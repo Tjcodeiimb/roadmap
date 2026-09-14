@@ -1,0 +1,3487 @@
+{
+  "track": {
+    "id": "ai",
+    "name": "ai",
+    "label": "AI Mastery"
+  },
+  "phases": [
+    {
+      "id": "ph1",
+      "track_id": "ai",
+      "order_index": 1,
+      "title": "Foundations — AI, Thinking & Communication",
+      "description": "Start with AI fluency, prompting, research habits, digital literacy, information design, and practical safety. This phase makes learners effective AI users before asking them to build systems. Expect 4-6 weeks.",
+      "estimated_weeks": "4-6 weeks",
+      "color": "var(--indigo)"
+    },
+    {
+      "id": "ph2",
+      "track_id": "ai",
+      "order_index": 2,
+      "title": "Building — Agents, Automation & AI-Powered Workflows",
+      "description": "Understand how LLMs work, then start shipping things. Agents, MCP, automation, RAG, research tools, data literacy, and your first AI productivity stack. By the end of this phase you will have built and used real AI systems. Expect 6-8 weeks.",
+      "estimated_weeks": "6-8 weeks",
+      "color": "var(--jade)"
+    },
+    {
+      "id": "ph3",
+      "track_id": "ai",
+      "order_index": 3,
+      "title": "Design — Visual, UX & AI-Augmented Creation",
+      "description": "Design is how AI solutions feel real. UX principles, Figma, visual design, AI image and video tools. Expect 5–7 weeks.",
+      "estimated_weeks": "5–7 weeks",
+      "color": "var(--rose)"
+    },
+    {
+      "id": "ph4",
+      "track_id": "ai",
+      "order_index": 4,
+      "title": "Technical Fluency — Code, APIs & AI Frameworks",
+      "description": "Python, HTML/CSS/JS, APIs, Git, LangChain, databases, deployment. Not to become a developer — to read, modify, and ship with confidence. Expect 8–12 weeks.",
+      "estimated_weeks": "8–12 weeks",
+      "color": "var(--amber)"
+    },
+    {
+      "id": "ph5",
+      "track_id": "ai",
+      "order_index": 5,
+      "title": "Launch — Products, Users & Responsibility",
+      "description": "Find real problems, build real solutions, ship to real users. User research, monitoring, cost optimisation, ethics, regulation. Expect 4–6 weeks.",
+      "estimated_weeks": "4–6 weeks",
+      "color": "var(--sienna)"
+    },
+    {
+      "id": "ph6",
+      "track_id": "ai",
+      "order_index": 6,
+      "title": "Business — Strategy, Sales & Distribution",
+      "description": "Business models, pricing, selling, go-to-market, personal brand. AI without business thinking is a hobby. Expect 4–6 weeks.",
+      "estimated_weeks": "4–6 weeks",
+      "color": "var(--sky)"
+    },
+    {
+      "id": "ph7",
+      "track_id": "ai",
+      "order_index": 7,
+      "title": "Mastery — Teaching, Contributing & Leading",
+      "description": "The highest form of learning is teaching. Contributing to research, governance, and community. You don't finish this phase — you live it. Ongoing.",
+      "estimated_weeks": "Ongoing",
+      "color": "var(--moss)"
+    }
+  ],
+  "topics": [
+    {
+      "id": "ai-fluency",
+      "phase_id": "ph1",
+      "order_index": 1,
+      "title": "AI Fluency: Framework & Foundations",
+      "section": "Anthropic Academy",
+      "tags": [
+        "ac"
+      ],
+      "estimated_time": "3h",
+      "description": "The 4D framework — Delegation, Description, Discernment, Diligence. How to work with AI effectively and responsibly. This is the operating system for everything else in this roadmap.",
+      "steps": [
+        {
+          "t": "Complete D1: Delegation module",
+          "d": "What can be delegated to AI and what must stay human."
+        },
+        {
+          "t": "Complete D2: Description module",
+          "d": "Crafting precise prompts and instructions."
+        },
+        {
+          "t": "Complete D3: Discernment module",
+          "d": "Evaluating AI outputs, spotting errors."
+        },
+        {
+          "t": "Complete D4: Diligence module",
+          "d": "Ethics, accountability, responsible use."
+        },
+        {
+          "t": "Take the final quiz",
+          "d": "Solidify understanding before moving on."
+        }
+      ]
+    },
+    {
+      "id": "claude-101",
+      "phase_id": "ph1",
+      "order_index": 2,
+      "title": "Claude 101",
+      "section": "Anthropic Academy",
+      "tags": [
+        "ac"
+      ],
+      "estimated_time": "2h",
+      "description": "Core Claude features and how to use them for everyday work. Covers Projects, Memory, artifacts, analysis, coding help, and research. Your practical launchpad.",
+      "steps": [
+        {
+          "t": "Explore Claude Projects",
+          "d": "Learn to set up persistent context for ongoing work."
+        },
+        {
+          "t": "Try different content types",
+          "d": "Writing, analysis, code, research — see the range."
+        },
+        {
+          "t": "Experiment with custom instructions",
+          "d": "Persona, format, tone, output style."
+        },
+        {
+          "t": "Learn about artifacts",
+          "d": "Claude can generate runnable code, HTML, diagrams."
+        }
+      ]
+    },
+    {
+      "id": "tokens-context",
+      "phase_id": "ph1",
+      "order_index": 3,
+      "title": "Tokens & Context Windows",
+      "section": "AI Fundamentals",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "1.5h",
+      "description": "Why AI has memory limits, why context quality matters, and how to design prompts, files, and retrieval workflows that fit within model limits. Context engineering is a real product skill.",
+      "steps": [
+        {
+          "t": "What a token is",
+          "d": "Roughly a chunk of text, not exactly a word. Use a tokenizer to build intuition."
+        },
+        {
+          "t": "What a context window does",
+          "d": "The model can only reason over what fits in the current context."
+        },
+        {
+          "t": "Strategies for long documents",
+          "d": "Summarization, chunking, retrieval, source selection, and context pruning."
+        },
+        {
+          "t": "Context engineering basics",
+          "d": "What belongs in instructions, examples, retrieved docs, and user messages."
+        }
+      ]
+    },
+    {
+      "id": "prompt-fundamentals",
+      "phase_id": "ph1",
+      "order_index": 4,
+      "title": "Prompt Engineering Fundamentals",
+      "section": "Communication Skills",
+      "tags": [
+        "ac"
+      ],
+      "estimated_time": "3h",
+      "description": "The craft of talking to AI precisely. Clarity, context, examples, constraints, format instructions. This single skill will save you thousands of hours across everything you do.",
+      "steps": [
+        {
+          "t": "The anatomy of a good prompt",
+          "d": "Role, context, task, format, constraints."
+        },
+        {
+          "t": "Positive vs negative framing",
+          "d": "Tell AI what to do, not just what NOT to do."
+        },
+        {
+          "t": "Using examples (few-shot)",
+          "d": "Showing rather than telling gets better results."
+        },
+        {
+          "t": "Format instructions",
+          "d": "JSON, markdown, bullet lists, specific lengths."
+        },
+        {
+          "t": "Iterative refinement",
+          "d": "How to improve a prompt over multiple turns."
+        }
+      ]
+    },
+    {
+      "id": "advanced-prompting",
+      "phase_id": "ph1",
+      "order_index": 5,
+      "title": "Advanced Prompting Techniques",
+      "section": "Communication Skills",
+      "tags": [
+        "ac",
+        "code"
+      ],
+      "estimated_time": "4h",
+      "description": "Chain-of-thought, tree-of-thought, self-consistency, meta-prompting, constitutional AI prompting, prompt chaining. The difference between good and exceptional AI output.",
+      "steps": [
+        {
+          "t": "Chain-of-thought prompting",
+          "d": "\"Think step by step\" and why it works so well."
+        },
+        {
+          "t": "Few-shot and zero-shot patterns",
+          "d": "When examples help and when they constrain."
+        },
+        {
+          "t": "Structured output generation",
+          "d": "Getting JSON, tables, and consistent schemas."
+        },
+        {
+          "t": "System prompt design",
+          "d": "Persona, memory, tool use, output format."
+        },
+        {
+          "t": "Prompt chaining",
+          "d": "Sequences of prompts where output becomes input."
+        }
+      ]
+    },
+    {
+      "id": "ai-model-landscape",
+      "phase_id": "ph1",
+      "order_index": 6,
+      "title": "AI Model Landscape 2026",
+      "section": "AI Fundamentals",
+      "tags": [],
+      "estimated_time": "2h",
+      "description": "Claude, GPT, Gemini, Llama, Mistral and open-weight models keep changing. Learn how to compare model families by capability, cost, latency, context, privacy, tooling, and product fit instead of chasing hype.",
+      "steps": [
+        {
+          "t": "Compare model families",
+          "d": "Claude, GPT, Gemini, Llama and Mistral have different strengths."
+        },
+        {
+          "t": "Understand closed vs open-weight models",
+          "d": "Capability, cost, privacy, deployment and control trade-offs."
+        },
+        {
+          "t": "Read benchmarks carefully",
+          "d": "Benchmarks are signals, not truth. Look for task similarity and eval quality."
+        },
+        {
+          "t": "Choose by use case",
+          "d": "Match model to writing, coding, research, agents, vision, latency and budget."
+        }
+      ]
+    },
+    {
+      "id": "ai-safety-basics",
+      "phase_id": "ph1",
+      "order_index": 7,
+      "title": "AI Safety & Alignment Basics",
+      "section": "Ethics & Society",
+      "tags": [
+        "biz"
+      ],
+      "estimated_time": "2h",
+      "description": "A beginner-friendly introduction to using AI responsibly: privacy, bias, reliability, accountability, misuse, and when a human must stay in the loop. The goal is practical judgement, not research-paper depth.",
+      "steps": [
+        {
+          "t": "Define responsible AI in plain language",
+          "d": "Fairness, accountability, safety, privacy, transparency and human oversight."
+        },
+        {
+          "t": "Spot everyday AI risks",
+          "d": "Bad sources, biased outputs, private data leakage, automation errors, and overtrust."
+        },
+        {
+          "t": "Build a simple safety checklist",
+          "d": "What data enters the system? Who can be harmed? How will mistakes be caught?"
+        },
+        {
+          "t": "Practice red-team thinking",
+          "d": "Ask how a tool could fail, be misused, or mislead a real user."
+        }
+      ]
+    },
+    {
+      "id": "personal-prompt-library",
+      "phase_id": "ph1",
+      "order_index": 8,
+      "title": "Building Your Personal Prompt Library",
+      "section": "Communication Skills",
+      "tags": [
+        "career"
+      ],
+      "estimated_time": "3h",
+      "description": "Templates, snippets, and system prompts for your specific work. A well-built prompt library is a professional superpower. The goal: spend time once, benefit forever.",
+      "steps": [
+        {
+          "t": "Audit your most common tasks",
+          "d": "What do you ask AI to help with repeatedly?"
+        },
+        {
+          "t": "Build writing prompt templates",
+          "d": "Emails, reports, proposals, summaries."
+        },
+        {
+          "t": "Build research prompt templates",
+          "d": "Competitive analysis, summarization, synthesis."
+        },
+        {
+          "t": "Create a personal system prompt",
+          "d": "Your default persona, preferences, and context."
+        }
+      ]
+    },
+    {
+      "id": "digital-literacy",
+      "phase_id": "ph1",
+      "order_index": 9,
+      "title": "Digital Literacy for AI Builders",
+      "section": "Foundations",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "2h",
+      "description": "File systems, URLs, APIs, JSON, command line basics. The minimum digital fluency needed before learning to code or build.",
+      "steps": [
+        {
+          "t": "File systems and paths",
+          "d": "Absolute vs relative paths."
+        },
+        {
+          "t": "URLs and HTTP basics",
+          "d": "How the web works. GET vs POST."
+        },
+        {
+          "t": "JSON — reading and writing",
+          "d": "The universal language of web data."
+        },
+        {
+          "t": "What an API actually is",
+          "d": "Request/response cycle."
+        },
+        {
+          "t": "Terminal / Command Line 101",
+          "d": "Basic commands."
+        }
+      ]
+    },
+    {
+      "id": "information-design",
+      "phase_id": "ph1",
+      "order_index": 10,
+      "title": "Information Architecture & Communication",
+      "section": "Design Thinking",
+      "tags": [
+        "design"
+      ],
+      "estimated_time": "3h",
+      "description": "Turn messy information into something people can scan, understand, and act on. Learn content hierarchy, naming, grouping, headings, navigation, and plain-language structure by redesigning real material.",
+      "steps": [
+        {
+          "t": "Start from user questions",
+          "d": "List what the reader is trying to find, decide, or do."
+        },
+        {
+          "t": "Create hierarchy",
+          "d": "Use titles, sections, summaries and order to make the most important thing obvious."
+        },
+        {
+          "t": "Chunk and label information",
+          "d": "Group related ideas, name them clearly, and remove clever-but-vague labels."
+        },
+        {
+          "t": "Design for scanning",
+          "d": "Use headings, lists, short paragraphs, tables and progressive disclosure."
+        },
+        {
+          "t": "Redesign one messy page",
+          "d": "Take a long document and turn it into a clean one-page brief."
+        }
+      ]
+    },
+    {
+      "id": "research-methodology",
+      "phase_id": "ph1",
+      "order_index": 11,
+      "title": "Research & Synthesis Methods",
+      "section": "Foundations",
+      "tags": [
+        "biz"
+      ],
+      "estimated_time": "3h",
+      "description": "A practical workflow for researching with AI without getting fooled. Learn how to frame a question, gather sources, verify claims, organize evidence, and synthesize a useful answer you can trust.",
+      "steps": [
+        {
+          "t": "Turn a vague topic into research questions",
+          "d": "Write the decision you need to make, the unknowns, and the evidence that would change your mind."
+        },
+        {
+          "t": "Collect sources intentionally",
+          "d": "Use search, Perplexity, NotebookLM and primary sources; save links as you go."
+        },
+        {
+          "t": "Verify with SIFT",
+          "d": "Stop, investigate the source, find better coverage, and trace claims back to the original."
+        },
+        {
+          "t": "Build an evidence table",
+          "d": "Claim, source, confidence, quote/link, and what it means for your decision."
+        },
+        {
+          "t": "Synthesize into action",
+          "d": "End with a recommendation, risks, open questions and next steps."
+        }
+      ]
+    },
+    {
+      "id": "how-llms-work",
+      "phase_id": "ph2",
+      "order_index": 1,
+      "title": "How Large Language Models Work",
+      "section": "AI Fundamentals",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "4h",
+      "description": "Build a clear, non-mystical mental model of LLMs: tokens, embeddings, attention, next-token prediction, training, inference, and why confident mistakes happen. This belongs just before agents and RAG, because builders need to know what they are actually building on.",
+      "steps": [
+        {
+          "t": "Watch a visual explanation first",
+          "d": "Start with attention and neural network intuition before touching papers."
+        },
+        {
+          "t": "Understand tokens and embeddings",
+          "d": "Text becomes chunks, chunks become vectors, and vectors make language computable."
+        },
+        {
+          "t": "Learn training vs inference",
+          "d": "Separate how models are made from how products call them."
+        },
+        {
+          "t": "Map failure modes",
+          "d": "Hallucinations, outdated knowledge, missing context, and overconfident synthesis."
+        },
+        {
+          "t": "Explain the model in plain English",
+          "d": "Teach the idea back without jargon before moving to agents."
+        }
+      ]
+    },
+    {
+      "id": "agent-skills",
+      "phase_id": "ph2",
+      "order_index": 2,
+      "title": "Introduction to Agent Skills",
+      "section": "Anthropic Academy",
+      "tags": [
+        "ac"
+      ],
+      "estimated_time": "2h",
+      "description": "How Claude uses skills — reusable capabilities that Claude applies automatically at the right moment. The backbone of AI assistants that actually do things.",
+      "steps": [
+        {
+          "t": "What are agent skills?",
+          "d": "Reusable tool-like capabilities that extend Claude."
+        },
+        {
+          "t": "Built-in vs custom skills",
+          "d": "Web search, code execution, file handling."
+        },
+        {
+          "t": "How Claude decides which skill to use",
+          "d": "The routing and planning mechanism."
+        },
+        {
+          "t": "Building your first custom skill",
+          "d": "Simple MCP-based skill from scratch."
+        }
+      ]
+    },
+    {
+      "id": "mcp-intro",
+      "phase_id": "ph2",
+      "order_index": 3,
+      "title": "Model Context Protocol (MCP) — Intro",
+      "section": "Anthropic Academy",
+      "tags": [
+        "ac",
+        "code"
+      ],
+      "estimated_time": "3h",
+      "description": "MCP is the standard that lets Claude connect to external tools, APIs, and data sources. Understanding this is what separates users from builders.",
+      "steps": [
+        {
+          "t": "What MCP is and why it exists",
+          "d": "The USB-C port for AI tools."
+        },
+        {
+          "t": "MCP servers and clients",
+          "d": "Architecture: what talks to what."
+        },
+        {
+          "t": "Connecting Claude to your filesystem",
+          "d": "Read/write files from Claude."
+        },
+        {
+          "t": "Build a simple MCP server",
+          "d": "Python or Node.js — 30 lines."
+        }
+      ]
+    },
+    {
+      "id": "agent-anatomy",
+      "phase_id": "ph2",
+      "order_index": 4,
+      "title": "Anatomy of an AI Agent",
+      "section": "Agent Architecture",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "3h",
+      "description": "Perception, memory, planning, action. Every AI agent is built from these four components. Understanding this architecture lets you design, debug, and improve any agent system.",
+      "steps": [
+        {
+          "t": "Perception: how agents receive input",
+          "d": "Text, images, tool results, environment state."
+        },
+        {
+          "t": "Memory: short, long, and episodic",
+          "d": "In-context vs vector store vs database."
+        },
+        {
+          "t": "Planning: how agents decide",
+          "d": "ReAct, Chain-of-Thought, task decomposition."
+        },
+        {
+          "t": "Action: how agents affect the world",
+          "d": "Tool calls, API requests, file writes."
+        }
+      ]
+    },
+    {
+      "id": "rag-deep-dive",
+      "phase_id": "ph2",
+      "order_index": 5,
+      "title": "RAG — Retrieval Augmented Generation",
+      "section": "Agent Architecture",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "4h",
+      "description": "Connect AI to your own knowledge without retraining. RAG is how AI products actually know your data — documents, wikis, databases.",
+      "steps": [
+        {
+          "t": "The RAG architecture",
+          "d": "Embed → store → retrieve → generate."
+        },
+        {
+          "t": "Chunking strategies",
+          "d": "How to split documents for best retrieval."
+        },
+        {
+          "t": "Embedding models",
+          "d": "OpenAI Ada, Cohere, BGE — trade-offs."
+        },
+        {
+          "t": "Vector databases",
+          "d": "Chroma for local, Pinecone for production."
+        },
+        {
+          "t": "Build a simple RAG pipeline",
+          "d": "PDF → embeddings → query → answer."
+        }
+      ]
+    },
+    {
+      "id": "no-code-automation",
+      "phase_id": "ph2",
+      "order_index": 6,
+      "title": "No-Code AI Automation — n8n & Make",
+      "section": "Automation Tools",
+      "tags": [
+        "tool"
+      ],
+      "estimated_time": "5h",
+      "description": "Build real AI workflows without writing code. n8n and Make connect hundreds of apps with AI at the centre.",
+      "steps": [
+        {
+          "t": "n8n installation and setup",
+          "d": "Docker setup or n8n.cloud account."
+        },
+        {
+          "t": "Your first AI workflow",
+          "d": "Gmail → summarize with Claude → save to Notion."
+        },
+        {
+          "t": "Triggers and scheduling",
+          "d": "Time-based, webhook, event-driven automation."
+        },
+        {
+          "t": "Error handling",
+          "d": "What happens when a step fails."
+        }
+      ]
+    },
+    {
+      "id": "multi-agent-systems",
+      "phase_id": "ph2",
+      "order_index": 7,
+      "title": "Multi-Agent Orchestration",
+      "section": "Agent Architecture",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "4h",
+      "description": "Teams of AI working in parallel. Orchestrators that delegate to specialists. This is how complex AI workflows scale.",
+      "steps": [
+        {
+          "t": "Why single agents have limits",
+          "d": "Context window, task scope, parallelism."
+        },
+        {
+          "t": "Orchestrator-subagent pattern",
+          "d": "One agent plans; others execute."
+        },
+        {
+          "t": "Parallel vs sequential execution",
+          "d": "When to fan out and when to chain."
+        },
+        {
+          "t": "Human-in-the-loop integration",
+          "d": "Where humans stay involved."
+        }
+      ]
+    },
+    {
+      "id": "ai-productivity-stack",
+      "phase_id": "ph2",
+      "order_index": 8,
+      "title": "Building Your Personal AI Productivity Stack",
+      "section": "Applied AI",
+      "tags": [
+        "career",
+        "biz"
+      ],
+      "estimated_time": "3h",
+      "description": "Your personal system for using AI every day. The tools, workflows, and prompts that become your professional superpower.",
+      "steps": [
+        {
+          "t": "Audit your current workflow",
+          "d": "Where do you spend time AI could help?"
+        },
+        {
+          "t": "Core tools setup",
+          "d": "Claude, Perplexity, NotebookLM."
+        },
+        {
+          "t": "Reading and research workflow",
+          "d": "Summarise, extract, synthesise."
+        },
+        {
+          "t": "Build your personal system prompt",
+          "d": "Your permanent context for all AI interactions."
+        }
+      ]
+    },
+    {
+      "id": "writing-with-ai",
+      "phase_id": "ph2",
+      "order_index": 9,
+      "title": "Writing & Communication with AI",
+      "section": "Applied AI",
+      "tags": [
+        "biz",
+        "career"
+      ],
+      "estimated_time": "2h",
+      "description": "AI as your writing partner — without losing your voice. Emails, reports, proposals, feedback. How to use AI to think more clearly, not just write faster.",
+      "steps": [
+        {
+          "t": "The collaboration mindset",
+          "d": "AI as editor, not ghostwriter."
+        },
+        {
+          "t": "Email and message writing",
+          "d": "Templates, tone adjustment, clarity editing."
+        },
+        {
+          "t": "Reports and documents",
+          "d": "Outline generation, section drafting."
+        },
+        {
+          "t": "Maintaining your voice",
+          "d": "How to use AI without sounding robotic."
+        }
+      ]
+    },
+    {
+      "id": "data-fundamentals",
+      "phase_id": "ph2",
+      "order_index": 10,
+      "title": "Data Literacy — Reading & Understanding Data",
+      "section": "Business Intelligence",
+      "tags": [
+        "biz",
+        "code"
+      ],
+      "estimated_time": "3h",
+      "description": "Making good decisions from data. Reading charts without being misled, understanding statistics, and knowing when AI's data analysis is trustworthy.",
+      "steps": [
+        {
+          "t": "Chart literacy",
+          "d": "Line, bar, scatter — what each shows and hides."
+        },
+        {
+          "t": "Basic statistics intuition",
+          "d": "Mean, median, variance, correlation vs causation."
+        },
+        {
+          "t": "Common misleading patterns",
+          "d": "Truncated axes, cherry-picked ranges, survivorship bias."
+        },
+        {
+          "t": "Using Claude for data analysis",
+          "d": "Upload a CSV, ask real questions."
+        }
+      ]
+    },
+    {
+      "id": "notebooklm-mastery",
+      "phase_id": "ph2",
+      "order_index": 11,
+      "title": "NotebookLM & AI Research Tools",
+      "section": "Applied AI",
+      "tags": [
+        "biz"
+      ],
+      "estimated_time": "2h",
+      "description": "Deep dive into Google NotebookLM, Perplexity, and Elicit. Turn your document collection into a conversational knowledge base.",
+      "steps": [
+        {
+          "t": "NotebookLM setup",
+          "d": "Import your key documents and start conversing."
+        },
+        {
+          "t": "Source grounding and citations",
+          "d": "Verify every AI answer back to source material."
+        },
+        {
+          "t": "Research workflow with Perplexity",
+          "d": "Internet-connected AI research with citations."
+        }
+      ]
+    },
+    {
+      "id": "ux-fundamentals",
+      "phase_id": "ph3",
+      "order_index": 1,
+      "title": "UX Design Principles",
+      "section": "Design Foundations",
+      "tags": [
+        "design"
+      ],
+      "estimated_time": "4h",
+      "description": "How people think and what they expect from digital products. Nielsen's 10 heuristics, cognitive load, mental models. You can't build good AI products without this.",
+      "steps": [
+        {
+          "t": "Nielsen's 10 Usability Heuristics",
+          "d": "The 10 principles behind every good interface."
+        },
+        {
+          "t": "Cognitive load theory",
+          "d": "Why simpler is harder to build but easier to use."
+        },
+        {
+          "t": "Mental models",
+          "d": "Users have expectations. Design to meet them."
+        },
+        {
+          "t": "Audit something you use every day",
+          "d": "Apply heuristics to critique a real product."
+        }
+      ]
+    },
+    {
+      "id": "ai-product-ux",
+      "phase_id": "ph3",
+      "order_index": 2,
+      "title": "UX Patterns for AI Products",
+      "section": "AI Design",
+      "tags": [
+        "design",
+        "ac"
+      ],
+      "estimated_time": "3h",
+      "description": "Designing for uncertainty, latency, and trust. AI products are different — outputs vary, responses take time, users need to verify.",
+      "steps": [
+        {
+          "t": "The trust design problem",
+          "d": "Users need to know when to trust AI outputs."
+        },
+        {
+          "t": "Designing for latency",
+          "d": "Loading states, skeleton screens, streaming text."
+        },
+        {
+          "t": "Handling uncertainty and errors",
+          "d": "What to show when AI is unsure or wrong."
+        },
+        {
+          "t": "Feedback mechanisms",
+          "d": "Thumbs up/down, corrections, regeneration patterns."
+        }
+      ]
+    },
+    {
+      "id": "figma-basics",
+      "phase_id": "ph3",
+      "order_index": 3,
+      "title": "Figma — From Zero to Productive",
+      "section": "Design Tools",
+      "tags": [
+        "design",
+        "tool"
+      ],
+      "estimated_time": "6h",
+      "description": "Industry-standard UI design. Master the 20% that gives 80% of the value.",
+      "steps": [
+        {
+          "t": "Figma setup and navigation",
+          "d": "Frames, layers, the toolbar."
+        },
+        {
+          "t": "Auto-layout mastery",
+          "d": "How to build responsive components."
+        },
+        {
+          "t": "Components and instances",
+          "d": "Build once, reuse everywhere."
+        },
+        {
+          "t": "Prototyping basics",
+          "d": "Clickable flows from static designs."
+        },
+        {
+          "t": "Build a full screen from scratch",
+          "d": "A landing page or app screen."
+        }
+      ]
+    },
+    {
+      "id": "visual-design-basics",
+      "phase_id": "ph3",
+      "order_index": 4,
+      "title": "Visual Design Fundamentals",
+      "section": "Design Foundations",
+      "tags": [
+        "design"
+      ],
+      "estimated_time": "4h",
+      "description": "Color, typography, spacing, contrast. The four rules that separate polished from amateur.",
+      "steps": [
+        {
+          "t": "Color theory and palettes",
+          "d": "Hue, saturation, value. Complementary vs analogous."
+        },
+        {
+          "t": "Typography: pairing and hierarchy",
+          "d": "How to choose and combine two fonts."
+        },
+        {
+          "t": "Spacing and rhythm",
+          "d": "Whitespace carries meaning."
+        },
+        {
+          "t": "Contrast and accessibility",
+          "d": "WCAG standards."
+        }
+      ]
+    },
+    {
+      "id": "wireframing-prototyping",
+      "phase_id": "ph3",
+      "order_index": 5,
+      "title": "Wireframing & Rapid Prototyping",
+      "section": "Design Process",
+      "tags": [
+        "design",
+        "career"
+      ],
+      "estimated_time": "3h",
+      "description": "Test ideas before building them. Learn to sketch, lo-fi prototype, and get feedback fast.",
+      "steps": [
+        {
+          "t": "Paper sketching first",
+          "d": "10 thumbnail sketches in 10 minutes."
+        },
+        {
+          "t": "Lo-fi wireframes in Figma",
+          "d": "Boxes and lines. No color."
+        },
+        {
+          "t": "Hi-fi prototype in Figma",
+          "d": "Adding visual design and interactivity."
+        },
+        {
+          "t": "User testing a prototype",
+          "d": "5-person test. Watch, don't explain."
+        }
+      ]
+    },
+    {
+      "id": "image-ai-tools",
+      "phase_id": "ph3",
+      "order_index": 6,
+      "title": "Midjourney, DALL·E & Image Generation",
+      "section": "AI Creative Tools",
+      "tags": [
+        "design",
+        "tool"
+      ],
+      "estimated_time": "3h",
+      "description": "Generate visuals, illustrations, UI mockups with AI. Prompting for images is a different skill from text prompting.",
+      "steps": [
+        {
+          "t": "Midjourney setup",
+          "d": "Discord bot. Start generating."
+        },
+        {
+          "t": "Prompt vocabulary for images",
+          "d": "Style, lighting, composition, artists, medium."
+        },
+        {
+          "t": "Iterating with parameters",
+          "d": "--ar --stylize --chaos."
+        },
+        {
+          "t": "Commercial licensing",
+          "d": "What you can and can't do with AI images."
+        }
+      ]
+    },
+    {
+      "id": "design-systems",
+      "phase_id": "ph3",
+      "order_index": 7,
+      "title": "Design Systems & Component Thinking",
+      "section": "Design Process",
+      "tags": [
+        "design",
+        "code"
+      ],
+      "estimated_time": "4h",
+      "description": "How great products stay consistent at scale. Tokens, components, patterns, documentation.",
+      "steps": [
+        {
+          "t": "What a design system is",
+          "d": "Tokens, components, patterns, documentation."
+        },
+        {
+          "t": "Design tokens",
+          "d": "Colors, spacing, typography as variables."
+        },
+        {
+          "t": "Component-based thinking",
+          "d": "Atoms, molecules, organisms."
+        },
+        {
+          "t": "Build a mini design system",
+          "d": "5 components with consistent tokens."
+        }
+      ]
+    },
+    {
+      "id": "canva-presentations",
+      "phase_id": "ph3",
+      "order_index": 8,
+      "title": "Canva AI & Presentation Design",
+      "section": "AI Creative Tools",
+      "tags": [
+        "design",
+        "biz",
+        "tool"
+      ],
+      "estimated_time": "2h",
+      "description": "Professional presentations without hiring a designer. Canva AI features accelerate every step.",
+      "steps": [
+        {
+          "t": "Canva setup and templates",
+          "d": "Pick templates strategically."
+        },
+        {
+          "t": "Canva AI features",
+          "d": "Text to image, background remover."
+        },
+        {
+          "t": "Presentation structure",
+          "d": "5-second rule, one idea per slide."
+        }
+      ]
+    },
+    {
+      "id": "video-ai-tools",
+      "phase_id": "ph3",
+      "order_index": 9,
+      "title": "Video AI — Runway, Sora & CapCut AI",
+      "section": "AI Creative Tools",
+      "tags": [
+        "design",
+        "tool"
+      ],
+      "estimated_time": "3h",
+      "description": "Create, edit, and enhance video with AI. A one-person video studio is now possible.",
+      "steps": [
+        {
+          "t": "CapCut AI for editing",
+          "d": "Auto-captions, templates, AI-enhanced editing."
+        },
+        {
+          "t": "Runway for AI video generation",
+          "d": "Text-to-video, image-to-video."
+        },
+        {
+          "t": "AI voiceover tools",
+          "d": "ElevenLabs, Murf — realistic AI narration."
+        },
+        {
+          "t": "Create a 60-second AI product demo",
+          "d": "Script, visuals, narration — all AI-assisted."
+        }
+      ]
+    },
+    {
+      "id": "data-visualization",
+      "phase_id": "ph3",
+      "order_index": 10,
+      "title": "Data Visualization",
+      "section": "Design Process",
+      "tags": [
+        "design",
+        "biz"
+      ],
+      "estimated_time": "3h",
+      "description": "Turning numbers into understanding. Charts, dashboards, and the visual language of data.",
+      "steps": [
+        {
+          "t": "Chart type selection",
+          "d": "When to use line vs bar vs scatter."
+        },
+        {
+          "t": "Dashboard design principles",
+          "d": "Layout, hierarchy, interactivity."
+        },
+        {
+          "t": "Tools: Flourish, Datawrapper",
+          "d": "No-code data visualization."
+        },
+        {
+          "t": "Building with AI",
+          "d": "Ask Claude to generate D3.js charts."
+        }
+      ]
+    },
+    {
+      "id": "brand-identity-basics",
+      "phase_id": "ph3",
+      "order_index": 11,
+      "title": "Brand Identity Basics",
+      "section": "Design Foundations",
+      "tags": [
+        "design",
+        "biz"
+      ],
+      "estimated_time": "2h",
+      "description": "What a brand actually is — positioning, voice, personality. You'll need this when you build products or market yourself.",
+      "steps": [
+        {
+          "t": "Brand vs identity vs logo",
+          "d": "Understanding the layers."
+        },
+        {
+          "t": "Brand positioning",
+          "d": "What you stand for vs competitors."
+        },
+        {
+          "t": "Voice and tone",
+          "d": "How a brand sounds in writing."
+        },
+        {
+          "t": "Apply to yourself",
+          "d": "Personal brand audit."
+        }
+      ]
+    },
+    {
+      "id": "claude-api",
+      "phase_id": "ph4",
+      "order_index": 1,
+      "title": "Building with the Claude API",
+      "section": "Anthropic Academy",
+      "tags": [
+        "ac",
+        "code"
+      ],
+      "estimated_time": "4h",
+      "description": "Messages, tool use, vision, streaming, batch processing, system prompts. The complete technical foundation for building Claude-powered applications.",
+      "steps": [
+        {
+          "t": "API setup and first call",
+          "d": "API key, Python SDK or curl."
+        },
+        {
+          "t": "Messages and conversation history",
+          "d": "How to maintain multi-turn conversations."
+        },
+        {
+          "t": "System prompts",
+          "d": "Persistent persona and instructions."
+        },
+        {
+          "t": "Tool use (function calling)",
+          "d": "Claude can call your custom functions."
+        },
+        {
+          "t": "Streaming responses",
+          "d": "Real-time text output for better UX."
+        }
+      ]
+    },
+    {
+      "id": "mcp-advanced",
+      "phase_id": "ph4",
+      "order_index": 2,
+      "title": "MCP: Advanced Topics",
+      "section": "Anthropic Academy",
+      "tags": [
+        "ac",
+        "code"
+      ],
+      "estimated_time": "4h",
+      "description": "Sampling, notifications, filesystem, transport protocols, security. Building production-grade MCP servers.",
+      "steps": [
+        {
+          "t": "Sampling and resource access",
+          "d": "Advanced MCP patterns."
+        },
+        {
+          "t": "Building a production MCP server",
+          "d": "Auth, error handling, logging."
+        },
+        {
+          "t": "MCP security considerations",
+          "d": "What a malicious MCP server can do."
+        },
+        {
+          "t": "MCP for databases",
+          "d": "Connecting Claude to PostgreSQL, SQLite."
+        }
+      ]
+    },
+    {
+      "id": "python-for-ai",
+      "phase_id": "ph4",
+      "order_index": 3,
+      "title": "Python Basics for AI Builders",
+      "section": "Code Foundations",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "8h",
+      "description": "Not to become a software engineer — to read, understand, and modify AI code. The minimum viable programming for an AI builder.",
+      "steps": [
+        {
+          "t": "Variables, types, and operations",
+          "d": "int, str, bool, list, dict."
+        },
+        {
+          "t": "Control flow",
+          "d": "if/elif/else, for loops, while."
+        },
+        {
+          "t": "Functions",
+          "d": "def, return, arguments, scope."
+        },
+        {
+          "t": "Lists and dictionaries",
+          "d": "The two data structures you'll use constantly."
+        },
+        {
+          "t": "Error handling",
+          "d": "try/except — making code that doesn't break."
+        }
+      ]
+    },
+    {
+      "id": "html-css-js",
+      "phase_id": "ph4",
+      "order_index": 4,
+      "title": "HTML, CSS & JavaScript Basics",
+      "section": "Code Foundations",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "8h",
+      "description": "Build anything that runs in a browser. HTML for structure, CSS for style, JavaScript for interactivity.",
+      "steps": [
+        {
+          "t": "HTML structure",
+          "d": "Tags, attributes, semantic HTML, the DOM."
+        },
+        {
+          "t": "CSS fundamentals",
+          "d": "Selectors, box model, flexbox, grid."
+        },
+        {
+          "t": "JavaScript basics",
+          "d": "Variables, functions, events, fetch API."
+        },
+        {
+          "t": "DOM manipulation",
+          "d": "Change page elements with code."
+        }
+      ]
+    },
+    {
+      "id": "apis-and-http",
+      "phase_id": "ph4",
+      "order_index": 5,
+      "title": "APIs, HTTP & Web Fundamentals",
+      "section": "Code Foundations",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "3h",
+      "description": "How the internet works. REST APIs, HTTP methods, authentication, webhooks.",
+      "steps": [
+        {
+          "t": "HTTP request/response cycle",
+          "d": "GET, POST, PUT, DELETE. Status codes."
+        },
+        {
+          "t": "REST API conventions",
+          "d": "Endpoints, resources, JSON responses."
+        },
+        {
+          "t": "Authentication patterns",
+          "d": "API keys, OAuth, Bearer tokens."
+        },
+        {
+          "t": "Webhooks",
+          "d": "When APIs call you back."
+        }
+      ]
+    },
+    {
+      "id": "git-github",
+      "phase_id": "ph4",
+      "order_index": 6,
+      "title": "Git & GitHub for Non-Developers",
+      "section": "Code Foundations",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "2h",
+      "description": "Track changes, collaborate, and not break things. Even non-developers need git when working with code.",
+      "steps": [
+        {
+          "t": "What git actually does",
+          "d": "Snapshots of your project over time."
+        },
+        {
+          "t": "Core commands",
+          "d": "init, add, commit, push, pull, clone."
+        },
+        {
+          "t": "Branching",
+          "d": "Work on features without breaking main."
+        },
+        {
+          "t": "GitHub",
+          "d": "Remote repositories, pull requests, issues."
+        }
+      ]
+    },
+    {
+      "id": "langchain-langgraph",
+      "phase_id": "ph4",
+      "order_index": 7,
+      "title": "LangChain & LangGraph",
+      "section": "AI Frameworks",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "5h",
+      "description": "The most widely-used framework for building AI applications. Chains, agents, memory, retrieval, tool use — all in Python.",
+      "steps": [
+        {
+          "t": "LangChain concepts",
+          "d": "LLMs, chains, prompts, parsers."
+        },
+        {
+          "t": "Building a simple chain",
+          "d": "Prompt → LLM → output parser."
+        },
+        {
+          "t": "LangChain agents",
+          "d": "Tool use, ReAct pattern, custom tools."
+        },
+        {
+          "t": "LangGraph intro",
+          "d": "Stateful agents with graph-based control flow."
+        }
+      ]
+    },
+    {
+      "id": "databases-sql",
+      "phase_id": "ph4",
+      "order_index": 8,
+      "title": "Databases & SQL Basics",
+      "section": "Code Foundations",
+      "tags": [
+        "code",
+        "biz"
+      ],
+      "estimated_time": "4h",
+      "description": "How data is stored and retrieved. SELECT, WHERE, JOIN, INSERT. Most AI systems connect to databases.",
+      "steps": [
+        {
+          "t": "Relational database concepts",
+          "d": "Tables, rows, columns, primary keys."
+        },
+        {
+          "t": "Core SQL",
+          "d": "SELECT, WHERE, ORDER BY, LIMIT."
+        },
+        {
+          "t": "JOINs",
+          "d": "How to combine data from multiple tables."
+        },
+        {
+          "t": "SQLite for beginners",
+          "d": "Local database — no server required."
+        }
+      ]
+    },
+    {
+      "id": "deployment-basics",
+      "phase_id": "ph4",
+      "order_index": 9,
+      "title": "Deployment — Getting Apps Live",
+      "section": "Infrastructure",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "3h",
+      "description": "Vercel, Railway, Render. Getting your AI app in front of real users. The last mile of building.",
+      "steps": [
+        {
+          "t": "What deployment actually means",
+          "d": "From your machine to the internet."
+        },
+        {
+          "t": "Vercel for frontend",
+          "d": "Instant deployment for web apps."
+        },
+        {
+          "t": "Railway for backend",
+          "d": "Python apps, APIs, scheduled jobs."
+        },
+        {
+          "t": "Environment variables",
+          "d": "Keeping API keys out of your code."
+        }
+      ]
+    },
+    {
+      "id": "evals-and-testing",
+      "phase_id": "ph4",
+      "order_index": 10,
+      "title": "Evaluating AI Systems — Evals",
+      "section": "Quality & Safety",
+      "tags": [
+        "code",
+        "biz"
+      ],
+      "estimated_time": "3h",
+      "description": "How do you know your AI app actually works? Test sets, metrics, LLM-as-judge. This separates serious AI engineers from everyone else.",
+      "steps": [
+        {
+          "t": "Why evals matter",
+          "d": "The only way to systematically improve AI products."
+        },
+        {
+          "t": "Building an eval set",
+          "d": "100 representative inputs and expected outputs."
+        },
+        {
+          "t": "LLM-as-judge",
+          "d": "Using Claude to evaluate Claude's outputs."
+        },
+        {
+          "t": "Regression testing",
+          "d": "Making sure updates don't break what worked."
+        }
+      ]
+    },
+    {
+      "id": "vector-dbs-embeddings",
+      "phase_id": "ph4",
+      "order_index": 11,
+      "title": "Vector Databases & Embeddings",
+      "section": "AI Infrastructure",
+      "tags": [
+        "code"
+      ],
+      "estimated_time": "3h",
+      "description": "The storage layer for AI memory and semantic search. Powers every serious RAG system.",
+      "steps": [
+        {
+          "t": "What embeddings are",
+          "d": "Words as vectors. Semantic proximity."
+        },
+        {
+          "t": "Similarity search",
+          "d": "Cosine similarity. Finding nearest neighbors."
+        },
+        {
+          "t": "Chroma — local vector store",
+          "d": "Install, add documents, query."
+        },
+        {
+          "t": "Pinecone — production",
+          "d": "Hosted vector database. Scaling up."
+        }
+      ]
+    },
+    {
+      "id": "opportunity-mapping",
+      "phase_id": "ph5",
+      "order_index": 1,
+      "title": "AI Opportunity Mapping",
+      "section": "Strategy",
+      "tags": [
+        "biz"
+      ],
+      "estimated_time": "3h",
+      "description": "Which industries and workflows have the highest leverage for AI right now. Systematic frameworks for spotting AI problems worth solving.",
+      "steps": [
+        {
+          "t": "The automation potential matrix",
+          "d": "High frequency × high pain × AI-solvable."
+        },
+        {
+          "t": "Industry deep dives",
+          "d": "Legal, healthcare, education, real estate, finance."
+        },
+        {
+          "t": "Workflow analysis",
+          "d": "Map out a workflow and find the friction."
+        },
+        {
+          "t": "Validation before building",
+          "d": "5 customer conversations before writing a line."
+        }
+      ]
+    },
+    {
+      "id": "first-ai-product",
+      "phase_id": "ph5",
+      "order_index": 2,
+      "title": "Building & Shipping Your First AI Product",
+      "section": "Product",
+      "tags": [
+        "biz",
+        "code",
+        "career"
+      ],
+      "estimated_time": "8h",
+      "description": "From idea to live product. The minimal steps to build something real and put it in front of users. Constraint: ship in under a week.",
+      "steps": [
+        {
+          "t": "Scope ruthlessly",
+          "d": "What's the absolute minimum useful version?"
+        },
+        {
+          "t": "Build with Claude Code",
+          "d": "Describe the app, iterate, ship."
+        },
+        {
+          "t": "Host on Vercel or Railway",
+          "d": "Live URL in 30 minutes."
+        },
+        {
+          "t": "Get 5 people to try it",
+          "d": "Find users before you polish."
+        },
+        {
+          "t": "Document what you learned",
+          "d": "Write up the build. Share it publicly."
+        }
+      ]
+    },
+    {
+      "id": "monitoring-production",
+      "phase_id": "ph5",
+      "order_index": 3,
+      "title": "Monitoring & Observing AI in Production",
+      "section": "Operations",
+      "tags": [
+        "code",
+        "biz"
+      ],
+      "estimated_time": "2h",
+      "description": "Logging, tracing, alerting. Knowing when your agent is drifting, failing, or being misused.",
+      "steps": [
+        {
+          "t": "What to log",
+          "d": "Inputs, outputs, latency, cost, errors."
+        },
+        {
+          "t": "LLM observability tools",
+          "d": "LangSmith, Helicone, Braintrust."
+        },
+        {
+          "t": "Setting up alerts",
+          "d": "Latency spikes, error rates, cost overruns."
+        },
+        {
+          "t": "Building a feedback loop",
+          "d": "Capturing user corrections."
+        }
+      ]
+    },
+    {
+      "id": "cost-optimization",
+      "phase_id": "ph5",
+      "order_index": 4,
+      "title": "AI Cost Optimization",
+      "section": "Operations",
+      "tags": [
+        "biz",
+        "code"
+      ],
+      "estimated_time": "2h",
+      "description": "Token budgets, caching, model selection, batch processing. AI costs can spiral fast.",
+      "steps": [
+        {
+          "t": "Token budget strategies",
+          "d": "Max tokens, prompt compression, context pruning."
+        },
+        {
+          "t": "Prompt caching",
+          "d": "Anthropic prompt caching — up to 90% savings."
+        },
+        {
+          "t": "Model routing",
+          "d": "Use Haiku for simple tasks, Sonnet for complex."
+        },
+        {
+          "t": "Batch API",
+          "d": "Non-urgent tasks at 50% cost."
+        }
+      ]
+    },
+    {
+      "id": "portfolio-building",
+      "phase_id": "ph5",
+      "order_index": 5,
+      "title": "Portfolio & Case Study Building",
+      "section": "Career",
+      "tags": [
+        "career",
+        "biz"
+      ],
+      "estimated_time": "4h",
+      "description": "Your work documented, showcased, and shareable. This is how you get clients, jobs, and collaborators.",
+      "steps": [
+        {
+          "t": "What goes in a portfolio",
+          "d": "Problems solved, not features built."
+        },
+        {
+          "t": "Case study structure",
+          "d": "Problem → approach → solution → results."
+        },
+        {
+          "t": "Build a portfolio site",
+          "d": "GitHub Pages or Notion. Simple is fine."
+        },
+        {
+          "t": "Distribution",
+          "d": "Share on LinkedIn, X/Twitter, relevant communities."
+        }
+      ]
+    },
+    {
+      "id": "ai-ethics-practice",
+      "phase_id": "ph5",
+      "order_index": 6,
+      "title": "AI Ethics in Practice",
+      "section": "Responsibility",
+      "tags": [
+        "biz"
+      ],
+      "estimated_time": "3h",
+      "description": "Not theory — real decisions real builders face. Bias, privacy, transparency, consent. What to do when your AI might cause harm.",
+      "steps": [
+        {
+          "t": "Identifying bias in AI outputs",
+          "d": "When does your AI disadvantage groups?"
+        },
+        {
+          "t": "Data privacy fundamentals",
+          "d": "What you can collect, store, and use."
+        },
+        {
+          "t": "Transparency obligations",
+          "d": "When must you tell users they're talking to AI?"
+        },
+        {
+          "t": "Your personal AI ethics policy",
+          "d": "Write the rules you'll follow as a builder."
+        }
+      ]
+    },
+    {
+      "id": "user-research",
+      "phase_id": "ph5",
+      "order_index": 7,
+      "title": "User Research & Customer Discovery",
+      "section": "Product",
+      "tags": [
+        "biz",
+        "career"
+      ],
+      "estimated_time": "3h",
+      "description": "Talking to users is the most underrated skill in AI building. Customer interviews, jobs-to-be-done, pain point discovery.",
+      "steps": [
+        {
+          "t": "Jobs-to-be-done framework",
+          "d": "What job is the user hiring your product to do?"
+        },
+        {
+          "t": "User interview technique",
+          "d": "Mom test: ask about their life, not your idea."
+        },
+        {
+          "t": "5 customer conversations",
+          "d": "Find real users and talk to them."
+        },
+        {
+          "t": "Synthesising findings",
+          "d": "Pattern recognition from qualitative data."
+        }
+      ]
+    },
+    {
+      "id": "regulation-compliance",
+      "phase_id": "ph5",
+      "order_index": 8,
+      "title": "AI Regulation & Compliance",
+      "section": "Responsibility",
+      "tags": [
+        "biz"
+      ],
+      "estimated_time": "2h",
+      "description": "EU AI Act, India DPDP Act, GDPR. What matters for builders in 2026.",
+      "steps": [
+        {
+          "t": "EU AI Act overview",
+          "d": "Risk tiers. What counts as high-risk AI."
+        },
+        {
+          "t": "India DPDP Act",
+          "d": "Data localisation, consent requirements."
+        },
+        {
+          "t": "GDPR basics for AI builders",
+          "d": "Lawful basis for processing."
+        },
+        {
+          "t": "Compliance checklist",
+          "d": "The minimum you need before launch."
+        }
+      ]
+    },
+    {
+      "id": "ai-business-models",
+      "phase_id": "ph6",
+      "order_index": 1,
+      "title": "AI Business Models",
+      "section": "Business Strategy",
+      "tags": [
+        "biz"
+      ],
+      "estimated_time": "3h",
+      "description": "SaaS, API-based, automation-as-a-service, consulting, productized services. How AI companies actually make money.",
+      "steps": [
+        {
+          "t": "API wrapper business",
+          "d": "Thin layer on top of Claude. Commodity vs differentiation."
+        },
+        {
+          "t": "AI SaaS",
+          "d": "Recurring revenue. Churn. Unit economics."
+        },
+        {
+          "t": "Automation as a service",
+          "d": "Build once, charge monthly."
+        },
+        {
+          "t": "AI consulting",
+          "d": "Positioning, pricing, client acquisition."
+        }
+      ]
+    },
+    {
+      "id": "sales-and-persuasion",
+      "phase_id": "ph6",
+      "order_index": 2,
+      "title": "Selling & Communicating Value",
+      "section": "Business Skills",
+      "tags": [
+        "biz",
+        "career"
+      ],
+      "estimated_time": "4h",
+      "description": "Demos, ROI framing, non-technical communication. The difference between a great product nobody buys and a mediocre product that sells.",
+      "steps": [
+        {
+          "t": "The value proposition",
+          "d": "Who it's for. What problem. Why better."
+        },
+        {
+          "t": "The demo that sells",
+          "d": "Show the before and after, not the features."
+        },
+        {
+          "t": "ROI framing",
+          "d": "Convert features into money saved, time saved."
+        },
+        {
+          "t": "Non-technical communication",
+          "d": "Explaining AI to stakeholders without jargon."
+        }
+      ]
+    },
+    {
+      "id": "pricing-strategy",
+      "phase_id": "ph6",
+      "order_index": 3,
+      "title": "Pricing AI Products & Services",
+      "section": "Business Strategy",
+      "tags": [
+        "biz"
+      ],
+      "estimated_time": "2h",
+      "description": "Value-based pricing. How to charge for automation, outcomes, and time saved.",
+      "steps": [
+        {
+          "t": "Cost-plus vs value-based",
+          "d": "Why what you pay for tokens is irrelevant."
+        },
+        {
+          "t": "Pricing models for AI",
+          "d": "Per seat, per usage, per outcome."
+        },
+        {
+          "t": "Anchoring and packaging",
+          "d": "Three-tier pricing. The decoy effect."
+        },
+        {
+          "t": "Price discovery with users",
+          "d": "How to find what people will actually pay."
+        }
+      ]
+    },
+    {
+      "id": "building-in-public",
+      "phase_id": "ph6",
+      "order_index": 4,
+      "title": "Building in Public & Personal Brand",
+      "section": "Distribution",
+      "tags": [
+        "career",
+        "biz"
+      ],
+      "estimated_time": "4h",
+      "description": "X/Twitter, LinkedIn, newsletters. Audience as distribution channel. The most underutilised leverage for independent AI builders.",
+      "steps": [
+        {
+          "t": "Why build in public works",
+          "d": "Trust, serendipity, feedback loops."
+        },
+        {
+          "t": "What to share",
+          "d": "Progress, failures, learnings. Not just wins."
+        },
+        {
+          "t": "Platform strategy",
+          "d": "X/Twitter for real-time. LinkedIn for professional."
+        },
+        {
+          "t": "Audience to revenue",
+          "d": "How followers become clients and customers."
+        }
+      ]
+    },
+    {
+      "id": "financial-basics",
+      "phase_id": "ph6",
+      "order_index": 5,
+      "title": "Financial Basics for Independent Builders",
+      "section": "Business Skills",
+      "tags": [
+        "biz",
+        "career"
+      ],
+      "estimated_time": "2h",
+      "description": "Revenue, profit, margins, cashflow. Setting consulting rates. The financial literacy every independent builder needs.",
+      "steps": [
+        {
+          "t": "Revenue vs profit vs cashflow",
+          "d": "Why you can be profitable and still go broke."
+        },
+        {
+          "t": "Setting consulting rates",
+          "d": "The formula for knowing what to charge."
+        },
+        {
+          "t": "Invoicing and getting paid",
+          "d": "Tools, terms, late payment protection."
+        },
+        {
+          "t": "Basic bookkeeping",
+          "d": "What to track."
+        }
+      ]
+    },
+    {
+      "id": "go-to-market",
+      "phase_id": "ph6",
+      "order_index": 6,
+      "title": "Go-to-Market Strategy for AI Products",
+      "section": "Distribution",
+      "tags": [
+        "biz",
+        "career"
+      ],
+      "estimated_time": "3h",
+      "description": "Who to target first. Which channels. How to acquire your first 100 users. The distribution challenge that kills technically good AI products.",
+      "steps": [
+        {
+          "t": "Ideal customer profile (ICP)",
+          "d": "Who feels the pain most acutely."
+        },
+        {
+          "t": "Positioning and differentiation",
+          "d": "Why you vs every other AI tool."
+        },
+        {
+          "t": "First 100 users",
+          "d": "Community, cold outreach, content, Product Hunt."
+        },
+        {
+          "t": "Launch strategy",
+          "d": "Product Hunt, press, partnerships."
+        }
+      ]
+    },
+    {
+      "id": "networking-community",
+      "phase_id": "ph6",
+      "order_index": 7,
+      "title": "Community & Professional Network",
+      "section": "Distribution",
+      "tags": [
+        "career"
+      ],
+      "estimated_time": "3h",
+      "description": "Building relationships in AI. Online communities, local meetups, mentorship, collaboration.",
+      "steps": [
+        {
+          "t": "Online communities that matter",
+          "d": "AI Engineer Discord, HuggingFace, Anthropic Community."
+        },
+        {
+          "t": "Local AI meetups",
+          "d": "Pune AI ecosystem."
+        },
+        {
+          "t": "Strategic LinkedIn presence",
+          "d": "Not spam — genuine visibility."
+        },
+        {
+          "t": "Collaboration over competition",
+          "d": "How building with others accelerates everyone."
+        }
+      ]
+    },
+    {
+      "id": "teaching-fluency",
+      "phase_id": "ph7",
+      "order_index": 1,
+      "title": "Teaching AI Fluency",
+      "section": "Anthropic Academy",
+      "tags": [
+        "ac",
+        "career"
+      ],
+      "estimated_time": "3h",
+      "description": "Anthropic's course on helping others understand AI. If you can teach something, you truly understand it.",
+      "steps": [
+        {
+          "t": "Designing learning experiences",
+          "d": "How adults learn. Spaced repetition."
+        },
+        {
+          "t": "Simplifying complex concepts",
+          "d": "The Feynman technique applied to AI."
+        },
+        {
+          "t": "Workshop facilitation",
+          "d": "Running interactive sessions."
+        },
+        {
+          "t": "Creating materials",
+          "d": "Slides, exercises, assessments."
+        }
+      ]
+    },
+    {
+      "id": "content-creation",
+      "phase_id": "ph7",
+      "order_index": 2,
+      "title": "Creating Content About AI",
+      "section": "Teaching & Publishing",
+      "tags": [
+        "career",
+        "biz"
+      ],
+      "estimated_time": "4h",
+      "description": "Writing, videos, threads. Explaining complex ideas simply. The builder-teacher flywheel.",
+      "steps": [
+        {
+          "t": "Written content fundamentals",
+          "d": "Newsletters, blog posts, threads."
+        },
+        {
+          "t": "Video content for AI",
+          "d": "Loom walkthroughs, YouTube tutorials, TikTok."
+        },
+        {
+          "t": "AI content workflow",
+          "d": "Research, draft, edit, publish — faster with AI."
+        },
+        {
+          "t": "Content repurposing",
+          "d": "One piece → thread → post → newsletter → video."
+        }
+      ]
+    },
+    {
+      "id": "open-source",
+      "phase_id": "ph7",
+      "order_index": 3,
+      "title": "Open Source Contributions",
+      "section": "Community",
+      "tags": [
+        "code",
+        "career"
+      ],
+      "estimated_time": "5h",
+      "description": "Contributing to tools, datasets, and frameworks the community uses. Open source work builds reputation, skills, and relationships simultaneously.",
+      "steps": [
+        {
+          "t": "Finding projects to contribute to",
+          "d": "Issues labeled \"good first issue\"."
+        },
+        {
+          "t": "Reading a codebase",
+          "d": "How to orient yourself in unfamiliar code."
+        },
+        {
+          "t": "First contribution",
+          "d": "Documentation fix or small bug. Ship it."
+        },
+        {
+          "t": "Building your own OSS tool",
+          "d": "Something you wished existed."
+        }
+      ]
+    },
+    {
+      "id": "ai-research-reading",
+      "phase_id": "ph7",
+      "order_index": 4,
+      "title": "Reading & Engaging with AI Research",
+      "section": "Advanced",
+      "tags": [],
+      "estimated_time": "ongoing",
+      "description": "ArXiv papers, Anthropic research, alignment forum. You'll never keep up with everything — build a system for the most important.",
+      "steps": [
+        {
+          "t": "Finding papers that matter",
+          "d": "Who to follow, which venues, how to filter."
+        },
+        {
+          "t": "Reading papers without a PhD",
+          "d": "Abstract → conclusion → key figures → methods."
+        },
+        {
+          "t": "Papers with Code",
+          "d": "Every paper linked to runnable code."
+        },
+        {
+          "t": "Building a reading routine",
+          "d": "1 paper per week. Notes. Discussion."
+        }
+      ]
+    },
+    {
+      "id": "ai-governance",
+      "phase_id": "ph7",
+      "order_index": 5,
+      "title": "AI Governance & Policy",
+      "section": "Advanced",
+      "tags": [
+        "biz"
+      ],
+      "estimated_time": "3h",
+      "description": "Contributing to how AI is governed. Standards bodies, policy consultation, industry groups. Your voice matters in policy rooms.",
+      "steps": [
+        {
+          "t": "Who governs AI",
+          "d": "Governments, standards bodies, labs, civil society."
+        },
+        {
+          "t": "How to engage with policy",
+          "d": "Public comments, consultations, advocacy."
+        },
+        {
+          "t": "India AI policy landscape",
+          "d": "MeitY frameworks. Upcoming regulation."
+        },
+        {
+          "t": "Responsible disclosure",
+          "d": "What to do when you find dangerous capabilities."
+        }
+      ]
+    },
+    {
+      "id": "ai-native-org",
+      "phase_id": "ph7",
+      "order_index": 6,
+      "title": "Building an AI-Native Organisation",
+      "section": "Leadership",
+      "tags": [
+        "biz",
+        "career"
+      ],
+      "estimated_time": "4h",
+      "description": "Designing teams, culture, and systems around AI from the ground up. What AI changes about how work is organised.",
+      "steps": [
+        {
+          "t": "AI-native vs AI-assisted",
+          "d": "The difference in culture and systems."
+        },
+        {
+          "t": "Org design for AI teams",
+          "d": "Roles, responsibilities, eval culture."
+        },
+        {
+          "t": "Change management",
+          "d": "Moving existing teams toward AI-native work."
+        },
+        {
+          "t": "AI governance inside an org",
+          "d": "Policies, review boards, safety checks."
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "ai-fluency-r1",
+      "topic_id": "ai-fluency",
+      "order_index": 1,
+      "title": "Anthropic — AI Fluency: Framework & Foundations",
+      "url": "https://www.anthropic.com/learn/claude-for-you",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Beginner course · practical 4D framework",
+      "icon": "🎓"
+    },
+    {
+      "id": "ai-fluency-r2",
+      "topic_id": "ai-fluency",
+      "order_index": 2,
+      "title": "AI Fluency Framework PDF",
+      "url": "https://www-cdn.anthropic.com/7e9692bba414a91a562af2a64b7e99d7946de590.pdf",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Framework by Joseph Feller and Rick Dakan",
+      "icon": "📄"
+    },
+    {
+      "id": "ai-fluency-r3",
+      "topic_id": "ai-fluency",
+      "order_index": 3,
+      "title": "Claude for personal learning hub",
+      "url": "https://www.anthropic.com/learn/claude-for-you",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Try Claude features while you study",
+      "icon": "🧪"
+    },
+    {
+      "id": "claude-101-r1",
+      "topic_id": "claude-101",
+      "order_index": 1,
+      "title": "Anthropic — Claude 101 course",
+      "url": "https://www.anthropic.com/learn/claude-for-work",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Official beginner course in Claude for work",
+      "icon": "🎓"
+    },
+    {
+      "id": "claude-101-r2",
+      "topic_id": "claude-101",
+      "order_index": 2,
+      "title": "Claude for personal learning hub",
+      "url": "https://www.anthropic.com/learn/claude-for-you",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Projects, artifacts, skills, research and everyday use",
+      "icon": "🌐"
+    },
+    {
+      "id": "claude-101-r3",
+      "topic_id": "claude-101",
+      "order_index": 3,
+      "title": "Claude.ai",
+      "url": "https://claude.ai/new",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Practice every lesson inside the product",
+      "icon": "🧪"
+    },
+    {
+      "id": "tokens-context-r1",
+      "topic_id": "tokens-context",
+      "order_index": 1,
+      "title": "Tiktokenizer — see tokens live",
+      "url": "https://tiktokenizer.vercel.app",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Paste any text and inspect tokenization",
+      "icon": "🧪"
+    },
+    {
+      "id": "tokens-context-r2",
+      "topic_id": "tokens-context",
+      "order_index": 2,
+      "title": "Anthropic — models and context windows",
+      "url": "https://docs.anthropic.com/en/docs/about-claude/models/all-models",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Official model limits and capabilities",
+      "icon": "📄"
+    },
+    {
+      "id": "prompt-fundamentals-r1",
+      "topic_id": "prompt-fundamentals",
+      "order_index": 1,
+      "title": "Anthropic Prompt Engineering Guide",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Official and comprehensive",
+      "icon": "🌐"
+    },
+    {
+      "id": "prompt-fundamentals-r2",
+      "topic_id": "prompt-fundamentals",
+      "order_index": 2,
+      "title": "Learn Prompting — Free full course",
+      "url": "https://learnprompting.org/docs/intro",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "learnprompting.org · beginner to advanced",
+      "icon": "🌐"
+    },
+    {
+      "id": "advanced-prompting-r1",
+      "topic_id": "advanced-prompting",
+      "order_index": 1,
+      "title": "Chain-of-Thought Prompting paper",
+      "url": "https://arxiv.org/abs/2201.11903",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "arxiv.org/abs/2201.11903",
+      "icon": "📄"
+    },
+    {
+      "id": "advanced-prompting-r2",
+      "topic_id": "advanced-prompting",
+      "order_index": 2,
+      "title": "DeepLearning.AI — ChatGPT Prompt Engineering",
+      "url": "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free short course · ~1.5 hours",
+      "icon": "🎓"
+    },
+    {
+      "id": "ai-model-landscape-r1",
+      "topic_id": "ai-model-landscape",
+      "order_index": 1,
+      "title": "LMArena — Chatbot Arena leaderboard",
+      "url": "https://lmarena.ai",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Compare real user preferences across models",
+      "icon": "🌐"
+    },
+    {
+      "id": "ai-model-landscape-r2",
+      "topic_id": "ai-model-landscape",
+      "order_index": 2,
+      "title": "Anthropic — models overview",
+      "url": "https://docs.anthropic.com/en/docs/about-claude/models/all-models",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Claude model family, context and pricing",
+      "icon": "📄"
+    },
+    {
+      "id": "ai-model-landscape-r3",
+      "topic_id": "ai-model-landscape",
+      "order_index": 3,
+      "title": "OpenAI — models overview",
+      "url": "https://platform.openai.com/docs/models/overview",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Current OpenAI API model families",
+      "icon": "📄"
+    },
+    {
+      "id": "ai-model-landscape-r4",
+      "topic_id": "ai-model-landscape",
+      "order_index": 4,
+      "title": "Google DeepMind — model cards",
+      "url": "https://deepmind.google/models/model-cards",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Gemini and DeepMind model documentation",
+      "icon": "📄"
+    },
+    {
+      "id": "ai-safety-basics-r1",
+      "topic_id": "ai-safety-basics",
+      "order_index": 1,
+      "title": "Google — Introduction to Responsible AI",
+      "url": "https://developers.google.com/machine-learning/guides/intro-responsible-ai",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Beginner course-style guide for builders",
+      "icon": "🎓"
+    },
+    {
+      "id": "ai-safety-basics-r2",
+      "topic_id": "ai-safety-basics",
+      "order_index": 2,
+      "title": "IBM — What is AI ethics?",
+      "url": "https://www.ibm.com/think/topics/ai-ethics",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Clear overview of fairness, privacy and explainability",
+      "icon": "📄"
+    },
+    {
+      "id": "ai-safety-basics-r3",
+      "topic_id": "ai-safety-basics",
+      "order_index": 3,
+      "title": "Google PAIR — People + AI Guidebook",
+      "url": "https://pair.withgoogle.com/guidebook",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Practical human-centered AI product guidance",
+      "icon": "🧭"
+    },
+    {
+      "id": "personal-prompt-library-r1",
+      "topic_id": "personal-prompt-library",
+      "order_index": 1,
+      "title": "Anthropic Prompt Library",
+      "url": "https://docs.anthropic.com/en/prompt-library/library",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Copy real system prompts",
+      "icon": "🌐"
+    },
+    {
+      "id": "digital-literacy-r1",
+      "topic_id": "digital-literacy",
+      "order_index": 1,
+      "title": "CS50x — Harvard (free on edX)",
+      "url": "https://cs50.harvard.edu/x/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "The best intro to computers ever made.",
+      "icon": "🎓"
+    },
+    {
+      "id": "information-design-r1",
+      "topic_id": "information-design",
+      "order_index": 1,
+      "title": "GOV.UK — Content design manual",
+      "url": "https://www.gov.uk/guidance/content-design",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "World-class practical guidance for clear public information",
+      "icon": "📄"
+    },
+    {
+      "id": "information-design-r2",
+      "topic_id": "information-design",
+      "order_index": 2,
+      "title": "Microsoft Style Guide — Scannable content",
+      "url": "https://learn.microsoft.com/en-us/style-guide/scannable-content/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Concrete rules for headings, lists and structure",
+      "icon": "📄"
+    },
+    {
+      "id": "information-design-r3",
+      "topic_id": "information-design",
+      "order_index": 3,
+      "title": "VA Design System — Structure your content",
+      "url": "https://design.va.gov/content-style-guide/plain-language/structure-your-content",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Accessible headings, lists and page structure",
+      "icon": "📄"
+    },
+    {
+      "id": "information-design-r4",
+      "topic_id": "information-design",
+      "order_index": 4,
+      "title": "NN/g — Information Architecture articles",
+      "url": "https://www.nngroup.com/topic/information-architecture/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Research-backed IA reference library",
+      "icon": "📄"
+    },
+    {
+      "id": "research-methodology-r1",
+      "topic_id": "research-methodology",
+      "order_index": 1,
+      "title": "SIFT method — lateral reading guide",
+      "url": "https://uscupstate.libguides.com/LateralReading/sift",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Simple verification workflow for online claims",
+      "icon": "📄"
+    },
+    {
+      "id": "research-methodology-r2",
+      "topic_id": "research-methodology",
+      "order_index": 2,
+      "title": "Google — NotebookLM Help Center",
+      "url": "https://support.google.com/notebooklm/?hl=en",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Learn notebooks, sources, notes and grounded Q&A",
+      "icon": "🎓"
+    },
+    {
+      "id": "research-methodology-r3",
+      "topic_id": "research-methodology",
+      "order_index": 3,
+      "title": "Google — 8 tips for getting started with NotebookLM",
+      "url": "https://blog.google/innovation-and-ai/products/notebooklm-beginner-tips/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Beginner-friendly workflow ideas",
+      "icon": "📄"
+    },
+    {
+      "id": "research-methodology-r4",
+      "topic_id": "research-methodology",
+      "order_index": 4,
+      "title": "Perplexity — Spaces help guide",
+      "url": "https://www.perplexity.ai/help-center/en/articles/10352961-spaces",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Organize research threads into project workspaces",
+      "icon": "🧪"
+    },
+    {
+      "id": "how-llms-work-r1",
+      "topic_id": "how-llms-work",
+      "order_index": 1,
+      "title": "Andrej Karpathy — Intro to Large Language Models",
+      "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Watch first · clear mental model · ~1 hour",
+      "icon": "📺"
+    },
+    {
+      "id": "how-llms-work-r2",
+      "topic_id": "how-llms-work",
+      "order_index": 2,
+      "title": "3Blue1Brown — Attention in Transformers",
+      "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Visual explanation of the core mechanism",
+      "icon": "📺"
+    },
+    {
+      "id": "how-llms-work-r3",
+      "topic_id": "how-llms-work",
+      "order_index": 3,
+      "title": "3Blue1Brown — Neural Networks playlist",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Optional visual foundation for neural nets",
+      "icon": "📺"
+    },
+    {
+      "id": "agent-skills-r1",
+      "topic_id": "agent-skills",
+      "order_index": 1,
+      "title": "Anthropic Learn — Introduction to agent skills",
+      "url": "https://www.anthropic.com/learn/build-with-claude",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Official build-with-Claude learning hub",
+      "icon": "🎓"
+    },
+    {
+      "id": "agent-skills-r2",
+      "topic_id": "agent-skills",
+      "order_index": 2,
+      "title": "Anthropic — Complete Guide to Building Skills for Claude",
+      "url": "https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Practical PDF guide for custom skills",
+      "icon": "📄"
+    },
+    {
+      "id": "agent-skills-r3",
+      "topic_id": "agent-skills",
+      "order_index": 3,
+      "title": "Anthropic — Building Effective Agents",
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Patterns for agents that actually work",
+      "icon": "📄"
+    },
+    {
+      "id": "mcp-intro-r1",
+      "topic_id": "mcp-intro",
+      "order_index": 1,
+      "title": "Model Context Protocol — official introduction",
+      "url": "https://modelcontextprotocol.io",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "What MCP is and how clients/servers work",
+      "icon": "🌐"
+    },
+    {
+      "id": "mcp-intro-r2",
+      "topic_id": "mcp-intro",
+      "order_index": 2,
+      "title": "MCP quickstart — build a server",
+      "url": "https://modelcontextprotocol.io/quickstart/server",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Hands-on server tutorial",
+      "icon": "🧪"
+    },
+    {
+      "id": "agent-anatomy-r1",
+      "topic_id": "agent-anatomy",
+      "order_index": 1,
+      "title": "ReAct: Synergizing Reasoning and Acting",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "arxiv.org/abs/2210.03629",
+      "icon": "📄"
+    },
+    {
+      "id": "agent-anatomy-r2",
+      "topic_id": "agent-anatomy",
+      "order_index": 2,
+      "title": "Anthropic — Building Effective Agents",
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Official deep-dive",
+      "icon": "📄"
+    },
+    {
+      "id": "rag-deep-dive-r1",
+      "topic_id": "rag-deep-dive",
+      "order_index": 1,
+      "title": "DeepLearning.AI — Building RAG systems",
+      "url": "https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free · ~1.5 hours",
+      "icon": "🎓"
+    },
+    {
+      "id": "rag-deep-dive-r2",
+      "topic_id": "rag-deep-dive",
+      "order_index": 2,
+      "title": "Anthropic — Contextual Retrieval",
+      "url": "https://www.anthropic.com/news/contextual-retrieval",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Advanced RAG technique from Anthropic",
+      "icon": "📄"
+    },
+    {
+      "id": "no-code-automation-r1",
+      "topic_id": "no-code-automation",
+      "order_index": 1,
+      "title": "n8n — Official docs",
+      "url": "https://docs.n8n.io/try-it-out/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "docs.n8n.io · free self-hosted",
+      "icon": "🌐"
+    },
+    {
+      "id": "no-code-automation-r2",
+      "topic_id": "no-code-automation",
+      "order_index": 2,
+      "title": "Cole Medin — n8n AI Agent tutorials",
+      "url": "https://www.youtube.com/@ColeMedin",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Best practical n8n + AI walkthroughs",
+      "icon": "📺"
+    },
+    {
+      "id": "multi-agent-systems-r1",
+      "topic_id": "multi-agent-systems",
+      "order_index": 1,
+      "title": "DeepLearning.AI — AI Agents in LangGraph",
+      "url": "https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free · 4 hours",
+      "icon": "🎓"
+    },
+    {
+      "id": "ai-productivity-stack-r1",
+      "topic_id": "ai-productivity-stack",
+      "order_index": 1,
+      "title": "Google NotebookLM",
+      "url": "https://notebooklm.google.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Upload PDFs/docs, ask questions",
+      "icon": "🌐"
+    },
+    {
+      "id": "writing-with-ai-r1",
+      "topic_id": "writing-with-ai",
+      "order_index": 1,
+      "title": "Paul Graham — Writing Simply",
+      "url": "https://paulgraham.com/simply.html",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "paulgraham.com/simply.html",
+      "icon": "📄"
+    },
+    {
+      "id": "data-fundamentals-r1",
+      "topic_id": "data-fundamentals",
+      "order_index": 1,
+      "title": "Our World in Data",
+      "url": "https://ourworldindata.org",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free · beautiful real-world charts explained",
+      "icon": "🌐"
+    },
+    {
+      "id": "notebooklm-mastery-r1",
+      "topic_id": "notebooklm-mastery",
+      "order_index": 1,
+      "title": "Google NotebookLM",
+      "url": "https://notebooklm.google.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free · upload up to 50 sources",
+      "icon": "🌐"
+    },
+    {
+      "id": "notebooklm-mastery-r2",
+      "topic_id": "notebooklm-mastery",
+      "order_index": 2,
+      "title": "Elicit — AI research assistant",
+      "url": "https://elicit.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "elicit.com · designed for academic papers",
+      "icon": "🌐"
+    },
+    {
+      "id": "ux-fundamentals-r1",
+      "topic_id": "ux-fundamentals",
+      "order_index": 1,
+      "title": "Nielsen Norman Group — Free UX articles",
+      "url": "https://www.nngroup.com/articles/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "The world's best UX research",
+      "icon": "🌐"
+    },
+    {
+      "id": "ai-product-ux-r1",
+      "topic_id": "ai-product-ux",
+      "order_index": 1,
+      "title": "Google PAIR — People + AI Guidebook",
+      "url": "https://pair.withgoogle.com/guidebook",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "pair.withgoogle.com · definitive AI UX guide",
+      "icon": "🌐"
+    },
+    {
+      "id": "figma-basics-r1",
+      "topic_id": "figma-basics",
+      "order_index": 1,
+      "title": "Figma Design for beginners — official course",
+      "url": "https://help.figma.com/hc/en-us/articles/30848209492887-Course-overview-Figma-Design-for-beginners-2025",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Updated 2025 course · portfolio project",
+      "icon": "🎓"
+    },
+    {
+      "id": "figma-basics-r2",
+      "topic_id": "figma-basics",
+      "order_index": 2,
+      "title": "Figma — Getting started in design",
+      "url": "https://www.figma.com/resource-library/getting-started-in-design/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Design fundamentals from Figma",
+      "icon": "🌐"
+    },
+    {
+      "id": "figma-basics-r3",
+      "topic_id": "figma-basics",
+      "order_index": 3,
+      "title": "Figma Tutorial for Beginners — Flux Academy",
+      "url": "https://www.youtube.com/watch?v=FTFaQWZBqQ8",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "2.5 hours · practical walkthrough",
+      "icon": "📺"
+    },
+    {
+      "id": "visual-design-basics-r1",
+      "topic_id": "visual-design-basics",
+      "order_index": 1,
+      "title": "Refactoring UI — Free design tips",
+      "url": "https://www.refactoringui.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "refactoringui.com/tips",
+      "icon": "🌐"
+    },
+    {
+      "id": "wireframing-prototyping-r1",
+      "topic_id": "wireframing-prototyping",
+      "order_index": 1,
+      "title": "Whimsical — Free wireframe tool",
+      "url": "https://whimsical.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "whimsical.com · simpler than Figma for lo-fi",
+      "icon": "🌐"
+    },
+    {
+      "id": "image-ai-tools-r1",
+      "topic_id": "image-ai-tools",
+      "order_index": 1,
+      "title": "Midjourney — Official documentation",
+      "url": "https://docs.midjourney.com/docs/quick-start",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "docs.midjourney.com",
+      "icon": "🌐"
+    },
+    {
+      "id": "image-ai-tools-r2",
+      "topic_id": "image-ai-tools",
+      "order_index": 2,
+      "title": "Adobe Firefly — Free in browser",
+      "url": "https://firefly.adobe.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "firefly.adobe.com",
+      "icon": "🌐"
+    },
+    {
+      "id": "design-systems-r1",
+      "topic_id": "design-systems",
+      "order_index": 1,
+      "title": "Material Design 3",
+      "url": "https://m3.material.io",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "m3.material.io · study how a real system is built",
+      "icon": "🌐"
+    },
+    {
+      "id": "canva-presentations-r1",
+      "topic_id": "canva-presentations",
+      "order_index": 1,
+      "title": "Canva Magic Studio",
+      "url": "https://www.canva.com/magic-studio/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "canva.com/magic-studio",
+      "icon": "🌐"
+    },
+    {
+      "id": "video-ai-tools-r1",
+      "topic_id": "video-ai-tools",
+      "order_index": 1,
+      "title": "Runway ML",
+      "url": "https://runwayml.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "runwayml.com · free trial credits",
+      "icon": "🌐"
+    },
+    {
+      "id": "video-ai-tools-r2",
+      "topic_id": "video-ai-tools",
+      "order_index": 2,
+      "title": "ElevenLabs",
+      "url": "https://elevenlabs.io",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "elevenlabs.io · free tier",
+      "icon": "🌐"
+    },
+    {
+      "id": "data-visualization-r1",
+      "topic_id": "data-visualization",
+      "order_index": 1,
+      "title": "Datawrapper",
+      "url": "https://www.datawrapper.de",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free · used by NYT, The Economist",
+      "icon": "🌐"
+    },
+    {
+      "id": "data-visualization-r2",
+      "topic_id": "data-visualization",
+      "order_index": 2,
+      "title": "Flourish",
+      "url": "https://flourish.studio",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "flourish.studio · beautiful templates",
+      "icon": "🌐"
+    },
+    {
+      "id": "brand-identity-basics-r1",
+      "topic_id": "brand-identity-basics",
+      "order_index": 1,
+      "title": "The Futur — Brand identity playlist",
+      "url": "https://www.youtube.com/playlist?list=PLzKQi55P2l9cEFnHGcKLNXkLJpGcSAb-H",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Professional branding education",
+      "icon": "📺"
+    },
+    {
+      "id": "claude-api-r1",
+      "topic_id": "claude-api",
+      "order_index": 1,
+      "title": "Anthropic Learn — Build with Claude",
+      "url": "https://www.anthropic.com/learn/build-with-claude",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Official API and developer learning hub",
+      "icon": "🎓"
+    },
+    {
+      "id": "claude-api-r2",
+      "topic_id": "claude-api",
+      "order_index": 2,
+      "title": "Anthropic API docs — Messages reference",
+      "url": "https://docs.anthropic.com/en/api/messages",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "The spec you'll always come back to",
+      "icon": "🌐"
+    },
+    {
+      "id": "claude-api-r3",
+      "topic_id": "claude-api",
+      "order_index": 3,
+      "title": "Anthropic Quickstart",
+      "url": "https://docs.anthropic.com/en/api/getting-started",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Make your first API request",
+      "icon": "🧪"
+    },
+    {
+      "id": "mcp-advanced-r1",
+      "topic_id": "mcp-advanced",
+      "order_index": 1,
+      "title": "MCP specification — current protocol docs",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/index",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Official protocol reference",
+      "icon": "📄"
+    },
+    {
+      "id": "mcp-advanced-r2",
+      "topic_id": "mcp-advanced",
+      "order_index": 2,
+      "title": "MCP transports specification",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/transports",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "HTTP, stdio and transport details",
+      "icon": "📄"
+    },
+    {
+      "id": "python-for-ai-r1",
+      "topic_id": "python-for-ai",
+      "order_index": 1,
+      "title": "Automate the Boring Stuff with Python",
+      "url": "https://automatetheboringstuff.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "automatetheboringstuff.com · free online",
+      "icon": "🌐"
+    },
+    {
+      "id": "python-for-ai-r2",
+      "topic_id": "python-for-ai",
+      "order_index": 2,
+      "title": "DeepLearning.AI — Python for AI",
+      "url": "https://www.deeplearning.ai/short-courses/ai-python-for-beginners/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free · Python specifically for AI work",
+      "icon": "🎓"
+    },
+    {
+      "id": "html-css-js-r1",
+      "topic_id": "html-css-js",
+      "order_index": 1,
+      "title": "freeCodeCamp — Responsive Web Design cert",
+      "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free · 300 hours · HTML + CSS full course",
+      "icon": "🌐"
+    },
+    {
+      "id": "html-css-js-r2",
+      "topic_id": "html-css-js",
+      "order_index": 2,
+      "title": "The Odin Project",
+      "url": "https://www.theodinproject.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free structured path from zero",
+      "icon": "🌐"
+    },
+    {
+      "id": "apis-and-http-r1",
+      "topic_id": "apis-and-http",
+      "order_index": 1,
+      "title": "APIs for Beginners — freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=GZvSYJDk-us",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "2 hours · Craig Dennis",
+      "icon": "📺"
+    },
+    {
+      "id": "git-github-r1",
+      "topic_id": "git-github",
+      "order_index": 1,
+      "title": "Learn Git Branching",
+      "url": "https://learngitbranching.js.org",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "learngitbranching.js.org · interactive visual game",
+      "icon": "🌐"
+    },
+    {
+      "id": "langchain-langgraph-r1",
+      "topic_id": "langchain-langgraph",
+      "order_index": 1,
+      "title": "LangChain Python docs",
+      "url": "https://docs.langchain.com/oss/python/langchain/overview",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Current LangChain overview and concepts",
+      "icon": "🌐"
+    },
+    {
+      "id": "langchain-langgraph-r2",
+      "topic_id": "langchain-langgraph",
+      "order_index": 2,
+      "title": "LangGraph quickstart",
+      "url": "https://docs.langchain.com/oss/python/langgraph/quickstart",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Build stateful agent workflows",
+      "icon": "🌐"
+    },
+    {
+      "id": "langchain-langgraph-r3",
+      "topic_id": "langchain-langgraph",
+      "order_index": 3,
+      "title": "DeepLearning.AI — LangChain for LLM Apps",
+      "url": "https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free · Harrison Chase course",
+      "icon": "🎓"
+    },
+    {
+      "id": "databases-sql-r1",
+      "topic_id": "databases-sql",
+      "order_index": 1,
+      "title": "SQLZoo — Interactive SQL exercises",
+      "url": "https://sqlzoo.net",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "sqlzoo.net · run queries live in browser",
+      "icon": "🌐"
+    },
+    {
+      "id": "deployment-basics-r1",
+      "topic_id": "deployment-basics",
+      "order_index": 1,
+      "title": "Vercel — Deployment docs",
+      "url": "https://vercel.com/docs",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Frontend deployment and environment variables",
+      "icon": "🌐"
+    },
+    {
+      "id": "deployment-basics-r2",
+      "topic_id": "deployment-basics",
+      "order_index": 2,
+      "title": "Railway — Quick Start Tutorial",
+      "url": "https://docs.railway.com/quick-start",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Deploy from GitHub, CLI or templates",
+      "icon": "🌐"
+    },
+    {
+      "id": "evals-and-testing-r1",
+      "topic_id": "evals-and-testing",
+      "order_index": 1,
+      "title": "Anthropic — Evals documentation",
+      "url": "https://docs.anthropic.com/en/docs/test-and-evaluate/eval-tool",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Official guide",
+      "icon": "🌐"
+    },
+    {
+      "id": "vector-dbs-embeddings-r1",
+      "topic_id": "vector-dbs-embeddings",
+      "order_index": 1,
+      "title": "Chroma — Getting Started",
+      "url": "https://docs.trychroma.com/docs/overview/getting-started",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Current official Chroma quickstart",
+      "icon": "🌐"
+    },
+    {
+      "id": "vector-dbs-embeddings-r2",
+      "topic_id": "vector-dbs-embeddings",
+      "order_index": 2,
+      "title": "Chroma — Query and get",
+      "url": "https://docs.trychroma.com/docs/querying-collections/query-and-get",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Practice similarity search concepts",
+      "icon": "📄"
+    },
+    {
+      "id": "vector-dbs-embeddings-r3",
+      "topic_id": "vector-dbs-embeddings",
+      "order_index": 3,
+      "title": "DeepLearning.AI — Building with Vector DBs",
+      "url": "https://www.deeplearning.ai/short-courses/building-applications-vector-databases/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free · hands-on course",
+      "icon": "🎓"
+    },
+    {
+      "id": "opportunity-mapping-r1",
+      "topic_id": "opportunity-mapping",
+      "order_index": 1,
+      "title": "YC — How to Get Startup Ideas",
+      "url": "https://www.youtube.com/watch?v=Th8JoIan4dg",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "youtube.com · 30 min · Michael Seibel",
+      "icon": "📺"
+    },
+    {
+      "id": "first-ai-product-r1",
+      "topic_id": "first-ai-product",
+      "order_index": 1,
+      "title": "v0.dev — AI UI generator by Vercel",
+      "url": "https://v0.dev",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free credits · describe UI, get React code",
+      "icon": "🌐"
+    },
+    {
+      "id": "first-ai-product-r2",
+      "topic_id": "first-ai-product",
+      "order_index": 2,
+      "title": "Vercel — Deploy in one click",
+      "url": "https://vercel.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Free tier",
+      "icon": "🌐"
+    },
+    {
+      "id": "monitoring-production-r1",
+      "topic_id": "monitoring-production",
+      "order_index": 1,
+      "title": "Helicone — LLM observability platform",
+      "url": "https://www.helicone.ai",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "helicone.ai · free tier",
+      "icon": "🌐"
+    },
+    {
+      "id": "cost-optimization-r1",
+      "topic_id": "cost-optimization",
+      "order_index": 1,
+      "title": "Anthropic — Prompt Caching guide",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Up to 90% cost reduction",
+      "icon": "📄"
+    },
+    {
+      "id": "portfolio-building-r1",
+      "topic_id": "portfolio-building",
+      "order_index": 1,
+      "title": "GitHub Pages — quickstart",
+      "url": "https://docs.github.com/en/pages/quickstart",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Publish a simple portfolio site for free",
+      "icon": "🌐"
+    },
+    {
+      "id": "portfolio-building-r2",
+      "topic_id": "portfolio-building",
+      "order_index": 2,
+      "title": "MDN — Using GitHub Pages",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/Using_GitHub_pages",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Beginner-friendly static site publishing guide",
+      "icon": "📄"
+    },
+    {
+      "id": "ai-ethics-practice-r1",
+      "topic_id": "ai-ethics-practice",
+      "order_index": 1,
+      "title": "Google — Introduction to Responsible AI",
+      "url": "https://developers.google.com/machine-learning/guides/intro-responsible-ai",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Practical responsible AI basics",
+      "icon": "🎓"
+    },
+    {
+      "id": "ai-ethics-practice-r2",
+      "topic_id": "ai-ethics-practice",
+      "order_index": 2,
+      "title": "Anthropic — Responsible Scaling Policy v3",
+      "url": "https://www.anthropic.com/news/responsible-scaling-policy-v3",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "How a frontier lab documents catastrophic-risk governance",
+      "icon": "📄"
+    },
+    {
+      "id": "ai-ethics-practice-r3",
+      "topic_id": "ai-ethics-practice",
+      "order_index": 3,
+      "title": "People + AI Guidebook",
+      "url": "https://pair.withgoogle.com/guidebook",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Human-centered AI design decisions",
+      "icon": "🧭"
+    },
+    {
+      "id": "user-research-r1",
+      "topic_id": "user-research",
+      "order_index": 1,
+      "title": "How to Talk to Users — YC",
+      "url": "https://www.youtube.com/watch?v=MT4Ig2uqjTc",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "youtube.com · 30 min · Eric Migicovsky",
+      "icon": "📺"
+    },
+    {
+      "id": "regulation-compliance-r1",
+      "topic_id": "regulation-compliance",
+      "order_index": 1,
+      "title": "EU AI Act Explorer",
+      "url": "https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "artificialintelligenceact.eu · compliance checker",
+      "icon": "🌐"
+    },
+    {
+      "id": "ai-business-models-r1",
+      "topic_id": "ai-business-models",
+      "order_index": 1,
+      "title": "Indie Hackers — AI product revenue stories",
+      "url": "https://www.indiehackers.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "indiehackers.com · real revenue numbers",
+      "icon": "🌐"
+    },
+    {
+      "id": "sales-and-persuasion-r1",
+      "topic_id": "sales-and-persuasion",
+      "order_index": 1,
+      "title": "Alex Hormozi — How to sell without selling",
+      "url": "https://www.youtube.com/@AlexHormozi",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "youtube.com/@AlexHormozi",
+      "icon": "📺"
+    },
+    {
+      "id": "pricing-strategy-r1",
+      "topic_id": "pricing-strategy",
+      "order_index": 1,
+      "title": "Stripe — SaaS pricing models 101",
+      "url": "https://stripe.com/resources/more/saas-pricing-models-101",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Pricing model options and selection criteria",
+      "icon": "📄"
+    },
+    {
+      "id": "pricing-strategy-r2",
+      "topic_id": "pricing-strategy",
+      "order_index": 2,
+      "title": "Stripe — Usage-based pricing strategy",
+      "url": "https://stripe.com/resources/more/usage-based-pricing-strategy-for-saas",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Especially useful for AI and API products",
+      "icon": "📄"
+    },
+    {
+      "id": "building-in-public-r1",
+      "topic_id": "building-in-public",
+      "order_index": 1,
+      "title": "Why Build in Public — Arvid Kahl",
+      "url": "https://www.youtube.com/@arvidkahl",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "youtube.com/@arvidkahl · 20 min",
+      "icon": "📺"
+    },
+    {
+      "id": "financial-basics-r1",
+      "topic_id": "financial-basics",
+      "order_index": 1,
+      "title": "Wave Accounting — Free invoicing",
+      "url": "https://www.waveapps.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "waveapps.com · free forever",
+      "icon": "🌐"
+    },
+    {
+      "id": "go-to-market-r1",
+      "topic_id": "go-to-market",
+      "order_index": 1,
+      "title": "How to get your first 1000 users — Lenny",
+      "url": "https://www.youtube.com/watch?v=CLMV9LuGXlQ",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "youtube.com · 45 min · studied 40+ apps",
+      "icon": "📺"
+    },
+    {
+      "id": "networking-community-r1",
+      "topic_id": "networking-community",
+      "order_index": 1,
+      "title": "Anthropic Community Forums",
+      "url": "https://community.anthropic.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "community.anthropic.com",
+      "icon": "🌐"
+    },
+    {
+      "id": "networking-community-r2",
+      "topic_id": "networking-community",
+      "order_index": 2,
+      "title": "AI Engineer Discord",
+      "url": "https://discord.gg/qqdnHqBNAB",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "discord.gg/aie · 10k+ AI engineers",
+      "icon": "🌐"
+    },
+    {
+      "id": "teaching-fluency-r1",
+      "topic_id": "teaching-fluency",
+      "order_index": 1,
+      "title": "Anthropic — Teaching AI Fluency",
+      "url": "https://www.anthropic.com/learn/claude-for-you",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Official education resources and course links",
+      "icon": "🎓"
+    },
+    {
+      "id": "teaching-fluency-r2",
+      "topic_id": "teaching-fluency",
+      "order_index": 2,
+      "title": "Teaching AI Fluency course notes",
+      "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/e1b94a544768df563bfe03fc6955f82a2d3a901e.pdf",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "Anthropic education PDF",
+      "icon": "📄"
+    },
+    {
+      "id": "content-creation-r1",
+      "topic_id": "content-creation",
+      "order_index": 1,
+      "title": "Substack — Start a newsletter (free)",
+      "url": "https://substack.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "substack.com · free to publish",
+      "icon": "🌐"
+    },
+    {
+      "id": "content-creation-r2",
+      "topic_id": "content-creation",
+      "order_index": 2,
+      "title": "How to grow a YouTube channel — Ali Abdaal",
+      "url": "https://www.youtube.com/@aliabdaal",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "youtube.com/@aliabdaal",
+      "icon": "📺"
+    },
+    {
+      "id": "open-source-r1",
+      "topic_id": "open-source",
+      "order_index": 1,
+      "title": "First Timers Only",
+      "url": "https://www.firsttimersonly.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "firsttimersonly.com · curated beginner contributions",
+      "icon": "🌐"
+    },
+    {
+      "id": "ai-research-reading-r1",
+      "topic_id": "ai-research-reading",
+      "order_index": 1,
+      "title": "Anthropic Research",
+      "url": "https://www.anthropic.com/research",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "anthropic.com/research",
+      "icon": "🌐"
+    },
+    {
+      "id": "ai-research-reading-r2",
+      "topic_id": "ai-research-reading",
+      "order_index": 2,
+      "title": "Papers With Code",
+      "url": "https://paperswithcode.com",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "paperswithcode.com",
+      "icon": "🌐"
+    },
+    {
+      "id": "ai-governance-r1",
+      "topic_id": "ai-governance",
+      "order_index": 1,
+      "title": "OECD AI Policy Observatory",
+      "url": "https://oecd.ai/en/dashboards/overview",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "oecd.ai · global AI policy tracker",
+      "icon": "🌐"
+    },
+    {
+      "id": "ai-native-org-r1",
+      "topic_id": "ai-native-org",
+      "order_index": 1,
+      "title": "McKinsey — The state of AI report",
+      "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+      "source": null,
+      "format": null,
+      "length": null,
+      "note": "mckinsey.com · free PDF",
+      "icon": "🌐"
+    }
+  ]
+}
