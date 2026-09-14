@@ -127,11 +127,20 @@ Keep this browser tab open — you'll copy these in a moment.
 
 ## 3. Load the course content into the database
 
-This inserts all three tracks (AI, Finance, Consulting — every phase, topic,
-and resource link) into Supabase. It only touches content tables, never
-anyone's personal progress, so it's safe to re-run later after you add more
+This inserts all 9 tracks (AI, Finance, Consulting, Excel & Business
+Modelling, Behavioral Psychology, Growth & Marketing, Data & Analytics,
+Product & Strategy, B2B Sales — every phase, topic, and resource link),
+plus the resume-ready skills and marketplace cohort bundles built on top
+of them, into Supabase. It only touches content tables, never anyone's
+personal progress, so it's safe to re-run later after you add more
 resources through the SQL editor directly (though normally you'll use the
 in-app Admin panel for that instead — see step 5).
+
+Before seeding, `node scripts/validate-seed.mjs` checks every seed-data
+file for structural problems (duplicate ids, broken foreign keys, missing
+marketplace metadata) and `node scripts/check-links.mjs` sweeps every
+resource URL for a live response — worth running after editing any
+seed-data file directly.
 
 On your own computer (not required to be the same machine this was built
 on):
@@ -155,12 +164,16 @@ on):
    ```
 6. You should see output like:
    ```
-   Seeding 3 tracks, 20 phases, 95 topics, 173 resources...
-     tracks: 3 rows
-     phases: 20 rows
-     topics: 95 rows
-     resources: 173 rows
-   Done. All three tracks are now live in the database.
+   Seeding 9 tracks, 56 phases, 198 topics, 378 resources, 12 skills, 4 cohorts...
+     tracks: 9 rows
+     phases: 56 rows
+     topics: 198 rows
+     resources: 378 rows
+     skills: 12 rows
+     cohorts: 4 rows
+     cohort_courses: 12 rows
+     skill_resources: 72 rows
+   Done. All tracks, skills and cohorts are now live in the database.
    ```
 
 ---

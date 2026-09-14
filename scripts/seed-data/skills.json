@@ -1,0 +1,106 @@
+{
+  "skills": [
+    { "id": "skill-excel-lookups", "name": "Excel Lookups & Data Cleaning", "domain": "excel", "description": "VLOOKUP, INDEX/MATCH, and data validation — the lookups every analyst role assumes.", "tier": "foundational", "icon_key": "excel", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-excel-modelling", "name": "Financial Modelling in Excel", "domain": "excel", "description": "Structuring a model, linking the 3 statements, and testing it with scenario analysis.", "tier": "intermediate", "icon_key": "excel", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-psych-biases", "name": "Cognitive Bias Literacy", "domain": "psychology", "description": "Recognizing anchoring, loss aversion, social proof, and framing effects in the wild.", "tier": "foundational", "icon_key": "psychology", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-psych-behavior-change", "name": "Behavior Change Design", "domain": "psychology", "description": "Applying the Fogg Behavior Model and habit-loop thinking to product and process design.", "tier": "intermediate", "icon_key": "psychology", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-marketing-seo", "name": "SEO & Content Fundamentals", "domain": "marketing", "description": "Keyword research, on-page SEO, and a content strategy that actually ranks.", "tier": "foundational", "icon_key": "marketing", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-marketing-growth", "name": "Growth Experimentation", "domain": "marketing", "description": "Running structured growth experiments and reading a funnel with AARRR.", "tier": "intermediate", "icon_key": "marketing", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-data-sql", "name": "SQL Fundamentals", "domain": "data", "description": "SELECT, JOIN, and GROUP BY — enough SQL to pull your own data.", "tier": "foundational", "icon_key": "data", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-data-viz", "name": "Data Visualization", "domain": "data", "description": "Choosing the right chart and building a dashboard that reads clearly.", "tier": "intermediate", "icon_key": "data", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-product-discovery", "name": "Product Discovery", "domain": "product", "description": "Running customer interviews and validating a problem before building anything.", "tier": "foundational", "icon_key": "product", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-product-prioritization", "name": "Prioritization & Roadmapping", "domain": "product", "description": "RICE, opportunity trees, and turning a backlog into a defensible roadmap.", "tier": "intermediate", "icon_key": "product", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-sales-prospecting", "name": "Prospecting & Qualifying", "domain": "sales", "description": "Outbound fundamentals and qualifying a lead with BANT/MEDDIC.", "tier": "foundational", "icon_key": "sales", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-sales-objections", "name": "Objection Handling", "domain": "sales", "description": "Presenting value and handling the objections that actually come up in a deal.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 150, "threshold": 0 }
+  ],
+  "skill_resources": [
+    { "skill_id": "skill-excel-lookups", "resource_id": "exc-p2-r1" },
+    { "skill_id": "skill-excel-lookups", "resource_id": "exc-p2-r2" },
+    { "skill_id": "skill-excel-lookups", "resource_id": "exc-p2-r3" },
+    { "skill_id": "skill-excel-lookups", "resource_id": "exc-p2-r4" },
+    { "skill_id": "skill-excel-lookups", "resource_id": "exc-p2-r5" },
+    { "skill_id": "skill-excel-lookups", "resource_id": "exc-p2-r6" },
+
+    { "skill_id": "skill-excel-modelling", "resource_id": "exc-p4-r1" },
+    { "skill_id": "skill-excel-modelling", "resource_id": "exc-p4-r2" },
+    { "skill_id": "skill-excel-modelling", "resource_id": "exc-p4-r3" },
+    { "skill_id": "skill-excel-modelling", "resource_id": "exc-p4-r4" },
+    { "skill_id": "skill-excel-modelling", "resource_id": "exc-p4-r5" },
+    { "skill_id": "skill-excel-modelling", "resource_id": "exc-p4-r6" },
+
+    { "skill_id": "skill-psych-biases", "resource_id": "psy-p2-r1" },
+    { "skill_id": "skill-psych-biases", "resource_id": "psy-p2-r2" },
+    { "skill_id": "skill-psych-biases", "resource_id": "psy-p2-r3" },
+    { "skill_id": "skill-psych-biases", "resource_id": "psy-p2-r4" },
+    { "skill_id": "skill-psych-biases", "resource_id": "psy-p2-r5" },
+    { "skill_id": "skill-psych-biases", "resource_id": "psy-p2-r6" },
+
+    { "skill_id": "skill-psych-behavior-change", "resource_id": "psy-p3-r1" },
+    { "skill_id": "skill-psych-behavior-change", "resource_id": "psy-p3-r2" },
+    { "skill_id": "skill-psych-behavior-change", "resource_id": "psy-p3-r3" },
+    { "skill_id": "skill-psych-behavior-change", "resource_id": "psy-p3-r4" },
+    { "skill_id": "skill-psych-behavior-change", "resource_id": "psy-p3-r5" },
+    { "skill_id": "skill-psych-behavior-change", "resource_id": "psy-p3-r6" },
+
+    { "skill_id": "skill-marketing-seo", "resource_id": "mkt-p2-r1" },
+    { "skill_id": "skill-marketing-seo", "resource_id": "mkt-p2-r2" },
+    { "skill_id": "skill-marketing-seo", "resource_id": "mkt-p2-r3" },
+    { "skill_id": "skill-marketing-seo", "resource_id": "mkt-p2-r4" },
+    { "skill_id": "skill-marketing-seo", "resource_id": "mkt-p2-r5" },
+    { "skill_id": "skill-marketing-seo", "resource_id": "mkt-p2-r6" },
+
+    { "skill_id": "skill-marketing-growth", "resource_id": "mkt-p5-r1" },
+    { "skill_id": "skill-marketing-growth", "resource_id": "mkt-p5-r2" },
+    { "skill_id": "skill-marketing-growth", "resource_id": "mkt-p5-r3" },
+    { "skill_id": "skill-marketing-growth", "resource_id": "mkt-p5-r4" },
+    { "skill_id": "skill-marketing-growth", "resource_id": "mkt-p5-r5" },
+    { "skill_id": "skill-marketing-growth", "resource_id": "mkt-p5-r6" },
+
+    { "skill_id": "skill-data-sql", "resource_id": "dat-p2-r1" },
+    { "skill_id": "skill-data-sql", "resource_id": "dat-p2-r2" },
+    { "skill_id": "skill-data-sql", "resource_id": "dat-p2-r3" },
+    { "skill_id": "skill-data-sql", "resource_id": "dat-p2-r4" },
+    { "skill_id": "skill-data-sql", "resource_id": "dat-p2-r5" },
+    { "skill_id": "skill-data-sql", "resource_id": "dat-p2-r6" },
+
+    { "skill_id": "skill-data-viz", "resource_id": "dat-p5-r1" },
+    { "skill_id": "skill-data-viz", "resource_id": "dat-p5-r2" },
+    { "skill_id": "skill-data-viz", "resource_id": "dat-p5-r3" },
+    { "skill_id": "skill-data-viz", "resource_id": "dat-p5-r4" },
+    { "skill_id": "skill-data-viz", "resource_id": "dat-p5-r5" },
+    { "skill_id": "skill-data-viz", "resource_id": "dat-p5-r6" },
+
+    { "skill_id": "skill-product-discovery", "resource_id": "prd-p2-r1" },
+    { "skill_id": "skill-product-discovery", "resource_id": "prd-p2-r2" },
+    { "skill_id": "skill-product-discovery", "resource_id": "prd-p2-r3" },
+    { "skill_id": "skill-product-discovery", "resource_id": "prd-p2-r4" },
+    { "skill_id": "skill-product-discovery", "resource_id": "prd-p2-r5" },
+    { "skill_id": "skill-product-discovery", "resource_id": "prd-p2-r6" },
+
+    { "skill_id": "skill-product-prioritization", "resource_id": "prd-p3-r1" },
+    { "skill_id": "skill-product-prioritization", "resource_id": "prd-p3-r2" },
+    { "skill_id": "skill-product-prioritization", "resource_id": "prd-p3-r3" },
+    { "skill_id": "skill-product-prioritization", "resource_id": "prd-p3-r4" },
+    { "skill_id": "skill-product-prioritization", "resource_id": "prd-p3-r5" },
+    { "skill_id": "skill-product-prioritization", "resource_id": "prd-p3-r6" },
+
+    { "skill_id": "skill-sales-prospecting", "resource_id": "sls-p2-r1" },
+    { "skill_id": "skill-sales-prospecting", "resource_id": "sls-p2-r2" },
+    { "skill_id": "skill-sales-prospecting", "resource_id": "sls-p2-r3" },
+    { "skill_id": "skill-sales-prospecting", "resource_id": "sls-p2-r4" },
+    { "skill_id": "skill-sales-prospecting", "resource_id": "sls-p2-r5" },
+    { "skill_id": "skill-sales-prospecting", "resource_id": "sls-p2-r6" },
+
+    { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r1" },
+    { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r2" },
+    { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r3" },
+    { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r4" },
+    { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r5" },
+    { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r6" }
+  ]
+}
