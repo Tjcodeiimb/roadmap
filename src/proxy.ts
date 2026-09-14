@@ -29,7 +29,13 @@ export async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const isPublic = PUBLIC_PATHS.some((p) => request.nextUrl.pathname.startsWith(p));
+  // "/" is also public: it's where Supabase's default invite/magic-link
+  // emails deliver the session, as a URL hash fragment the server can never
+  // see — the root page itself parses that client-side, so the middleware
+  // must not bounce an unauthenticated request away from it first.
+  const isPublic =
+    request.nextUrl.pathname === "/" ||
+    PUBLIC_PATHS.some((p) => request.nextUrl.pathname.startsWith(p));
 
   if (!user && !isPublic) {
     const url = request.nextUrl.clone();
