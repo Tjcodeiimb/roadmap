@@ -8,6 +8,7 @@ import {
   getUserXP,
   getUserStreak,
   getReviewQueue,
+  getPendingSkillUnlocks,
 } from "@/lib/queries";
 import { touchStreak } from "@/app/actions/progress";
 
@@ -29,10 +30,11 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   await touchStreak();
 
-  const [xp, streak, review] = await Promise.all([
+  const [xp, streak, review, pendingSkillUnlocks] = await Promise.all([
     getUserXP(supabase),
     getUserStreak(supabase),
     getReviewQueue(supabase),
+    getPendingSkillUnlocks(supabase),
   ]);
 
   const tracks = allTracks
@@ -49,6 +51,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       streak={streak.current_streak}
       theme={(profile?.theme as "light" | "dark") ?? "light"}
       fullName={profile?.full_name ?? user.email ?? null}
+      pendingSkillUnlocks={pendingSkillUnlocks}
     >
       {children}
     </AppShell>

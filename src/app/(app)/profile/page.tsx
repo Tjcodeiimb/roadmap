@@ -6,6 +6,8 @@ import {
   getBuildProjects,
   getCompletedTopicsByTrack,
   getSelectedTracks,
+  getWatchStats,
+  getSkillProgress,
 } from "@/lib/queries";
 import { Card } from "@/components/ui/card";
 import { CountUp } from "@/components/ui/count-up";
@@ -13,6 +15,8 @@ import { ProgressRing } from "@/components/ui/progress-ring";
 import { BuildProjectsPanel } from "@/components/profile/build-projects-panel";
 import { LeaderboardOptIn } from "@/components/profile/leaderboard-optin";
 import { SetPasswordForm } from "@/components/profile/set-password-form";
+import { WatchStats } from "@/components/profile/watch-stats";
+import { SkillsPanel } from "@/components/profile/skills-panel";
 import { levelForXP } from "@/lib/gamification/levels";
 import { LEVEL_ICONS, StreakMark, TrophyMark } from "@/components/icons";
 
@@ -28,14 +32,17 @@ export default async function ProfilePage({
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  const [profile, xp, streak, projects, trackIds] = await Promise.all([
+  const [profile, xp, streak, projects, trackIds, watchStats, skills] = await Promise.all([
     getProfile(supabase, user.id),
     getUserXP(supabase),
     getUserStreak(supabase),
     getBuildProjects(supabase),
     getSelectedTracks(supabase),
+    getWatchStats(supabase),
+    getSkillProgress(supabase),
   ]);
   const completedByTrack = await getCompletedTopicsByTrack(supabase, trackIds);
+  const topicsDone = completedByTrack.reduce((sum, t) => sum + t.doneTopics.length, 0);
 
   const level = levelForXP(xp.total_xp);
   const LevelIcon = LEVEL_ICONS[level.level - 1];
@@ -85,6 +92,15 @@ export default async function ProfilePage({
           ))}
         </div>
       </div>
+
+      <WatchStats
+        secondsWatched={watchStats.secondsWatched}
+        resourcesCompleted={watchStats.resourcesCompleted}
+        videosCompleted={watchStats.videosCompleted}
+        topicsDone={topicsDone}
+      />
+
+      <SkillsPanel skills={skills} />
 
       <BuildProjectsPanel projects={projects} />
 

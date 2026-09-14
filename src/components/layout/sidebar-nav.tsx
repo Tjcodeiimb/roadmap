@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { LayoutDashboard, UserRound, ShieldCheck } from "lucide-react";
-import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark, StackMark } from "@/components/icons";
+import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark, StackMark, TargetMark } from "@/components/icons";
 import { CourseSwitcherTrigger } from "./course-switcher";
 
 export interface NavTrack {
@@ -37,6 +37,7 @@ export function SidebarNav({
       icon: ICONS[t.id] ?? FALLBACK_ICON,
     })),
     { href: "/review", label: "Review", icon: RepeatMark, badge: reviewCount },
+    { href: "/skills", label: "Skills", icon: TargetMark },
     { href: "/profile", label: "Profile", icon: UserRound },
     ...(leaderboardEnabled ? [{ href: "/leaderboard", label: "Leaderboard", icon: TrophyMark }] : []),
     ...(isAdmin ? [{ href: "/admin", label: "Admin", icon: ShieldCheck }] : []),

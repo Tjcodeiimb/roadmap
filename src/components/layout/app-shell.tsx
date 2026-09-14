@@ -8,6 +8,8 @@ import { CourseSwitcherModal, useCourseSwitcherShortcut } from "@/components/lay
 import { XPWidget } from "@/components/layout/xp-widget";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { signOut } from "@/app/actions/auth";
+import { SkillUnlockQueue } from "@/components/skills/skill-unlock-queue";
+import type { PendingSkillUnlock } from "@/lib/queries";
 
 export function AppShell({
   tracks,
@@ -18,6 +20,7 @@ export function AppShell({
   streak,
   theme,
   fullName,
+  pendingSkillUnlocks,
   children,
 }: {
   tracks: NavTrack[];
@@ -28,6 +31,7 @@ export function AppShell({
   streak: number;
   theme: "light" | "dark";
   fullName: string | null;
+  pendingSkillUnlocks: PendingSkillUnlock[];
   children: React.ReactNode;
 }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -123,6 +127,7 @@ export function AppShell({
         </AnimatePresence>
 
         <CourseSwitcherModal tracks={tracks} open={switcherOpen} onClose={() => setSwitcherOpen(false)} />
+        <SkillUnlockQueue pending={pendingSkillUnlocks} />
       </div>
     </MotionConfig>
   );
