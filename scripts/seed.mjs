@@ -33,17 +33,74 @@ const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY, {
   auth: { autoRefreshToken: false, persistSession: false },
 });
 
-function loadTrack(file) {
+function loadJson(file) {
   return JSON.parse(readFileSync(join(__dirname, 'seed-data', file), 'utf8'));
 }
 
-const TRACK_FILES = ['ai.json', 'finance.json', 'consulting.json'];
+const TRACK_FILES = [
+  'ai.json',
+  'finance.json',
+  'consulting.json',
+  'excel.json',
+  'psychology.json',
+  'marketing.json',
+  'data.json',
+  'product.json',
+  'sales.json',
+];
 
-async function upsert(table, rows, label) {
+// Mirrors migration 0002's SQL backfill in JS — same priority order,
+// including the legacy emoji fallback — so re-seeding is idempotent for the
+// original 3 tracks (whose seed-data JSON still carries the pre-icon-system
+// emoji in `icon`) as well as correct for newly-authored ones.
+const EMOJI_ICON_KEY = {
+  '🎓': 'course',
+  '📄': 'article',
+  '🧪': 'practice',
+  '📺': 'video',
+  '🧭': 'guide',
+  '🌐': 'web',
+};
+
+function deriveResourceMedia(r) {
+  const watch = r.url.match(/youtube\.com\/watch\?v=([A-Za-z0-9_-]{11})/);
+  const short = r.url.match(/youtu\.be\/([A-Za-z0-9_-]{11})/);
+  const externalId = watch?.[1] ?? short?.[1] ?? null;
+  const isYouTube = /youtube\.com|youtu\.be/i.test(r.url);
+  const isVimeo = /vimeo\.com/i.test(r.url);
+  const provider = isYouTube ? 'youtube' : isVimeo ? 'vimeo' : 'external';
+  const embeddable = provider === 'youtube' && externalId != null;
+
+  const format = (r.format ?? '').toLowerCase();
+  let iconKey = r.icon_key ?? null;
+  if (!iconKey) {
+    if (provider === 'youtube') iconKey = 'video';
+    else if (r.icon && EMOJI_ICON_KEY[r.icon]) iconKey = EMOJI_ICON_KEY[r.icon];
+    else if (format.includes('video')) iconKey = 'video';
+    else if (format.includes('course')) iconKey = 'course';
+    else if (format.includes('article') || format.includes('pdf') || format.includes('textbook')) iconKey = 'article';
+    else if (format.includes('practice') || format.includes('exercise')) iconKey = 'practice';
+    else iconKey = 'web';
+  }
+
+  return {
+    ...r,
+    icon: null,
+    provider,
+    external_id: externalId,
+    embeddable,
+    icon_key: iconKey,
+    duration_seconds: r.duration_seconds ?? null,
+  };
+}
+
+// cohort_courses and skill_resources are composite-PK tables, so
+// `onConflict: 'id'` doesn't apply — each table needs its own conflict target.
+async function upsert(table, rows, conflictTarget = 'id') {
   if (!rows.length) return;
-  const { error } = await supabase.from(table).upsert(rows, { onConflict: 'id' });
+  const { error } = await supabase.from(table).upsert(rows, { onConflict: conflictTarget });
   if (error) {
-    console.error(`Failed upserting ${label} into ${table}:`, error.message);
+    console.error(`Failed upserting into ${table}:`, error.message);
     process.exit(1);
   }
   console.log(`  ${table}: ${rows.length} rows`);
@@ -56,22 +113,32 @@ async function main() {
   const allResources = [];
 
   TRACK_FILES.forEach((file, i) => {
-    const data = loadTrack(file);
+    const data = loadJson(file);
     tracks.push({ ...data.track, order_index: i + 1 });
     allPhases.push(...data.phases);
     allTopics.push(...data.topics);
-    allResources.push(...data.resources);
+    allResources.push(...data.resources.map(deriveResourceMedia));
   });
 
-  console.log(`Seeding ${tracks.length} tracks, ${allPhases.length} phases, ${allTopics.length} topics, ${allResources.length} resources...`);
+  const skillsData = loadJson('skills.json');
+  const cohortsData = loadJson('cohorts.json');
 
-  // Order matters: parents before children, because of foreign keys.
-  await upsert('tracks', tracks, 'tracks');
-  await upsert('phases', allPhases, 'phases');
-  await upsert('topics', allTopics, 'topics');
-  await upsert('resources', allResources, 'resources');
+  console.log(
+    `Seeding ${tracks.length} tracks, ${allPhases.length} phases, ${allTopics.length} topics, ` +
+      `${allResources.length} resources, ${skillsData.skills.length} skills, ${cohortsData.cohorts.length} cohorts...`
+  );
 
-  console.log('Done. All three tracks are now live in the database.');
+  // Order matters throughout: parents before children, because of foreign keys.
+  await upsert('tracks', tracks);
+  await upsert('phases', allPhases);
+  await upsert('topics', allTopics);
+  await upsert('resources', allResources);
+  await upsert('skills', skillsData.skills);
+  await upsert('cohorts', cohortsData.cohorts);
+  await upsert('cohort_courses', cohortsData.cohort_courses, 'cohort_id,track_id');
+  await upsert('skill_resources', skillsData.skill_resources, 'skill_id,resource_id');
+
+  console.log('Done. All tracks, skills and cohorts are now live in the database.');
 }
 
 main().catch((err) => {

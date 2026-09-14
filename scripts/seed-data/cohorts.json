@@ -1,0 +1,65 @@
+{
+  "cohorts": [
+    {
+      "id": "new-analyst-bootcamp",
+      "name": "new-analyst-bootcamp",
+      "label": "New Analyst Bootcamp",
+      "summary": "The spreadsheet, finance, and consulting fundamentals every new analyst is expected to already have.",
+      "tier": "foundational",
+      "order_index": 1,
+      "icon_key": "excel",
+      "estimated_hours": 220,
+      "published": true
+    },
+    {
+      "id": "growth-operator",
+      "name": "growth-operator",
+      "label": "Growth Operator",
+      "summary": "Marketing, analytics, and product sense for someone who owns growth end to end.",
+      "tier": "intermediate",
+      "order_index": 2,
+      "icon_key": "marketing",
+      "estimated_hours": 180,
+      "published": true
+    },
+    {
+      "id": "ai-native-consultant",
+      "name": "ai-native-consultant",
+      "label": "AI-Native Consultant",
+      "summary": "Modern AI fluency paired with the structured problem-solving and spreadsheet craft consulting runs on.",
+      "tier": "advanced",
+      "order_index": 3,
+      "icon_key": "ai",
+      "estimated_hours": 270,
+      "published": true
+    },
+    {
+      "id": "customer-facing-growth",
+      "name": "customer-facing-growth",
+      "label": "Customer-Facing Growth",
+      "summary": "The psychology, marketing, and sales skills behind every customer conversation that actually converts.",
+      "tier": "foundational",
+      "order_index": 4,
+      "icon_key": "sales",
+      "estimated_hours": 150,
+      "published": true
+    }
+  ],
+  "cohort_courses": [
+    { "cohort_id": "new-analyst-bootcamp", "track_id": "excel", "order_index": 1 },
+    { "cohort_id": "new-analyst-bootcamp", "track_id": "finance", "order_index": 2 },
+    { "cohort_id": "new-analyst-bootcamp", "track_id": "consulting", "order_index": 3 },
+
+    { "cohort_id": "growth-operator", "track_id": "marketing", "order_index": 1 },
+    { "cohort_id": "growth-operator", "track_id": "data", "order_index": 2 },
+    { "cohort_id": "growth-operator", "track_id": "product", "order_index": 3 },
+
+    { "cohort_id": "ai-native-consultant", "track_id": "ai", "order_index": 1 },
+    { "cohort_id": "ai-native-consultant", "track_id": "consulting", "order_index": 2 },
+    { "cohort_id": "ai-native-consultant", "track_id": "excel", "order_index": 3 },
+
+    { "cohort_id": "customer-facing-growth", "track_id": "psychology", "order_index": 1 },
+    { "cohort_id": "customer-facing-growth", "track_id": "marketing", "order_index": 2 },
+    { "cohort_id": "customer-facing-growth", "track_id": "sales", "order_index": 3 }
+  ]
+}
