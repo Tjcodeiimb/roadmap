@@ -45,7 +45,11 @@ export async function selectTracks(trackIds: string[]) {
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not authenticated" };
 
-  const rows = trackIds.map((track_id) => ({ user_id: user.id, track_id }));
+  const rows = trackIds.map((track_id) => ({
+    user_id: user.id,
+    track_id,
+    status: "active" as const,
+  }));
   const { error } = await supabase.from("user_track_selection").upsert(rows, {
     onConflict: "user_id,track_id",
   });
