@@ -48,6 +48,14 @@ together with a handful of copy-paste values, and you're live.
 4. Click **Run** (bottom right). You should see "Success. No rows returned."
    This creates every table, security rule, and function the app needs. It's
    safe to run more than once if you ever need to.
+5. Repeat for **every other file in `supabase/migrations/`, in filename
+   order** — currently `0002_marketplace_skills_media.sql`, which adds the
+   course marketplace, cohort bundles, the skills system, and per-resource
+   progress for the video player.
+
+> **Important:** run a migration *before* deploying code that depends on it.
+> Each file is additive and safe to re-run, so if you're unsure whether one
+> has been applied, running it again is harmless.
 
 ### 1b. Turn off public sign-up
 
