@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { LayoutDashboard, UserRound, ShieldCheck } from "lucide-react";
 import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark } from "@/components/icons";
+import { CourseSwitcherTrigger } from "./course-switcher";
 
 export interface NavTrack {
   id: string;
@@ -16,11 +17,13 @@ export function SidebarNav({
   reviewCount,
   isAdmin,
   leaderboardEnabled,
+  onOpenSwitcher,
 }: {
   tracks: NavTrack[];
   reviewCount: number;
   isAdmin: boolean;
   leaderboardEnabled: boolean;
+  onOpenSwitcher: () => void;
 }) {
   const pathname = usePathname();
 
@@ -39,6 +42,11 @@ export function SidebarNav({
 
   return (
     <nav className="flex flex-col gap-1">
+      {tracks.length > 4 && (
+        <div className="mb-1 px-0.5">
+          <CourseSwitcherTrigger onOpen={onOpenSwitcher} />
+        </div>
+      )}
       {items.map((item) => {
         const active = pathname === item.href || pathname.startsWith(item.href + "/");
         const Icon = item.icon;
