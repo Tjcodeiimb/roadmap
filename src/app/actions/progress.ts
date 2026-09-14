@@ -38,21 +38,14 @@ export async function touchStreak() {
   return { data: data?.[0] ?? { current_streak: 0, longest_streak: 0 } };
 }
 
-export async function selectTracks(trackIds: string[]) {
+export async function completeOnboarding() {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { error: "Not authenticated" };
 
-  const rows = trackIds.map((track_id) => ({
-    user_id: user.id,
-    track_id,
-    status: "active" as const,
-  }));
-  const { error } = await supabase.from("user_track_selection").upsert(rows, {
-    onConflict: "user_id,track_id",
-  });
+  const { error } = await supabase.from("profiles").update({ onboarded: true }).eq("id", user.id);
   if (error) return { error: error.message };
   revalidatePath("/dashboard");
   return { success: true };

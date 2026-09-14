@@ -49,9 +49,10 @@ together with a handful of copy-paste values, and you're live.
    This creates every table, security rule, and function the app needs. It's
    safe to run more than once if you ever need to.
 5. Repeat for **every other file in `supabase/migrations/`, in filename
-   order** — currently `0002_marketplace_skills_media.sql`, which adds the
-   course marketplace, cohort bundles, the skills system, and per-resource
-   progress for the video player.
+   order** — `0002_marketplace_skills_media.sql` adds the course
+   marketplace, cohort bundles, the skills system, and per-resource
+   progress for the video player; `0003` and `0004` backfill marketplace
+   metadata and the onboarding-completed flag.
 
 > **Important:** run a migration *before* deploying code that depends on it.
 > Each file is additive and safe to re-run, so if you're unsure whether one
@@ -189,8 +190,9 @@ in Supabase, once:
 2. Enter your own email address and send the invite.
 3. Check your email, click the invite link — it opens your live app and
    signs you in.
-4. Go through the short onboarding (pick a track or two) and land on the
-   dashboard.
+4. Go through the short onboarding walkthrough, then browse the
+   **Marketplace** and enroll in a course or cohort bundle — the dashboard
+   stays empty until you enroll in something.
 5. Back in Supabase → **SQL Editor** → run this once, with your real email:
    ```sql
    update public.profiles

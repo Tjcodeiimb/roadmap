@@ -2,9 +2,10 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { getProfile, getSelectedTracks, getTrackSummaries, getReviewQueue } from "@/lib/queries";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { ProgressRing } from "@/components/ui/progress-ring";
 import { ArrowRight } from "lucide-react";
-import { BurstMark, RepeatMark } from "@/components/icons";
+import { BurstMark, RepeatMark, CompassMark } from "@/components/icons";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -47,42 +48,61 @@ export default async function DashboardPage() {
         </Link>
       )}
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        {summaries.map((s) => {
-          const pct = s.totalTopics ? Math.round((s.doneTopics / s.totalTopics) * 100) : 0;
-          return (
-            <Card key={s.track.id} className="flex flex-col gap-4">
-              <div className="flex items-center gap-4">
-                <ProgressRing progress={pct} size={52} strokeWidth={4}>
-                  <span className="text-xs font-bold text-ink">{pct}%</span>
-                </ProgressRing>
-                <div>
-                  <div className="font-display text-lg font-bold text-ink">{s.track.label}</div>
-                  <div className="text-sm text-ink-2">
-                    {s.doneTopics} of {s.totalTopics} topics done
+      {summaries.length === 0 ? (
+        <Card className="flex flex-col items-center gap-4 py-14 text-center">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent-soft text-accent">
+            <CompassMark size={22} />
+          </div>
+          <div>
+            <div className="font-display text-lg font-bold text-ink">No courses yet</div>
+            <p className="mt-1 max-w-sm text-sm text-ink-2">
+              Browse the marketplace to enroll in a course, or a curated cohort bundle that strings a few together.
+            </p>
+          </div>
+          <Link href="/marketplace">
+            <Button size="lg">
+              Browse the marketplace <ArrowRight size={16} />
+            </Button>
+          </Link>
+        </Card>
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {summaries.map((s) => {
+            const pct = s.totalTopics ? Math.round((s.doneTopics / s.totalTopics) * 100) : 0;
+            return (
+              <Card key={s.track.id} className="flex flex-col gap-4">
+                <div className="flex items-center gap-4">
+                  <ProgressRing progress={pct} size={52} strokeWidth={4}>
+                    <span className="text-xs font-bold text-ink">{pct}%</span>
+                  </ProgressRing>
+                  <div>
+                    <div className="font-display text-lg font-bold text-ink">{s.track.label}</div>
+                    <div className="text-sm text-ink-2">
+                      {s.doneTopics} of {s.totalTopics} topics done
+                    </div>
                   </div>
                 </div>
-              </div>
-              {s.currentTopic ? (
-                <Link
-                  href={`/track/${s.track.id}/topic/${s.currentTopic.id}`}
-                  className="flex items-center justify-between rounded-xl bg-paper-3 px-4 py-3 text-sm font-medium text-ink transition-colors hover:bg-paper-3/70"
-                >
-                  <span className="truncate">Continue: {s.currentTopic.title}</span>
-                  <ArrowRight size={16} className="shrink-0" />
+                {s.currentTopic ? (
+                  <Link
+                    href={`/track/${s.track.id}/topic/${s.currentTopic.id}`}
+                    className="flex items-center justify-between rounded-xl bg-paper-3 px-4 py-3 text-sm font-medium text-ink transition-colors hover:bg-paper-3/70"
+                  >
+                    <span className="truncate">Continue: {s.currentTopic.title}</span>
+                    <ArrowRight size={16} className="shrink-0" />
+                  </Link>
+                ) : (
+                  <div className="flex items-center gap-2 rounded-xl bg-success-soft px-4 py-3 text-sm font-medium text-success">
+                    <BurstMark size={16} /> All topics complete
+                  </div>
+                )}
+                <Link href={`/track/${s.track.id}`} className="text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink">
+                  View full roadmap
                 </Link>
-              ) : (
-                <div className="flex items-center gap-2 rounded-xl bg-success-soft px-4 py-3 text-sm font-medium text-success">
-                  <BurstMark size={16} /> All topics complete
-                </div>
-              )}
-              <Link href={`/track/${s.track.id}`} className="text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink">
-                View full roadmap
-              </Link>
-            </Card>
-          );
-        })}
-      </div>
+              </Card>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

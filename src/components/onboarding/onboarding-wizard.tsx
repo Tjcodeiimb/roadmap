@@ -3,30 +3,20 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { selectTracks } from "@/app/actions/progress";
+import { completeOnboarding } from "@/app/actions/progress";
 import { ICONS, FALLBACK_ICON, SignalMark } from "@/components/icons";
 
-interface TrackOption {
-  id: string;
-  label: string;
-}
-
-export function OnboardingWizard({ tracks }: { tracks: TrackOption[] }) {
+export function OnboardingWizard() {
   const [step, setStep] = useState(0);
-  const [chosen, setChosen] = useState<string[]>([]);
   const [pending, startTransition] = useTransition();
   const router = useRouter();
 
-  function toggle(id: string) {
-    setChosen((c) => (c.includes(id) ? c.filter((x) => x !== id) : [...c, id]));
-  }
-
   function finish() {
     startTransition(async () => {
-      await selectTracks(chosen.length ? chosen : tracks.map((t) => t.id));
-      router.push("/dashboard");
+      await completeOnboarding();
+      router.push("/marketplace");
       router.refresh();
     });
   }
@@ -34,7 +24,7 @@ export function OnboardingWizard({ tracks }: { tracks: TrackOption[] }) {
   return (
     <div className="w-full max-w-lg">
       <div className="mb-8 flex justify-center gap-1.5">
-        {[0, 1, 2].map((i) => (
+        {[0, 1].map((i) => (
           <div
             key={i}
             className={`h-1.5 rounded-full transition-all duration-300 ${
@@ -62,46 +52,20 @@ export function OnboardingWizard({ tracks }: { tracks: TrackOption[] }) {
         )}
 
         {step === 1 && (
-          <Screen key="tracks">
-            <h2 className="font-display text-2xl font-bold text-ink">Pick your track</h2>
-            <p className="mt-2 text-sm text-ink-2">
-              Choose one or more. You can switch or add tracks anytime.
-            </p>
-            <div className="mt-6 flex flex-col gap-3">
-              {tracks.map((t) => {
-                const Icon = ICONS[t.id] ?? FALLBACK_ICON;
-                const active = chosen.includes(t.id);
-                return (
-                  <button
-                    key={t.id}
-                    onClick={() => toggle(t.id)}
-                    className={`flex items-center gap-3 rounded-2xl border px-4 py-3.5 text-left transition-colors duration-150 ${
-                      active ? "border-accent bg-accent-soft" : "border-border bg-paper-2 hover:bg-paper-3"
-                    }`}
-                  >
-                    <Icon size={20} />
-                    <span className="flex-1 font-medium text-ink">{t.label}</span>
-                    {active && <Check size={18} className="text-accent" />}
-                  </button>
-                );
-              })}
-            </div>
-            <Button size="lg" className="mt-8 w-full" onClick={() => setStep(2)} disabled={!chosen.length}>
-              Continue <ArrowRight size={16} />
-            </Button>
-          </Screen>
-        )}
-
-        {step === 2 && (
           <Screen key="how">
             <h2 className="font-display text-2xl font-bold text-ink">How it works</h2>
             <div className="mt-6 flex flex-col gap-4">
+              <HowItem
+                iconKey="course"
+                title="Browse the marketplace"
+                desc="Enroll in individual courses, or a curated cohort bundle that strings a few together."
+              />
               <HowItem iconKey="bolt" title="Earn XP" desc="Complete topics to level up. Progress is saved to your account automatically." />
               <HowItem iconKey="streak" title="Build a streak" desc="Visit most days to keep your streak alive." />
               <HowItem iconKey="repeat" title="Spaced review" desc="Finished topics resurface for a quick review, right when you're about to forget them." />
             </div>
             <Button size="lg" className="mt-8 w-full" disabled={pending} onClick={finish}>
-              {pending ? "Setting up…" : "Go to dashboard"} <ArrowRight size={16} />
+              {pending ? "Setting up…" : "Browse the marketplace"} <ArrowRight size={16} />
             </Button>
           </Screen>
         )}

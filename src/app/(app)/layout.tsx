@@ -26,7 +26,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     getAllTracks(supabase),
   ]);
 
-  if (!selectedTrackIds.length) redirect("/onboarding");
+  if (!profile?.onboarded) redirect("/onboarding");
 
   await touchStreak();
 

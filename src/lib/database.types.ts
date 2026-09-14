@@ -188,6 +188,7 @@ export type Database = {
           role: Role;
           theme: ThemeName;
           leaderboard_opt_in: boolean;
+          onboarded: boolean;
           created_at: string;
         };
         Insert: {
@@ -196,6 +197,7 @@ export type Database = {
           role?: Role;
           theme?: ThemeName;
           leaderboard_opt_in?: boolean;
+          onboarded?: boolean;
           created_at?: string;
         };
         Update: Partial<{
@@ -204,6 +206,7 @@ export type Database = {
           role: Role;
           theme: ThemeName;
           leaderboard_opt_in: boolean;
+          onboarded: boolean;
           created_at: string;
         }>;
         Relationships: [];
