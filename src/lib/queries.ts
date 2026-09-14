@@ -347,6 +347,8 @@ export async function getTrackContentTree(supabase: Client, trackId: string) {
   return { track, phases: phasesWithTopics };
 }
 
+export type ResourceBankStatus = "todo" | "in_progress" | "done";
+
 export async function getTopicDetail(supabase: Client, topicId: string) {
   const { data: topic } = await supabase.from("topics").select("*").eq("id", topicId).single();
   if (!topic) return null;
@@ -361,12 +363,192 @@ export async function getTopicDetail(supabase: Client, topicId: string) {
     .select("status")
     .eq("topic_id", topicId)
     .maybeSingle();
+  const status = (progress?.status as Status) ?? ("todo" as Status);
+
+  const resourceIds = (resources ?? []).map((r) => r.id);
+  const { data: resourceProgress } = await supabase
+    .from("user_resource_progress")
+    .select("resource_id, status")
+    .in("resource_id", resourceIds.length ? resourceIds : ["__none__"]);
+  const resourceStatusById = new Map((resourceProgress ?? []).map((p) => [p.resource_id, p.status]));
 
   return {
     topic,
     phase,
-    resources: resources ?? [],
-    status: (progress?.status as Status) ?? ("todo" as Status),
+    resources: (resources ?? []).map((r) => ({
+      ...r,
+      status: (resourceStatusById.get(r.id) === "done" || status === "done"
+        ? "done"
+        : resourceStatusById.get(r.id) === "in_progress"
+          ? "in_progress"
+          : "todo") as ResourceBankStatus,
+    })),
+    status,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Library — one browsable bank of every resource across enrolled tracks,
+// plus per-resource progress for the embedded player.
+// ---------------------------------------------------------------------------
+
+export interface LibraryResource {
+  id: string;
+  title: string;
+  url: string;
+  source: string | null;
+  format: string | null;
+  length: string | null;
+  note: string | null;
+  iconKey: string | null;
+  provider: string | null;
+  embeddable: boolean;
+  durationSeconds: number | null;
+  topicId: string;
+  topicTitle: string;
+  trackId: string;
+  trackLabel: string;
+  trackIconKey: string | null;
+  status: ResourceBankStatus;
+  secondsWatched: number;
+  lastPositionSeconds: number;
+  updatedAt: string | null;
+}
+
+export async function getLibraryResources(supabase: Client, trackIds: string[]): Promise<LibraryResource[]> {
+  if (!trackIds.length) return [];
+
+  const [{ data: tracks }, { data: phases }] = await Promise.all([
+    supabase.from("tracks").select("id, label, icon_key").in("id", trackIds).order("order_index"),
+    supabase.from("phases").select("id, track_id").in("track_id", trackIds).order("order_index"),
+  ]);
+
+  const phaseIds = (phases ?? []).map((p) => p.id);
+  const { data: topics } = await supabase
+    .from("topics")
+    .select("id, phase_id, title, order_index")
+    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"])
+    .order("order_index");
+  const topicIds = (topics ?? []).map((t) => t.id);
+  const { data: resources } = await supabase
+    .from("resources")
+    .select("*")
+    .in("topic_id", topicIds.length ? topicIds : ["__none__"])
+    .order("order_index");
+  const resourceIds = (resources ?? []).map((r) => r.id);
+
+  const [{ data: topicProgress }, { data: resourceProgress }] = await Promise.all([
+    supabase.from("user_progress").select("topic_id, status"),
+    supabase
+      .from("user_resource_progress")
+      .select("resource_id, status, seconds_watched, last_position_seconds, updated_at")
+      .in("resource_id", resourceIds.length ? resourceIds : ["__none__"]),
+  ]);
+
+  const trackById = new Map((tracks ?? []).map((t) => [t.id, t]));
+  const trackOrder = new Map((tracks ?? []).map((t, i) => [t.id, i]));
+  const phaseTrack = new Map((phases ?? []).map((p) => [p.id, p.track_id]));
+  const topicById = new Map((topics ?? []).map((t) => [t.id, t]));
+  const topicOrder = new Map((topics ?? []).map((t, i) => [t.id, i]));
+  const doneTopicSet = new Set((topicProgress ?? []).filter((p) => p.status === "done").map((p) => p.topic_id));
+  const progressByResource = new Map((resourceProgress ?? []).map((p) => [p.resource_id, p]));
+
+  const rows = (resources ?? [])
+    .map((r) => {
+      const topic = topicById.get(r.topic_id);
+      const trackId = topic ? phaseTrack.get(topic.phase_id) : undefined;
+      const track = trackId ? trackById.get(trackId) : undefined;
+      if (!topic || !track) return null;
+
+      const rp = progressByResource.get(r.id);
+      const status: ResourceBankStatus =
+        rp?.status === "done" || doneTopicSet.has(topic.id)
+          ? "done"
+          : rp?.status === "in_progress"
+            ? "in_progress"
+            : "todo";
+
+      const row: LibraryResource = {
+        id: r.id,
+        title: r.title,
+        url: r.url,
+        source: r.source,
+        format: r.format,
+        length: r.length,
+        note: r.note,
+        iconKey: r.icon_key,
+        provider: r.provider,
+        embeddable: r.embeddable,
+        durationSeconds: r.duration_seconds,
+        topicId: topic.id,
+        topicTitle: topic.title,
+        trackId: track.id,
+        trackLabel: track.label,
+        trackIconKey: track.icon_key,
+        status,
+        secondsWatched: rp?.seconds_watched ?? 0,
+        lastPositionSeconds: rp?.last_position_seconds ?? 0,
+        updatedAt: rp?.updated_at ?? null,
+      };
+      return row;
+    })
+    .filter((r): r is LibraryResource => r !== null);
+
+  rows.sort(
+    (a, b) =>
+      (trackOrder.get(a.trackId) ?? 0) - (trackOrder.get(b.trackId) ?? 0) ||
+      (topicOrder.get(a.topicId) ?? 0) - (topicOrder.get(b.topicId) ?? 0)
+  );
+  return rows;
+}
+
+export async function getResourceDetail(supabase: Client, resourceId: string) {
+  const { data: resource } = await supabase.from("resources").select("*").eq("id", resourceId).single();
+  if (!resource) return null;
+  const { data: topic } = await supabase
+    .from("topics")
+    .select("id, title, phase_id")
+    .eq("id", resource.topic_id)
+    .single();
+  if (!topic) return null;
+  const { data: phase } = await supabase.from("phases").select("id, track_id").eq("id", topic.phase_id).single();
+  const { data: track } = phase
+    ? await supabase.from("tracks").select("id, label, icon_key").eq("id", phase.track_id).single()
+    : { data: null };
+  const { data: topicStatus } = await supabase
+    .from("user_progress")
+    .select("status")
+    .eq("topic_id", topic.id)
+    .maybeSingle();
+  const { data: rp } = await supabase
+    .from("user_resource_progress")
+    .select("*")
+    .eq("resource_id", resourceId)
+    .maybeSingle();
+
+  const status: ResourceBankStatus =
+    rp?.status === "done" || topicStatus?.status === "done"
+      ? "done"
+      : rp?.status === "in_progress"
+        ? "in_progress"
+        : "todo";
+
+  return {
+    resource,
+    topic,
+    track,
+    status,
+    secondsWatched: rp?.seconds_watched ?? 0,
+    lastPositionSeconds: rp?.last_position_seconds ?? 0,
+  };
+}
+
+export async function getWatchStats(supabase: Client) {
+  const { data } = await supabase.from("user_resource_progress").select("seconds_watched, status");
+  const rows = data ?? [];
+  return {
+    secondsWatched: rows.reduce((sum, r) => sum + r.seconds_watched, 0),
+    resourcesCompleted: rows.filter((r) => r.status === "done").length,
   };
 }
 

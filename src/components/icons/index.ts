@@ -20,6 +20,7 @@ import {
   CompassMark,
   TrendMark,
   LinkMark,
+  StackMark,
 } from "./glyphs";
 import {
   CourseMark,
@@ -91,6 +92,7 @@ export const ICONS: Record<string, ComponentType<IconProps>> = {
   compass: CompassMark,
   trend: TrendMark,
   link: LinkMark,
+  stack: StackMark,
 };
 
 /**
