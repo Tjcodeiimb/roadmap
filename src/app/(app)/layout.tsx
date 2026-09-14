@@ -6,7 +6,6 @@ import {
   getSelectedTracks,
   getAllTracks,
   getUserXP,
-  getUserStreak,
   getReviewQueue,
   getPendingSkillUnlocks,
 } from "@/lib/queries";
@@ -28,14 +27,16 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   if (!profile?.onboarded) redirect("/onboarding");
 
-  await touchStreak();
-
-  const [xp, streak, review, pendingSkillUnlocks] = await Promise.all([
+  // touch_streak's own RPC already returns the up-to-date streak row, so
+  // running it inside this Promise.all (instead of awaiting it separately,
+  // then re-reading user_streak) turns 2 sequential round-trips into 1.
+  const [streakResult, xp, review, pendingSkillUnlocks] = await Promise.all([
+    touchStreak(),
     getUserXP(supabase),
-    getUserStreak(supabase),
     getReviewQueue(supabase),
     getPendingSkillUnlocks(supabase),
   ]);
+  const streak = streakResult.data ?? { current_streak: 0, longest_streak: 0 };
 
   const tracks = allTracks
     .filter((t) => selectedTrackIds.includes(t.id))

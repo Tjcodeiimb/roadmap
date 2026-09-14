@@ -1,5 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { Database, Status } from "@/lib/database.types";
+import type { Database, Status, Step, Tier } from "@/lib/database.types";
 
 type Client = SupabaseClient<Database>;
 
@@ -60,101 +60,91 @@ export interface MarketplaceCourse {
   enrolled: boolean;
 }
 
+interface SkillResourceRow {
+  skill_id: string;
+  skills: { name: string } | null;
+  resources: { topic_id: string; topics: { phase_id: string; phases: { track_id: string } | null } | null } | null;
+}
+
 // Every skill a track can grant: a skill counts if any of its mapped
-// resources belongs to a topic under that track. Computed in JS because
-// `Relationships: []` means embedded selects don't type — same idiom as
-// getTrackSummaries.
+// resources belongs to a topic under that track. One nested select
+// (skill_resources -> skills, and skill_resources -> resources -> topics ->
+// phases) replaces what used to be 5 fully sequential round-trips.
 async function getSkillNamesByTrack(supabase: Client): Promise<Map<string, string[]>> {
-  const { data: skillResources } = await supabase.from("skill_resources").select("skill_id, resource_id");
-  if (!skillResources?.length) return new Map();
+  const { data } = await supabase
+    .from("skill_resources")
+    .select("skill_id, skills(name), resources(topic_id, topics(phase_id, phases(track_id)))");
+  const skillResources = (data ?? []) as unknown as SkillResourceRow[];
+  if (!skillResources.length) return new Map();
 
-  const resourceIds = [...new Set(skillResources.map((sr) => sr.resource_id))];
-  const { data: resources } = await supabase
-    .from("resources")
-    .select("id, topic_id")
-    .in("id", resourceIds);
-  const topicIds = [...new Set((resources ?? []).map((r) => r.topic_id))];
-  const { data: topics } = await supabase.from("topics").select("id, phase_id").in("id", topicIds);
-  const phaseIds = [...new Set((topics ?? []).map((t) => t.phase_id))];
-  const { data: phases } = await supabase.from("phases").select("id, track_id").in("id", phaseIds);
-  const { data: skills } = await supabase.from("skills").select("id, name");
-
-  const topicByResource = new Map((resources ?? []).map((r) => [r.id, r.topic_id]));
-  const phaseByTopic = new Map((topics ?? []).map((t) => [t.id, t.phase_id]));
-  const trackByPhase = new Map((phases ?? []).map((p) => [p.id, p.track_id]));
-  const skillName = new Map((skills ?? []).map((s) => [s.id, s.name]));
-
-  const trackSkillIds = new Map<string, Set<string>>();
+  const trackSkillNames = new Map<string, Set<string>>();
   for (const sr of skillResources) {
-    const topicId = topicByResource.get(sr.resource_id);
-    const phaseId = topicId ? phaseByTopic.get(topicId) : undefined;
-    const trackId = phaseId ? trackByPhase.get(phaseId) : undefined;
-    if (!trackId) continue;
-    if (!trackSkillIds.has(trackId)) trackSkillIds.set(trackId, new Set());
-    trackSkillIds.get(trackId)!.add(sr.skill_id);
+    const trackId = sr.resources?.topics?.phases?.track_id;
+    const name = sr.skills?.name;
+    if (!trackId || !name) continue;
+    if (!trackSkillNames.has(trackId)) trackSkillNames.set(trackId, new Set());
+    trackSkillNames.get(trackId)!.add(name);
   }
 
   const result = new Map<string, string[]>();
-  for (const [trackId, skillIds] of trackSkillIds) {
-    result.set(
-      trackId,
-      [...skillIds].map((id) => skillName.get(id) ?? id)
-    );
-  }
+  for (const [trackId, names] of trackSkillNames) result.set(trackId, [...names]);
   return result;
 }
 
+interface MarketplaceTrackRow {
+  id: string;
+  label: string;
+  summary: string;
+  tier: string;
+  domain: string | null;
+  estimated_hours: number | null;
+  effort_per_week: string | null;
+  icon_key: string | null;
+  phases: { topics: { id: string; resources: { id: string }[] }[] }[];
+}
+
+// One nested select (tracks -> phases -> topics -> resources) replaces
+// what used to be 3 sequential round-trips just to count topics/resources
+// per track — the counts are now plain array-length sums in JS.
 export async function getMarketplaceCourses(supabase: Client): Promise<MarketplaceCourse[]> {
-  const [{ data: tracks }, { data: phases }, enrolledIds, skillsByTrack] = await Promise.all([
-    supabase.from("tracks").select("*").eq("published", true).order("order_index"),
-    supabase.from("phases").select("id, track_id"),
+  const [{ data: trackRows }, enrolledIds, skillsByTrack] = await Promise.all([
+    supabase
+      .from("tracks")
+      .select(
+        "id, label, summary, tier, domain, estimated_hours, effort_per_week, icon_key, " +
+          "phases(topics(id, resources(id)))"
+      )
+      .eq("published", true)
+      .order("order_index"),
     getSelectedTracks(supabase),
     getSkillNamesByTrack(supabase),
   ]);
 
-  const phaseIds = (phases ?? []).map((p) => p.id);
-  const { data: topics } = await supabase
-    .from("topics")
-    .select("id, phase_id")
-    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"]);
-  const topicIds = (topics ?? []).map((t) => t.id);
-  const { data: resources } = await supabase
-    .from("resources")
-    .select("id, topic_id")
-    .in("topic_id", topicIds.length ? topicIds : ["__none__"]);
-
-  const phaseTrack = new Map((phases ?? []).map((p) => [p.id, p.track_id]));
-  const topicsByTrack = new Map<string, number>();
-  const topicTrack = new Map<string, string>();
-  for (const t of topics ?? []) {
-    const trackId = phaseTrack.get(t.phase_id);
-    if (!trackId) continue;
-    topicTrack.set(t.id, trackId);
-    topicsByTrack.set(trackId, (topicsByTrack.get(trackId) ?? 0) + 1);
-  }
-  const resourcesByTrack = new Map<string, number>();
-  for (const r of resources ?? []) {
-    const trackId = topicTrack.get(r.topic_id);
-    if (!trackId) continue;
-    resourcesByTrack.set(trackId, (resourcesByTrack.get(trackId) ?? 0) + 1);
-  }
-
+  const tracks = (trackRows ?? []) as unknown as MarketplaceTrackRow[];
   const enrolledSet = new Set(enrolledIds);
 
-  return (tracks ?? []).map((t) => ({
-    id: t.id,
-    label: t.label,
-    summary: t.summary,
-    tier: t.tier,
-    domain: t.domain,
-    estimatedHours: t.estimated_hours,
-    effortPerWeek: t.effort_per_week,
-    iconKey: t.icon_key,
-    topicCount: topicsByTrack.get(t.id) ?? 0,
-    resourceCount: resourcesByTrack.get(t.id) ?? 0,
-    skillNames: skillsByTrack.get(t.id) ?? [],
-    enrolled: enrolledSet.has(t.id),
-  }));
+  return tracks.map((t) => {
+    let topicCount = 0;
+    let resourceCount = 0;
+    for (const phase of t.phases) {
+      topicCount += phase.topics.length;
+      for (const topic of phase.topics) resourceCount += topic.resources.length;
+    }
+    return {
+      id: t.id,
+      label: t.label,
+      summary: t.summary,
+      tier: t.tier,
+      domain: t.domain,
+      estimatedHours: t.estimated_hours,
+      effortPerWeek: t.effort_per_week,
+      iconKey: t.icon_key,
+      topicCount,
+      resourceCount,
+      skillNames: skillsByTrack.get(t.id) ?? [],
+      enrolled: enrolledSet.has(t.id),
+    };
+  });
 }
 
 export interface MarketplaceCohort {
@@ -196,39 +186,72 @@ export async function getMarketplaceCohorts(supabase: Client): Promise<Marketpla
   }));
 }
 
+interface CourseDetailRow {
+  id: string;
+  name: string;
+  label: string;
+  order_index: number;
+  tier: string;
+  summary: string;
+  domain: string | null;
+  estimated_hours: number | null;
+  effort_per_week: string | null;
+  icon_key: string | null;
+  published: boolean;
+  phases: {
+    id: string;
+    title: string;
+    description: string;
+    estimated_weeks: string | null;
+    order_index: number;
+    topics: { id: string; title: string; order_index: number; resources: { id: string }[] }[];
+  }[];
+}
+
+// One nested select (track -> phases -> topics -> resources) replaces the
+// old pattern of calling getMarketplaceCourses() (which itself queries
+// every published track) just to read one track's counts, plus 2 more
+// sequential round-trips for phases/topics.
 export async function getCourseDetail(supabase: Client, trackId: string) {
-  const [{ data: track }, courses, skillsByTrack, enrolledIds] = await Promise.all([
-    supabase.from("tracks").select("*").eq("id", trackId).single(),
-    getMarketplaceCourses(supabase),
+  const [{ data: row }, skillsByTrack, enrolledIds] = await Promise.all([
+    supabase
+      .from("tracks")
+      .select(
+        "*, phases(id, title, description, estimated_weeks, order_index, " +
+          "topics(id, title, order_index, resources(id)))"
+      )
+      .eq("id", trackId)
+      .maybeSingle(),
     getSkillNamesByTrack(supabase),
     getSelectedTracks(supabase),
   ]);
-  if (!track) return null;
+  if (!row) return null;
 
-  const { data: phases } = await supabase
-    .from("phases")
-    .select("id, title, description, estimated_weeks")
-    .eq("track_id", trackId)
-    .order("order_index");
-  const phaseIds = (phases ?? []).map((p) => p.id);
-  const { data: topics } = await supabase
-    .from("topics")
-    .select("id, phase_id, title")
-    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"])
-    .order("order_index");
-
-  const summary = courses.find((c) => c.id === trackId);
+  const { phases: rawPhases, ...track } = row as unknown as CourseDetailRow;
+  const phases = [...rawPhases]
+    .sort((a, b) => a.order_index - b.order_index)
+    .map((p) => ({
+      id: p.id,
+      title: p.title,
+      description: p.description,
+      estimated_weeks: p.estimated_weeks,
+      topics: [...p.topics]
+        .sort((a, b) => a.order_index - b.order_index)
+        .map((t) => ({ id: t.id, phase_id: p.id, title: t.title })),
+    }));
+  const topicCount = phases.reduce((n, p) => n + p.topics.length, 0);
+  const resourceCount = rawPhases.reduce(
+    (n, p) => n + p.topics.reduce((m, t) => m + t.resources.length, 0),
+    0
+  );
 
   return {
     track,
     enrolled: enrolledIds.includes(trackId),
-    topicCount: summary?.topicCount ?? 0,
-    resourceCount: summary?.resourceCount ?? 0,
+    topicCount,
+    resourceCount,
     skillNames: skillsByTrack.get(trackId) ?? [],
-    phases: (phases ?? []).map((p) => ({
-      ...p,
-      topics: (topics ?? []).filter((t) => t.phase_id === p.id),
-    })),
+    phases,
   };
 }
 
@@ -249,26 +272,49 @@ export interface TrackProgressSummary {
   currentTopic: { id: string; title: string; phaseTitle: string } | null;
 }
 
+interface TrackSummaryRow {
+  id: string;
+  name: string;
+  label: string;
+  phases: {
+    id: string;
+    order_index: number;
+    title: string;
+    topics: { id: string; title: string; order_index: number }[];
+  }[];
+}
+
 // Dashboard: one row per track the user has selected, with overall
 // completion and a "continue where you left off" pointer.
+//
+// One nested PostgREST select (tracks -> phases -> topics) replaces what
+// used to be 4 fully sequential round-trips — the real FK chain
+// (phases.track_id / topics.phase_id) makes this a single query even
+// though `database.types.ts` declares `Relationships: []` (a compile-time
+// simplification, not a schema limitation; PostgREST resolves embeds from
+// the live FK constraints, not from the hand-written types).
 export async function getTrackSummaries(supabase: Client, trackIds: string[]): Promise<TrackProgressSummary[]> {
   if (!trackIds.length) return [];
 
-  const { data: tracks } = await supabase.from("tracks").select("*").in("id", trackIds).order("order_index");
-  const { data: phases } = await supabase.from("phases").select("*").in("track_id", trackIds).order("order_index");
-  const phaseIds = (phases ?? []).map((p) => p.id);
-  const { data: topics } = await supabase
-    .from("topics")
-    .select("id, phase_id, title, order_index")
-    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"])
-    .order("order_index");
-  const { data: progress } = await supabase.from("user_progress").select("topic_id, status");
+  const [{ data: trackRows }, { data: progress }] = await Promise.all([
+    supabase
+      .from("tracks")
+      .select("id, name, label, order_index, phases(id, order_index, title, topics(id, title, order_index))")
+      .in("id", trackIds)
+      .order("order_index"),
+    supabase.from("user_progress").select("topic_id, status"),
+  ]);
 
+  const tracks = (trackRows ?? []) as unknown as TrackSummaryRow[];
   const statusByTopic = new Map((progress ?? []).map((p) => [p.topic_id, p.status]));
-  const phaseById = new Map((phases ?? []).map((p) => [p.id, p]));
 
-  return (tracks ?? []).map((track) => {
-    const trackTopics = (topics ?? []).filter((t) => phaseById.get(t.phase_id)?.track_id === track.id);
+  return tracks.map((track) => {
+    const phases = [...track.phases].sort((a, b) => a.order_index - b.order_index);
+    const trackTopics = phases.flatMap((phase) =>
+      [...phase.topics]
+        .sort((a, b) => a.order_index - b.order_index)
+        .map((t) => ({ ...t, phaseTitle: phase.title }))
+    );
     const doneTopics = trackTopics.filter((t) => statusByTopic.get(t.id) === "done").length;
     const nextTopic =
       trackTopics.find((t) => statusByTopic.get(t.id) === "active") ??
@@ -280,111 +326,196 @@ export async function getTrackSummaries(supabase: Client, trackIds: string[]): P
       totalTopics: trackTopics.length,
       doneTopics,
       currentTopic: nextTopic
-        ? {
-            id: nextTopic.id,
-            title: nextTopic.title,
-            phaseTitle: phaseById.get(nextTopic.phase_id)?.title ?? "",
-          }
+        ? { id: nextTopic.id, title: nextTopic.title, phaseTitle: nextTopic.phaseTitle }
         : null,
     };
   });
 }
 
+interface TrackDetailRow {
+  id: string;
+  name: string;
+  label: string;
+  order_index: number;
+  tier: Tier;
+  summary: string;
+  domain: string | null;
+  estimated_hours: number | null;
+  effort_per_week: string | null;
+  icon_key: string | null;
+  published: boolean;
+  phases: {
+    id: string;
+    track_id: string;
+    order_index: number;
+    title: string;
+    description: string;
+    estimated_weeks: string | null;
+    color: string | null;
+    topics: {
+      id: string;
+      phase_id: string;
+      order_index: number;
+      title: string;
+      section: string | null;
+      tags: string[];
+      estimated_time: string | null;
+      description: string;
+      steps: Step[];
+      user_progress: { status: string }[];
+    }[];
+  }[];
+}
+
+// One nested select (track -> phases -> topics, with user_progress
+// embedded under topics via its own FK) replaces 4 sequential round-trips
+// with 1 — this page is one of the most frequently visited in the app.
 export async function getTrackDetail(supabase: Client, trackId: string) {
-  const { data: track } = await supabase.from("tracks").select("*").eq("id", trackId).single();
-  const { data: phases } = await supabase
-    .from("phases")
-    .select("*")
-    .eq("track_id", trackId)
-    .order("order_index");
-  const phaseIds = (phases ?? []).map((p) => p.id);
-  const { data: topics } = await supabase
-    .from("topics")
-    .select("*")
-    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"])
-    .order("order_index");
-  const { data: progress } = await supabase.from("user_progress").select("topic_id, status");
-  const statusByTopic = new Map((progress ?? []).map((p) => [p.topic_id, p.status as Status]));
+  const { data: row } = await supabase
+    .from("tracks")
+    .select("*, phases(*, topics(*, user_progress(status)))")
+    .eq("id", trackId)
+    .maybeSingle();
+  if (!row) return { track: null, phases: [] };
 
-  const phasesWithTopics = (phases ?? []).map((phase) => ({
-    ...phase,
-    topics: (topics ?? [])
-      .filter((t) => t.phase_id === phase.id)
-      .map((t) => ({ ...t, status: statusByTopic.get(t.id) ?? ("todo" as Status) })),
-  }));
+  const { phases: rawPhases, ...track } = row as unknown as TrackDetailRow;
+  const phases = [...rawPhases]
+    .sort((a, b) => a.order_index - b.order_index)
+    .map((phase) => {
+      const { topics: rawTopics, ...phaseFields } = phase;
+      return {
+        ...phaseFields,
+        topics: [...rawTopics]
+          .sort((a, b) => a.order_index - b.order_index)
+          .map((t) => {
+            const { user_progress, ...topicFields } = t;
+            return { ...topicFields, status: (user_progress?.[0]?.status as Status) ?? ("todo" as Status) };
+          }),
+      };
+    });
 
-  return { track, phases: phasesWithTopics };
+  return { track, phases };
 }
 
 // Full content tree for one track (no per-user status) — used by the admin
 // content editor.
+interface ContentTreeRow {
+  id: string;
+  name: string;
+  label: string;
+  order_index: number;
+  phases: {
+    id: string;
+    track_id: string;
+    order_index: number;
+    title: string;
+    description: string;
+    estimated_weeks: string | null;
+    color: string | null;
+    topics: {
+      id: string;
+      phase_id: string;
+      order_index: number;
+      title: string;
+      section: string | null;
+      tags: string[];
+      estimated_time: string | null;
+      description: string;
+      steps: Step[];
+      resources: Database["public"]["Tables"]["resources"]["Row"][];
+    }[];
+  }[];
+}
+
+// Full content tree for one track (no per-user status) — used by the admin
+// content editor. One nested select replaces 4 sequential round-trips.
 export async function getTrackContentTree(supabase: Client, trackId: string) {
-  const { data: track } = await supabase.from("tracks").select("*").eq("id", trackId).single();
-  const { data: phases } = await supabase.from("phases").select("*").eq("track_id", trackId).order("order_index");
-  const phaseIds = (phases ?? []).map((p) => p.id);
-  const { data: topics } = await supabase
-    .from("topics")
-    .select("*")
-    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"])
-    .order("order_index");
-  const topicIds = (topics ?? []).map((t) => t.id);
-  const { data: resources } = await supabase
-    .from("resources")
-    .select("*")
-    .in("topic_id", topicIds.length ? topicIds : ["__none__"])
-    .order("order_index");
+  const { data: row } = await supabase
+    .from("tracks")
+    .select("*, phases(*, topics(*, resources(*)))")
+    .eq("id", trackId)
+    .maybeSingle();
+  if (!row) return { track: null, phases: [] };
 
-  const phasesWithTopics = (phases ?? []).map((phase) => ({
-    ...phase,
-    topics: (topics ?? [])
-      .filter((t) => t.phase_id === phase.id)
-      .map((topic) => ({
-        ...topic,
-        resources: (resources ?? []).filter((r) => r.topic_id === topic.id),
-      })),
-  }));
+  const { phases: rawPhases, ...track } = row as unknown as ContentTreeRow;
+  const phases = [...rawPhases]
+    .sort((a, b) => a.order_index - b.order_index)
+    .map((phase) => ({
+      ...phase,
+      topics: [...phase.topics]
+        .sort((a, b) => a.order_index - b.order_index)
+        .map((topic) => ({
+          ...topic,
+          resources: [...topic.resources].sort((a, b) => a.order_index - b.order_index),
+        })),
+    }));
 
-  return { track, phases: phasesWithTopics };
+  return { track, phases };
 }
 
 export type ResourceBankStatus = "todo" | "in_progress" | "done";
 
+interface TopicDetailRow {
+  id: string;
+  phase_id: string;
+  order_index: number;
+  title: string;
+  section: string | null;
+  tags: string[];
+  estimated_time: string | null;
+  description: string;
+  steps: Step[];
+  phases: { id: string; track_id: string; order_index: number; title: string; description: string; estimated_weeks: string | null; color: string | null } | null;
+  user_progress: { status: string }[];
+  resources: {
+    id: string;
+    topic_id: string;
+    order_index: number;
+    title: string;
+    url: string;
+    source: string | null;
+    format: string | null;
+    length: string | null;
+    note: string | null;
+    provider: string | null;
+    external_id: string | null;
+    duration_seconds: number | null;
+    embeddable: boolean;
+    icon_key: string | null;
+    user_resource_progress: { status: string }[];
+  }[];
+}
+
+// One nested select (topic -> phase, topic -> user_progress, topic ->
+// resources -> user_resource_progress, all real FKs) replaces 5 fully
+// sequential round-trips with 1 — this is the core "learning loop" page.
 export async function getTopicDetail(supabase: Client, topicId: string) {
-  const { data: topic } = await supabase.from("topics").select("*").eq("id", topicId).single();
-  if (!topic) return null;
-  const { data: phase } = await supabase.from("phases").select("*").eq("id", topic.phase_id).single();
-  const { data: resources } = await supabase
-    .from("resources")
-    .select("*")
-    .eq("topic_id", topicId)
-    .order("order_index");
-  const { data: progress } = await supabase
-    .from("user_progress")
-    .select("status")
-    .eq("topic_id", topicId)
+  const { data: row } = await supabase
+    .from("topics")
+    .select("*, phases(*), user_progress(status), resources(*, user_resource_progress(status))")
+    .eq("id", topicId)
     .maybeSingle();
-  const status = (progress?.status as Status) ?? ("todo" as Status);
+  if (!row) return null;
 
-  const resourceIds = (resources ?? []).map((r) => r.id);
-  const { data: resourceProgress } = await supabase
-    .from("user_resource_progress")
-    .select("resource_id, status")
-    .in("resource_id", resourceIds.length ? resourceIds : ["__none__"]);
-  const resourceStatusById = new Map((resourceProgress ?? []).map((p) => [p.resource_id, p.status]));
+  const { phases: phase, user_progress, resources: rawResources, ...topic } = row as unknown as TopicDetailRow;
+  const status = (user_progress?.[0]?.status as Status) ?? ("todo" as Status);
 
-  return {
-    topic,
-    phase,
-    resources: (resources ?? []).map((r) => ({
-      ...r,
-      status: (resourceStatusById.get(r.id) === "done" || status === "done"
-        ? "done"
-        : resourceStatusById.get(r.id) === "in_progress"
-          ? "in_progress"
-          : "todo") as ResourceBankStatus,
-    })),
-    status,
-  };
+  const resources = [...rawResources]
+    .sort((a, b) => a.order_index - b.order_index)
+    .map((res) => {
+      const { user_resource_progress, ...resFields } = res;
+      const rStatus = user_resource_progress?.[0]?.status;
+      return {
+        ...resFields,
+        status: (rStatus === "done" || status === "done"
+          ? "done"
+          : rStatus === "in_progress"
+            ? "in_progress"
+            : "todo") as ResourceBankStatus,
+      };
+    });
+
+  return { topic, phase, resources, status };
 }
 
 // ---------------------------------------------------------------------------
@@ -415,119 +546,158 @@ export interface LibraryResource {
   updatedAt: string | null;
 }
 
+interface LibraryTrackRow {
+  id: string;
+  label: string;
+  icon_key: string | null;
+  phases: {
+    order_index: number;
+    topics: {
+      id: string;
+      title: string;
+      order_index: number;
+      user_progress: { status: string }[];
+      resources: {
+        id: string;
+        title: string;
+        url: string;
+        source: string | null;
+        format: string | null;
+        length: string | null;
+        note: string | null;
+        icon_key: string | null;
+        provider: string | null;
+        embeddable: boolean;
+        duration_seconds: number | null;
+        order_index: number;
+        user_resource_progress: {
+          status: string;
+          seconds_watched: number;
+          last_position_seconds: number;
+          updated_at: string;
+        }[];
+      }[];
+    }[];
+  }[];
+}
+
+// One nested select (tracks -> phases -> topics -> resources, with both
+// per-user progress tables embedded via their own FKs) replaces what used
+// to be 4 sequential content round-trips plus 2 more for progress.
+// Traversing in the query's own nested order (top-level tracks ordered by
+// `order_index`, sorted by the same field at each inner level) means the
+// result is already in track/topic order — no separate re-sort needed.
 export async function getLibraryResources(supabase: Client, trackIds: string[]): Promise<LibraryResource[]> {
   if (!trackIds.length) return [];
 
-  const [{ data: tracks }, { data: phases }] = await Promise.all([
-    supabase.from("tracks").select("id, label, icon_key").in("id", trackIds).order("order_index"),
-    supabase.from("phases").select("id, track_id").in("track_id", trackIds).order("order_index"),
-  ]);
-
-  const phaseIds = (phases ?? []).map((p) => p.id);
-  const { data: topics } = await supabase
-    .from("topics")
-    .select("id, phase_id, title, order_index")
-    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"])
+  const { data } = await supabase
+    .from("tracks")
+    .select(
+      "id, label, icon_key, phases(order_index, topics(id, title, order_index, user_progress(status), " +
+        "resources(id, title, url, source, format, length, note, icon_key, provider, embeddable, " +
+        "duration_seconds, order_index, user_resource_progress(status, seconds_watched, last_position_seconds, updated_at))))"
+    )
+    .in("id", trackIds)
     .order("order_index");
-  const topicIds = (topics ?? []).map((t) => t.id);
-  const { data: resources } = await supabase
-    .from("resources")
-    .select("*")
-    .in("topic_id", topicIds.length ? topicIds : ["__none__"])
-    .order("order_index");
-  const resourceIds = (resources ?? []).map((r) => r.id);
 
-  const [{ data: topicProgress }, { data: resourceProgress }] = await Promise.all([
-    supabase.from("user_progress").select("topic_id, status"),
-    supabase
-      .from("user_resource_progress")
-      .select("resource_id, status, seconds_watched, last_position_seconds, updated_at")
-      .in("resource_id", resourceIds.length ? resourceIds : ["__none__"]),
-  ]);
+  const tracks = (data ?? []) as unknown as LibraryTrackRow[];
+  const rows: LibraryResource[] = [];
 
-  const trackById = new Map((tracks ?? []).map((t) => [t.id, t]));
-  const trackOrder = new Map((tracks ?? []).map((t, i) => [t.id, i]));
-  const phaseTrack = new Map((phases ?? []).map((p) => [p.id, p.track_id]));
-  const topicById = new Map((topics ?? []).map((t) => [t.id, t]));
-  const topicOrder = new Map((topics ?? []).map((t, i) => [t.id, i]));
-  const doneTopicSet = new Set((topicProgress ?? []).filter((p) => p.status === "done").map((p) => p.topic_id));
-  const progressByResource = new Map((resourceProgress ?? []).map((p) => [p.resource_id, p]));
+  for (const track of tracks) {
+    const phases = [...track.phases].sort((a, b) => a.order_index - b.order_index);
+    for (const phase of phases) {
+      const topics = [...phase.topics].sort((a, b) => a.order_index - b.order_index);
+      for (const topic of topics) {
+        const doneTopic = topic.user_progress?.[0]?.status === "done";
+        const resources = [...topic.resources].sort((a, b) => a.order_index - b.order_index);
+        for (const r of resources) {
+          const rp = r.user_resource_progress?.[0];
+          const status: ResourceBankStatus =
+            rp?.status === "done" || doneTopic ? "done" : rp?.status === "in_progress" ? "in_progress" : "todo";
 
-  const rows = (resources ?? [])
-    .map((r) => {
-      const topic = topicById.get(r.topic_id);
-      const trackId = topic ? phaseTrack.get(topic.phase_id) : undefined;
-      const track = trackId ? trackById.get(trackId) : undefined;
-      if (!topic || !track) return null;
+          rows.push({
+            id: r.id,
+            title: r.title,
+            url: r.url,
+            source: r.source,
+            format: r.format,
+            length: r.length,
+            note: r.note,
+            iconKey: r.icon_key,
+            provider: r.provider,
+            embeddable: r.embeddable,
+            durationSeconds: r.duration_seconds,
+            topicId: topic.id,
+            topicTitle: topic.title,
+            trackId: track.id,
+            trackLabel: track.label,
+            trackIconKey: track.icon_key,
+            status,
+            secondsWatched: rp?.seconds_watched ?? 0,
+            lastPositionSeconds: rp?.last_position_seconds ?? 0,
+            updatedAt: rp?.updated_at ?? null,
+          });
+        }
+      }
+    }
+  }
 
-      const rp = progressByResource.get(r.id);
-      const status: ResourceBankStatus =
-        rp?.status === "done" || doneTopicSet.has(topic.id)
-          ? "done"
-          : rp?.status === "in_progress"
-            ? "in_progress"
-            : "todo";
-
-      const row: LibraryResource = {
-        id: r.id,
-        title: r.title,
-        url: r.url,
-        source: r.source,
-        format: r.format,
-        length: r.length,
-        note: r.note,
-        iconKey: r.icon_key,
-        provider: r.provider,
-        embeddable: r.embeddable,
-        durationSeconds: r.duration_seconds,
-        topicId: topic.id,
-        topicTitle: topic.title,
-        trackId: track.id,
-        trackLabel: track.label,
-        trackIconKey: track.icon_key,
-        status,
-        secondsWatched: rp?.seconds_watched ?? 0,
-        lastPositionSeconds: rp?.last_position_seconds ?? 0,
-        updatedAt: rp?.updated_at ?? null,
-      };
-      return row;
-    })
-    .filter((r): r is LibraryResource => r !== null);
-
-  rows.sort(
-    (a, b) =>
-      (trackOrder.get(a.trackId) ?? 0) - (trackOrder.get(b.trackId) ?? 0) ||
-      (topicOrder.get(a.topicId) ?? 0) - (topicOrder.get(b.topicId) ?? 0)
-  );
   return rows;
 }
 
+interface ResourceDetailRow {
+  id: string;
+  topic_id: string;
+  order_index: number;
+  title: string;
+  url: string;
+  source: string | null;
+  format: string | null;
+  length: string | null;
+  note: string | null;
+  provider: string | null;
+  external_id: string | null;
+  duration_seconds: number | null;
+  embeddable: boolean;
+  icon_key: string | null;
+  user_resource_progress: { status: string; seconds_watched: number; last_position_seconds: number }[];
+  topics: {
+    id: string;
+    title: string;
+    phase_id: string;
+    user_progress: { status: string }[];
+    phases: { id: string; track_id: string; tracks: { id: string; label: string; icon_key: string | null } | null } | null;
+  } | null;
+}
+
+// One nested select (resources -> topics -> phases -> tracks, with the
+// two per-user progress tables embedded alongside via their own FKs to
+// resources/topics) replaces 6 fully sequential round-trips with 1 — RLS
+// still scopes the embedded user_progress/user_resource_progress rows to
+// the caller, exactly as if queried directly.
 export async function getResourceDetail(supabase: Client, resourceId: string) {
-  const { data: resource } = await supabase.from("resources").select("*").eq("id", resourceId).single();
-  if (!resource) return null;
-  const { data: topic } = await supabase
-    .from("topics")
-    .select("id, title, phase_id")
-    .eq("id", resource.topic_id)
-    .single();
+  const { data: row } = await supabase
+    .from("resources")
+    .select(
+      "id, topic_id, order_index, title, url, source, format, length, note, provider, external_id, " +
+        "duration_seconds, embeddable, icon_key, " +
+        "user_resource_progress(status, seconds_watched, last_position_seconds), " +
+        "topics(id, title, phase_id, user_progress(status), phases(id, track_id, tracks(id, label, icon_key)))"
+    )
+    .eq("id", resourceId)
+    .maybeSingle();
+  if (!row) return null;
+
+  const r = row as unknown as ResourceDetailRow;
+  const { user_resource_progress, topics, ...resource } = r;
+  const topic = topics ? { id: topics.id, title: topics.title, phase_id: topics.phase_id } : null;
   if (!topic) return null;
-  const { data: phase } = await supabase.from("phases").select("id, track_id").eq("id", topic.phase_id).single();
-  const { data: track } = phase
-    ? await supabase.from("tracks").select("id, label, icon_key").eq("id", phase.track_id).single()
-    : { data: null };
-  const { data: topicStatus } = await supabase
-    .from("user_progress")
-    .select("status")
-    .eq("topic_id", topic.id)
-    .maybeSingle();
-  const { data: rp } = await supabase
-    .from("user_resource_progress")
-    .select("*")
-    .eq("resource_id", resourceId)
-    .maybeSingle();
+  const track = topics?.phases?.tracks ?? null;
+  const rp = user_resource_progress?.[0];
+  const topicStatus = topics?.user_progress?.[0]?.status;
 
   const status: ResourceBankStatus =
-    rp?.status === "done" || topicStatus?.status === "done"
+    rp?.status === "done" || topicStatus === "done"
       ? "done"
       : rp?.status === "in_progress"
         ? "in_progress"
@@ -680,54 +850,50 @@ export interface ReviewItem {
   nextReviewDate: string;
 }
 
+interface SpacedRepetitionRow {
+  topic_id: string;
+  reps: number;
+  next_review_date: string;
+  topics: { title: string; section: string | null; estimated_time: string | null; phases: { title: string } | null } | null;
+}
+
+// Embedding topics/phases directly under spaced_repetition (both real FKs)
+// replaces what used to be 2 extra sequential round-trips (topics, then
+// phases) with nothing extra at all — due/upcoming stay the only 2 queries,
+// now run fully in parallel with no follow-up.
 export async function getReviewQueue(supabase: Client) {
   const today = new Date().toISOString().slice(0, 10);
+  const embed = "topic_id, reps, next_review_date, topics(title, section, estimated_time, phases(title))";
 
   const [{ data: due }, { data: upcoming }] = await Promise.all([
+    supabase.from("spaced_repetition").select(embed).lte("next_review_date", today).order("next_review_date"),
     supabase
       .from("spaced_repetition")
-      .select("topic_id, reps, next_review_date")
-      .lte("next_review_date", today)
-      .order("next_review_date"),
-    supabase
-      .from("spaced_repetition")
-      .select("topic_id, reps, next_review_date")
+      .select(embed)
       .gt("next_review_date", today)
       .order("next_review_date")
       .limit(6),
   ]);
 
-  const topicIds = [...(due ?? []), ...(upcoming ?? [])].map((r) => r.topic_id);
-  const { data: topics } = await supabase
-    .from("topics")
-    .select("id, title, section, estimated_time, phase_id")
-    .in("id", topicIds.length ? topicIds : ["__none__"]);
-  const topicById = new Map((topics ?? []).map((t) => [t.id, t]));
-
-  const phaseIds = (topics ?? []).map((t) => t.phase_id);
-  const { data: phases } = await supabase
-    .from("phases")
-    .select("id, title")
-    .in("id", phaseIds.length ? phaseIds : ["__none__"]);
-  const phaseTitle = new Map((phases ?? []).map((p) => [p.id, p.title]));
-
-  function toItem(row: { topic_id: string; reps: number; next_review_date: string }): ReviewItem | null {
-    const topic = topicById.get(row.topic_id);
-    if (!topic) return null;
+  function toItem(row: SpacedRepetitionRow): ReviewItem | null {
+    if (!row.topics) return null;
     return {
-      topicId: topic.id,
-      title: topic.title,
-      phaseTitle: phaseTitle.get(topic.phase_id) ?? "",
-      section: topic.section,
-      estimatedTime: topic.estimated_time,
+      topicId: row.topic_id,
+      title: row.topics.title,
+      phaseTitle: row.topics.phases?.title ?? "",
+      section: row.topics.section,
+      estimatedTime: row.topics.estimated_time,
       reps: row.reps,
       nextReviewDate: row.next_review_date,
     };
   }
 
+  const dueRows = (due ?? []) as unknown as SpacedRepetitionRow[];
+  const upcomingRows = (upcoming ?? []) as unknown as SpacedRepetitionRow[];
+
   return {
-    due: (due ?? []).map(toItem).filter((x): x is ReviewItem => !!x),
-    upcoming: (upcoming ?? []).map(toItem).filter((x): x is ReviewItem => !!x),
+    due: dueRows.map(toItem).filter((x): x is ReviewItem => !!x),
+    upcoming: upcomingRows.map(toItem).filter((x): x is ReviewItem => !!x),
   };
 }
 
@@ -736,42 +902,41 @@ export async function getBuildProjects(supabase: Client) {
   return data ?? [];
 }
 
+interface CompletedTopicsTrackRow {
+  id: string;
+  label: string;
+  phases: {
+    topics: { title: string; user_progress: { status: string; completed_at: string | null }[] }[];
+  }[];
+}
+
 // Scoped to the caller's enrolled tracks — with the catalogue growing past
 // 250+ topics, pulling every track/phase/topic regardless of enrollment
-// would waste most of the query on tracks the user never joined.
+// would waste most of the query on tracks the user never joined. One
+// nested select (tracks -> phases -> topics -> user_progress) replaces
+// what used to be 4 sequential round-trips.
 export async function getCompletedTopicsByTrack(supabase: Client, trackIds: string[]) {
   if (!trackIds.length) return [];
 
-  const { data: tracks } = await supabase
+  const { data } = await supabase
     .from("tracks")
-    .select("id, label")
+    .select("id, label, phases(topics(title, user_progress(status, completed_at)))")
     .in("id", trackIds)
     .order("order_index");
-  const { data: phases } = await supabase.from("phases").select("id, track_id").in("track_id", trackIds);
-  const phaseIds = (phases ?? []).map((p) => p.id);
-  const { data: topics } = await supabase
-    .from("topics")
-    .select("id, phase_id, title")
-    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"]);
-  const { data: progress } = await supabase
-    .from("user_progress")
-    .select("topic_id, status, completed_at")
-    .eq("status", "done");
 
-  const phaseTrack = new Map((phases ?? []).map((p) => [p.id, p.track_id]));
-  const topicById = new Map((topics ?? []).map((t) => [t.id, t]));
+  const tracks = (data ?? []) as unknown as CompletedTopicsTrackRow[];
 
-  return (tracks ?? []).map((track) => {
-    const doneTopics = (progress ?? [])
-      .filter((p) => {
-        const topic = topicById.get(p.topic_id);
-        return topic && phaseTrack.get(topic.phase_id) === track.id;
-      })
-      .map((p) => ({
-        title: topicById.get(p.topic_id)?.title ?? "",
-        completedAt: p.completed_at,
-      }));
-    return { track, doneTopics };
+  return tracks.map((track) => {
+    const doneTopics: { title: string; completedAt: string | null }[] = [];
+    for (const phase of track.phases) {
+      for (const topic of phase.topics) {
+        const progress = topic.user_progress?.[0];
+        if (progress?.status === "done") {
+          doneTopics.push({ title: topic.title, completedAt: progress.completed_at });
+        }
+      }
+    }
+    return { track: { id: track.id, label: track.label }, doneTopics };
   });
 }
 
