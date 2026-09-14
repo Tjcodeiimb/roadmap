@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { getReviewQueue } from "@/lib/queries";
 import { ReviewCard } from "@/components/review/review-card";
+import { CheckCircleMark } from "@/components/icons";
 
 export default async function ReviewPage() {
   const supabase = await createClient();
@@ -27,7 +28,7 @@ export default async function ReviewPage() {
 
       {due.length === 0 && (
         <div className="rounded-2xl border border-border bg-paper-2 p-8 text-center">
-          <div className="mb-2 text-3xl">✅</div>
+          <CheckCircleMark size={32} className="mx-auto mb-2 text-success" />
           <div className="font-semibold text-ink">All caught up</div>
           <div className="mt-1 text-sm text-ink-2">Complete more topics and they&apos;ll come back here for review.</div>
         </div>

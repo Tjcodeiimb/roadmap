@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { REVIEW_QUALITY_BUTTONS, REVIEW_QUALITY_LABELS } from "@/lib/gamification/constants";
 import { reviewTopic } from "@/app/actions/progress";
 import { useToast } from "@/components/ui/toast";
+import { ICONS, FALLBACK_ICON } from "@/components/icons";
 import type { ReviewItem } from "@/lib/queries";
 
 export function ReviewCard({ item }: { item: ReviewItem }) {
@@ -51,16 +52,19 @@ export function ReviewCard({ item }: { item: ReviewItem }) {
             </span>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
-            {REVIEW_QUALITY_BUTTONS.map((b) => (
-              <button
-                key={b.quality}
-                disabled={pending}
-                onClick={() => rate(b.quality as 0 | 1 | 2)}
-                className="flex-1 rounded-xl border border-border bg-paper py-2.5 text-sm font-medium text-ink transition-colors hover:bg-paper-3"
-              >
-                {b.icon} {b.label}
-              </button>
-            ))}
+            {REVIEW_QUALITY_BUTTONS.map((b) => {
+              const Icon = ICONS[b.iconKey] ?? FALLBACK_ICON;
+              return (
+                <button
+                  key={b.quality}
+                  disabled={pending}
+                  onClick={() => rate(b.quality as 0 | 1 | 2)}
+                  className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-border bg-paper py-2.5 text-sm font-medium text-ink transition-colors hover:bg-paper-3"
+                >
+                  <Icon size={15} className="text-ink-2" /> {b.label}
+                </button>
+              );
+            })}
           </div>
         </motion.div>
       )}

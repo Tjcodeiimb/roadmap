@@ -3,22 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import {
-  LayoutDashboard,
-  Sparkles,
-  LineChart,
-  Users,
-  RefreshCcw,
-  UserRound,
-  Trophy,
-  ShieldCheck,
-} from "lucide-react";
-
-const TRACK_ICONS: Record<string, React.ComponentType<{ size?: number }>> = {
-  ai: Sparkles,
-  finance: LineChart,
-  consulting: Users,
-};
+import { LayoutDashboard, UserRound, ShieldCheck } from "lucide-react";
+import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark } from "@/components/icons";
 
 export interface NavTrack {
   id: string;
@@ -43,11 +29,11 @@ export function SidebarNav({
     ...tracks.map((t) => ({
       href: `/track/${t.id}`,
       label: t.label,
-      icon: TRACK_ICONS[t.id] ?? Sparkles,
+      icon: ICONS[t.id] ?? FALLBACK_ICON,
     })),
-    { href: "/review", label: "Review", icon: RefreshCcw, badge: reviewCount },
+    { href: "/review", label: "Review", icon: RepeatMark, badge: reviewCount },
     { href: "/profile", label: "Profile", icon: UserRound },
-    ...(leaderboardEnabled ? [{ href: "/leaderboard", label: "Leaderboard", icon: Trophy }] : []),
+    ...(leaderboardEnabled ? [{ href: "/leaderboard", label: "Leaderboard", icon: TrophyMark }] : []),
     ...(isAdmin ? [{ href: "/admin", label: "Admin", icon: ShieldCheck }] : []),
   ];
 

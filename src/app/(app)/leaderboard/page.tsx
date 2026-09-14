@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { getLeaderboard } from "@/lib/queries";
 import { Card } from "@/components/ui/card";
+import { StreakMark } from "@/components/icons";
 
 export default async function LeaderboardPage() {
   const supabase = await createClient();
@@ -21,7 +22,9 @@ export default async function LeaderboardPage() {
             <Card key={i} className="flex items-center gap-4 py-3.5">
               <div className="w-6 text-center font-display font-bold text-ink-3">{i + 1}</div>
               <div className="flex-1 font-medium text-ink">{row.full_name ?? "Anonymous"}</div>
-              <div className="flex items-center gap-1 text-sm text-ink-2">🔥 {row.current_streak}</div>
+              <div className="flex items-center gap-1.5 text-sm text-ink-2">
+                <StreakMark size={14} /> {row.current_streak}
+              </div>
               <div className="font-display font-bold text-ink">{row.total_xp} XP</div>
             </Card>
           ))}

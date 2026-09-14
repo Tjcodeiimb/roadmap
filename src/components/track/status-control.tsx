@@ -8,6 +8,7 @@ import type { Status } from "@/lib/database.types";
 import { STATUS_LABELS } from "@/lib/gamification/constants";
 import { setTopicStatus } from "@/app/actions/progress";
 import { useToast } from "@/components/ui/toast";
+import { SparkMark } from "@/components/icons";
 
 const OPTIONS: Status[] = ["todo", "next", "active", "done"];
 
@@ -61,9 +62,9 @@ export function StatusControl({ topicId, status, path }: { topicId: string; stat
             animate={{ opacity: 1, scale: 1.4 }}
             exit={{ opacity: 0, scale: 1.8 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="pointer-events-none absolute -top-2 left-0 text-2xl"
+            className="pointer-events-none absolute -top-3 left-0 flex items-center gap-1.5 font-display text-lg font-bold text-accent"
           >
-            ✨ +50 XP
+            <SparkMark size={20} /> +50 XP
           </motion.div>
         )}
       </AnimatePresence>

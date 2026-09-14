@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { StatusBadge } from "@/components/ui/badge";
+import { listReveal } from "@/lib/motion";
 import type { Status } from "@/lib/database.types";
 
 export function TopicRow({
@@ -20,12 +21,7 @@ export function TopicRow({
   index: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.3, delay: Math.min(index, 8) * 0.04, ease: "easeOut" }}
-    >
+    <motion.div {...listReveal(index)}>
       <Link
         href={href}
         className="group flex items-center gap-4 rounded-xl border border-border bg-paper-2 px-4 py-3.5 transition-all duration-150 hover:border-accent/40 hover:bg-paper-3 active:scale-[0.995]"

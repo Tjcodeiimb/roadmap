@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { ClockMark } from "@/components/icons";
 
 // Supabase's default (no-custom-SMTP-required) invite/magic-link emails
 // deliver the session as a URL hash fragment on the Site URL
@@ -59,7 +60,7 @@ export default function RootPage() {
   if (error) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center gap-3 bg-paper px-4 text-center">
-        <div className="text-4xl">⏱️</div>
+        <ClockMark size={40} className="text-ink-3" />
         <h1 className="font-display text-xl font-bold text-ink">That link expired</h1>
         <p className="max-w-sm text-sm text-ink-2">{error}</p>
         <a href="/login" className="text-sm font-medium text-accent underline underline-offset-4">

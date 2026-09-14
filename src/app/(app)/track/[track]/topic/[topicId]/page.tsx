@@ -64,7 +64,6 @@ export default async function TopicPage({
           {resources.map((r) => (
             <ResourceCard
               key={r.id}
-              icon={r.icon}
               title={r.title}
               url={r.url}
               source={r.source}

@@ -129,6 +129,17 @@ body {
   box-shadow: 0 1px 2px rgb(var(--shadow-color) / 0.04), 0 8px 24px -8px rgb(var(--shadow-color) / 0.10);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .scrollbar-thin::-webkit-scrollbar {
   width: 6px;
   height: 6px;

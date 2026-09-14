@@ -3,15 +3,10 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, Sparkles, LineChart, Users, ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { selectTracks } from "@/app/actions/progress";
-
-const TRACK_ICONS: Record<string, React.ComponentType<{ size?: number }>> = {
-  ai: Sparkles,
-  finance: LineChart,
-  consulting: Users,
-};
+import { ICONS, FALLBACK_ICON, SignalMark } from "@/components/icons";
 
 interface TrackOption {
   id: string;
@@ -52,13 +47,13 @@ export function OnboardingWizard({ tracks }: { tracks: TrackOption[] }) {
       <AnimatePresence mode="wait">
         {step === 0 && (
           <Screen key="welcome">
-            <div className="mb-5 text-5xl">👋</div>
+            <SignalMark size={44} className="mx-auto mb-5 text-accent" />
             <h1 className="font-display text-3xl font-extrabold tracking-tight text-ink">
               Welcome to UpForge Learning
             </h1>
             <p className="mt-3 text-base text-ink-2">
-              A self-paced way to build real skills. No cohorts, no deadlines —
-              just steady progress, tracked for you.
+              A self-paced way to build real skills. No deadlines, no fixed
+              schedule — just steady progress, tracked for you.
             </p>
             <Button size="lg" className="mt-8 w-full" onClick={() => setStep(1)}>
               Get started <ArrowRight size={16} />
@@ -74,7 +69,7 @@ export function OnboardingWizard({ tracks }: { tracks: TrackOption[] }) {
             </p>
             <div className="mt-6 flex flex-col gap-3">
               {tracks.map((t) => {
-                const Icon = TRACK_ICONS[t.id] ?? Sparkles;
+                const Icon = ICONS[t.id] ?? FALLBACK_ICON;
                 const active = chosen.includes(t.id);
                 return (
                   <button
@@ -101,9 +96,9 @@ export function OnboardingWizard({ tracks }: { tracks: TrackOption[] }) {
           <Screen key="how">
             <h2 className="font-display text-2xl font-bold text-ink">How it works</h2>
             <div className="mt-6 flex flex-col gap-4">
-              <HowItem icon="⚡" title="Earn XP" desc="Complete topics to level up. Progress is saved to your account automatically." />
-              <HowItem icon="🔥" title="Build a streak" desc="Visit most days to keep your streak alive." />
-              <HowItem icon="🔁" title="Spaced review" desc="Finished topics resurface for a quick review, right when you're about to forget them." />
+              <HowItem iconKey="bolt" title="Earn XP" desc="Complete topics to level up. Progress is saved to your account automatically." />
+              <HowItem iconKey="streak" title="Build a streak" desc="Visit most days to keep your streak alive." />
+              <HowItem iconKey="repeat" title="Spaced review" desc="Finished topics resurface for a quick review, right when you're about to forget them." />
             </div>
             <Button size="lg" className="mt-8 w-full" disabled={pending} onClick={finish}>
               {pending ? "Setting up…" : "Go to dashboard"} <ArrowRight size={16} />
@@ -129,10 +124,11 @@ function Screen({ children }: { children: React.ReactNode }) {
   );
 }
 
-function HowItem({ icon, title, desc }: { icon: string; title: string; desc: string }) {
+function HowItem({ iconKey, title, desc }: { iconKey: string; title: string; desc: string }) {
+  const Icon = ICONS[iconKey] ?? FALLBACK_ICON;
   return (
     <div className="flex items-start gap-3 text-left">
-      <div className="text-2xl leading-none">{icon}</div>
+      <Icon size={22} className="mt-0.5 shrink-0 text-accent" />
       <div>
         <div className="font-semibold text-ink">{title}</div>
         <div className="text-sm text-ink-2">{desc}</div>

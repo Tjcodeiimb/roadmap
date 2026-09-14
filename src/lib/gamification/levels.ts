@@ -1,21 +1,22 @@
-// Ported verbatim from the original tool's LEVELS constant.
+// Level bands ported from the original tool. Thresholds are mirrored by
+// `xp_level()` in the SQL migration — change one and you must change both.
 export interface LevelDef {
+  level: number;
   min: number;
   max: number;
-  icon: string;
   name: string;
   label: string;
 }
 
 export const LEVELS: LevelDef[] = [
-  { min: 0, max: 50, icon: "🌱", name: "Curious Mind", label: "Level 1" },
-  { min: 50, max: 150, icon: "📚", name: "Active Learner", label: "Level 2" },
-  { min: 150, max: 350, icon: "⚡", name: "Builder Mindset", label: "Level 3" },
-  { min: 350, max: 700, icon: "🔥", name: "Flow State", label: "Level 4" },
-  { min: 700, max: 1200, icon: "🚀", name: "Maker", label: "Level 5" },
-  { min: 1200, max: 2000, icon: "💎", name: "AI Practitioner", label: "Level 6" },
-  { min: 2000, max: 3500, icon: "🧠", name: "Deep Specialist", label: "Level 7" },
-  { min: 3500, max: Infinity, icon: "👑", name: "AI Native", label: "Level 8" },
+  { level: 1, min: 0, max: 50, name: "Curious Mind", label: "Level 1" },
+  { level: 2, min: 50, max: 150, name: "Active Learner", label: "Level 2" },
+  { level: 3, min: 150, max: 350, name: "Builder Mindset", label: "Level 3" },
+  { level: 4, min: 350, max: 700, name: "Flow State", label: "Level 4" },
+  { level: 5, min: 700, max: 1200, name: "Maker", label: "Level 5" },
+  { level: 6, min: 1200, max: 2000, name: "Practitioner", label: "Level 6" },
+  { level: 7, min: 2000, max: 3500, name: "Deep Specialist", label: "Level 7" },
+  { level: 8, min: 3500, max: Infinity, name: "Polymath", label: "Level 8" },
 ];
 
 export function levelForXP(xp: number): LevelDef {

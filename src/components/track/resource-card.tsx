@@ -1,6 +1,8 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalMark, ICONS, FALLBACK_ICON } from "@/components/icons";
 
-function inferAction(title: string, note: string | null, format: string | null, url: string) {
+type Action = "Watch" | "Course" | "Read" | "Practice" | "Open";
+
+function inferAction(title: string, note: string | null, format: string | null, url: string): Action {
   const text = `${title} ${note ?? ""} ${format ?? ""} ${url}`.toLowerCase();
   if (/youtube|youtu\.be|watch|video|podcast/.test(text)) return "Watch";
   if (/course|academy|cert|freecodecamp|deeplearning|coursera|khan academy/.test(text)) return "Course";
@@ -9,8 +11,16 @@ function inferAction(title: string, note: string | null, format: string | null, 
   return "Open";
 }
 
+const ACTION_ICON_KEY: Record<Action, string> = {
+  Watch: "video",
+  Course: "course",
+  Read: "article",
+  Practice: "practice",
+  Open: "web",
+};
+
 export function ResourceCard({
-  icon,
+  iconKey,
   title,
   url,
   source,
@@ -18,7 +28,7 @@ export function ResourceCard({
   length,
   note,
 }: {
-  icon?: string | null;
+  iconKey?: string | null;
   title: string;
   url: string;
   source?: string | null;
@@ -28,6 +38,7 @@ export function ResourceCard({
 }) {
   const action = inferAction(title, note ?? null, format ?? null, url);
   const metaParts = [source, format, length].filter(Boolean);
+  const Icon = ICONS[iconKey ?? ACTION_ICON_KEY[action]] ?? FALLBACK_ICON;
 
   return (
     <a
@@ -36,11 +47,11 @@ export function ResourceCard({
       rel="noopener noreferrer"
       className="group flex items-start gap-3 rounded-xl border border-border bg-paper-2 p-4 transition-all duration-150 hover:border-accent/40 hover:bg-paper-3"
     >
-      <div className="mt-0.5 text-xl leading-none">{icon || "🔗"}</div>
+      <Icon size={20} className="mt-0.5 shrink-0 text-ink-2" />
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-2">
           <span className="font-medium text-ink group-hover:underline">{title}</span>
-          <ExternalLink size={14} className="mt-1 shrink-0 text-ink-3" />
+          <ExternalMark size={14} className="mt-1 shrink-0 text-ink-3" />
         </div>
         {metaParts.length > 0 && <div className="mt-0.5 text-xs text-ink-3">{metaParts.join(" · ")}</div>}
         {note && <div className="mt-1 text-sm text-ink-2">{note}</div>}

@@ -3,7 +3,8 @@ import { createClient } from "@/lib/supabase/server";
 import { getProfile, getSelectedTracks, getTrackSummaries, getReviewQueue } from "@/lib/queries";
 import { Card } from "@/components/ui/card";
 import { ProgressRing } from "@/components/ui/progress-ring";
-import { ArrowRight, RefreshCcw } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { BurstMark, RepeatMark } from "@/components/icons";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -33,7 +34,7 @@ export default async function DashboardPage() {
         <Link href="/review">
           <Card className="flex items-center gap-4 border-accent/30 bg-accent-soft transition-transform duration-200 hover:scale-[1.01]">
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-accent-ink">
-              <RefreshCcw size={18} />
+              <RepeatMark size={18} />
             </div>
             <div className="flex-1">
               <div className="font-semibold text-ink">
@@ -71,8 +72,8 @@ export default async function DashboardPage() {
                   <ArrowRight size={16} className="shrink-0" />
                 </Link>
               ) : (
-                <div className="rounded-xl bg-success-soft px-4 py-3 text-sm font-medium text-success">
-                  All topics complete 🎉
+                <div className="flex items-center gap-2 rounded-xl bg-success-soft px-4 py-3 text-sm font-medium text-success">
+                  <BurstMark size={16} /> All topics complete
                 </div>
               )}
               <Link href={`/track/${s.track.id}`} className="text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink">
