@@ -1,7 +1,7 @@
 import Link from "next/link";
 import clsx from "clsx";
 import { createClient } from "@/lib/supabase/server";
-import { getMarketplaceCourses, getMarketplaceCohorts } from "@/lib/queries";
+import { getMarketplaceCourses, getMarketplaceCohorts, getTrendingTrackIds } from "@/lib/queries";
 import { CourseCard } from "@/components/marketplace/course-card";
 import { CohortCard } from "@/components/marketplace/cohort-card";
 
@@ -59,7 +59,11 @@ export default async function MarketplacePage({
 }
 
 async function CoursesTab({ supabase }: { supabase: Awaited<ReturnType<typeof createClient>> }) {
-  const courses = await getMarketplaceCourses(supabase);
+  const [courses, trendingIds] = await Promise.all([
+    getMarketplaceCourses(supabase),
+    getTrendingTrackIds(supabase),
+  ]);
+  const trendingSet = new Set(trendingIds);
 
   return (
     <div className="flex flex-col gap-10">
@@ -71,7 +75,7 @@ async function CoursesTab({ supabase }: { supabase: Awaited<ReturnType<typeof cr
             <h2 className="mb-4 font-display text-lg font-bold text-ink">{TIER_TITLE[tier]}</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               {inTier.map((course, i) => (
-                <CourseCard key={course.id} course={course} index={i} />
+                <CourseCard key={course.id} course={course} index={i} trending={trendingSet.has(course.id)} />
               ))}
             </div>
           </section>

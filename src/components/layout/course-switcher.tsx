@@ -3,9 +3,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Search, X } from "lucide-react";
+import { Search, X, BookOpen, FileText, Link2, Sparkles, Layers } from "lucide-react";
 import { ICONS, FALLBACK_ICON } from "@/components/icons";
 import { overlayVariants, uiTransition } from "@/lib/motion";
+import { searchCatalog, type SearchResult } from "@/app/actions/search";
 import type { NavTrack } from "./sidebar-nav";
 
 /** Trigger button — safe to render more than once (desktop aside + mobile drawer); all instances share one modal via `onOpen`. */
@@ -16,13 +17,37 @@ export function CourseSwitcherTrigger({ onOpen }: { onOpen: () => void }) {
       className="flex w-full items-center gap-2.5 rounded-xl border border-border bg-paper px-3 py-2.5 text-left text-sm text-ink-2 transition-colors hover:bg-paper-3"
     >
       <Search size={15} />
-      <span className="flex-1">Switch course</span>
+      <span className="flex-1">Search</span>
       <span className="hidden rounded-md border border-border bg-paper-2 px-1.5 py-0.5 text-[10px] font-medium text-ink-3 sm:inline">
         ⌘K
       </span>
     </button>
   );
 }
+
+interface ListItem {
+  key: string;
+  icon: React.ComponentType<{ size?: number }>;
+  label: string;
+  snippet?: string | null;
+  go: () => void;
+}
+
+const TYPE_ICON: Record<SearchResult["type"], React.ComponentType<{ size?: number }>> = {
+  track: BookOpen,
+  cohort: Layers,
+  topic: FileText,
+  resource: Link2,
+  skill: Sparkles,
+};
+
+const TYPE_LABEL: Record<SearchResult["type"], string> = {
+  track: "Courses",
+  cohort: "Cohorts",
+  topic: "Topics",
+  resource: "Resources",
+  skill: "Skills",
+};
 
 /** The modal itself — mount exactly once (e.g. in AppShell), state owned by the parent. */
 export function CourseSwitcherModal({
@@ -35,15 +60,68 @@ export function CourseSwitcherModal({
   onClose: () => void;
 }) {
   const [query, setQuery] = useState("");
+  const [results, setResults] = useState<SearchResult[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const router = useRouter();
 
-  const filtered = useMemo(() => {
+  const trackFiltered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return tracks;
     return tracks.filter((t) => t.label.toLowerCase().includes(q));
   }, [tracks, query]);
+
+  const searching = query.trim().length >= 2;
+
+  // Dropping back below the search threshold clears stale results — a
+  // derived reset done during render (matching the prevOpen/prevQuery
+  // pattern below), not in the effect, which should only ever set state
+  // from inside its async callback.
+  const [prevSearching, setPrevSearching] = useState(searching);
+  if (searching !== prevSearching) {
+    setPrevSearching(searching);
+    if (!searching) setResults([]);
+  }
+
+  // Debounced server search once the query is long enough to be worth a
+  // round-trip; below that, the instant local track filter above covers it.
+  useEffect(() => {
+    if (!searching) return;
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      searchCatalog(query).then(setResults);
+    }, 200);
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
+  }, [query, searching]);
+
+  function go(item: ListItem) {
+    onClose();
+    item.go();
+  }
+
+  const items: ListItem[] = searching
+    ? results.map((r) => ({
+        key: `${r.type}-${r.id}`,
+        icon: TYPE_ICON[r.type],
+        label: r.title,
+        snippet: r.snippet,
+        go: () => {
+          if (r.type === "track") router.push(`/track/${r.id}`);
+          else if (r.type === "topic" && r.parentTrackId) router.push(`/track/${r.parentTrackId}/topic/${r.id}`);
+          else if (r.type === "resource") router.push(`/library/resource/${r.id}`);
+          else if (r.type === "cohort") router.push(`/marketplace/cohort/${r.id}`);
+          else router.push("/skills");
+        },
+      }))
+    : trackFiltered.map((t) => ({
+        key: t.id,
+        icon: ICONS[t.id] ?? FALLBACK_ICON,
+        label: t.label,
+        go: () => router.push(`/track/${t.id}`),
+      }));
 
   // Reset search + selection when the modal transitions closed -> open, and
   // whenever the query changes. Done during render (not in an effect) per
@@ -69,26 +147,30 @@ export function CourseSwitcherModal({
     if (open) requestAnimationFrame(() => inputRef.current?.focus());
   }, [open]);
 
-  function go(trackId: string) {
-    onClose();
-    router.push(`/track/${trackId}`);
-  }
-
   function onListKeyDown(e: React.KeyboardEvent) {
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setActiveIndex((i) => Math.min(i + 1, filtered.length - 1));
+      setActiveIndex((i) => Math.min(i + 1, items.length - 1));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
       setActiveIndex((i) => Math.max(i - 1, 0));
     } else if (e.key === "Enter") {
       e.preventDefault();
-      const track = filtered[activeIndex];
-      if (track) go(track.id);
+      const item = items[activeIndex];
+      if (item) go(item);
     } else if (e.key === "Escape") {
       onClose();
     }
   }
+
+  // Group by type only in search mode — the empty-query track list stays a
+  // flat list, matching the original "jump to a course" behavior.
+  const grouped = searching
+    ? results.reduce<Record<string, number[]>>((acc, r, i) => {
+        (acc[r.type] ??= []).push(i);
+        return acc;
+      }, {})
+    : null;
 
   return (
     <AnimatePresence>
@@ -117,39 +199,79 @@ export function CourseSwitcherModal({
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={onListKeyDown}
-                  placeholder="Jump to a course…"
+                  placeholder="Search courses, topics, resources…"
                   className="flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-ink-3"
                 />
                 <button onClick={onClose} aria-label="Close" className="text-ink-3 hover:text-ink">
                   <X size={16} />
                 </button>
               </div>
-              <div className="max-h-80 overflow-y-auto scrollbar-thin p-2">
-                {filtered.length === 0 && (
-                  <div className="px-3 py-6 text-center text-sm text-ink-3">No courses match.</div>
+              <div className="max-h-96 overflow-y-auto scrollbar-thin p-2">
+                {items.length === 0 && (
+                  <div className="px-3 py-6 text-center text-sm text-ink-3">
+                    {searching ? "No matches." : "No courses match."}
+                  </div>
                 )}
-                {filtered.map((t, i) => {
-                  const Icon = ICONS[t.id] ?? FALLBACK_ICON;
-                  return (
-                    <button
-                      key={t.id}
-                      onClick={() => go(t.id)}
-                      onMouseEnter={() => setActiveIndex(i)}
-                      className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition-colors ${
-                        i === activeIndex ? "bg-accent-soft text-accent" : "text-ink-2"
-                      }`}
-                    >
-                      <Icon size={17} />
-                      {t.label}
-                    </button>
-                  );
-                })}
+                {grouped
+                  ? (Object.keys(TYPE_LABEL) as SearchResult["type"][])
+                      .filter((type) => grouped[type]?.length)
+                      .map((type) => (
+                        <div key={type} className="mb-1">
+                          <div className="px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-3">
+                            {TYPE_LABEL[type]}
+                          </div>
+                          {grouped[type].map((i) => (
+                            <ResultRow
+                              key={items[i].key}
+                              item={items[i]}
+                              active={i === activeIndex}
+                              onHover={() => setActiveIndex(i)}
+                              onClick={() => go(items[i])}
+                            />
+                          ))}
+                        </div>
+                      ))
+                  : items.map((item, i) => (
+                      <ResultRow
+                        key={item.key}
+                        item={item}
+                        active={i === activeIndex}
+                        onHover={() => setActiveIndex(i)}
+                        onClick={() => go(item)}
+                      />
+                    ))}
               </div>
             </div>
           </motion.div>
         </>
       )}
     </AnimatePresence>
+  );
+}
+
+function ResultRow({
+  item,
+  active,
+  onHover,
+  onClick,
+}: {
+  item: ListItem;
+  active: boolean;
+  onHover: () => void;
+  onClick: () => void;
+}) {
+  const Icon = item.icon;
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={onHover}
+      className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition-colors ${
+        active ? "bg-accent-soft text-accent" : "text-ink-2"
+      }`}
+    >
+      <Icon size={17} />
+      <span className="min-w-0 flex-1 truncate">{item.label}</span>
+    </button>
   );
 }
 

@@ -10,6 +10,7 @@ export type Tier = "foundational" | "intermediate" | "advanced";
 export type EnrollmentStatus = "active" | "archived";
 export type ResourceStatus = "in_progress" | "done";
 export type MediaProvider = "youtube" | "vimeo" | "external";
+export type LinkStatus = "ok" | "broken" | "unchecked";
 
 export interface Step {
   t: string;
@@ -144,6 +145,9 @@ export type Database = {
           duration_seconds: number | null;
           embeddable: boolean;
           icon_key: string | null;
+          link_status: LinkStatus;
+          last_checked_at: string | null;
+          created_at: string;
         };
         Insert: {
           id: string;
@@ -161,6 +165,9 @@ export type Database = {
           duration_seconds?: number | null;
           embeddable?: boolean;
           icon_key?: string | null;
+          link_status?: LinkStatus;
+          last_checked_at?: string | null;
+          created_at?: string;
         };
         Update: Partial<{
           id: string;
@@ -178,6 +185,9 @@ export type Database = {
           duration_seconds: number | null;
           embeddable: boolean;
           icon_key: string | null;
+          link_status: LinkStatus;
+          last_checked_at: string | null;
+          created_at: string;
         }>;
         Relationships: [];
       };
@@ -564,6 +574,21 @@ export type Database = {
           role: Role;
           created_at: string;
         }[];
+      };
+      search_catalog: {
+        Args: { p_query: string };
+        Returns: {
+          type: "track" | "topic" | "resource" | "skill" | "cohort";
+          id: string;
+          parent_track_id: string | null;
+          title: string;
+          snippet: string | null;
+          rank: number;
+        }[];
+      };
+      get_trending_tracks: {
+        Args: { p_days?: number; p_limit?: number };
+        Returns: { track_id: string; completions: number }[];
       };
     };
     Enums: Record<string, never>;

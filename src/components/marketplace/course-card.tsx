@@ -4,10 +4,18 @@ import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/ui/reveal";
 import { TierBadge } from "./tier-badge";
 import { EnrollButton } from "./enroll-button";
-import { ICONS, FALLBACK_ICON, ClockMark, SignalMark } from "@/components/icons";
+import { ICONS, FALLBACK_ICON, ClockMark, SignalMark, StreakMark, SparkMark } from "@/components/icons";
 import type { MarketplaceCourse } from "@/lib/queries";
 
-export function CourseCard({ course, index = 0 }: { course: MarketplaceCourse; index?: number }) {
+export function CourseCard({
+  course,
+  index = 0,
+  trending = false,
+}: {
+  course: MarketplaceCourse;
+  index?: number;
+  trending?: boolean;
+}) {
   const Icon = ICONS[course.iconKey ?? course.id] ?? FALLBACK_ICON;
 
   return (
@@ -18,10 +26,22 @@ export function CourseCard({ course, index = 0 }: { course: MarketplaceCourse; i
             <Icon size={22} />
           </div>
           <div className="min-w-0 flex-1">
-            <Link href={`/marketplace/course/${course.id}`} className="font-display text-lg font-bold text-ink hover:underline">
-              {course.label}
-            </Link>
-            <TierBadge tier={course.tier} className="ml-2 align-middle" />
+            <div className="flex items-center gap-2">
+              <Link href={`/marketplace/course/${course.id}`} className="font-display text-lg font-bold text-ink hover:underline">
+                {course.label}
+              </Link>
+              {trending && (
+                <span className="flex items-center gap-0.5 rounded-full bg-accent-soft px-1.5 py-0.5 text-[10px] font-semibold text-accent">
+                  <StreakMark size={11} /> Trending
+                </span>
+              )}
+            </div>
+            <TierBadge tier={course.tier} />
+            {course.newResourceCount > 0 && (
+              <span className="ml-2 inline-flex items-center gap-0.5 align-middle text-[11px] font-medium text-ink-3">
+                <SparkMark size={11} /> {course.newResourceCount} new
+              </span>
+            )}
           </div>
         </div>
 

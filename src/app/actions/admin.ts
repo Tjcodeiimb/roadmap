@@ -239,3 +239,21 @@ export async function setUserRole(userId: string, role: "employee" | "admin") {
   revalidatePath("/admin");
   return { success: true };
 }
+
+// ---------------------------------------------------------------------------
+// Link health
+// ---------------------------------------------------------------------------
+
+// A human confirming a flagged link is fine — the cron never auto-hides
+// content, so this is the only way a "broken" result clears.
+export async function dismissBrokenLink(resourceId: string) {
+  const { supabase, error } = await requireAdmin();
+  if (!supabase) return { error };
+  const { error: dbError } = await supabase
+    .from("resources")
+    .update({ link_status: "ok" })
+    .eq("id", resourceId);
+  if (dbError) return { error: dbError.message };
+  revalidatePath("/admin");
+  return { success: true };
+}

@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
-import { getProfile, getSelectedTracks, getTrackSummaries, getReviewQueue } from "@/lib/queries";
+import { getProfile, getSelectedTracks, getTrackSummaries, getReviewQueue, getSkillProgress } from "@/lib/queries";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { ProgressRing } from "@/components/ui/progress-ring";
+import { DiscoverRail } from "@/components/dashboard/discover-rail";
 import { ArrowRight } from "lucide-react";
 import { BurstMark, RepeatMark, CompassMark } from "@/components/icons";
 
@@ -16,10 +17,19 @@ export default async function DashboardPage() {
   if (!user) return null;
 
   const [profile, trackIds] = await Promise.all([getProfile(supabase, user.id), getSelectedTracks(supabase)]);
-  const [summaries, review] = await Promise.all([
+  const [summaries, review, skills] = await Promise.all([
     getTrackSummaries(supabase, trackIds),
     getReviewQueue(supabase),
+    getSkillProgress(supabase),
   ]);
+
+  // "Almost unlocked": within 2 resources of a skill's threshold, closest
+  // first — a heuristic, not ML, reusing counts getSkillProgress already
+  // computes for the Skills page.
+  const almostUnlocked = skills
+    .filter((s) => !s.unlocked && s.totalCount > 0 && s.totalCount - s.doneCount <= 2)
+    .sort((a, b) => a.totalCount - a.doneCount - (b.totalCount - b.doneCount))
+    .slice(0, 3);
 
   const firstName = (profile?.full_name ?? user.email ?? "there").split(" ")[0];
 
@@ -48,6 +58,8 @@ export default async function DashboardPage() {
           </Card>
         </Link>
       )}
+
+      <DiscoverRail summaries={summaries} almostUnlocked={almostUnlocked} />
 
       {summaries.length === 0 ? (
         <Card className="flex flex-col items-center gap-4 py-14 text-center">

@@ -47,11 +47,9 @@ export function SidebarNav({
 
   return (
     <nav className="flex flex-col gap-1">
-      {tracks.length > 4 && (
-        <div className="mb-1 px-0.5">
-          <CourseSwitcherTrigger onOpen={onOpenSwitcher} />
-        </div>
-      )}
+      <div className="mb-1 px-0.5">
+        <CourseSwitcherTrigger onOpen={onOpenSwitcher} />
+      </div>
       {items.map((item) => {
         const active = pathname === item.href || pathname.startsWith(item.href + "/");
         const Icon = item.icon;

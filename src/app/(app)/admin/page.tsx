@@ -1,16 +1,18 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
-import { getAllTracks, getAdminTrackStats, getAdminRoster } from "@/lib/queries";
+import { getAllTracks, getAdminTrackStats, getAdminRoster, getBrokenLinks } from "@/lib/queries";
 import { Card } from "@/components/ui/card";
 import { InviteForm } from "@/components/admin/invite-form";
 import { RosterTable } from "@/components/admin/roster-table";
+import { BrokenLinksTable } from "@/components/admin/broken-links-table";
 
 export default async function AdminPage() {
   const supabase = await createClient();
-  const [tracks, stats, roster] = await Promise.all([
+  const [tracks, stats, roster, brokenLinks] = await Promise.all([
     getAllTracks(supabase),
     getAdminTrackStats(supabase),
     getAdminRoster(supabase),
+    getBrokenLinks(supabase),
   ]);
 
   return (
@@ -42,6 +44,14 @@ export default async function AdminPage() {
       <Card>
         <div className="mb-3 text-sm font-semibold text-ink">People</div>
         <RosterTable rows={roster} />
+      </Card>
+
+      <Card>
+        <div className="mb-1 text-sm font-semibold text-ink">Needs attention</div>
+        <p className="mb-3 text-xs text-ink-3">
+          Flagged by the daily link check — many sites block automated requests, so this is a hint to confirm, not a verdict.
+        </p>
+        <BrokenLinksTable rows={brokenLinks} />
       </Card>
 
       <Card>

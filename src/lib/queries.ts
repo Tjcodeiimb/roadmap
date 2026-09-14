@@ -56,9 +56,12 @@ export interface MarketplaceCourse {
   iconKey: string | null;
   topicCount: number;
   resourceCount: number;
+  newResourceCount: number;
   skillNames: string[];
   enrolled: boolean;
 }
+
+const NEW_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
 
 interface SkillResourceRow {
   skill_id: string;
@@ -100,19 +103,26 @@ interface MarketplaceTrackRow {
   estimated_hours: number | null;
   effort_per_week: string | null;
   icon_key: string | null;
-  phases: { topics: { id: string; resources: { id: string }[] }[] }[];
+  phases: { topics: { id: string; resources: { id: string; created_at: string }[] }[] }[];
 }
 
 // One nested select (tracks -> phases -> topics -> resources) replaces
 // what used to be 3 sequential round-trips just to count topics/resources
 // per track — the counts are now plain array-length sums in JS.
+//
+// `newResourceCount` (resources added in the last 30 days) is naturally
+// inflated right after the 0005 migration backfills `created_at = now()`
+// onto every pre-existing resource — that's an inherent, one-time
+// limitation of retrofitting a timestamp onto old rows (there's no real
+// historical creation date to recover), and it settles on its own over
+// the following 30 days as only genuinely new resources stay "new".
 export async function getMarketplaceCourses(supabase: Client): Promise<MarketplaceCourse[]> {
   const [{ data: trackRows }, enrolledIds, skillsByTrack] = await Promise.all([
     supabase
       .from("tracks")
       .select(
         "id, label, summary, tier, domain, estimated_hours, effort_per_week, icon_key, " +
-          "phases(topics(id, resources(id)))"
+          "phases(topics(id, resources(id, created_at)))"
       )
       .eq("published", true)
       .order("order_index"),
@@ -122,13 +132,20 @@ export async function getMarketplaceCourses(supabase: Client): Promise<Marketpla
 
   const tracks = (trackRows ?? []) as unknown as MarketplaceTrackRow[];
   const enrolledSet = new Set(enrolledIds);
+  const newCutoff = Date.now() - NEW_WINDOW_MS;
 
   return tracks.map((t) => {
     let topicCount = 0;
     let resourceCount = 0;
+    let newResourceCount = 0;
     for (const phase of t.phases) {
       topicCount += phase.topics.length;
-      for (const topic of phase.topics) resourceCount += topic.resources.length;
+      for (const topic of phase.topics) {
+        resourceCount += topic.resources.length;
+        for (const r of topic.resources) {
+          if (new Date(r.created_at).getTime() >= newCutoff) newResourceCount++;
+        }
+      }
     }
     return {
       id: t.id,
@@ -141,10 +158,20 @@ export async function getMarketplaceCourses(supabase: Client): Promise<Marketpla
       iconKey: t.icon_key,
       topicCount,
       resourceCount,
+      newResourceCount,
       skillNames: skillsByTrack.get(t.id) ?? [],
       enrolled: enrolledSet.has(t.id),
     };
   });
+}
+
+// Aggregate-only, no PII: just track ids ranked by completions in the last
+// N days, across all users (the RPC is SECURITY DEFINER so it can see past
+// each user's own RLS-scoped rows to compute the aggregate).
+export async function getTrendingTrackIds(supabase: Client, days = 14, limit = 5): Promise<string[]> {
+  const { data, error } = await supabase.rpc("get_trending_tracks", { p_days: days, p_limit: limit });
+  if (error) return [];
+  return (data ?? []).map((r) => r.track_id);
 }
 
 export interface MarketplaceCohort {
@@ -956,4 +983,41 @@ export async function getAdminRoster(supabase: Client) {
   const { data, error } = await supabase.rpc("get_admin_roster");
   if (error) return [];
   return data ?? [];
+}
+
+export interface BrokenLinkRow {
+  id: string;
+  title: string;
+  url: string;
+  lastCheckedAt: string | null;
+  trackId: string | null;
+  trackLabel: string | null;
+}
+
+interface BrokenLinkQueryRow {
+  id: string;
+  title: string;
+  url: string;
+  last_checked_at: string | null;
+  topics: { phases: { track_id: string; tracks: { label: string } | null } | null } | null;
+}
+
+// "Needs attention" queue for the admin panel — a broken result from the
+// link-health cron is a hint for a human to confirm, never an auto-hide.
+export async function getBrokenLinks(supabase: Client): Promise<BrokenLinkRow[]> {
+  const { data } = await supabase
+    .from("resources")
+    .select("id, title, url, last_checked_at, topics(phases(track_id, tracks(label)))")
+    .eq("link_status", "broken")
+    .order("last_checked_at", { ascending: false });
+
+  const rows = (data ?? []) as unknown as BrokenLinkQueryRow[];
+  return rows.map((r) => ({
+    id: r.id,
+    title: r.title,
+    url: r.url,
+    lastCheckedAt: r.last_checked_at,
+    trackId: r.topics?.phases?.track_id ?? null,
+    trackLabel: r.topics?.phases?.tracks?.label ?? null,
+  }));
 }

@@ -52,7 +52,8 @@ together with a handful of copy-paste values, and you're live.
    order** — `0002_marketplace_skills_media.sql` adds the course
    marketplace, cohort bundles, the skills system, and per-resource
    progress for the video player; `0003` and `0004` backfill marketplace
-   metadata and the onboarding-completed flag.
+   metadata and the onboarding-completed flag; `0005_search_and_link_health.sql`
+   adds full-text search and the link-health cron's columns/function.
 
 > **Important:** run a migration *before* deploying code that depends on it.
 > Each file is additive and safe to re-run, so if you're unsure whether one
@@ -102,6 +103,12 @@ Keep this browser tab open — you'll copy these in a moment.
    | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | your Supabase `anon public` key |
    | `SUPABASE_SERVICE_ROLE_KEY` | your Supabase `service_role` key |
    | `NEXT_PUBLIC_SITE_URL` | leave blank for now — see step 2a |
+   | `CRON_SECRET` | any random string you make up (e.g. mash the keyboard) |
+
+   `CRON_SECRET` protects the daily link-check cron (`vercel.json`) from
+   being triggered by anyone who isn't Vercel itself — Vercel automatically
+   sends it back as an `Authorization` header for Cron Jobs once it's set,
+   no further configuration needed.
 
 6. Click **Deploy**. Wait 1–2 minutes.
 7. You'll get a URL like `https://roadmap-xyz.vercel.app`. Open it to
