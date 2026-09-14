@@ -1,48 +1,51 @@
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Reveal } from "@/components/ui/reveal";
 import { TierBadge } from "./tier-badge";
 import { EnrollButton } from "./enroll-button";
 import { ICONS, FALLBACK_ICON, ClockMark } from "@/components/icons";
 import type { MarketplaceCohort } from "@/lib/queries";
 
-export function CohortCard({ cohort }: { cohort: MarketplaceCohort }) {
+export function CohortCard({ cohort, index = 0 }: { cohort: MarketplaceCohort; index?: number }) {
   const Icon = ICONS[cohort.iconKey ?? ""] ?? FALLBACK_ICON;
 
   return (
-    <Card className="flex flex-col gap-4">
-      <div className="flex items-start gap-3">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">
-          <Icon size={22} />
+    <Reveal index={index}>
+      <Card className="flex h-full flex-col gap-4 transition-transform duration-200 ease-out hover:-translate-y-1">
+        <div className="flex items-start gap-3">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">
+            <Icon size={22} />
+          </div>
+          <div className="min-w-0 flex-1">
+            <Link href={`/marketplace/cohort/${cohort.id}`} className="font-display text-lg font-bold text-ink hover:underline">
+              {cohort.label}
+            </Link>
+            <TierBadge tier={cohort.tier} className="ml-2 align-middle" />
+          </div>
         </div>
-        <div className="min-w-0 flex-1">
-          <Link href={`/marketplace/cohort/${cohort.id}`} className="font-display text-lg font-bold text-ink hover:underline">
-            {cohort.label}
+
+        <p className="text-sm leading-relaxed text-ink-2">{cohort.summary}</p>
+
+        <div className="flex flex-wrap gap-1.5">
+          {cohort.courses.map((c) => (
+            <Badge key={c.id}>{c.label}</Badge>
+          ))}
+        </div>
+
+        {cohort.estimatedHours != null && (
+          <div className="flex items-center gap-1 text-xs text-ink-3">
+            <ClockMark size={13} /> {cohort.estimatedHours}h total · {cohort.courses.length} courses
+          </div>
+        )}
+
+        <div className="mt-auto flex items-center justify-between pt-1">
+          <Link href={`/marketplace/cohort/${cohort.id}`} className="text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink">
+            View bundle
           </Link>
-          <TierBadge tier={cohort.tier} className="ml-2 align-middle" />
+          <EnrollButton kind="cohort" id={cohort.id} label={cohort.label} enrolled={cohort.enrolled} continueHref="/dashboard" />
         </div>
-      </div>
-
-      <p className="text-sm leading-relaxed text-ink-2">{cohort.summary}</p>
-
-      <div className="flex flex-wrap gap-1.5">
-        {cohort.courses.map((c) => (
-          <Badge key={c.id}>{c.label}</Badge>
-        ))}
-      </div>
-
-      {cohort.estimatedHours != null && (
-        <div className="flex items-center gap-1 text-xs text-ink-3">
-          <ClockMark size={13} /> {cohort.estimatedHours}h total · {cohort.courses.length} courses
-        </div>
-      )}
-
-      <div className="mt-auto flex items-center justify-between pt-1">
-        <Link href={`/marketplace/cohort/${cohort.id}`} className="text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink">
-          View bundle
-        </Link>
-        <EnrollButton kind="cohort" id={cohort.id} label={cohort.label} enrolled={cohort.enrolled} continueHref="/dashboard" />
-      </div>
-    </Card>
+      </Card>
+    </Reveal>
   );
 }

@@ -70,8 +70,8 @@ async function CoursesTab({ supabase }: { supabase: Awaited<ReturnType<typeof cr
           <section key={tier}>
             <h2 className="mb-4 font-display text-lg font-bold text-ink">{TIER_TITLE[tier]}</h2>
             <div className="grid gap-4 sm:grid-cols-2">
-              {inTier.map((course) => (
-                <CourseCard key={course.id} course={course} />
+              {inTier.map((course, i) => (
+                <CourseCard key={course.id} course={course} index={i} />
               ))}
             </div>
           </section>
@@ -97,8 +97,8 @@ async function CohortsTab({ supabase }: { supabase: Awaited<ReturnType<typeof cr
 
   return (
     <div className="grid gap-4 sm:grid-cols-2">
-      {cohorts.map((cohort) => (
-        <CohortCard key={cohort.id} cohort={cohort} />
+      {cohorts.map((cohort, i) => (
+        <CohortCard key={cohort.id} cohort={cohort} index={i} />
       ))}
     </div>
   );

@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import clsx from "clsx";
 import { LayoutDashboard, UserRound, ShieldCheck } from "lucide-react";
 import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark, StackMark, TargetMark } from "@/components/icons";
+import { uiTransition } from "@/lib/motion";
 import { CourseSwitcherTrigger } from "./course-switcher";
 
 export interface NavTrack {
@@ -58,14 +60,21 @@ export function SidebarNav({
             key={item.href}
             href={item.href}
             className={clsx(
-              "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors duration-150",
-              active ? "bg-accent-soft text-accent" : "text-ink-2 hover:bg-paper-2 hover:text-ink"
+              "relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors duration-150",
+              active ? "text-accent" : "text-ink-2 hover:bg-paper-2 hover:text-ink"
             )}
           >
-            <Icon size={18} />
-            <span className="flex-1">{item.label}</span>
+            {active && (
+              <motion.div
+                layoutId="sidebar-active-pill"
+                className="absolute inset-0 rounded-xl bg-accent-soft"
+                transition={uiTransition}
+              />
+            )}
+            <Icon size={18} className="relative z-10" />
+            <span className="relative z-10 flex-1">{item.label}</span>
             {"badge" in item && item.badge ? (
-              <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1.5 text-[11px] font-semibold text-accent-ink">
+              <span className="relative z-10 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1.5 text-[11px] font-semibold text-accent-ink">
                 {item.badge}
               </span>
             ) : null}
