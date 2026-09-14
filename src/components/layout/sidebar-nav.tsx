@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { LayoutDashboard, UserRound, ShieldCheck } from "lucide-react";
-import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark } from "@/components/icons";
+import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark } from "@/components/icons";
 import { CourseSwitcherTrigger } from "./course-switcher";
 
 export interface NavTrack {
@@ -29,6 +29,7 @@ export function SidebarNav({
 
   const items = [
     { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+    { href: "/marketplace", label: "Marketplace", icon: CompassMark },
     ...tracks.map((t) => ({
       href: `/track/${t.id}`,
       label: t.label,

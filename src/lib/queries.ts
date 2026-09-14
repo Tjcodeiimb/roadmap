@@ -41,6 +41,207 @@ export async function getAllTracks(supabase: Client) {
   return data ?? [];
 }
 
+// ---------------------------------------------------------------------------
+// Marketplace
+// ---------------------------------------------------------------------------
+
+export interface MarketplaceCourse {
+  id: string;
+  label: string;
+  summary: string;
+  tier: string;
+  domain: string | null;
+  estimatedHours: number | null;
+  effortPerWeek: string | null;
+  iconKey: string | null;
+  topicCount: number;
+  resourceCount: number;
+  skillNames: string[];
+  enrolled: boolean;
+}
+
+// Every skill a track can grant: a skill counts if any of its mapped
+// resources belongs to a topic under that track. Computed in JS because
+// `Relationships: []` means embedded selects don't type — same idiom as
+// getTrackSummaries.
+async function getSkillNamesByTrack(supabase: Client): Promise<Map<string, string[]>> {
+  const { data: skillResources } = await supabase.from("skill_resources").select("skill_id, resource_id");
+  if (!skillResources?.length) return new Map();
+
+  const resourceIds = [...new Set(skillResources.map((sr) => sr.resource_id))];
+  const { data: resources } = await supabase
+    .from("resources")
+    .select("id, topic_id")
+    .in("id", resourceIds);
+  const topicIds = [...new Set((resources ?? []).map((r) => r.topic_id))];
+  const { data: topics } = await supabase.from("topics").select("id, phase_id").in("id", topicIds);
+  const phaseIds = [...new Set((topics ?? []).map((t) => t.phase_id))];
+  const { data: phases } = await supabase.from("phases").select("id, track_id").in("id", phaseIds);
+  const { data: skills } = await supabase.from("skills").select("id, name");
+
+  const topicByResource = new Map((resources ?? []).map((r) => [r.id, r.topic_id]));
+  const phaseByTopic = new Map((topics ?? []).map((t) => [t.id, t.phase_id]));
+  const trackByPhase = new Map((phases ?? []).map((p) => [p.id, p.track_id]));
+  const skillName = new Map((skills ?? []).map((s) => [s.id, s.name]));
+
+  const trackSkillIds = new Map<string, Set<string>>();
+  for (const sr of skillResources) {
+    const topicId = topicByResource.get(sr.resource_id);
+    const phaseId = topicId ? phaseByTopic.get(topicId) : undefined;
+    const trackId = phaseId ? trackByPhase.get(phaseId) : undefined;
+    if (!trackId) continue;
+    if (!trackSkillIds.has(trackId)) trackSkillIds.set(trackId, new Set());
+    trackSkillIds.get(trackId)!.add(sr.skill_id);
+  }
+
+  const result = new Map<string, string[]>();
+  for (const [trackId, skillIds] of trackSkillIds) {
+    result.set(
+      trackId,
+      [...skillIds].map((id) => skillName.get(id) ?? id)
+    );
+  }
+  return result;
+}
+
+export async function getMarketplaceCourses(supabase: Client): Promise<MarketplaceCourse[]> {
+  const [{ data: tracks }, { data: phases }, enrolledIds, skillsByTrack] = await Promise.all([
+    supabase.from("tracks").select("*").eq("published", true).order("order_index"),
+    supabase.from("phases").select("id, track_id"),
+    getSelectedTracks(supabase),
+    getSkillNamesByTrack(supabase),
+  ]);
+
+  const phaseIds = (phases ?? []).map((p) => p.id);
+  const { data: topics } = await supabase
+    .from("topics")
+    .select("id, phase_id")
+    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"]);
+  const topicIds = (topics ?? []).map((t) => t.id);
+  const { data: resources } = await supabase
+    .from("resources")
+    .select("id, topic_id")
+    .in("topic_id", topicIds.length ? topicIds : ["__none__"]);
+
+  const phaseTrack = new Map((phases ?? []).map((p) => [p.id, p.track_id]));
+  const topicsByTrack = new Map<string, number>();
+  const topicTrack = new Map<string, string>();
+  for (const t of topics ?? []) {
+    const trackId = phaseTrack.get(t.phase_id);
+    if (!trackId) continue;
+    topicTrack.set(t.id, trackId);
+    topicsByTrack.set(trackId, (topicsByTrack.get(trackId) ?? 0) + 1);
+  }
+  const resourcesByTrack = new Map<string, number>();
+  for (const r of resources ?? []) {
+    const trackId = topicTrack.get(r.topic_id);
+    if (!trackId) continue;
+    resourcesByTrack.set(trackId, (resourcesByTrack.get(trackId) ?? 0) + 1);
+  }
+
+  const enrolledSet = new Set(enrolledIds);
+
+  return (tracks ?? []).map((t) => ({
+    id: t.id,
+    label: t.label,
+    summary: t.summary,
+    tier: t.tier,
+    domain: t.domain,
+    estimatedHours: t.estimated_hours,
+    effortPerWeek: t.effort_per_week,
+    iconKey: t.icon_key,
+    topicCount: topicsByTrack.get(t.id) ?? 0,
+    resourceCount: resourcesByTrack.get(t.id) ?? 0,
+    skillNames: skillsByTrack.get(t.id) ?? [],
+    enrolled: enrolledSet.has(t.id),
+  }));
+}
+
+export interface MarketplaceCohort {
+  id: string;
+  label: string;
+  summary: string;
+  tier: string;
+  iconKey: string | null;
+  estimatedHours: number | null;
+  courses: { id: string; label: string; iconKey: string | null }[];
+  enrolled: boolean;
+}
+
+export async function getMarketplaceCohorts(supabase: Client): Promise<MarketplaceCohort[]> {
+  const [{ data: cohorts }, { data: cohortCourses }, { data: tracks }, enrolledCohortIds] = await Promise.all([
+    supabase.from("cohorts").select("*").eq("published", true).order("order_index"),
+    supabase.from("cohort_courses").select("cohort_id, track_id, order_index").order("order_index"),
+    supabase.from("tracks").select("id, label, icon_key"),
+    getEnrolledCohortIds(supabase),
+  ]);
+
+  const trackById = new Map((tracks ?? []).map((t) => [t.id, t]));
+  const enrolledSet = new Set(enrolledCohortIds);
+
+  return (cohorts ?? []).map((c) => ({
+    id: c.id,
+    label: c.label,
+    summary: c.summary,
+    tier: c.tier,
+    iconKey: c.icon_key,
+    estimatedHours: c.estimated_hours,
+    courses: (cohortCourses ?? [])
+      .filter((cc) => cc.cohort_id === c.id)
+      .map((cc) => {
+        const t = trackById.get(cc.track_id);
+        return { id: cc.track_id, label: t?.label ?? cc.track_id, iconKey: t?.icon_key ?? null };
+      }),
+    enrolled: enrolledSet.has(c.id),
+  }));
+}
+
+export async function getCourseDetail(supabase: Client, trackId: string) {
+  const [{ data: track }, courses, skillsByTrack, enrolledIds] = await Promise.all([
+    supabase.from("tracks").select("*").eq("id", trackId).single(),
+    getMarketplaceCourses(supabase),
+    getSkillNamesByTrack(supabase),
+    getSelectedTracks(supabase),
+  ]);
+  if (!track) return null;
+
+  const { data: phases } = await supabase
+    .from("phases")
+    .select("id, title, description, estimated_weeks")
+    .eq("track_id", trackId)
+    .order("order_index");
+  const phaseIds = (phases ?? []).map((p) => p.id);
+  const { data: topics } = await supabase
+    .from("topics")
+    .select("id, phase_id, title")
+    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"])
+    .order("order_index");
+
+  const summary = courses.find((c) => c.id === trackId);
+
+  return {
+    track,
+    enrolled: enrolledIds.includes(trackId),
+    topicCount: summary?.topicCount ?? 0,
+    resourceCount: summary?.resourceCount ?? 0,
+    skillNames: skillsByTrack.get(trackId) ?? [],
+    phases: (phases ?? []).map((p) => ({
+      ...p,
+      topics: (topics ?? []).filter((t) => t.phase_id === p.id),
+    })),
+  };
+}
+
+export async function getCohortDetail(supabase: Client, cohortId: string) {
+  const [{ data: cohort }, cohorts] = await Promise.all([
+    supabase.from("cohorts").select("*").eq("id", cohortId).single(),
+    getMarketplaceCohorts(supabase),
+  ]);
+  if (!cohort) return null;
+  const summary = cohorts.find((c) => c.id === cohortId);
+  return { cohort, courses: summary?.courses ?? [], enrolled: summary?.enrolled ?? false };
+}
+
 export interface TrackProgressSummary {
   track: { id: string; name: string; label: string };
   totalTopics: number;
