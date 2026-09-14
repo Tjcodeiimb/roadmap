@@ -13,6 +13,7 @@ import { BuildProjectsPanel } from "@/components/profile/build-projects-panel";
 import { LeaderboardOptIn } from "@/components/profile/leaderboard-optin";
 import { SetPasswordForm } from "@/components/profile/set-password-form";
 import { levelForXP } from "@/lib/gamification/levels";
+import { LEVEL_ICONS, StreakMark, TrophyMark } from "@/components/icons";
 
 export default async function ProfilePage({
   searchParams,
@@ -35,6 +36,7 @@ export default async function ProfilePage({
   ]);
 
   const level = levelForXP(xp.total_xp);
+  const LevelIcon = LEVEL_ICONS[level.level - 1];
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8">
@@ -47,19 +49,19 @@ export default async function ProfilePage({
 
       <div className="grid gap-4 sm:grid-cols-3">
         <Card className="flex flex-col items-center gap-2 text-center">
-          <div className="text-3xl">{level.icon}</div>
+          <LevelIcon size={30} className="text-accent" />
           <div className="font-display text-2xl font-bold text-ink">
             <CountUp value={xp.total_xp} />
           </div>
           <div className="text-xs uppercase tracking-wide text-ink-3">{level.name}</div>
         </Card>
         <Card className="flex flex-col items-center gap-2 text-center">
-          <div className="text-3xl">🔥</div>
+          <StreakMark size={30} className="text-accent" />
           <div className="font-display text-2xl font-bold text-ink">{streak.current_streak}</div>
           <div className="text-xs uppercase tracking-wide text-ink-3">Day streak</div>
         </Card>
         <Card className="flex flex-col items-center gap-2 text-center">
-          <div className="text-3xl">🏆</div>
+          <TrophyMark size={30} className="text-accent" />
           <div className="font-display text-2xl font-bold text-ink">{streak.longest_streak}</div>
           <div className="text-xs uppercase tracking-wide text-ink-3">Best streak</div>
         </Card>

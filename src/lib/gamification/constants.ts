@@ -17,7 +17,7 @@ export const REVIEW_QUALITY_LABELS = [
 ] as const;
 
 export const REVIEW_QUALITY_BUTTONS = [
-  { quality: 0, label: "Hard", icon: "😓" },
-  { quality: 1, label: "Got it", icon: "👍" },
-  { quality: 2, label: "Easy", icon: "⚡" },
+  { quality: 0, label: "Hard", iconKey: "effort" },
+  { quality: 1, label: "Got it", iconKey: "check" },
+  { quality: 2, label: "Easy", iconKey: "bolt" },
 ] as const;

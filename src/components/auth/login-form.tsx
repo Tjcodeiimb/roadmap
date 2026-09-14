@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Mail, Lock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { signInWithPassword, sendMagicLink } from "@/app/actions/auth";
+import { MailMark } from "@/components/icons";
 
 type Mode = "password" | "magic-link";
 
@@ -33,7 +34,7 @@ export function LoginForm() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center"
       >
-        <div className="mb-3 text-4xl">📬</div>
+        <MailMark size={40} className="mx-auto mb-3 text-accent" />
         <h2 className="font-display text-xl font-semibold text-ink">Check your email</h2>
         <p className="mt-2 text-sm text-ink-2">
           We sent a sign-in link. Open it on this device to continue.
