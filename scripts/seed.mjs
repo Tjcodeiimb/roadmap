@@ -106,6 +106,26 @@ async function upsert(table, rows, conflictTarget = 'id') {
   console.log(`  ${table}: ${rows.length} rows`);
 }
 
+// tracks is the one table whose rows have genuinely different shapes: the
+// original 3 tracks carry only {id, name, label} (their marketplace metadata
+// comes from migration 0003's UPDATE, not from seed data), while the 6 newer
+// tracks carry the full marketplace metadata inline. Batching heterogeneous
+// objects into a single upsert() call makes PostgREST fill each row's
+// missing keys with an explicit SQL NULL (not "leave column untouched" and
+// not "use the column default") — which then fails the `tier`/`summary`
+// NOT NULL constraints for the 3 older tracks. One row per call sidesteps
+// that: each call only ever sees the keys that row actually has.
+async function upsertEach(table, rows, conflictTarget = 'id') {
+  for (const row of rows) {
+    const { error } = await supabase.from(table).upsert([row], { onConflict: conflictTarget });
+    if (error) {
+      console.error(`Failed upserting ${row.id} into ${table}:`, error.message);
+      process.exit(1);
+    }
+  }
+  console.log(`  ${table}: ${rows.length} rows`);
+}
+
 async function main() {
   const tracks = [];
   const allPhases = [];
@@ -129,7 +149,7 @@ async function main() {
   );
 
   // Order matters throughout: parents before children, because of foreign keys.
-  await upsert('tracks', tracks);
+  await upsertEach('tracks', tracks);
   await upsert('phases', allPhases);
   await upsert('topics', allTopics);
   await upsert('resources', allResources);
