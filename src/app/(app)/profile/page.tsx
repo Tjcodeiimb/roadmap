@@ -5,6 +5,7 @@ import {
   getUserStreak,
   getBuildProjects,
   getCompletedTopicsByTrack,
+  getSelectedTracks,
 } from "@/lib/queries";
 import { Card } from "@/components/ui/card";
 import { CountUp } from "@/components/ui/count-up";
@@ -27,13 +28,14 @@ export default async function ProfilePage({
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  const [profile, xp, streak, projects, completedByTrack] = await Promise.all([
+  const [profile, xp, streak, projects, trackIds] = await Promise.all([
     getProfile(supabase, user.id),
     getUserXP(supabase),
     getUserStreak(supabase),
     getBuildProjects(supabase),
-    getCompletedTopicsByTrack(supabase),
+    getSelectedTracks(supabase),
   ]);
+  const completedByTrack = await getCompletedTopicsByTrack(supabase, trackIds);
 
   const level = levelForXP(xp.total_xp);
   const LevelIcon = LEVEL_ICONS[level.level - 1];

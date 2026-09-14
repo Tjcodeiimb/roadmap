@@ -9,8 +9,31 @@ export async function getProfile(supabase: Client, userId: string) {
 }
 
 export async function getSelectedTracks(supabase: Client) {
-  const { data } = await supabase.from("user_track_selection").select("track_id");
+  const { data } = await supabase
+    .from("user_track_selection")
+    .select("track_id")
+    .eq("status", "active");
   return (data ?? []).map((r) => r.track_id);
+}
+
+export interface EnrolledTrack {
+  trackId: string;
+  source: string;
+  selectedAt: string;
+}
+
+export async function getEnrolledTracks(supabase: Client): Promise<EnrolledTrack[]> {
+  const { data } = await supabase
+    .from("user_track_selection")
+    .select("track_id, source, selected_at")
+    .eq("status", "active")
+    .order("selected_at");
+  return (data ?? []).map((r) => ({ trackId: r.track_id, source: r.source, selectedAt: r.selected_at }));
+}
+
+export async function getEnrolledCohortIds(supabase: Client): Promise<string[]> {
+  const { data } = await supabase.from("user_cohort_enrollment").select("cohort_id");
+  return (data ?? []).map((r) => r.cohort_id);
 }
 
 export async function getAllTracks(supabase: Client) {
@@ -222,10 +245,23 @@ export async function getBuildProjects(supabase: Client) {
   return data ?? [];
 }
 
-export async function getCompletedTopicsByTrack(supabase: Client) {
-  const { data: tracks } = await supabase.from("tracks").select("id, label").order("order_index");
-  const { data: phases } = await supabase.from("phases").select("id, track_id");
-  const { data: topics } = await supabase.from("topics").select("id, phase_id, title");
+// Scoped to the caller's enrolled tracks — with the catalogue growing past
+// 250+ topics, pulling every track/phase/topic regardless of enrollment
+// would waste most of the query on tracks the user never joined.
+export async function getCompletedTopicsByTrack(supabase: Client, trackIds: string[]) {
+  if (!trackIds.length) return [];
+
+  const { data: tracks } = await supabase
+    .from("tracks")
+    .select("id, label")
+    .in("id", trackIds)
+    .order("order_index");
+  const { data: phases } = await supabase.from("phases").select("id, track_id").in("track_id", trackIds);
+  const phaseIds = (phases ?? []).map((p) => p.id);
+  const { data: topics } = await supabase
+    .from("topics")
+    .select("id, phase_id, title")
+    .in("phase_id", phaseIds.length ? phaseIds : ["__none__"]);
   const { data: progress } = await supabase
     .from("user_progress")
     .select("topic_id, status, completed_at")

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import { Menu, X, LogOut } from "lucide-react";
 import { SidebarNav, type NavTrack } from "@/components/layout/sidebar-nav";
+import { CourseSwitcherModal, useCourseSwitcherShortcut } from "@/components/layout/course-switcher";
 import { XPWidget } from "@/components/layout/xp-widget";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { signOut } from "@/app/actions/auth";
@@ -30,13 +31,15 @@ export function AppShell({
   children: React.ReactNode;
 }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [switcherOpen, setSwitcherOpen] = useState(false);
+  useCourseSwitcherShortcut(() => setSwitcherOpen((o) => !o));
 
   return (
     <MotionConfig reducedMotion="user">
       <div className="flex min-h-screen bg-paper">
         <aside className="hidden w-64 shrink-0 flex-col gap-6 border-r border-border bg-paper-2/60 p-5 md:flex">
           <Brand />
-          <SidebarNav tracks={tracks} reviewCount={reviewCount} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} />
+          <SidebarNav tracks={tracks} reviewCount={reviewCount} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} onOpenSwitcher={() => setSwitcherOpen(true)} />
           <div className="mt-auto flex flex-col gap-3">
             <XPWidget xp={xp} streak={streak} />
             <div className="flex items-center justify-between gap-2 px-1">
@@ -101,7 +104,7 @@ export function AppShell({
                   </button>
                 </div>
                 <div onClick={() => setDrawerOpen(false)}>
-                  <SidebarNav tracks={tracks} reviewCount={reviewCount} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} />
+                  <SidebarNav tracks={tracks} reviewCount={reviewCount} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} onOpenSwitcher={() => setSwitcherOpen(true)} />
                 </div>
                 <div className="mt-auto flex flex-col gap-3">
                   <XPWidget xp={xp} streak={streak} />
@@ -118,6 +121,8 @@ export function AppShell({
             </>
           )}
         </AnimatePresence>
+
+        <CourseSwitcherModal tracks={tracks} open={switcherOpen} onClose={() => setSwitcherOpen(false)} />
       </div>
     </MotionConfig>
   );
