@@ -183,3 +183,13 @@ export function LinkMark(props: IconProps) {
     </IconBase>
   );
 }
+
+export function StackMark(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M12 3.6 L20.4 8 L12 12.4 L3.6 8 Z" />
+      <path d="M4.6 11.4 L12 15.2 L19.4 11.4" />
+      <path d="M4.6 14.8 L12 18.6 L19.4 14.8" />
+    </IconBase>
+  );
+}

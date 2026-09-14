@@ -64,12 +64,15 @@ export default async function TopicPage({
           {resources.map((r) => (
             <ResourceCard
               key={r.id}
+              id={r.id}
+              iconKey={r.icon_key}
               title={r.title}
               url={r.url}
               source={r.source}
               format={r.format}
               length={r.length}
               note={r.note}
+              status={r.status}
             />
           ))}
         </div>
