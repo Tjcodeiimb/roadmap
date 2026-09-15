@@ -1,4 +1,5 @@
 // Structural validation for every seed-data file — run before scripts/seed.mjs.
+// (Also runs automatically via .github/workflows/seed.yml.)
 //
 // The single most destructive failure mode here is a reused text PK: phases,
 // topics and resources all use global text ids, and an upsert with a
