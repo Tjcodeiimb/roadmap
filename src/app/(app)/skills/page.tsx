@@ -26,8 +26,8 @@ export default async function SkillsPage() {
       </div>
 
       {skills.length === 0 ? (
-        <div className="rounded-2xl border border-border bg-paper-2 p-10 text-center">
-          <div className="font-semibold text-ink">No skills yet</div>
+        <div className="rounded-md border-2 border-ink bg-paper-2 p-10 text-center shadow-[4px_4px_0_0_var(--brutal-shadow)]">
+          <div className="font-bold text-ink">No skills yet</div>
           <p className="mt-1 text-sm text-ink-2">Enroll in a course and start working through resources to unlock some.</p>
         </div>
       ) : (
@@ -48,15 +48,15 @@ export default async function SkillsPage() {
                       key={skill.id}
                       className={
                         skill.unlocked
-                          ? "flex items-start gap-3 rounded-xl border border-border bg-paper-2 p-4"
-                          : "flex items-start gap-3 rounded-xl border border-dashed border-border bg-paper p-4 opacity-70"
+                          ? "flex items-start gap-3 rounded-md border-2 border-ink bg-paper-2 p-4 shadow-[3px_3px_0_0_var(--brutal-shadow)]"
+                          : "flex items-start gap-3 rounded-md border-2 border-dashed border-ink bg-paper p-4 opacity-70"
                       }
                     >
                       <div
                         className={
                           skill.unlocked
-                            ? "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent"
-                            : "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-paper-3 text-ink-3"
+                            ? "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent-soft text-accent"
+                            : "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-paper-3 text-ink-3"
                         }
                       >
                         {skill.unlocked ? <Icon size={20} /> : <LockMark size={18} />}
@@ -82,9 +82,9 @@ export default async function SkillsPage() {
                           </span>
                         </div>
                         {!skill.unlocked && skill.totalCount > 0 && (
-                          <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-paper-3">
+                          <div className="mt-2 h-2 w-full overflow-hidden rounded-sm border-2 border-ink bg-paper-3">
                             <div
-                              className="h-full rounded-full bg-accent"
+                              className="h-full bg-accent"
                               style={{ width: `${Math.min(100, Math.round((skill.doneCount / skill.totalCount) * 100))}%` }}
                             />
                           </div>

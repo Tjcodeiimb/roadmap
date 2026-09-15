@@ -58,21 +58,21 @@ export function SidebarNav({
             key={item.href}
             href={item.href}
             className={clsx(
-              "relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors duration-150",
-              active ? "text-accent" : "text-ink-2 hover:bg-paper-2 hover:text-ink"
+              "relative flex items-center gap-3 rounded-md border-2 px-3 py-2.5 text-sm font-bold transition-colors duration-150",
+              active ? "border-ink text-accent-ink" : "border-transparent text-ink-2 hover:border-ink hover:text-ink"
             )}
           >
             {active && (
               <motion.div
                 layoutId="sidebar-active-pill"
-                className="absolute inset-0 rounded-xl bg-accent-soft"
+                className="absolute inset-0 rounded-md bg-accent"
                 transition={uiTransition}
               />
             )}
             <Icon size={18} className="relative z-10" />
             <span className="relative z-10 flex-1">{item.label}</span>
             {"badge" in item && item.badge ? (
-              <span className="relative z-10 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1.5 text-[11px] font-semibold text-accent-ink">
+              <span className="relative z-10 flex h-5 min-w-5 items-center justify-center rounded-sm border-2 border-ink bg-accent px-1.5 text-[11px] font-bold text-accent-ink">
                 {item.badge}
               </span>
             ) : null}

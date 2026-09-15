@@ -21,7 +21,7 @@ export function ThemeToggle({ initialTheme }: { initialTheme: "light" | "dark" }
     <button
       onClick={toggle}
       aria-label="Toggle theme"
-      className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-paper-2 text-ink transition-transform duration-200 hover:scale-105 active:scale-95"
+      className="press-sm flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink bg-paper-2 text-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]"
     >
       {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
     </button>

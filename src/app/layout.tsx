@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Archivo } from "next/font/google";
 import { cookies } from "next/headers";
 import "./globals.css";
 import { ToastProvider } from "@/components/ui/toast";
 
-const inter = Inter({
+// A bold, geometric grotesque instead of the ubiquitous "AI product" Inter
+// look — variable weight so headings can go heavy (800) while body copy
+// stays readable at 400/500. Self-hosted via next/font, no external request.
+const archivo = Archivo({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +34,7 @@ export default async function RootLayout({
     <html
       lang="en"
       data-theme={theme}
-      className={`${inter.variable} h-full antialiased`}
+      className={`${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink">
         <ToastProvider>{children}</ToastProvider>

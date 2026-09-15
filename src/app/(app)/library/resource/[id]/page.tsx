@@ -27,7 +27,7 @@ export default async function ResourceDetailPage({
       </Link>
 
       <div className="flex items-start gap-3">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent-soft text-accent">
           <Icon size={22} />
         </div>
         <div className="min-w-0">

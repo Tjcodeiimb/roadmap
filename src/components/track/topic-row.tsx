@@ -24,10 +24,10 @@ export function TopicRow({
     <motion.div {...listReveal(index)}>
       <Link
         href={href}
-        className="group flex items-center gap-4 rounded-xl border border-border bg-paper-2 px-4 py-3.5 transition-all duration-150 hover:border-accent/40 hover:bg-paper-3 active:scale-[0.995]"
+        className="press-sm group flex items-center gap-4 rounded-md border-2 border-ink bg-paper-2 px-4 py-3.5 shadow-[3px_3px_0_0_var(--brutal-shadow)]"
       >
         <div className="min-w-0 flex-1">
-          <div className="truncate font-medium text-ink">{title}</div>
+          <div className="truncate font-bold text-ink">{title}</div>
           {estimatedTime && <div className="text-xs text-ink-3">{estimatedTime} estimated</div>}
         </div>
         <StatusBadge status={status} />

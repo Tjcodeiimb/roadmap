@@ -27,8 +27,8 @@ export function DiscoverRail({
           return (
             <Reveal key={s.track.id} index={i}>
               <Link href={`/track/${s.track.id}/topic/${s.currentTopic!.id}`}>
-                <Card className="flex h-full items-center gap-3 p-4 transition-transform duration-200 ease-out hover:-translate-y-1">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-accent">
+                <Card className="press flex h-full items-center gap-3 p-4">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent-soft text-accent">
                     <Icon size={18} />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -47,8 +47,8 @@ export function DiscoverRail({
           return (
             <Reveal key={skill.id} index={continueItems.length + i}>
               <Link href="/skills">
-                <Card className="flex h-full items-center gap-3 p-4 transition-transform duration-200 ease-out hover:-translate-y-1">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-paper-3 text-ink-2">
+                <Card className="press flex h-full items-center gap-3 p-4">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-paper-3 text-ink-2">
                     <Icon size={18} />
                   </div>
                   <div className="min-w-0 flex-1">

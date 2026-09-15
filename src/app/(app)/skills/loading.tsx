@@ -14,8 +14,8 @@ export default function SkillsLoading() {
             <Skeleton className="mb-3 h-5 w-32" />
             <div className="grid gap-3 sm:grid-cols-2">
               {Array.from({ length: 4 }).map((_, i) => (
-                <div key={i} className="flex items-start gap-3 rounded-xl border border-border bg-paper-2 p-4">
-                  <Skeleton className="h-10 w-10 shrink-0 rounded-xl" />
+                <div key={i} className="flex items-start gap-3 rounded-md border-2 border-ink bg-paper-2 p-4">
+                  <Skeleton className="h-10 w-10 shrink-0 rounded-md" />
                   <div className="min-w-0 flex-1">
                     <Skeleton className="h-4 w-32" />
                     <Skeleton className="mt-2 h-3 w-full" />

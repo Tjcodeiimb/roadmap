@@ -9,17 +9,20 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: Size;
 }
 
+// Flat, fully-saturated fills with a thick black/ink outline — no soft
+// hover fades. Every variant keeps the same border so the shape reads
+// consistently; only fill and text color change.
 const variantClasses: Record<Variant, string> = {
-  primary: "bg-accent text-accent-ink hover:opacity-90",
-  secondary: "bg-paper-2 text-ink border border-border hover:bg-paper-3",
-  ghost: "bg-transparent text-ink hover:bg-paper-2",
-  danger: "bg-danger text-white hover:opacity-90",
+  primary: "bg-accent text-accent-ink border-2 border-ink",
+  secondary: "bg-paper-2 text-ink border-2 border-ink hover:bg-paper-3",
+  ghost: "bg-transparent text-ink border-2 border-transparent hover:border-ink",
+  danger: "bg-danger text-white border-2 border-ink",
 };
 
 const sizeClasses: Record<Size, string> = {
-  sm: "h-8 px-3 text-sm rounded-lg gap-1.5",
-  md: "h-10 px-4 text-sm rounded-xl gap-2",
-  lg: "h-12 px-6 text-base rounded-2xl gap-2",
+  sm: "h-8 px-3 text-sm font-bold rounded-md gap-1.5",
+  md: "h-10 px-4 text-sm font-bold rounded-md gap-2",
+  lg: "h-12 px-6 text-base font-extrabold rounded-md gap-2",
 };
 
 // Shared with any element that needs to *look* like a button without
@@ -28,7 +31,8 @@ const sizeClasses: Record<Size, string> = {
 // className directly on the Link instead of wrapping the Button component.
 export function buttonClassName(variant: Variant = "primary", size: Size = "md", className?: string) {
   return clsx(
-    "inline-flex items-center justify-center font-medium transition-all duration-200 ease-out disabled:opacity-50 disabled:pointer-events-none active:scale-[0.97]",
+    "press-sm inline-flex items-center justify-center disabled:opacity-50 disabled:pointer-events-none",
+    variant !== "ghost" && "shadow-[4px_4px_0_0_var(--brutal-shadow)]",
     variantClasses[variant],
     sizeClasses[size],
     className

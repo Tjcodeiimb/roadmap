@@ -27,7 +27,7 @@ export default async function AdminPage() {
         <div className="grid gap-3 sm:grid-cols-3">
           {tracks.map((t) => (
             <Link key={t.id} href={`/admin/content/${t.id}`}>
-              <Card className="transition-transform duration-150 hover:scale-[1.02]">
+              <Card className="press">
                 <div className="font-display font-bold text-ink">{t.label}</div>
                 <div className="mt-1 text-sm text-ink-2">Edit phases, topics & resources</div>
               </Card>

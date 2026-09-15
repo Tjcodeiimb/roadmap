@@ -37,7 +37,7 @@ export function InviteForm() {
         onChange={(e) => setFullName(e.target.value)}
         placeholder="Full name"
         required
-        className="flex-1 rounded-lg border border-border bg-paper px-3 py-2 text-sm outline-none focus:border-accent"
+        className="flex-1 rounded-md border-2 border-ink bg-paper px-3 py-2 text-sm font-medium outline-none"
       />
       <input
         value={email}
@@ -45,7 +45,7 @@ export function InviteForm() {
         type="email"
         placeholder="name@upforge.com"
         required
-        className="flex-1 rounded-lg border border-border bg-paper px-3 py-2 text-sm outline-none focus:border-accent"
+        className="flex-1 rounded-md border-2 border-ink bg-paper px-3 py-2 text-sm font-medium outline-none"
       />
       <Button type="submit" size="md" disabled={pending}>
         {pending ? "Inviting…" : "Send invite"}

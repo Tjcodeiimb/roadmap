@@ -32,12 +32,12 @@ export default async function MarketplacePage({
         </p>
       </div>
 
-      <div className="flex gap-1 rounded-xl border border-border bg-paper-2 p-1 w-fit">
+      <div className="flex gap-1 rounded-md border-2 border-ink bg-paper-2 p-1 w-fit">
         <Link
           href="/marketplace?tab=courses"
           className={clsx(
-            "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
-            activeTab === "courses" ? "bg-paper text-ink card-shadow" : "text-ink-2 hover:text-ink"
+            "rounded-sm px-4 py-2 text-sm font-bold transition-colors",
+            activeTab === "courses" ? "border-2 border-ink bg-paper text-ink" : "border-2 border-transparent text-ink-2 hover:text-ink"
           )}
         >
           Courses
@@ -45,8 +45,8 @@ export default async function MarketplacePage({
         <Link
           href="/marketplace?tab=cohorts"
           className={clsx(
-            "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
-            activeTab === "cohorts" ? "bg-paper text-ink card-shadow" : "text-ink-2 hover:text-ink"
+            "rounded-sm px-4 py-2 text-sm font-bold transition-colors",
+            activeTab === "cohorts" ? "border-2 border-ink bg-paper text-ink" : "border-2 border-transparent text-ink-2 hover:text-ink"
           )}
         >
           Cohorts
@@ -90,8 +90,8 @@ async function CohortsTab({ supabase }: { supabase: Awaited<ReturnType<typeof cr
 
   if (!cohorts.length) {
     return (
-      <div className="rounded-2xl border border-border bg-paper-2 p-10 text-center">
-        <div className="font-semibold text-ink">No cohorts yet</div>
+      <div className="rounded-md border-2 border-ink bg-paper-2 p-10 text-center shadow-[4px_4px_0_0_var(--brutal-shadow)]">
+        <div className="font-bold text-ink">No cohorts yet</div>
         <p className="mt-1 text-sm text-ink-2">
           Curated multi-course bundles are on the way — check back soon.
         </p>

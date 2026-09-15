@@ -46,10 +46,8 @@ export function StatusControl({ topicId, status, path }: { topicId: string; stat
           disabled={pending}
           onClick={() => pick(opt)}
           className={clsx(
-            "rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200",
-            current === opt
-              ? "border-accent bg-accent text-accent-ink"
-              : "border-border bg-paper-2 text-ink-2 hover:bg-paper-3"
+            "press-sm rounded-md border-2 border-ink px-4 py-2 text-sm font-bold",
+            current === opt ? "bg-accent text-accent-ink" : "bg-paper-2 text-ink-2"
           )}
         >
           {STATUS_LABELS[opt]}

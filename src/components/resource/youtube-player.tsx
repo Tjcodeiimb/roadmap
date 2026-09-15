@@ -155,7 +155,7 @@ export function YoutubePlayer({
   }, [resourceId, videoId]);
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-black">
+    <div className="overflow-hidden rounded-md border-2 border-ink bg-black shadow-[4px_4px_0_0_var(--brutal-shadow)]">
       <div className="relative aspect-video w-full">
         <div ref={hostRef} className="absolute inset-0 h-full w-full" />
         {!ready && (

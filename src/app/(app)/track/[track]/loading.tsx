@@ -15,7 +15,7 @@ export default function TrackLoading() {
             <Skeleton className="mb-4 h-5 w-48" />
             <div className="flex flex-col gap-2">
               {Array.from({ length: 4 }).map((_, ti) => (
-                <Skeleton key={ti} className="h-14 w-full rounded-xl" />
+                <Skeleton key={ti} className="h-14 w-full rounded-md" />
               ))}
             </div>
           </section>
