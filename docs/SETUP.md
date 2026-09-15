@@ -53,7 +53,10 @@ together with a handful of copy-paste values, and you're live.
    marketplace, cohort bundles, the skills system, and per-resource
    progress for the video player; `0003` and `0004` backfill marketplace
    metadata and the onboarding-completed flag; `0005_search_and_link_health.sql`
-   adds full-text search and the link-health cron's columns/function.
+   adds full-text search and the link-health cron's columns/function;
+   `0006_leaderboard_highlight.sql` adds the leaderboard RPC; `0007` soft-hides
+   the ESG track from the marketplace; `0008` bumps Finance's marketplace
+   tier/hours after its advanced-content expansion.
 
 > **Important:** run a migration *before* deploying code that depends on it.
 > Each file is additive and safe to re-run, so if you're unsure whether one
@@ -135,12 +138,17 @@ Keep this browser tab open — you'll copy these in a moment.
 
 ## 3. Load the course content into the database
 
-This inserts all 14 tracks (AI, Finance, Consulting, Excel & Business
+This inserts all 13 active tracks (AI, Finance, Consulting, Excel & Business
 Modelling, Behavioral Psychology, Growth & Marketing, Data & Analytics,
 Product & Strategy, B2B Sales, UX & Discovery, Operations & Process,
-Cybersecurity & Risk, People & Org Design, ESG & Business Models — every
-phase, topic, and resource link), plus the resume-ready skills and
-marketplace cohort bundles built on top of them, into Supabase. It only touches content tables, never anyone's
+Cybersecurity & Risk, People & Org Design — every phase, topic, and
+resource link), plus the resume-ready skills (2 hand-picked "signature"
+skills per track, plus one generated per topic — see
+`scripts/generate-topic-skills.mjs`) and marketplace cohort bundles built
+on top of them, into Supabase. (A 14th track, ESG & Business Models, is
+soft-hidden — `published = false` via migration `0007` — rather than
+deleted, so it's intentionally excluded from seeding; see that migration's
+comment if you ever want it back.) It only touches content tables, never anyone's
 personal progress, so it's safe to re-run later after you add more
 resources through the SQL editor directly (though normally you'll use the
 in-app Admin panel for that instead — see step 5).
@@ -173,15 +181,15 @@ on):
    ```
 6. You should see output like:
    ```
-   Seeding 14 tracks, 86 phases, 288 topics, 573 resources, 22 skills, 7 cohorts...
-     tracks: 14 rows
-     phases: 86 rows
-     topics: 288 rows
-     resources: 573 rows
-     skills: 22 rows
+   Seeding 13 tracks, 82 phases, 276 topics, 548 resources, 302 skills, 7 cohorts...
+     tracks: 13 rows
+     phases: 82 rows
+     topics: 276 rows
+     resources: 548 rows
+     skills: 302 rows
      cohorts: 7 rows
      cohort_courses: 21 rows
-     skill_resources: 138 rows
+     skill_resources: 707 rows
    Done. All tracks, skills and cohorts are now live in the database.
    ```
 
