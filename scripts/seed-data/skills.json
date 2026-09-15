@@ -31,7 +31,16 @@
     { "id": "skill-people-hiring", "name": "Hiring & Structured Interviewing", "domain": "people", "description": "Writing job descriptions, sourcing candidates, and running structured interviews that reduce bias.", "tier": "intermediate", "icon_key": "people", "xp_reward": 150, "threshold": 0 },
 
     { "id": "skill-esg-fundamentals", "name": "ESG Fundamentals & Materiality", "domain": "esg", "description": "The environmental, social, and governance basics, and how a materiality assessment decides what to prioritize.", "tier": "foundational", "icon_key": "sustainability", "xp_reward": 100, "threshold": 0 },
-    { "id": "skill-esg-reporting", "name": "ESG Reporting Frameworks", "domain": "esg", "description": "Navigating GRI, MSCI ratings, and the other frameworks companies use to report ESG performance.", "tier": "intermediate", "icon_key": "sustainability", "xp_reward": 150, "threshold": 0 }
+    { "id": "skill-esg-reporting", "name": "ESG Reporting Frameworks", "domain": "esg", "description": "Navigating GRI, MSCI ratings, and the other frameworks companies use to report ESG performance.", "tier": "intermediate", "icon_key": "sustainability", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-finance-statements", "name": "Reading Financial Statements", "domain": "finance", "description": "Reading the income statement, balance sheet, and cash flow statement, and how they connect.", "tier": "foundational", "icon_key": "finance", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-finance-valuation", "name": "Company Valuation Fundamentals", "domain": "finance", "description": "Building comps and a DCF to put a number on what a company is worth.", "tier": "intermediate", "icon_key": "finance", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-consulting-frameworks", "name": "Structured Problem-Solving Frameworks", "domain": "consulting", "description": "MECE, issue trees, Porter's Five Forces, and the 3Cs — breaking down an ambiguous problem into a structured one.", "tier": "foundational", "icon_key": "consulting", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-consulting-caseprep", "name": "Case Interview & Market Sizing", "domain": "consulting", "description": "Hypothesis-driven problem solving and market sizing under case-interview conditions.", "tier": "intermediate", "icon_key": "consulting", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-ai-prompting", "name": "Prompt Engineering Fundamentals", "domain": "ai", "description": "Writing clear, structured prompts and understanding tokens and context windows.", "tier": "foundational", "icon_key": "ai", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-ai-building", "name": "Building AI-Powered Workflows", "domain": "ai", "description": "Using the Claude API and MCP to wire AI into a real, repeatable workflow.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 150, "threshold": 0 }
   ],
   "skill_resources": [
     { "skill_id": "skill-excel-lookups", "resource_id": "exc-p2-r1" },
@@ -192,6 +201,46 @@
     { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r4" },
     { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r5" },
     { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r6" },
-    { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r7" }
+    { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r7" },
+
+    { "skill_id": "skill-finance-statements", "resource_id": "fin-p1-r1" },
+    { "skill_id": "skill-finance-statements", "resource_id": "fin-p1-r2" },
+    { "skill_id": "skill-finance-statements", "resource_id": "fin-p1-r3" },
+    { "skill_id": "skill-finance-statements", "resource_id": "fin-p1-r4" },
+    { "skill_id": "skill-finance-statements", "resource_id": "fin-p1-r5" },
+
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r1" },
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r2" },
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r3" },
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r4" },
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r5" },
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r6" },
+
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p1-r1" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p1-r2" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p1-r3" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p2-r1" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p2-r2" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p2-r3" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p2-r4" },
+
+    { "skill_id": "skill-consulting-caseprep", "resource_id": "con-p3-r1" },
+    { "skill_id": "skill-consulting-caseprep", "resource_id": "con-p3-r2" },
+    { "skill_id": "skill-consulting-caseprep", "resource_id": "con-p3-r3" },
+    { "skill_id": "skill-consulting-caseprep", "resource_id": "con-p3-r4" },
+    { "skill_id": "skill-consulting-caseprep", "resource_id": "con-p3-r5" },
+
+    { "skill_id": "skill-ai-prompting", "resource_id": "prompt-fundamentals-r1" },
+    { "skill_id": "skill-ai-prompting", "resource_id": "prompt-fundamentals-r2" },
+    { "skill_id": "skill-ai-prompting", "resource_id": "advanced-prompting-r1" },
+    { "skill_id": "skill-ai-prompting", "resource_id": "advanced-prompting-r2" },
+    { "skill_id": "skill-ai-prompting", "resource_id": "tokens-context-r1" },
+    { "skill_id": "skill-ai-prompting", "resource_id": "tokens-context-r2" },
+
+    { "skill_id": "skill-ai-building", "resource_id": "claude-api-r1" },
+    { "skill_id": "skill-ai-building", "resource_id": "claude-api-r2" },
+    { "skill_id": "skill-ai-building", "resource_id": "claude-api-r3" },
+    { "skill_id": "skill-ai-building", "resource_id": "mcp-advanced-r1" },
+    { "skill_id": "skill-ai-building", "resource_id": "mcp-advanced-r2" }
   ]
 }
