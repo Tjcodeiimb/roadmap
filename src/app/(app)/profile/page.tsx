@@ -15,7 +15,6 @@ import { Card } from "@/components/ui/card";
 import { CountUp } from "@/components/ui/count-up";
 import { ProgressRing } from "@/components/ui/progress-ring";
 import { BuildProjectsPanel } from "@/components/profile/build-projects-panel";
-import { LeaderboardOptIn } from "@/components/profile/leaderboard-optin";
 import { SetPasswordForm } from "@/components/profile/set-password-form";
 import { WatchStats } from "@/components/profile/watch-stats";
 import { SkillsPanel } from "@/components/profile/skills-panel";
@@ -124,7 +123,11 @@ export default async function ProfilePage({
       <BuildProjectsPanel projects={projects} />
 
       <Card>
-        <LeaderboardOptIn initial={profile?.leaderboard_opt_in ?? false} />
+        <div className="text-sm font-bold text-ink">Team leaderboard</div>
+        <p className="mt-1 text-xs text-ink-3">
+          Your name and XP appear on the team leaderboard, visible to everyone signed in. Nothing else is shared there —
+          not your streak, your progress, or anything from your resumes.
+        </p>
       </Card>
 
       {!params["set-password"] && (

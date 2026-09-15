@@ -553,7 +553,7 @@ export type Database = {
       };
       get_leaderboard: {
         Args: Record<string, never>;
-        Returns: { full_name: string | null; total_xp: number; current_streak: number; is_you: boolean }[];
+        Returns: { full_name: string | null; total_xp: number; is_you: boolean }[];
       };
       get_admin_track_stats: {
         Args: Record<string, never>;
