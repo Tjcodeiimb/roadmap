@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import { ICONS, FALLBACK_ICON, CheckCircleMark, PlayMark } from "@/components/icons";
 import { listReveal } from "@/lib/motion";
+import { trackColor } from "@/lib/track-colors";
 import type { LibraryResource } from "@/lib/queries";
 
 type StatusFilter = "all" | "todo" | "in_progress" | "done";
@@ -271,7 +272,7 @@ export function LibraryBrowser({ resources }: { resources: LibraryResource[] }) 
             return (
               <section key={tid}>
                 <div className="mb-4 flex items-center gap-2">
-                  <TrackIcon size={18} className="text-accent" />
+                  <TrackIcon size={18} style={{ color: trackColor(tid) }} />
                   <h2 className="font-display text-lg font-bold text-ink">{track.label}</h2>
                 </div>
                 <div className="flex flex-col gap-5">

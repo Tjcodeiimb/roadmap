@@ -8,6 +8,7 @@ import { ProgressRing } from "@/components/ui/progress-ring";
 import { DiscoverRail } from "@/components/dashboard/discover-rail";
 import { ArrowRight } from "lucide-react";
 import { BurstMark, RepeatMark, CompassMark } from "@/components/icons";
+import { trackColor } from "@/lib/track-colors";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -86,7 +87,7 @@ export default async function DashboardPage() {
               <Reveal key={s.track.id} index={i}>
                 <Card className="press flex h-full flex-col gap-4">
                   <div className="flex items-center gap-4">
-                    <ProgressRing progress={pct} size={52} strokeWidth={4}>
+                    <ProgressRing progress={pct} size={52} strokeWidth={4} color={trackColor(s.track.id)}>
                       <span className="text-xs font-bold text-ink">{pct}%</span>
                     </ProgressRing>
                     <div>

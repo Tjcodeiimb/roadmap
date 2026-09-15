@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { TierBadge } from "./tier-badge";
 import { EnrollButton } from "./enroll-button";
 import { ICONS, FALLBACK_ICON, ClockMark, SignalMark, StreakMark, SparkMark } from "@/components/icons";
+import { trackColor, trackInk } from "@/lib/track-colors";
 import type { MarketplaceCourse } from "@/lib/queries";
 
 export function CourseCard({
@@ -22,7 +23,10 @@ export function CourseCard({
     <Reveal index={index}>
       <Card className="press flex h-full flex-col gap-4">
         <div className="flex items-start gap-3">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent-soft text-accent">
+          <div
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border-2 border-ink"
+            style={{ backgroundColor: trackColor(course.id), color: trackInk(course.id) }}
+          >
             <Icon size={22} />
           </div>
           <div className="min-w-0 flex-1">

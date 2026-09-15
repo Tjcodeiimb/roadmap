@@ -2,6 +2,8 @@ import { createClient } from "@/lib/supabase/server";
 import { getSkillProgress } from "@/lib/queries";
 import { ICONS, FALLBACK_ICON, LockMark, CheckCircleMark, SparkMark } from "@/components/icons";
 import { TierBadge } from "@/components/marketplace/tier-badge";
+import { trackColor, trackInk } from "@/lib/track-colors";
+import { Reveal } from "@/components/ui/reveal";
 
 export default async function SkillsPage() {
   const supabase = await createClient();
@@ -32,9 +34,12 @@ export default async function SkillsPage() {
         </div>
       ) : (
         <div className="flex flex-col gap-8">
-          {[...byDomain.entries()].map(([domain, domainSkills]) => (
+          {(() => {
+            let globalIndex = 0;
+            return [...byDomain.entries()].map(([domain, domainSkills]) => (
             <section key={domain}>
               <div className="mb-3 flex items-baseline gap-2">
+                <span className="h-3 w-3 rounded-sm border-2 border-ink" style={{ backgroundColor: trackColor(domain) }} />
                 <h2 className="font-display text-lg font-bold text-ink">{domain}</h2>
                 <span className="text-xs text-ink-3">
                   {domainSkills.filter((s) => s.unlocked).length}/{domainSkills.length}
@@ -43,9 +48,10 @@ export default async function SkillsPage() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {domainSkills.map((skill) => {
                   const Icon = ICONS[skill.iconKey ?? ""] ?? FALLBACK_ICON;
+                  const index = globalIndex++;
                   return (
+                    <Reveal key={skill.id} index={index}>
                     <div
-                      key={skill.id}
                       className={
                         skill.unlocked
                           ? "flex items-start gap-3 rounded-md border-2 border-ink bg-paper-2 p-4 shadow-[3px_3px_0_0_var(--brutal-shadow)]"
@@ -55,9 +61,10 @@ export default async function SkillsPage() {
                       <div
                         className={
                           skill.unlocked
-                            ? "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent-soft text-accent"
+                            ? "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border-2 border-ink"
                             : "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-paper-3 text-ink-3"
                         }
+                        style={skill.unlocked ? { backgroundColor: trackColor(skill.domain), color: trackInk(skill.domain) } : undefined}
                       >
                         {skill.unlocked ? <Icon size={20} /> : <LockMark size={18} />}
                       </div>
@@ -91,11 +98,13 @@ export default async function SkillsPage() {
                         )}
                       </div>
                     </div>
+                    </Reveal>
                   );
                 })}
               </div>
             </section>
-          ))}
+            ));
+          })()}
         </div>
       )}
     </div>

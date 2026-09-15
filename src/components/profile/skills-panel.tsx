@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ICONS, FALLBACK_ICON } from "@/components/icons";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/components/ui/toast";
+import { trackColor } from "@/lib/track-colors";
 import type { SkillProgress } from "@/lib/queries";
 
 export function SkillsPanel({ skills }: { skills: SkillProgress[] }) {
@@ -62,7 +63,7 @@ export function SkillsPanel({ skills }: { skills: SkillProgress[] }) {
                 key={s.id}
                 className="flex items-center gap-1.5 rounded-sm border-2 border-ink bg-paper-3 px-3 py-1.5 text-xs font-bold text-ink"
               >
-                <Icon size={13} className="text-accent" /> {s.name}
+                <Icon size={13} style={{ color: trackColor(s.domain) }} /> {s.name}
               </span>
             );
           })}

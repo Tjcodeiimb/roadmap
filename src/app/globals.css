@@ -34,6 +34,39 @@
   --radius-lg: 10px;
   --radius-md: 6px;
   --radius-sm: 4px;
+
+  /* Per-track/domain colors — one loud, distinct hue per track so course
+     icons, active nav items, and skill badges read as their own category
+     rather than everything sharing one accent. Each is WCAG AA-verified as
+     text/icon color on --paper (>=4.5:1) and pairs with a matching -ink
+     token (the text color to put ON a solid fill of that track color).
+     Security/esg are domain-string aliases (skills.domain uses "security"/
+     "esg" while the track ids are "cybersecurity"/"sustainability"). */
+  --track-ai: #0b50da; --track-ai-ink: #ffffff;
+  --track-finance: #078345; --track-finance-ink: #ffffff;
+  --track-consulting: #b35009; --track-consulting-ink: #ffffff;
+  --track-excel: #078364; --track-excel-ink: #ffffff;
+  --track-psychology: #950bda; --track-psychology-ink: #ffffff;
+  --track-marketing: #da0b62; --track-marketing-ink: #ffffff;
+  --track-data: #087e96; --track-data-ink: #ffffff;
+  --track-product: #8d6b07; --track-product-ink: #ffffff;
+  --track-sales: #da1d0b; --track-sales-ink: #ffffff;
+  --track-ux: #d00baf; --track-ux-ink: #ffffff;
+  --track-operations: #3b8307; --track-operations-ink: #ffffff;
+  --track-cybersecurity: #da0b1d; --track-cybersecurity-ink: #ffffff;
+  --track-security: #da0b1d; --track-security-ink: #ffffff;
+  --track-people: #620bda; --track-people-ink: #ffffff;
+  --track-sustainability: #07831c; --track-sustainability-ink: #ffffff;
+  --track-esg: #07831c; --track-esg-ink: #ffffff;
+
+  /* One bold flat color for the login splash — a brand moment, so it stays
+     bright regardless of the viewer's light/dark preference rather than
+     switching to a muted dark background. --login-ink is a fixed near-black
+     (never the theme-flipping --ink, which turns near-white in dark mode
+     and would be unreadable on this bright a background) for any text that
+     sits directly on --login-bg rather than on a card. */
+  --login-bg: #ffd83d;
+  --login-ink: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,6 +87,23 @@
     --danger-soft: #3a140f;
     --shadow-color: 245 245 240;
     --brutal-shadow: var(--ink);
+
+    --track-ai: #5a8cf2; --track-ai-ink: #0a0a0a;
+    --track-finance: #5af2a6; --track-finance-ink: #0a0a0a;
+    --track-consulting: #f2995a; --track-consulting-ink: #0a0a0a;
+    --track-excel: #5af2cc; --track-excel-ink: #0a0a0a;
+    --track-psychology: #bf5af2; --track-psychology-ink: #0a0a0a;
+    --track-marketing: #f25a99; --track-marketing-ink: #0a0a0a;
+    --track-data: #5ad8f2; --track-data-ink: #0a0a0a;
+    --track-product: #f2cc5a; --track-product-ink: #0a0a0a;
+    --track-sales: #f2675a; --track-sales-ink: #0a0a0a;
+    --track-ux: #f25ad8; --track-ux-ink: #0a0a0a;
+    --track-operations: #99f25a; --track-operations-ink: #0a0a0a;
+    --track-cybersecurity: #f25a67; --track-cybersecurity-ink: #0a0a0a;
+    --track-security: #f25a67; --track-security-ink: #0a0a0a;
+    --track-people: #995af2; --track-people-ink: #0a0a0a;
+    --track-sustainability: #5af273; --track-sustainability-ink: #0a0a0a;
+    --track-esg: #5af273; --track-esg-ink: #0a0a0a;
   }
 }
 
@@ -74,6 +124,23 @@
   --danger-soft: #3a140f;
   --shadow-color: 245 245 240;
   --brutal-shadow: var(--ink);
+
+  --track-ai: #5a8cf2; --track-ai-ink: #0a0a0a;
+  --track-finance: #5af2a6; --track-finance-ink: #0a0a0a;
+  --track-consulting: #f2995a; --track-consulting-ink: #0a0a0a;
+  --track-excel: #5af2cc; --track-excel-ink: #0a0a0a;
+  --track-psychology: #bf5af2; --track-psychology-ink: #0a0a0a;
+  --track-marketing: #f25a99; --track-marketing-ink: #0a0a0a;
+  --track-data: #5ad8f2; --track-data-ink: #0a0a0a;
+  --track-product: #f2cc5a; --track-product-ink: #0a0a0a;
+  --track-sales: #f2675a; --track-sales-ink: #0a0a0a;
+  --track-ux: #f25ad8; --track-ux-ink: #0a0a0a;
+  --track-operations: #99f25a; --track-operations-ink: #0a0a0a;
+  --track-cybersecurity: #f25a67; --track-cybersecurity-ink: #0a0a0a;
+  --track-security: #f25a67; --track-security-ink: #0a0a0a;
+  --track-people: #995af2; --track-people-ink: #0a0a0a;
+  --track-sustainability: #5af273; --track-sustainability-ink: #0a0a0a;
+  --track-esg: #5af273; --track-esg-ink: #0a0a0a;
 }
 
 @theme inline {
@@ -91,6 +158,7 @@
   --color-success-soft: var(--success-soft);
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);
+  --color-login-bg: var(--login-bg);
   --font-sans: var(--font-display);
   --font-display: var(--font-display);
   --radius-lg: var(--radius-lg);

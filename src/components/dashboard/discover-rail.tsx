@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Reveal } from "@/components/ui/reveal";
 import { ArrowRight } from "lucide-react";
 import { ICONS, FALLBACK_ICON, SparkMark } from "@/components/icons";
+import { trackColor, trackInk } from "@/lib/track-colors";
 import type { TrackProgressSummary, SkillProgress } from "@/lib/queries";
 
 // Heuristic "Recommended next" — no ML needed at this scale. Reuses data
@@ -28,7 +29,10 @@ export function DiscoverRail({
             <Reveal key={s.track.id} index={i}>
               <Link href={`/track/${s.track.id}/topic/${s.currentTopic!.id}`}>
                 <Card className="press flex h-full items-center gap-3 p-4">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent-soft text-accent">
+                  <div
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border-2 border-ink"
+                    style={{ backgroundColor: trackColor(s.track.id), color: trackInk(s.track.id) }}
+                  >
                     <Icon size={18} />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -48,7 +52,10 @@ export function DiscoverRail({
             <Reveal key={skill.id} index={continueItems.length + i}>
               <Link href="/skills">
                 <Card className="press flex h-full items-center gap-3 p-4">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-paper-3 text-ink-2">
+                  <div
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border-2 border-ink"
+                    style={{ backgroundColor: trackColor(skill.domain), color: trackInk(skill.domain) }}
+                  >
                     <Icon size={18} />
                   </div>
                   <div className="min-w-0 flex-1">

@@ -21,6 +21,7 @@ import { WatchStats } from "@/components/profile/watch-stats";
 import { SkillsPanel } from "@/components/profile/skills-panel";
 import { levelForXP } from "@/lib/gamification/levels";
 import { LEVEL_ICONS, StreakMark, TrophyMark } from "@/components/icons";
+import { trackColor } from "@/lib/track-colors";
 
 export default async function ProfilePage({
   searchParams,
@@ -91,7 +92,7 @@ export default async function ProfilePage({
             return (
               <Link key={s.track.id} href={`/track/${s.track.id}`}>
                 <Card className="press flex flex-col items-center gap-2 py-5 text-center">
-                  <ProgressRing progress={pct} size={44} strokeWidth={4}>
+                  <ProgressRing progress={pct} size={44} strokeWidth={4} color={trackColor(s.track.id)}>
                     <span className="text-[11px] font-bold text-ink">{pct}%</span>
                   </ProgressRing>
                   <div className="text-sm font-bold text-ink">{s.track.label}</div>
