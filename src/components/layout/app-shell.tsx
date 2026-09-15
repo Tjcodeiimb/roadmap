@@ -41,7 +41,7 @@ export function AppShell({
   return (
     <MotionConfig reducedMotion="user">
       <div className="flex min-h-screen bg-paper">
-        <aside className="hidden w-64 shrink-0 flex-col gap-6 border-r-2 border-ink bg-paper-2 p-5 md:flex">
+        <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col gap-6 overflow-y-auto border-r-2 border-ink bg-paper-2 p-5 md:flex">
           <Brand />
           <SidebarNav tracks={tracks} reviewCount={reviewCount} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} onOpenSwitcher={() => setSwitcherOpen(true)} />
           <div className="mt-auto flex flex-col gap-3">
