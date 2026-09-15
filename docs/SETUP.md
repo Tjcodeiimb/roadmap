@@ -56,7 +56,15 @@ together with a handful of copy-paste values, and you're live.
    adds full-text search and the link-health cron's columns/function;
    `0006_leaderboard_highlight.sql` adds the leaderboard RPC; `0007` soft-hides
    the ESG track from the marketplace; `0008` bumps Finance's marketplace
-   tier/hours after its advanced-content expansion.
+   tier/hours after its advanced-content expansion; `0009` makes the
+   leaderboard always-on for everyone (name + XP only); `0010_resumes.sql`
+   adds the resume builder's table.
+
+> **On `0010_resumes.sql`:** resumes hold the most sensitive data in this
+> database — phone numbers, dates of birth, full work history. Its RLS policy
+> is strictly `auth.uid() = user_id` with **no** admin escape hatch, unlike
+> `profiles`, which admins can read for the roster screen. Don't add one, and
+> don't add a resume view to the admin panel.
 
 > **Important:** run a migration *before* deploying code that depends on it.
 > Each file is additive and safe to re-run, so if you're unsure whether one

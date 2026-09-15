@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { LayoutDashboard, UserRound, ShieldCheck } from "lucide-react";
-import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark, StackMark, TargetMark } from "@/components/icons";
+import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark, StackMark, TargetMark, ArticleMark } from "@/components/icons";
 import { uiTransition } from "@/lib/motion";
 import { trackColor, trackInk } from "@/lib/track-colors";
 import { CourseSwitcherTrigger } from "./course-switcher";
@@ -42,6 +42,7 @@ export function SidebarNav({
     })),
     { href: "/review", label: "Review", icon: RepeatMark, badge: reviewCount },
     { href: "/skills", label: "Skills", icon: TargetMark },
+    { href: "/resume", label: "Resume", icon: ArticleMark },
     { href: "/profile", label: "Profile", icon: UserRound },
     ...(leaderboardEnabled ? [{ href: "/leaderboard", label: "Leaderboard", icon: TrophyMark }] : []),
     ...(isAdmin ? [{ href: "/admin", label: "Admin", icon: ShieldCheck }] : []),
