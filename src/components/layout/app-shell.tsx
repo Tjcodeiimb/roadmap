@@ -77,7 +77,7 @@ export function AppShell({
             <ThemeToggle initialTheme={theme} />
           </header>
 
-          <main className="flex-1 px-4 py-6 md:px-10 md:py-10">{children}</main>
+          <main className="app-canvas relative flex-1 px-4 py-6 md:px-10 md:py-10">{children}</main>
         </div>
 
         <AnimatePresence>

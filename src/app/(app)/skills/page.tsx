@@ -25,6 +25,7 @@ export default async function SkillsPage() {
         <p className="mt-2 text-ink-2">
           {unlockedCount} of {skills.length} skills unlocked across {domains.length} domains.
         </p>
+        <div className="rule-stripes mt-4 h-2 w-full border-2 border-ink" />
       </div>
 
       {skills.length === 0 ? (

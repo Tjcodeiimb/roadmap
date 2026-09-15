@@ -226,9 +226,12 @@ body {
 .press {
   transition: transform 0.1s linear, box-shadow 0.1s linear;
 }
+/* Lift *away* from the shadow rather than toward it, so hover gains weight
+   and the press then drops the whole distance. A bigger gap between the two
+   states makes the slam land harder. */
 .press:hover {
-  transform: translate(2px, 2px);
-  box-shadow: var(--brutal-offset-sm) var(--brutal-offset-sm) 0 0 var(--brutal-shadow);
+  transform: translate(-2px, -2px);
+  box-shadow: calc(var(--brutal-offset) + 2px) calc(var(--brutal-offset) + 2px) 0 0 var(--brutal-shadow);
 }
 /* The slam is a hard cut, not an eased move: brutalist motion shows no
    easing curve on the way down. The lift keeps its 0.1s linear ramp, so
@@ -246,8 +249,8 @@ body {
   transition: transform 0.1s linear, box-shadow 0.1s linear;
 }
 .press-sm:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 0 var(--brutal-shadow);
+  transform: translate(-1px, -1px);
+  box-shadow: calc(var(--brutal-offset-sm) + 1px) calc(var(--brutal-offset-sm) + 1px) 0 0 var(--brutal-shadow);
 }
 .press-sm:active {
   transition: none;
@@ -280,8 +283,30 @@ body {
    legibility for decoration.
    --------------------------------------------------------------------------- */
 :root {
-  --grid-line: color-mix(in srgb, var(--ink) 8%, transparent);
-  --grid-line-strong: color-mix(in srgb, var(--ink) 14%, transparent);
+  --grid-line: color-mix(in srgb, var(--ink) 11%, transparent);
+  --grid-line-strong: color-mix(in srgb, var(--ink) 20%, transparent);
+}
+
+/* The page canvas: a grid behind every app screen, not just the loud ones.
+   It lives on a position:fixed pseudo-element rather than a background on a
+   scrolling container, so it composites once and never repaints on scroll —
+   `background-attachment: fixed` still forces a paint-per-frame on some
+   engines. Cards sit on top as solid fills, so body text never reads against
+   the pattern directly. */
+.app-canvas::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 34px);
+}
+
+.app-canvas > * {
+  position: relative;
+  z-index: 1;
 }
 
 .bg-grid {
@@ -302,6 +327,51 @@ body {
 /* Fades a pattern out before it reaches the content sitting on top of it. */
 .bg-fade-down {
   mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+/* A hazard-stripe band, for page headers and section rules that should read
+   as a hard graphic element rather than a hairline. */
+.rule-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--ink) 0 6px,
+    transparent 6px 12px
+  );
+}
+
+/* ---------------------------------------------------------------------------
+   Marquee. Duplicated content scrolls a full 50% so the loop is seamless.
+   Linear, never eased — a ticker that accelerates reads as decoration; one
+   that runs at constant speed reads as machinery, which is the point.
+   Pauses on hover and focus-within so it can't run away from someone
+   reading it, and stops entirely under reduced motion (the block above
+   collapses the duration, and this pins it to a stable frame).
+   --------------------------------------------------------------------------- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
 /* ---------------------------------------------------------------------------

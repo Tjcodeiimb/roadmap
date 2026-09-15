@@ -16,6 +16,7 @@ export default async function ResumePage() {
         <p className="mt-2 text-sm text-ink-3">
           Private to you. Not visible to admins, not shown on the leaderboard, never shared.
         </p>
+        <div className="rule-stripes mt-4 h-2 w-full border-2 border-ink" />
       </div>
 
       <ResumeList resumes={resumes} />

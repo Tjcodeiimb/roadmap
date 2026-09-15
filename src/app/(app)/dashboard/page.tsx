@@ -9,6 +9,7 @@ import { DiscoverRail } from "@/components/dashboard/discover-rail";
 import { ArrowRight } from "lucide-react";
 import { BurstMark, RepeatMark, CompassMark } from "@/components/icons";
 import { trackColor, trackInk } from "@/lib/track-colors";
+import { Marquee } from "@/components/ui/marquee";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -41,7 +42,18 @@ export default async function DashboardPage() {
           Welcome back, {firstName}
         </h1>
         <p className="mt-2 text-base text-ink-2">Here&apos;s where you left off.</p>
+        <div className="rule-stripes mt-4 h-2 w-full border-2 border-ink" />
       </div>
+
+      <Marquee
+        items={[
+          `${skills.filter((s) => s.unlocked).length} skills unlocked`,
+          `${summaries.length} course${summaries.length === 1 ? "" : "s"} in progress`,
+          `${summaries.reduce((n, s) => n + s.doneTopics, 0)} topics done`,
+          `${review.due.length} review${review.due.length === 1 ? "" : "s"} due`,
+          `${almostUnlocked.length} skill${almostUnlocked.length === 1 ? "" : "s"} almost unlocked`,
+        ]}
+      />
 
       {review.due.length > 0 && (
         <Link href="/review">

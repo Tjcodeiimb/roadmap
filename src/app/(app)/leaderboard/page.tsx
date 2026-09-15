@@ -12,6 +12,7 @@ export default async function LeaderboardPage() {
       <div>
         <h1 className="font-display text-3xl font-extrabold tracking-tight text-ink">Leaderboard</h1>
         <p className="mt-2 text-ink-2">Everyone on the team, ranked by XP. Names and XP only — nothing else is shared here.</p>
+        <div className="rule-stripes mt-4 h-2 w-full border-2 border-ink" />
       </div>
 
       {rows.length === 0 ? (
