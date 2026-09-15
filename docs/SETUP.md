@@ -53,7 +53,18 @@ together with a handful of copy-paste values, and you're live.
    marketplace, cohort bundles, the skills system, and per-resource
    progress for the video player; `0003` and `0004` backfill marketplace
    metadata and the onboarding-completed flag; `0005_search_and_link_health.sql`
-   adds full-text search and the link-health cron's columns/function.
+   adds full-text search and the link-health cron's columns/function;
+   `0006_leaderboard_highlight.sql` adds the leaderboard RPC; `0007` soft-hides
+   the ESG track from the marketplace; `0008` bumps Finance's marketplace
+   tier/hours after its advanced-content expansion; `0009` makes the
+   leaderboard always-on for everyone (name + XP only); `0010_resumes.sql`
+   adds the resume builder's table.
+
+> **On `0010_resumes.sql`:** resumes hold the most sensitive data in this
+> database — phone numbers, dates of birth, full work history. Its RLS policy
+> is strictly `auth.uid() = user_id` with **no** admin escape hatch, unlike
+> `profiles`, which admins can read for the roster screen. Don't add one, and
+> don't add a resume view to the admin panel.
 
 > **Important:** run a migration *before* deploying code that depends on it.
 > Each file is additive and safe to re-run, so if you're unsure whether one
@@ -135,11 +146,17 @@ Keep this browser tab open — you'll copy these in a moment.
 
 ## 3. Load the course content into the database
 
-This inserts all 9 tracks (AI, Finance, Consulting, Excel & Business
+This inserts all 13 active tracks (AI, Finance, Consulting, Excel & Business
 Modelling, Behavioral Psychology, Growth & Marketing, Data & Analytics,
-Product & Strategy, B2B Sales — every phase, topic, and resource link),
-plus the resume-ready skills and marketplace cohort bundles built on top
-of them, into Supabase. It only touches content tables, never anyone's
+Product & Strategy, B2B Sales, UX & Discovery, Operations & Process,
+Cybersecurity & Risk, People & Org Design — every phase, topic, and
+resource link), plus the resume-ready skills (2 hand-picked "signature"
+skills per track, plus one generated per topic — see
+`scripts/generate-topic-skills.mjs`) and marketplace cohort bundles built
+on top of them, into Supabase. (A 14th track, ESG & Business Models, is
+soft-hidden — `published = false` via migration `0007` — rather than
+deleted, so it's intentionally excluded from seeding; see that migration's
+comment if you ever want it back.) It only touches content tables, never anyone's
 personal progress, so it's safe to re-run later after you add more
 resources through the SQL editor directly (though normally you'll use the
 in-app Admin panel for that instead — see step 5).
@@ -172,15 +189,15 @@ on):
    ```
 6. You should see output like:
    ```
-   Seeding 9 tracks, 56 phases, 198 topics, 378 resources, 12 skills, 4 cohorts...
-     tracks: 9 rows
-     phases: 56 rows
-     topics: 198 rows
-     resources: 378 rows
-     skills: 12 rows
-     cohorts: 4 rows
-     cohort_courses: 12 rows
-     skill_resources: 72 rows
+   Seeding 13 tracks, 82 phases, 276 topics, 548 resources, 302 skills, 7 cohorts...
+     tracks: 13 rows
+     phases: 82 rows
+     topics: 276 rows
+     resources: 548 rows
+     skills: 302 rows
+     cohorts: 7 rows
+     cohort_courses: 21 rows
+     skill_resources: 707 rows
    Done. All tracks, skills and cohorts are now live in the database.
    ```
 
@@ -271,3 +288,22 @@ open-source libraries that run inside your own Vercel deployment.
 - **Re-running the seed script**: safe to re-run any time; it upserts by
   ID, so it won't create duplicates. It never touches user progress, XP,
   streaks, or spaced-repetition data.
+
+### Automating the seed step (recommended, one-time setup)
+
+`.github/workflows/seed.yml` re-runs `npm run seed` automatically in GitHub
+Actions whenever a push changes anything under `scripts/seed-data/`, so you
+never need to run it by hand again after the first time. To turn it on:
+
+1. GitHub repo → **Settings** → **Secrets and variables** → **Actions** →
+   **New repository secret**. Add two secrets, using the same values from
+   your `.env.local`:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+2. That's it. From then on, any commit that touches seed content on `main`
+   or `claude/new-session-xqqu7b` triggers the workflow automatically —
+   check progress under the repo's **Actions** tab.
+
+Combined with Vercel's own auto-deploy on push, this means a future prompt
+like "add a new track" or "add another cohort" needs no manual steps from
+you at all: code deploys via Vercel, content seeds via this workflow.

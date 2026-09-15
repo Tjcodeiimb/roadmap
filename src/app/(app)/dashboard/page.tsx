@@ -8,6 +8,8 @@ import { ProgressRing } from "@/components/ui/progress-ring";
 import { DiscoverRail } from "@/components/dashboard/discover-rail";
 import { ArrowRight } from "lucide-react";
 import { BurstMark, RepeatMark, CompassMark } from "@/components/icons";
+import { trackColor, trackInk } from "@/lib/track-colors";
+import { Marquee } from "@/components/ui/marquee";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -40,12 +42,23 @@ export default async function DashboardPage() {
           Welcome back, {firstName}
         </h1>
         <p className="mt-2 text-base text-ink-2">Here&apos;s where you left off.</p>
+        <div className="rule-stripes mt-4 h-2 w-full border-2 border-ink" />
       </div>
+
+      <Marquee
+        items={[
+          `${skills.filter((s) => s.unlocked).length} skills unlocked`,
+          `${summaries.length} course${summaries.length === 1 ? "" : "s"} in progress`,
+          `${summaries.reduce((n, s) => n + s.doneTopics, 0)} topics done`,
+          `${review.due.length} review${review.due.length === 1 ? "" : "s"} due`,
+          `${almostUnlocked.length} skill${almostUnlocked.length === 1 ? "" : "s"} almost unlocked`,
+        ]}
+      />
 
       {review.due.length > 0 && (
         <Link href="/review">
-          <Card className="flex items-center gap-4 border-accent/30 bg-accent-soft transition-transform duration-200 hover:scale-[1.01]">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-accent-ink">
+          <Card className="press flex items-center gap-4 bg-accent-soft">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-ink bg-accent text-accent-ink">
               <RepeatMark size={18} />
             </div>
             <div className="flex-1">
@@ -63,7 +76,7 @@ export default async function DashboardPage() {
 
       {summaries.length === 0 ? (
         <Card className="flex flex-col items-center gap-4 py-14 text-center">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent-soft text-accent">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-ink bg-accent-soft text-accent">
             <CompassMark size={22} />
           </div>
           <div>
@@ -84,14 +97,20 @@ export default async function DashboardPage() {
             const pct = s.totalTopics ? Math.round((s.doneTopics / s.totalTopics) * 100) : 0;
             return (
               <Reveal key={s.track.id} index={i}>
-                <Card className="flex h-full flex-col gap-4 transition-transform duration-200 ease-out hover:-translate-y-1">
+                <Card className="press flex h-full flex-col gap-4" style={{ backgroundColor: trackColor(s.track.id) }}>
                   <div className="flex items-center gap-4">
-                    <ProgressRing progress={pct} size={52} strokeWidth={4}>
-                      <span className="text-xs font-bold text-ink">{pct}%</span>
+                    <ProgressRing
+                      progress={pct}
+                      size={52}
+                      strokeWidth={4}
+                      color={trackInk(s.track.id)}
+                      trackColor={`color-mix(in srgb, ${trackInk(s.track.id)} 25%, transparent)`}
+                    >
+                      <span className="text-xs font-bold" style={{ color: trackInk(s.track.id) }}>{pct}%</span>
                     </ProgressRing>
                     <div>
-                      <div className="font-display text-lg font-bold text-ink">{s.track.label}</div>
-                      <div className="text-sm text-ink-2">
+                      <div className="font-display text-lg font-bold" style={{ color: trackInk(s.track.id) }}>{s.track.label}</div>
+                      <div className="text-sm" style={{ color: trackInk(s.track.id), opacity: 0.8 }}>
                         {s.doneTopics} of {s.totalTopics} topics done
                       </div>
                     </div>
@@ -99,17 +118,21 @@ export default async function DashboardPage() {
                   {s.currentTopic ? (
                     <Link
                       href={`/track/${s.track.id}/topic/${s.currentTopic.id}`}
-                      className="flex items-center justify-between rounded-xl bg-paper-3 px-4 py-3 text-sm font-medium text-ink transition-colors hover:bg-paper-3/70"
+                      className="press-sm flex items-center justify-between rounded-md border-2 border-ink bg-paper-2 px-4 py-3 text-sm font-bold text-ink"
                     >
                       <span className="truncate">Continue: {s.currentTopic.title}</span>
                       <ArrowRight size={16} className="shrink-0" />
                     </Link>
                   ) : (
-                    <div className="flex items-center gap-2 rounded-xl bg-success-soft px-4 py-3 text-sm font-medium text-success">
+                    <div className="flex items-center gap-2 rounded-md border-2 border-success bg-success-soft px-4 py-3 text-sm font-bold text-success">
                       <BurstMark size={16} /> All topics complete
                     </div>
                   )}
-                  <Link href={`/track/${s.track.id}`} className="text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink">
+                  <Link
+                    href={`/track/${s.track.id}`}
+                    className="text-sm font-bold underline decoration-2 underline-offset-4"
+                    style={{ color: trackInk(s.track.id), opacity: 0.8 }}
+                  >
                     View full roadmap
                   </Link>
                 </Card>

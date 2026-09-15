@@ -44,7 +44,7 @@ function Field({
       rows={multiline ? 2 : undefined}
       onChange={(e) => setV(e.target.value)}
       onBlur={() => v !== value && onSave(v)}
-      className="w-full rounded-lg border border-border bg-paper px-2.5 py-1.5 text-sm outline-none focus:border-accent"
+      className="w-full rounded-sm border-2 border-ink bg-paper px-2.5 py-1.5 text-sm font-medium outline-none"
     />
   );
 }
@@ -78,12 +78,12 @@ export function ContentEditor({ trackId, initialPhases }: { trackId: string; ini
         />
       ))}
 
-      <div className="flex gap-2 rounded-xl border border-dashed border-border p-3">
+      <div className="flex gap-2 rounded-md border-2 border-dashed border-ink p-3">
         <input
           value={newPhaseTitle}
           onChange={(e) => setNewPhaseTitle(e.target.value)}
           placeholder="New phase title"
-          className="flex-1 rounded-lg border border-border bg-paper px-3 py-2 text-sm outline-none focus:border-accent"
+          className="flex-1 rounded-sm border-2 border-ink bg-paper px-3 py-2 text-sm font-medium outline-none"
         />
         <Button
           size="sm"
@@ -118,7 +118,7 @@ function PhaseBlock({
   const [newTopicTitle, setNewTopicTitle] = useState("");
 
   return (
-    <div className="rounded-2xl border border-border bg-paper-2">
+    <div className="rounded-md border-2 border-ink bg-paper-2 shadow-[4px_4px_0_0_var(--brutal-shadow)]">
       <div className="flex items-center gap-2 p-4">
         <GripVertical size={16} className="shrink-0 text-ink-3" />
         <div className="flex-1">
@@ -136,7 +136,7 @@ function PhaseBlock({
           </button>
           <button
             onClick={() => setOpen((o) => !o)}
-            className="ml-1 rounded-full bg-paper-3 px-3 py-1 text-xs font-medium text-ink-2"
+            className="ml-1 rounded-sm border-2 border-ink bg-paper-3 px-3 py-1 text-xs font-bold text-ink-2"
           >
             {phase.topics.length} topics
           </button>
@@ -158,7 +158,7 @@ function PhaseBlock({
       </div>
 
       {open && (
-        <div className="flex flex-col gap-2 border-t border-border p-4">
+        <div className="flex flex-col gap-2 border-t-2 border-ink p-4">
           {phase.topics.map((topic, ti) => (
             <TopicBlock
               key={topic.id}
@@ -170,12 +170,12 @@ function PhaseBlock({
               run={run}
             />
           ))}
-          <div className="flex gap-2 rounded-xl border border-dashed border-border p-2.5">
+          <div className="flex gap-2 rounded-md border-2 border-dashed border-ink p-2.5">
             <input
               value={newTopicTitle}
               onChange={(e) => setNewTopicTitle(e.target.value)}
               placeholder="New topic title"
-              className="flex-1 rounded-lg border border-border bg-paper px-3 py-1.5 text-sm outline-none focus:border-accent"
+              className="flex-1 rounded-sm border-2 border-ink bg-paper px-3 py-1.5 text-sm font-medium outline-none"
             />
             <Button
               size="sm"
@@ -216,7 +216,7 @@ function TopicBlock({
   const [newResourceUrl, setNewResourceUrl] = useState("");
 
   return (
-    <div className="rounded-xl border border-border bg-paper p-3">
+    <div className="rounded-md border-2 border-ink bg-paper p-3">
       <div className="flex items-center gap-2">
         <div className="flex-1">
           <Field value={topic.title} onSave={(v) => run(updateTopic(topic.id, trackId, { title: v }))} />
@@ -230,7 +230,7 @@ function TopicBlock({
         <button onClick={() => run(deleteTopic(topic.id, trackId))} className="rounded p-1 text-ink-3 hover:text-danger">
           <Trash2 size={15} />
         </button>
-        <button onClick={() => setOpen((o) => !o)} className="rounded-full bg-paper-3 px-2.5 py-1 text-xs font-medium text-ink-2">
+        <button onClick={() => setOpen((o) => !o)} className="rounded-sm border-2 border-ink bg-paper-3 px-2.5 py-1 text-xs font-bold text-ink-2">
           {topic.resources.length} resources
         </button>
       </div>
@@ -255,22 +255,22 @@ function TopicBlock({
       </div>
 
       {open && (
-        <div className="mt-3 flex flex-col gap-2 border-t border-border pt-3">
+        <div className="mt-3 flex flex-col gap-2 border-t-2 border-ink pt-3">
           {topic.resources.map((resource) => (
             <ResourceRow key={resource.id} resource={resource} trackId={trackId} run={run} />
           ))}
-          <div className="flex flex-col gap-2 rounded-xl border border-dashed border-border p-2.5 sm:flex-row">
+          <div className="flex flex-col gap-2 rounded-md border-2 border-dashed border-ink p-2.5 sm:flex-row">
             <input
               value={newResourceTitle}
               onChange={(e) => setNewResourceTitle(e.target.value)}
               placeholder="Resource title"
-              className="flex-1 rounded-lg border border-border bg-paper-2 px-3 py-1.5 text-sm outline-none focus:border-accent"
+              className="flex-1 rounded-sm border-2 border-ink bg-paper-2 px-3 py-1.5 text-sm font-medium outline-none"
             />
             <input
               value={newResourceUrl}
               onChange={(e) => setNewResourceUrl(e.target.value)}
               placeholder="https://…"
-              className="flex-1 rounded-lg border border-border bg-paper-2 px-3 py-1.5 text-sm outline-none focus:border-accent"
+              className="flex-1 rounded-sm border-2 border-ink bg-paper-2 px-3 py-1.5 text-sm font-medium outline-none"
             />
             <Button
               size="sm"
@@ -303,7 +303,7 @@ function ResourceRow({
   run: <T extends { error?: string | null }>(p: Promise<T>) => void;
 }) {
   return (
-    <div className="rounded-lg bg-paper-2 p-2.5">
+    <div className="rounded-sm border-2 border-ink bg-paper-2 p-2.5">
       <div className="flex items-center gap-2">
         <div className="flex-1">
           <Field value={resource.title} onSave={(v) => run(updateResource(resource.id, trackId, { title: v }))} />

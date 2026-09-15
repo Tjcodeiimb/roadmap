@@ -15,8 +15,8 @@ export default function LibraryLoading() {
 
       <div className="flex flex-col gap-3">
         {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="flex items-center gap-4 rounded-2xl border border-border bg-paper-2 p-4">
-            <Skeleton className="h-10 w-10 shrink-0 rounded-xl" />
+          <div key={i} className="flex items-center gap-4 rounded-md border-2 border-ink bg-paper-2 p-4">
+            <Skeleton className="h-10 w-10 shrink-0 rounded-md" />
             <div className="flex-1">
               <Skeleton className="h-4 w-2/3" />
               <Skeleton className="mt-2 h-3 w-1/3" />

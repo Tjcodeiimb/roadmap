@@ -4,6 +4,7 @@ import { useState, useTransition } from "react";
 import { motion } from "framer-motion";
 import { Mail, Lock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { inputWrapperClassName, inputFieldClassName } from "@/components/ui/input";
 import { signInWithPassword, sendMagicLink } from "@/app/actions/auth";
 import { MailMark } from "@/components/icons";
 
@@ -50,7 +51,7 @@ export function LoginForm() {
     >
       <label className="flex flex-col gap-1.5">
         <span className="text-sm font-medium text-ink-2">Email</span>
-        <div className="flex items-center gap-2 rounded-xl border border-border bg-paper px-3.5 py-2.5">
+        <div className={inputWrapperClassName()}>
           <Mail size={16} className="text-ink-3" />
           <input
             type="email"
@@ -58,7 +59,7 @@ export function LoginForm() {
             required
             autoComplete="email"
             placeholder="you@upforge.com"
-            className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-ink-3"
+            className={inputFieldClassName()}
           />
         </div>
       </label>
@@ -66,7 +67,7 @@ export function LoginForm() {
       {mode === "password" && (
         <label className="flex flex-col gap-1.5">
           <span className="text-sm font-medium text-ink-2">Password</span>
-          <div className="flex items-center gap-2 rounded-xl border border-border bg-paper px-3.5 py-2.5">
+          <div className={inputWrapperClassName()}>
             <Lock size={16} className="text-ink-3" />
             <input
               type="password"
@@ -74,7 +75,7 @@ export function LoginForm() {
               required
               autoComplete="current-password"
               placeholder="••••••••"
-              className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-ink-3"
+              className={inputFieldClassName()}
             />
           </div>
         </label>
@@ -93,7 +94,7 @@ export function LoginForm() {
           setError(null);
           setMode(mode === "password" ? "magic-link" : "password");
         }}
-        className="text-center text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink"
+        className="text-center text-sm font-bold text-ink-2 underline decoration-2 underline-offset-4 hover:text-ink"
       >
         {mode === "password" ? "Use a sign-in link instead" : "Use a password instead"}
       </button>

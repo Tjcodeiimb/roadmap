@@ -6,6 +6,7 @@ import { getCohortDetail } from "@/lib/queries";
 import { TierBadge } from "@/components/marketplace/tier-badge";
 import { EnrollButton } from "@/components/marketplace/enroll-button";
 import { ICONS, FALLBACK_ICON, ClockMark } from "@/components/icons";
+import { trackColor } from "@/lib/track-colors";
 
 export default async function CohortDetailPage({
   params,
@@ -28,7 +29,7 @@ export default async function CohortDetailPage({
 
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-4">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-accent">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent-soft text-accent">
             <Icon size={28} />
           </div>
           <div>
@@ -56,10 +57,10 @@ export default async function CohortDetailPage({
               <Link
                 key={c.id}
                 href={`/marketplace/course/${c.id}`}
-                className="group flex items-center gap-3 rounded-xl border border-border bg-paper-2 px-4 py-3.5 transition-colors hover:bg-paper-3"
+                className="press-sm group flex items-center gap-3 rounded-md border-2 border-ink bg-paper-2 px-4 py-3.5 shadow-[3px_3px_0_0_var(--brutal-shadow)]"
               >
                 <span className="font-display text-xs font-bold text-ink-3">{i + 1}</span>
-                <CourseIcon size={18} className="text-ink-2" />
+                <CourseIcon size={18} style={{ color: trackColor(c.id) }} />
                 <span className="flex-1 font-medium text-ink">{c.label}</span>
                 <ArrowRight size={15} className="text-ink-3 transition-transform group-hover:translate-x-0.5" />
               </Link>

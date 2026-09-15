@@ -47,28 +47,28 @@ security definer set search_path = public
 stable
 as $$
   with q as (select websearch_to_tsquery('english', p_query) as tsq)
-  select 'track'::text, t.id, t.id, t.label, t.summary, ts_rank_cd(t.search_vector, q.tsq)
+  select 'track'::text as type, t.id as id, t.id as parent_track_id, t.label as title, t.summary as snippet, ts_rank_cd(t.search_vector, q.tsq) as rank
   from public.tracks t, q
   where t.published and t.search_vector @@ q.tsq
   union all
-  select 'topic'::text, tp.id, ph.track_id, tp.title, tp.description, ts_rank_cd(tp.search_vector, q.tsq)
+  select 'topic'::text as type, tp.id as id, ph.track_id as parent_track_id, tp.title as title, tp.description as snippet, ts_rank_cd(tp.search_vector, q.tsq) as rank
   from public.topics tp
   join public.phases ph on ph.id = tp.phase_id
   join public.tracks tr on tr.id = ph.track_id, q
   where tr.published and tp.search_vector @@ q.tsq
   union all
-  select 'resource'::text, r.id, ph.track_id, r.title, r.note, ts_rank_cd(r.search_vector, q.tsq)
+  select 'resource'::text as type, r.id as id, ph.track_id as parent_track_id, r.title as title, r.note as snippet, ts_rank_cd(r.search_vector, q.tsq) as rank
   from public.resources r
   join public.topics tp on tp.id = r.topic_id
   join public.phases ph on ph.id = tp.phase_id
   join public.tracks tr on tr.id = ph.track_id, q
   where tr.published and r.search_vector @@ q.tsq
   union all
-  select 'skill'::text, s.id, null, s.name, s.description, ts_rank_cd(s.search_vector, q.tsq)
+  select 'skill'::text as type, s.id as id, null::text as parent_track_id, s.name as title, s.description as snippet, ts_rank_cd(s.search_vector, q.tsq) as rank
   from public.skills s, q
   where s.search_vector @@ q.tsq
   union all
-  select 'cohort'::text, c.id, null, c.label, c.summary, ts_rank_cd(c.search_vector, q.tsq)
+  select 'cohort'::text as type, c.id as id, null::text as parent_track_id, c.label as title, c.summary as snippet, ts_rank_cd(c.search_vector, q.tsq) as rank
   from public.cohorts c, q
   where c.published and c.search_vector @@ q.tsq
   order by rank desc

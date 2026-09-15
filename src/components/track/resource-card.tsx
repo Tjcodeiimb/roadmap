@@ -50,12 +50,12 @@ export function ResourceCard({
   return (
     <Link
       href={`/library/resource/${id}`}
-      className="group flex items-start gap-3 rounded-xl border border-border bg-paper-2 p-4 transition-all duration-150 hover:border-accent/40 hover:bg-paper-3"
+      className="press-sm group flex items-start gap-3 rounded-md border-2 border-ink bg-paper-2 p-4 shadow-[3px_3px_0_0_var(--brutal-shadow)]"
     >
       <Icon size={20} className="mt-0.5 shrink-0 text-ink-2" />
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-2">
-          <span className="font-medium text-ink group-hover:underline">{title}</span>
+          <span className="font-bold text-ink group-hover:underline">{title}</span>
           {status === "done" ? (
             <CheckCircleMark size={16} className="mt-0.5 shrink-0 text-success" />
           ) : (
@@ -68,7 +68,7 @@ export function ResourceCard({
         {metaParts.length > 0 && <div className="mt-0.5 text-xs text-ink-3">{metaParts.join(" · ")}</div>}
         {note && <div className="mt-1 text-sm text-ink-2">{note}</div>}
       </div>
-      <span className="mt-0.5 shrink-0 rounded-full bg-paper-3 px-2 py-1 text-[11px] font-semibold text-ink-2">
+      <span className="mt-0.5 shrink-0 rounded-sm border-2 border-ink bg-paper-3 px-2 py-1 text-[11px] font-bold text-ink-2">
         {action}
       </span>
     </Link>

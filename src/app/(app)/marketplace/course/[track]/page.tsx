@@ -7,6 +7,7 @@ import { TierBadge } from "@/components/marketplace/tier-badge";
 import { EnrollButton } from "@/components/marketplace/enroll-button";
 import { Badge } from "@/components/ui/badge";
 import { ICONS, FALLBACK_ICON, ClockMark, SignalMark } from "@/components/icons";
+import { trackColor, trackInk } from "@/lib/track-colors";
 
 export default async function CourseDetailPage({
   params,
@@ -29,7 +30,10 @@ export default async function CourseDetailPage({
 
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-4">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-accent">
+          <div
+            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md border-2 border-ink"
+            style={{ backgroundColor: trackColor(track.id), color: trackInk(track.id) }}
+          >
             <Icon size={28} />
           </div>
           <div>
@@ -73,7 +77,7 @@ export default async function CourseDetailPage({
         <div className="mb-3 text-sm font-semibold text-ink">Syllabus</div>
         <div className="flex flex-col gap-3">
           {phases.map((phase, i) => (
-            <div key={phase.id} className="rounded-xl border border-border bg-paper-2 p-4">
+            <div key={phase.id} className="rounded-md border-2 border-ink bg-paper-2 p-4">
               <div className="flex items-baseline gap-2">
                 <span className="font-display text-xs font-bold text-accent">Phase {i + 1}</span>
                 <span className="font-semibold text-ink">{phase.title}</span>

@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getResourceDetail } from "@/lib/queries";
 import { ResourcePlayer } from "@/components/resource/resource-player";
 import { ICONS, FALLBACK_ICON } from "@/components/icons";
+import { trackColor, trackInk } from "@/lib/track-colors";
 
 export default async function ResourceDetailPage({
   params,
@@ -27,7 +28,10 @@ export default async function ResourceDetailPage({
       </Link>
 
       <div className="flex items-start gap-3">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">
+        <div
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border-2 border-ink"
+          style={{ backgroundColor: trackColor(track?.id), color: trackInk(track?.id) }}
+        >
           <Icon size={22} />
         </div>
         <div className="min-w-0">

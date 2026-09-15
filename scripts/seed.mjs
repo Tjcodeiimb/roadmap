@@ -1,4 +1,5 @@
-// One-time (and re-runnable) content seed script.
+// One-time (and re-runnable) content seed script. Also runs automatically
+// via .github/workflows/seed.yml whenever scripts/seed-data/ changes.
 //
 // Loads the AI / Finance / Consulting track content from scripts/seed-data/*.json
 // and upserts it into Supabase. Content only — it never touches any user's
@@ -47,6 +48,13 @@ const TRACK_FILES = [
   'data.json',
   'product.json',
   'sales.json',
+  'ux.json',
+  'operations.json',
+  'cybersecurity.json',
+  'people.json',
+  // sustainability.json intentionally excluded - that track is soft-hidden
+  // (see migration 0007_hide_sustainability_track.sql) rather than deleted,
+  // so re-seeding must not touch it or re-publish it.
 ];
 
 // Mirrors migration 0002's SQL backfill in JS — same priority order,

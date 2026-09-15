@@ -7,16 +7,16 @@ const TIER_LABEL: Record<string, string> = {
 };
 
 const TIER_CLASSES: Record<string, string> = {
-  foundational: "bg-success-soft text-success",
-  intermediate: "bg-accent-soft text-accent",
-  advanced: "bg-ink text-paper",
+  foundational: "bg-success-soft text-success border-success",
+  intermediate: "bg-accent-soft text-accent border-accent",
+  advanced: "bg-ink text-paper border-ink",
 };
 
 export function TierBadge({ tier, className }: { tier: string; className?: string }) {
   return (
     <span
       className={clsx(
-        "inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide",
+        "inline-flex items-center rounded-sm border-2 px-2.5 py-1 text-xs font-bold uppercase tracking-wide",
         TIER_CLASSES[tier] ?? TIER_CLASSES.foundational,
         className
       )}

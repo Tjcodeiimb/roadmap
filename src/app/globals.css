@@ -4,65 +4,143 @@
    Design tokens. Every color a component uses comes from one of these custom
    properties — never a hardcoded hex in a component — so the light and dark
    themes stay perfectly in sync and can be tuned in exactly one place.
+
+   Neo-brutalist system (see .claude/skills/neo-brutalist-design): flat
+   saturated color, thick full-strength borders (no faint hairlines), sharp
+   corners, and a hard offset shadow instead of a soft blurred one. Every
+   pair below is WCAG AA-verified (several AAA) — bold does not mean low
+   contrast here.
 --------------------------------------------------------------------------- */
 
 :root {
-  --paper: #faf9f6;
-  --paper-2: #f2f0ea;
-  --paper-3: #e9e6dd;
-  --ink: #1c1b19;
-  --ink-2: #57544d;
-  --ink-3: #86827a;
-  --border: #e3e0d6;
-  --accent: #4f46e5;
+  --paper: #fffcf5;
+  --paper-2: #ffffff;
+  --paper-3: #f5efd9;
+  --ink: #0a0a0a;
+  --ink-2: #3a3a3a;
+  --ink-3: #6b6b66;
+  --border: #0a0a0a;
+  --accent: #2a2aff;
   --accent-ink: #ffffff;
-  --accent-soft: #eae8fd;
-  --success: #1e8e5a;
-  --success-soft: #e1f3ea;
-  --danger: #c4432b;
-  --danger-soft: #fbe9e4;
-  --shadow-color: 28 27 25;
-  --radius-lg: 20px;
-  --radius-md: 14px;
-  --radius-sm: 9px;
+  --accent-soft: #dcdbff;
+  --success: #0a6b2b;
+  --success-soft: #c6f6d5;
+  --danger: #b3001b;
+  --danger-soft: #ffd6d6;
+  --shadow-color: 10 10 10;
+  --brutal-shadow: var(--ink);
+  --brutal-offset: 6px;
+  --brutal-offset-sm: 4px;
+  --radius-lg: 10px;
+  --radius-md: 6px;
+  --radius-sm: 4px;
+
+  /* Per-track/domain colors — one loud, distinct hue per track so course
+     icons, active nav items, and skill badges read as their own category
+     rather than everything sharing one accent. Each is WCAG AA-verified as
+     text/icon color on --paper (>=4.5:1) and pairs with a matching -ink
+     token (the text color to put ON a solid fill of that track color).
+     Security/esg are domain-string aliases (skills.domain uses "security"/
+     "esg" while the track ids are "cybersecurity"/"sustainability"). */
+  --track-ai: #054ee0; --track-ai-ink: #ffffff;
+  --track-finance: #038745; --track-finance-ink: #ffffff;
+  --track-consulting: #b84f04; --track-consulting-ink: #ffffff;
+  --track-excel: #038766; --track-excel-ink: #ffffff;
+  --track-psychology: #9705e0; --track-psychology-ink: #ffffff;
+  --track-marketing: #e00561; --track-marketing-ink: #ffffff;
+  --track-data: #03819b; --track-data-ink: #ffffff;
+  --track-product: #916d03; --track-product-ink: #ffffff;
+  --track-sales: #e01805; --track-sales-ink: #ffffff;
+  --track-ux: #d704b3; --track-ux-ink: #ffffff;
+  --track-operations: #3a8703; --track-operations-ink: #ffffff;
+  --track-cybersecurity: #e00518; --track-cybersecurity-ink: #ffffff;
+  --track-security: #e00518; --track-security-ink: #ffffff;
+  --track-people: #6105e0; --track-people-ink: #ffffff;
+  --track-sustainability: #038719; --track-sustainability-ink: #ffffff;
+  --track-esg: #038719; --track-esg-ink: #ffffff;
+
+  /* One bold flat color for the login splash — a brand moment, so it stays
+     bright regardless of the viewer's light/dark preference rather than
+     switching to a muted dark background. --login-ink is a fixed near-black
+     (never the theme-flipping --ink, which turns near-white in dark mode
+     and would be unreadable on this bright a background) for any text that
+     sits directly on --login-bg rather than on a card. */
+  --login-bg: #ffd83d;
+  --login-ink: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #17171b;
-    --paper-2: #1e1e23;
-    --paper-3: #28282f;
-    --ink: #f4f3f0;
-    --ink-2: #b6b3ac;
-    --ink-3: #817e77;
-    --border: #303039;
+    --paper: #0a0a0a;
+    --paper-2: #141414;
+    --paper-3: #1f1f1f;
+    --ink: #f5f5f0;
+    --ink-2: #c7c7c0;
+    --ink-3: #8f8f88;
+    --border: #f5f5f0;
     --accent: #8b85f5;
-    --accent-ink: #12101f;
-    --accent-soft: #2a2650;
-    --success: #3ecf8e;
-    --success-soft: #123829;
-    --danger: #e5715a;
-    --danger-soft: #3a1f1a;
-    --shadow-color: 0 0 0;
+    --accent-ink: #050314;
+    --accent-soft: #24225a;
+    --success: #5fe79a;
+    --success-soft: #103622;
+    --danger: #ff9086;
+    --danger-soft: #3a140f;
+    --shadow-color: 245 245 240;
+    --brutal-shadow: var(--ink);
+
+    --track-ai: #5189fb; --track-ai-ink: #0a0a0a;
+    --track-finance: #51fba6; --track-finance-ink: #0a0a0a;
+    --track-consulting: #fb9751; --track-consulting-ink: #0a0a0a;
+    --track-excel: #51fbd1; --track-excel-ink: #0a0a0a;
+    --track-psychology: #c251fb; --track-psychology-ink: #0a0a0a;
+    --track-marketing: #fb5197; --track-marketing-ink: #0a0a0a;
+    --track-data: #51defb; --track-data-ink: #0a0a0a;
+    --track-product: #fbd151; --track-product-ink: #0a0a0a;
+    --track-sales: #fb5f51; --track-sales-ink: #0a0a0a;
+    --track-ux: #fb51de; --track-ux-ink: #0a0a0a;
+    --track-operations: #97fb51; --track-operations-ink: #0a0a0a;
+    --track-cybersecurity: #fb515f; --track-cybersecurity-ink: #0a0a0a;
+    --track-security: #fb515f; --track-security-ink: #0a0a0a;
+    --track-people: #9751fb; --track-people-ink: #0a0a0a;
+    --track-sustainability: #51fb6d; --track-sustainability-ink: #0a0a0a;
+    --track-esg: #51fb6d; --track-esg-ink: #0a0a0a;
   }
 }
 
 :root[data-theme="dark"] {
-  --paper: #17171b;
-  --paper-2: #1e1e23;
-  --paper-3: #28282f;
-  --ink: #f4f3f0;
-  --ink-2: #b6b3ac;
-  --ink-3: #817e77;
-  --border: #303039;
+  --paper: #0a0a0a;
+  --paper-2: #141414;
+  --paper-3: #1f1f1f;
+  --ink: #f5f5f0;
+  --ink-2: #c7c7c0;
+  --ink-3: #8f8f88;
+  --border: #f5f5f0;
   --accent: #8b85f5;
-  --accent-ink: #12101f;
-  --accent-soft: #2a2650;
-  --success: #3ecf8e;
-  --success-soft: #123829;
-  --danger: #e5715a;
-  --danger-soft: #3a1f1a;
-  --shadow-color: 0 0 0;
+  --accent-ink: #050314;
+  --accent-soft: #24225a;
+  --success: #5fe79a;
+  --success-soft: #103622;
+  --danger: #ff9086;
+  --danger-soft: #3a140f;
+  --shadow-color: 245 245 240;
+  --brutal-shadow: var(--ink);
+
+  --track-ai: #5189fb; --track-ai-ink: #0a0a0a;
+  --track-finance: #51fba6; --track-finance-ink: #0a0a0a;
+  --track-consulting: #fb9751; --track-consulting-ink: #0a0a0a;
+  --track-excel: #51fbd1; --track-excel-ink: #0a0a0a;
+  --track-psychology: #c251fb; --track-psychology-ink: #0a0a0a;
+  --track-marketing: #fb5197; --track-marketing-ink: #0a0a0a;
+  --track-data: #51defb; --track-data-ink: #0a0a0a;
+  --track-product: #fbd151; --track-product-ink: #0a0a0a;
+  --track-sales: #fb5f51; --track-sales-ink: #0a0a0a;
+  --track-ux: #fb51de; --track-ux-ink: #0a0a0a;
+  --track-operations: #97fb51; --track-operations-ink: #0a0a0a;
+  --track-cybersecurity: #fb515f; --track-cybersecurity-ink: #0a0a0a;
+  --track-security: #fb515f; --track-security-ink: #0a0a0a;
+  --track-people: #9751fb; --track-people-ink: #0a0a0a;
+  --track-sustainability: #51fb6d; --track-sustainability-ink: #0a0a0a;
+  --track-esg: #51fb6d; --track-esg-ink: #0a0a0a;
 }
 
 @theme inline {
@@ -80,11 +158,14 @@
   --color-success-soft: var(--success-soft);
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);
+  --color-login-bg: var(--login-bg);
   --font-sans: var(--font-display);
   --font-display: var(--font-display);
   --radius-lg: var(--radius-lg);
   --radius-md: var(--radius-md);
   --radius-sm: var(--radius-sm);
+  --radius-2xl: var(--radius-lg);
+  --radius-xl: var(--radius-lg);
 }
 
 html {
@@ -100,14 +181,16 @@ html[data-theme="dark"] {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", var(--font-display, Inter), ui-sans-serif, sans-serif;
+  font-family: var(--font-display, "Archivo"), -apple-system, BlinkMacSystemFont, ui-sans-serif, sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
 .font-display {
   font-family: var(--font-display), -apple-system, BlinkMacSystemFont, ui-sans-serif, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 * {
@@ -115,18 +198,64 @@ body {
 }
 
 ::selection {
-  background: var(--accent-soft);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
 }
 
+/* A bold, unmissable focus ring is both on-brand (thick outlines are the
+   whole point) and a real accessibility win over the thin default browser
+   ring — every interactive element gets the same treatment. */
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
+/* Hard offset shadow, no blur — the signature brutalist surface. Every
+   Card/modal/dropdown uses this instead of a soft ambient shadow. */
 .card-shadow {
-  box-shadow: 0 1px 2px rgb(var(--shadow-color) / 0.04), 0 8px 24px -8px rgb(var(--shadow-color) / 0.10);
+  box-shadow: var(--brutal-offset) var(--brutal-offset) 0 0 var(--brutal-shadow);
+}
+
+/* The signature "press" interaction: the element sits offset from its hard
+   shadow, then on hover/active it translates toward the shadow while the
+   shadow shrinks by the same amount, reading as a physical press into the
+   page. Cheap (transform + box-shadow only), fast, no easing that implies
+   softness. Reduced-motion still gets the color/shadow change, just no
+   translate, via the *,*::before,*::after override below. */
+.press {
+  transition: transform 0.1s linear, box-shadow 0.1s linear;
+}
+/* Lift *away* from the shadow rather than toward it, so hover gains weight
+   and the press then drops the whole distance. A bigger gap between the two
+   states makes the slam land harder. */
+.press:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: calc(var(--brutal-offset) + 2px) calc(var(--brutal-offset) + 2px) 0 0 var(--brutal-shadow);
+}
+/* The slam is a hard cut, not an eased move: brutalist motion shows no
+   easing curve on the way down. The lift keeps its 0.1s linear ramp, so
+   hover still reads as deliberate while the press lands instantly. */
+.press:active {
+  transition: none;
+  transform: translate(var(--brutal-offset), var(--brutal-offset));
+  box-shadow: 0 0 0 0 var(--brutal-shadow);
+}
+
+/* Same "press" language, scaled down for small surfaces (buttons, badges,
+   nav items) whose resting shadow is --brutal-offset-sm rather than the
+   full --brutal-offset Cards use. */
+.press-sm {
+  transition: transform 0.1s linear, box-shadow 0.1s linear;
+}
+.press-sm:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: calc(var(--brutal-offset-sm) + 1px) calc(var(--brutal-offset-sm) + 1px) 0 0 var(--brutal-shadow);
+}
+.press-sm:active {
+  transition: none;
+  transform: translate(var(--brutal-offset-sm), var(--brutal-offset-sm));
+  box-shadow: 0 0 0 0 var(--brutal-shadow);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -137,6 +266,149 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Background patterns.
+
+   One derived token rather than a literal per theme: --ink already flips
+   near-black -> near-white across the three blocks above, so the same 8% mix
+   reads as a faint dark line on light paper and a faint light line on dark.
+   Never hard-code a pattern colour here — it will be wrong in one mode.
+
+   Restraint is the point. These belong on the login splash, marketplace
+   headers and empty states. They must not sit behind body text people read
+   daily (dashboard rows, library lists, the resume editor), where they cost
+   legibility for decoration.
+   --------------------------------------------------------------------------- */
+:root {
+  --grid-line: color-mix(in srgb, var(--ink) 11%, transparent);
+  --grid-line-strong: color-mix(in srgb, var(--ink) 20%, transparent);
+}
+
+/* The page canvas: a grid behind every app screen, not just the loud ones.
+   It lives on a position:fixed pseudo-element rather than a background on a
+   scrolling container, so it composites once and never repaints on scroll —
+   `background-attachment: fixed` still forces a paint-per-frame on some
+   engines. Cards sit on top as solid fills, so body text never reads against
+   the pattern directly. */
+.app-canvas::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 34px);
+}
+
+.app-canvas > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-grid {
+  background-image:
+    repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 32px);
+}
+
+.bg-dots {
+  background-image: radial-gradient(var(--grid-line-strong) 1.4px, transparent 1.6px);
+  background-size: 18px 18px;
+}
+
+.bg-stripes {
+  background-image: repeating-linear-gradient(45deg, var(--grid-line) 0 8px, transparent 8px 18px);
+}
+
+/* Fades a pattern out before it reaches the content sitting on top of it. */
+.bg-fade-down {
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+/* A hazard-stripe band, for page headers and section rules that should read
+   as a hard graphic element rather than a hairline. */
+.rule-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--ink) 0 6px,
+    transparent 6px 12px
+  );
+}
+
+/* ---------------------------------------------------------------------------
+   Marquee. Duplicated content scrolls a full 50% so the loop is seamless.
+   Linear, never eased — a ticker that accelerates reads as decoration; one
+   that runs at constant speed reads as machinery, which is the point.
+   Pauses on hover and focus-within so it can't run away from someone
+   reading it, and stops entirely under reduced motion (the block above
+   collapses the duration, and this pins it to a stable frame).
+   --------------------------------------------------------------------------- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Print: the resume preview IS the PDF.
+
+   Rather than maintain a third rendering implementation alongside the HTML
+   preview and the .docx, printing hides the app chrome and promotes the
+   already-WYSIWYG preview to the page. `visibility` rather than `display`
+   keeps the ancestor layout intact while emptying it visually.
+   --------------------------------------------------------------------------- */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  [data-print-root],
+  [data-print-root] * {
+    visibility: visible;
+  }
+
+  [data-print-root] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: none !important;
+    box-shadow: none !important;
   }
 }
 

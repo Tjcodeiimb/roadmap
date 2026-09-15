@@ -9,7 +9,7 @@ export function XPWidget({ xp, streak }: { xp: number; streak: number }) {
   const LevelIcon = LEVEL_ICONS[level.level - 1];
 
   return (
-    <div className="rounded-2xl border border-border bg-paper-2 p-4">
+    <div className="rounded-md border-2 border-ink bg-paper-2 p-4 shadow-[4px_4px_0_0_var(--brutal-shadow)]">
       <div className="flex items-center gap-3">
         <LevelIcon size={26} className="shrink-0 text-accent" />
         <div className="min-w-0 flex-1">
@@ -25,9 +25,9 @@ export function XPWidget({ xp, streak }: { xp: number; streak: number }) {
         </div>
       </div>
 
-      <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-paper-3">
+      <div className="mt-3 h-2 overflow-hidden rounded-sm border-2 border-ink bg-paper-3">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-accent to-success transition-[width] duration-700 ease-out"
+          className="h-full bg-accent transition-[width] duration-700 ease-out"
           style={{ width: `${pct}%` }}
         />
       </div>

@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { TierBadge } from "./tier-badge";
 import { EnrollButton } from "./enroll-button";
 import { ICONS, FALLBACK_ICON, ClockMark, SignalMark, StreakMark, SparkMark } from "@/components/icons";
+import { trackColor, trackInk } from "@/lib/track-colors";
 import type { MarketplaceCourse } from "@/lib/queries";
 
 export function CourseCard({
@@ -18,36 +19,41 @@ export function CourseCard({
 }) {
   const Icon = ICONS[course.iconKey ?? course.id] ?? FALLBACK_ICON;
 
+  const ink = trackInk(course.id);
+
   return (
     <Reveal index={index}>
-      <Card className="flex h-full flex-col gap-4 transition-transform duration-200 ease-out hover:-translate-y-1">
+      <Card className="press flex h-full flex-col gap-4" style={{ backgroundColor: trackColor(course.id) }}>
         <div className="flex items-start gap-3">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">
+          <div
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-paper-2"
+            style={{ color: trackColor(course.id) }}
+          >
             <Icon size={22} />
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
-              <Link href={`/marketplace/course/${course.id}`} className="font-display text-lg font-bold text-ink hover:underline">
+              <Link href={`/marketplace/course/${course.id}`} className="font-display text-lg font-bold hover:underline" style={{ color: ink }}>
                 {course.label}
               </Link>
               {trending && (
-                <span className="flex items-center gap-0.5 rounded-full bg-accent-soft px-1.5 py-0.5 text-[10px] font-semibold text-accent">
+                <span className="flex items-center gap-0.5 rounded-sm border-2 border-ink bg-paper-2 px-1.5 py-0.5 text-[10px] font-bold text-accent">
                   <StreakMark size={11} /> Trending
                 </span>
               )}
             </div>
             <TierBadge tier={course.tier} />
             {course.newResourceCount > 0 && (
-              <span className="ml-2 inline-flex items-center gap-0.5 align-middle text-[11px] font-medium text-ink-3">
+              <span className="ml-2 inline-flex items-center gap-0.5 align-middle text-[11px] font-medium" style={{ color: ink, opacity: 0.75 }}>
                 <SparkMark size={11} /> {course.newResourceCount} new
               </span>
             )}
           </div>
         </div>
 
-        <p className="text-sm leading-relaxed text-ink-2">{course.summary}</p>
+        <p className="text-sm leading-relaxed" style={{ color: ink, opacity: 0.85 }}>{course.summary}</p>
 
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink-3">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs" style={{ color: ink, opacity: 0.75 }}>
           {course.estimatedHours != null && (
             <span className="flex items-center gap-1">
               <ClockMark size={13} /> {course.estimatedHours}h total
@@ -71,7 +77,7 @@ export function CourseCard({
         )}
 
         <div className="mt-auto flex items-center justify-between pt-1">
-          <Link href={`/marketplace/course/${course.id}`} className="text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink">
+          <Link href={`/marketplace/course/${course.id}`} className="text-sm font-bold underline decoration-2 underline-offset-4" style={{ color: ink, opacity: 0.8 }}>
             View syllabus
           </Link>
           <EnrollButton kind="track" id={course.id} label={course.label} enrolled={course.enrolled} continueHref={`/track/${course.id}`} />

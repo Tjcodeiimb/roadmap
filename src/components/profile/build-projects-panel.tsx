@@ -52,31 +52,31 @@ export function BuildProjectsPanel({ projects }: { projects: BuildProject[] }) {
   }
 
   return (
-    <div className="rounded-2xl border border-border bg-paper-2 p-5">
+    <div className="rounded-md border-2 border-ink bg-paper-2 p-5 shadow-[4px_4px_0_0_var(--brutal-shadow)]">
       <div className="mb-4 flex items-center justify-between">
-        <div className="font-semibold text-ink">Build log</div>
+        <div className="font-bold text-ink">Build log</div>
         <button
           onClick={() => setOpen((o) => !o)}
-          className="flex items-center gap-1 text-sm font-medium text-accent"
+          className="flex items-center gap-1 text-sm font-bold text-accent"
         >
           <Plus size={16} /> Add project
         </button>
       </div>
 
       {open && (
-        <div className="mb-4 flex flex-col gap-2 rounded-xl border border-border bg-paper p-3">
+        <div className="mb-4 flex flex-col gap-2 rounded-md border-2 border-ink bg-paper p-3">
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="What are you building?"
-            className="rounded-lg border border-border bg-paper px-3 py-2 text-sm outline-none focus:border-accent"
+            className="rounded-sm border-2 border-ink bg-paper px-3 py-2 text-sm font-medium outline-none"
           />
           <textarea
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Notes (optional)"
             rows={2}
-            className="rounded-lg border border-border bg-paper px-3 py-2 text-sm outline-none focus:border-accent"
+            className="rounded-sm border-2 border-ink bg-paper px-3 py-2 text-sm font-medium outline-none"
           />
           <Button size="sm" disabled={pending || !title.trim()} onClick={submit} className="self-end">
             Save
@@ -89,9 +89,9 @@ export function BuildProjectsPanel({ projects }: { projects: BuildProject[] }) {
       ) : (
         <div className="flex flex-col gap-2">
           {projects.map((p) => (
-            <div key={p.id} className="flex items-center gap-3 rounded-xl bg-paper px-3.5 py-3">
+            <div key={p.id} className="flex items-center gap-3 rounded-md border-2 border-ink bg-paper px-3.5 py-3">
               <div className="min-w-0 flex-1">
-                <div className="truncate text-sm font-medium text-ink">{p.title}</div>
+                <div className="truncate text-sm font-bold text-ink">{p.title}</div>
                 {p.notes && <div className="truncate text-xs text-ink-3">{p.notes}</div>}
               </div>
               <div className="flex gap-1">
@@ -101,8 +101,8 @@ export function BuildProjectsPanel({ projects }: { projects: BuildProject[] }) {
                     disabled={pending}
                     onClick={() => updateStatus(p.id, opt.value, p.title, p.notes)}
                     className={clsx(
-                      "rounded-full px-2.5 py-1 text-[11px] font-semibold transition-colors",
-                      p.status === opt.value ? "bg-accent text-accent-ink" : "bg-paper-3 text-ink-2 hover:text-ink"
+                      "press-sm rounded-sm border-2 border-ink px-2.5 py-1 text-[11px] font-bold",
+                      p.status === opt.value ? "bg-accent text-accent-ink" : "bg-paper-3 text-ink-2"
                     )}
                   >
                     {opt.label}

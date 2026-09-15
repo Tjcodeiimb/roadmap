@@ -38,7 +38,7 @@ export function ResourceCompleteButton({
   }
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-border bg-paper-2 p-6">
+    <div className="flex flex-col gap-3 rounded-md border-2 border-ink bg-paper-2 p-6 shadow-[4px_4px_0_0_var(--brutal-shadow)]">
       <p className="text-sm text-ink-2">
         This resource can&apos;t be played inline — open it in a new tab, then mark it complete here.
       </p>
@@ -46,12 +46,12 @@ export function ResourceCompleteButton({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 rounded-xl border border-border bg-paper-3 px-4 py-3 text-sm font-medium text-ink transition-colors hover:bg-paper"
+        className="press-sm flex items-center justify-center gap-2 rounded-md border-2 border-ink bg-paper-3 px-4 py-3 text-sm font-bold text-ink"
       >
         Open resource <ExternalMark size={15} />
       </a>
       {done ? (
-        <div className="flex items-center justify-center gap-1.5 rounded-xl bg-success-soft px-4 py-3 text-sm font-semibold text-success">
+        <div className="flex items-center justify-center gap-1.5 rounded-md border-2 border-success bg-success-soft px-4 py-3 text-sm font-bold text-success">
           <CheckCircleMark size={16} /> Completed
         </div>
       ) : (

@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getTrackDetail } from "@/lib/queries";
 import { TopicRow } from "@/components/track/topic-row";
 import { LeaveCourseButton } from "@/components/track/leave-course-button";
+import { trackColor } from "@/lib/track-colors";
 
 export default async function TrackPage({
   params,
@@ -21,7 +22,7 @@ export default async function TrackPage({
     <div className="mx-auto flex max-w-3xl flex-col gap-10">
       <div>
         <div className="flex items-center justify-between gap-3">
-          <div className="text-sm font-semibold uppercase tracking-wider text-accent">{track.label} Track</div>
+          <div className="text-sm font-bold uppercase tracking-wider" style={{ color: trackColor(track.id) }}>{track.label} Track</div>
           <LeaveCourseButton trackId={track.id} trackLabel={track.label} />
         </div>
         <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
@@ -36,7 +37,7 @@ export default async function TrackPage({
         {phases.map((phase, pi) => (
           <section key={phase.id}>
             <div className="mb-4 flex items-baseline gap-3">
-              <span className="font-display text-sm font-bold text-accent">Phase {pi + 1}</span>
+              <span className="font-display text-sm font-bold" style={{ color: trackColor(track.id) }}>Phase {pi + 1}</span>
               <h2 className="font-display text-xl font-bold text-ink">{phase.title}</h2>
               {phase.estimated_weeks && (
                 <span className="ml-auto text-xs text-ink-3">{phase.estimated_weeks} weeks</span>

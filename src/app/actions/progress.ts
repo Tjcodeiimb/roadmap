@@ -51,23 +51,6 @@ export async function completeOnboarding() {
   return { success: true };
 }
 
-export async function toggleLeaderboardOptIn(optIn: boolean) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return { error: "Not authenticated" };
-
-  const { error } = await supabase
-    .from("profiles")
-    .update({ leaderboard_opt_in: optIn })
-    .eq("id", user.id);
-  if (error) return { error: error.message };
-  revalidatePath("/profile");
-  revalidatePath("/leaderboard");
-  return { success: true };
-}
-
 export async function upsertBuildProject(input: {
   id?: string;
   title: string;

@@ -45,7 +45,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 8, scale: 0.97 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="card-shadow pointer-events-auto rounded-full border border-border bg-ink px-5 py-2.5 text-sm font-medium text-paper"
+              className="card-shadow pointer-events-auto rounded-md border-2 border-paper bg-ink px-5 py-2.5 text-sm font-bold text-paper"
             >
               {toast.message}
             </motion.div>

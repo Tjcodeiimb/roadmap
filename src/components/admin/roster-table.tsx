@@ -36,17 +36,17 @@ export function RosterTable({ rows }: { rows: Row[] }) {
         </thead>
         <tbody>
           {rows.map((r) => (
-            <tr key={r.id} className="border-t border-border">
-              <td className="py-2.5 text-ink">{r.full_name ?? "—"}</td>
+            <tr key={r.id} className="border-t-2 border-ink">
+              <td className="py-2.5 font-medium text-ink">{r.full_name ?? "—"}</td>
               <td className="py-2.5 text-ink-2">{r.email}</td>
               <td className="py-2.5">
-                <span className="rounded-full bg-paper-3 px-2 py-0.5 text-xs font-medium text-ink-2">{r.role}</span>
+                <span className="rounded-sm border-2 border-ink bg-paper-3 px-2 py-0.5 text-xs font-bold text-ink-2">{r.role}</span>
               </td>
               <td className="py-2.5 text-right">
                 <button
                   disabled={pending}
                   onClick={() => toggleRole(r.id, r.role)}
-                  className="text-xs font-medium text-accent hover:underline"
+                  className="text-xs font-bold text-accent underline decoration-2 underline-offset-2"
                 >
                   {r.role === "admin" ? "Make employee" : "Make admin"}
                 </button>

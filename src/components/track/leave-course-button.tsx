@@ -31,11 +31,11 @@ export function LeaveCourseButton({ trackId, trackLabel }: { trackId: string; tr
         <button
           onClick={leave}
           disabled={pending}
-          className="rounded-full bg-danger px-2.5 py-1 font-semibold text-white"
+          className="press-sm rounded-sm border-2 border-ink bg-danger px-2.5 py-1 font-bold text-white"
         >
           {pending ? "Leaving…" : "Confirm"}
         </button>
-        <button onClick={() => setConfirming(false)} className="rounded-full bg-paper-3 px-2.5 py-1 font-semibold text-ink-2">
+        <button onClick={() => setConfirming(false)} className="press-sm rounded-sm border-2 border-ink bg-paper-3 px-2.5 py-1 font-bold text-ink-2">
           Cancel
         </button>
       </div>
@@ -43,7 +43,7 @@ export function LeaveCourseButton({ trackId, trackLabel }: { trackId: string; tr
   }
 
   return (
-    <button onClick={() => setConfirming(true)} className="text-xs font-medium text-ink-3 underline decoration-border underline-offset-4 hover:text-ink">
+    <button onClick={() => setConfirming(true)} className="text-xs font-bold text-ink-3 underline decoration-2 underline-offset-4 hover:text-ink">
       Leave course
     </button>
   );

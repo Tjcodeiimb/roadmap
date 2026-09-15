@@ -40,12 +40,12 @@ export default async function TopicPage({
       <StatusControl topicId={topic.id} status={status} path={`/track/${track}/topic/${topicId}`} />
 
       {topic.steps.length > 0 && (
-        <div className="rounded-2xl border border-border bg-paper-2 p-5">
-          <div className="mb-3 text-sm font-semibold text-ink">What to do</div>
+        <div className="rounded-md border-2 border-ink bg-paper-2 p-5 shadow-[4px_4px_0_0_var(--brutal-shadow)]">
+          <div className="mb-3 text-sm font-bold text-ink">What to do</div>
           <ul className="flex flex-col gap-3">
             {topic.steps.map((step, i) => (
               <li key={i} className="flex gap-3 text-sm">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-paper-3 text-[11px] font-semibold text-ink-2">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-paper-3 text-[11px] font-bold text-ink-2">
                   {i + 1}
                 </span>
                 <div>

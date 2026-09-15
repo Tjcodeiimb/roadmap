@@ -19,7 +19,7 @@ export default function DashboardLoading() {
                 <Skeleton className="mt-2 h-3.5 w-28" />
               </div>
             </div>
-            <Skeleton className="h-11 w-full rounded-xl" />
+            <Skeleton className="h-11 w-full rounded-md" />
             <Skeleton className="h-3.5 w-24" />
           </Card>
         ))}

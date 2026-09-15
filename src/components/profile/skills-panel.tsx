@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ICONS, FALLBACK_ICON } from "@/components/icons";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/components/ui/toast";
+import { trackColor } from "@/lib/track-colors";
 import type { SkillProgress } from "@/lib/queries";
 
 export function SkillsPanel({ skills }: { skills: SkillProgress[] }) {
@@ -27,19 +28,19 @@ export function SkillsPanel({ skills }: { skills: SkillProgress[] }) {
   return (
     <Card className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
-        <div className="text-sm font-semibold text-ink">
+        <div className="text-sm font-bold text-ink">
           Skills <span className="text-ink-3">({unlocked.length})</span>
         </div>
         <div className="flex items-center gap-3">
           {unlocked.length > 0 && (
             <button
               onClick={copyList}
-              className="text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink"
+              className="text-sm font-bold text-ink-2 underline decoration-2 underline-offset-4 hover:text-ink"
             >
               {copied ? "Copied ✓" : "Copy for resume"}
             </button>
           )}
-          <Link href="/skills" className="text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink">
+          <Link href="/skills" className="text-sm font-bold text-ink-2 underline decoration-2 underline-offset-4 hover:text-ink">
             View all
           </Link>
         </div>
@@ -48,7 +49,7 @@ export function SkillsPanel({ skills }: { skills: SkillProgress[] }) {
       {unlocked.length === 0 ? (
         <p className="text-sm text-ink-2">
           Complete resources to unlock resume-ready skills. See what&apos;s next on the{" "}
-          <Link href="/skills" className="underline decoration-border underline-offset-4 hover:text-ink">
+          <Link href="/skills" className="underline decoration-2 underline-offset-4 hover:text-ink">
             skills page
           </Link>
           .
@@ -60,9 +61,9 @@ export function SkillsPanel({ skills }: { skills: SkillProgress[] }) {
             return (
               <span
                 key={s.id}
-                className="flex items-center gap-1.5 rounded-full bg-paper-3 px-3 py-1.5 text-xs font-medium text-ink"
+                className="flex items-center gap-1.5 rounded-sm border-2 border-ink bg-paper-3 px-3 py-1.5 text-xs font-bold text-ink"
               >
-                <Icon size={13} className="text-accent" /> {s.name}
+                <Icon size={13} style={{ color: trackColor(s.domain) }} /> {s.name}
               </span>
             );
           })}

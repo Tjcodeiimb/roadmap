@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { TierBadge } from "./tier-badge";
 import { EnrollButton } from "./enroll-button";
 import { ICONS, FALLBACK_ICON, ClockMark } from "@/components/icons";
+import { trackColor } from "@/lib/track-colors";
 import type { MarketplaceCohort } from "@/lib/queries";
 
 export function CohortCard({ cohort, index = 0 }: { cohort: MarketplaceCohort; index?: number }) {
@@ -12,9 +13,9 @@ export function CohortCard({ cohort, index = 0 }: { cohort: MarketplaceCohort; i
 
   return (
     <Reveal index={index}>
-      <Card className="flex h-full flex-col gap-4 transition-transform duration-200 ease-out hover:-translate-y-1">
+      <Card className="press flex h-full flex-col gap-4">
         <div className="flex items-start gap-3">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent-soft text-accent">
             <Icon size={22} />
           </div>
           <div className="min-w-0 flex-1">
@@ -26,6 +27,12 @@ export function CohortCard({ cohort, index = 0 }: { cohort: MarketplaceCohort; i
         </div>
 
         <p className="text-sm leading-relaxed text-ink-2">{cohort.summary}</p>
+
+        <div className="flex overflow-hidden rounded-sm border-2 border-ink">
+          {cohort.courses.map((c) => (
+            <span key={c.id} className="h-2 flex-1" style={{ backgroundColor: trackColor(c.id) }} />
+          ))}
+        </div>
 
         <div className="flex flex-wrap gap-1.5">
           {cohort.courses.map((c) => (
@@ -40,7 +47,7 @@ export function CohortCard({ cohort, index = 0 }: { cohort: MarketplaceCohort; i
         )}
 
         <div className="mt-auto flex items-center justify-between pt-1">
-          <Link href={`/marketplace/cohort/${cohort.id}`} className="text-sm text-ink-2 underline decoration-border underline-offset-4 hover:text-ink">
+          <Link href={`/marketplace/cohort/${cohort.id}`} className="text-sm font-bold text-ink-2 underline decoration-2 underline-offset-4 hover:text-ink">
             View bundle
           </Link>
           <EnrollButton kind="cohort" id={cohort.id} label={cohort.label} enrolled={cohort.enrolled} continueHref="/dashboard" />

@@ -1,0 +1,37 @@
+name: Seed course content
+
+# Runs automatically whenever a push changes anything under scripts/seed-data/
+# (or the seed/validator scripts themselves) on main or the working branch.
+# Upserts by id, so it's safe to re-run and never touches anyone's personal
+# progress, XP, streaks, or spaced-repetition data - only content tables.
+on:
+  push:
+    branches:
+      - main
+      - claude/new-session-xqqu7b
+    paths:
+      - "scripts/seed-data/**"
+      - "scripts/seed.mjs"
+      - "scripts/validate-seed.mjs"
+  workflow_dispatch: {}
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Validate seed data
+        run: node scripts/validate-seed.mjs
+
+      - name: Seed Supabase
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/seed.mjs

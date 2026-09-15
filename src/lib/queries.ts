@@ -1,5 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database, Status, Step, Tier } from "@/lib/database.types";
+import { hydrateResumeDoc } from "@/lib/resume/sections";
+import type { ResumeDoc } from "@/lib/resume/types";
 
 type Client = SupabaseClient<Database>;
 
@@ -1020,4 +1022,86 @@ export async function getBrokenLinks(supabase: Client): Promise<BrokenLinkRow[]>
     trackId: r.topics?.phases?.track_id ?? null,
     trackLabel: r.topics?.phases?.tracks?.label ?? null,
   }));
+}
+
+// ---------------------------------------------------------------------------
+// Resumes
+//
+// Never cached (no unstable_cache, no shared revalidate window): these rows
+// carry the most sensitive data in the app, and the caching added for the
+// catalogue tables must not creep onto them.
+// ---------------------------------------------------------------------------
+
+export interface ResumeSummary {
+  id: string;
+  title: string;
+  updatedAt: string;
+  /** Enough to render a meaningful card without shipping the whole document. */
+  fullName: string;
+  sectionCount: number;
+  entryCount: number;
+}
+
+export async function getResumes(supabase: Client): Promise<ResumeSummary[]> {
+  const { data } = await supabase
+    .from("resumes")
+    .select("id, title, doc, updated_at")
+    .order("updated_at", { ascending: false });
+
+  return (data ?? []).map((row) => {
+    const doc = hydrateResumeDoc(row.doc);
+    const filled = doc.sections.filter((s) => s.entries.length > 0);
+    return {
+      id: row.id,
+      title: row.title,
+      updatedAt: row.updated_at,
+      fullName: doc.header.fullName,
+      sectionCount: filled.length,
+      entryCount: filled.reduce((n, s) => n + s.entries.length, 0),
+    };
+  });
+}
+
+export async function getResume(
+  supabase: Client,
+  id: string
+): Promise<{ id: string; title: string; doc: ResumeDoc; updatedAt: string } | null> {
+  // RLS scopes this to the owner, so a foreign id comes back as no rows —
+  // callers turn that into a 404 rather than a 403, which would confirm the
+  // resume exists.
+  const { data } = await supabase
+    .from("resumes")
+    .select("id, title, doc, updated_at")
+    .eq("id", id)
+    .maybeSingle();
+  if (!data) return null;
+  return { id: data.id, title: data.title, doc: hydrateResumeDoc(data.doc), updatedAt: data.updated_at };
+}
+
+export interface UnlockedSkill {
+  id: string;
+  name: string;
+  domain: string;
+  tier: string;
+}
+
+/**
+ * Deliberately not getSkillProgress(): that one pulls all ~300 skills plus
+ * every skill_resources row and two progress tables across five sequential
+ * round-trips, because it computes locked-skill progress bars. The resume
+ * picker only ever needs skills the user has actually unlocked.
+ */
+export async function getUnlockedSkills(supabase: Client): Promise<UnlockedSkill[]> {
+  const { data } = await supabase
+    .from("user_skills")
+    .select("skill_id, skills(id, name, domain, tier)")
+    .order("unlocked_at", { ascending: false });
+
+  const rows = (data ?? []) as unknown as {
+    skills: { id: string; name: string; domain: string; tier: string } | null;
+  }[];
+  return rows
+    .map((r) => r.skills)
+    .filter((s): s is NonNullable<typeof s> => s != null)
+    .map((s) => ({ id: s.id, name: s.name, domain: s.domain, tier: s.tier }));
 }

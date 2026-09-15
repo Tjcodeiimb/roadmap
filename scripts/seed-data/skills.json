@@ -16,7 +16,305 @@
     { "id": "skill-product-prioritization", "name": "Prioritization & Roadmapping", "domain": "product", "description": "RICE, opportunity trees, and turning a backlog into a defensible roadmap.", "tier": "intermediate", "icon_key": "product", "xp_reward": 150, "threshold": 0 },
 
     { "id": "skill-sales-prospecting", "name": "Prospecting & Qualifying", "domain": "sales", "description": "Outbound fundamentals and qualifying a lead with BANT/MEDDIC.", "tier": "foundational", "icon_key": "sales", "xp_reward": 100, "threshold": 0 },
-    { "id": "skill-sales-objections", "name": "Objection Handling", "domain": "sales", "description": "Presenting value and handling the objections that actually come up in a deal.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 150, "threshold": 0 }
+    { "id": "skill-sales-objections", "name": "Objection Handling", "domain": "sales", "description": "Presenting value and handling the objections that actually come up in a deal.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-ux-research", "name": "UX Research Fundamentals", "domain": "ux", "description": "Running user interviews and surveys, then turning findings into personas and journey maps.", "tier": "foundational", "icon_key": "ux", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-ux-prototyping", "name": "Prototyping & Usability Testing", "domain": "ux", "description": "Building a clickable Figma prototype and testing it against real users and Nielsen's heuristics.", "tier": "intermediate", "icon_key": "ux", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-ops-process", "name": "Process Mapping & Lean Fundamentals", "domain": "operations", "description": "Value stream mapping, the eight wastes of Lean, and DMAIC as a structured way to fix a broken process.", "tier": "foundational", "icon_key": "operations", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-ops-metrics", "name": "Operational Metrics & Continuous Improvement", "domain": "operations", "description": "Building a KPI/OKR dashboard and using root-cause tools to keep an operation improving.", "tier": "intermediate", "icon_key": "operations", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-sec-fundamentals", "name": "Security Fundamentals & Threat Awareness", "domain": "security", "description": "The CIA triad, common attack types, and recognizing phishing and social engineering.", "tier": "foundational", "icon_key": "cybersecurity", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-sec-risk", "name": "Risk Assessment & Compliance", "domain": "security", "description": "Running a risk assessment and navigating SOC 2, ISO 27001, and NIST compliance frameworks.", "tier": "intermediate", "icon_key": "cybersecurity", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-people-management", "name": "People Management Fundamentals", "domain": "people", "description": "Running effective 1:1s, delegating well, and the core practices of managing people for the first time.", "tier": "foundational", "icon_key": "people", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-people-hiring", "name": "Hiring & Structured Interviewing", "domain": "people", "description": "Writing job descriptions, sourcing candidates, and running structured interviews that reduce bias.", "tier": "intermediate", "icon_key": "people", "xp_reward": 150, "threshold": 0 },
+
+
+    { "id": "skill-finance-statements", "name": "Reading Financial Statements", "domain": "finance", "description": "Reading the income statement, balance sheet, and cash flow statement, and how they connect.", "tier": "foundational", "icon_key": "finance", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-finance-valuation", "name": "Company Valuation Fundamentals", "domain": "finance", "description": "Building comps and a DCF to put a number on what a company is worth.", "tier": "intermediate", "icon_key": "finance", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-consulting-frameworks", "name": "Structured Problem-Solving Frameworks", "domain": "consulting", "description": "MECE, issue trees, Porter's Five Forces, and the 3Cs — breaking down an ambiguous problem into a structured one.", "tier": "foundational", "icon_key": "consulting", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-consulting-caseprep", "name": "Case Interview & Market Sizing", "domain": "consulting", "description": "Hypothesis-driven problem solving and market sizing under case-interview conditions.", "tier": "intermediate", "icon_key": "consulting", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-ai-prompting", "name": "Prompt Engineering Fundamentals", "domain": "ai", "description": "Writing clear, structured prompts and understanding tokens and context windows.", "tier": "foundational", "icon_key": "ai", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-ai-building", "name": "Building AI-Powered Workflows", "domain": "ai", "description": "Using the Claude API and MCP to wire AI into a real, repeatable workflow.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 150, "threshold": 0 },
+    { "id": "skill-topic-ai-fluency", "name": "AI Fluency: Framework & Foundations", "domain": "ai", "description": "The 4D framework — Delegation, Description, Discernment, Diligence. How to work with AI effectively and responsibly. This is the operating system for everything else in this roadmap.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-claude-101", "name": "Claude 101", "domain": "ai", "description": "Core Claude features and how to use them for everyday work. Covers Projects, Memory, artifacts, analysis, coding help, and research. Your practical launchpad.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-tokens-context", "name": "Tokens & Context Windows", "domain": "ai", "description": "Why AI has memory limits, why context quality matters, and how to design prompts, files, and retrieval workflows that fit within model limits. Context engineering is a real product skill.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-prompt-fundamentals", "name": "Prompt Engineering Fundamentals", "domain": "ai", "description": "The craft of talking to AI precisely. Clarity, context, examples, constraints, format instructions. This single skill will save you thousands of hours across everything you do.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-advanced-prompting", "name": "Advanced Prompting Techniques", "domain": "ai", "description": "Chain-of-thought, tree-of-thought, self-consistency, meta-prompting, constitutional AI prompting, prompt chaining. The difference between good and exceptional AI output.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ai-model-landscape", "name": "AI Model Landscape 2026", "domain": "ai", "description": "Claude, GPT, Gemini, Llama, Mistral and open-weight models keep changing. Learn how to compare model families by capability, cost, latency, context, privacy, tooling, and product fit instead of chasing hype.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ai-safety-basics", "name": "AI Safety & Alignment Basics", "domain": "ai", "description": "A beginner-friendly introduction to using AI responsibly: privacy, bias, reliability, accountability, misuse, and when a human must stay in the loop. The goal is practical judgement, not research-paper depth.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-personal-prompt-library", "name": "Building Your Personal Prompt Library", "domain": "ai", "description": "Templates, snippets, and system prompts for your specific work. A well-built prompt library is a professional superpower. The goal: spend time once, benefit forever.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-digital-literacy", "name": "Digital Literacy for AI Builders", "domain": "ai", "description": "File systems, URLs, APIs, JSON, command line basics. The minimum digital fluency needed before learning to code or build.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-information-design", "name": "Information Architecture & Communication", "domain": "ai", "description": "Turn messy information into something people can scan, understand, and act on. Learn content hierarchy, naming, grouping, headings, navigation, and plain-language structure by redesigning real material.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-research-methodology", "name": "Research & Synthesis Methods", "domain": "ai", "description": "A practical workflow for researching with AI without getting fooled. Learn how to frame a question, gather sources, verify claims, organize evidence, and synthesize a useful answer you can trust.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-how-llms-work", "name": "How Large Language Models Work", "domain": "ai", "description": "Build a clear, non-mystical mental model of LLMs: tokens, embeddings, attention, next-token prediction, training, inference, and why confident mistakes happen. This belongs just before agents and RAG, because builders need to know what they are actually building on.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-agent-skills", "name": "Introduction to Agent Skills", "domain": "ai", "description": "How Claude uses skills — reusable capabilities that Claude applies automatically at the right moment. The backbone of AI assistants that actually do things.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-mcp-intro", "name": "Model Context Protocol (MCP) — Intro", "domain": "ai", "description": "MCP is the standard that lets Claude connect to external tools, APIs, and data sources. Understanding this is what separates users from builders.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-agent-anatomy", "name": "Anatomy of an AI Agent", "domain": "ai", "description": "Perception, memory, planning, action. Every AI agent is built from these four components. Understanding this architecture lets you design, debug, and improve any agent system.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-rag-deep-dive", "name": "RAG — Retrieval Augmented Generation", "domain": "ai", "description": "Connect AI to your own knowledge without retraining. RAG is how AI products actually know your data — documents, wikis, databases.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-no-code-automation", "name": "No-Code AI Automation — n8n & Make", "domain": "ai", "description": "Build real AI workflows without writing code. n8n and Make connect hundreds of apps with AI at the centre.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-multi-agent-systems", "name": "Multi-Agent Orchestration", "domain": "ai", "description": "Teams of AI working in parallel. Orchestrators that delegate to specialists. This is how complex AI workflows scale.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ai-productivity-stack", "name": "Building Your Personal AI Productivity Stack", "domain": "ai", "description": "Your personal system for using AI every day. The tools, workflows, and prompts that become your professional superpower.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-writing-with-ai", "name": "Writing & Communication with AI", "domain": "ai", "description": "AI as your writing partner — without losing your voice. Emails, reports, proposals, feedback. How to use AI to think more clearly, not just write faster.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-data-fundamentals", "name": "Data Literacy — Reading & Understanding Data", "domain": "ai", "description": "Making good decisions from data. Reading charts without being misled, understanding statistics, and knowing when AI's data analysis is trustworthy.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-notebooklm-mastery", "name": "NotebookLM & AI Research Tools", "domain": "ai", "description": "Deep dive into Google NotebookLM, Perplexity, and Elicit. Turn your document collection into a conversational knowledge base.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ux-fundamentals", "name": "UX Design Principles", "domain": "ai", "description": "How people think and what they expect from digital products. Nielsen's 10 heuristics, cognitive load, mental models. You can't build good AI products without this.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ai-product-ux", "name": "UX Patterns for AI Products", "domain": "ai", "description": "Designing for uncertainty, latency, and trust. AI products are different — outputs vary, responses take time, users need to verify.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-figma-basics", "name": "Figma — From Zero to Productive", "domain": "ai", "description": "Industry-standard UI design. Master the 20% that gives 80% of the value.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-visual-design-basics", "name": "Visual Design Fundamentals", "domain": "ai", "description": "Color, typography, spacing, contrast. The four rules that separate polished from amateur.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-wireframing-prototyping", "name": "Wireframing & Rapid Prototyping", "domain": "ai", "description": "Test ideas before building them. Learn to sketch, lo-fi prototype, and get feedback fast.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-image-ai-tools", "name": "Midjourney, DALL·E & Image Generation", "domain": "ai", "description": "Generate visuals, illustrations, UI mockups with AI. Prompting for images is a different skill from text prompting.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-design-systems", "name": "Design Systems & Component Thinking", "domain": "ai", "description": "How great products stay consistent at scale. Tokens, components, patterns, documentation.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-canva-presentations", "name": "Canva AI & Presentation Design", "domain": "ai", "description": "Professional presentations without hiring a designer. Canva AI features accelerate every step.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-video-ai-tools", "name": "Video AI — Runway, Sora & CapCut AI", "domain": "ai", "description": "Create, edit, and enhance video with AI. A one-person video studio is now possible.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-data-visualization", "name": "Data Visualization", "domain": "ai", "description": "Turning numbers into understanding. Charts, dashboards, and the visual language of data.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-brand-identity-basics", "name": "Brand Identity Basics", "domain": "ai", "description": "What a brand actually is — positioning, voice, personality. You'll need this when you build products or market yourself.", "tier": "foundational", "icon_key": "ai", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-claude-api", "name": "Building with the Claude API", "domain": "ai", "description": "Messages, tool use, vision, streaming, batch processing, system prompts. The complete technical foundation for building Claude-powered applications.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-mcp-advanced", "name": "MCP: Advanced Topics", "domain": "ai", "description": "Sampling, notifications, filesystem, transport protocols, security. Building production-grade MCP servers.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-python-for-ai", "name": "Python Basics for AI Builders", "domain": "ai", "description": "Not to become a software engineer — to read, understand, and modify AI code. The minimum viable programming for an AI builder.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-html-css-js", "name": "HTML, CSS & JavaScript Basics", "domain": "ai", "description": "Build anything that runs in a browser. HTML for structure, CSS for style, JavaScript for interactivity.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-apis-and-http", "name": "APIs, HTTP & Web Fundamentals", "domain": "ai", "description": "How the internet works. REST APIs, HTTP methods, authentication, webhooks.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-git-github", "name": "Git & GitHub for Non-Developers", "domain": "ai", "description": "Track changes, collaborate, and not break things. Even non-developers need git when working with code.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-langchain-langgraph", "name": "LangChain & LangGraph", "domain": "ai", "description": "The most widely-used framework for building AI applications. Chains, agents, memory, retrieval, tool use — all in Python.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-databases-sql", "name": "Databases & SQL Basics", "domain": "ai", "description": "How data is stored and retrieved. SELECT, WHERE, JOIN, INSERT. Most AI systems connect to databases.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-deployment-basics", "name": "Deployment — Getting Apps Live", "domain": "ai", "description": "Vercel, Railway, Render. Getting your AI app in front of real users. The last mile of building.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-evals-and-testing", "name": "Evaluating AI Systems — Evals", "domain": "ai", "description": "How do you know your AI app actually works? Test sets, metrics, LLM-as-judge. This separates serious AI engineers from everyone else.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-vector-dbs-embeddings", "name": "Vector Databases & Embeddings", "domain": "ai", "description": "The storage layer for AI memory and semantic search. Powers every serious RAG system.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-opportunity-mapping", "name": "AI Opportunity Mapping", "domain": "ai", "description": "Which industries and workflows have the highest leverage for AI right now. Systematic frameworks for spotting AI problems worth solving.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-first-ai-product", "name": "Building & Shipping Your First AI Product", "domain": "ai", "description": "From idea to live product. The minimal steps to build something real and put it in front of users. Constraint: ship in under a week.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-monitoring-production", "name": "Monitoring & Observing AI in Production", "domain": "ai", "description": "Logging, tracing, alerting. Knowing when your agent is drifting, failing, or being misused.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-cost-optimization", "name": "AI Cost Optimization", "domain": "ai", "description": "Token budgets, caching, model selection, batch processing. AI costs can spiral fast.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-portfolio-building", "name": "Portfolio & Case Study Building", "domain": "ai", "description": "Your work documented, showcased, and shareable. This is how you get clients, jobs, and collaborators.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ai-ethics-practice", "name": "AI Ethics in Practice", "domain": "ai", "description": "Not theory — real decisions real builders face. Bias, privacy, transparency, consent. What to do when your AI might cause harm.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-user-research", "name": "User Research & Customer Discovery", "domain": "ai", "description": "Talking to users is the most underrated skill in AI building. Customer interviews, jobs-to-be-done, pain point discovery.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-regulation-compliance", "name": "AI Regulation & Compliance", "domain": "ai", "description": "EU AI Act, India DPDP Act, GDPR. What matters for builders in 2026.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ai-business-models", "name": "AI Business Models", "domain": "ai", "description": "SaaS, API-based, automation-as-a-service, consulting, productized services. How AI companies actually make money.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sales-and-persuasion", "name": "Selling & Communicating Value", "domain": "ai", "description": "Demos, ROI framing, non-technical communication. The difference between a great product nobody buys and a mediocre product that sells.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-pricing-strategy", "name": "Pricing AI Products & Services", "domain": "ai", "description": "Value-based pricing. How to charge for automation, outcomes, and time saved.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-building-in-public", "name": "Building in Public & Personal Brand", "domain": "ai", "description": "X/Twitter, LinkedIn, newsletters. Audience as distribution channel. The most underutilised leverage for independent AI builders.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-financial-basics", "name": "Financial Basics for Independent Builders", "domain": "ai", "description": "Revenue, profit, margins, cashflow. Setting consulting rates. The financial literacy every independent builder needs.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-go-to-market", "name": "Go-to-Market Strategy for AI Products", "domain": "ai", "description": "Who to target first. Which channels. How to acquire your first 100 users. The distribution challenge that kills technically good AI products.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-networking-community", "name": "Community & Professional Network", "domain": "ai", "description": "Building relationships in AI. Online communities, local meetups, mentorship, collaboration.", "tier": "intermediate", "icon_key": "ai", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-teaching-fluency", "name": "Teaching AI Fluency", "domain": "ai", "description": "Anthropic's course on helping others understand AI. If you can teach something, you truly understand it.", "tier": "advanced", "icon_key": "ai", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-content-creation", "name": "Creating Content About AI", "domain": "ai", "description": "Writing, videos, threads. Explaining complex ideas simply. The builder-teacher flywheel.", "tier": "advanced", "icon_key": "ai", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-open-source", "name": "Open Source Contributions", "domain": "ai", "description": "Contributing to tools, datasets, and frameworks the community uses. Open source work builds reputation, skills, and relationships simultaneously.", "tier": "advanced", "icon_key": "ai", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ai-research-reading", "name": "Reading & Engaging with AI Research", "domain": "ai", "description": "ArXiv papers, Anthropic research, alignment forum. You'll never keep up with everything — build a system for the most important.", "tier": "advanced", "icon_key": "ai", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ai-governance", "name": "AI Governance & Policy", "domain": "ai", "description": "Contributing to how AI is governed. Standards bodies, policy consultation, industry groups. Your voice matters in policy rooms.", "tier": "advanced", "icon_key": "ai", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ai-native-org", "name": "Building an AI-Native Organisation", "domain": "ai", "description": "Designing teams, culture, and systems around AI from the ground up. What AI changes about how work is organised.", "tier": "advanced", "icon_key": "ai", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p1-t1", "name": "Reading the Three Statements", "domain": "finance", "description": "Completed every resource in the \"Reading the Three Statements\" topic.", "tier": "foundational", "icon_key": "finance", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-fin-p1-t2", "name": "Accounting Fundamentals", "domain": "finance", "description": "Completed every resource in the \"Accounting Fundamentals\" topic.", "tier": "foundational", "icon_key": "finance", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-fin-p2-t1", "name": "Cost of Capital & WACC", "domain": "finance", "description": "Completed every resource in the \"Cost of Capital & WACC\" topic.", "tier": "foundational", "icon_key": "finance", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-fin-p2-t2", "name": "Corporate Finance Courses", "domain": "finance", "description": "Completed every resource in the \"Corporate Finance Courses\" topic.", "tier": "foundational", "icon_key": "finance", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-fin-p3-t1", "name": "Instruments: Equities, Debt & Derivatives", "domain": "finance", "description": "Completed every resource in the \"Instruments: Equities, Debt & Derivatives\" topic.", "tier": "foundational", "icon_key": "finance", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-fin-p3-t2", "name": "Buy-Side vs Sell-Side", "domain": "finance", "description": "Completed every resource in the \"Buy-Side vs Sell-Side\" topic.", "tier": "foundational", "icon_key": "finance", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-fin-p4-t1", "name": "Pitch Books", "domain": "finance", "description": "Completed every resource in the \"Pitch Books\" topic.", "tier": "intermediate", "icon_key": "finance", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-fin-p4-t2", "name": "Comparable Company Analysis (Comps)", "domain": "finance", "description": "Completed every resource in the \"Comparable Company Analysis (Comps)\" topic.", "tier": "intermediate", "icon_key": "finance", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-fin-p4-t3", "name": "DCF Modeling", "domain": "finance", "description": "Completed every resource in the \"DCF Modeling\" topic.", "tier": "intermediate", "icon_key": "finance", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-fin-p5-t1", "name": "The M&A Deal Process & Due Diligence", "domain": "finance", "description": "Completed every resource in the \"The M&A Deal Process & Due Diligence\" topic.", "tier": "intermediate", "icon_key": "finance", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-fin-p5-t2", "name": "Synergies & Post-Merger Integration", "domain": "finance", "description": "Completed every resource in the \"Synergies & Post-Merger Integration\" topic.", "tier": "intermediate", "icon_key": "finance", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-fin-p6-t1", "name": "Equity Research & Valuation", "domain": "finance", "description": "Completed every resource in the \"Equity Research & Valuation\" topic.", "tier": "intermediate", "icon_key": "finance", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-fin-p6-t2", "name": "Portfolio Construction", "domain": "finance", "description": "Completed every resource in the \"Portfolio Construction\" topic.", "tier": "intermediate", "icon_key": "finance", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-fin-p7-t1", "name": "Reading 10-Ks & 10-Qs", "domain": "finance", "description": "Completed every resource in the \"Reading 10-Ks & 10-Qs\" topic.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p7-t2", "name": "Deal Practice & Interview Prep", "domain": "finance", "description": "Completed every resource in the \"Deal Practice & Interview Prep\" topic.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p8-t1", "name": "3-Statement Modeling", "domain": "finance", "description": "Build a fully linked income statement, balance sheet, and cash flow statement in Excel from scratch — the foundational build behind every advanced model, versus just reading one.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p8-t2", "name": "LBO Modeling", "domain": "finance", "description": "Model a leveraged buyout end to end: sources & uses, acquisition debt tranches, cash sweeps, and the return math (IRR/MOIC) private equity firms underwrite deals on.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p8-t3", "name": "Credit Analysis & Debt Schedules", "domain": "finance", "description": "Analyze a borrower the way a lender does — leverage and coverage ratios, covenant headroom — and build a debt schedule with interest, amortization, and cash sweep mechanics.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p9-t1", "name": "Private Equity Fundamentals", "domain": "finance", "description": "How PE funds are structured (GP/LP, fees, carry), how they source and screen deals, and how a buyout thesis turns into an investment.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p9-t2", "name": "Hedge Fund Strategies", "domain": "finance", "description": "Survey the core hedge fund strategies — long/short equity, global macro, quant, event-driven, arbitrage — and how each generates returns.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p9-t3", "name": "Venture Capital Basics", "domain": "finance", "description": "How VC funds are structured and how they evaluate, price, and structure early-stage investments — from thesis to term sheet.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-con-p1-t1", "name": "MECE & Issue Trees", "domain": "consulting", "description": "Completed every resource in the \"MECE & Issue Trees\" topic.", "tier": "foundational", "icon_key": "consulting", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-con-p1-t2", "name": "Core Case Frameworks Reference", "domain": "consulting", "description": "Completed every resource in the \"Core Case Frameworks Reference\" topic.", "tier": "foundational", "icon_key": "consulting", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-con-p2-t1", "name": "Porter's Five Forces & Strategy Frameworks", "domain": "consulting", "description": "Completed every resource in the \"Porter's Five Forces & Strategy Frameworks\" topic.", "tier": "foundational", "icon_key": "consulting", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-con-p2-t2", "name": "The 3Cs Framework", "domain": "consulting", "description": "Completed every resource in the \"The 3Cs Framework\" topic.", "tier": "foundational", "icon_key": "consulting", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-con-p3-t1", "name": "Hypothesis-Driven Problem Solving", "domain": "consulting", "description": "Completed every resource in the \"Hypothesis-Driven Problem Solving\" topic.", "tier": "intermediate", "icon_key": "consulting", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-con-p3-t2", "name": "Market Sizing & Guesstimates", "domain": "consulting", "description": "Completed every resource in the \"Market Sizing & Guesstimates\" topic.", "tier": "intermediate", "icon_key": "consulting", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-con-p3-t3", "name": "Case Interview Practice Library", "domain": "consulting", "description": "Completed every resource in the \"Case Interview Practice Library\" topic.", "tier": "intermediate", "icon_key": "consulting", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-con-p4-t1", "name": "Pitch Decks & the Pyramid Principle", "domain": "consulting", "description": "Completed every resource in the \"Pitch Decks & the Pyramid Principle\" topic.", "tier": "intermediate", "icon_key": "consulting", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-con-p4-t2", "name": "Top-Down Client Communication", "domain": "consulting", "description": "Completed every resource in the \"Top-Down Client Communication\" topic.", "tier": "intermediate", "icon_key": "consulting", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-con-p4-t3", "name": "Workshop Facilitation", "domain": "consulting", "description": "Completed every resource in the \"Workshop Facilitation\" topic.", "tier": "intermediate", "icon_key": "consulting", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-con-p5-t1", "name": "Excel & Financial Modeling", "domain": "consulting", "description": "Completed every resource in the \"Excel & Financial Modeling\" topic.", "tier": "advanced", "icon_key": "consulting", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-con-p5-t2", "name": "Slide Craft", "domain": "consulting", "description": "Completed every resource in the \"Slide Craft\" topic.", "tier": "advanced", "icon_key": "consulting", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-con-p5-t3", "name": "Business Research", "domain": "consulting", "description": "Completed every resource in the \"Business Research\" topic.", "tier": "advanced", "icon_key": "consulting", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-con-p6-t1", "name": "MBA Casebooks", "domain": "consulting", "description": "Completed every resource in the \"MBA Casebooks\" topic.", "tier": "advanced", "icon_key": "consulting", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-con-p6-t2", "name": "Live Case Practice", "domain": "consulting", "description": "Completed every resource in the \"Live Case Practice\" topic.", "tier": "advanced", "icon_key": "consulting", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-exc-p1-t1", "name": "The Excel Interface & Navigation", "domain": "excel", "description": "The ribbon, cells, sheets, and the keyboard habits that make everything else faster.", "tier": "foundational", "icon_key": "excel", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-exc-p1-t2", "name": "Formulas & Cell References", "domain": "excel", "description": "Relative vs. absolute references, and why a dragged formula breaks without them.", "tier": "foundational", "icon_key": "excel", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-exc-p1-t3", "name": "Core Functions: SUM, AVERAGE, IF, COUNT", "domain": "excel", "description": "The handful of functions that cover most day-to-day spreadsheet work.", "tier": "foundational", "icon_key": "excel", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-exc-p2-t1", "name": "VLOOKUP Fundamentals", "domain": "excel", "description": "Pull a value from another table by matching an id — the most-used lookup in business Excel.", "tier": "foundational", "icon_key": "excel", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-exc-p2-t2", "name": "INDEX & MATCH", "domain": "excel", "description": "The more flexible lookup combo that doesn't break when columns get inserted.", "tier": "foundational", "icon_key": "excel", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-exc-p2-t3", "name": "Data Validation & Dropdown Lists", "domain": "excel", "description": "Restrict what can be typed into a cell so a shared sheet stays clean.", "tier": "foundational", "icon_key": "excel", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-exc-p3-t1", "name": "Building Your First Pivot Table", "domain": "excel", "description": "Turn a raw data dump into a summary in a few drags.", "tier": "intermediate", "icon_key": "excel", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-exc-p3-t2", "name": "Sorting, Filtering & Excel Tables", "domain": "excel", "description": "Structured tables that expand automatically and filter without breaking formulas.", "tier": "intermediate", "icon_key": "excel", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-exc-p3-t3", "name": "Pivot Table Calculations & Slicers", "domain": "excel", "description": "Custom summaries and interactive filters on top of a pivot table.", "tier": "intermediate", "icon_key": "excel", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-exc-p4-t1", "name": "Financial Modelling Fundamentals", "domain": "excel", "description": "How a model is structured: inputs, calculations, and outputs kept separate.", "tier": "intermediate", "icon_key": "excel", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-exc-p4-t2", "name": "Building a 3-Statement Model", "domain": "excel", "description": "Link the income statement, balance sheet, and cash flow statement into one model.", "tier": "intermediate", "icon_key": "excel", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-exc-p4-t3", "name": "Scenario & Sensitivity Analysis", "domain": "excel", "description": "Stress-test a model's assumptions instead of trusting a single forecast.", "tier": "intermediate", "icon_key": "excel", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-exc-p5-t1", "name": "Charts That Communicate", "domain": "excel", "description": "Picking and building the right chart for the point you're making.", "tier": "advanced", "icon_key": "excel", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-exc-p5-t2", "name": "Conditional Formatting", "domain": "excel", "description": "Formatting rules driven by formulas, not just Excel's built-in presets.", "tier": "advanced", "icon_key": "excel", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-exc-p5-t3", "name": "Building an Interactive Dashboard", "domain": "excel", "description": "Combine pivots, slicers, and charts into one page someone else can actually use.", "tier": "advanced", "icon_key": "excel", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-exc-p6-t1", "name": "Power Query Basics", "domain": "excel", "description": "Import and clean data from multiple sources without manual copy-paste.", "tier": "advanced", "icon_key": "excel", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-exc-p6-t2", "name": "Power Pivot & the Data Model", "domain": "excel", "description": "Combine multiple tables into one model you can pivot across.", "tier": "advanced", "icon_key": "excel", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-exc-p6-t3", "name": "Intro to Macros & VBA", "domain": "excel", "description": "Record a macro, then read just enough VBA to tweak it.", "tier": "advanced", "icon_key": "excel", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-psy-p1-t1", "name": "System 1 vs. System 2 Thinking", "domain": "psychology", "description": "How the brain's fast, automatic thinking and its slow, deliberate thinking trade off in everyday decisions.", "tier": "foundational", "icon_key": "psychology", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-psy-p1-t2", "name": "Heuristics: Mental Shortcuts in Decision-Making", "domain": "psychology", "description": "The rules of thumb people use to decide quickly, and why they help more often than they hurt.", "tier": "foundational", "icon_key": "psychology", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-psy-p1-t3", "name": "Thinking, Fast and Slow — Kahneman's Framework", "domain": "psychology", "description": "The book and researcher that turned System 1/2 thinking and dozens of biases into a shared vocabulary for the field.", "tier": "foundational", "icon_key": "psychology", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-psy-p2-t1", "name": "Anchoring & Framing Effects", "domain": "psychology", "description": "How the first number you see and the way a choice is worded quietly shape the decision that follows.", "tier": "foundational", "icon_key": "psychology", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-psy-p2-t2", "name": "Loss Aversion & the Endowment Effect", "domain": "psychology", "description": "Why losing something feels worse than gaining the equivalent, and why owning something makes us overvalue it.", "tier": "foundational", "icon_key": "psychology", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-psy-p2-t3", "name": "Social Proof & Scarcity", "domain": "psychology", "description": "Why we copy what others are doing and want more of what seems limited or about to disappear.", "tier": "foundational", "icon_key": "psychology", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-psy-p3-t1", "name": "The Fogg Behavior Model", "domain": "psychology", "description": "BJ Fogg's model of exactly what has to line up — motivation, ability, and a prompt — for a behavior to happen.", "tier": "intermediate", "icon_key": "psychology", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-psy-p3-t2", "name": "Habit Loops: Cue, Routine, Reward", "domain": "psychology", "description": "How a repeated cue-routine-reward cycle turns a deliberate action into an automatic habit.", "tier": "intermediate", "icon_key": "psychology", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-psy-p3-t3", "name": "The Hook Model: Building Habit-Forming Products", "domain": "psychology", "description": "Nir Eyal's trigger-action-variable reward-investment loop for designing products people return to on their own.", "tier": "intermediate", "icon_key": "psychology", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-psy-p4-t1", "name": "Intrinsic vs. Extrinsic Motivation", "domain": "psychology", "description": "The difference between doing something because it's rewarding in itself and doing it for an outside reward or to avoid a penalty.", "tier": "intermediate", "icon_key": "psychology", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-psy-p4-t2", "name": "Gamification & the Octalysis Framework", "domain": "psychology", "description": "Yu-kai Chou's map of the eight core human drives that game-like design elements tap into.", "tier": "intermediate", "icon_key": "psychology", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-psy-p4-t3", "name": "Flow, Feedback Loops & Engagement Design", "domain": "psychology", "description": "Csikszentmihalyi's flow state, and why fast, clear feedback is what keeps people absorbed in a task or product.", "tier": "intermediate", "icon_key": "psychology", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-psy-p5-t1", "name": "Nudge Theory & Choice Architecture", "domain": "psychology", "description": "How the way options are presented — the default, the order, the framing — steers decisions without removing any choice.", "tier": "advanced", "icon_key": "psychology", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-psy-p5-t2", "name": "Dark Patterns & the Ethics of Persuasion", "domain": "psychology", "description": "Where nudging crosses into deception, and the manipulative UX patterns regulators are now cracking down on.", "tier": "advanced", "icon_key": "psychology", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-psy-p5-t3", "name": "Behavioral Design in Marketing & UX", "domain": "psychology", "description": "Applying behavioral science deliberately inside product and marketing design, rather than bolting psychology on after the fact.", "tier": "advanced", "icon_key": "psychology", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-psy-p6-t1", "name": "Prospect Theory", "domain": "psychology", "description": "Kahneman and Tversky's model of how people actually weigh risky gains and losses, and why it beats the classical rational-agent model.", "tier": "advanced", "icon_key": "psychology", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-psy-p6-t2", "name": "Mental Accounting", "domain": "psychology", "description": "Why people mentally sort money into separate 'accounts' and treat a dollar differently depending on where it came from.", "tier": "advanced", "icon_key": "psychology", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-psy-p6-t3", "name": "Intro to Behavioral Economics", "domain": "psychology", "description": "A field-level overview of behavioral economics, plus a full free course for going deeper than any single article can.", "tier": "advanced", "icon_key": "psychology", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-mkt-p1-t1", "name": "Marketing Fundamentals & the Marketing Mix", "domain": "marketing", "description": "The core vocabulary of marketing — product, price, place, promotion — and how they fit together into a strategy.", "tier": "foundational", "icon_key": "marketing", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-mkt-p1-t2", "name": "Ideal Customer Profile & Buyer Personas", "domain": "marketing", "description": "Define exactly who you're marketing to, from firmographic ICP criteria to a detailed buyer persona.", "tier": "foundational", "icon_key": "marketing", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-mkt-p1-t3", "name": "Value Proposition, Positioning & Brand Basics", "domain": "marketing", "description": "Turn a clear ICP into a value proposition and a brand that a customer can actually recognize and trust.", "tier": "foundational", "icon_key": "marketing", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-mkt-p2-t1", "name": "SEO Fundamentals", "domain": "marketing", "description": "How search engines crawl, index and rank pages, and the levers you actually control.", "tier": "foundational", "icon_key": "marketing", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-mkt-p2-t2", "name": "Keyword Research", "domain": "marketing", "description": "Find the terms your customers are actually searching for, and judge which ones are worth targeting.", "tier": "foundational", "icon_key": "marketing", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-mkt-p2-t3", "name": "On-Page SEO & Content Strategy", "domain": "marketing", "description": "Optimize a page for both readers and search engines, and plan content that compounds instead of one-off posts.", "tier": "foundational", "icon_key": "marketing", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-mkt-p3-t1", "name": "Google Ads Fundamentals (Search)", "domain": "marketing", "description": "Structure, keywords, and bidding for a Google Search campaign that doesn't burn budget.", "tier": "intermediate", "icon_key": "marketing", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-mkt-p3-t2", "name": "Display & Video Advertising", "domain": "marketing", "description": "Reach people who aren't actively searching yet, through Display remarketing and YouTube video campaigns.", "tier": "intermediate", "icon_key": "marketing", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-mkt-p3-t3", "name": "Paid Social Advertising (Meta & LinkedIn)", "domain": "marketing", "description": "Targeting, campaign objectives and creative basics for advertising on Facebook, Instagram and LinkedIn.", "tier": "intermediate", "icon_key": "marketing", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-mkt-p4-t1", "name": "Inbound Marketing Fundamentals", "domain": "marketing", "description": "The inbound methodology and flywheel model that ties content, SEO, social and email together.", "tier": "intermediate", "icon_key": "marketing", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-mkt-p4-t2", "name": "Email Marketing & Nurture Sequences", "domain": "marketing", "description": "Plan and write an email sequence that moves a lead toward a decision instead of just sitting in an inbox.", "tier": "intermediate", "icon_key": "marketing", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-mkt-p4-t3", "name": "Segmentation & Lifecycle Marketing", "domain": "marketing", "description": "Group contacts by shared traits and behavior, and message each lifecycle stage differently.", "tier": "intermediate", "icon_key": "marketing", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-mkt-p5-t1", "name": "A/B Testing & Experimentation", "domain": "marketing", "description": "Design a test that produces a real answer, and read the results without fooling yourself.", "tier": "advanced", "icon_key": "marketing", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-mkt-p5-t2", "name": "Growth Loops & Funnel Metrics (AARRR)", "domain": "marketing", "description": "The AARRR funnel — acquisition, activation, retention, referral, revenue — and the growth-loop thinking that goes beyond a linear funnel.", "tier": "advanced", "icon_key": "marketing", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-mkt-p5-t3", "name": "Growth Hacking Fundamentals", "domain": "marketing", "description": "The rapid-experimentation mindset behind fast-growing startups, and where it differs from traditional marketing.", "tier": "advanced", "icon_key": "marketing", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-mkt-p6-t1", "name": "Google Analytics 4 Fundamentals", "domain": "marketing", "description": "Set up and read GA4 reports well enough to answer basic questions about traffic and behavior.", "tier": "advanced", "icon_key": "marketing", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-mkt-p6-t2", "name": "Attribution & Campaign Measurement", "domain": "marketing", "description": "Decide which marketing touchpoint gets credit for a conversion, and measure campaigns accordingly.", "tier": "advanced", "icon_key": "marketing", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-dat-p1-t1", "name": "The Analytics Process: Ask, Prepare, Process, Analyze, Share", "domain": "data", "description": "The six-phase framework analysts use to structure any project, from defining the problem to acting on the results.", "tier": "foundational", "icon_key": "data", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-dat-p1-t2", "name": "Asking Effective Questions & Data-Driven Decisions", "domain": "data", "description": "How to turn a vague business problem into a specific, answerable question before you touch any data.", "tier": "foundational", "icon_key": "data", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-dat-p2-t1", "name": "SQL SELECT & Filtering Basics", "domain": "data", "description": "Write your first queries — selecting columns, filtering rows, and sorting results.", "tier": "foundational", "icon_key": "data", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-dat-p2-t2", "name": "JOINs — Combining Tables", "domain": "data", "description": "Combine rows from two or more tables using INNER, LEFT, RIGHT, and FULL JOINs.", "tier": "foundational", "icon_key": "data", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-dat-p2-t3", "name": "Aggregating Data with GROUP BY", "domain": "data", "description": "Collapse rows into summaries with GROUP BY and aggregate functions like COUNT, SUM, and AVG.", "tier": "foundational", "icon_key": "data", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-dat-p3-t1", "name": "Data Quality & Common Cleaning Tasks", "domain": "data", "description": "Spot the data quality problems — wrong types, inconsistent formatting, outliers — that break an analysis before it starts.", "tier": "intermediate", "icon_key": "data", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-dat-p3-t2", "name": "Handling Missing Data & Duplicates", "domain": "data", "description": "Decide when to drop, fill, or flag missing values, and how to find and remove duplicate records.", "tier": "intermediate", "icon_key": "data", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-dat-p4-t1", "name": "Descriptive Statistics — Center & Spread", "domain": "data", "description": "Summarize a dataset with mean, median, mode, and standard deviation before drawing any conclusions from it.", "tier": "intermediate", "icon_key": "data", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-dat-p4-t2", "name": "Understanding Distributions", "domain": "data", "description": "Recognize the shape of your data — normal, skewed, uniform — and why that shape changes which statistics you can trust.", "tier": "intermediate", "icon_key": "data", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-dat-p4-t3", "name": "Correlation vs. Causation", "domain": "data", "description": "Why two variables moving together doesn't mean one causes the other, and how to avoid that trap in your own analysis.", "tier": "intermediate", "icon_key": "data", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-dat-p5-t1", "name": "Choosing the Right Chart", "domain": "data", "description": "Match a chart type to the question you're answering instead of defaulting to whatever your tool suggests first.", "tier": "advanced", "icon_key": "data", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-dat-p5-t2", "name": "Dashboard Design Principles", "domain": "data", "description": "Layout, hierarchy, and focus — the design choices that make a dashboard readable in five seconds instead of five minutes.", "tier": "advanced", "icon_key": "data", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-dat-p5-t3", "name": "Building Dashboards with Free BI Tools", "domain": "data", "description": "Hands-on practice building an interactive dashboard in a free tool like Looker Studio or Tableau Public.", "tier": "advanced", "icon_key": "data", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-dat-p6-t1", "name": "Python Basics for Data Analysis", "domain": "data", "description": "Enough Python syntax — variables, loops, functions — to start automating the analysis work a spreadsheet can't.", "tier": "advanced", "icon_key": "data", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-dat-p6-t2", "name": "Pandas Fundamentals", "domain": "data", "description": "Load, index, filter, and summarize tabular data with pandas DataFrames, the workhorse of Python data analysis.", "tier": "advanced", "icon_key": "data", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-dat-p6-t3", "name": "Exploratory Data Analysis with Pandas", "domain": "data", "description": "Combine pandas with basic plotting to explore a new dataset and spot patterns before formal analysis begins.", "tier": "advanced", "icon_key": "data", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-prd-p1-t1", "name": "What Product Managers Actually Do", "domain": "product", "description": "What the product manager role covers, and why it's centered on solving customer problems rather than managing a backlog.", "tier": "foundational", "icon_key": "product", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-prd-p1-t2", "name": "PM vs. Product Owner vs. Project Manager", "domain": "product", "description": "How these three commonly-confused titles differ in scope, focus, and day-to-day responsibilities.", "tier": "foundational", "icon_key": "product", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-prd-p1-t3", "name": "Empowered Product Teams vs. Feature Teams", "domain": "product", "description": "The difference between teams handed a list of features to build and teams handed problems to solve.", "tier": "foundational", "icon_key": "product", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-prd-p2-t1", "name": "Customer Interviews & Problem Discovery", "domain": "product", "description": "How to talk to customers in a way that surfaces real problems instead of confirming what you already believed.", "tier": "foundational", "icon_key": "product", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-prd-p2-t2", "name": "Continuous Discovery Habits", "domain": "product", "description": "Building a weekly cadence of small customer touchpoints instead of one big research phase before launch.", "tier": "foundational", "icon_key": "product", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-prd-p2-t3", "name": "Validating Problems Before Solutions", "domain": "product", "description": "Using lightweight opportunity assessments to decide whether a problem is worth solving before committing engineering time.", "tier": "foundational", "icon_key": "product", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-prd-p3-t1", "name": "RICE & Prioritization Frameworks", "domain": "product", "description": "Scoring competing ideas on reach, impact, confidence, and effort instead of prioritizing by opinion or seniority.", "tier": "intermediate", "icon_key": "product", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-prd-p3-t2", "name": "Opportunity Solution Trees", "domain": "product", "description": "Mapping opportunities and solutions visually so a team can see and debate its options instead of jumping to one idea.", "tier": "intermediate", "icon_key": "product", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-prd-p3-t3", "name": "Outcome-Based Roadmapping", "domain": "product", "description": "Building roadmaps around outcomes and time horizons instead of a fixed list of features and dates.", "tier": "intermediate", "icon_key": "product", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-prd-p4-t1", "name": "Product Vision & Strategy Fundamentals", "domain": "product", "description": "The difference between a multi-year vision, a strategy, and the tactics that execute it.", "tier": "intermediate", "icon_key": "product", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-prd-p4-t2", "name": "Competitive Positioning & Market Analysis", "domain": "product", "description": "Framing a product against competitive alternatives so the right customers immediately understand its value.", "tier": "intermediate", "icon_key": "product", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-prd-p4-t3", "name": "Strategy Frameworks in Practice", "domain": "product", "description": "Applying a diagnosis-guiding policy-actions structure to tell a good strategy from a list of goals dressed up as one.", "tier": "intermediate", "icon_key": "product", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-prd-p5-t1", "name": "Writing PRDs & Specs", "domain": "product", "description": "Writing a requirements document that aligns a team around the problem and success criteria, not just a feature list.", "tier": "advanced", "icon_key": "product", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-prd-p5-t2", "name": "Agile & Scrum Basics for PMs", "domain": "product", "description": "The ceremonies, roles, and vocabulary of Scrum a PM needs to work effectively with an agile engineering team.", "tier": "advanced", "icon_key": "product", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-prd-p5-t3", "name": "Cross-Functional Collaboration", "domain": "product", "description": "Working as a true trio with design and engineering so decisions get made together, not handed off in sequence.", "tier": "advanced", "icon_key": "product", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-prd-p6-t1", "name": "North Star Metrics & Product Metrics", "domain": "product", "description": "Choosing a single metric that captures customer value, and the input metrics that actually move it.", "tier": "advanced", "icon_key": "product", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-prd-p6-t2", "name": "A/B Testing Fundamentals for PMs", "domain": "product", "description": "The basics of running a valid experiment so a launch decision rests on evidence instead of the loudest opinion in the room.", "tier": "advanced", "icon_key": "product", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sls-p1-t1", "name": "Intro to B2B Sales & the Modern Buyer's Journey", "domain": "sales", "description": "How B2B buyers move from awareness to decision, and why most of that journey now happens before they ever talk to a salesperson.", "tier": "foundational", "icon_key": "sales", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sls-p1-t2", "name": "The Inbound Sales Methodology", "domain": "sales", "description": "Sell in a way that matches how buyers already research and buy, instead of running a generic, one-size-fits-all pitch.", "tier": "foundational", "icon_key": "sales", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sls-p2-t1", "name": "Prospecting Fundamentals", "domain": "sales", "description": "Build a repeatable process for finding and reaching the right prospects instead of relying on random outreach.", "tier": "foundational", "icon_key": "sales", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sls-p2-t2", "name": "Cold Outreach: Email & Cold Calling", "domain": "sales", "description": "Write cold emails and make cold calls that earn a reply instead of getting ignored or hung up on.", "tier": "foundational", "icon_key": "sales", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sls-p2-t3", "name": "Qualification Frameworks: BANT & MEDDIC", "domain": "sales", "description": "Use BANT and MEDDIC to judge whether an opportunity is real and worth pursuing before investing more time in it.", "tier": "foundational", "icon_key": "sales", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sls-p3-t1", "name": "Running a Discovery Call", "domain": "sales", "description": "Structure a discovery call so it uncovers a prospect's real pain points instead of just checking boxes.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sls-p3-t2", "name": "Active Listening & Questioning Techniques", "domain": "sales", "description": "Listen and ask questions in a way that makes prospects actually open up about what they need.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sls-p3-t3", "name": "SPIN Selling & Needs Analysis", "domain": "sales", "description": "Use the SPIN question sequence to help a buyer connect their problem to the cost of leaving it unsolved.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sls-p4-t1", "name": "Sales Presentations & Product Demos", "domain": "sales", "description": "Tailor a demo to what a specific buyer cares about instead of running the same generic walkthrough every time.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sls-p4-t2", "name": "Handling Objections", "domain": "sales", "description": "Respond to price, fit, and competitor objections in a way that builds trust instead of triggering a debate.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sls-p4-t3", "name": "Value Selling & ROI Communication", "domain": "sales", "description": "Translate your solution into the numbers a buyer's boss will actually approve.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sls-p5-t1", "name": "Closing Techniques", "domain": "sales", "description": "Recognize buying signals and use the right closing approach to move a ready deal to a signature.", "tier": "advanced", "icon_key": "sales", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sls-p5-t2", "name": "Sales Negotiation Fundamentals", "domain": "sales", "description": "Negotiate price and terms without giving away margin for free or damaging the relationship.", "tier": "advanced", "icon_key": "sales", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sls-p5-t3", "name": "Sales Pipeline & CRM Fundamentals", "domain": "sales", "description": "Keep a pipeline organized in a CRM so deals move forward instead of quietly going cold.", "tier": "advanced", "icon_key": "sales", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sls-p6-t1", "name": "Account Management Fundamentals", "domain": "sales", "description": "Manage a portfolio of existing accounts so relationships and revenue grow instead of just being maintained.", "tier": "advanced", "icon_key": "sales", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sls-p6-t2", "name": "Renewals & Customer Success", "domain": "sales", "description": "Plan for renewal well before the contract ends by tracking account health and proving value along the way.", "tier": "advanced", "icon_key": "sales", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sls-p6-t3", "name": "Expansion Revenue & Upselling", "domain": "sales", "description": "Grow revenue from existing customers through upsells and cross-sells that genuinely fit their needs.", "tier": "advanced", "icon_key": "sales", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ux-p1-t1", "name": "What is UX Design?", "domain": "ux", "description": "A working definition of UX design and why it's become central to how digital products get built.", "tier": "foundational", "icon_key": "ux", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ux-p1-t2", "name": "The Design Thinking Process", "domain": "ux", "description": "The empathize-define-ideate-prototype-test cycle that structures most human-centered design work.", "tier": "foundational", "icon_key": "ux", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ux-p1-t3", "name": "UX vs UI vs Product Design", "domain": "ux", "description": "How these three commonly confused roles actually divide up the work of building a product.", "tier": "foundational", "icon_key": "ux", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ux-p2-t1", "name": "User Interviews", "domain": "ux", "description": "Plan and run one-on-one conversations that surface real user needs instead of assumptions.", "tier": "foundational", "icon_key": "ux", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ux-p2-t2", "name": "Surveys & Quantitative Research", "domain": "ux", "description": "Write survey questions that produce clean, analyzable data instead of noise.", "tier": "foundational", "icon_key": "ux", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ux-p2-t3", "name": "Personas & Journey Mapping", "domain": "ux", "description": "Turn research findings into personas and journey maps the whole team can design against.", "tier": "foundational", "icon_key": "ux", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ux-p3-t1", "name": "Information Architecture Fundamentals", "domain": "ux", "description": "Organize content into structures people can actually navigate.", "tier": "intermediate", "icon_key": "ux", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ux-p3-t2", "name": "Card Sorting & Sitemaps", "domain": "ux", "description": "Use card sorting to discover how users group content, then turn that into a sitemap.", "tier": "intermediate", "icon_key": "ux", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ux-p3-t3", "name": "Interaction Design Principles", "domain": "ux", "description": "The psychology-backed rules — Fitts's Law, Hick's Law, and more — behind interfaces that feel intuitive.", "tier": "intermediate", "icon_key": "ux", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ux-p4-t1", "name": "Low-Fidelity Wireframing", "domain": "ux", "description": "Rough out a screen's layout and flow before investing in visual design.", "tier": "intermediate", "icon_key": "ux", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ux-p4-t2", "name": "Prototyping with Figma", "domain": "ux", "description": "Wire frames together into a clickable prototype someone else can actually test.", "tier": "intermediate", "icon_key": "ux", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ux-p4-t3", "name": "Design Systems & Component Libraries", "domain": "ux", "description": "Reusable components and a shared design system that keep a product consistent as it grows.", "tier": "intermediate", "icon_key": "ux", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ux-p5-t1", "name": "Usability Testing Fundamentals", "domain": "ux", "description": "Watch real people attempt real tasks to find out where a design actually breaks down.", "tier": "advanced", "icon_key": "ux", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ux-p5-t2", "name": "Heuristic Evaluation", "domain": "ux", "description": "Audit an interface against Nielsen's 10 usability heuristics without needing to recruit test users.", "tier": "advanced", "icon_key": "ux", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ux-p5-t3", "name": "A/B Testing & Iteration", "domain": "ux", "description": "Test one change at a time against real traffic to know whether it actually helped.", "tier": "advanced", "icon_key": "ux", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ux-p6-t1", "name": "Presenting Design Work", "domain": "ux", "description": "Frame design decisions around the story and the business outcome stakeholders actually care about.", "tier": "advanced", "icon_key": "ux", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ux-p6-t2", "name": "UX Metrics & ROI", "domain": "ux", "description": "Track the numbers — conversion, retention, support cost — that make the case for design investment.", "tier": "advanced", "icon_key": "ux", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ux-p6-t3", "name": "Accessibility Fundamentals", "domain": "ux", "description": "Design and build for people using assistive technology, using WCAG as the baseline.", "tier": "advanced", "icon_key": "ux", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ops-p1-t1", "name": "What operations management is", "domain": "operations", "description": "The function that turns strategy into repeatable, efficient delivery of a product or service.", "tier": "foundational", "icon_key": "operations", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ops-p1-t2", "name": "Process Mapping & Value Stream Analysis", "domain": "operations", "description": "Drawing a process as it actually runs — not as people assume it does — to see where time and value get lost.", "tier": "foundational", "icon_key": "operations", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ops-p1-t3", "name": "Operations Strategy & the Efficiency-Flexibility Tradeoff", "domain": "operations", "description": "Why an operation optimized for low cost and one optimized for adaptability tend to pull in different directions.", "tier": "foundational", "icon_key": "operations", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ops-p2-t1", "name": "Lean Principles & Waste Elimination", "domain": "operations", "description": "Seeing a process through the lens of value versus the eight wastes of Lean.", "tier": "foundational", "icon_key": "operations", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ops-p2-t2", "name": "Six Sigma & DMAIC", "domain": "operations", "description": "A structured, data-driven cycle — Define, Measure, Analyze, Improve, Control — for fixing a process that isn't meeting expectations.", "tier": "foundational", "icon_key": "operations", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ops-p2-t3", "name": "Kaizen & Continuous Improvement", "domain": "operations", "description": "Small, constant changes made by the people doing the work, instead of one big overhaul.", "tier": "foundational", "icon_key": "operations", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ops-p3-t1", "name": "Project Management Fundamentals (scope/schedule/budget)", "domain": "operations", "description": "The triple constraint every project manager balances, and why moving one side of it moves the other two.", "tier": "intermediate", "icon_key": "operations", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ops-p3-t2", "name": "Agile & Scrum for Operations", "domain": "operations", "description": "Borrowing sprints, backlogs, and standups for operational work that isn't software development.", "tier": "intermediate", "icon_key": "operations", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ops-p3-t3", "name": "Managing Cross-Functional Projects", "domain": "operations", "description": "Getting people who don't share a manager, incentives, or vocabulary to ship something together.", "tier": "intermediate", "icon_key": "operations", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ops-p4-t1", "name": "Supply Chain Fundamentals", "domain": "operations", "description": "The network of suppliers, manufacturers, and distributors that gets a product to a customer, and what managing it actually involves.", "tier": "intermediate", "icon_key": "operations", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ops-p4-t2", "name": "Inventory Management & Demand Forecasting", "domain": "operations", "description": "Predicting what customers will want and deciding how much stock to hold without tying up cash unnecessarily.", "tier": "intermediate", "icon_key": "operations", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ops-p4-t3", "name": "Vendor & Procurement Management", "domain": "operations", "description": "Choosing, contracting with, and managing the outside suppliers an operation depends on.", "tier": "intermediate", "icon_key": "operations", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ops-p5-t1", "name": "Building an Operations Dashboard (KPIs/OKRs)", "domain": "operations", "description": "Picking the handful of metrics that actually tell you whether an operation is healthy, and framing them as goals people can act on.", "tier": "advanced", "icon_key": "operations", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ops-p5-t2", "name": "Root Cause Analysis (5 Whys, Fishbone)", "domain": "operations", "description": "Simple tools for tracing a problem back to its actual cause instead of patching a symptom.", "tier": "advanced", "icon_key": "operations", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ops-p5-t3", "name": "SOPs & Process Documentation", "domain": "operations", "description": "Writing down how a process works so it survives someone leaving or a team growing.", "tier": "advanced", "icon_key": "operations", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ops-p6-t1", "name": "Scaling Processes as a Company Grows", "domain": "operations", "description": "Why what worked at 10 people breaks at 100, and how to rebuild a process before it breaks in production.", "tier": "advanced", "icon_key": "operations", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ops-p6-t2", "name": "Change Management Fundamentals (ADKAR/Kotter)", "domain": "operations", "description": "Two well-known models for getting people to actually adopt a new process instead of quietly reverting to the old one.", "tier": "advanced", "icon_key": "operations", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ops-p6-t3", "name": "Automation & Operational Tooling", "domain": "operations", "description": "Deciding which repetitive operational work is worth automating, and with what kind of tool.", "tier": "advanced", "icon_key": "operations", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sec-p1-t1", "name": "CIA Triad & Core Security Concepts", "domain": "security", "description": "Confidentiality, integrity, and availability — the three-part lens security people use to evaluate almost everything.", "tier": "foundational", "icon_key": "cybersecurity", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sec-p1-t2", "name": "Common Threats & Attack Types", "domain": "security", "description": "Malware, ransomware, and the other attack categories that show up in almost every breach report.", "tier": "foundational", "icon_key": "cybersecurity", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sec-p1-t3", "name": "Social Engineering & Phishing", "domain": "security", "description": "Why humans, not firewalls, are the easiest way into most organizations.", "tier": "foundational", "icon_key": "cybersecurity", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sec-p2-t1", "name": "Network Security Fundamentals", "domain": "security", "description": "Firewalls, VPNs, and the basic architecture decisions that keep a network from being wide open.", "tier": "foundational", "icon_key": "cybersecurity", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sec-p2-t2", "name": "Web Application Security (OWASP Top 10)", "domain": "security", "description": "The ten vulnerability categories responsible for the vast majority of web app breaches.", "tier": "foundational", "icon_key": "cybersecurity", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sec-p2-t3", "name": "Secure Coding Basics", "domain": "security", "description": "Writing code that doesn't hand attackers an opening, using checklists instead of guesswork.", "tier": "foundational", "icon_key": "cybersecurity", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-sec-p3-t1", "name": "Identity & Access Management", "domain": "security", "description": "Making sure the right people, and only the right people, can get to the right systems.", "tier": "intermediate", "icon_key": "cybersecurity", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sec-p3-t2", "name": "Encryption Fundamentals", "domain": "security", "description": "How data gets scrambled so it's useless without the key, and why there are two very different ways to do it.", "tier": "intermediate", "icon_key": "cybersecurity", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sec-p3-t3", "name": "Data Privacy & Protection", "domain": "security", "description": "What organizations owe the people whose data they hold, and the regulations that make it enforceable.", "tier": "intermediate", "icon_key": "cybersecurity", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sec-p4-t1", "name": "Risk Assessment Fundamentals", "domain": "security", "description": "Turning 'what could go wrong' into a ranked, defensible list of what to fix first.", "tier": "intermediate", "icon_key": "cybersecurity", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sec-p4-t2", "name": "Compliance Frameworks (SOC 2, ISO 27001, NIST)", "domain": "security", "description": "The frameworks auditors and customers actually check against, and what each one is really asking for.", "tier": "intermediate", "icon_key": "cybersecurity", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sec-p4-t3", "name": "Third-Party & Vendor Risk", "domain": "security", "description": "Your security posture is only as strong as the vendors and suppliers you've given access to.", "tier": "intermediate", "icon_key": "cybersecurity", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-sec-p5-t1", "name": "Incident Response Fundamentals", "domain": "security", "description": "The phases of handling a security incident, from first alert to closing the loop.", "tier": "advanced", "icon_key": "cybersecurity", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sec-p5-t2", "name": "Business Continuity & Disaster Recovery", "domain": "security", "description": "Keeping the business running, and getting systems back, when something actually goes wrong.", "tier": "advanced", "icon_key": "cybersecurity", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sec-p5-t3", "name": "Tabletop Exercises & Post-Incident Review", "domain": "security", "description": "Rehearsing the incident response plan before you need it, then honestly reviewing what happened after.", "tier": "advanced", "icon_key": "cybersecurity", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sec-p6-t1", "name": "Building a Security-Aware Culture", "domain": "security", "description": "Turning security from an annual training video into habits people actually keep.", "tier": "advanced", "icon_key": "cybersecurity", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sec-p6-t2", "name": "Security for Non-Technical Teams", "domain": "security", "description": "The handful of things every employee, not just IT, needs to know and do.", "tier": "advanced", "icon_key": "cybersecurity", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-sec-p6-t3", "name": "Hands-On Practice (CTFs & Labs)", "domain": "security", "description": "Free, legal environments to practice the attacker's side and see how the concepts hold up.", "tier": "advanced", "icon_key": "cybersecurity", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ppl-p1-t1", "name": "From Individual Contributor to Manager", "domain": "people", "description": "Why the job changes completely once your results come through other people's work instead of your own.", "tier": "foundational", "icon_key": "people", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ppl-p1-t2", "name": "1:1s & Ongoing Feedback", "domain": "people", "description": "Running a recurring 1:1 that's actually useful, and giving feedback your report can act on.", "tier": "foundational", "icon_key": "people", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ppl-p1-t3", "name": "Delegation & Trust", "domain": "people", "description": "Handing off real ownership of work instead of just tasks, and building the trust that makes it stick.", "tier": "foundational", "icon_key": "people", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ppl-p2-t1", "name": "Writing Job Descriptions & Sourcing", "domain": "people", "description": "Writing a job ad that attracts the right candidates, then finding the ones who aren't applying.", "tier": "foundational", "icon_key": "people", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ppl-p2-t2", "name": "Structured Interviewing", "domain": "people", "description": "Asking every candidate the same well-designed questions and scoring them against a shared rubric.", "tier": "foundational", "icon_key": "people", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ppl-p2-t3", "name": "Reducing Bias in Hiring", "domain": "people", "description": "Where bias actually creeps into a hiring process, and the concrete changes that reduce it.", "tier": "foundational", "icon_key": "people", "xp_reward": 60, "threshold": 0 },
+    { "id": "skill-topic-ppl-p3-t1", "name": "Setting Goals (OKRs)", "domain": "people", "description": "Pairing a clear objective with a small set of measurable key results so everyone knows what matters.", "tier": "intermediate", "icon_key": "people", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ppl-p3-t2", "name": "Performance Reviews", "domain": "people", "description": "Turning a stretch of observations into a review that's specific, fair, and doesn't surprise anyone.", "tier": "intermediate", "icon_key": "people", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ppl-p3-t3", "name": "Managing Underperformance", "domain": "people", "description": "Naming a performance problem directly and working through a structured plan to fix it.", "tier": "intermediate", "icon_key": "people", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ppl-p4-t1", "name": "Organizational Design Fundamentals", "domain": "people", "description": "The models and tradeoffs behind how a company groups people into teams and reporting lines.", "tier": "intermediate", "icon_key": "people", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ppl-p4-t2", "name": "Span of Control & Team Topologies", "domain": "people", "description": "How many people one manager can actually manage well, and how team shape affects how work flows.", "tier": "intermediate", "icon_key": "people", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ppl-p4-t3", "name": "Career Ladders & Leveling", "domain": "people", "description": "Defining what each level of seniority actually means so growth and pay decisions aren't arbitrary.", "tier": "intermediate", "icon_key": "people", "xp_reward": 90, "threshold": 0 },
+    { "id": "skill-topic-ppl-p5-t1", "name": "Building Team Culture", "domain": "people", "description": "Turning stated values into the everyday norms a team actually follows.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ppl-p5-t2", "name": "Diversity, Equity & Inclusion Fundamentals", "domain": "people", "description": "The core DEI vocabulary and concepts — diversity, equity, inclusion, bias, and belonging — and why they're distinct.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ppl-p5-t3", "name": "Employee Engagement & Retention", "domain": "people", "description": "What actually drives people to stay and do good work, and how to measure it honestly.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ppl-p6-t1", "name": "People Analytics Fundamentals", "domain": "people", "description": "Using workforce data to test assumptions about hiring, performance, and retention instead of guessing.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ppl-p6-t2", "name": "Compensation & Leveling Basics", "domain": "people", "description": "How salary bands and a compensation philosophy keep pay consistent, fair, and defensible.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-ppl-p6-t3", "name": "HR Operations & Compliance Basics", "domain": "people", "description": "The recurring administrative and legal-compliance work that keeps a people function out of trouble.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 }
   ],
   "skill_resources": [
     { "skill_id": "skill-excel-lookups", "resource_id": "exc-p2-r1" },
@@ -101,6 +399,932 @@
     { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r3" },
     { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r4" },
     { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r5" },
-    { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r6" }
+    { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r6" },
+
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r1" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r2" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r3" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r4" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r5" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r6" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r7" },
+
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r1" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r2" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r3" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r4" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r5" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r6" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r7" },
+
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r1" },
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r2" },
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r3" },
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r4" },
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r5" },
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r6" },
+
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r1" },
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r2" },
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r3" },
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r4" },
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r5" },
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r6" },
+
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r1" },
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r2" },
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r3" },
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r4" },
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r5" },
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r6" },
+
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r1" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r2" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r3" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r4" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r5" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r6" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r7" },
+
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r1" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r2" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r3" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r4" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r5" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r6" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r7" },
+
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r1" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r2" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r3" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r4" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r5" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r6" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r7" },
+
+
+    { "skill_id": "skill-finance-statements", "resource_id": "fin-p1-r1" },
+    { "skill_id": "skill-finance-statements", "resource_id": "fin-p1-r2" },
+    { "skill_id": "skill-finance-statements", "resource_id": "fin-p1-r3" },
+    { "skill_id": "skill-finance-statements", "resource_id": "fin-p1-r4" },
+    { "skill_id": "skill-finance-statements", "resource_id": "fin-p1-r5" },
+
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r1" },
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r2" },
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r3" },
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r4" },
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r5" },
+    { "skill_id": "skill-finance-valuation", "resource_id": "fin-p4-r6" },
+
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p1-r1" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p1-r2" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p1-r3" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p2-r1" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p2-r2" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p2-r3" },
+    { "skill_id": "skill-consulting-frameworks", "resource_id": "con-p2-r4" },
+
+    { "skill_id": "skill-consulting-caseprep", "resource_id": "con-p3-r1" },
+    { "skill_id": "skill-consulting-caseprep", "resource_id": "con-p3-r2" },
+    { "skill_id": "skill-consulting-caseprep", "resource_id": "con-p3-r3" },
+    { "skill_id": "skill-consulting-caseprep", "resource_id": "con-p3-r4" },
+    { "skill_id": "skill-consulting-caseprep", "resource_id": "con-p3-r5" },
+
+    { "skill_id": "skill-ai-prompting", "resource_id": "prompt-fundamentals-r1" },
+    { "skill_id": "skill-ai-prompting", "resource_id": "prompt-fundamentals-r2" },
+    { "skill_id": "skill-ai-prompting", "resource_id": "advanced-prompting-r1" },
+    { "skill_id": "skill-ai-prompting", "resource_id": "advanced-prompting-r2" },
+    { "skill_id": "skill-ai-prompting", "resource_id": "tokens-context-r1" },
+    { "skill_id": "skill-ai-prompting", "resource_id": "tokens-context-r2" },
+
+    { "skill_id": "skill-ai-building", "resource_id": "claude-api-r1" },
+    { "skill_id": "skill-ai-building", "resource_id": "claude-api-r2" },
+    { "skill_id": "skill-ai-building", "resource_id": "claude-api-r3" },
+    { "skill_id": "skill-ai-building", "resource_id": "mcp-advanced-r1" },
+    { "skill_id": "skill-ai-building", "resource_id": "mcp-advanced-r2" },
+
+    { "skill_id": "skill-topic-ai-fluency", "resource_id": "ai-fluency-r1" },
+    { "skill_id": "skill-topic-ai-fluency", "resource_id": "ai-fluency-r2" },
+    { "skill_id": "skill-topic-ai-fluency", "resource_id": "ai-fluency-r3" },
+
+    { "skill_id": "skill-topic-claude-101", "resource_id": "claude-101-r1" },
+    { "skill_id": "skill-topic-claude-101", "resource_id": "claude-101-r2" },
+    { "skill_id": "skill-topic-claude-101", "resource_id": "claude-101-r3" },
+
+    { "skill_id": "skill-topic-tokens-context", "resource_id": "tokens-context-r1" },
+    { "skill_id": "skill-topic-tokens-context", "resource_id": "tokens-context-r2" },
+
+    { "skill_id": "skill-topic-prompt-fundamentals", "resource_id": "prompt-fundamentals-r1" },
+    { "skill_id": "skill-topic-prompt-fundamentals", "resource_id": "prompt-fundamentals-r2" },
+
+    { "skill_id": "skill-topic-advanced-prompting", "resource_id": "advanced-prompting-r1" },
+    { "skill_id": "skill-topic-advanced-prompting", "resource_id": "advanced-prompting-r2" },
+
+    { "skill_id": "skill-topic-ai-model-landscape", "resource_id": "ai-model-landscape-r1" },
+    { "skill_id": "skill-topic-ai-model-landscape", "resource_id": "ai-model-landscape-r2" },
+    { "skill_id": "skill-topic-ai-model-landscape", "resource_id": "ai-model-landscape-r3" },
+    { "skill_id": "skill-topic-ai-model-landscape", "resource_id": "ai-model-landscape-r4" },
+
+    { "skill_id": "skill-topic-ai-safety-basics", "resource_id": "ai-safety-basics-r1" },
+    { "skill_id": "skill-topic-ai-safety-basics", "resource_id": "ai-safety-basics-r2" },
+    { "skill_id": "skill-topic-ai-safety-basics", "resource_id": "ai-safety-basics-r3" },
+
+    { "skill_id": "skill-topic-personal-prompt-library", "resource_id": "personal-prompt-library-r1" },
+
+    { "skill_id": "skill-topic-digital-literacy", "resource_id": "digital-literacy-r1" },
+
+    { "skill_id": "skill-topic-information-design", "resource_id": "information-design-r1" },
+    { "skill_id": "skill-topic-information-design", "resource_id": "information-design-r2" },
+    { "skill_id": "skill-topic-information-design", "resource_id": "information-design-r3" },
+    { "skill_id": "skill-topic-information-design", "resource_id": "information-design-r4" },
+
+    { "skill_id": "skill-topic-research-methodology", "resource_id": "research-methodology-r1" },
+    { "skill_id": "skill-topic-research-methodology", "resource_id": "research-methodology-r2" },
+    { "skill_id": "skill-topic-research-methodology", "resource_id": "research-methodology-r3" },
+    { "skill_id": "skill-topic-research-methodology", "resource_id": "research-methodology-r4" },
+
+    { "skill_id": "skill-topic-how-llms-work", "resource_id": "how-llms-work-r1" },
+    { "skill_id": "skill-topic-how-llms-work", "resource_id": "how-llms-work-r2" },
+    { "skill_id": "skill-topic-how-llms-work", "resource_id": "how-llms-work-r3" },
+
+    { "skill_id": "skill-topic-agent-skills", "resource_id": "agent-skills-r1" },
+    { "skill_id": "skill-topic-agent-skills", "resource_id": "agent-skills-r2" },
+    { "skill_id": "skill-topic-agent-skills", "resource_id": "agent-skills-r3" },
+
+    { "skill_id": "skill-topic-mcp-intro", "resource_id": "mcp-intro-r1" },
+    { "skill_id": "skill-topic-mcp-intro", "resource_id": "mcp-intro-r2" },
+
+    { "skill_id": "skill-topic-agent-anatomy", "resource_id": "agent-anatomy-r1" },
+    { "skill_id": "skill-topic-agent-anatomy", "resource_id": "agent-anatomy-r2" },
+
+    { "skill_id": "skill-topic-rag-deep-dive", "resource_id": "rag-deep-dive-r1" },
+    { "skill_id": "skill-topic-rag-deep-dive", "resource_id": "rag-deep-dive-r2" },
+
+    { "skill_id": "skill-topic-no-code-automation", "resource_id": "no-code-automation-r1" },
+    { "skill_id": "skill-topic-no-code-automation", "resource_id": "no-code-automation-r2" },
+
+    { "skill_id": "skill-topic-multi-agent-systems", "resource_id": "multi-agent-systems-r1" },
+
+    { "skill_id": "skill-topic-ai-productivity-stack", "resource_id": "ai-productivity-stack-r1" },
+
+    { "skill_id": "skill-topic-writing-with-ai", "resource_id": "writing-with-ai-r1" },
+
+    { "skill_id": "skill-topic-data-fundamentals", "resource_id": "data-fundamentals-r1" },
+
+    { "skill_id": "skill-topic-notebooklm-mastery", "resource_id": "notebooklm-mastery-r1" },
+    { "skill_id": "skill-topic-notebooklm-mastery", "resource_id": "notebooklm-mastery-r2" },
+
+    { "skill_id": "skill-topic-ux-fundamentals", "resource_id": "ux-fundamentals-r1" },
+
+    { "skill_id": "skill-topic-ai-product-ux", "resource_id": "ai-product-ux-r1" },
+
+    { "skill_id": "skill-topic-figma-basics", "resource_id": "figma-basics-r1" },
+    { "skill_id": "skill-topic-figma-basics", "resource_id": "figma-basics-r2" },
+    { "skill_id": "skill-topic-figma-basics", "resource_id": "figma-basics-r3" },
+
+    { "skill_id": "skill-topic-visual-design-basics", "resource_id": "visual-design-basics-r1" },
+
+    { "skill_id": "skill-topic-wireframing-prototyping", "resource_id": "wireframing-prototyping-r1" },
+
+    { "skill_id": "skill-topic-image-ai-tools", "resource_id": "image-ai-tools-r1" },
+    { "skill_id": "skill-topic-image-ai-tools", "resource_id": "image-ai-tools-r2" },
+
+    { "skill_id": "skill-topic-design-systems", "resource_id": "design-systems-r1" },
+
+    { "skill_id": "skill-topic-canva-presentations", "resource_id": "canva-presentations-r1" },
+
+    { "skill_id": "skill-topic-video-ai-tools", "resource_id": "video-ai-tools-r1" },
+    { "skill_id": "skill-topic-video-ai-tools", "resource_id": "video-ai-tools-r2" },
+
+    { "skill_id": "skill-topic-data-visualization", "resource_id": "data-visualization-r1" },
+    { "skill_id": "skill-topic-data-visualization", "resource_id": "data-visualization-r2" },
+
+    { "skill_id": "skill-topic-brand-identity-basics", "resource_id": "brand-identity-basics-r1" },
+
+    { "skill_id": "skill-topic-claude-api", "resource_id": "claude-api-r1" },
+    { "skill_id": "skill-topic-claude-api", "resource_id": "claude-api-r2" },
+    { "skill_id": "skill-topic-claude-api", "resource_id": "claude-api-r3" },
+
+    { "skill_id": "skill-topic-mcp-advanced", "resource_id": "mcp-advanced-r1" },
+    { "skill_id": "skill-topic-mcp-advanced", "resource_id": "mcp-advanced-r2" },
+
+    { "skill_id": "skill-topic-python-for-ai", "resource_id": "python-for-ai-r1" },
+    { "skill_id": "skill-topic-python-for-ai", "resource_id": "python-for-ai-r2" },
+
+    { "skill_id": "skill-topic-html-css-js", "resource_id": "html-css-js-r1" },
+    { "skill_id": "skill-topic-html-css-js", "resource_id": "html-css-js-r2" },
+
+    { "skill_id": "skill-topic-apis-and-http", "resource_id": "apis-and-http-r1" },
+
+    { "skill_id": "skill-topic-git-github", "resource_id": "git-github-r1" },
+
+    { "skill_id": "skill-topic-langchain-langgraph", "resource_id": "langchain-langgraph-r1" },
+    { "skill_id": "skill-topic-langchain-langgraph", "resource_id": "langchain-langgraph-r2" },
+    { "skill_id": "skill-topic-langchain-langgraph", "resource_id": "langchain-langgraph-r3" },
+
+    { "skill_id": "skill-topic-databases-sql", "resource_id": "databases-sql-r1" },
+
+    { "skill_id": "skill-topic-deployment-basics", "resource_id": "deployment-basics-r1" },
+    { "skill_id": "skill-topic-deployment-basics", "resource_id": "deployment-basics-r2" },
+
+    { "skill_id": "skill-topic-evals-and-testing", "resource_id": "evals-and-testing-r1" },
+
+    { "skill_id": "skill-topic-vector-dbs-embeddings", "resource_id": "vector-dbs-embeddings-r1" },
+    { "skill_id": "skill-topic-vector-dbs-embeddings", "resource_id": "vector-dbs-embeddings-r2" },
+    { "skill_id": "skill-topic-vector-dbs-embeddings", "resource_id": "vector-dbs-embeddings-r3" },
+
+    { "skill_id": "skill-topic-opportunity-mapping", "resource_id": "opportunity-mapping-r1" },
+
+    { "skill_id": "skill-topic-first-ai-product", "resource_id": "first-ai-product-r1" },
+    { "skill_id": "skill-topic-first-ai-product", "resource_id": "first-ai-product-r2" },
+
+    { "skill_id": "skill-topic-monitoring-production", "resource_id": "monitoring-production-r1" },
+
+    { "skill_id": "skill-topic-cost-optimization", "resource_id": "cost-optimization-r1" },
+
+    { "skill_id": "skill-topic-portfolio-building", "resource_id": "portfolio-building-r1" },
+    { "skill_id": "skill-topic-portfolio-building", "resource_id": "portfolio-building-r2" },
+
+    { "skill_id": "skill-topic-ai-ethics-practice", "resource_id": "ai-ethics-practice-r1" },
+    { "skill_id": "skill-topic-ai-ethics-practice", "resource_id": "ai-ethics-practice-r2" },
+    { "skill_id": "skill-topic-ai-ethics-practice", "resource_id": "ai-ethics-practice-r3" },
+
+    { "skill_id": "skill-topic-user-research", "resource_id": "user-research-r1" },
+
+    { "skill_id": "skill-topic-regulation-compliance", "resource_id": "regulation-compliance-r1" },
+
+    { "skill_id": "skill-topic-ai-business-models", "resource_id": "ai-business-models-r1" },
+
+    { "skill_id": "skill-topic-sales-and-persuasion", "resource_id": "sales-and-persuasion-r1" },
+
+    { "skill_id": "skill-topic-pricing-strategy", "resource_id": "pricing-strategy-r1" },
+    { "skill_id": "skill-topic-pricing-strategy", "resource_id": "pricing-strategy-r2" },
+
+    { "skill_id": "skill-topic-building-in-public", "resource_id": "building-in-public-r1" },
+
+    { "skill_id": "skill-topic-financial-basics", "resource_id": "financial-basics-r1" },
+
+    { "skill_id": "skill-topic-go-to-market", "resource_id": "go-to-market-r1" },
+
+    { "skill_id": "skill-topic-networking-community", "resource_id": "networking-community-r1" },
+    { "skill_id": "skill-topic-networking-community", "resource_id": "networking-community-r2" },
+
+    { "skill_id": "skill-topic-teaching-fluency", "resource_id": "teaching-fluency-r1" },
+    { "skill_id": "skill-topic-teaching-fluency", "resource_id": "teaching-fluency-r2" },
+
+    { "skill_id": "skill-topic-content-creation", "resource_id": "content-creation-r1" },
+    { "skill_id": "skill-topic-content-creation", "resource_id": "content-creation-r2" },
+
+    { "skill_id": "skill-topic-open-source", "resource_id": "open-source-r1" },
+
+    { "skill_id": "skill-topic-ai-research-reading", "resource_id": "ai-research-reading-r1" },
+    { "skill_id": "skill-topic-ai-research-reading", "resource_id": "ai-research-reading-r2" },
+
+    { "skill_id": "skill-topic-ai-governance", "resource_id": "ai-governance-r1" },
+
+    { "skill_id": "skill-topic-ai-native-org", "resource_id": "ai-native-org-r1" },
+
+    { "skill_id": "skill-topic-fin-p1-t1", "resource_id": "fin-p1-r1" },
+    { "skill_id": "skill-topic-fin-p1-t1", "resource_id": "fin-p1-r2" },
+    { "skill_id": "skill-topic-fin-p1-t1", "resource_id": "fin-p1-r3" },
+
+    { "skill_id": "skill-topic-fin-p1-t2", "resource_id": "fin-p1-r4" },
+    { "skill_id": "skill-topic-fin-p1-t2", "resource_id": "fin-p1-r5" },
+
+    { "skill_id": "skill-topic-fin-p2-t1", "resource_id": "fin-p2-r1" },
+    { "skill_id": "skill-topic-fin-p2-t1", "resource_id": "fin-p2-r2" },
+    { "skill_id": "skill-topic-fin-p2-t1", "resource_id": "fin-p2-r5" },
+
+    { "skill_id": "skill-topic-fin-p2-t2", "resource_id": "fin-p2-r3" },
+    { "skill_id": "skill-topic-fin-p2-t2", "resource_id": "fin-p2-r4" },
+
+    { "skill_id": "skill-topic-fin-p3-t1", "resource_id": "fin-p3-r1" },
+    { "skill_id": "skill-topic-fin-p3-t1", "resource_id": "fin-p3-r2" },
+
+    { "skill_id": "skill-topic-fin-p3-t2", "resource_id": "fin-p3-r3" },
+
+    { "skill_id": "skill-topic-fin-p4-t1", "resource_id": "fin-p4-r1" },
+    { "skill_id": "skill-topic-fin-p4-t1", "resource_id": "fin-p4-r2" },
+
+    { "skill_id": "skill-topic-fin-p4-t2", "resource_id": "fin-p4-r3" },
+    { "skill_id": "skill-topic-fin-p4-t2", "resource_id": "fin-p4-r4" },
+
+    { "skill_id": "skill-topic-fin-p4-t3", "resource_id": "fin-p4-r5" },
+    { "skill_id": "skill-topic-fin-p4-t3", "resource_id": "fin-p4-r6" },
+
+    { "skill_id": "skill-topic-fin-p5-t1", "resource_id": "fin-p5-r1" },
+    { "skill_id": "skill-topic-fin-p5-t1", "resource_id": "fin-p5-r2" },
+
+    { "skill_id": "skill-topic-fin-p5-t2", "resource_id": "fin-p5-r3" },
+    { "skill_id": "skill-topic-fin-p5-t2", "resource_id": "fin-p5-r4" },
+
+    { "skill_id": "skill-topic-fin-p6-t1", "resource_id": "fin-p6-r1" },
+    { "skill_id": "skill-topic-fin-p6-t1", "resource_id": "fin-p6-r2" },
+    { "skill_id": "skill-topic-fin-p6-t1", "resource_id": "fin-p6-r3" },
+
+    { "skill_id": "skill-topic-fin-p6-t2", "resource_id": "fin-p6-r4" },
+    { "skill_id": "skill-topic-fin-p6-t2", "resource_id": "fin-p6-r5" },
+
+    { "skill_id": "skill-topic-fin-p7-t1", "resource_id": "fin-p7-r1" },
+    { "skill_id": "skill-topic-fin-p7-t1", "resource_id": "fin-p7-r2" },
+
+    { "skill_id": "skill-topic-fin-p7-t2", "resource_id": "fin-p7-r3" },
+    { "skill_id": "skill-topic-fin-p7-t2", "resource_id": "fin-p7-r4" },
+
+    { "skill_id": "skill-topic-fin-p8-t1", "resource_id": "fin-p8-r1" },
+    { "skill_id": "skill-topic-fin-p8-t1", "resource_id": "fin-p8-r2" },
+
+    { "skill_id": "skill-topic-fin-p8-t2", "resource_id": "fin-p8-r3" },
+    { "skill_id": "skill-topic-fin-p8-t2", "resource_id": "fin-p8-r4" },
+
+    { "skill_id": "skill-topic-fin-p8-t3", "resource_id": "fin-p8-r5" },
+    { "skill_id": "skill-topic-fin-p8-t3", "resource_id": "fin-p8-r6" },
+
+    { "skill_id": "skill-topic-fin-p9-t1", "resource_id": "fin-p9-r1" },
+    { "skill_id": "skill-topic-fin-p9-t1", "resource_id": "fin-p9-r2" },
+
+    { "skill_id": "skill-topic-fin-p9-t2", "resource_id": "fin-p9-r3" },
+    { "skill_id": "skill-topic-fin-p9-t2", "resource_id": "fin-p9-r4" },
+
+    { "skill_id": "skill-topic-fin-p9-t3", "resource_id": "fin-p9-r5" },
+    { "skill_id": "skill-topic-fin-p9-t3", "resource_id": "fin-p9-r6" },
+
+    { "skill_id": "skill-topic-con-p1-t1", "resource_id": "con-p1-r1" },
+    { "skill_id": "skill-topic-con-p1-t1", "resource_id": "con-p1-r2" },
+
+    { "skill_id": "skill-topic-con-p1-t2", "resource_id": "con-p1-r3" },
+
+    { "skill_id": "skill-topic-con-p2-t1", "resource_id": "con-p2-r1" },
+    { "skill_id": "skill-topic-con-p2-t1", "resource_id": "con-p2-r2" },
+
+    { "skill_id": "skill-topic-con-p2-t2", "resource_id": "con-p2-r3" },
+    { "skill_id": "skill-topic-con-p2-t2", "resource_id": "con-p2-r4" },
+
+    { "skill_id": "skill-topic-con-p3-t1", "resource_id": "con-p3-r1" },
+
+    { "skill_id": "skill-topic-con-p3-t2", "resource_id": "con-p3-r2" },
+    { "skill_id": "skill-topic-con-p3-t2", "resource_id": "con-p3-r3" },
+
+    { "skill_id": "skill-topic-con-p3-t3", "resource_id": "con-p3-r4" },
+    { "skill_id": "skill-topic-con-p3-t3", "resource_id": "con-p3-r5" },
+
+    { "skill_id": "skill-topic-con-p4-t1", "resource_id": "con-p4-r1" },
+    { "skill_id": "skill-topic-con-p4-t1", "resource_id": "con-p4-r2" },
+
+    { "skill_id": "skill-topic-con-p4-t2", "resource_id": "con-p4-r3" },
+
+    { "skill_id": "skill-topic-con-p4-t3", "resource_id": "con-p4-r4" },
+    { "skill_id": "skill-topic-con-p4-t3", "resource_id": "con-p4-r5" },
+
+    { "skill_id": "skill-topic-con-p5-t1", "resource_id": "con-p5-r1" },
+    { "skill_id": "skill-topic-con-p5-t1", "resource_id": "con-p5-r2" },
+
+    { "skill_id": "skill-topic-con-p5-t2", "resource_id": "con-p5-r3" },
+
+    { "skill_id": "skill-topic-con-p5-t3", "resource_id": "con-p5-r4" },
+
+    { "skill_id": "skill-topic-con-p6-t1", "resource_id": "con-p6-r1" },
+    { "skill_id": "skill-topic-con-p6-t1", "resource_id": "con-p6-r2" },
+
+    { "skill_id": "skill-topic-con-p6-t2", "resource_id": "con-p6-r3" },
+    { "skill_id": "skill-topic-con-p6-t2", "resource_id": "con-p6-r4" },
+
+    { "skill_id": "skill-topic-exc-p1-t1", "resource_id": "exc-p1-r1" },
+    { "skill_id": "skill-topic-exc-p1-t1", "resource_id": "exc-p1-r2" },
+
+    { "skill_id": "skill-topic-exc-p1-t2", "resource_id": "exc-p1-r3" },
+    { "skill_id": "skill-topic-exc-p1-t2", "resource_id": "exc-p1-r4" },
+
+    { "skill_id": "skill-topic-exc-p1-t3", "resource_id": "exc-p1-r5" },
+    { "skill_id": "skill-topic-exc-p1-t3", "resource_id": "exc-p1-r6" },
+
+    { "skill_id": "skill-topic-exc-p2-t1", "resource_id": "exc-p2-r1" },
+    { "skill_id": "skill-topic-exc-p2-t1", "resource_id": "exc-p2-r2" },
+
+    { "skill_id": "skill-topic-exc-p2-t2", "resource_id": "exc-p2-r3" },
+    { "skill_id": "skill-topic-exc-p2-t2", "resource_id": "exc-p2-r4" },
+
+    { "skill_id": "skill-topic-exc-p2-t3", "resource_id": "exc-p2-r5" },
+    { "skill_id": "skill-topic-exc-p2-t3", "resource_id": "exc-p2-r6" },
+
+    { "skill_id": "skill-topic-exc-p3-t1", "resource_id": "exc-p3-r1" },
+    { "skill_id": "skill-topic-exc-p3-t1", "resource_id": "exc-p3-r2" },
+
+    { "skill_id": "skill-topic-exc-p3-t2", "resource_id": "exc-p3-r3" },
+    { "skill_id": "skill-topic-exc-p3-t2", "resource_id": "exc-p3-r4" },
+
+    { "skill_id": "skill-topic-exc-p3-t3", "resource_id": "exc-p3-r5" },
+
+    { "skill_id": "skill-topic-exc-p4-t1", "resource_id": "exc-p4-r1" },
+    { "skill_id": "skill-topic-exc-p4-t1", "resource_id": "exc-p4-r2" },
+
+    { "skill_id": "skill-topic-exc-p4-t2", "resource_id": "exc-p4-r3" },
+    { "skill_id": "skill-topic-exc-p4-t2", "resource_id": "exc-p4-r4" },
+
+    { "skill_id": "skill-topic-exc-p4-t3", "resource_id": "exc-p4-r5" },
+    { "skill_id": "skill-topic-exc-p4-t3", "resource_id": "exc-p4-r6" },
+
+    { "skill_id": "skill-topic-exc-p5-t1", "resource_id": "exc-p5-r1" },
+    { "skill_id": "skill-topic-exc-p5-t1", "resource_id": "exc-p5-r2" },
+
+    { "skill_id": "skill-topic-exc-p5-t2", "resource_id": "exc-p5-r3" },
+    { "skill_id": "skill-topic-exc-p5-t2", "resource_id": "exc-p5-r4" },
+
+    { "skill_id": "skill-topic-exc-p5-t3", "resource_id": "exc-p5-r5" },
+    { "skill_id": "skill-topic-exc-p5-t3", "resource_id": "exc-p5-r6" },
+
+    { "skill_id": "skill-topic-exc-p6-t1", "resource_id": "exc-p6-r1" },
+    { "skill_id": "skill-topic-exc-p6-t1", "resource_id": "exc-p6-r2" },
+
+    { "skill_id": "skill-topic-exc-p6-t2", "resource_id": "exc-p6-r3" },
+    { "skill_id": "skill-topic-exc-p6-t2", "resource_id": "exc-p6-r4" },
+
+    { "skill_id": "skill-topic-exc-p6-t3", "resource_id": "exc-p6-r5" },
+    { "skill_id": "skill-topic-exc-p6-t3", "resource_id": "exc-p6-r6" },
+
+    { "skill_id": "skill-topic-psy-p1-t1", "resource_id": "psy-p1-r1" },
+    { "skill_id": "skill-topic-psy-p1-t1", "resource_id": "psy-p1-r2" },
+
+    { "skill_id": "skill-topic-psy-p1-t2", "resource_id": "psy-p1-r3" },
+    { "skill_id": "skill-topic-psy-p1-t2", "resource_id": "psy-p1-r4" },
+
+    { "skill_id": "skill-topic-psy-p1-t3", "resource_id": "psy-p1-r5" },
+    { "skill_id": "skill-topic-psy-p1-t3", "resource_id": "psy-p1-r6" },
+
+    { "skill_id": "skill-topic-psy-p2-t1", "resource_id": "psy-p2-r1" },
+    { "skill_id": "skill-topic-psy-p2-t1", "resource_id": "psy-p2-r2" },
+
+    { "skill_id": "skill-topic-psy-p2-t2", "resource_id": "psy-p2-r3" },
+    { "skill_id": "skill-topic-psy-p2-t2", "resource_id": "psy-p2-r4" },
+
+    { "skill_id": "skill-topic-psy-p2-t3", "resource_id": "psy-p2-r5" },
+    { "skill_id": "skill-topic-psy-p2-t3", "resource_id": "psy-p2-r6" },
+
+    { "skill_id": "skill-topic-psy-p3-t1", "resource_id": "psy-p3-r1" },
+    { "skill_id": "skill-topic-psy-p3-t1", "resource_id": "psy-p3-r2" },
+
+    { "skill_id": "skill-topic-psy-p3-t2", "resource_id": "psy-p3-r3" },
+    { "skill_id": "skill-topic-psy-p3-t2", "resource_id": "psy-p3-r4" },
+
+    { "skill_id": "skill-topic-psy-p3-t3", "resource_id": "psy-p3-r5" },
+    { "skill_id": "skill-topic-psy-p3-t3", "resource_id": "psy-p3-r6" },
+
+    { "skill_id": "skill-topic-psy-p4-t1", "resource_id": "psy-p4-r1" },
+    { "skill_id": "skill-topic-psy-p4-t1", "resource_id": "psy-p4-r2" },
+
+    { "skill_id": "skill-topic-psy-p4-t2", "resource_id": "psy-p4-r3" },
+    { "skill_id": "skill-topic-psy-p4-t2", "resource_id": "psy-p4-r4" },
+
+    { "skill_id": "skill-topic-psy-p4-t3", "resource_id": "psy-p4-r5" },
+    { "skill_id": "skill-topic-psy-p4-t3", "resource_id": "psy-p4-r6" },
+
+    { "skill_id": "skill-topic-psy-p5-t1", "resource_id": "psy-p5-r1" },
+    { "skill_id": "skill-topic-psy-p5-t1", "resource_id": "psy-p5-r2" },
+
+    { "skill_id": "skill-topic-psy-p5-t2", "resource_id": "psy-p5-r3" },
+    { "skill_id": "skill-topic-psy-p5-t2", "resource_id": "psy-p5-r4" },
+
+    { "skill_id": "skill-topic-psy-p5-t3", "resource_id": "psy-p5-r5" },
+    { "skill_id": "skill-topic-psy-p5-t3", "resource_id": "psy-p5-r6" },
+
+    { "skill_id": "skill-topic-psy-p6-t1", "resource_id": "psy-p6-r1" },
+    { "skill_id": "skill-topic-psy-p6-t1", "resource_id": "psy-p6-r2" },
+
+    { "skill_id": "skill-topic-psy-p6-t2", "resource_id": "psy-p6-r3" },
+    { "skill_id": "skill-topic-psy-p6-t2", "resource_id": "psy-p6-r4" },
+
+    { "skill_id": "skill-topic-psy-p6-t3", "resource_id": "psy-p6-r5" },
+    { "skill_id": "skill-topic-psy-p6-t3", "resource_id": "psy-p6-r6" },
+
+    { "skill_id": "skill-topic-mkt-p1-t1", "resource_id": "mkt-p1-r1" },
+    { "skill_id": "skill-topic-mkt-p1-t1", "resource_id": "mkt-p1-r2" },
+
+    { "skill_id": "skill-topic-mkt-p1-t2", "resource_id": "mkt-p1-r3" },
+    { "skill_id": "skill-topic-mkt-p1-t2", "resource_id": "mkt-p1-r4" },
+
+    { "skill_id": "skill-topic-mkt-p1-t3", "resource_id": "mkt-p1-r5" },
+    { "skill_id": "skill-topic-mkt-p1-t3", "resource_id": "mkt-p1-r6" },
+
+    { "skill_id": "skill-topic-mkt-p2-t1", "resource_id": "mkt-p2-r1" },
+    { "skill_id": "skill-topic-mkt-p2-t1", "resource_id": "mkt-p2-r2" },
+
+    { "skill_id": "skill-topic-mkt-p2-t2", "resource_id": "mkt-p2-r3" },
+    { "skill_id": "skill-topic-mkt-p2-t2", "resource_id": "mkt-p2-r4" },
+
+    { "skill_id": "skill-topic-mkt-p2-t3", "resource_id": "mkt-p2-r5" },
+    { "skill_id": "skill-topic-mkt-p2-t3", "resource_id": "mkt-p2-r6" },
+
+    { "skill_id": "skill-topic-mkt-p3-t1", "resource_id": "mkt-p3-r1" },
+    { "skill_id": "skill-topic-mkt-p3-t1", "resource_id": "mkt-p3-r2" },
+
+    { "skill_id": "skill-topic-mkt-p3-t2", "resource_id": "mkt-p3-r3" },
+    { "skill_id": "skill-topic-mkt-p3-t2", "resource_id": "mkt-p3-r4" },
+
+    { "skill_id": "skill-topic-mkt-p3-t3", "resource_id": "mkt-p3-r5" },
+    { "skill_id": "skill-topic-mkt-p3-t3", "resource_id": "mkt-p3-r6" },
+
+    { "skill_id": "skill-topic-mkt-p4-t1", "resource_id": "mkt-p4-r1" },
+    { "skill_id": "skill-topic-mkt-p4-t1", "resource_id": "mkt-p4-r2" },
+
+    { "skill_id": "skill-topic-mkt-p4-t2", "resource_id": "mkt-p4-r3" },
+    { "skill_id": "skill-topic-mkt-p4-t2", "resource_id": "mkt-p4-r4" },
+
+    { "skill_id": "skill-topic-mkt-p4-t3", "resource_id": "mkt-p4-r5" },
+    { "skill_id": "skill-topic-mkt-p4-t3", "resource_id": "mkt-p4-r6" },
+
+    { "skill_id": "skill-topic-mkt-p5-t1", "resource_id": "mkt-p5-r1" },
+    { "skill_id": "skill-topic-mkt-p5-t1", "resource_id": "mkt-p5-r2" },
+
+    { "skill_id": "skill-topic-mkt-p5-t2", "resource_id": "mkt-p5-r3" },
+    { "skill_id": "skill-topic-mkt-p5-t2", "resource_id": "mkt-p5-r4" },
+
+    { "skill_id": "skill-topic-mkt-p5-t3", "resource_id": "mkt-p5-r5" },
+    { "skill_id": "skill-topic-mkt-p5-t3", "resource_id": "mkt-p5-r6" },
+
+    { "skill_id": "skill-topic-mkt-p6-t1", "resource_id": "mkt-p6-r1" },
+    { "skill_id": "skill-topic-mkt-p6-t1", "resource_id": "mkt-p6-r2" },
+
+    { "skill_id": "skill-topic-mkt-p6-t2", "resource_id": "mkt-p6-r3" },
+    { "skill_id": "skill-topic-mkt-p6-t2", "resource_id": "mkt-p6-r4" },
+
+    { "skill_id": "skill-topic-dat-p1-t1", "resource_id": "dat-p1-r1" },
+    { "skill_id": "skill-topic-dat-p1-t1", "resource_id": "dat-p1-r2" },
+
+    { "skill_id": "skill-topic-dat-p1-t2", "resource_id": "dat-p1-r3" },
+    { "skill_id": "skill-topic-dat-p1-t2", "resource_id": "dat-p1-r4" },
+
+    { "skill_id": "skill-topic-dat-p2-t1", "resource_id": "dat-p2-r1" },
+    { "skill_id": "skill-topic-dat-p2-t1", "resource_id": "dat-p2-r2" },
+
+    { "skill_id": "skill-topic-dat-p2-t2", "resource_id": "dat-p2-r3" },
+    { "skill_id": "skill-topic-dat-p2-t2", "resource_id": "dat-p2-r4" },
+
+    { "skill_id": "skill-topic-dat-p2-t3", "resource_id": "dat-p2-r5" },
+    { "skill_id": "skill-topic-dat-p2-t3", "resource_id": "dat-p2-r6" },
+
+    { "skill_id": "skill-topic-dat-p3-t1", "resource_id": "dat-p3-r1" },
+    { "skill_id": "skill-topic-dat-p3-t1", "resource_id": "dat-p3-r2" },
+
+    { "skill_id": "skill-topic-dat-p3-t2", "resource_id": "dat-p3-r3" },
+    { "skill_id": "skill-topic-dat-p3-t2", "resource_id": "dat-p3-r4" },
+
+    { "skill_id": "skill-topic-dat-p4-t1", "resource_id": "dat-p4-r1" },
+    { "skill_id": "skill-topic-dat-p4-t1", "resource_id": "dat-p4-r2" },
+
+    { "skill_id": "skill-topic-dat-p4-t2", "resource_id": "dat-p4-r3" },
+    { "skill_id": "skill-topic-dat-p4-t2", "resource_id": "dat-p4-r4" },
+
+    { "skill_id": "skill-topic-dat-p4-t3", "resource_id": "dat-p4-r5" },
+    { "skill_id": "skill-topic-dat-p4-t3", "resource_id": "dat-p4-r6" },
+
+    { "skill_id": "skill-topic-dat-p5-t1", "resource_id": "dat-p5-r1" },
+    { "skill_id": "skill-topic-dat-p5-t1", "resource_id": "dat-p5-r2" },
+
+    { "skill_id": "skill-topic-dat-p5-t2", "resource_id": "dat-p5-r3" },
+    { "skill_id": "skill-topic-dat-p5-t2", "resource_id": "dat-p5-r4" },
+
+    { "skill_id": "skill-topic-dat-p5-t3", "resource_id": "dat-p5-r5" },
+    { "skill_id": "skill-topic-dat-p5-t3", "resource_id": "dat-p5-r6" },
+
+    { "skill_id": "skill-topic-dat-p6-t1", "resource_id": "dat-p6-r1" },
+    { "skill_id": "skill-topic-dat-p6-t1", "resource_id": "dat-p6-r2" },
+
+    { "skill_id": "skill-topic-dat-p6-t2", "resource_id": "dat-p6-r3" },
+    { "skill_id": "skill-topic-dat-p6-t2", "resource_id": "dat-p6-r4" },
+
+    { "skill_id": "skill-topic-dat-p6-t3", "resource_id": "dat-p6-r5" },
+    { "skill_id": "skill-topic-dat-p6-t3", "resource_id": "dat-p6-r6" },
+
+    { "skill_id": "skill-topic-prd-p1-t1", "resource_id": "prd-p1-r1" },
+    { "skill_id": "skill-topic-prd-p1-t1", "resource_id": "prd-p1-r2" },
+
+    { "skill_id": "skill-topic-prd-p1-t2", "resource_id": "prd-p1-r3" },
+    { "skill_id": "skill-topic-prd-p1-t2", "resource_id": "prd-p1-r4" },
+
+    { "skill_id": "skill-topic-prd-p1-t3", "resource_id": "prd-p1-r5" },
+    { "skill_id": "skill-topic-prd-p1-t3", "resource_id": "prd-p1-r6" },
+
+    { "skill_id": "skill-topic-prd-p2-t1", "resource_id": "prd-p2-r1" },
+    { "skill_id": "skill-topic-prd-p2-t1", "resource_id": "prd-p2-r2" },
+
+    { "skill_id": "skill-topic-prd-p2-t2", "resource_id": "prd-p2-r3" },
+    { "skill_id": "skill-topic-prd-p2-t2", "resource_id": "prd-p2-r4" },
+
+    { "skill_id": "skill-topic-prd-p2-t3", "resource_id": "prd-p2-r5" },
+    { "skill_id": "skill-topic-prd-p2-t3", "resource_id": "prd-p2-r6" },
+
+    { "skill_id": "skill-topic-prd-p3-t1", "resource_id": "prd-p3-r1" },
+    { "skill_id": "skill-topic-prd-p3-t1", "resource_id": "prd-p3-r2" },
+
+    { "skill_id": "skill-topic-prd-p3-t2", "resource_id": "prd-p3-r3" },
+    { "skill_id": "skill-topic-prd-p3-t2", "resource_id": "prd-p3-r4" },
+
+    { "skill_id": "skill-topic-prd-p3-t3", "resource_id": "prd-p3-r5" },
+    { "skill_id": "skill-topic-prd-p3-t3", "resource_id": "prd-p3-r6" },
+
+    { "skill_id": "skill-topic-prd-p4-t1", "resource_id": "prd-p4-r1" },
+    { "skill_id": "skill-topic-prd-p4-t1", "resource_id": "prd-p4-r2" },
+
+    { "skill_id": "skill-topic-prd-p4-t2", "resource_id": "prd-p4-r3" },
+    { "skill_id": "skill-topic-prd-p4-t2", "resource_id": "prd-p4-r4" },
+
+    { "skill_id": "skill-topic-prd-p4-t3", "resource_id": "prd-p4-r5" },
+    { "skill_id": "skill-topic-prd-p4-t3", "resource_id": "prd-p4-r6" },
+
+    { "skill_id": "skill-topic-prd-p5-t1", "resource_id": "prd-p5-r1" },
+    { "skill_id": "skill-topic-prd-p5-t1", "resource_id": "prd-p5-r2" },
+
+    { "skill_id": "skill-topic-prd-p5-t2", "resource_id": "prd-p5-r3" },
+    { "skill_id": "skill-topic-prd-p5-t2", "resource_id": "prd-p5-r4" },
+
+    { "skill_id": "skill-topic-prd-p5-t3", "resource_id": "prd-p5-r5" },
+    { "skill_id": "skill-topic-prd-p5-t3", "resource_id": "prd-p5-r6" },
+
+    { "skill_id": "skill-topic-prd-p6-t1", "resource_id": "prd-p6-r1" },
+    { "skill_id": "skill-topic-prd-p6-t1", "resource_id": "prd-p6-r2" },
+
+    { "skill_id": "skill-topic-prd-p6-t2", "resource_id": "prd-p6-r3" },
+    { "skill_id": "skill-topic-prd-p6-t2", "resource_id": "prd-p6-r4" },
+
+    { "skill_id": "skill-topic-sls-p1-t1", "resource_id": "sls-p1-r1" },
+    { "skill_id": "skill-topic-sls-p1-t1", "resource_id": "sls-p1-r2" },
+
+    { "skill_id": "skill-topic-sls-p1-t2", "resource_id": "sls-p1-r3" },
+    { "skill_id": "skill-topic-sls-p1-t2", "resource_id": "sls-p1-r4" },
+
+    { "skill_id": "skill-topic-sls-p2-t1", "resource_id": "sls-p2-r1" },
+    { "skill_id": "skill-topic-sls-p2-t1", "resource_id": "sls-p2-r2" },
+
+    { "skill_id": "skill-topic-sls-p2-t2", "resource_id": "sls-p2-r3" },
+    { "skill_id": "skill-topic-sls-p2-t2", "resource_id": "sls-p2-r4" },
+
+    { "skill_id": "skill-topic-sls-p2-t3", "resource_id": "sls-p2-r5" },
+    { "skill_id": "skill-topic-sls-p2-t3", "resource_id": "sls-p2-r6" },
+
+    { "skill_id": "skill-topic-sls-p3-t1", "resource_id": "sls-p3-r1" },
+    { "skill_id": "skill-topic-sls-p3-t1", "resource_id": "sls-p3-r2" },
+
+    { "skill_id": "skill-topic-sls-p3-t2", "resource_id": "sls-p3-r3" },
+    { "skill_id": "skill-topic-sls-p3-t2", "resource_id": "sls-p3-r4" },
+
+    { "skill_id": "skill-topic-sls-p3-t3", "resource_id": "sls-p3-r5" },
+    { "skill_id": "skill-topic-sls-p3-t3", "resource_id": "sls-p3-r6" },
+
+    { "skill_id": "skill-topic-sls-p4-t1", "resource_id": "sls-p4-r1" },
+    { "skill_id": "skill-topic-sls-p4-t1", "resource_id": "sls-p4-r2" },
+
+    { "skill_id": "skill-topic-sls-p4-t2", "resource_id": "sls-p4-r3" },
+    { "skill_id": "skill-topic-sls-p4-t2", "resource_id": "sls-p4-r4" },
+
+    { "skill_id": "skill-topic-sls-p4-t3", "resource_id": "sls-p4-r5" },
+    { "skill_id": "skill-topic-sls-p4-t3", "resource_id": "sls-p4-r6" },
+
+    { "skill_id": "skill-topic-sls-p5-t1", "resource_id": "sls-p5-r1" },
+    { "skill_id": "skill-topic-sls-p5-t1", "resource_id": "sls-p5-r2" },
+
+    { "skill_id": "skill-topic-sls-p5-t2", "resource_id": "sls-p5-r3" },
+    { "skill_id": "skill-topic-sls-p5-t2", "resource_id": "sls-p5-r4" },
+
+    { "skill_id": "skill-topic-sls-p5-t3", "resource_id": "sls-p5-r5" },
+    { "skill_id": "skill-topic-sls-p5-t3", "resource_id": "sls-p5-r6" },
+
+    { "skill_id": "skill-topic-sls-p6-t1", "resource_id": "sls-p6-r1" },
+    { "skill_id": "skill-topic-sls-p6-t1", "resource_id": "sls-p6-r2" },
+
+    { "skill_id": "skill-topic-sls-p6-t2", "resource_id": "sls-p6-r3" },
+    { "skill_id": "skill-topic-sls-p6-t2", "resource_id": "sls-p6-r4" },
+
+    { "skill_id": "skill-topic-sls-p6-t3", "resource_id": "sls-p6-r5" },
+    { "skill_id": "skill-topic-sls-p6-t3", "resource_id": "sls-p6-r6" },
+
+    { "skill_id": "skill-topic-ux-p1-t1", "resource_id": "ux-p1-r1" },
+    { "skill_id": "skill-topic-ux-p1-t1", "resource_id": "ux-p1-r2" },
+
+    { "skill_id": "skill-topic-ux-p1-t2", "resource_id": "ux-p1-r3" },
+    { "skill_id": "skill-topic-ux-p1-t2", "resource_id": "ux-p1-r4" },
+
+    { "skill_id": "skill-topic-ux-p1-t3", "resource_id": "ux-p1-r5" },
+    { "skill_id": "skill-topic-ux-p1-t3", "resource_id": "ux-p1-r6" },
+
+    { "skill_id": "skill-topic-ux-p2-t1", "resource_id": "ux-p2-r1" },
+    { "skill_id": "skill-topic-ux-p2-t1", "resource_id": "ux-p2-r2" },
+
+    { "skill_id": "skill-topic-ux-p2-t2", "resource_id": "ux-p2-r3" },
+    { "skill_id": "skill-topic-ux-p2-t2", "resource_id": "ux-p2-r4" },
+    { "skill_id": "skill-topic-ux-p2-t2", "resource_id": "ux-p2-r5" },
+
+    { "skill_id": "skill-topic-ux-p2-t3", "resource_id": "ux-p2-r6" },
+    { "skill_id": "skill-topic-ux-p2-t3", "resource_id": "ux-p2-r7" },
+
+    { "skill_id": "skill-topic-ux-p3-t1", "resource_id": "ux-p3-r1" },
+    { "skill_id": "skill-topic-ux-p3-t1", "resource_id": "ux-p3-r2" },
+
+    { "skill_id": "skill-topic-ux-p3-t2", "resource_id": "ux-p3-r3" },
+    { "skill_id": "skill-topic-ux-p3-t2", "resource_id": "ux-p3-r4" },
+
+    { "skill_id": "skill-topic-ux-p3-t3", "resource_id": "ux-p3-r5" },
+    { "skill_id": "skill-topic-ux-p3-t3", "resource_id": "ux-p3-r6" },
+
+    { "skill_id": "skill-topic-ux-p4-t1", "resource_id": "ux-p4-r1" },
+    { "skill_id": "skill-topic-ux-p4-t1", "resource_id": "ux-p4-r2" },
+
+    { "skill_id": "skill-topic-ux-p4-t2", "resource_id": "ux-p4-r3" },
+    { "skill_id": "skill-topic-ux-p4-t2", "resource_id": "ux-p4-r4" },
+    { "skill_id": "skill-topic-ux-p4-t2", "resource_id": "ux-p4-r5" },
+
+    { "skill_id": "skill-topic-ux-p4-t3", "resource_id": "ux-p4-r6" },
+    { "skill_id": "skill-topic-ux-p4-t3", "resource_id": "ux-p4-r7" },
+
+    { "skill_id": "skill-topic-ux-p5-t1", "resource_id": "ux-p5-r1" },
+    { "skill_id": "skill-topic-ux-p5-t1", "resource_id": "ux-p5-r2" },
+
+    { "skill_id": "skill-topic-ux-p5-t2", "resource_id": "ux-p5-r3" },
+    { "skill_id": "skill-topic-ux-p5-t2", "resource_id": "ux-p5-r4" },
+
+    { "skill_id": "skill-topic-ux-p5-t3", "resource_id": "ux-p5-r5" },
+    { "skill_id": "skill-topic-ux-p5-t3", "resource_id": "ux-p5-r6" },
+    { "skill_id": "skill-topic-ux-p5-t3", "resource_id": "ux-p5-r7" },
+
+    { "skill_id": "skill-topic-ux-p6-t1", "resource_id": "ux-p6-r1" },
+    { "skill_id": "skill-topic-ux-p6-t1", "resource_id": "ux-p6-r2" },
+
+    { "skill_id": "skill-topic-ux-p6-t2", "resource_id": "ux-p6-r3" },
+    { "skill_id": "skill-topic-ux-p6-t2", "resource_id": "ux-p6-r4" },
+    { "skill_id": "skill-topic-ux-p6-t2", "resource_id": "ux-p6-r5" },
+
+    { "skill_id": "skill-topic-ux-p6-t3", "resource_id": "ux-p6-r6" },
+    { "skill_id": "skill-topic-ux-p6-t3", "resource_id": "ux-p6-r7" },
+
+    { "skill_id": "skill-topic-ops-p1-t1", "resource_id": "ops-p1-r1" },
+    { "skill_id": "skill-topic-ops-p1-t1", "resource_id": "ops-p1-r2" },
+
+    { "skill_id": "skill-topic-ops-p1-t2", "resource_id": "ops-p1-r3" },
+    { "skill_id": "skill-topic-ops-p1-t2", "resource_id": "ops-p1-r4" },
+    { "skill_id": "skill-topic-ops-p1-t2", "resource_id": "ops-p1-r5" },
+
+    { "skill_id": "skill-topic-ops-p1-t3", "resource_id": "ops-p1-r6" },
+    { "skill_id": "skill-topic-ops-p1-t3", "resource_id": "ops-p1-r7" },
+
+    { "skill_id": "skill-topic-ops-p2-t1", "resource_id": "ops-p2-r1" },
+    { "skill_id": "skill-topic-ops-p2-t1", "resource_id": "ops-p2-r2" },
+
+    { "skill_id": "skill-topic-ops-p2-t2", "resource_id": "ops-p2-r3" },
+    { "skill_id": "skill-topic-ops-p2-t2", "resource_id": "ops-p2-r4" },
+
+    { "skill_id": "skill-topic-ops-p2-t3", "resource_id": "ops-p2-r5" },
+    { "skill_id": "skill-topic-ops-p2-t3", "resource_id": "ops-p2-r6" },
+
+    { "skill_id": "skill-topic-ops-p3-t1", "resource_id": "ops-p3-r1" },
+    { "skill_id": "skill-topic-ops-p3-t1", "resource_id": "ops-p3-r2" },
+
+    { "skill_id": "skill-topic-ops-p3-t2", "resource_id": "ops-p3-r3" },
+    { "skill_id": "skill-topic-ops-p3-t2", "resource_id": "ops-p3-r4" },
+    { "skill_id": "skill-topic-ops-p3-t2", "resource_id": "ops-p3-r5" },
+
+    { "skill_id": "skill-topic-ops-p3-t3", "resource_id": "ops-p3-r6" },
+    { "skill_id": "skill-topic-ops-p3-t3", "resource_id": "ops-p3-r7" },
+
+    { "skill_id": "skill-topic-ops-p4-t1", "resource_id": "ops-p4-r1" },
+    { "skill_id": "skill-topic-ops-p4-t1", "resource_id": "ops-p4-r2" },
+
+    { "skill_id": "skill-topic-ops-p4-t2", "resource_id": "ops-p4-r3" },
+    { "skill_id": "skill-topic-ops-p4-t2", "resource_id": "ops-p4-r4" },
+    { "skill_id": "skill-topic-ops-p4-t2", "resource_id": "ops-p4-r5" },
+
+    { "skill_id": "skill-topic-ops-p4-t3", "resource_id": "ops-p4-r6" },
+    { "skill_id": "skill-topic-ops-p4-t3", "resource_id": "ops-p4-r7" },
+
+    { "skill_id": "skill-topic-ops-p5-t1", "resource_id": "ops-p5-r1" },
+    { "skill_id": "skill-topic-ops-p5-t1", "resource_id": "ops-p5-r2" },
+
+    { "skill_id": "skill-topic-ops-p5-t2", "resource_id": "ops-p5-r3" },
+    { "skill_id": "skill-topic-ops-p5-t2", "resource_id": "ops-p5-r4" },
+
+    { "skill_id": "skill-topic-ops-p5-t3", "resource_id": "ops-p5-r5" },
+    { "skill_id": "skill-topic-ops-p5-t3", "resource_id": "ops-p5-r6" },
+
+    { "skill_id": "skill-topic-ops-p6-t1", "resource_id": "ops-p6-r1" },
+    { "skill_id": "skill-topic-ops-p6-t1", "resource_id": "ops-p6-r2" },
+
+    { "skill_id": "skill-topic-ops-p6-t2", "resource_id": "ops-p6-r3" },
+    { "skill_id": "skill-topic-ops-p6-t2", "resource_id": "ops-p6-r4" },
+    { "skill_id": "skill-topic-ops-p6-t2", "resource_id": "ops-p6-r5" },
+
+    { "skill_id": "skill-topic-ops-p6-t3", "resource_id": "ops-p6-r6" },
+    { "skill_id": "skill-topic-ops-p6-t3", "resource_id": "ops-p6-r7" },
+
+    { "skill_id": "skill-topic-sec-p1-t1", "resource_id": "sec-p1-r1" },
+    { "skill_id": "skill-topic-sec-p1-t1", "resource_id": "sec-p1-r2" },
+
+    { "skill_id": "skill-topic-sec-p1-t2", "resource_id": "sec-p1-r3" },
+    { "skill_id": "skill-topic-sec-p1-t2", "resource_id": "sec-p1-r4" },
+
+    { "skill_id": "skill-topic-sec-p1-t3", "resource_id": "sec-p1-r5" },
+    { "skill_id": "skill-topic-sec-p1-t3", "resource_id": "sec-p1-r6" },
+
+    { "skill_id": "skill-topic-sec-p2-t1", "resource_id": "sec-p2-r1" },
+    { "skill_id": "skill-topic-sec-p2-t1", "resource_id": "sec-p2-r2" },
+
+    { "skill_id": "skill-topic-sec-p2-t2", "resource_id": "sec-p2-r3" },
+    { "skill_id": "skill-topic-sec-p2-t2", "resource_id": "sec-p2-r4" },
+    { "skill_id": "skill-topic-sec-p2-t2", "resource_id": "sec-p2-r5" },
+
+    { "skill_id": "skill-topic-sec-p2-t3", "resource_id": "sec-p2-r6" },
+    { "skill_id": "skill-topic-sec-p2-t3", "resource_id": "sec-p2-r7" },
+
+    { "skill_id": "skill-topic-sec-p3-t1", "resource_id": "sec-p3-r1" },
+    { "skill_id": "skill-topic-sec-p3-t1", "resource_id": "sec-p3-r2" },
+    { "skill_id": "skill-topic-sec-p3-t1", "resource_id": "sec-p3-r3" },
+
+    { "skill_id": "skill-topic-sec-p3-t2", "resource_id": "sec-p3-r4" },
+    { "skill_id": "skill-topic-sec-p3-t2", "resource_id": "sec-p3-r5" },
+
+    { "skill_id": "skill-topic-sec-p3-t3", "resource_id": "sec-p3-r6" },
+    { "skill_id": "skill-topic-sec-p3-t3", "resource_id": "sec-p3-r7" },
+
+    { "skill_id": "skill-topic-sec-p4-t1", "resource_id": "sec-p4-r1" },
+    { "skill_id": "skill-topic-sec-p4-t1", "resource_id": "sec-p4-r2" },
+
+    { "skill_id": "skill-topic-sec-p4-t2", "resource_id": "sec-p4-r3" },
+    { "skill_id": "skill-topic-sec-p4-t2", "resource_id": "sec-p4-r4" },
+    { "skill_id": "skill-topic-sec-p4-t2", "resource_id": "sec-p4-r5" },
+
+    { "skill_id": "skill-topic-sec-p4-t3", "resource_id": "sec-p4-r6" },
+    { "skill_id": "skill-topic-sec-p4-t3", "resource_id": "sec-p4-r7" },
+
+    { "skill_id": "skill-topic-sec-p5-t1", "resource_id": "sec-p5-r1" },
+    { "skill_id": "skill-topic-sec-p5-t1", "resource_id": "sec-p5-r2" },
+
+    { "skill_id": "skill-topic-sec-p5-t2", "resource_id": "sec-p5-r3" },
+    { "skill_id": "skill-topic-sec-p5-t2", "resource_id": "sec-p5-r4" },
+
+    { "skill_id": "skill-topic-sec-p5-t3", "resource_id": "sec-p5-r5" },
+    { "skill_id": "skill-topic-sec-p5-t3", "resource_id": "sec-p5-r6" },
+
+    { "skill_id": "skill-topic-sec-p6-t1", "resource_id": "sec-p6-r1" },
+    { "skill_id": "skill-topic-sec-p6-t1", "resource_id": "sec-p6-r2" },
+
+    { "skill_id": "skill-topic-sec-p6-t2", "resource_id": "sec-p6-r3" },
+    { "skill_id": "skill-topic-sec-p6-t2", "resource_id": "sec-p6-r4" },
+
+    { "skill_id": "skill-topic-sec-p6-t3", "resource_id": "sec-p6-r5" },
+    { "skill_id": "skill-topic-sec-p6-t3", "resource_id": "sec-p6-r6" },
+    { "skill_id": "skill-topic-sec-p6-t3", "resource_id": "sec-p6-r7" },
+
+    { "skill_id": "skill-topic-ppl-p1-t1", "resource_id": "ppl-p1-r1" },
+    { "skill_id": "skill-topic-ppl-p1-t1", "resource_id": "ppl-p1-r2" },
+
+    { "skill_id": "skill-topic-ppl-p1-t2", "resource_id": "ppl-p1-r3" },
+    { "skill_id": "skill-topic-ppl-p1-t2", "resource_id": "ppl-p1-r4" },
+    { "skill_id": "skill-topic-ppl-p1-t2", "resource_id": "ppl-p1-r5" },
+
+    { "skill_id": "skill-topic-ppl-p1-t3", "resource_id": "ppl-p1-r6" },
+    { "skill_id": "skill-topic-ppl-p1-t3", "resource_id": "ppl-p1-r7" },
+
+    { "skill_id": "skill-topic-ppl-p2-t1", "resource_id": "ppl-p2-r1" },
+    { "skill_id": "skill-topic-ppl-p2-t1", "resource_id": "ppl-p2-r2" },
+    { "skill_id": "skill-topic-ppl-p2-t1", "resource_id": "ppl-p2-r3" },
+
+    { "skill_id": "skill-topic-ppl-p2-t2", "resource_id": "ppl-p2-r4" },
+    { "skill_id": "skill-topic-ppl-p2-t2", "resource_id": "ppl-p2-r5" },
+
+    { "skill_id": "skill-topic-ppl-p2-t3", "resource_id": "ppl-p2-r6" },
+    { "skill_id": "skill-topic-ppl-p2-t3", "resource_id": "ppl-p2-r7" },
+
+    { "skill_id": "skill-topic-ppl-p3-t1", "resource_id": "ppl-p3-r1" },
+    { "skill_id": "skill-topic-ppl-p3-t1", "resource_id": "ppl-p3-r2" },
+
+    { "skill_id": "skill-topic-ppl-p3-t2", "resource_id": "ppl-p3-r3" },
+    { "skill_id": "skill-topic-ppl-p3-t2", "resource_id": "ppl-p3-r4" },
+
+    { "skill_id": "skill-topic-ppl-p3-t3", "resource_id": "ppl-p3-r5" },
+    { "skill_id": "skill-topic-ppl-p3-t3", "resource_id": "ppl-p3-r6" },
+
+    { "skill_id": "skill-topic-ppl-p4-t1", "resource_id": "ppl-p4-r1" },
+    { "skill_id": "skill-topic-ppl-p4-t1", "resource_id": "ppl-p4-r2" },
+
+    { "skill_id": "skill-topic-ppl-p4-t2", "resource_id": "ppl-p4-r3" },
+    { "skill_id": "skill-topic-ppl-p4-t2", "resource_id": "ppl-p4-r4" },
+
+    { "skill_id": "skill-topic-ppl-p4-t3", "resource_id": "ppl-p4-r5" },
+    { "skill_id": "skill-topic-ppl-p4-t3", "resource_id": "ppl-p4-r6" },
+
+    { "skill_id": "skill-topic-ppl-p5-t1", "resource_id": "ppl-p5-r1" },
+    { "skill_id": "skill-topic-ppl-p5-t1", "resource_id": "ppl-p5-r2" },
+
+    { "skill_id": "skill-topic-ppl-p5-t2", "resource_id": "ppl-p5-r3" },
+    { "skill_id": "skill-topic-ppl-p5-t2", "resource_id": "ppl-p5-r4" },
+
+    { "skill_id": "skill-topic-ppl-p5-t3", "resource_id": "ppl-p5-r5" },
+    { "skill_id": "skill-topic-ppl-p5-t3", "resource_id": "ppl-p5-r6" },
+
+    { "skill_id": "skill-topic-ppl-p6-t1", "resource_id": "ppl-p6-r1" },
+    { "skill_id": "skill-topic-ppl-p6-t1", "resource_id": "ppl-p6-r2" },
+
+    { "skill_id": "skill-topic-ppl-p6-t2", "resource_id": "ppl-p6-r3" },
+    { "skill_id": "skill-topic-ppl-p6-t2", "resource_id": "ppl-p6-r4" },
+
+    { "skill_id": "skill-topic-ppl-p6-t3", "resource_id": "ppl-p6-r5" },
+    { "skill_id": "skill-topic-ppl-p6-t3", "resource_id": "ppl-p6-r6" }
   ]
 }

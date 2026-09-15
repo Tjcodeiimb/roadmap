@@ -14,11 +14,11 @@ export function CourseSwitcherTrigger({ onOpen }: { onOpen: () => void }) {
   return (
     <button
       onClick={onOpen}
-      className="flex w-full items-center gap-2.5 rounded-xl border border-border bg-paper px-3 py-2.5 text-left text-sm text-ink-2 transition-colors hover:bg-paper-3"
+      className="press-sm flex w-full items-center gap-2.5 rounded-md border-2 border-ink bg-paper px-3 py-2.5 text-left text-sm font-bold text-ink-2 shadow-[3px_3px_0_0_var(--brutal-shadow)] hover:text-ink"
     >
       <Search size={15} />
       <span className="flex-1">Search</span>
-      <span className="hidden rounded-md border border-border bg-paper-2 px-1.5 py-0.5 text-[10px] font-medium text-ink-3 sm:inline">
+      <span className="hidden rounded-sm border-2 border-ink bg-paper-2 px-1.5 py-0.5 text-[10px] font-bold text-ink-3 sm:inline">
         ⌘K
       </span>
     </button>
@@ -191,8 +191,8 @@ export function CourseSwitcherModal({
             transition={uiTransition}
             className="fixed inset-x-0 top-24 z-[70] mx-auto w-full max-w-md px-4"
           >
-            <div className="card-shadow overflow-hidden rounded-2xl border border-border bg-paper-2">
-              <div className="flex items-center gap-2.5 border-b border-border px-4 py-3">
+            <div className="card-shadow overflow-hidden rounded-md border-2 border-ink bg-paper-2">
+              <div className="flex items-center gap-2.5 border-b-2 border-ink px-4 py-3">
                 <Search size={16} className="text-ink-3" />
                 <input
                   ref={inputRef}
@@ -200,7 +200,7 @@ export function CourseSwitcherModal({
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={onListKeyDown}
                   placeholder="Search courses, topics, resources…"
-                  className="flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-ink-3"
+                  className="flex-1 bg-transparent text-sm font-medium text-ink outline-none placeholder:text-ink-3"
                 />
                 <button onClick={onClose} aria-label="Close" className="text-ink-3 hover:text-ink">
                   <X size={16} />
@@ -265,8 +265,8 @@ function ResultRow({
     <button
       onClick={onClick}
       onMouseEnter={onHover}
-      className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition-colors ${
-        active ? "bg-accent-soft text-accent" : "text-ink-2"
+      className={`flex w-full items-center gap-3 rounded-md border-2 px-3 py-2.5 text-left text-sm font-bold transition-colors ${
+        active ? "border-ink bg-accent text-accent-ink" : "border-transparent text-ink-2"
       }`}
     >
       <Icon size={17} />

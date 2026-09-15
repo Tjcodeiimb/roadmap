@@ -497,6 +497,36 @@ export type Database = {
         }>;
         Relationships: [];
       };
+      // `doc` is jsonb and typed `unknown` on purpose: it forces every read
+      // through normalizeResumeDoc() in src/lib/resume/types.ts rather than
+      // letting callers assume a shape the database doesn't enforce.
+      resumes: {
+        Row: {
+          id: string;
+          user_id: string;
+          title: string;
+          doc: unknown;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          title?: string;
+          doc?: unknown;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<{
+          id: string;
+          user_id: string;
+          title: string;
+          doc: unknown;
+          created_at: string;
+          updated_at: string;
+        }>;
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
     Functions: {
@@ -553,7 +583,7 @@ export type Database = {
       };
       get_leaderboard: {
         Args: Record<string, never>;
-        Returns: { full_name: string | null; total_xp: number; current_streak: number }[];
+        Returns: { full_name: string | null; total_xp: number; is_you: boolean }[];
       };
       get_admin_track_stats: {
         Args: Record<string, never>;

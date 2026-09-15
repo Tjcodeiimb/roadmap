@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { LayoutDashboard, UserRound, ShieldCheck } from "lucide-react";
-import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark, StackMark, TargetMark } from "@/components/icons";
+import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark, StackMark, TargetMark, ArticleMark } from "@/components/icons";
 import { uiTransition } from "@/lib/motion";
+import { trackColor, trackInk } from "@/lib/track-colors";
 import { CourseSwitcherTrigger } from "./course-switcher";
 
 export interface NavTrack {
@@ -37,9 +38,11 @@ export function SidebarNav({
       href: `/track/${t.id}`,
       label: t.label,
       icon: ICONS[t.id] ?? FALLBACK_ICON,
+      trackId: t.id,
     })),
     { href: "/review", label: "Review", icon: RepeatMark, badge: reviewCount },
     { href: "/skills", label: "Skills", icon: TargetMark },
+    { href: "/resume", label: "Resume", icon: ArticleMark },
     { href: "/profile", label: "Profile", icon: UserRound },
     ...(leaderboardEnabled ? [{ href: "/leaderboard", label: "Leaderboard", icon: TrophyMark }] : []),
     ...(isAdmin ? [{ href: "/admin", label: "Admin", icon: ShieldCheck }] : []),
@@ -53,26 +56,35 @@ export function SidebarNav({
       {items.map((item) => {
         const active = pathname === item.href || pathname.startsWith(item.href + "/");
         const Icon = item.icon;
+        const trackId = "trackId" in item ? item.trackId : undefined;
+        const color = trackId ? trackColor(trackId) : "var(--accent)";
+        const ink = trackId ? trackInk(trackId) : "var(--accent-ink)";
         return (
           <Link
             key={item.href}
             href={item.href}
             className={clsx(
-              "relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors duration-150",
-              active ? "text-accent" : "text-ink-2 hover:bg-paper-2 hover:text-ink"
+              "group relative flex items-center gap-3 rounded-md border-2 px-3 py-2.5 text-sm font-bold transition-colors duration-150",
+              active ? "border-ink" : "border-transparent text-ink-2 hover:border-ink hover:text-ink"
             )}
+            style={active ? { color: ink } : undefined}
           >
             {active && (
               <motion.div
                 layoutId="sidebar-active-pill"
-                className="absolute inset-0 rounded-xl bg-accent-soft"
+                className="absolute inset-0 rounded-md"
+                style={{ backgroundColor: color }}
                 transition={uiTransition}
               />
             )}
-            <Icon size={18} className="relative z-10" />
+            <Icon
+              size={18}
+              className="relative z-10 transition-transform duration-150 group-hover:scale-110 group-hover:rotate-3"
+              style={!active && trackId ? { color } : undefined}
+            />
             <span className="relative z-10 flex-1">{item.label}</span>
             {"badge" in item && item.badge ? (
-              <span className="relative z-10 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1.5 text-[11px] font-semibold text-accent-ink">
+              <span className="relative z-10 flex h-5 min-w-5 items-center justify-center rounded-sm border-2 border-ink bg-accent px-1.5 text-[11px] font-bold text-accent-ink">
                 {item.badge}
               </span>
             ) : null}

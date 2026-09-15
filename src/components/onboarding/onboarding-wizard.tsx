@@ -27,8 +27,8 @@ export function OnboardingWizard() {
         {[0, 1].map((i) => (
           <div
             key={i}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === step ? "w-8 bg-accent" : "w-1.5 bg-paper-3"
+            className={`h-2 rounded-sm border-2 border-ink transition-all duration-300 ${
+              i === step ? "w-8 bg-accent" : "w-2 bg-paper-3"
             }`}
           />
         ))}
@@ -81,7 +81,7 @@ function Screen({ children }: { children: React.ReactNode }) {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -16 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
-      className="card-shadow rounded-2xl border border-border bg-paper-2 p-8 text-center"
+      className="card-shadow rounded-md border-2 border-ink bg-paper-2 p-8 text-center"
     >
       {children}
     </motion.div>

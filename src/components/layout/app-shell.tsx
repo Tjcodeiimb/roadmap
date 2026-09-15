@@ -41,7 +41,7 @@ export function AppShell({
   return (
     <MotionConfig reducedMotion="user">
       <div className="flex min-h-screen bg-paper">
-        <aside className="hidden w-64 shrink-0 flex-col gap-6 border-r border-border bg-paper-2/60 p-5 md:flex">
+        <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col gap-6 overflow-y-auto border-r-2 border-ink bg-paper-2 p-5 md:flex">
           <Brand />
           <SidebarNav tracks={tracks} reviewCount={reviewCount} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} onOpenSwitcher={() => setSwitcherOpen(true)} />
           <div className="mt-auto flex flex-col gap-3">
@@ -54,7 +54,7 @@ export function AppShell({
                   <button
                     type="submit"
                     aria-label="Sign out"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-paper-2 text-ink-2 transition-colors hover:text-ink"
+                    className="press-sm flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink bg-paper-2 text-ink-2 shadow-[3px_3px_0_0_var(--brutal-shadow)] hover:text-ink"
                   >
                     <LogOut size={16} />
                   </button>
@@ -65,11 +65,11 @@ export function AppShell({
         </aside>
 
         <div className="flex min-h-screen flex-1 flex-col">
-          <header className="flex items-center justify-between border-b border-border bg-paper/80 px-4 py-3 backdrop-blur md:hidden">
+          <header className="flex items-center justify-between border-b-2 border-ink bg-paper px-4 py-3 md:hidden">
             <button
               onClick={() => setDrawerOpen(true)}
               aria-label="Open menu"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-border"
+              className="press-sm flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]"
             >
               <Menu size={18} />
             </button>
@@ -77,7 +77,7 @@ export function AppShell({
             <ThemeToggle initialTheme={theme} />
           </header>
 
-          <main className="flex-1 px-4 py-6 md:px-10 md:py-10">{children}</main>
+          <main className="app-canvas relative flex-1 px-4 py-6 md:px-10 md:py-10">{children}</main>
         </div>
 
         <AnimatePresence>
@@ -95,14 +95,14 @@ export function AppShell({
                 animate={{ x: 0 }}
                 exit={{ x: "-100%" }}
                 transition={{ type: "spring", stiffness: 320, damping: 32 }}
-                className="fixed inset-y-0 left-0 z-50 flex w-72 flex-col gap-6 bg-paper-2 p-5 shadow-2xl md:hidden"
+                className="fixed inset-y-0 left-0 z-50 flex w-72 flex-col gap-6 border-r-2 border-ink bg-paper-2 p-5 shadow-[8px_0_0_0_var(--brutal-shadow)] md:hidden"
               >
                 <div className="flex items-center justify-between">
                   <Brand />
                   <button
                     onClick={() => setDrawerOpen(false)}
                     aria-label="Close menu"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-border"
+                    className="press-sm flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]"
                   >
                     <X size={18} />
                   </button>
@@ -115,7 +115,7 @@ export function AppShell({
                   <form action={signOut}>
                     <button
                       type="submit"
-                      className="flex w-full items-center justify-center gap-2 rounded-xl border border-border py-2.5 text-sm font-medium text-ink-2"
+                      className="press-sm flex w-full items-center justify-center gap-2 rounded-md border-2 border-ink bg-paper py-2.5 text-sm font-bold text-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]"
                     >
                       <LogOut size={16} /> Sign out
                     </button>
@@ -136,7 +136,7 @@ export function AppShell({
 function Brand({ compact }: { compact?: boolean }) {
   return (
     <div className="flex items-center gap-2">
-      <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-accent text-xs font-bold text-accent-ink">
+      <div className="flex h-8 w-8 items-center justify-center rounded-md border-2 border-ink bg-accent text-xs font-extrabold text-accent-ink shadow-[2px_2px_0_0_var(--brutal-shadow)]">
         UF
       </div>
       {!compact && <span className="font-display text-sm font-bold text-ink">UpForge Learning</span>}
