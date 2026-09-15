@@ -10,6 +10,8 @@ const PAPER = "#ffffff";
 const INK = "#111111";
 const MUTED = "#444444";
 const RULE = "#111111";
+const SHADE = "#d9d9d9";
+const SHADE_SOFT = "#efefef";
 
 function Bullets({ bullets }: { bullets: string[] }) {
   if (bullets.length === 0) return null;
@@ -25,37 +27,46 @@ function Bullets({ bullets }: { bullets: string[] }) {
 }
 
 /**
- * The format's signature two-column row: a narrow left label block (org,
- * role, dates) against the bullets. In the .docx this is a borderless table;
- * here it's a grid with the same proportions.
+ * The format's signature two-column row. Rendered as a real table so the
+ * label column sizes to its widest content across the whole section — a
+ * one-word organisation shouldn't reserve the same gutter as a long one.
+ * `width: 1px` plus `nowrap` is the standard CSS shrink-to-fit trick, and it
+ * mirrors the autofit table the exporter builds.
  */
-function EntryRow({ entry, labelKeys, bulletsEnabled }: { entry: ResumeEntry; labelKeys: string[]; bulletsEnabled: boolean }) {
-  const labels = labelKeys.map((key) => entry.fields[key]).filter(Boolean);
-  if (labels.length === 0 && entry.bullets.length === 0) return null;
-
+function EntryTable({ entries, labelKeys, bulletsEnabled }: { entries: ResumeEntry[]; labelKeys: string[]; bulletsEnabled: boolean }) {
   return (
-    <div className="grid grid-cols-[30%_1fr] gap-x-3 py-[3px]">
-      <div className="min-w-0">
-        {labels.map((label, i) => (
-          <div
-            key={i}
-            className={i === 0 ? "text-[10.5px] font-bold leading-[1.35]" : "text-[10px] leading-[1.35]"}
-            style={{ color: i === 0 ? INK : MUTED }}
-          >
-            {label}
-          </div>
-        ))}
-      </div>
-      <div className="min-w-0">{bulletsEnabled && <Bullets bullets={entry.bullets} />}</div>
-    </div>
+    <table className="w-full border-collapse">
+      <tbody>
+        {entries.map((entry) => {
+          const labels = labelKeys.map((key) => entry.fields[key]).filter(Boolean);
+          if (labels.length === 0 && entry.bullets.length === 0) return null;
+          return (
+            <tr key={entry.id} style={{ borderBottom: `1px solid ${SHADE_SOFT}` }}>
+              <td className="whitespace-nowrap py-[4px] pr-4 align-top" style={{ width: 1 }}>
+                {labels.map((label, i) => (
+                  <div
+                    key={i}
+                    className={i === 0 ? "text-[10.5px] font-bold leading-[1.35]" : "text-[10px] leading-[1.35]"}
+                    style={{ color: i === 0 ? INK : MUTED }}
+                  >
+                    {label}
+                  </div>
+                ))}
+              </td>
+              <td className="py-[4px] align-top">{bulletsEnabled && <Bullets bullets={entry.bullets} />}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }
 
 function SectionHeading({ title }: { title: string }) {
   return (
     <h2
-      className="mb-1 mt-3 text-[10.5px] font-bold uppercase tracking-[0.06em]"
-      style={{ color: INK, borderBottom: `1px solid ${RULE}`, paddingBottom: 2 }}
+      className="mb-1 mt-3 px-2 py-[3px] text-[10.5px] font-bold uppercase tracking-[0.06em]"
+      style={{ color: INK, background: SHADE, border: `1px solid ${RULE}` }}
     >
       {title}
     </h2>
@@ -65,8 +76,8 @@ function SectionHeading({ title }: { title: string }) {
 const EDUCATION_COLS = [
   { key: "degree", label: "Degree" },
   { key: "institute", label: "Institute/School" },
-  { key: "board", label: "Board/University" },
-  { key: "grade", label: "CGPA/%" },
+  { key: "grade", label: "CGPA/Grade" },
+  { key: "remarks", label: "Remarks" },
   { key: "year", label: "Year" },
 ];
 
@@ -79,7 +90,7 @@ function EducationTable({ entries }: { entries: ResumeEntry[] }) {
             <th
               key={col.key}
               className="border px-1.5 py-[3px] text-left font-bold"
-              style={{ borderColor: RULE }}
+              style={{ borderColor: RULE, background: SHADE }}
             >
               {col.label}
             </th>
@@ -161,14 +172,11 @@ export function ResumePreview({ doc }: { doc: ResumeDoc }) {
               ) : def.layout === "skills" ? (
                 <SkillsRow entries={section.entries} />
               ) : (
-                section.entries.map((entry) => (
-                  <EntryRow
-                    key={entry.id}
-                    entry={entry}
-                    labelKeys={def.fields.map((f) => f.key)}
-                    bulletsEnabled={def.hasBullets}
-                  />
-                ))
+                <EntryTable
+                  entries={section.entries}
+                  labelKeys={def.fields.map((f) => f.key)}
+                  bulletsEnabled={def.hasBullets}
+                />
               )}
             </section>
           );
