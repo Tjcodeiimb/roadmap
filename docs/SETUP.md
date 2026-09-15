@@ -272,3 +272,22 @@ open-source libraries that run inside your own Vercel deployment.
 - **Re-running the seed script**: safe to re-run any time; it upserts by
   ID, so it won't create duplicates. It never touches user progress, XP,
   streaks, or spaced-repetition data.
+
+### Automating the seed step (recommended, one-time setup)
+
+`.github/workflows/seed.yml` re-runs `npm run seed` automatically in GitHub
+Actions whenever a push changes anything under `scripts/seed-data/`, so you
+never need to run it by hand again after the first time. To turn it on:
+
+1. GitHub repo → **Settings** → **Secrets and variables** → **Actions** →
+   **New repository secret**. Add two secrets, using the same values from
+   your `.env.local`:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+2. That's it. From then on, any commit that touches seed content on `main`
+   or `claude/new-session-xqqu7b` triggers the workflow automatically —
+   check progress under the repo's **Actions** tab.
+
+Combined with Vercel's own auto-deploy on push, this means a future prompt
+like "add a new track" or "add another cohort" needs no manual steps from
+you at all: code deploys via Vercel, content seeds via this workflow.
