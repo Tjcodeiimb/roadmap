@@ -1,6 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database, Status, Step, Tier } from "@/lib/database.types";
-import { normalizeResumeDoc, type ResumeDoc } from "@/lib/resume/types";
+import { hydrateResumeDoc } from "@/lib/resume/sections";
+import type { ResumeDoc } from "@/lib/resume/types";
 
 type Client = SupabaseClient<Database>;
 
@@ -1048,7 +1049,7 @@ export async function getResumes(supabase: Client): Promise<ResumeSummary[]> {
     .order("updated_at", { ascending: false });
 
   return (data ?? []).map((row) => {
-    const doc = normalizeResumeDoc(row.doc);
+    const doc = hydrateResumeDoc(row.doc);
     const filled = doc.sections.filter((s) => s.entries.length > 0);
     return {
       id: row.id,
@@ -1074,7 +1075,7 @@ export async function getResume(
     .eq("id", id)
     .maybeSingle();
   if (!data) return null;
-  return { id: data.id, title: data.title, doc: normalizeResumeDoc(data.doc), updatedAt: data.updated_at };
+  return { id: data.id, title: data.title, doc: hydrateResumeDoc(data.doc), updatedAt: data.updated_at };
 }
 
 export interface UnlockedSkill {

@@ -103,8 +103,8 @@ function entryRow(entry: ResumeEntry, labelKeys: string[], withBullets: boolean)
 const EDUCATION_COLS: { key: string; label: string }[] = [
   { key: "degree", label: "Degree" },
   { key: "institute", label: "Institute/School" },
-  { key: "grade", label: "CGPA/Grade" },
-  { key: "remarks", label: "Remarks" },
+  { key: "board", label: "Board/University" },
+  { key: "grade", label: "CGPA/%" },
   { key: "year", label: "Year" },
 ];
 

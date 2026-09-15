@@ -324,9 +324,22 @@ function HeaderFields({
         <Field label="Email" value={doc.header.email} onChange={(v) => onChange("email", v)} />
         <Field label="Phone" value={doc.header.phone} onChange={(v) => onChange("phone", v)} optional />
         <Field label="LinkedIn" value={doc.header.linkedin} onChange={(v) => onChange("linkedin", v)} optional />
-        <Field label="Gender" value={doc.header.gender} onChange={(v) => onChange("gender", v)} optional />
-        <Field label="Age" value={doc.header.age} onChange={(v) => onChange("age", v)} optional />
       </div>
+
+      {/* Age and gender appear on some circulated templates but current
+          guidance is to leave them off, so they're collapsed rather than sat
+          in the form inviting completion. */}
+      <details className="mt-4 rounded-md border-2 border-ink bg-paper p-3" open={Boolean(doc.header.age || doc.header.gender)}>
+        <summary className="cursor-pointer text-xs font-bold text-ink-2">Add age or gender</summary>
+        <p className="mt-2 text-xs text-ink-3">
+          Older CV templates include these, but most current guidance says to leave them out. Only add them if your
+          placement cell asks for them.
+        </p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          <Field label="Gender" value={doc.header.gender} onChange={(v) => onChange("gender", v)} optional />
+          <Field label="Age" value={doc.header.age} onChange={(v) => onChange("age", v)} optional />
+        </div>
+      </details>
     </div>
   );
 }

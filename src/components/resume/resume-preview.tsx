@@ -65,8 +65,8 @@ function SectionHeading({ title }: { title: string }) {
 const EDUCATION_COLS = [
   { key: "degree", label: "Degree" },
   { key: "institute", label: "Institute/School" },
-  { key: "grade", label: "CGPA/Grade" },
-  { key: "remarks", label: "Remarks" },
+  { key: "board", label: "Board/University" },
+  { key: "grade", label: "CGPA/%" },
   { key: "year", label: "Year" },
 ];
 

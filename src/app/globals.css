@@ -230,7 +230,11 @@ body {
   transform: translate(2px, 2px);
   box-shadow: var(--brutal-offset-sm) var(--brutal-offset-sm) 0 0 var(--brutal-shadow);
 }
+/* The slam is a hard cut, not an eased move: brutalist motion shows no
+   easing curve on the way down. The lift keeps its 0.1s linear ramp, so
+   hover still reads as deliberate while the press lands instantly. */
 .press:active {
+  transition: none;
   transform: translate(var(--brutal-offset), var(--brutal-offset));
   box-shadow: 0 0 0 0 var(--brutal-shadow);
 }
@@ -246,6 +250,7 @@ body {
   box-shadow: 2px 2px 0 0 var(--brutal-shadow);
 }
 .press-sm:active {
+  transition: none;
   transform: translate(var(--brutal-offset-sm), var(--brutal-offset-sm));
   box-shadow: 0 0 0 0 var(--brutal-shadow);
 }
