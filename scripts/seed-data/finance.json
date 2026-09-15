@@ -67,6 +67,24 @@
       "description": "Apply it all to real filings and mock deals — read 10-Ks/10-Qs, practice deal exercises, prep for finance interviews.",
       "estimated_weeks": "4-6",
       "color": null
+    },
+    {
+      "id": "fin-p8",
+      "track_id": "finance",
+      "order_index": 8,
+      "title": "Advanced Financial Modeling",
+      "description": "Go beyond reading statements — build a fully integrated 3-statement model from scratch, layer in acquisition debt with an LBO model, and analyze credit risk the way a lender does.",
+      "estimated_weeks": "5-7",
+      "color": null
+    },
+    {
+      "id": "fin-p9",
+      "track_id": "finance",
+      "order_index": 9,
+      "title": "Private Equity & Alternative Investments",
+      "description": "Explore the buy-side beyond public markets — how private equity funds source and structure deals, how hedge funds generate returns across strategies, and how venture capital evaluates early-stage bets.",
+      "estimated_weeks": "4-6",
+      "color": null
     }
   ],
   "topics": [
@@ -233,6 +251,72 @@
       "tags": [],
       "estimated_time": null,
       "description": "",
+      "steps": []
+    },
+    {
+      "id": "fin-p8-t1",
+      "phase_id": "fin-p8",
+      "order_index": 1,
+      "title": "3-Statement Modeling",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Build a fully linked income statement, balance sheet, and cash flow statement in Excel from scratch — the foundational build behind every advanced model, versus just reading one.",
+      "steps": []
+    },
+    {
+      "id": "fin-p8-t2",
+      "phase_id": "fin-p8",
+      "order_index": 2,
+      "title": "LBO Modeling",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Model a leveraged buyout end to end: sources & uses, acquisition debt tranches, cash sweeps, and the return math (IRR/MOIC) private equity firms underwrite deals on.",
+      "steps": []
+    },
+    {
+      "id": "fin-p8-t3",
+      "phase_id": "fin-p8",
+      "order_index": 3,
+      "title": "Credit Analysis & Debt Schedules",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Analyze a borrower the way a lender does — leverage and coverage ratios, covenant headroom — and build a debt schedule with interest, amortization, and cash sweep mechanics.",
+      "steps": []
+    },
+    {
+      "id": "fin-p9-t1",
+      "phase_id": "fin-p9",
+      "order_index": 1,
+      "title": "Private Equity Fundamentals",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How PE funds are structured (GP/LP, fees, carry), how they source and screen deals, and how a buyout thesis turns into an investment.",
+      "steps": []
+    },
+    {
+      "id": "fin-p9-t2",
+      "phase_id": "fin-p9",
+      "order_index": 2,
+      "title": "Hedge Fund Strategies",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Survey the core hedge fund strategies — long/short equity, global macro, quant, event-driven, arbitrage — and how each generates returns.",
+      "steps": []
+    },
+    {
+      "id": "fin-p9-t3",
+      "phase_id": "fin-p9",
+      "order_index": 3,
+      "title": "Venture Capital Basics",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How VC funds are structured and how they evaluate, price, and structure early-stage investments — from thesis to term sheet.",
       "steps": []
     }
   ],
@@ -619,6 +703,150 @@
       "format": "article",
       "length": null,
       "note": "Interview-oriented technical practice",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r1",
+      "topic_id": "fin-p8-t1",
+      "order_index": 1,
+      "title": "3-Statement Model | Complete Guide (Step-by-Step)",
+      "url": "https://www.wallstreetprep.com/knowledge/build-integrated-3-statement-financial-model/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Builds the IS/BS/CF links from scratch, not just reading them",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r2",
+      "topic_id": "fin-p8-t1",
+      "order_index": 2,
+      "title": "Introduction to 3-Statement Modeling",
+      "url": "https://www.coursera.org/learn/cfi-introduction-to-3-statement-modeling",
+      "source": "Coursera / Corporate Finance Institute",
+      "format": "course",
+      "length": "~6 hrs",
+      "note": "FREE audit mode",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r3",
+      "topic_id": "fin-p8-t2",
+      "order_index": 1,
+      "title": "Short-Form LBO Model | Free Course + Excel Template",
+      "url": "https://www.wallstreetprep.com/knowledge/lbo-model/",
+      "source": "Wall Street Prep",
+      "format": "article+template",
+      "length": null,
+      "note": "Free downloadable Excel template",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r4",
+      "topic_id": "fin-p8-t2",
+      "order_index": 2,
+      "title": "Simple LBO Model - Excel, Video Tutorial, and Written Guide",
+      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/simple-lbo-model-excel/",
+      "source": "Breaking Into Wall Street",
+      "format": "video+article",
+      "length": null,
+      "note": "Video + written guide with Excel file",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r5",
+      "topic_id": "fin-p8-t3",
+      "order_index": 1,
+      "title": "Credit Analysis | Financial Ratios + Lending Process",
+      "url": "https://www.wallstreetprep.com/knowledge/credit-risk-analysis/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Leverage/coverage ratios and the lender's underwriting process",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r6",
+      "topic_id": "fin-p8-t3",
+      "order_index": 2,
+      "title": "Debt Schedule: Video Tutorial and Excel Example",
+      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/debt-schedule/",
+      "source": "Breaking Into Wall Street",
+      "format": "video+template",
+      "length": null,
+      "note": "Interest, amortization, and cash sweep mechanics with an Excel example",
+      "icon": null
+    },
+    {
+      "id": "fin-p9-r1",
+      "topic_id": "fin-p9-t1",
+      "order_index": 1,
+      "title": "Private Equity and Venture Capital",
+      "url": "https://www.coursera.org/learn/private-equity",
+      "source": "Coursera / Università Bocconi",
+      "format": "course",
+      "length": "~9 hrs",
+      "note": "320k+ enrolled; fund structure, fees/carry, deal-making; FREE audit mode",
+      "icon": null
+    },
+    {
+      "id": "fin-p9-r2",
+      "topic_id": "fin-p9-t1",
+      "order_index": 2,
+      "title": "Private Equity Fund Structure: Key Roles, Profit Distribution & Investment Strategies",
+      "url": "https://www.wallstreetoasis.com/resources/skills/finance/private-equity-fund-structure",
+      "source": "Wall Street Oasis",
+      "format": "article",
+      "length": null,
+      "note": "GP/LP roles, carry, and fund mechanics",
+      "icon": null
+    },
+    {
+      "id": "fin-p9-r3",
+      "topic_id": "fin-p9-t2",
+      "order_index": 1,
+      "title": "Hedge Fund Trading Strategies - Types, Examples",
+      "url": "https://corporatefinanceinstitute.com/resources/career-map/sell-side/capital-markets/hedge-fund-strategies/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Long/short, macro, quant, event-driven, arbitrage",
+      "icon": null
+    },
+    {
+      "id": "fin-p9-r4",
+      "topic_id": "fin-p9-t2",
+      "order_index": 2,
+      "title": "Hedge Fund Strategies",
+      "url": "https://www.streetofwalls.com/finance-training-courses/hedge-fund-training/hedge-fund-strategies/",
+      "source": "Street of Walls",
+      "format": "article",
+      "length": null,
+      "note": "Overview of the 7 core hedge fund strategies",
+      "icon": null
+    },
+    {
+      "id": "fin-p9-r5",
+      "topic_id": "fin-p9-t3",
+      "order_index": 1,
+      "title": "VC 101: How Venture Capital Works",
+      "url": "https://carta.com/learn/vc-101/1/",
+      "source": "Carta",
+      "format": "video",
+      "length": "~1 hr",
+      "note": "Free 7-part series: fund vs firm, LP/GP structure, deal evaluation",
+      "icon": null
+    },
+    {
+      "id": "fin-p9-r6",
+      "topic_id": "fin-p9-t3",
+      "order_index": 2,
+      "title": "What Is Venture Capital",
+      "url": "https://corporatefinanceinstitute.com/resources/career-map/sell-side/capital-markets/what-is-venture-capital/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How VC funds are structured and evaluate early-stage deals",
       "icon": null
     }
   ]
