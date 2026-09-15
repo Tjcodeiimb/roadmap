@@ -8,7 +8,7 @@ import { ProgressRing } from "@/components/ui/progress-ring";
 import { DiscoverRail } from "@/components/dashboard/discover-rail";
 import { ArrowRight } from "lucide-react";
 import { BurstMark, RepeatMark, CompassMark } from "@/components/icons";
-import { trackColor } from "@/lib/track-colors";
+import { trackColor, trackInk } from "@/lib/track-colors";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -85,14 +85,20 @@ export default async function DashboardPage() {
             const pct = s.totalTopics ? Math.round((s.doneTopics / s.totalTopics) * 100) : 0;
             return (
               <Reveal key={s.track.id} index={i}>
-                <Card className="press flex h-full flex-col gap-4">
+                <Card className="press flex h-full flex-col gap-4" style={{ backgroundColor: trackColor(s.track.id) }}>
                   <div className="flex items-center gap-4">
-                    <ProgressRing progress={pct} size={52} strokeWidth={4} color={trackColor(s.track.id)}>
-                      <span className="text-xs font-bold text-ink">{pct}%</span>
+                    <ProgressRing
+                      progress={pct}
+                      size={52}
+                      strokeWidth={4}
+                      color={trackInk(s.track.id)}
+                      trackColor={`color-mix(in srgb, ${trackInk(s.track.id)} 25%, transparent)`}
+                    >
+                      <span className="text-xs font-bold" style={{ color: trackInk(s.track.id) }}>{pct}%</span>
                     </ProgressRing>
                     <div>
-                      <div className="font-display text-lg font-bold text-ink">{s.track.label}</div>
-                      <div className="text-sm text-ink-2">
+                      <div className="font-display text-lg font-bold" style={{ color: trackInk(s.track.id) }}>{s.track.label}</div>
+                      <div className="text-sm" style={{ color: trackInk(s.track.id), opacity: 0.8 }}>
                         {s.doneTopics} of {s.totalTopics} topics done
                       </div>
                     </div>
@@ -100,7 +106,7 @@ export default async function DashboardPage() {
                   {s.currentTopic ? (
                     <Link
                       href={`/track/${s.track.id}/topic/${s.currentTopic.id}`}
-                      className="press-sm flex items-center justify-between rounded-md border-2 border-ink bg-paper-3 px-4 py-3 text-sm font-bold text-ink"
+                      className="press-sm flex items-center justify-between rounded-md border-2 border-ink bg-paper-2 px-4 py-3 text-sm font-bold text-ink"
                     >
                       <span className="truncate">Continue: {s.currentTopic.title}</span>
                       <ArrowRight size={16} className="shrink-0" />
@@ -110,7 +116,11 @@ export default async function DashboardPage() {
                       <BurstMark size={16} /> All topics complete
                     </div>
                   )}
-                  <Link href={`/track/${s.track.id}`} className="text-sm font-bold text-ink-2 underline decoration-2 underline-offset-4 hover:text-ink">
+                  <Link
+                    href={`/track/${s.track.id}`}
+                    className="text-sm font-bold underline decoration-2 underline-offset-4"
+                    style={{ color: trackInk(s.track.id), opacity: 0.8 }}
+                  >
                     View full roadmap
                   </Link>
                 </Card>

@@ -42,22 +42,22 @@
      token (the text color to put ON a solid fill of that track color).
      Security/esg are domain-string aliases (skills.domain uses "security"/
      "esg" while the track ids are "cybersecurity"/"sustainability"). */
-  --track-ai: #0b50da; --track-ai-ink: #ffffff;
-  --track-finance: #078345; --track-finance-ink: #ffffff;
-  --track-consulting: #b35009; --track-consulting-ink: #ffffff;
-  --track-excel: #078364; --track-excel-ink: #ffffff;
-  --track-psychology: #950bda; --track-psychology-ink: #ffffff;
-  --track-marketing: #da0b62; --track-marketing-ink: #ffffff;
-  --track-data: #087e96; --track-data-ink: #ffffff;
-  --track-product: #8d6b07; --track-product-ink: #ffffff;
-  --track-sales: #da1d0b; --track-sales-ink: #ffffff;
-  --track-ux: #d00baf; --track-ux-ink: #ffffff;
-  --track-operations: #3b8307; --track-operations-ink: #ffffff;
-  --track-cybersecurity: #da0b1d; --track-cybersecurity-ink: #ffffff;
-  --track-security: #da0b1d; --track-security-ink: #ffffff;
-  --track-people: #620bda; --track-people-ink: #ffffff;
-  --track-sustainability: #07831c; --track-sustainability-ink: #ffffff;
-  --track-esg: #07831c; --track-esg-ink: #ffffff;
+  --track-ai: #054ee0; --track-ai-ink: #ffffff;
+  --track-finance: #038745; --track-finance-ink: #ffffff;
+  --track-consulting: #b84f04; --track-consulting-ink: #ffffff;
+  --track-excel: #038766; --track-excel-ink: #ffffff;
+  --track-psychology: #9705e0; --track-psychology-ink: #ffffff;
+  --track-marketing: #e00561; --track-marketing-ink: #ffffff;
+  --track-data: #03819b; --track-data-ink: #ffffff;
+  --track-product: #916d03; --track-product-ink: #ffffff;
+  --track-sales: #e01805; --track-sales-ink: #ffffff;
+  --track-ux: #d704b3; --track-ux-ink: #ffffff;
+  --track-operations: #3a8703; --track-operations-ink: #ffffff;
+  --track-cybersecurity: #e00518; --track-cybersecurity-ink: #ffffff;
+  --track-security: #e00518; --track-security-ink: #ffffff;
+  --track-people: #6105e0; --track-people-ink: #ffffff;
+  --track-sustainability: #038719; --track-sustainability-ink: #ffffff;
+  --track-esg: #038719; --track-esg-ink: #ffffff;
 
   /* One bold flat color for the login splash — a brand moment, so it stays
      bright regardless of the viewer's light/dark preference rather than
@@ -88,22 +88,22 @@
     --shadow-color: 245 245 240;
     --brutal-shadow: var(--ink);
 
-    --track-ai: #5a8cf2; --track-ai-ink: #0a0a0a;
-    --track-finance: #5af2a6; --track-finance-ink: #0a0a0a;
-    --track-consulting: #f2995a; --track-consulting-ink: #0a0a0a;
-    --track-excel: #5af2cc; --track-excel-ink: #0a0a0a;
-    --track-psychology: #bf5af2; --track-psychology-ink: #0a0a0a;
-    --track-marketing: #f25a99; --track-marketing-ink: #0a0a0a;
-    --track-data: #5ad8f2; --track-data-ink: #0a0a0a;
-    --track-product: #f2cc5a; --track-product-ink: #0a0a0a;
-    --track-sales: #f2675a; --track-sales-ink: #0a0a0a;
-    --track-ux: #f25ad8; --track-ux-ink: #0a0a0a;
-    --track-operations: #99f25a; --track-operations-ink: #0a0a0a;
-    --track-cybersecurity: #f25a67; --track-cybersecurity-ink: #0a0a0a;
-    --track-security: #f25a67; --track-security-ink: #0a0a0a;
-    --track-people: #995af2; --track-people-ink: #0a0a0a;
-    --track-sustainability: #5af273; --track-sustainability-ink: #0a0a0a;
-    --track-esg: #5af273; --track-esg-ink: #0a0a0a;
+    --track-ai: #5189fb; --track-ai-ink: #0a0a0a;
+    --track-finance: #51fba6; --track-finance-ink: #0a0a0a;
+    --track-consulting: #fb9751; --track-consulting-ink: #0a0a0a;
+    --track-excel: #51fbd1; --track-excel-ink: #0a0a0a;
+    --track-psychology: #c251fb; --track-psychology-ink: #0a0a0a;
+    --track-marketing: #fb5197; --track-marketing-ink: #0a0a0a;
+    --track-data: #51defb; --track-data-ink: #0a0a0a;
+    --track-product: #fbd151; --track-product-ink: #0a0a0a;
+    --track-sales: #fb5f51; --track-sales-ink: #0a0a0a;
+    --track-ux: #fb51de; --track-ux-ink: #0a0a0a;
+    --track-operations: #97fb51; --track-operations-ink: #0a0a0a;
+    --track-cybersecurity: #fb515f; --track-cybersecurity-ink: #0a0a0a;
+    --track-security: #fb515f; --track-security-ink: #0a0a0a;
+    --track-people: #9751fb; --track-people-ink: #0a0a0a;
+    --track-sustainability: #51fb6d; --track-sustainability-ink: #0a0a0a;
+    --track-esg: #51fb6d; --track-esg-ink: #0a0a0a;
   }
 }
 
@@ -125,22 +125,22 @@
   --shadow-color: 245 245 240;
   --brutal-shadow: var(--ink);
 
-  --track-ai: #5a8cf2; --track-ai-ink: #0a0a0a;
-  --track-finance: #5af2a6; --track-finance-ink: #0a0a0a;
-  --track-consulting: #f2995a; --track-consulting-ink: #0a0a0a;
-  --track-excel: #5af2cc; --track-excel-ink: #0a0a0a;
-  --track-psychology: #bf5af2; --track-psychology-ink: #0a0a0a;
-  --track-marketing: #f25a99; --track-marketing-ink: #0a0a0a;
-  --track-data: #5ad8f2; --track-data-ink: #0a0a0a;
-  --track-product: #f2cc5a; --track-product-ink: #0a0a0a;
-  --track-sales: #f2675a; --track-sales-ink: #0a0a0a;
-  --track-ux: #f25ad8; --track-ux-ink: #0a0a0a;
-  --track-operations: #99f25a; --track-operations-ink: #0a0a0a;
-  --track-cybersecurity: #f25a67; --track-cybersecurity-ink: #0a0a0a;
-  --track-security: #f25a67; --track-security-ink: #0a0a0a;
-  --track-people: #995af2; --track-people-ink: #0a0a0a;
-  --track-sustainability: #5af273; --track-sustainability-ink: #0a0a0a;
-  --track-esg: #5af273; --track-esg-ink: #0a0a0a;
+  --track-ai: #5189fb; --track-ai-ink: #0a0a0a;
+  --track-finance: #51fba6; --track-finance-ink: #0a0a0a;
+  --track-consulting: #fb9751; --track-consulting-ink: #0a0a0a;
+  --track-excel: #51fbd1; --track-excel-ink: #0a0a0a;
+  --track-psychology: #c251fb; --track-psychology-ink: #0a0a0a;
+  --track-marketing: #fb5197; --track-marketing-ink: #0a0a0a;
+  --track-data: #51defb; --track-data-ink: #0a0a0a;
+  --track-product: #fbd151; --track-product-ink: #0a0a0a;
+  --track-sales: #fb5f51; --track-sales-ink: #0a0a0a;
+  --track-ux: #fb51de; --track-ux-ink: #0a0a0a;
+  --track-operations: #97fb51; --track-operations-ink: #0a0a0a;
+  --track-cybersecurity: #fb515f; --track-cybersecurity-ink: #0a0a0a;
+  --track-security: #fb515f; --track-security-ink: #0a0a0a;
+  --track-people: #9751fb; --track-people-ink: #0a0a0a;
+  --track-sustainability: #51fb6d; --track-sustainability-ink: #0a0a0a;
+  --track-esg: #51fb6d; --track-esg-ink: #0a0a0a;
 }
 
 @theme inline {

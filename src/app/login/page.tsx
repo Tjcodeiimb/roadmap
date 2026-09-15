@@ -1,12 +1,21 @@
+import { cookies } from "next/headers";
 import { LoginForm } from "@/components/auth/login-form";
 import { FloatingShapes } from "@/components/auth/floating-shapes";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const cookieStore = await cookies();
+  const cookieTheme = cookieStore.get("theme")?.value;
+  const theme = cookieTheme === "dark" ? "dark" : "light";
+
   return (
     <div
       className="relative flex min-h-screen flex-1 items-center justify-center overflow-hidden px-4 py-16"
       style={{ backgroundColor: "var(--login-bg)" }}
     >
+      <div className="fixed right-4 z-20" style={{ top: "calc(env(safe-area-inset-top, 0px) + 1rem)" }}>
+        <ThemeToggle initialTheme={theme} />
+      </div>
       <FloatingShapes />
       <div className="relative z-10 w-full max-w-sm">
         <div className="mb-8 text-center">

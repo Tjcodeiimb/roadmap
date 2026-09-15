@@ -49,34 +49,36 @@ export default async function SkillsPage() {
                 {domainSkills.map((skill) => {
                   const Icon = ICONS[skill.iconKey ?? ""] ?? FALLBACK_ICON;
                   const index = globalIndex++;
+                  const ink = trackInk(skill.domain);
                   return (
                     <Reveal key={skill.id} index={index}>
                     <div
                       className={
                         skill.unlocked
-                          ? "flex items-start gap-3 rounded-md border-2 border-ink bg-paper-2 p-4 shadow-[3px_3px_0_0_var(--brutal-shadow)]"
+                          ? "flex items-start gap-3 rounded-md border-2 border-ink p-4 shadow-[3px_3px_0_0_var(--brutal-shadow)]"
                           : "flex items-start gap-3 rounded-md border-2 border-dashed border-ink bg-paper p-4 opacity-70"
                       }
+                      style={skill.unlocked ? { backgroundColor: trackColor(skill.domain) } : undefined}
                     >
                       <div
                         className={
                           skill.unlocked
-                            ? "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border-2 border-ink"
+                            ? "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-paper-2"
                             : "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-paper-3 text-ink-3"
                         }
-                        style={skill.unlocked ? { backgroundColor: trackColor(skill.domain), color: trackInk(skill.domain) } : undefined}
+                        style={skill.unlocked ? { color: trackColor(skill.domain) } : undefined}
                       >
                         {skill.unlocked ? <Icon size={20} /> : <LockMark size={18} />}
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                          <span className="font-medium text-ink">{skill.name}</span>
+                          <span className="font-medium" style={skill.unlocked ? { color: ink } : undefined}>{skill.name}</span>
                           <TierBadge tier={skill.tier} />
                         </div>
-                        <p className="mt-0.5 text-xs text-ink-3">{skill.description}</p>
+                        <p className="mt-0.5 text-xs" style={skill.unlocked ? { color: ink, opacity: 0.8 } : undefined}>{skill.description}</p>
                         <div className="mt-2 flex items-center gap-3 text-xs">
                           {skill.unlocked ? (
-                            <span className="flex items-center gap-1 font-medium text-success">
+                            <span className="flex items-center gap-1 font-medium" style={{ color: ink }}>
                               <CheckCircleMark size={13} /> Unlocked
                             </span>
                           ) : (
@@ -84,7 +86,7 @@ export default async function SkillsPage() {
                               {skill.doneCount} of {skill.totalCount} resources
                             </span>
                           )}
-                          <span className="flex items-center gap-1 text-ink-3">
+                          <span className="flex items-center gap-1" style={skill.unlocked ? { color: ink, opacity: 0.75 } : undefined}>
                             <SparkMark size={12} /> {skill.xpReward} XP
                           </span>
                         </div>

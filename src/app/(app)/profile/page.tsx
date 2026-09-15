@@ -21,7 +21,7 @@ import { WatchStats } from "@/components/profile/watch-stats";
 import { SkillsPanel } from "@/components/profile/skills-panel";
 import { levelForXP } from "@/lib/gamification/levels";
 import { LEVEL_ICONS, StreakMark, TrophyMark } from "@/components/icons";
-import { trackColor } from "@/lib/track-colors";
+import { trackColor, trackInk } from "@/lib/track-colors";
 
 export default async function ProfilePage({
   searchParams,
@@ -91,12 +91,18 @@ export default async function ProfilePage({
             const pct = s.totalTopics ? Math.round((s.doneTopics / s.totalTopics) * 100) : 0;
             return (
               <Link key={s.track.id} href={`/track/${s.track.id}`}>
-                <Card className="press flex flex-col items-center gap-2 py-5 text-center">
-                  <ProgressRing progress={pct} size={44} strokeWidth={4} color={trackColor(s.track.id)}>
-                    <span className="text-[11px] font-bold text-ink">{pct}%</span>
+                <Card className="press flex flex-col items-center gap-2 py-5 text-center" style={{ backgroundColor: trackColor(s.track.id) }}>
+                  <ProgressRing
+                    progress={pct}
+                    size={44}
+                    strokeWidth={4}
+                    color={trackInk(s.track.id)}
+                    trackColor={`color-mix(in srgb, ${trackInk(s.track.id)} 25%, transparent)`}
+                  >
+                    <span className="text-[11px] font-bold" style={{ color: trackInk(s.track.id) }}>{pct}%</span>
                   </ProgressRing>
-                  <div className="text-sm font-bold text-ink">{s.track.label}</div>
-                  <div className="text-xs text-ink-3">
+                  <div className="text-sm font-bold" style={{ color: trackInk(s.track.id) }}>{s.track.label}</div>
+                  <div className="text-xs" style={{ color: trackInk(s.track.id), opacity: 0.75 }}>
                     {s.doneTopics} of {s.totalTopics} topics
                   </div>
                 </Card>
