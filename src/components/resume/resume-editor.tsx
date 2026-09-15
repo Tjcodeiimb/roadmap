@@ -1,8 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Trash2, ChevronLeft, ChevronRight, Download, Printer, Eye, PencilLine } from "lucide-react";
+import { Plus, Trash2, ChevronLeft, ChevronRight, Download, Check, Eye, PencilLine } from "lucide-react";
 import clsx from "clsx";
 import { Button } from "@/components/ui/button";
 import { ResumePreview, A4_HEIGHT_PX, A4_WIDTH_PX } from "@/components/resume/resume-preview";
@@ -44,6 +45,7 @@ export function ResumeEditor({
   // Below lg there isn't room for both, and stacking the preview under the
   // whole editor makes it useless — you'd scroll past every field to see it.
   const [view, setView] = useState<"edit" | "preview">("edit");
+  const router = useRouter();
 
   // One page is a hard rule at these schools, so rather than estimating from
   // line counts, the preview is laid out at true A4 width and then scaled
@@ -116,6 +118,11 @@ export function ResumeEditor({
     () => doc.sections.find((s) => s.type === def?.type),
     [doc.sections, def?.type]
   );
+
+  // "Skip" only makes sense while a section is still empty — once there's
+  // something in it, moving on is "Next".
+  const sectionHasContent = (section?.entries.length ?? 0) > 0;
+  const isLastStep = step === SECTION_DEFS.length - 1;
 
   function setHeader(key: keyof ResumeDoc["header"], value: string) {
     update({ ...doc, header: { ...doc.header, [key]: value } });
@@ -246,6 +253,11 @@ export function ResumeEditor({
                   <div className="mb-4 mt-6 border-t-2 border-ink pt-4">
                     <h2 className="font-display text-lg font-bold text-ink">{def.title}</h2>
                     <p className="mt-1 text-sm text-ink-2">{def.prompt}</p>
+                    {def.note && (
+                      <p className="mt-2 rounded-md border-2 border-ink bg-accent-soft px-3 py-2 text-xs font-bold text-accent">
+                        {def.note}
+                      </p>
+                    )}
                   </div>
 
                   {def.layout === "skills" && (
@@ -297,13 +309,24 @@ export function ResumeEditor({
               <ChevronLeft size={15} /> Back
             </button>
             <SaveIndicator state={saveState} />
-            <button
-              onClick={() => setStep((s) => Math.min(SECTION_DEFS.length - 1, s + 1))}
-              disabled={step === SECTION_DEFS.length - 1}
-              className="press-sm flex items-center gap-1 rounded-md border-2 border-ink bg-paper px-3 py-2 text-sm font-bold text-ink disabled:opacity-40"
-            >
-              {def?.optional ? "Skip" : "Next"} <ChevronRight size={15} />
-            </button>
+            {isLastStep ? (
+              <button
+                onClick={async () => {
+                  await flush();
+                  router.push("/resume");
+                }}
+                className="press-sm flex items-center gap-1 rounded-md border-2 border-ink bg-accent px-4 py-2 text-sm font-bold text-accent-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]"
+              >
+                <Check size={15} /> Submit
+              </button>
+            ) : (
+              <button
+                onClick={() => setStep((s) => Math.min(SECTION_DEFS.length - 1, s + 1))}
+                className="press-sm flex items-center gap-1 rounded-md border-2 border-ink bg-paper px-3 py-2 text-sm font-bold text-ink"
+              >
+                {sectionHasContent ? "Next" : "Skip"} <ChevronRight size={15} />
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -318,12 +341,6 @@ export function ResumeEditor({
         <div className="flex flex-wrap items-center justify-between gap-2">
           <PageBudget fill={pageFill} />
           <div className="flex items-center gap-1.5">
-            <button
-              onClick={() => window.print()}
-              className="press-sm flex items-center gap-1.5 rounded-md border-2 border-ink bg-paper-2 px-3 py-1.5 text-xs font-bold text-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]"
-            >
-              <Printer size={13} /> PDF
-            </button>
             <a
               href={`/api/resume/${resumeId}/export`}
               className="press-sm flex items-center gap-1.5 rounded-md border-2 border-ink bg-accent px-3 py-1.5 text-xs font-bold text-accent-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]"

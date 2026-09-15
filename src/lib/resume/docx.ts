@@ -7,6 +7,7 @@ import {
   Table,
   TableCell,
   TableRow,
+  TableLayoutType,
   TextRun,
   WidthType,
 } from "docx";
@@ -26,6 +27,8 @@ const NAME_SIZE = 32;
 
 const NO_BORDER = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" } as const;
 const HAIRLINE = { style: BorderStyle.SINGLE, size: 4, color: "111111" } as const;
+const SHADE = "D9D9D9";
+const SHADE_SOFT = "EFEFEF";
 
 const BORDERLESS = {
   top: NO_BORDER,
@@ -60,10 +63,22 @@ function line(value: string, opts: { bold?: boolean; size?: number; color?: stri
 }
 
 function sectionHeading(title: string) {
-  return new Paragraph({
-    children: [text(title.toUpperCase(), { bold: true, size: HEADING_SIZE })],
-    spacing: { before: 160, after: 60 },
-    border: { bottom: HAIRLINE },
+  // A shaded, boxed bar — the grey header band the source format uses, rather
+  // than a hairline underline.
+  return new Table({
+    rows: [
+      new TableRow({
+        children: [
+          new TableCell({
+            children: [new Paragraph({ children: [text(title.toUpperCase(), { bold: true, size: HEADING_SIZE })] })],
+            shading: { fill: SHADE },
+            margins: { top: 30, bottom: 30, left: 80, right: 80 },
+          }),
+        ],
+      }),
+    ],
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    borders: BOXED,
   });
 }
 
@@ -88,12 +103,14 @@ function entryRow(entry: ResumeEntry, labelKeys: string[], withBullets: boolean)
     children: [
       new TableCell({
         children: leftParagraphs,
-        width: { size: 30, type: WidthType.PERCENTAGE },
-        margins: { top: 40, bottom: 40, left: 0, right: 120 },
+        // AUTO width + the autofit layout below lets Word size this column to
+        // its widest content rather than reserving a fixed gutter.
+        width: { size: 0, type: WidthType.AUTO },
+        margins: { top: 40, bottom: 40, left: 0, right: 160 },
       }),
       new TableCell({
         children: rightParagraphs,
-        width: { size: 70, type: WidthType.PERCENTAGE },
+        width: { size: 100, type: WidthType.PERCENTAGE },
         margins: { top: 40, bottom: 40, left: 0, right: 0 },
       }),
     ],
@@ -103,8 +120,8 @@ function entryRow(entry: ResumeEntry, labelKeys: string[], withBullets: boolean)
 const EDUCATION_COLS: { key: string; label: string }[] = [
   { key: "degree", label: "Degree" },
   { key: "institute", label: "Institute/School" },
-  { key: "board", label: "Board/University" },
-  { key: "grade", label: "CGPA/%" },
+  { key: "grade", label: "CGPA/Grade" },
+  { key: "remarks", label: "Remarks" },
   { key: "year", label: "Year" },
 ];
 
@@ -115,6 +132,7 @@ function educationTable(entries: ResumeEntry[]) {
       (col) =>
         new TableCell({
           children: [line(col.label, { bold: true })],
+          shading: { fill: SHADE },
           margins: { top: 40, bottom: 40, left: 80, right: 80 },
         })
     ),
@@ -237,7 +255,12 @@ export async function buildResumeDocx(doc: ResumeDoc, layout: ResumeLayout = "fo
             )
           ),
           width: { size: 100, type: WidthType.PERCENTAGE },
-          borders: BORDERLESS,
+          layout: TableLayoutType.AUTOFIT,
+          borders: {
+            ...BORDERLESS,
+            // A faint rule between entries — structure without boxing.
+            insideHorizontal: { style: BorderStyle.SINGLE, size: 2, color: SHADE_SOFT },
+          },
         })
       );
     }

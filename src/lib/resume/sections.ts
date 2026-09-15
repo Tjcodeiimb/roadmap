@@ -34,6 +34,8 @@ export interface SectionDef {
   layout: SectionLayout;
   /** One-line explanation shown at the top of this step in the survey. */
   prompt: string;
+  /** Extra guidance shown under the prompt, where a section needs it. */
+  note?: string;
   fields: FieldDef[];
   hasBullets: boolean;
   maxBullets: number;
@@ -60,14 +62,16 @@ export const SECTION_DEFS: SectionDef[] = [
     title: "ACADEMIC QUALIFICATIONS",
     layout: "table",
     prompt: "Your degrees and schooling, most recent first.",
+    note: "Put both here — your colleges and your school boards. One row each: a degree row reads like “MBA”, a school row like “XII CBSE”.",
     fields: [
-      { key: "degree", label: "Degree", placeholder: "BBA (DBE)", width: "half" },
-      { key: "institute", label: "Institute / School", placeholder: "Indian Institute of Management, Bangalore" },
-      // Class X and XII need the examining board recorded separately from the
-      // school; degrees need the awarding university.
-      { key: "board", label: "Board / University", placeholder: "CBSE", width: "half" },
-      { key: "grade", label: "CGPA / %", placeholder: "86.30/100", width: "half" },
-      { key: "year", label: "Year", placeholder: "2024-2027", width: "half" },
+      // One column rather than separate degree/board fields: a degree has no
+      // board, and a school row carries the board in place of a degree, so
+      // splitting them leaves one or the other permanently blank.
+      { key: "degree", label: "Degree / School Board", placeholder: "MBA  ·  or  ·  XII CBSE", width: "half" },
+      { key: "institute", label: "Institute / School", placeholder: "University of Example" },
+      { key: "grade", label: "CGPA / Grade", placeholder: "8.4/10", width: "half" },
+      { key: "remarks", label: "Remarks (optional)", placeholder: "Finance major", width: "half" },
+      { key: "year", label: "Year", placeholder: "2023-2025", width: "half" },
     ],
     hasBullets: false,
     maxBullets: 0,
@@ -80,8 +84,8 @@ export const SECTION_DEFS: SectionDef[] = [
     layout: "entries",
     prompt: "Full-time roles, most recent first. Quantify every bullet you can.",
     fields: [
-      { key: "org", label: "Organisation", placeholder: "Bain & Company" },
-      { key: "role", label: "Role", placeholder: "Associate Consultant", width: "half" },
+      { key: "org", label: "Organisation", placeholder: "Acme Consulting" },
+      { key: "role", label: "Role", placeholder: "Analyst", width: "half" },
       { key: "dates", label: "Duration", placeholder: "Jun’22 – Mar’24", width: "half" },
     ],
     hasBullets: true,
@@ -95,9 +99,9 @@ export const SECTION_DEFS: SectionDef[] = [
     layout: "entries",
     prompt: "Internships and shorter work stints.",
     fields: [
-      { key: "org", label: "Organisation", placeholder: "What Customer Thinks Consulting" },
-      { key: "role", label: "Role", placeholder: "Intern", width: "half" },
-      { key: "dates", label: "Duration", placeholder: "Sep’24 – Dec’24", width: "half" },
+      { key: "org", label: "Organisation", placeholder: "Northwind Technologies" },
+      { key: "role", label: "Role", placeholder: "Summer Intern", width: "half" },
+      { key: "dates", label: "Duration", placeholder: "May’24 – Jul’24", width: "half" },
     ],
     hasBullets: true,
     maxBullets: MAX_BULLETS,
@@ -110,8 +114,8 @@ export const SECTION_DEFS: SectionDef[] = [
     layout: "entries",
     prompt: "Only worth its own section if a venture is a genuine spike on your profile — otherwise put the founder role under Work Experience.",
     fields: [
-      { key: "org", label: "Venture", placeholder: "UpForge Consulting" },
-      { key: "role", label: "Role", placeholder: "Founder & CEO", width: "half" },
+      { key: "org", label: "Venture", placeholder: "Your venture" },
+      { key: "role", label: "Role", placeholder: "Co-Founder", width: "half" },
       { key: "dates", label: "Duration", placeholder: "Dec’24 – Present", width: "half" },
     ],
     hasBullets: true,
@@ -125,9 +129,9 @@ export const SECTION_DEFS: SectionDef[] = [
     layout: "entries",
     prompt: "Formal leadership titles — committee, club and society roles.",
     fields: [
-      { key: "org", label: "Organisation", placeholder: "BMCC", width: "half" },
-      { key: "body", label: "Body / Cell", placeholder: "Entrepreneurship Development Cell", width: "half" },
-      { key: "role", label: "Role", placeholder: "Research Dept. Head", width: "half" },
+      { key: "org", label: "Organisation", placeholder: "Student Council", width: "half" },
+      { key: "body", label: "Body / Cell", placeholder: "Finance Club", width: "half" },
+      { key: "role", label: "Role", placeholder: "Vice President", width: "half" },
       { key: "dates", label: "Duration", placeholder: "Dec’24 – Present", width: "half" },
     ],
     hasBullets: true,
@@ -141,8 +145,8 @@ export const SECTION_DEFS: SectionDef[] = [
     layout: "entries",
     prompt: "Live projects, case competitions and consulting engagements.",
     fields: [
-      { key: "name", label: "Project", placeholder: "VIBAe", width: "half" },
-      { key: "kind", label: "Type", placeholder: "GTM Analysis", width: "half" },
+      { key: "name", label: "Project", placeholder: "Market entry study", width: "half" },
+      { key: "kind", label: "Type", placeholder: "Strategy", width: "half" },
     ],
     hasBullets: true,
     maxBullets: MAX_BULLETS,
@@ -154,7 +158,7 @@ export const SECTION_DEFS: SectionDef[] = [
     title: "ACHIEVEMENTS & AWARDS",
     layout: "entries",
     prompt: "Scholastic honours, competitions, prizes and scholarships — all in one bucket.",
-    fields: [{ key: "title", label: "Achievement", placeholder: "B-Plan Comp: IIM Lucknow X CM Yuva" }],
+    fields: [{ key: "title", label: "Achievement", placeholder: "National case competition — Winner" }],
     hasBullets: true,
     maxBullets: MAX_BULLETS,
     optional: true,
@@ -166,7 +170,7 @@ export const SECTION_DEFS: SectionDef[] = [
     layout: "entries",
     prompt: "Sports, clubs, volunteering — anything without a formal title, which would belong under Positions of Responsibility instead.",
     fields: [
-      { key: "activity", label: "Activity", placeholder: "National-level debating" },
+      { key: "activity", label: "Activity", placeholder: "State-level football" },
       { key: "dates", label: "Duration", placeholder: "2021 – Present", width: "half" },
     ],
     hasBullets: true,
@@ -179,7 +183,7 @@ export const SECTION_DEFS: SectionDef[] = [
     title: "SKILLS & CERTIFICATIONS",
     layout: "skills",
     prompt: "Add skills by hand, or pull in the ones you’ve unlocked on UpForge.",
-    fields: [{ key: "name", label: "Skill", placeholder: "3-Statement Modeling" }],
+    fields: [{ key: "name", label: "Skill", placeholder: "Financial modelling" }],
     hasBullets: false,
     maxBullets: 0,
     optional: true,
