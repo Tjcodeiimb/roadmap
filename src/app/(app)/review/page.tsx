@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getReviewQueue } from "@/lib/queries";
 import { ReviewCard } from "@/components/review/review-card";
 import { CheckCircleMark } from "@/components/icons";
+import { Reveal } from "@/components/ui/reveal";
 
 export default async function ReviewPage() {
   const supabase = await createClient();
@@ -38,14 +39,13 @@ export default async function ReviewPage() {
         <div>
           <div className="mb-3 text-sm font-semibold text-ink-2">Coming up</div>
           <div className="flex flex-col gap-2">
-            {upcoming.map((item) => (
-              <div
-                key={item.topicId}
-                className="flex items-center justify-between rounded-md border-2 border-ink bg-paper-2 px-4 py-3 text-sm"
-              >
-                <span className="text-ink-2">{item.title}</span>
-                <span className="text-xs text-ink-3">{formatUpcoming(item.nextReviewDate)}</span>
-              </div>
+            {upcoming.map((item, i) => (
+              <Reveal key={item.topicId} index={i}>
+                <div className="flex items-center justify-between rounded-md border-2 border-ink bg-paper-2 px-4 py-3 text-sm">
+                  <span className="text-ink-2">{item.title}</span>
+                  <span className="text-xs text-ink-3">{formatUpcoming(item.nextReviewDate)}</span>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>

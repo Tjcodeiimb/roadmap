@@ -6,6 +6,7 @@ import { InviteForm } from "@/components/admin/invite-form";
 import { RosterTable } from "@/components/admin/roster-table";
 import { BrokenLinksTable } from "@/components/admin/broken-links-table";
 import { trackColor } from "@/lib/track-colors";
+import { Reveal } from "@/components/ui/reveal";
 
 export default async function AdminPage() {
   const supabase = await createClient();
@@ -26,13 +27,15 @@ export default async function AdminPage() {
       <div>
         <div className="mb-3 text-sm font-semibold text-ink">Manage content</div>
         <div className="grid gap-3 sm:grid-cols-3">
-          {tracks.map((t) => (
-            <Link key={t.id} href={`/admin/content/${t.id}`}>
-              <Card className="press" style={{ borderTopWidth: "6px", borderTopColor: trackColor(t.id) }}>
-                <div className="font-display font-bold text-ink">{t.label}</div>
-                <div className="mt-1 text-sm text-ink-2">Edit phases, topics & resources</div>
-              </Card>
-            </Link>
+          {tracks.map((t, i) => (
+            <Reveal key={t.id} index={i}>
+              <Link href={`/admin/content/${t.id}`}>
+                <Card className="press" style={{ borderTopWidth: "6px", borderTopColor: trackColor(t.id) }}>
+                  <div className="font-display font-bold text-ink">{t.label}</div>
+                  <div className="mt-1 text-sm text-ink-2">Edit phases, topics & resources</div>
+                </Card>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </div>

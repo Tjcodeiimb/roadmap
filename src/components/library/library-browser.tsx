@@ -103,27 +103,28 @@ export function LibraryBrowser({ resources }: { resources: LibraryResource[] }) 
         <section>
           <h2 className="mb-3 font-display text-lg font-bold text-ink">Continue watching</h2>
           <div className="flex gap-3 overflow-x-auto pb-1">
-            {continueWatching.map((r) => (
-              <Link
-                key={r.id}
-                href={`/library/resource/${r.id}`}
-                className="press group flex w-56 shrink-0 flex-col gap-2 rounded-md border-2 border-ink bg-paper-2 p-4 shadow-[4px_4px_0_0_var(--brutal-shadow)]"
-              >
-                <div className="flex items-center gap-2 text-xs font-bold text-ink-3">
-                  <PlayMark size={13} className="text-accent" /> {r.trackLabel}
-                </div>
-                <div className="line-clamp-2 text-sm font-bold text-ink group-hover:underline">{r.title}</div>
-                {r.durationSeconds != null && r.durationSeconds > 0 && (
-                  <div className="h-2 w-full overflow-hidden rounded-sm border-2 border-ink bg-paper-3">
-                    <div
-                      className="h-full bg-accent"
-                      style={{
-                        width: `${Math.min(100, Math.round((r.lastPositionSeconds / r.durationSeconds) * 100))}%`,
-                      }}
-                    />
+            {continueWatching.map((r, i) => (
+              <motion.div key={r.id} {...listReveal(i)} className="shrink-0">
+                <Link
+                  href={`/library/resource/${r.id}`}
+                  className="press group flex w-56 flex-col gap-2 rounded-md border-2 border-ink bg-paper-2 p-4 shadow-[4px_4px_0_0_var(--brutal-shadow)]"
+                >
+                  <div className="flex items-center gap-2 text-xs font-bold text-ink-3">
+                    <PlayMark size={13} className="text-accent" /> {r.trackLabel}
                   </div>
-                )}
-              </Link>
+                  <div className="line-clamp-2 text-sm font-bold text-ink group-hover:underline">{r.title}</div>
+                  {r.durationSeconds != null && r.durationSeconds > 0 && (
+                    <div className="h-2 w-full overflow-hidden rounded-sm border-2 border-ink bg-paper-3">
+                      <div
+                        className="h-full bg-accent"
+                        style={{
+                          width: `${Math.min(100, Math.round((r.lastPositionSeconds / r.durationSeconds) * 100))}%`,
+                        }}
+                      />
+                    </div>
+                  )}
+                </Link>
+              </motion.div>
             ))}
           </div>
         </section>
