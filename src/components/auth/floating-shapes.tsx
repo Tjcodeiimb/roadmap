@@ -18,14 +18,17 @@ const SHAPES: {
   duration: number;
   rotate: number;
 }[] = [
-  { kind: "square", color: "var(--track-marketing)", top: "8%", left: "10%", size: 64, duration: 7, rotate: 12 },
-  { kind: "circle", color: "var(--track-data)", top: "18%", left: "82%", size: 52, duration: 9, rotate: 0 },
-  { kind: "triangle", color: "var(--track-product)", top: "70%", left: "6%", size: 70, duration: 8, rotate: -10 },
-  { kind: "square", color: "var(--track-people)", top: "78%", left: "80%", size: 46, duration: 6.5, rotate: -18 },
-  { kind: "circle", color: "var(--track-operations)", top: "4%", left: "48%", size: 34, duration: 10, rotate: 0 },
-  { kind: "triangle", color: "var(--track-cybersecurity)", top: "88%", left: "45%", size: 44, duration: 7.5, rotate: 20 },
-  { kind: "square", color: "var(--track-ux)", top: "42%", left: "4%", size: 38, duration: 8.5, rotate: 8 },
-  { kind: "circle", color: "var(--track-sustainability)", top: "38%", left: "90%", size: 40, duration: 9.5, rotate: 0 },
+  // Kept clear of the bottom ~40% of the panel, where the feature chips
+  // live (see BrandPanel) — this panel is narrower than the old full-width
+  // login background, so shapes need a tighter, higher-up cluster instead
+  // of spreading the full height.
+  { kind: "square", color: "var(--track-marketing)", top: "6%", left: "8%", size: 56, duration: 7, rotate: 12 },
+  { kind: "circle", color: "var(--track-data)", top: "14%", left: "80%", size: 46, duration: 9, rotate: 0 },
+  { kind: "triangle", color: "var(--track-product)", top: "48%", left: "4%", size: 42, duration: 8, rotate: -10 },
+  { kind: "square", color: "var(--track-people)", top: "40%", left: "84%", size: 40, duration: 6.5, rotate: -18 },
+  { kind: "circle", color: "var(--track-operations)", top: "2%", left: "46%", size: 30, duration: 10, rotate: 0 },
+  { kind: "square", color: "var(--track-ux)", top: "34%", left: "6%", size: 32, duration: 8.5, rotate: 8 },
+  { kind: "circle", color: "var(--track-cybersecurity)", top: "24%", left: "62%", size: 34, duration: 9.5, rotate: 0 },
 ];
 
 function Shape({ shape, index }: { shape: (typeof SHAPES)[number]; index: number }) {
