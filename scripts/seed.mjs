@@ -47,6 +47,11 @@ const TRACK_FILES = [
   'data.json',
   'product.json',
   'sales.json',
+  'ux.json',
+  'operations.json',
+  'cybersecurity.json',
+  'people.json',
+  'sustainability.json',
 ];
 
 // Mirrors migration 0002's SQL backfill in JS — same priority order,

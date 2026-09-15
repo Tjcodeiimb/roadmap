@@ -25,6 +25,11 @@ const TRACK_FILES = [
   'data.json',
   'product.json',
   'sales.json',
+  'ux.json',
+  'operations.json',
+  'cybersecurity.json',
+  'people.json',
+  'sustainability.json',
 ];
 
 let errors = 0;

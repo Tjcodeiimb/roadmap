@@ -16,7 +16,22 @@
     { "id": "skill-product-prioritization", "name": "Prioritization & Roadmapping", "domain": "product", "description": "RICE, opportunity trees, and turning a backlog into a defensible roadmap.", "tier": "intermediate", "icon_key": "product", "xp_reward": 150, "threshold": 0 },
 
     { "id": "skill-sales-prospecting", "name": "Prospecting & Qualifying", "domain": "sales", "description": "Outbound fundamentals and qualifying a lead with BANT/MEDDIC.", "tier": "foundational", "icon_key": "sales", "xp_reward": 100, "threshold": 0 },
-    { "id": "skill-sales-objections", "name": "Objection Handling", "domain": "sales", "description": "Presenting value and handling the objections that actually come up in a deal.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 150, "threshold": 0 }
+    { "id": "skill-sales-objections", "name": "Objection Handling", "domain": "sales", "description": "Presenting value and handling the objections that actually come up in a deal.", "tier": "intermediate", "icon_key": "sales", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-ux-research", "name": "UX Research Fundamentals", "domain": "ux", "description": "Running user interviews and surveys, then turning findings into personas and journey maps.", "tier": "foundational", "icon_key": "ux", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-ux-prototyping", "name": "Prototyping & Usability Testing", "domain": "ux", "description": "Building a clickable Figma prototype and testing it against real users and Nielsen's heuristics.", "tier": "intermediate", "icon_key": "ux", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-ops-process", "name": "Process Mapping & Lean Fundamentals", "domain": "operations", "description": "Value stream mapping, the eight wastes of Lean, and DMAIC as a structured way to fix a broken process.", "tier": "foundational", "icon_key": "operations", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-ops-metrics", "name": "Operational Metrics & Continuous Improvement", "domain": "operations", "description": "Building a KPI/OKR dashboard and using root-cause tools to keep an operation improving.", "tier": "intermediate", "icon_key": "operations", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-sec-fundamentals", "name": "Security Fundamentals & Threat Awareness", "domain": "security", "description": "The CIA triad, common attack types, and recognizing phishing and social engineering.", "tier": "foundational", "icon_key": "cybersecurity", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-sec-risk", "name": "Risk Assessment & Compliance", "domain": "security", "description": "Running a risk assessment and navigating SOC 2, ISO 27001, and NIST compliance frameworks.", "tier": "intermediate", "icon_key": "cybersecurity", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-people-management", "name": "People Management Fundamentals", "domain": "people", "description": "Running effective 1:1s, delegating well, and the core practices of managing people for the first time.", "tier": "foundational", "icon_key": "people", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-people-hiring", "name": "Hiring & Structured Interviewing", "domain": "people", "description": "Writing job descriptions, sourcing candidates, and running structured interviews that reduce bias.", "tier": "intermediate", "icon_key": "people", "xp_reward": 150, "threshold": 0 },
+
+    { "id": "skill-esg-fundamentals", "name": "ESG Fundamentals & Materiality", "domain": "esg", "description": "The environmental, social, and governance basics, and how a materiality assessment decides what to prioritize.", "tier": "foundational", "icon_key": "sustainability", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-esg-reporting", "name": "ESG Reporting Frameworks", "domain": "esg", "description": "Navigating GRI, MSCI ratings, and the other frameworks companies use to report ESG performance.", "tier": "intermediate", "icon_key": "sustainability", "xp_reward": 150, "threshold": 0 }
   ],
   "skill_resources": [
     { "skill_id": "skill-excel-lookups", "resource_id": "exc-p2-r1" },
@@ -101,6 +116,82 @@
     { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r3" },
     { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r4" },
     { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r5" },
-    { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r6" }
+    { "skill_id": "skill-sales-objections", "resource_id": "sls-p4-r6" },
+
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r1" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r2" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r3" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r4" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r5" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r6" },
+    { "skill_id": "skill-ux-research", "resource_id": "ux-p2-r7" },
+
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r1" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r2" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r3" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r4" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r5" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r6" },
+    { "skill_id": "skill-ux-prototyping", "resource_id": "ux-p5-r7" },
+
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r1" },
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r2" },
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r3" },
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r4" },
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r5" },
+    { "skill_id": "skill-ops-process", "resource_id": "ops-p2-r6" },
+
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r1" },
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r2" },
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r3" },
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r4" },
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r5" },
+    { "skill_id": "skill-ops-metrics", "resource_id": "ops-p5-r6" },
+
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r1" },
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r2" },
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r3" },
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r4" },
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r5" },
+    { "skill_id": "skill-sec-fundamentals", "resource_id": "sec-p1-r6" },
+
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r1" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r2" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r3" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r4" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r5" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r6" },
+    { "skill_id": "skill-sec-risk", "resource_id": "sec-p4-r7" },
+
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r1" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r2" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r3" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r4" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r5" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r6" },
+    { "skill_id": "skill-people-management", "resource_id": "ppl-p1-r7" },
+
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r1" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r2" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r3" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r4" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r5" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r6" },
+    { "skill_id": "skill-people-hiring", "resource_id": "ppl-p2-r7" },
+
+    { "skill_id": "skill-esg-fundamentals", "resource_id": "esg-p1-r1" },
+    { "skill_id": "skill-esg-fundamentals", "resource_id": "esg-p1-r2" },
+    { "skill_id": "skill-esg-fundamentals", "resource_id": "esg-p1-r3" },
+    { "skill_id": "skill-esg-fundamentals", "resource_id": "esg-p1-r4" },
+    { "skill_id": "skill-esg-fundamentals", "resource_id": "esg-p1-r5" },
+    { "skill_id": "skill-esg-fundamentals", "resource_id": "esg-p1-r6" },
+
+    { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r1" },
+    { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r2" },
+    { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r3" },
+    { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r4" },
+    { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r5" },
+    { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r6" },
+    { "skill_id": "skill-esg-reporting", "resource_id": "esg-p5-r7" }
   ]
 }

@@ -135,11 +135,12 @@ Keep this browser tab open — you'll copy these in a moment.
 
 ## 3. Load the course content into the database
 
-This inserts all 9 tracks (AI, Finance, Consulting, Excel & Business
+This inserts all 14 tracks (AI, Finance, Consulting, Excel & Business
 Modelling, Behavioral Psychology, Growth & Marketing, Data & Analytics,
-Product & Strategy, B2B Sales — every phase, topic, and resource link),
-plus the resume-ready skills and marketplace cohort bundles built on top
-of them, into Supabase. It only touches content tables, never anyone's
+Product & Strategy, B2B Sales, UX & Discovery, Operations & Process,
+Cybersecurity & Risk, People & Org Design, ESG & Business Models — every
+phase, topic, and resource link), plus the resume-ready skills and
+marketplace cohort bundles built on top of them, into Supabase. It only touches content tables, never anyone's
 personal progress, so it's safe to re-run later after you add more
 resources through the SQL editor directly (though normally you'll use the
 in-app Admin panel for that instead — see step 5).
@@ -172,15 +173,15 @@ on):
    ```
 6. You should see output like:
    ```
-   Seeding 9 tracks, 56 phases, 198 topics, 378 resources, 12 skills, 4 cohorts...
-     tracks: 9 rows
-     phases: 56 rows
-     topics: 198 rows
-     resources: 378 rows
-     skills: 12 rows
-     cohorts: 4 rows
-     cohort_courses: 12 rows
-     skill_resources: 72 rows
+   Seeding 14 tracks, 86 phases, 288 topics, 573 resources, 22 skills, 7 cohorts...
+     tracks: 14 rows
+     phases: 86 rows
+     topics: 288 rows
+     resources: 573 rows
+     skills: 22 rows
+     cohorts: 7 rows
+     cohort_courses: 21 rows
+     skill_resources: 138 rows
    Done. All tracks, skills and cohorts are now live in the database.
    ```
 

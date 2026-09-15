@@ -43,6 +43,39 @@
       "icon_key": "sales",
       "estimated_hours": 150,
       "published": true
+    },
+    {
+      "id": "trust-risk-operator",
+      "name": "trust-risk-operator",
+      "label": "Trust & Risk Operator",
+      "summary": "Security literacy, operational discipline, and structured problem-solving for anyone owning risk, compliance, or process at a growing company.",
+      "tier": "advanced",
+      "order_index": 5,
+      "icon_key": "cybersecurity",
+      "estimated_hours": 190,
+      "published": true
+    },
+    {
+      "id": "people-leader",
+      "name": "people-leader",
+      "label": "People Leader",
+      "summary": "The management fundamentals, behavioral science, and consulting-grade problem-solving behind leading a team well.",
+      "tier": "intermediate",
+      "order_index": 6,
+      "icon_key": "people",
+      "estimated_hours": 170,
+      "published": true
+    },
+    {
+      "id": "full-stack-product-builder",
+      "name": "full-stack-product-builder",
+      "label": "Full-Stack Product Builder",
+      "summary": "User research and prototyping, product discovery and prioritization, and the data skills to know what's actually working.",
+      "tier": "intermediate",
+      "order_index": 7,
+      "icon_key": "ux",
+      "estimated_hours": 180,
+      "published": true
     }
   ],
   "cohort_courses": [
@@ -60,6 +93,18 @@
 
     { "cohort_id": "customer-facing-growth", "track_id": "psychology", "order_index": 1 },
     { "cohort_id": "customer-facing-growth", "track_id": "marketing", "order_index": 2 },
-    { "cohort_id": "customer-facing-growth", "track_id": "sales", "order_index": 3 }
+    { "cohort_id": "customer-facing-growth", "track_id": "sales", "order_index": 3 },
+
+    { "cohort_id": "trust-risk-operator", "track_id": "cybersecurity", "order_index": 1 },
+    { "cohort_id": "trust-risk-operator", "track_id": "operations", "order_index": 2 },
+    { "cohort_id": "trust-risk-operator", "track_id": "consulting", "order_index": 3 },
+
+    { "cohort_id": "people-leader", "track_id": "people", "order_index": 1 },
+    { "cohort_id": "people-leader", "track_id": "psychology", "order_index": 2 },
+    { "cohort_id": "people-leader", "track_id": "consulting", "order_index": 3 },
+
+    { "cohort_id": "full-stack-product-builder", "track_id": "ux", "order_index": 1 },
+    { "cohort_id": "full-stack-product-builder", "track_id": "product", "order_index": 2 },
+    { "cohort_id": "full-stack-product-builder", "track_id": "data", "order_index": 3 }
   ]
 }
