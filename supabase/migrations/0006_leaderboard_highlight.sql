@@ -9,6 +9,8 @@
 -- fixing that gap. Additive/safe to re-run like every other migration here.
 -- ============================================================================
 
+drop function if exists public.get_leaderboard();
+
 create or replace function public.get_leaderboard()
 returns table (full_name text, total_xp int, current_streak int, is_you boolean)
 language sql
