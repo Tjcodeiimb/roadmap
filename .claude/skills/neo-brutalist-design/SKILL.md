@@ -39,6 +39,18 @@ already relies on.
   button "sinking" into the page) rather than a subtle opacity fade.
 - **No gradients, no blur, no glassmorphism.** Every surface is a flat
   fill with a hard border.
+- **The signature "press" interaction**: instead of a soft opacity/color
+  fade on hover, an interactive element (button, card, link-styled-as-
+  button) sits at a base offset from its hard shadow, then on hover/active
+  the element translates toward the shadow (e.g. `translate(2px, 2px)`)
+  while the shadow itself shrinks by the same amount — reading as the
+  element physically pressing down into the page. Keep it cheap
+  (`transform`/`box-shadow` only, short duration, no easing curve that
+  implies softness) so it stays "snappy and mechanical," not smooth.
+- **Don't soften it later.** The harshness (hard edges, flat shadows, no
+  blur) is the identity, not a rough draft to polish — resist rounding
+  corners back off or adding blur "for accessibility/elegance" reasons
+  once it's in; that just turns it back into generic SaaS design.
 
 ## Where to make the change (token-first, not component-by-component)
 
