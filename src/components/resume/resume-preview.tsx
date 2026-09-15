@@ -111,6 +111,16 @@ function SkillsRow({ entries }: { entries: ResumeEntry[] }) {
   );
 }
 
+/**
+ * A4 at 96 CSS px per inch. The exporter uses the same page size and 0.5in
+ * margins (720 twips), so these numbers keep the preview dimensionally
+ * identical to the .docx — which is what lets the editor measure this
+ * element's height and say something true about whether it fits on one page.
+ */
+export const A4_WIDTH_PX = 794;
+export const A4_HEIGHT_PX = 1123;
+const A4_MARGIN_PX = 48;
+
 export function ResumePreview({ doc }: { doc: ResumeDoc }) {
   const sections = filledSections(doc);
   const { header } = doc;
@@ -120,8 +130,9 @@ export function ResumePreview({ doc }: { doc: ResumeDoc }) {
 
   return (
     <div
-      className="mx-auto w-full max-w-[794px] px-8 py-8 shadow-[0_1px_4px_rgba(0,0,0,0.18)]"
-      style={{ background: PAPER, aspectRatio: "auto" }}
+      data-print-root
+      className="mx-auto w-full shadow-[0_1px_4px_rgba(0,0,0,0.18)]"
+      style={{ background: PAPER, maxWidth: A4_WIDTH_PX, padding: A4_MARGIN_PX }}
     >
       <header className="text-center">
         <h1 className="text-[17px] font-bold uppercase tracking-[0.08em]" style={{ color: INK }}>

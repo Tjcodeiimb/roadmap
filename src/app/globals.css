@@ -266,6 +266,82 @@ body {
   }
 }
 
+/* ---------------------------------------------------------------------------
+   Background patterns.
+
+   One derived token rather than a literal per theme: --ink already flips
+   near-black -> near-white across the three blocks above, so the same 8% mix
+   reads as a faint dark line on light paper and a faint light line on dark.
+   Never hard-code a pattern colour here — it will be wrong in one mode.
+
+   Restraint is the point. These belong on the login splash, marketplace
+   headers and empty states. They must not sit behind body text people read
+   daily (dashboard rows, library lists, the resume editor), where they cost
+   legibility for decoration.
+   --------------------------------------------------------------------------- */
+:root {
+  --grid-line: color-mix(in srgb, var(--ink) 8%, transparent);
+  --grid-line-strong: color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+.bg-grid {
+  background-image:
+    repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 32px);
+}
+
+.bg-dots {
+  background-image: radial-gradient(var(--grid-line-strong) 1.4px, transparent 1.6px);
+  background-size: 18px 18px;
+}
+
+.bg-stripes {
+  background-image: repeating-linear-gradient(45deg, var(--grid-line) 0 8px, transparent 8px 18px);
+}
+
+/* Fades a pattern out before it reaches the content sitting on top of it. */
+.bg-fade-down {
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+/* ---------------------------------------------------------------------------
+   Print: the resume preview IS the PDF.
+
+   Rather than maintain a third rendering implementation alongside the HTML
+   preview and the .docx, printing hides the app chrome and promotes the
+   already-WYSIWYG preview to the page. `visibility` rather than `display`
+   keeps the ancestor layout intact while emptying it visually.
+   --------------------------------------------------------------------------- */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  [data-print-root],
+  [data-print-root] * {
+    visibility: visible;
+  }
+
+  [data-print-root] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: none !important;
+    box-shadow: none !important;
+  }
+}
+
 .scrollbar-thin::-webkit-scrollbar {
   width: 6px;
   height: 6px;

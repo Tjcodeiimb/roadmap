@@ -90,7 +90,7 @@ async function CohortsTab({ supabase }: { supabase: Awaited<ReturnType<typeof cr
 
   if (!cohorts.length) {
     return (
-      <div className="rounded-md border-2 border-ink bg-paper-2 p-10 text-center shadow-[4px_4px_0_0_var(--brutal-shadow)]">
+      <div className="bg-dots rounded-md border-2 border-ink bg-paper-2 p-10 text-center shadow-[4px_4px_0_0_var(--brutal-shadow)]">
         <div className="font-bold text-ink">No cohorts yet</div>
         <p className="mt-1 text-sm text-ink-2">
           Curated multi-course bundles are on the way — check back soon.

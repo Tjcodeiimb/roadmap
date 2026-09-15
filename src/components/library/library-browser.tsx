@@ -222,7 +222,7 @@ export function LibraryBrowser({ resources }: { resources: LibraryResource[] }) 
       </div>
 
       {filtered.length === 0 ? (
-        <div className="rounded-md border-2 border-ink bg-paper-2 p-10 text-center shadow-[4px_4px_0_0_var(--brutal-shadow)]">
+        <div className="bg-dots rounded-md border-2 border-ink bg-paper-2 p-10 text-center shadow-[4px_4px_0_0_var(--brutal-shadow)]">
           <div className="font-bold text-ink">No resources match</div>
           <p className="mt-1 text-sm text-ink-2">Try clearing a filter or searching for something else.</p>
           <button

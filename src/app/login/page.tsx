@@ -20,7 +20,7 @@ export default async function LoginPage() {
           so this half always reads as the bold brand moment regardless of
           light/dark; the form panel beside it is fully theme-aware. */}
       <div
-        className="relative flex min-h-[42vh] flex-col overflow-hidden px-6 py-10 md:min-h-screen md:w-1/2 md:px-14 md:py-16"
+        className="bg-grid relative flex min-h-[42vh] flex-col overflow-hidden px-6 py-10 md:min-h-screen md:w-1/2 md:px-14 md:py-16"
         style={{ backgroundColor: "var(--login-bg)" }}
       >
         <FloatingShapes />

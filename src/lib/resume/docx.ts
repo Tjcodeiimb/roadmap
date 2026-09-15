@@ -140,7 +140,46 @@ function educationTable(entries: ResumeEntry[]) {
   });
 }
 
-export async function buildResumeDocx(doc: ResumeDoc): Promise<Buffer> {
+/**
+ * The ATS-safe alternative: no tables at all, everything as flat paragraphs
+ * in reading order.
+ *
+ * The table layout is not actually the parsing hazard it's usually claimed to
+ * be — a document-order text extractor walks this file's per-entry rows and
+ * gets correct semantic order, because each entry is its own row rather than
+ * one page-tall two-column sidebar. The one genuinely risky piece is the
+ * bordered academics grid, where a linear token stream can mis-associate a
+ * CGPA with the wrong degree or read a header label as data. This variant
+ * exists for off-campus applications that go through a parser; the default
+ * stays table-based, because on campus the reader is a human looking at a
+ * compiled CV book and the mandated format is what matters.
+ */
+function flatEntry(entry: ResumeEntry, labelKeys: string[], withBullets: boolean): Paragraph[] {
+  const labels = labelKeys.map((key) => entry.fields[key]).filter(Boolean);
+  const out: Paragraph[] = [];
+  if (labels.length) {
+    // Label, role and dates on one line so a parser reads them as one record.
+    out.push(line(labels.join(" | "), { bold: true }));
+  }
+  if (withBullets) out.push(...entry.bullets.map(bullet));
+  return out;
+}
+
+function flatEducation(entries: ResumeEntry[]): Paragraph[] {
+  // Each qualification becomes one self-contained line, so no column/value
+  // mis-association is possible.
+  return entries.map((entry) =>
+    line(
+      EDUCATION_COLS.map((col) => entry.fields[col.key])
+        .filter(Boolean)
+        .join(" | ")
+    )
+  );
+}
+
+export type ResumeLayout = "format" | "ats";
+
+export async function buildResumeDocx(doc: ResumeDoc, layout: ResumeLayout = "format"): Promise<Buffer> {
   const { header } = doc;
   const contact = [header.gender, header.age, header.phone, header.email, header.linkedin]
     .filter(Boolean)
@@ -170,11 +209,23 @@ export async function buildResumeDocx(doc: ResumeDoc): Promise<Buffer> {
 
     children.push(sectionHeading(section.title || def.title));
 
-    if (def.layout === "table") {
-      children.push(educationTable(section.entries));
-    } else if (def.layout === "skills") {
+    if (def.layout === "skills") {
       const names = section.entries.map((e) => e.fields.name).filter(Boolean);
       if (names.length) children.push(line(names.join("  ·  ")));
+    } else if (layout === "ats") {
+      children.push(
+        ...(def.layout === "table"
+          ? flatEducation(section.entries)
+          : section.entries.flatMap((entry) =>
+              flatEntry(
+                entry,
+                def.fields.map((f) => f.key),
+                def.hasBullets
+              )
+            ))
+      );
+    } else if (def.layout === "table") {
+      children.push(educationTable(section.entries));
     } else {
       children.push(
         new Table({
@@ -213,7 +264,8 @@ export async function buildResumeDocx(doc: ResumeDoc): Promise<Buffer> {
 }
 
 /** "Shardul Singh" -> "Shardul_Singh_Resume.docx" */
-export function resumeFilename(fullName: string): string {
+export function resumeFilename(fullName: string, layout: ResumeLayout = "format"): string {
   const base = fullName.trim().replace(/[^\w\s-]/g, "").replace(/\s+/g, "_");
-  return `${base || "Resume"}_Resume.docx`.replace(/_Resume_Resume/, "_Resume");
+  const suffix = layout === "ats" ? "_Resume_ATS" : "_Resume";
+  return `${base || "Resume"}${suffix}.docx`.replace(/_Resume_Resume/, "_Resume");
 }

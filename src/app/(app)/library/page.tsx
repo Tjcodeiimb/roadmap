@@ -35,7 +35,7 @@ export default async function LibraryPage() {
       </div>
 
       {resources.length === 0 ? (
-        <div className="rounded-md border-2 border-ink bg-paper-2 p-10 text-center shadow-[4px_4px_0_0_var(--brutal-shadow)]">
+        <div className="bg-dots rounded-md border-2 border-ink bg-paper-2 p-10 text-center shadow-[4px_4px_0_0_var(--brutal-shadow)]">
           <div className="font-bold text-ink">No enrolled courses yet</div>
           <p className="mt-1 text-sm text-ink-2">
             Enroll in a course from the marketplace to start building your library.

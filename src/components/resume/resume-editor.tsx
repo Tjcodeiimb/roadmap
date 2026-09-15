@@ -2,10 +2,10 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Trash2, ChevronLeft, ChevronRight, Download } from "lucide-react";
+import { Plus, Trash2, ChevronLeft, ChevronRight, Download, Printer, Eye, PencilLine } from "lucide-react";
 import clsx from "clsx";
 import { Button } from "@/components/ui/button";
-import { ResumePreview } from "@/components/resume/resume-preview";
+import { ResumePreview, A4_HEIGHT_PX, A4_WIDTH_PX } from "@/components/resume/resume-preview";
 import { SkillPicker } from "@/components/resume/skill-picker";
 import { saveResumeDoc } from "@/app/actions/resume";
 import { SECTION_DEFS, BULLET_SOFT_LIMIT, sectionDef } from "@/lib/resume/sections";
@@ -16,6 +16,17 @@ import { uiTransition } from "@/lib/motion";
 type SaveState = "idle" | "saving" | "saved" | "error";
 
 const AUTOSAVE_MS = 800;
+
+/**
+ * Quantified bullets are the single most-emphasised content rule for these
+ * CVs — "every point needs a metric". A digit anywhere is a crude proxy, but
+ * it catches the real failure (a bullet that describes a responsibility
+ * rather than a result) without ever being wrong in a way that blocks
+ * someone. It's a hint, never a validation error.
+ */
+function hasMetric(bullet: string): boolean {
+  return /\d/.test(bullet);
+}
 
 export function ResumeEditor({
   resumeId,
@@ -30,6 +41,35 @@ export function ResumeEditor({
   const [step, setStep] = useState(0);
   const [saveState, setSaveState] = useState<SaveState>("idle");
   const [pickerOpen, setPickerOpen] = useState(false);
+  // Below lg there isn't room for both, and stacking the preview under the
+  // whole editor makes it useless — you'd scroll past every field to see it.
+  const [view, setView] = useState<"edit" | "preview">("edit");
+
+  // One page is a hard rule at these schools, so rather than estimating from
+  // line counts, the preview is laid out at true A4 width and then scaled
+  // down to fit its column. That keeps it honestly WYSIWYG *and* makes its
+  // height a real measurement: offsetHeight reports the pre-transform layout
+  // height, so dividing by A4 height gives an actual page count.
+  const frameRef = useRef<HTMLDivElement | null>(null);
+  const previewRef = useRef<HTMLDivElement | null>(null);
+  const [scale, setScale] = useState(1);
+  const [pageFill, setPageFill] = useState(0);
+
+  useEffect(() => {
+    if (typeof ResizeObserver === "undefined") return;
+    const measure = () => {
+      const frame = frameRef.current;
+      const preview = previewRef.current;
+      if (!frame || !preview) return;
+      setScale(Math.min(1, frame.clientWidth / A4_WIDTH_PX));
+      setPageFill(preview.offsetHeight / A4_HEIGHT_PX);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    if (frameRef.current) observer.observe(frameRef.current);
+    if (previewRef.current) observer.observe(previewRef.current);
+    return () => observer.disconnect();
+  }, [view]);
 
   // The debounce timer and the latest doc are refs so the flush-on-unmount
   // effect can see the newest value without re-subscribing on every keystroke.
@@ -163,8 +203,31 @@ export function ResumeEditor({
 
   return (
     <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+      {/* Mobile only — there's no room for both panes below lg. */}
+      <div className="flex gap-1.5 lg:hidden" role="tablist" aria-label="Editor or preview">
+        {(
+          [
+            { id: "edit", label: "Edit", Icon: PencilLine },
+            { id: "preview", label: "Preview", Icon: Eye },
+          ] as const
+        ).map(({ id, label, Icon }) => (
+          <button
+            key={id}
+            role="tab"
+            aria-selected={view === id}
+            onClick={() => setView(id)}
+            className={clsx(
+              "press-sm flex flex-1 items-center justify-center gap-1.5 rounded-md border-2 border-ink px-3 py-2 text-sm font-bold",
+              view === id ? "bg-ink text-paper" : "bg-paper-2 text-ink-2"
+            )}
+          >
+            <Icon size={15} /> {label}
+          </button>
+        ))}
+      </div>
+
       {/* Editor column */}
-      <div className="flex min-w-0 flex-1 flex-col gap-4">
+      <div className={clsx("min-w-0 flex-1 flex-col gap-4", view === "edit" ? "flex" : "hidden lg:flex")}>
         <SectionTabs step={step} onStep={setStep} doc={doc} />
 
         <div className="rounded-md border-2 border-ink bg-paper-2 p-5 shadow-[4px_4px_0_0_var(--brutal-shadow)]">
@@ -246,19 +309,49 @@ export function ResumeEditor({
       </div>
 
       {/* Preview column */}
-      <div className="flex w-full flex-col gap-3 lg:sticky lg:top-6 lg:w-[46%]">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-bold uppercase tracking-wide text-ink-3">Live preview</span>
-          <a
-            href={`/api/resume/${resumeId}/export`}
-            className="press-sm flex items-center gap-1.5 rounded-md border-2 border-ink bg-accent px-3 py-1.5 text-xs font-bold text-accent-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]"
-          >
-            <Download size={13} /> Word
-          </a>
+      <div
+        className={clsx(
+          "w-full flex-col gap-3 lg:sticky lg:top-6 lg:flex lg:w-[46%]",
+          view === "preview" ? "flex" : "hidden"
+        )}
+      >
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <PageBudget fill={pageFill} />
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => window.print()}
+              className="press-sm flex items-center gap-1.5 rounded-md border-2 border-ink bg-paper-2 px-3 py-1.5 text-xs font-bold text-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]"
+            >
+              <Printer size={13} /> PDF
+            </button>
+            <a
+              href={`/api/resume/${resumeId}/export`}
+              className="press-sm flex items-center gap-1.5 rounded-md border-2 border-ink bg-accent px-3 py-1.5 text-xs font-bold text-accent-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]"
+            >
+              <Download size={13} /> Word
+            </a>
+          </div>
         </div>
-        <div className="max-h-[78vh] overflow-y-auto rounded-md border-2 border-ink bg-paper-3 p-3">
-          <ResumePreview doc={doc} />
+
+        <div ref={frameRef} className="overflow-hidden rounded-md border-2 border-ink bg-paper-3 p-3">
+          {/* Laid out at true A4 width, then scaled to fit — so what's on
+              screen matches the export, and the height measurement is real. */}
+          <div style={{ height: (pageFill || 1) * A4_HEIGHT_PX * scale }}>
+            <div
+              ref={previewRef}
+              style={{ width: A4_WIDTH_PX, transform: `scale(${scale})`, transformOrigin: "top left" }}
+            >
+              <ResumePreview doc={doc} />
+            </div>
+          </div>
         </div>
+
+        <a
+          href={`/api/resume/${resumeId}/export?layout=ats`}
+          className="text-xs font-bold text-ink-3 underline decoration-2 underline-offset-4 hover:text-ink"
+        >
+          Download an ATS-safe version (no tables, for online applications)
+        </a>
       </div>
 
       <SkillPicker
@@ -272,6 +365,23 @@ export function ResumeEditor({
         }}
       />
     </div>
+  );
+}
+
+function PageBudget({ fill }: { fill: number }) {
+  if (fill === 0) return <span className="text-xs font-bold uppercase tracking-wide text-ink-3">Live preview</span>;
+
+  const pages = Math.max(1, Math.ceil(fill - 0.001));
+  const over = fill > 1;
+  // Roughly how much has to come out, in printed lines, at ~13px per line.
+  const linesOver = Math.ceil(((fill - 1) * A4_HEIGHT_PX) / 13);
+
+  return (
+    <span className={clsx("text-xs font-bold", over ? "text-danger" : "text-success")}>
+      {over
+        ? `${pages} pages — trim about ${linesOver} line${linesOver === 1 ? "" : "s"}`
+        : `Fits on one page · ${Math.round(fill * 100)}% full`}
+    </span>
   );
 }
 
@@ -426,6 +536,7 @@ function EntryCard({
         <div className="mt-4 flex flex-col gap-2">
           {entry.bullets.map((bullet, i) => {
             const over = bullet.length > BULLET_SOFT_LIMIT;
+            const unquantified = bullet.trim().length > 0 && !hasMetric(bullet);
             return (
               <div key={i} className="flex items-start gap-2">
                 <div className="flex-1">
@@ -435,9 +546,12 @@ function EntryCard({
                     rows={2}
                     className="w-full resize-y rounded-md border-2 border-ink bg-paper-2 px-3 py-2 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-accent"
                   />
-                  <div className={clsx("mt-0.5 text-[11px] font-bold", over ? "text-danger" : "text-ink-3")}>
-                    {bullet.length}/{BULLET_SOFT_LIMIT}
-                    {over && " — will wrap onto a second line"}
+                  <div className="mt-0.5 flex flex-wrap items-center gap-x-3 text-[11px] font-bold">
+                    <span className={over ? "text-danger" : "text-ink-3"}>
+                      {bullet.length}/{BULLET_SOFT_LIMIT}
+                      {over && " — will wrap onto a second line"}
+                    </span>
+                    {unquantified && <span className="text-ink-3">no number — can you quantify the result?</span>}
                   </div>
                 </div>
                 <button
