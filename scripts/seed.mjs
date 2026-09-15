@@ -1,4 +1,5 @@
-// One-time (and re-runnable) content seed script.
+// One-time (and re-runnable) content seed script. Also runs automatically
+// via .github/workflows/seed.yml whenever scripts/seed-data/ changes.
 //
 // Loads the AI / Finance / Consulting track content from scripts/seed-data/*.json
 // and upserts it into Supabase. Content only — it never touches any user's
