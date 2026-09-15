@@ -19,9 +19,12 @@ export default async function LeaderboardPage() {
       ) : (
         <div className="flex flex-col gap-2">
           {rows.map((row, i) => (
-            <Card key={i} className="flex items-center gap-4 py-3.5">
+            <Card key={i} className={row.is_you ? "flex items-center gap-4 border-accent bg-accent-soft py-3.5" : "flex items-center gap-4 py-3.5"}>
               <div className="w-6 text-center font-display font-bold text-ink-3">{i + 1}</div>
-              <div className="flex-1 font-medium text-ink">{row.full_name ?? "Anonymous"}</div>
+              <div className="flex-1 font-bold text-ink">
+                {row.full_name ?? "Anonymous"}
+                {row.is_you && <span className="ml-2 text-xs font-bold text-accent">(you)</span>}
+              </div>
               <div className="flex items-center gap-1.5 text-sm text-ink-2">
                 <StreakMark size={14} /> {row.current_streak}
               </div>
