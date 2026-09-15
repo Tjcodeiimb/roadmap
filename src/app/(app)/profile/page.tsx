@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import {
   getProfile,
@@ -6,6 +7,7 @@ import {
   getBuildProjects,
   getCompletedTopicsByTrack,
   getSelectedTracks,
+  getTrackSummaries,
   getWatchStats,
   getSkillProgress,
 } from "@/lib/queries";
@@ -41,7 +43,10 @@ export default async function ProfilePage({
     getWatchStats(supabase),
     getSkillProgress(supabase),
   ]);
-  const completedByTrack = await getCompletedTopicsByTrack(supabase, trackIds);
+  const [completedByTrack, trackSummaries] = await Promise.all([
+    getCompletedTopicsByTrack(supabase, trackIds),
+    getTrackSummaries(supabase, trackIds),
+  ]);
   const topicsDone = completedByTrack.reduce((sum, t) => sum + t.doneTopics.length, 0);
 
   const level = levelForXP(xp.total_xp);
@@ -79,17 +84,24 @@ export default async function ProfilePage({
       {params["set-password"] && <SetPasswordForm />}
 
       <div>
-        <div className="mb-3 text-sm font-semibold text-ink">Progress by track</div>
+        <div className="mb-3 text-sm font-bold text-ink">Progress by track</div>
         <div className="grid gap-3 sm:grid-cols-3">
-          {completedByTrack.map(({ track, doneTopics }) => (
-            <Card key={track.id} className="flex flex-col items-center gap-2 py-5 text-center">
-              <ProgressRing progress={Math.min(100, doneTopics.length * 4)} size={44} strokeWidth={4}>
-                <span className="text-[11px] font-bold text-ink">{doneTopics.length}</span>
-              </ProgressRing>
-              <div className="text-sm font-medium text-ink">{track.label}</div>
-              <div className="text-xs text-ink-3">topics done</div>
-            </Card>
-          ))}
+          {trackSummaries.map((s) => {
+            const pct = s.totalTopics ? Math.round((s.doneTopics / s.totalTopics) * 100) : 0;
+            return (
+              <Link key={s.track.id} href={`/track/${s.track.id}`}>
+                <Card className="press flex flex-col items-center gap-2 py-5 text-center">
+                  <ProgressRing progress={pct} size={44} strokeWidth={4}>
+                    <span className="text-[11px] font-bold text-ink">{pct}%</span>
+                  </ProgressRing>
+                  <div className="text-sm font-bold text-ink">{s.track.label}</div>
+                  <div className="text-xs text-ink-3">
+                    {s.doneTopics} of {s.totalTopics} topics
+                  </div>
+                </Card>
+              </Link>
+            );
+          })}
         </div>
       </div>
 
@@ -109,8 +121,8 @@ export default async function ProfilePage({
       </Card>
 
       {!params["set-password"] && (
-        <details className="rounded-xl border border-border bg-paper-2 p-4">
-          <summary className="cursor-pointer text-sm font-medium text-ink-2">Account settings</summary>
+        <details className="rounded-md border-2 border-ink bg-paper-2 p-4">
+          <summary className="cursor-pointer text-sm font-bold text-ink-2">Account settings</summary>
           <div className="mt-3">
             <SetPasswordForm />
           </div>
