@@ -18,7 +18,7 @@ export default async function AdminPage() {
   ]);
 
   return (
-    <div className="mx-auto flex max-w-4xl flex-col gap-8">
+    <div className="flex flex-col gap-8">
       <div>
         <h1 className="font-display text-3xl font-extrabold tracking-tight text-ink">Admin</h1>
         <p className="mt-2 text-ink-2">Content, people, and aggregate progress. No individual progress is shown.</p>

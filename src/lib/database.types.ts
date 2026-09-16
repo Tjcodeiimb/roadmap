@@ -195,6 +195,7 @@ export type Database = {
         Row: {
           id: string;
           full_name: string | null;
+          username: string;
           role: Role;
           theme: ThemeName;
           leaderboard_opt_in: boolean;
@@ -204,6 +205,7 @@ export type Database = {
         Insert: {
           id: string;
           full_name?: string | null;
+          username?: string;
           role?: Role;
           theme?: ThemeName;
           leaderboard_opt_in?: boolean;
@@ -213,6 +215,7 @@ export type Database = {
         Update: Partial<{
           id: string;
           full_name: string | null;
+          username: string;
           role: Role;
           theme: ThemeName;
           leaderboard_opt_in: boolean;
@@ -619,6 +622,10 @@ export type Database = {
       get_trending_tracks: {
         Args: { p_days?: number; p_limit?: number };
         Returns: { track_id: string; completions: number }[];
+      };
+      update_username: {
+        Args: { p_username: string };
+        Returns: void;
       };
     };
     Enums: Record<string, never>;

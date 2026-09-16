@@ -16,6 +16,7 @@ import { CountUp } from "@/components/ui/count-up";
 import { ProgressRing } from "@/components/ui/progress-ring";
 import { BuildProjectsPanel } from "@/components/profile/build-projects-panel";
 import { SetPasswordForm } from "@/components/profile/set-password-form";
+import { UsernameForm } from "@/components/profile/username-form";
 import { WatchStats } from "@/components/profile/watch-stats";
 import { SkillsPanel } from "@/components/profile/skills-panel";
 import { levelForXP } from "@/lib/gamification/levels";
@@ -53,12 +54,15 @@ export default async function ProfilePage({
   const LevelIcon = LEVEL_ICONS[level.level - 1];
 
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-8">
+    <div className="flex flex-col gap-8">
       <div>
         <h1 className="font-display text-3xl font-extrabold tracking-tight text-ink">
           {profile?.full_name ?? user.email}
         </h1>
-        <p className="mt-1 text-ink-2">{user.email}</p>
+        {profile?.username && (
+          <p className="mt-0.5 font-mono text-base text-ink-2">@{profile.username}</p>
+        )}
+        <p className="mt-1 text-sm text-ink-3">{user.email}</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
@@ -133,7 +137,12 @@ export default async function ProfilePage({
       {!params["set-password"] && (
         <details className="rounded-md border-2 border-ink bg-paper-2 p-4">
           <summary className="cursor-pointer text-sm font-bold text-ink-2">Account settings</summary>
-          <div className="mt-3">
+          <div className="mt-4 flex flex-col gap-4">
+            {profile?.username && (
+              <div className="border-b-2 border-paper-3 pb-4">
+                <UsernameForm current={profile.username} />
+              </div>
+            )}
             <SetPasswordForm />
           </div>
         </details>
