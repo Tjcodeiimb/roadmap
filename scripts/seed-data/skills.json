@@ -314,7 +314,10 @@
     { "id": "skill-topic-ppl-p5-t3", "name": "Employee Engagement & Retention", "domain": "people", "description": "What actually drives people to stay and do good work, and how to measure it honestly.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 },
     { "id": "skill-topic-ppl-p6-t1", "name": "People Analytics Fundamentals", "domain": "people", "description": "Using workforce data to test assumptions about hiring, performance, and retention instead of guessing.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 },
     { "id": "skill-topic-ppl-p6-t2", "name": "Compensation & Leveling Basics", "domain": "people", "description": "How salary bands and a compensation philosophy keep pay consistent, fair, and defensible.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 },
-    { "id": "skill-topic-ppl-p6-t3", "name": "HR Operations & Compliance Basics", "domain": "people", "description": "The recurring administrative and legal-compliance work that keeps a people function out of trouble.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 }
+    { "id": "skill-topic-ppl-p6-t3", "name": "HR Operations & Compliance Basics", "domain": "people", "description": "The recurring administrative and legal-compliance work that keeps a people function out of trouble.", "tier": "advanced", "icon_key": "people", "xp_reward": 120, "threshold": 0 },
+
+    { "id": "skill-mr-fundamentals", "name": "Market Research Fundamentals", "domain": "market-research", "description": "Designing and running primary and secondary research studies — knowing which method fits the question, conducting interviews, and coding qualitative findings.", "tier": "foundational", "icon_key": "search", "xp_reward": 100, "threshold": 0 },
+    { "id": "skill-mr-quant-survey", "name": "Quantitative Research & Survey Design", "domain": "market-research", "description": "Building surveys with sound question wording and scales, choosing the right sampling strategy, and running A/B tests or conjoint studies to measure customer preferences.", "tier": "intermediate", "icon_key": "search", "xp_reward": 150, "threshold": 0 }
   ],
   "skill_resources": [
     { "skill_id": "skill-excel-lookups", "resource_id": "exc-p2-r1" },
@@ -1325,6 +1328,20 @@
     { "skill_id": "skill-topic-ppl-p6-t2", "resource_id": "ppl-p6-r4" },
 
     { "skill_id": "skill-topic-ppl-p6-t3", "resource_id": "ppl-p6-r5" },
-    { "skill_id": "skill-topic-ppl-p6-t3", "resource_id": "ppl-p6-r6" }
+    { "skill_id": "skill-topic-ppl-p6-t3", "resource_id": "ppl-p6-r6" },
+
+    { "skill_id": "skill-mr-fundamentals", "resource_id": "mr-p1-r1" },
+    { "skill_id": "skill-mr-fundamentals", "resource_id": "mr-p1-r2" },
+    { "skill_id": "skill-mr-fundamentals", "resource_id": "mr-p1-r5" },
+    { "skill_id": "skill-mr-fundamentals", "resource_id": "mr-p2-r1" },
+    { "skill_id": "skill-mr-fundamentals", "resource_id": "mr-p2-r3" },
+    { "skill_id": "skill-mr-fundamentals", "resource_id": "mr-p2-r5" },
+
+    { "skill_id": "skill-mr-quant-survey", "resource_id": "mr-p3-r1" },
+    { "skill_id": "skill-mr-quant-survey", "resource_id": "mr-p3-r2" },
+    { "skill_id": "skill-mr-quant-survey", "resource_id": "mr-p3-r3" },
+    { "skill_id": "skill-mr-quant-survey", "resource_id": "mr-p3-r4" },
+    { "skill_id": "skill-mr-quant-survey", "resource_id": "mr-p3-r5" },
+    { "skill_id": "skill-mr-quant-survey", "resource_id": "mr-p3-r6" }
   ]
 }

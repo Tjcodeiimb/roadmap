@@ -30,6 +30,7 @@ const TRACK_FILES = [
   'operations.json',
   'cybersecurity.json',
   'people.json',
+  'market_research.json',
   // sustainability.json intentionally excluded - soft-hidden, not seeded.
 ];
 

@@ -52,6 +52,7 @@ const TRACK_FILES = [
   'operations.json',
   'cybersecurity.json',
   'people.json',
+  'market_research.json',
   // sustainability.json intentionally excluded - that track is soft-hidden
   // (see migration 0007_hide_sustainability_track.sql) rather than deleted,
   // so re-seeding must not touch it or re-publish it.
