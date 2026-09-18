@@ -36,7 +36,7 @@ export default async function DashboardPage() {
   const firstName = (profile?.full_name ?? user.email ?? "there").split(" ")[0];
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="mx-auto flex max-w-4xl flex-col gap-8">
       <div>
         <h1 className="font-display text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
           Welcome back, {firstName}

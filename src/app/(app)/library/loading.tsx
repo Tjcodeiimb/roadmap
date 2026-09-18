@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function LibraryLoading() {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="mx-auto flex max-w-5xl flex-col gap-8">
       <div>
         <Skeleton className="h-9 w-32" />
         <Skeleton className="mt-3 h-4 w-72" />

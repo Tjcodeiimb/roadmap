@@ -859,6 +859,114 @@ export async function getSkillProgress(supabase: Client): Promise<SkillProgress[
   });
 }
 
+export interface TrackSkillGroup {
+  trackId: string;
+  trackLabel: string;
+  iconKey: string | null;
+  skills: SkillProgress[];
+}
+
+// Like getSkillProgress but scoped to enrolled tracks only, grouped by track.
+export async function getEnrolledSkillProgress(supabase: Client): Promise<TrackSkillGroup[]> {
+  const [enrolledIds, { data: skillResourceRows }, { data: userSkills }] = await Promise.all([
+    getSelectedTracks(supabase),
+    supabase
+      .from("skill_resources")
+      .select("skill_id, resources(id, topic_id, topics(phase_id, phases(track_id)))"),
+    supabase.from("user_skills").select("skill_id, unlocked_at"),
+  ]);
+
+  if (!enrolledIds.length) return [];
+
+  const enrolledSet = new Set(enrolledIds);
+
+  // Build: skillId -> Set<trackId> (enrolled only)
+  const skillTracks = new Map<string, Set<string>>();
+  const resourcesBySkill = new Map<string, string[]>();
+  for (const row of (skillResourceRows ?? []) as unknown as Array<{
+    skill_id: string;
+    resources: { id: string; topic_id: string; topics: { phase_id: string; phases: { track_id: string } | null } | null } | null;
+  }>) {
+    const trackId = row.resources?.topics?.phases?.track_id;
+    const resourceId = row.resources?.id;
+    if (!trackId || !enrolledSet.has(trackId) || !resourceId) continue;
+    if (!skillTracks.has(row.skill_id)) skillTracks.set(row.skill_id, new Set());
+    skillTracks.get(row.skill_id)!.add(trackId);
+    if (!resourcesBySkill.has(row.skill_id)) resourcesBySkill.set(row.skill_id, []);
+    resourcesBySkill.get(row.skill_id)!.push(resourceId);
+  }
+
+  const skillIds = [...skillTracks.keys()];
+  if (!skillIds.length) return [];
+
+  const allResourceIds = [...new Set([...resourcesBySkill.values()].flat())];
+  const [{ data: skills }, { data: tracks }, { data: resourceProgress }, { data: topicProgress }] = await Promise.all([
+    supabase.from("skills").select("*").in("id", skillIds),
+    supabase.from("tracks").select("id, label, icon_key").in("id", enrolledIds),
+    supabase
+      .from("user_resource_progress")
+      .select("resource_id, status")
+      .in("resource_id", allResourceIds.length ? allResourceIds : ["__none__"]),
+    supabase.from("user_progress").select("topic_id, status"),
+  ]);
+
+  const doneResourceSet = new Set(
+    (resourceProgress ?? []).filter((p) => p.status === "done").map((p) => p.resource_id)
+  );
+  const doneTopicSet = new Set((topicProgress ?? []).filter((p) => p.status === "done").map((p) => p.topic_id));
+  const unlockedBySkill = new Map((userSkills ?? []).map((u) => [u.skill_id, u.unlocked_at]));
+
+  // Build skill progress objects
+  const allResources = (skillResourceRows ?? []) as unknown as Array<{
+    skill_id: string;
+    resources: { id: string; topic_id: string; topics: { phase_id: string; phases: { track_id: string } | null } | null } | null;
+  }>;
+  const skillProgressMap = new Map<string, SkillProgress>();
+  for (const s of skills ?? []) {
+    const mappedResources = allResources
+      .filter((r) => r.skill_id === s.id && r.resources?.id)
+      .map((r) => r.resources!.id);
+    const consumed = mappedResources.filter((rid) => {
+      if (doneResourceSet.has(rid)) return true;
+      const topicId = allResources.find((r) => r.resources?.id === rid)?.resources?.topic_id;
+      return topicId ? doneTopicSet.has(topicId) : false;
+    }).length;
+    skillProgressMap.set(s.id, {
+      id: s.id,
+      name: s.name,
+      domain: s.domain,
+      description: s.description,
+      iconKey: s.icon_key,
+      tier: s.tier,
+      xpReward: s.xp_reward,
+      unlocked: unlockedBySkill.has(s.id),
+      unlockedAt: unlockedBySkill.get(s.id) ?? null,
+      doneCount: consumed,
+      totalCount: mappedResources.length,
+    });
+  }
+
+  // Group by track in enrollment order
+  const trackById = new Map((tracks ?? []).map((t) => [t.id, t]));
+  return enrolledIds
+    .filter((tid) => trackById.has(tid))
+    .map((tid) => {
+      const track = trackById.get(tid)!;
+      const trackSkillIds = [...(skillTracks.entries())]
+        .filter(([, tids]) => tids.has(tid))
+        .map(([sid]) => sid);
+      return {
+        trackId: tid,
+        trackLabel: track.label,
+        iconKey: track.icon_key,
+        skills: trackSkillIds
+          .map((sid) => skillProgressMap.get(sid))
+          .filter(Boolean) as SkillProgress[],
+      };
+    })
+    .filter((g) => g.skills.length > 0);
+}
+
 export async function getUserXP(supabase: Client) {
   const { data } = await supabase.from("user_xp").select("*").maybeSingle();
   return data ?? { total_xp: 0, level: 1 };

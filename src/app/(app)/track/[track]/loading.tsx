@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function TrackLoading() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="mx-auto flex max-w-3xl flex-col gap-10">
       <div>
         <Skeleton className="h-4 w-32" />
         <Skeleton className="mt-2 h-9 w-56" />

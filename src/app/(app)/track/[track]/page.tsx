@@ -19,7 +19,7 @@ export default async function TrackPage({
   const doneTopics = phases.reduce((n, p) => n + p.topics.filter((t) => t.status === "done").length, 0);
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="mx-auto flex max-w-3xl flex-col gap-10">
       <div>
         <div className="flex items-center justify-between gap-3">
           <div className="text-sm font-bold uppercase tracking-wider" style={{ color: trackColor(track.id) }}>{track.label} Track</div>
