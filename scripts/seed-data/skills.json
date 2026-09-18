@@ -125,6 +125,17 @@
     { "id": "skill-topic-fin-p9-t1", "name": "Private Equity Fundamentals", "domain": "finance", "description": "How PE funds are structured (GP/LP, fees, carry), how they source and screen deals, and how a buyout thesis turns into an investment.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
     { "id": "skill-topic-fin-p9-t2", "name": "Hedge Fund Strategies", "domain": "finance", "description": "Survey the core hedge fund strategies — long/short equity, global macro, quant, event-driven, arbitrage — and how each generates returns.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
     { "id": "skill-topic-fin-p9-t3", "name": "Venture Capital Basics", "domain": "finance", "description": "How VC funds are structured and how they evaluate, price, and structure early-stage investments — from thesis to term sheet.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p10-t1", "name": "DCF Deep Dive", "domain": "finance", "description": "Build a rigorous DCF from scratch: WACC construction, unlevered FCF projection, terminal value methods, and sensitivity analysis.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p10-t2", "name": "Comparable Company Analysis (Comps)", "domain": "finance", "description": "Screen and select a peer group, calculate EV/EBITDA and P/E multiples consistently, and build a football-field valuation range.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p10-t3", "name": "Trading Multiples & Precedent Transactions", "domain": "finance", "description": "Distinguish trading comps from deal comps, use precedent transactions to anchor the control premium, and triangulate a valuation range.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p11-t1", "name": "Securitization & ABS/MBS Basics", "domain": "finance", "description": "How loans are pooled and tranched into ABS and MBS — cash-flow waterfalls, credit enhancement, and tranche risk.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p11-t2", "name": "Options & Greeks Fundamentals", "domain": "finance", "description": "How call and put options are priced and how delta, gamma, theta, and vega measure each dimension of option risk.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p11-t3", "name": "Interest Rate & Credit Derivatives", "domain": "finance", "description": "How interest rate swaps transfer rate risk and credit default swaps transfer credit risk — the instruments at the heart of fixed-income risk management.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p12-t1", "name": "Earnings Quality & Accruals Analysis", "domain": "finance", "description": "Assess whether reported earnings reflect real cash generation or aggressive accrual choices — the foundation of forensic analysis.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p12-t2", "name": "Off-Balance-Sheet Items & SPVs", "domain": "finance", "description": "Identify leverage and commitments hidden in SPVs and off-balance-sheet arrangements, and understand when consolidation is required.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-topic-fin-p12-t3", "name": "Red Flags in Financial Statements", "domain": "finance", "description": "Spot the warning signs that preceded Enron and WorldCom — abnormal receivables growth, channel stuffing, related-party transactions, and the Beneish M-Score.", "tier": "advanced", "icon_key": "finance", "xp_reward": 120, "threshold": 0 },
+    { "id": "skill-finance-equity-research-valuation", "name": "Equity Research & Valuation", "domain": "finance", "description": "The full advanced valuation toolkit: rigorous DCF with terminal value sensitivity, a comps table, and precedent transaction analysis — the core skill-set for any buy-side or sell-side analyst role.", "tier": "advanced", "icon_key": "finance", "xp_reward": 200, "threshold": 0 },
+    { "id": "skill-finance-structured-finance", "name": "Structured Finance Fundamentals", "domain": "finance", "description": "Securitization mechanics, options pricing and Greeks, and the interest rate and credit derivatives that are central to fixed-income and risk management roles.", "tier": "advanced", "icon_key": "finance", "xp_reward": 200, "threshold": 0 },
     { "id": "skill-topic-con-p1-t1", "name": "MECE & Issue Trees", "domain": "consulting", "description": "Completed every resource in the \"MECE & Issue Trees\" topic.", "tier": "foundational", "icon_key": "consulting", "xp_reward": 60, "threshold": 0 },
     { "id": "skill-topic-con-p1-t2", "name": "Core Case Frameworks Reference", "domain": "consulting", "description": "Completed every resource in the \"Core Case Frameworks Reference\" topic.", "tier": "foundational", "icon_key": "consulting", "xp_reward": 60, "threshold": 0 },
     { "id": "skill-topic-con-p2-t1", "name": "Porter's Five Forces & Strategy Frameworks", "domain": "consulting", "description": "Completed every resource in the \"Porter's Five Forces & Strategy Frameworks\" topic.", "tier": "foundational", "icon_key": "consulting", "xp_reward": 60, "threshold": 0 },
@@ -751,6 +762,45 @@
 
     { "skill_id": "skill-topic-fin-p9-t3", "resource_id": "fin-p9-r5" },
     { "skill_id": "skill-topic-fin-p9-t3", "resource_id": "fin-p9-r6" },
+
+    { "skill_id": "skill-topic-fin-p10-t1", "resource_id": "fin-p10-r1" },
+    { "skill_id": "skill-topic-fin-p10-t1", "resource_id": "fin-p10-r2" },
+
+    { "skill_id": "skill-topic-fin-p10-t2", "resource_id": "fin-p10-r3" },
+    { "skill_id": "skill-topic-fin-p10-t2", "resource_id": "fin-p10-r4" },
+
+    { "skill_id": "skill-topic-fin-p10-t3", "resource_id": "fin-p10-r5" },
+    { "skill_id": "skill-topic-fin-p10-t3", "resource_id": "fin-p10-r6" },
+
+    { "skill_id": "skill-topic-fin-p11-t1", "resource_id": "fin-p11-r1" },
+    { "skill_id": "skill-topic-fin-p11-t1", "resource_id": "fin-p11-r2" },
+
+    { "skill_id": "skill-topic-fin-p11-t2", "resource_id": "fin-p11-r3" },
+    { "skill_id": "skill-topic-fin-p11-t2", "resource_id": "fin-p11-r4" },
+
+    { "skill_id": "skill-topic-fin-p11-t3", "resource_id": "fin-p11-r5" },
+    { "skill_id": "skill-topic-fin-p11-t3", "resource_id": "fin-p11-r6" },
+
+    { "skill_id": "skill-topic-fin-p12-t1", "resource_id": "fin-p12-r1" },
+    { "skill_id": "skill-topic-fin-p12-t1", "resource_id": "fin-p12-r2" },
+
+    { "skill_id": "skill-topic-fin-p12-t2", "resource_id": "fin-p12-r3" },
+    { "skill_id": "skill-topic-fin-p12-t2", "resource_id": "fin-p12-r4" },
+
+    { "skill_id": "skill-topic-fin-p12-t3", "resource_id": "fin-p12-r5" },
+    { "skill_id": "skill-topic-fin-p12-t3", "resource_id": "fin-p12-r6" },
+
+    { "skill_id": "skill-finance-equity-research-valuation", "resource_id": "fin-p10-r1" },
+    { "skill_id": "skill-finance-equity-research-valuation", "resource_id": "fin-p10-r2" },
+    { "skill_id": "skill-finance-equity-research-valuation", "resource_id": "fin-p10-r3" },
+    { "skill_id": "skill-finance-equity-research-valuation", "resource_id": "fin-p10-r5" },
+    { "skill_id": "skill-finance-equity-research-valuation", "resource_id": "fin-p10-r6" },
+
+    { "skill_id": "skill-finance-structured-finance", "resource_id": "fin-p11-r1" },
+    { "skill_id": "skill-finance-structured-finance", "resource_id": "fin-p11-r2" },
+    { "skill_id": "skill-finance-structured-finance", "resource_id": "fin-p11-r3" },
+    { "skill_id": "skill-finance-structured-finance", "resource_id": "fin-p11-r5" },
+    { "skill_id": "skill-finance-structured-finance", "resource_id": "fin-p11-r6" },
 
     { "skill_id": "skill-topic-con-p1-t1", "resource_id": "con-p1-r1" },
     { "skill_id": "skill-topic-con-p1-t1", "resource_id": "con-p1-r2" },
