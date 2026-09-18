@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getTrackDetail } from "@/lib/queries";
 import { TopicRow } from "@/components/track/topic-row";
 import { LeaveCourseButton } from "@/components/track/leave-course-button";
+import { ProgressRing } from "@/components/track/progress-ring";
 import { trackColor } from "@/lib/track-colors";
 
 export default async function TrackPage({
@@ -17,19 +18,24 @@ export default async function TrackPage({
 
   const totalTopics = phases.reduce((n, p) => n + p.topics.length, 0);
   const doneTopics = phases.reduce((n, p) => n + p.topics.filter((t) => t.status === "done").length, 0);
+  const activeTopics = phases.reduce((n, p) => n + p.topics.filter((t) => t.status === "active").length, 0);
+  const pct = totalTopics > 0 ? Math.round((doneTopics / totalTopics) * 100) : 0;
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-10">
       <div>
         <div className="flex items-center justify-between gap-3">
           <div className="text-sm font-bold uppercase tracking-wider" style={{ color: trackColor(track.id) }}>{track.label} Track</div>
-          <LeaveCourseButton trackId={track.id} trackLabel={track.label} />
+          <div className="flex items-center gap-3">
+            <ProgressRing pct={pct} done={doneTopics} total={totalTopics} color={trackColor(track.id)} />
+            <LeaveCourseButton trackId={track.id} trackLabel={track.label} />
+          </div>
         </div>
         <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
           Your roadmap
         </h1>
         <p className="mt-2 text-ink-2">
-          {doneTopics} of {totalTopics} topics complete across {phases.length} phases.
+          {doneTopics} done · {activeTopics} in progress · {totalTopics - doneTopics - activeTopics} to do
         </p>
       </div>
 

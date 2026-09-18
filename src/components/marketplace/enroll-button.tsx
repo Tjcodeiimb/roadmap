@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -27,7 +26,6 @@ export function EnrollButton({
   const [enrolled, setEnrolled] = useState(initialEnrolled);
   const [celebrate, setCelebrate] = useState(false);
   const [pending, startTransition] = useTransition();
-  const router = useRouter();
   const { showToast } = useToast();
 
   function enroll() {
@@ -41,7 +39,6 @@ export function EnrollButton({
       setCelebrate(true);
       setTimeout(() => setCelebrate(false), 700);
       showToast(`Enrolled in ${label} ✓`);
-      router.refresh();
     });
   }
 
