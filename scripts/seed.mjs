@@ -156,7 +156,12 @@ async function main() {
     const data = loadJson(file);
     tracks.push({ ...data.track, order_index: i + 1 });
     allPhases.push(...data.phases);
-    allTopics.push(...data.topics.map(({ status: _s, ...t }) => ({ tags: [], ...t })));
+    allTopics.push(...data.topics.map(({ status: _s, ...t }) => ({
+      tags: [],
+      description: '',
+      steps: [],
+      ...t,
+    })));
     allResources.push(...data.resources.map(deriveResourceMedia));
   });
 
