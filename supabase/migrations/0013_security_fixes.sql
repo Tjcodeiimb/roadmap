@@ -70,9 +70,10 @@ begin
 end;
 $$;
 
--- Revoking from `anon` alone does nothing: Postgres grants EXECUTE on new
--- functions to PUBLIC, and anon inherits it that way. The grant has to be
--- taken off PUBLIC and handed back to the signed-in roles explicitly.
+-- EXECUTE arrives by two separate routes and both have to be closed: Postgres
+-- grants it to PUBLIC on every new function, and Supabase's default privileges
+-- additionally grant it to `anon` directly. Revoking only one leaves the other
+-- in place. 0015 revokes from both; these lines alone are not sufficient.
 revoke execute on function public.get_leaderboard() from public;
 grant execute on function public.get_leaderboard() to authenticated, service_role;
 
