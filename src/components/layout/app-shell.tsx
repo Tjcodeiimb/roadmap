@@ -45,8 +45,8 @@ export function AppShell({
       {/* app-canvas here so the fixed ::before grid pseudo-element is a sibling
           of both the aside and main — the > * rule gives both z-index 1 so
           they sit above the grid rather than having the grid bleed through. */}
-      <div className="app-canvas flex min-h-screen bg-paper">
-        <aside className="sticky top-0 z-[1] hidden h-screen w-64 shrink-0 flex-col gap-6 overflow-y-auto border-r-2 border-ink bg-paper-2 p-5 md:flex">
+      <div className="app-canvas flex h-screen overflow-hidden bg-paper">
+        <aside className="z-[1] hidden h-full w-64 shrink-0 flex-col gap-6 overflow-y-auto border-r-2 border-ink bg-paper-2 p-5 md:flex">
           <Brand />
           <SidebarNav tracks={tracks} reviewCount={reviewCount} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} onOpenSwitcher={() => setSwitcherOpen(true)} />
           <div className="mt-auto flex flex-col gap-3">
@@ -72,8 +72,8 @@ export function AppShell({
           </div>
         </aside>
 
-        <div className="flex min-h-screen flex-1 flex-col">
-          <header className="flex items-center justify-between border-b-2 border-ink bg-paper px-4 py-3 md:hidden">
+        <div className="flex flex-1 flex-col overflow-hidden">
+          <header className="flex shrink-0 items-center justify-between border-b-2 border-ink bg-paper px-4 py-3 md:hidden">
             <button
               onClick={() => setDrawerOpen(true)}
               aria-label="Open menu"
@@ -85,7 +85,7 @@ export function AppShell({
             <ThemeToggle initialTheme={theme} />
           </header>
 
-          <main className="relative flex-1 px-4 py-6 md:px-10 md:py-10">{children}</main>
+          <main className="relative flex-1 overflow-y-auto px-4 py-6 md:px-10 md:py-10">{children}</main>
         </div>
 
         <AnimatePresence>
@@ -143,11 +143,16 @@ export function AppShell({
 
 function Brand({ compact }: { compact?: boolean }) {
   return (
-    <div className="flex items-center gap-2">
-      <div className="flex h-8 w-8 items-center justify-center rounded-md border-2 border-ink bg-accent text-xs font-extrabold text-accent-ink shadow-[2px_2px_0_0_var(--brutal-shadow)]">
+    <div className="flex items-center gap-2.5">
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent font-display text-sm font-extrabold text-accent-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]">
         UF
       </div>
-      {!compact && <span className="font-display text-sm font-bold text-ink">UpForge Learning</span>}
+      {!compact && (
+        <div className="min-w-0">
+          <div className="font-display text-sm font-extrabold leading-tight tracking-tight text-ink">UpForge</div>
+          <div className="text-[10px] font-semibold uppercase tracking-widest text-ink-3">Learning</div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/ui/reveal";
@@ -23,6 +24,7 @@ export function CourseCard({
 
   return (
     <Reveal index={index}>
+      <motion.div whileHover={{ y: -3, transition: { duration: 0.15, ease: "easeOut" } }}>
       <Card className="press flex h-full flex-col gap-4" style={{ backgroundColor: trackColor(course.id) }}>
         <div className="flex items-start gap-3">
           <div
@@ -83,6 +85,7 @@ export function CourseCard({
           <EnrollButton kind="track" id={course.id} label={course.label} enrolled={course.enrolled} continueHref={`/track/${course.id}`} />
         </div>
       </Card>
+      </motion.div>
     </Reveal>
   );
 }
