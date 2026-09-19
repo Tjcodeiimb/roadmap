@@ -259,20 +259,20 @@ export async function getCourseDetail(supabase: Client, trackId: string) {
   if (!row) return null;
 
   const { phases: rawPhases, ...track } = row as unknown as CourseDetailRow;
-  const phases = [...rawPhases]
+  const phases = [...(rawPhases ?? [])]
     .sort((a, b) => a.order_index - b.order_index)
     .map((p) => ({
       id: p.id,
       title: p.title,
       description: p.description,
       estimated_weeks: p.estimated_weeks,
-      topics: [...p.topics]
+      topics: [...(p.topics ?? [])]
         .sort((a, b) => a.order_index - b.order_index)
         .map((t) => ({ id: t.id, phase_id: p.id, title: t.title })),
     }));
   const topicCount = phases.reduce((n, p) => n + p.topics.length, 0);
-  const resourceCount = rawPhases.reduce(
-    (n, p) => n + p.topics.reduce((m, t) => m + t.resources.length, 0),
+  const resourceCount = (rawPhases ?? []).reduce(
+    (n, p) => n + (p.topics ?? []).reduce((m, t) => m + (t.resources ?? []).length, 0),
     0
   );
 
@@ -340,9 +340,9 @@ export async function getTrackSummaries(supabase: Client, trackIds: string[]): P
   const statusByTopic = new Map((progress ?? []).map((p) => [p.topic_id, p.status]));
 
   return tracks.map((track) => {
-    const phases = [...track.phases].sort((a, b) => a.order_index - b.order_index);
+    const phases = [...(track.phases ?? [])].sort((a, b) => a.order_index - b.order_index);
     const trackTopics = phases.flatMap((phase) =>
-      [...phase.topics]
+      [...(phase.topics ?? [])]
         .sort((a, b) => a.order_index - b.order_index)
         .map((t) => ({ ...t, phaseTitle: phase.title }))
     );
@@ -410,13 +410,13 @@ export async function getTrackDetail(supabase: Client, trackId: string) {
   if (!row) return { track: null, phases: [] };
 
   const { phases: rawPhases, ...track } = row as unknown as TrackDetailRow;
-  const phases = [...rawPhases]
+  const phases = [...(rawPhases ?? [])]
     .sort((a, b) => a.order_index - b.order_index)
     .map((phase) => {
       const { topics: rawTopics, ...phaseFields } = phase;
       return {
         ...phaseFields,
-        topics: [...rawTopics]
+        topics: [...(rawTopics ?? [])]
           .sort((a, b) => a.order_index - b.order_index)
           .map((t) => {
             const { user_progress, ...topicFields } = t;
@@ -469,15 +469,15 @@ export async function getTrackContentTree(supabase: Client, trackId: string) {
   if (!row) return { track: null, phases: [] };
 
   const { phases: rawPhases, ...track } = row as unknown as ContentTreeRow;
-  const phases = [...rawPhases]
+  const phases = [...(rawPhases ?? [])]
     .sort((a, b) => a.order_index - b.order_index)
     .map((phase) => ({
       ...phase,
-      topics: [...phase.topics]
+      topics: [...(phase.topics ?? [])]
         .sort((a, b) => a.order_index - b.order_index)
         .map((topic) => ({
           ...topic,
-          resources: [...topic.resources].sort((a, b) => a.order_index - b.order_index),
+          resources: [...(topic.resources ?? [])].sort((a, b) => a.order_index - b.order_index),
         })),
     }));
 
@@ -531,7 +531,7 @@ export async function getTopicDetail(supabase: Client, topicId: string) {
   const { phases: phase, user_progress, resources: rawResources, ...topic } = row as unknown as TopicDetailRow;
   const status = (user_progress?.[0]?.status as Status) ?? ("todo" as Status);
 
-  const resources = [...rawResources]
+  const resources = [...(rawResources ?? [])]
     .sort((a, b) => a.order_index - b.order_index)
     .map((res) => {
       const { user_resource_progress, ...resFields } = res;
@@ -635,12 +635,12 @@ export async function getLibraryResources(supabase: Client, trackIds: string[]):
   const rows: LibraryResource[] = [];
 
   for (const track of tracks) {
-    const phases = [...track.phases].sort((a, b) => a.order_index - b.order_index);
+    const phases = [...(track.phases ?? [])].sort((a, b) => a.order_index - b.order_index);
     for (const phase of phases) {
-      const topics = [...phase.topics].sort((a, b) => a.order_index - b.order_index);
+      const topics = [...(phase.topics ?? [])].sort((a, b) => a.order_index - b.order_index);
       for (const topic of topics) {
         const doneTopic = topic.user_progress?.[0]?.status === "done";
-        const resources = [...topic.resources].sort((a, b) => a.order_index - b.order_index);
+        const resources = [...(topic.resources ?? [])].sort((a, b) => a.order_index - b.order_index);
         for (const r of resources) {
           const rp = r.user_resource_progress?.[0];
           const status: ResourceBankStatus =
@@ -1067,8 +1067,8 @@ export async function getCompletedTopicsByTrack(supabase: Client, trackIds: stri
 
   return tracks.map((track) => {
     const doneTopics: { title: string; completedAt: string | null }[] = [];
-    for (const phase of track.phases) {
-      for (const topic of phase.topics) {
+    for (const phase of (track.phases ?? [])) {
+      for (const topic of (phase.topics ?? [])) {
         const progress = topic.user_progress?.[0];
         if (progress?.status === "done") {
           doneTopics.push({ title: topic.title, completedAt: progress.completed_at });
