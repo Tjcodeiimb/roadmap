@@ -1190,6 +1190,78 @@
       "length": null,
       "note": "Common fraud indicators including abnormal revenue growth, unusual related-party transactions, and inconsistent cash flows",
       "icon": null
+    },
+    {
+      "id": "fin-p1-r10",
+      "topic_id": "fin-p1-t1",
+      "order_index": 10,
+      "title": "Financial Statements – Zerodha Varsity Module 3",
+      "url": "https://zerodha.com/varsity/module/fundamental-analysis/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "3 hours",
+      "icon_key": "link"
+    },
+    {
+      "id": "fin-p3-r10",
+      "topic_id": "fin-p3-t1",
+      "order_index": 10,
+      "title": "Introduction to Stock Markets – Zerodha Varsity Module 1",
+      "url": "https://zerodha.com/varsity/module/introduction-to-stock-markets/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "4 hours",
+      "icon_key": "link"
+    },
+    {
+      "id": "fin-p3-r11",
+      "topic_id": "fin-p3-t1",
+      "order_index": 11,
+      "title": "Technical Analysis – Zerodha Varsity Module 2",
+      "url": "https://zerodha.com/varsity/module/technical-analysis/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "5 hours",
+      "icon_key": "link"
+    },
+    {
+      "id": "fin-p11-r10",
+      "topic_id": "fin-p11-t2",
+      "order_index": 10,
+      "title": "Options Theory for Professional Trading – Zerodha Varsity Module 5",
+      "url": "https://zerodha.com/varsity/module/option-theory/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "6 hours",
+      "icon_key": "link"
+    },
+    {
+      "id": "fin-p11-r11",
+      "topic_id": "fin-p11-t2",
+      "order_index": 11,
+      "title": "Option Strategies – Zerodha Varsity Module 6",
+      "url": "https://zerodha.com/varsity/module/option-strategies/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "5 hours",
+      "icon_key": "link"
+    },
+    {
+      "id": "fin-p12-r10",
+      "topic_id": "fin-p12-t3",
+      "order_index": 10,
+      "title": "Financial Modelling & Valuation – Zerodha Varsity Module 11",
+      "url": "https://zerodha.com/varsity/module/financial-modelling-and-valuation/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "4 hours",
+      "icon_key": "link"
     }
   ]
 }

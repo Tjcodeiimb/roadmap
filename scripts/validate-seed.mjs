@@ -32,6 +32,11 @@ const TRACK_FILES = [
   'people.json',
   'market_research.json',
   // sustainability.json intentionally excluded - soft-hidden, not seeded.
+  // Job-ready tracks (batch 2)
+  'prompt_engineering.json',
+  'ai_nocode.json',
+  'langchain_rag.json',
+  'sql_analytics.json',
 ];
 
 let errors = 0;

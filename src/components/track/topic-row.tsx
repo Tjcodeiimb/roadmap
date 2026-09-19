@@ -16,7 +16,12 @@ const STATUS_CONFIG: Record<Status, {
 }> = {
   done: {
     rowClass: "border-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]",
-    rowStyle: { backgroundColor: "var(--success-soft)", borderColor: "var(--success)" },
+    rowStyle: {
+      backgroundColor: "var(--success-soft)",
+      borderColor: "var(--success)",
+      borderLeftWidth: "6px",
+      borderLeftColor: "var(--success)",
+    },
     iconColor: "var(--success)",
     textClass: "text-ink",
     label: "Done",
@@ -24,7 +29,12 @@ const STATUS_CONFIG: Record<Status, {
   },
   active: {
     rowClass: "border-ink shadow-[3px_3px_0_0_var(--accent)]",
-    rowStyle: { backgroundColor: "var(--accent-soft)", borderColor: "var(--accent)" },
+    rowStyle: {
+      backgroundColor: "var(--accent-soft)",
+      borderColor: "var(--accent)",
+      borderLeftWidth: "6px",
+      borderLeftColor: "var(--accent)",
+    },
     iconColor: "var(--accent)",
     textClass: "text-ink",
     label: "In progress",
@@ -32,6 +42,7 @@ const STATUS_CONFIG: Record<Status, {
   },
   next: {
     rowClass: "border-ink bg-paper-2 shadow-[3px_3px_0_0_var(--brutal-shadow)]",
+    rowStyle: { borderLeftWidth: "6px", borderLeftColor: "var(--ink-2)" },
     iconColor: "var(--ink-2)",
     textClass: "text-ink",
     label: "Up next",
