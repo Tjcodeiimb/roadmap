@@ -31,6 +31,9 @@ export async function updateResourceProgress(
     revalidatePath("/library");
     revalidatePath(`/library/resource/${resourceId}`);
     revalidatePath("/dashboard");
+    // Completing a resource can now change its topic's status (and the next
+    // topic's), so the roadmap behind this page is stale too.
+    revalidatePath("/track", "layout");
   }
   return { success: true, unlockedSkillIds: data ?? [] };
 }
@@ -43,5 +46,6 @@ export async function completeResource(resourceId: string): Promise<ResourceProg
   revalidatePath("/library");
   revalidatePath(`/library/resource/${resourceId}`);
   revalidatePath("/dashboard");
+  revalidatePath("/track", "layout");
   return { success: true, unlockedSkillIds: data ?? [] };
 }

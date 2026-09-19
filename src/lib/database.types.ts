@@ -568,6 +568,13 @@ export type Database = {
         Args: { p_resource_id: string };
         Returns: string[];
       };
+      // Derives a topic's status from how many of its resources are done.
+      // Takes no user id on purpose — it reads auth.uid() internally so it
+      // can only ever write the caller's own progress.
+      sync_topic_progress: {
+        Args: { p_topic_id: string };
+        Returns: void;
+      };
       ack_skills: {
         Args: { p_skill_ids: string[] | null };
         Returns: void;

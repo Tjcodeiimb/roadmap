@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
-import { createClient } from "@/lib/supabase/server";
+import { requireAdminPage } from "@/lib/admin-guard";
 import { getTrackContentTree } from "@/lib/queries";
 import { ContentEditor } from "@/components/admin/content-editor";
 
@@ -11,7 +11,7 @@ export default async function AdminContentPage({
   params: Promise<{ track: string }>;
 }) {
   const { track: trackId } = await params;
-  const supabase = await createClient();
+  const supabase = await requireAdminPage();
   const { track, phases } = await getTrackContentTree(supabase, trackId);
   if (!track) notFound();
 

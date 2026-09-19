@@ -74,6 +74,14 @@
   /* Status color tokens — used for full-bleed topic/resource row backgrounds */
   --success-ink: #ffffff;
   --warning: #c07800; --warning-ink: #ffffff; --warning-soft: #fff3cc;
+  /* Progress states. Fixed across every track so a colour means one thing
+     app-wide; the track hue stays course chrome. "Up next" is yellow with
+     near-black ink in BOTH themes so it reads identically either way — and it
+     replaces --warning here, which only reached 3.54:1 against white. */
+  --state-todo: var(--paper-2); --state-todo-ink: var(--ink-2);
+  --state-next: #ffb200; --state-next-ink: #0a0a0a;
+  --state-active: #2a2aff; --state-active-ink: #ffffff;
+  --state-done: #0a6b2b; --state-done-ink: #ffffff;
 
   /* One bold flat color for the login splash — a brand moment, so it stays
      bright regardless of the viewer's light/dark preference rather than
@@ -133,6 +141,10 @@
     --track-personal-branding: #ff3db0; --track-personal-branding-ink: #0a0a0a;
     --success-ink: #0a0a0a;
     --warning: #ffc030; --warning-ink: #0a0a0a; --warning-soft: #3d2800;
+    --state-todo: var(--paper-2); --state-todo-ink: var(--ink-2);
+    --state-next: #ffc030; --state-next-ink: #0a0a0a;
+    --state-active: #8b85f5; --state-active-ink: #0a0a0a;
+    --state-done: #5fe79a; --state-done-ink: #0a0a0a;
   }
 }
 
@@ -183,6 +195,10 @@
   --track-personal-branding: #ff3db0; --track-personal-branding-ink: #0a0a0a;
   --success-ink: #0a0a0a;
   --warning: #ffc030; --warning-ink: #0a0a0a; --warning-soft: #3d2800;
+  --state-todo: var(--paper-2); --state-todo-ink: var(--ink-2);
+  --state-next: #ffc030; --state-next-ink: #0a0a0a;
+  --state-active: #8b85f5; --state-active-ink: #0a0a0a;
+  --state-done: #5fe79a; --state-done-ink: #0a0a0a;
 }
 
 @theme inline {

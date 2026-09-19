@@ -24,18 +24,19 @@ const ACTION_ICON_KEY: Record<Action, string> = {
 
 const STATUS_STYLE: Record<ResourceBankStatus, React.CSSProperties> = {
   done: {
-    backgroundColor: "var(--success)",
-    borderColor: "var(--success)",
-    color: "var(--success-ink)",
+    backgroundColor: "var(--state-done)",
+    borderColor: "var(--ink)",
+    color: "var(--state-done-ink)",
   },
   in_progress: {
-    backgroundColor: "var(--accent)",
-    borderColor: "var(--accent)",
-    color: "var(--accent-ink)",
+    backgroundColor: "var(--state-active)",
+    borderColor: "var(--ink)",
+    color: "var(--state-active-ink)",
   },
   todo: {
-    backgroundColor: "var(--paper-2)",
+    backgroundColor: "var(--state-todo)",
     borderColor: "var(--ink)",
+    color: "var(--state-todo-ink)",
   },
 };
 

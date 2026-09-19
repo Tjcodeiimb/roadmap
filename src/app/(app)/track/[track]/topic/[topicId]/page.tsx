@@ -4,7 +4,8 @@ import { ChevronLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getTopicDetail } from "@/lib/queries";
 import { ResourceCard } from "@/components/track/resource-card";
-import { StatusControl } from "@/components/track/status-control";
+import { TopicProgressHeader } from "@/components/track/topic-progress-header";
+import { Reveal } from "@/components/ui/reveal";
 import { Badge } from "@/components/ui/badge";
 
 export default async function TopicPage({
@@ -18,6 +19,13 @@ export default async function TopicPage({
   if (!detail) notFound();
 
   const { topic, resources, status } = detail;
+
+  const resourcesDone = resources.filter((r) => r.status === "done").length;
+  // Seed data for some tracks carries step entries with no text at all, which
+  // rendered as a list of bare numbers. Only keep steps that say something.
+  const steps = (topic.steps ?? []).filter(
+    (s) => (s?.t ?? "").trim() || (s?.d ?? "").trim()
+  );
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">
@@ -37,13 +45,13 @@ export default async function TopicPage({
         {topic.description && <p className="mt-3 text-base leading-relaxed text-ink-2">{topic.description}</p>}
       </div>
 
-      <StatusControl topicId={topic.id} status={status} path={`/track/${track}/topic/${topicId}`} />
+      <TopicProgressHeader status={status} done={resourcesDone} total={resources.length} />
 
-      {topic.steps.length > 0 && (
+      {steps.length > 0 && (
         <div className="rounded-md border-2 border-ink bg-paper-2 p-5 shadow-[4px_4px_0_0_var(--brutal-shadow)]">
           <div className="mb-3 text-sm font-bold text-ink">What to do</div>
           <ul className="flex flex-col gap-3">
-            {topic.steps.map((step, i) => (
+            {steps.map((step, i) => (
               <li key={i} className="flex gap-3 text-sm">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-paper-3 text-[11px] font-bold text-ink-2">
                   {i + 1}
@@ -59,16 +67,19 @@ export default async function TopicPage({
       )}
 
       <div>
-        <div className="mb-3 text-sm font-semibold text-ink">Resources</div>
+        <div className="mb-1 text-sm font-semibold text-ink">Resources</div>
+        <p className="mb-3 text-xs text-ink-3">
+          Opening a resource marks it done. Finish them all and this topic completes itself.
+        </p>
         {resources.length === 0 ? (
           <div className="rounded-md border-2 border-dashed border-ink/30 p-6 text-center text-sm text-ink-3">
             No resources added yet — check back soon.
           </div>
         ) : (
           <div className="flex flex-col gap-2.5">
-            {resources.map((r) => (
+            {resources.map((r, i) => (
+              <Reveal key={r.id} index={i}>
               <ResourceCard
-                key={r.id}
                 id={r.id}
                 iconKey={r.icon_key}
                 title={r.title}
@@ -79,15 +90,11 @@ export default async function TopicPage({
                 note={r.note}
                 status={r.status}
               />
+              </Reveal>
             ))}
           </div>
         )}
       </div>
-
-      {/* Bottom status control — repeat mark-done so user doesn't have to scroll back up */}
-      {status !== "done" && (
-        <StatusControl topicId={topic.id} status={status} path={`/track/${track}/topic/${topicId}`} />
-      )}
 
     </div>
   );

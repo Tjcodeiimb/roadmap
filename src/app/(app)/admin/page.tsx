@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { requireAdminPage } from "@/lib/admin-guard";
 import { getAllTracks, getAdminTrackStats, getAdminRoster, getBrokenLinks } from "@/lib/queries";
 import { Card } from "@/components/ui/card";
 import { InviteForm } from "@/components/admin/invite-form";
@@ -9,7 +9,7 @@ import { trackColor } from "@/lib/track-colors";
 import { Reveal } from "@/components/ui/reveal";
 
 export default async function AdminPage() {
-  const supabase = await createClient();
+  const supabase = await requireAdminPage();
   const [tracks, stats, roster, brokenLinks] = await Promise.all([
     getAllTracks(supabase),
     getAdminTrackStats(supabase),

@@ -4,6 +4,7 @@ import { ChevronLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getResourceDetail } from "@/lib/queries";
 import { ResourcePlayer } from "@/components/resource/resource-player";
+import { AutoCompleteOnOpen } from "@/components/resource/auto-complete-on-open";
 import { ICONS, FALLBACK_ICON } from "@/components/icons";
 import { trackColor, trackInk } from "@/lib/track-colors";
 
@@ -23,6 +24,7 @@ export default async function ResourceDetailPage({
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-6">
+      <AutoCompleteOnOpen resourceId={resource.id} alreadyDone={status === "done"} />
       <Link href="/library" className="flex w-fit items-center gap-1 text-sm text-ink-2 hover:text-ink">
         <ChevronLeft size={16} /> Back to library
       </Link>

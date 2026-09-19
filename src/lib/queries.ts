@@ -394,6 +394,7 @@ interface TrackDetailRow {
       description: string;
       steps: Step[];
       user_progress: { status: string }[];
+      resources: { id: string; user_resource_progress: { status: string }[] }[];
     }[];
   }[];
 }
@@ -404,7 +405,7 @@ interface TrackDetailRow {
 export async function getTrackDetail(supabase: Client, trackId: string) {
   const { data: row } = await supabase
     .from("tracks")
-    .select("*, phases(*, topics(*, user_progress(status)))")
+    .select("*, phases(*, topics(*, user_progress(status), resources(id, user_resource_progress(status))))")
     .eq("id", trackId)
     .maybeSingle();
   if (!row) return { track: null, phases: [] };
@@ -419,8 +420,17 @@ export async function getTrackDetail(supabase: Client, trackId: string) {
         topics: [...(rawTopics ?? [])]
           .sort((a, b) => a.order_index - b.order_index)
           .map((t) => {
-            const { user_progress, ...topicFields } = t;
-            return { ...topicFields, status: (user_progress?.[0]?.status as Status) ?? ("todo" as Status) };
+            const { user_progress, resources, ...topicFields } = t;
+            const topicResources = resources ?? [];
+            const resourcesDone = topicResources.filter(
+              (r) => (r.user_resource_progress ?? [])[0]?.status === "done"
+            ).length;
+            return {
+              ...topicFields,
+              status: (user_progress?.[0]?.status as Status) ?? ("todo" as Status),
+              resourceTotal: topicResources.length,
+              resourceDone: resourcesDone,
+            };
           }),
       };
     });
