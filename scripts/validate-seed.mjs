@@ -37,6 +37,8 @@ const TRACK_FILES = [
   'ai_nocode.json',
   'langchain_rag.json',
   'sql_analytics.json',
+  'fpa_reporting.json',
+  'startup_finance.json',
 ];
 
 let errors = 0;

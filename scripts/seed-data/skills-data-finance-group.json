@@ -1,0 +1,68 @@
+[
+  {
+    "id": "skill-sql-querying",
+    "name": "SQL Querying Fundamentals",
+    "domain": "Data & Analytics",
+    "description": "Can write SQL queries using SELECT, WHERE, ORDER BY, GROUP BY, HAVING, and all JOIN types to extract and summarise data from relational databases for business analysis.",
+    "tier": "foundational",
+    "icon_key": null,
+    "xp_reward": 100,
+    "threshold": 0,
+    "resource_ids": ["sql-p1-r1", "sql-p1-r2", "sql-p1-r3", "sql-p1-r4", "sql-p2-r1", "sql-p2-r2"]
+  },
+  {
+    "id": "skill-sql-analytics",
+    "name": "SQL Analytics & Business Queries",
+    "domain": "Data & Analytics",
+    "description": "Demonstrates ability to write window functions, CTEs, and subqueries to solve real analyst problems including cohort analysis, retention, and revenue reporting.",
+    "tier": "intermediate",
+    "icon_key": null,
+    "xp_reward": 175,
+    "threshold": 0,
+    "resource_ids": ["sql-p3-r1", "sql-p3-r2", "sql-p3-r3", "sql-p3-r4", "sql-p4-r1", "sql-p4-r2"]
+  },
+  {
+    "id": "skill-fpa-reporting",
+    "name": "FP&A Reporting Essentials",
+    "domain": "Finance & Business",
+    "description": "Can explain the FP&A planning cycle, build a driver-based rolling forecast, produce a zero-based budget, and present a management P&L with variance commentary.",
+    "tier": "foundational",
+    "icon_key": null,
+    "xp_reward": 125,
+    "threshold": 0,
+    "resource_ids": ["fpa-p1-r1", "fpa-p1-r2", "fpa-p1-r3", "fpa-p1-r4", "fpa-p2-r1", "fpa-p2-r2"]
+  },
+  {
+    "id": "skill-fpa-strategic",
+    "name": "Strategic Finance & Storytelling",
+    "domain": "Finance & Business",
+    "description": "Demonstrates ability to produce a full variance bridge, build an EBITDA walk, and present financial results to leadership with a structured narrative that drives decisions.",
+    "tier": "intermediate",
+    "icon_key": null,
+    "xp_reward": 200,
+    "threshold": 0,
+    "resource_ids": ["fpa-p3-r1", "fpa-p3-r2", "fpa-p3-r3", "fpa-p3-r4", "fpa-p4-r1", "fpa-p4-r2"]
+  },
+  {
+    "id": "skill-sfin-uniteconomics",
+    "name": "Startup Unit Economics",
+    "domain": "Finance & Business",
+    "description": "Can calculate CAC, LTV, and CAC payback period for SaaS and non-SaaS models, interpret the LTV:CAC ratio, and assess whether a business model is capital-efficient.",
+    "tier": "foundational",
+    "icon_key": null,
+    "xp_reward": 125,
+    "threshold": 0,
+    "resource_ids": ["sfin-p1-r1", "sfin-p1-r2", "sfin-p1-r3", "sfin-p1-r4", "sfin-p2-r1", "sfin-p2-r2"]
+  },
+  {
+    "id": "skill-sfin-fundraising",
+    "name": "Fundraising & SaaS Metrics",
+    "domain": "Finance & Business",
+    "description": "Demonstrates the ability to calculate burn rate and runway, decode a term sheet and SAFE, build an ARR waterfall, and assemble the SaaS metrics dashboard investors expect at Series A.",
+    "tier": "intermediate",
+    "icon_key": null,
+    "xp_reward": 200,
+    "threshold": 0,
+    "resource_ids": ["sfin-p3-r1", "sfin-p3-r2", "sfin-p3-r3", "sfin-p3-r4", "sfin-p4-r1", "sfin-p4-r2"]
+  }
+]

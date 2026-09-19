@@ -61,6 +61,8 @@ const TRACK_FILES = [
   'ai_nocode.json',
   'langchain_rag.json',
   'sql_analytics.json',
+  'fpa_reporting.json',
+  'startup_finance.json',
 ];
 
 // Mirrors migration 0002's SQL backfill in JS — same priority order,
