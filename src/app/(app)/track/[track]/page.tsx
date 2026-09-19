@@ -4,7 +4,7 @@ import { getTrackDetail } from "@/lib/queries";
 import { TopicRow } from "@/components/track/topic-row";
 import { LeaveCourseButton } from "@/components/track/leave-course-button";
 import { CourseProgressBanner } from "@/components/track/course-progress-banner";
-import { trackColor } from "@/lib/track-colors";
+import { trackColor, trackInk } from "@/lib/track-colors";
 
 export default async function TrackPage({
   params,
@@ -28,6 +28,7 @@ export default async function TrackPage({
   }));
 
   const color = trackColor(track.id);
+  const ink = trackInk(track.id);
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8">
@@ -94,6 +95,8 @@ export default async function TrackPage({
                     status={topic.status}
                     estimatedTime={topic.estimated_time}
                     index={ti}
+                    activeColor={color}
+                    activeInk={ink}
                   />
                 ))}
               </div>
