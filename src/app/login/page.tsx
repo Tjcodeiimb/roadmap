@@ -31,8 +31,8 @@ export default async function LoginPage() {
       <div className="flex flex-1 items-center justify-center bg-paper px-4 py-12 md:w-1/2">
         <Reveal index={0} className="w-full max-w-sm">
           <div className="mb-6 text-center md:hidden">
-            <h2 className="font-display text-xl font-bold text-ink">Sign in</h2>
-            <p className="mt-1 text-sm text-ink-2">Use the email your admin invited you at.</p>
+            <h2 className="font-display text-xl font-bold text-ink">UpForge Learning</h2>
+            <p className="mt-1 text-sm text-ink-2">Sign in or create a free account.</p>
           </div>
           <div className="card-shadow rounded-md border-2 border-ink bg-paper-2 p-6">
             <LoginForm />

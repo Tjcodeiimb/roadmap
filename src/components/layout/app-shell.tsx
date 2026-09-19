@@ -20,6 +20,7 @@ export function AppShell({
   streak,
   theme,
   fullName,
+  username,
   pendingSkillUnlocks,
   children,
 }: {
@@ -31,6 +32,7 @@ export function AppShell({
   streak: number;
   theme: "light" | "dark";
   fullName: string | null;
+  username: string | null;
   pendingSkillUnlocks: PendingSkillUnlock[];
   children: React.ReactNode;
 }) {
@@ -40,14 +42,20 @@ export function AppShell({
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="flex min-h-screen bg-paper">
-        <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col gap-6 overflow-y-auto border-r-2 border-ink bg-paper-2 p-5 md:flex">
+      {/* app-canvas here so the fixed ::before grid pseudo-element is a sibling
+          of both the aside and main — the > * rule gives both z-index 1 so
+          they sit above the grid rather than having the grid bleed through. */}
+      <div className="app-canvas flex min-h-screen bg-paper">
+        <aside className="sticky top-0 z-[1] hidden h-screen w-64 shrink-0 flex-col gap-6 overflow-y-auto border-r-2 border-ink bg-paper-2 p-5 md:flex">
           <Brand />
           <SidebarNav tracks={tracks} reviewCount={reviewCount} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} onOpenSwitcher={() => setSwitcherOpen(true)} />
           <div className="mt-auto flex flex-col gap-3">
             <XPWidget xp={xp} streak={streak} />
             <div className="flex items-center justify-between gap-2 px-1">
-              <span className="truncate text-sm text-ink-2">{fullName ?? "You"}</span>
+              <div className="min-w-0">
+                <div className="truncate text-sm font-semibold text-ink">{fullName ?? "You"}</div>
+                {username && <div className="truncate font-mono text-[11px] text-ink-3">@{username}</div>}
+              </div>
               <div className="flex items-center gap-1.5">
                 <ThemeToggle initialTheme={theme} />
                 <form action={signOut}>
@@ -77,7 +85,7 @@ export function AppShell({
             <ThemeToggle initialTheme={theme} />
           </header>
 
-          <main className="app-canvas relative flex-1 px-4 py-6 md:px-10 md:py-10">{children}</main>
+          <main className="relative flex-1 px-4 py-6 md:px-10 md:py-10">{children}</main>
         </div>
 
         <AnimatePresence>

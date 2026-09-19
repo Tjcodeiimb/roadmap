@@ -23,7 +23,7 @@ export function ResumeList({ resumes }: { resumes: ResumeSummary[] }) {
   const router = useRouter();
   const { showToast } = useToast();
 
-  function run(action: () => Promise<{ error?: string; success?: true; id?: string }>, onDone?: (id?: string) => void) {
+  function run(action: () => Promise<{ error?: string; success?: true; id?: string }>, onDone?: (id?: string) => void, skipRefresh = false) {
     startTransition(async () => {
       const result = await action();
       if (result?.error) {
@@ -31,7 +31,7 @@ export function ResumeList({ resumes }: { resumes: ResumeSummary[] }) {
         return;
       }
       onDone?.(result?.id);
-      router.refresh();
+      if (!skipRefresh) router.refresh();
     });
   }
 
@@ -47,7 +47,7 @@ export function ResumeList({ resumes }: { resumes: ResumeSummary[] }) {
             Answer a short set of questions and your resume builds itself as you go.
           </p>
         </div>
-        <Button size="lg" disabled={pending} onClick={() => run(createResume, (id) => id && router.push(`/resume/${id}`))}>
+        <Button size="lg" disabled={pending} onClick={() => run(createResume, (id) => id && router.push(`/resume/${id}`), true)}>
           Build my first resume <ArrowRight size={16} />
         </Button>
       </Card>
@@ -57,7 +57,7 @@ export function ResumeList({ resumes }: { resumes: ResumeSummary[] }) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-end">
-        <Button size="md" disabled={pending} onClick={() => run(createResume, (id) => id && router.push(`/resume/${id}`))}>
+        <Button size="md" disabled={pending} onClick={() => run(createResume, (id) => id && router.push(`/resume/${id}`), true)}>
           <Plus size={15} /> New resume
         </Button>
       </div>

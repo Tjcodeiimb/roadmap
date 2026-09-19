@@ -23,12 +23,13 @@ export async function createResume(title?: string) {
   const { supabase, user } = await requireUser();
   if (!user) return { error: "Not authenticated" };
 
-  const { count } = await supabase.from("resumes").select("id", { count: "exact", head: true });
+  const [{ count }, { data: profile }] = await Promise.all([
+    supabase.from("resumes").select("id", { count: "exact", head: true }),
+    supabase.from("profiles").select("full_name").eq("id", user.id).single(),
+  ]);
   if ((count ?? 0) >= MAX_RESUMES) {
     return { error: `You can keep up to ${MAX_RESUMES} resumes. Delete one to make room.` };
   }
-
-  const { data: profile } = await supabase.from("profiles").select("full_name").eq("id", user.id).single();
 
   const { data, error } = await supabase
     .from("resumes")

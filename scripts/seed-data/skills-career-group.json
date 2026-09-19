@@ -1,0 +1,90 @@
+[
+  {
+    "id": "skill-neg-batna",
+    "name": "BATNA and Negotiation Preparation",
+    "domain": "negotiation",
+    "description": "Can identify and strengthen a BATNA before any negotiation, set strategic anchors, and prepare using interest-based frameworks to achieve better outcomes.",
+    "tier": "foundational",
+    "icon_key": null,
+    "xp_reward": 125,
+    "threshold": 0,
+    "resource_ids": ["neg-p1-r1", "neg-p1-r2", "neg-p2-r1", "neg-p2-r2", "neg-p2-r3", "neg-p2-r4"]
+  },
+  {
+    "id": "skill-neg-dealmaking",
+    "name": "Tactical Deal-Making and Closing",
+    "domain": "negotiation",
+    "description": "Demonstrates ability to apply tactical empathy, counter high-pressure tactics, navigate salary and contract negotiations, and close deals across complex multi-party situations.",
+    "tier": "intermediate",
+    "icon_key": null,
+    "xp_reward": 175,
+    "threshold": 0,
+    "resource_ids": ["neg-p3-r1", "neg-p3-r2", "neg-p4-r1", "neg-p5-r1", "neg-p5-r3", "neg-p5-r5"]
+  },
+  {
+    "id": "skill-xcomm-presence",
+    "name": "Executive Presence and Structured Communication",
+    "domain": "communication",
+    "description": "Can project executive presence in meetings and presentations, apply the Pyramid Principle to structure any communication, and write clear, action-oriented recommendations.",
+    "tier": "foundational",
+    "icon_key": null,
+    "xp_reward": 125,
+    "threshold": 0,
+    "resource_ids": ["xcomm-p1-r1", "xcomm-p1-r2", "xcomm-p1-r3", "xcomm-p2-r1", "xcomm-p2-r2", "xcomm-p2-r3"]
+  },
+  {
+    "id": "skill-xcomm-storytelling",
+    "name": "Data Storytelling and High-Stakes Presenting",
+    "domain": "communication",
+    "description": "Demonstrates ability to turn data into compelling narratives using the right chart types, deliver polished presentations to boards and C-suites, and handle tough questions with confidence.",
+    "tier": "intermediate",
+    "icon_key": null,
+    "xp_reward": 175,
+    "threshold": 0,
+    "resource_ids": ["xcomm-p3-r1", "xcomm-p3-r2", "xcomm-p4-r1", "xcomm-p4-r2", "xcomm-p5-r1", "xcomm-p5-r3"]
+  },
+  {
+    "id": "skill-tw-docs-fundamentals",
+    "name": "Technical Writing Fundamentals",
+    "domain": "writing",
+    "description": "Can write clear, audience-centered technical content — applying core principles of clarity and structure, analysing reader needs, and planning documents before writing.",
+    "tier": "foundational",
+    "icon_key": null,
+    "xp_reward": 100,
+    "threshold": 0,
+    "resource_ids": ["tw-p1-r1", "tw-p1-r2", "tw-p1-r3", "tw-p1-r4", "tw-p1-r5", "tw-p1-r6"]
+  },
+  {
+    "id": "skill-tw-api-docs",
+    "name": "API and Developer Documentation",
+    "domain": "writing",
+    "description": "Demonstrates ability to write complete API reference documentation, getting-started guides, and OpenAPI specifications that reduce developer integration friction.",
+    "tier": "intermediate",
+    "icon_key": null,
+    "xp_reward": 150,
+    "threshold": 0,
+    "resource_ids": ["tw-p2-r1", "tw-p2-r2", "tw-p2-r3", "tw-p2-r4", "tw-p2-r5", "tw-p2-r6"]
+  },
+  {
+    "id": "skill-pb-profile",
+    "name": "LinkedIn Profile and Brand Foundation",
+    "domain": "career",
+    "description": "Can build a compelling LinkedIn profile with a standout headline, keyword-rich About section, and featured content that reflects a clear personal brand and attracts the right opportunities.",
+    "tier": "foundational",
+    "icon_key": null,
+    "xp_reward": 100,
+    "threshold": 0,
+    "resource_ids": ["pb-p1-r1", "pb-p1-r2", "pb-p2-r1", "pb-p2-r2", "pb-p2-r3", "pb-p2-r4"]
+  },
+  {
+    "id": "skill-pb-content",
+    "name": "LinkedIn Content and Thought Leadership",
+    "domain": "career",
+    "description": "Demonstrates ability to create a consistent LinkedIn content strategy, write engaging posts with effective hooks, and build thought leadership that grows a professional audience.",
+    "tier": "intermediate",
+    "icon_key": null,
+    "xp_reward": 150,
+    "threshold": 0,
+    "resource_ids": ["pb-p3-r1", "pb-p3-r2", "pb-p3-r3", "pb-p3-r5", "pb-p5-r1", "pb-p5-r3"]
+  }
+]

@@ -52,6 +52,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       streak={streak.current_streak}
       theme={(profile?.theme as "light" | "dark") ?? "light"}
       fullName={profile?.full_name ?? user.email ?? null}
+      username={profile?.username ?? null}
       pendingSkillUnlocks={pendingSkillUnlocks}
     >
       {children}

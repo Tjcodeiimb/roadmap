@@ -52,9 +52,21 @@ const TRACK_FILES = [
   'operations.json',
   'cybersecurity.json',
   'people.json',
+  'market_research.json',
   // sustainability.json intentionally excluded - that track is soft-hidden
   // (see migration 0007_hide_sustainability_track.sql) rather than deleted,
   // so re-seeding must not touch it or re-publish it.
+  // Job-ready tracks (batch 2)
+  'prompt_engineering.json',
+  'ai_nocode.json',
+  'langchain_rag.json',
+  'sql_analytics.json',
+  'fpa_reporting.json',
+  'startup_finance.json',
+  'negotiation.json',
+  'exec_communication.json',
+  'tech_writing.json',
+  'personal_branding.json',
 ];
 
 // Mirrors migration 0002's SQL backfill in JS — same priority order,

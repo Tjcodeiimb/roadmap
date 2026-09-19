@@ -58,6 +58,22 @@
   --track-people: #6105e0; --track-people-ink: #ffffff;
   --track-sustainability: #038719; --track-sustainability-ink: #ffffff;
   --track-esg: #038719; --track-esg-ink: #ffffff;
+  --track-market-research: #03819b; --track-market-research-ink: #ffffff;
+  /* Job-ready tracks (batch 2) */
+  --track-prompt-eng: #b86200; --track-prompt-eng-ink: #ffffff;
+  --track-ai-nocode: #2e7a00; --track-ai-nocode-ink: #ffffff;
+  --track-langchain-rag: #0050b8; --track-langchain-rag-ink: #ffffff;
+  --track-sql-analytics: #6a00b3; --track-sql-analytics-ink: #ffffff;
+  --track-fpa-reporting: #007a6e; --track-fpa-reporting-ink: #ffffff;
+  --track-startup-finance: #a83800; --track-startup-finance-ink: #ffffff;
+  --track-negotiation: #7a6a00; --track-negotiation-ink: #ffffff;
+  --track-exec-communication: #1a6128; --track-exec-communication-ink: #ffffff;
+  --track-tech-writing: #1e4082; --track-tech-writing-ink: #ffffff;
+  --track-personal-branding: #960057; --track-personal-branding-ink: #ffffff;
+
+  /* Status color tokens — used for full-bleed topic/resource row backgrounds */
+  --success-ink: #ffffff;
+  --warning: #c07800; --warning-ink: #ffffff; --warning-soft: #fff3cc;
 
   /* One bold flat color for the login splash — a brand moment, so it stays
      bright regardless of the viewer's light/dark preference rather than
@@ -104,6 +120,19 @@
     --track-people: #9751fb; --track-people-ink: #0a0a0a;
     --track-sustainability: #51fb6d; --track-sustainability-ink: #0a0a0a;
     --track-esg: #51fb6d; --track-esg-ink: #0a0a0a;
+    --track-market-research: #51defb; --track-market-research-ink: #0a0a0a;
+    --track-prompt-eng: #ffb84d; --track-prompt-eng-ink: #0a0a0a;
+    --track-ai-nocode: #b4ff4d; --track-ai-nocode-ink: #0a0a0a;
+    --track-langchain-rag: #4d7cff; --track-langchain-rag-ink: #0a0a0a;
+    --track-sql-analytics: #b04dff; --track-sql-analytics-ink: #0a0a0a;
+    --track-fpa-reporting: #3dffd4; --track-fpa-reporting-ink: #0a0a0a;
+    --track-startup-finance: #ff7a3d; --track-startup-finance-ink: #0a0a0a;
+    --track-negotiation: #e8d82e; --track-negotiation-ink: #0a0a0a;
+    --track-exec-communication: #3df0a4; --track-exec-communication-ink: #0a0a0a;
+    --track-tech-writing: #7a99ff; --track-tech-writing-ink: #0a0a0a;
+    --track-personal-branding: #ff3db0; --track-personal-branding-ink: #0a0a0a;
+    --success-ink: #0a0a0a;
+    --warning: #ffc030; --warning-ink: #0a0a0a; --warning-soft: #3d2800;
   }
 }
 
@@ -141,6 +170,19 @@
   --track-people: #9751fb; --track-people-ink: #0a0a0a;
   --track-sustainability: #51fb6d; --track-sustainability-ink: #0a0a0a;
   --track-esg: #51fb6d; --track-esg-ink: #0a0a0a;
+  --track-market-research: #51defb; --track-market-research-ink: #0a0a0a;
+  --track-prompt-eng: #ffb84d; --track-prompt-eng-ink: #0a0a0a;
+  --track-ai-nocode: #b4ff4d; --track-ai-nocode-ink: #0a0a0a;
+  --track-langchain-rag: #4d7cff; --track-langchain-rag-ink: #0a0a0a;
+  --track-sql-analytics: #b04dff; --track-sql-analytics-ink: #0a0a0a;
+  --track-fpa-reporting: #3dffd4; --track-fpa-reporting-ink: #0a0a0a;
+  --track-startup-finance: #ff7a3d; --track-startup-finance-ink: #0a0a0a;
+  --track-negotiation: #e8d82e; --track-negotiation-ink: #0a0a0a;
+  --track-exec-communication: #3df0a4; --track-exec-communication-ink: #0a0a0a;
+  --track-tech-writing: #7a99ff; --track-tech-writing-ink: #0a0a0a;
+  --track-personal-branding: #ff3db0; --track-personal-branding-ink: #0a0a0a;
+  --success-ink: #0a0a0a;
+  --warning: #ffc030; --warning-ink: #0a0a0a; --warning-soft: #3d2800;
 }
 
 @theme inline {

@@ -22,6 +22,23 @@ const ACTION_ICON_KEY: Record<Action, string> = {
   Open: "web",
 };
 
+const STATUS_STYLE: Record<ResourceBankStatus, React.CSSProperties> = {
+  done: {
+    backgroundColor: "var(--success)",
+    borderColor: "var(--success)",
+    color: "var(--success-ink)",
+  },
+  in_progress: {
+    backgroundColor: "var(--accent)",
+    borderColor: "var(--accent)",
+    color: "var(--accent-ink)",
+  },
+  todo: {
+    backgroundColor: "var(--paper-2)",
+    borderColor: "var(--ink)",
+  },
+};
+
 export function ResourceCard({
   id,
   iconKey,
@@ -46,29 +63,38 @@ export function ResourceCard({
   const action = inferAction(title, note ?? null, format ?? null, url);
   const metaParts = [source, format, length].filter(Boolean);
   const Icon = ICONS[iconKey ?? ACTION_ICON_KEY[action]] ?? FALLBACK_ICON;
+  const style = STATUS_STYLE[status];
+  const isDone = status === "done";
+  const isActive = status === "in_progress";
 
   return (
     <Link
       href={`/library/resource/${id}`}
-      className="press-sm group flex items-start gap-3 rounded-md border-2 border-ink bg-paper-2 p-4 shadow-[3px_3px_0_0_var(--brutal-shadow)]"
+      className="press-sm group flex items-start gap-3 rounded-md border-2 p-4 shadow-[3px_3px_0_0_var(--brutal-shadow)]"
+      style={style}
     >
-      <Icon size={20} className="mt-0.5 shrink-0 text-ink-2" />
+      <Icon size={20} className="mt-0.5 shrink-0 opacity-80" />
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-2">
-          <span className="font-bold text-ink group-hover:underline">{title}</span>
-          {status === "done" ? (
-            <CheckCircleMark size={16} className="mt-0.5 shrink-0 text-success" />
+          <span className="font-bold group-hover:underline">{title}</span>
+          {isDone ? (
+            <CheckCircleMark size={16} className="mt-0.5 shrink-0" />
           ) : (
             <ChevronRight
               size={16}
-              className="mt-0.5 shrink-0 text-ink-3 transition-transform group-hover:translate-x-0.5"
+              className="mt-0.5 shrink-0 opacity-60 transition-transform group-hover:translate-x-0.5"
             />
           )}
         </div>
-        {metaParts.length > 0 && <div className="mt-0.5 text-xs text-ink-3">{metaParts.join(" · ")}</div>}
-        {note && <div className="mt-1 text-sm text-ink-2">{note}</div>}
+        {metaParts.length > 0 && (
+          <div className="mt-0.5 text-xs opacity-70">{metaParts.join(" · ")}</div>
+        )}
+        {note && <div className="mt-1 text-sm opacity-80">{note}</div>}
       </div>
-      <span className="mt-0.5 shrink-0 rounded-sm border-2 border-ink bg-paper-3 px-2 py-1 text-[11px] font-bold text-ink-2">
+      <span
+        className="mt-0.5 shrink-0 rounded-sm border-2 border-current px-2 py-1 text-[11px] font-bold opacity-90"
+        style={isActive || isDone ? { borderColor: "currentColor" } : { borderColor: "var(--ink)", color: "var(--ink-2)" }}
+      >
         {action}
       </span>
     </Link>

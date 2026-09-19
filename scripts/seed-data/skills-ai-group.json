@@ -1,0 +1,68 @@
+[
+  {
+    "id": "skill-pe-fundamentals",
+    "name": "Prompt Engineering Fundamentals",
+    "domain": "AI & Automation",
+    "description": "Demonstrates fluency with core prompting techniques: zero-shot, few-shot, chain-of-thought reasoning, and persona-based system prompts. Can apply these patterns to real workplace tasks in ChatGPT and Claude.",
+    "tier": "intermediate",
+    "icon_key": null,
+    "xp_reward": 150,
+    "threshold": 0,
+    "resource_ids": ["pe-p1-r1", "pe-p1-r2", "pe-p1-r3", "pe-p1-r4", "pe-p2-r1", "pe-p2-r2"]
+  },
+  {
+    "id": "skill-pe-advanced-patterns",
+    "name": "Advanced Prompt Patterns & AI Workflows",
+    "domain": "AI & Automation",
+    "description": "Demonstrates mastery of advanced prompting architectures — ReAct, Tree of Thought, meta-prompts — and the ability to chain AI tools together into automated workflows with responsible evaluation practices.",
+    "tier": "intermediate",
+    "icon_key": null,
+    "xp_reward": 200,
+    "threshold": 0,
+    "resource_ids": ["pe-p3-r1", "pe-p3-r2", "pe-p4-r1", "pe-p4-r2", "pe-p5-r1", "pe-p5-r2"]
+  },
+  {
+    "id": "skill-ainc-automation-builder",
+    "name": "No-Code Automation Builder",
+    "domain": "AI & Automation",
+    "description": "Can design and build multi-step automations in Zapier and Make.com, apply filters and error handling, and integrate n8n for open-source self-hosted workflows.",
+    "tier": "foundational",
+    "icon_key": null,
+    "xp_reward": 125,
+    "threshold": 0,
+    "resource_ids": ["ainc-p1-r1", "ainc-p1-r2", "ainc-p1-r3", "ainc-p1-r4", "ainc-p2-r1", "ainc-p2-r2"]
+  },
+  {
+    "id": "skill-ainc-ai-integrations",
+    "name": "AI-Powered Workflow Integrations",
+    "domain": "AI & Automation",
+    "description": "Demonstrates ability to embed AI steps (OpenAI and Claude) into no-code automations, connect business tools like Slack, Notion, and Google Sheets, and ship monitored end-to-end workflows.",
+    "tier": "foundational",
+    "icon_key": null,
+    "xp_reward": 175,
+    "threshold": 0,
+    "resource_ids": ["ainc-p3-r1", "ainc-p3-r2", "ainc-p4-r1", "ainc-p4-r2", "ainc-p5-r1", "ainc-p5-r2"]
+  },
+  {
+    "id": "skill-rag-llm-api-langchain",
+    "name": "LLM APIs & LangChain Fundamentals",
+    "domain": "AI & Automation",
+    "description": "Can call OpenAI and Anthropic APIs from Python, build LangChain chains with prompt templates and memory, and load and split documents for downstream embedding.",
+    "tier": "advanced",
+    "icon_key": null,
+    "xp_reward": 200,
+    "threshold": 0,
+    "resource_ids": ["rag-p1-r1", "rag-p1-r2", "rag-p1-r3", "rag-p1-r4", "rag-p2-r1", "rag-p2-r2"]
+  },
+  {
+    "id": "skill-rag-vector-rag-pipeline",
+    "name": "Vector Databases & RAG Pipelines",
+    "domain": "AI & Automation",
+    "description": "Demonstrates the ability to generate and store embeddings in FAISS or Chroma, build a complete retrieval-augmented generation pipeline, and deploy it as an interactive Streamlit application with LangSmith tracing.",
+    "tier": "advanced",
+    "icon_key": null,
+    "xp_reward": 250,
+    "threshold": 0,
+    "resource_ids": ["rag-p3-r1", "rag-p3-r2", "rag-p4-r1", "rag-p4-r2", "rag-p5-r1", "rag-p5-r2"]
+  }
+]
