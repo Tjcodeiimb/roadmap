@@ -47,7 +47,6 @@ export function TopicRow({
         return {
           backgroundColor: "var(--paper-2)",
           borderColor: "var(--ink)",
-          opacity: 0.6,
         };
     }
   })();

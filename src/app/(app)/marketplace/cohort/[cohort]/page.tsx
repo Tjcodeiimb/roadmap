@@ -68,6 +68,8 @@ export default async function CohortDetailPage({
           })}
         </div>
       </div>
+
+      <EnrollButton kind="cohort" id={cohort.id} label={cohort.label} enrolled={enrolled} continueHref="/dashboard" />
     </div>
   );
 }

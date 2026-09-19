@@ -64,7 +64,14 @@ export function OnboardingWizard() {
               <HowItem iconKey="streak" title="Build a streak" desc="Visit most days to keep your streak alive." />
               <HowItem iconKey="repeat" title="Spaced review" desc="Finished topics resurface for a quick review, right when you're about to forget them." />
             </div>
-            <Button size="lg" className="mt-8 w-full" disabled={pending} onClick={finish}>
+            <button
+              type="button"
+              onClick={() => setStep(0)}
+              className="mt-4 w-full text-sm text-ink-3 hover:text-ink"
+            >
+              ← Back
+            </button>
+            <Button size="lg" className="mt-3 w-full" disabled={pending} onClick={finish}>
               {pending ? "Setting up…" : "Browse the marketplace"} <ArrowRight size={16} />
             </Button>
           </Screen>

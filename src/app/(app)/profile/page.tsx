@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AnimatedDisclosure } from "@/components/ui/animated-disclosure";
 import { createClient } from "@/lib/supabase/server";
 import {
   getProfile,
@@ -135,17 +136,14 @@ export default async function ProfilePage({
       </Card>
 
       {!params["set-password"] && (
-        <details className="rounded-md border-2 border-ink bg-paper-2 p-4">
-          <summary className="cursor-pointer text-sm font-bold text-ink-2">Account settings</summary>
-          <div className="mt-4 flex flex-col gap-4">
-            {profile?.username && (
-              <div className="border-b-2 border-paper-3 pb-4">
-                <UsernameForm current={profile.username} />
-              </div>
-            )}
-            <SetPasswordForm />
-          </div>
-        </details>
+        <AnimatedDisclosure summary="Account settings">
+          {profile?.username && (
+            <div className="border-b-2 border-paper-3 pb-4">
+              <UsernameForm current={profile.username} />
+            </div>
+          )}
+          <SetPasswordForm />
+        </AnimatedDisclosure>
       )}
     </div>
   );
