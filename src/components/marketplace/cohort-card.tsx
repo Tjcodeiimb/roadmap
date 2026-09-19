@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/ui/reveal";
@@ -13,6 +14,7 @@ export function CohortCard({ cohort, index = 0 }: { cohort: MarketplaceCohort; i
 
   return (
     <Reveal index={index}>
+      <motion.div whileHover={{ y: -3, transition: { duration: 0.15, ease: "easeOut" } }}>
       <Card className="press flex h-full flex-col gap-4">
         <div className="flex items-start gap-3">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent-soft text-accent">
@@ -53,6 +55,7 @@ export function CohortCard({ cohort, index = 0 }: { cohort: MarketplaceCohort; i
           <EnrollButton kind="cohort" id={cohort.id} label={cohort.label} enrolled={cohort.enrolled} continueHref="/dashboard" />
         </div>
       </Card>
+      </motion.div>
     </Reveal>
   );
 }
