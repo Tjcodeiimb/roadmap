@@ -8,7 +8,8 @@
     "effort_per_week": "3-4 hrs",
     "icon_key": "consulting",
     "published": true,
-    "summary": "Develop the communication skills that define senior leaders — structured thinking with the Pyramid Principle, data storytelling, high-stakes presentation delivery, and concise written communication for C-suite audiences."
+    "summary": "Develop the communication skills that define senior leaders — structured thinking with the Pyramid Principle, data storytelling, high-stakes presentation delivery, and concise written communication for C-suite audiences.",
+    "name": "exec-communication"
   },
   "phases": [
     {

@@ -8,7 +8,8 @@
     "effort_per_week": "3-4 hrs",
     "icon_key": "consulting",
     "published": true,
-    "summary": "Master negotiation from first principles to complex deals — covering BATNA, tactical empathy, salary conversations, vendor contracts, and cross-cultural dynamics so you can consistently reach better agreements."
+    "summary": "Master negotiation from first principles to complex deals — covering BATNA, tactical empathy, salary conversations, vendor contracts, and cross-cultural dynamics so you can consistently reach better agreements.",
+    "name": "negotiation"
   },
   "phases": [
     {
