@@ -63,6 +63,10 @@ const TRACK_FILES = [
   'sql_analytics.json',
   'fpa_reporting.json',
   'startup_finance.json',
+  'negotiation.json',
+  'exec_communication.json',
+  'tech_writing.json',
+  'personal_branding.json',
 ];
 
 // Mirrors migration 0002's SQL backfill in JS — same priority order,

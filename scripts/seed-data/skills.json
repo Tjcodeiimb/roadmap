@@ -3269,6 +3269,86 @@
       "icon_key": null,
       "xp_reward": 200,
       "threshold": 0
+    },
+    {
+      "id": "skill-neg-batna",
+      "name": "BATNA and Negotiation Preparation",
+      "domain": "negotiation",
+      "description": "Can identify and strengthen a BATNA before any negotiation, set strategic anchors, and prepare using interest-based frameworks to achieve better outcomes.",
+      "tier": "foundational",
+      "icon_key": null,
+      "xp_reward": 125,
+      "threshold": 0
+    },
+    {
+      "id": "skill-neg-dealmaking",
+      "name": "Tactical Deal-Making and Closing",
+      "domain": "negotiation",
+      "description": "Demonstrates ability to apply tactical empathy, counter high-pressure tactics, navigate salary and contract negotiations, and close deals across complex multi-party situations.",
+      "tier": "intermediate",
+      "icon_key": null,
+      "xp_reward": 175,
+      "threshold": 0
+    },
+    {
+      "id": "skill-xcomm-presence",
+      "name": "Executive Presence and Structured Communication",
+      "domain": "communication",
+      "description": "Can project executive presence in meetings and presentations, apply the Pyramid Principle to structure any communication, and write clear, action-oriented recommendations.",
+      "tier": "foundational",
+      "icon_key": null,
+      "xp_reward": 125,
+      "threshold": 0
+    },
+    {
+      "id": "skill-xcomm-storytelling",
+      "name": "Data Storytelling and High-Stakes Presenting",
+      "domain": "communication",
+      "description": "Demonstrates ability to turn data into compelling narratives using the right chart types, deliver polished presentations to boards and C-suites, and handle tough questions with confidence.",
+      "tier": "intermediate",
+      "icon_key": null,
+      "xp_reward": 175,
+      "threshold": 0
+    },
+    {
+      "id": "skill-tw-docs-fundamentals",
+      "name": "Technical Writing Fundamentals",
+      "domain": "writing",
+      "description": "Can write clear, audience-centered technical content — applying core principles of clarity and structure, analysing reader needs, and planning documents before writing.",
+      "tier": "foundational",
+      "icon_key": null,
+      "xp_reward": 100,
+      "threshold": 0
+    },
+    {
+      "id": "skill-tw-api-docs",
+      "name": "API and Developer Documentation",
+      "domain": "writing",
+      "description": "Demonstrates ability to write complete API reference documentation, getting-started guides, and OpenAPI specifications that reduce developer integration friction.",
+      "tier": "intermediate",
+      "icon_key": null,
+      "xp_reward": 150,
+      "threshold": 0
+    },
+    {
+      "id": "skill-pb-profile",
+      "name": "LinkedIn Profile and Brand Foundation",
+      "domain": "career",
+      "description": "Can build a compelling LinkedIn profile with a standout headline, keyword-rich About section, and featured content that reflects a clear personal brand and attracts the right opportunities.",
+      "tier": "foundational",
+      "icon_key": null,
+      "xp_reward": 100,
+      "threshold": 0
+    },
+    {
+      "id": "skill-pb-content",
+      "name": "LinkedIn Content and Thought Leadership",
+      "domain": "career",
+      "description": "Demonstrates ability to create a consistent LinkedIn content strategy, write engaging posts with effective hooks, and build thought leadership that grows a professional audience.",
+      "tier": "intermediate",
+      "icon_key": null,
+      "xp_reward": 150,
+      "threshold": 0
     }
   ],
   "skill_resources": [
@@ -6547,6 +6627,198 @@
     {
       "skill_id": "skill-sfin-fundraising",
       "resource_id": "sfin-p4-r2"
+    },
+    {
+      "skill_id": "skill-neg-batna",
+      "resource_id": "neg-p1-r1"
+    },
+    {
+      "skill_id": "skill-neg-batna",
+      "resource_id": "neg-p1-r2"
+    },
+    {
+      "skill_id": "skill-neg-batna",
+      "resource_id": "neg-p2-r1"
+    },
+    {
+      "skill_id": "skill-neg-batna",
+      "resource_id": "neg-p2-r2"
+    },
+    {
+      "skill_id": "skill-neg-batna",
+      "resource_id": "neg-p2-r3"
+    },
+    {
+      "skill_id": "skill-neg-batna",
+      "resource_id": "neg-p2-r4"
+    },
+    {
+      "skill_id": "skill-neg-dealmaking",
+      "resource_id": "neg-p3-r1"
+    },
+    {
+      "skill_id": "skill-neg-dealmaking",
+      "resource_id": "neg-p3-r2"
+    },
+    {
+      "skill_id": "skill-neg-dealmaking",
+      "resource_id": "neg-p4-r1"
+    },
+    {
+      "skill_id": "skill-neg-dealmaking",
+      "resource_id": "neg-p5-r1"
+    },
+    {
+      "skill_id": "skill-neg-dealmaking",
+      "resource_id": "neg-p5-r3"
+    },
+    {
+      "skill_id": "skill-neg-dealmaking",
+      "resource_id": "neg-p5-r5"
+    },
+    {
+      "skill_id": "skill-xcomm-presence",
+      "resource_id": "xcomm-p1-r1"
+    },
+    {
+      "skill_id": "skill-xcomm-presence",
+      "resource_id": "xcomm-p1-r2"
+    },
+    {
+      "skill_id": "skill-xcomm-presence",
+      "resource_id": "xcomm-p1-r3"
+    },
+    {
+      "skill_id": "skill-xcomm-presence",
+      "resource_id": "xcomm-p2-r1"
+    },
+    {
+      "skill_id": "skill-xcomm-presence",
+      "resource_id": "xcomm-p2-r2"
+    },
+    {
+      "skill_id": "skill-xcomm-presence",
+      "resource_id": "xcomm-p2-r3"
+    },
+    {
+      "skill_id": "skill-xcomm-storytelling",
+      "resource_id": "xcomm-p3-r1"
+    },
+    {
+      "skill_id": "skill-xcomm-storytelling",
+      "resource_id": "xcomm-p3-r2"
+    },
+    {
+      "skill_id": "skill-xcomm-storytelling",
+      "resource_id": "xcomm-p4-r1"
+    },
+    {
+      "skill_id": "skill-xcomm-storytelling",
+      "resource_id": "xcomm-p4-r2"
+    },
+    {
+      "skill_id": "skill-xcomm-storytelling",
+      "resource_id": "xcomm-p5-r1"
+    },
+    {
+      "skill_id": "skill-xcomm-storytelling",
+      "resource_id": "xcomm-p5-r3"
+    },
+    {
+      "skill_id": "skill-tw-docs-fundamentals",
+      "resource_id": "tw-p1-r1"
+    },
+    {
+      "skill_id": "skill-tw-docs-fundamentals",
+      "resource_id": "tw-p1-r2"
+    },
+    {
+      "skill_id": "skill-tw-docs-fundamentals",
+      "resource_id": "tw-p1-r3"
+    },
+    {
+      "skill_id": "skill-tw-docs-fundamentals",
+      "resource_id": "tw-p1-r4"
+    },
+    {
+      "skill_id": "skill-tw-docs-fundamentals",
+      "resource_id": "tw-p1-r5"
+    },
+    {
+      "skill_id": "skill-tw-docs-fundamentals",
+      "resource_id": "tw-p1-r6"
+    },
+    {
+      "skill_id": "skill-tw-api-docs",
+      "resource_id": "tw-p2-r1"
+    },
+    {
+      "skill_id": "skill-tw-api-docs",
+      "resource_id": "tw-p2-r2"
+    },
+    {
+      "skill_id": "skill-tw-api-docs",
+      "resource_id": "tw-p2-r3"
+    },
+    {
+      "skill_id": "skill-tw-api-docs",
+      "resource_id": "tw-p2-r4"
+    },
+    {
+      "skill_id": "skill-tw-api-docs",
+      "resource_id": "tw-p2-r5"
+    },
+    {
+      "skill_id": "skill-tw-api-docs",
+      "resource_id": "tw-p2-r6"
+    },
+    {
+      "skill_id": "skill-pb-profile",
+      "resource_id": "pb-p1-r1"
+    },
+    {
+      "skill_id": "skill-pb-profile",
+      "resource_id": "pb-p1-r2"
+    },
+    {
+      "skill_id": "skill-pb-profile",
+      "resource_id": "pb-p2-r1"
+    },
+    {
+      "skill_id": "skill-pb-profile",
+      "resource_id": "pb-p2-r2"
+    },
+    {
+      "skill_id": "skill-pb-profile",
+      "resource_id": "pb-p2-r3"
+    },
+    {
+      "skill_id": "skill-pb-profile",
+      "resource_id": "pb-p2-r4"
+    },
+    {
+      "skill_id": "skill-pb-content",
+      "resource_id": "pb-p3-r1"
+    },
+    {
+      "skill_id": "skill-pb-content",
+      "resource_id": "pb-p3-r2"
+    },
+    {
+      "skill_id": "skill-pb-content",
+      "resource_id": "pb-p3-r3"
+    },
+    {
+      "skill_id": "skill-pb-content",
+      "resource_id": "pb-p3-r5"
+    },
+    {
+      "skill_id": "skill-pb-content",
+      "resource_id": "pb-p5-r1"
+    },
+    {
+      "skill_id": "skill-pb-content",
+      "resource_id": "pb-p5-r3"
     }
   ]
 }
