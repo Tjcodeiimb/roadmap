@@ -82,6 +82,14 @@ const EMOJI_ICON_KEY = {
   '🌐': 'web',
 };
 
+// Valid columns for the resources table (0001 + 0002 additions).
+// Any field in a seed JSON that isn't here gets stripped before upsert.
+const RESOURCE_COLUMNS = new Set([
+  'id', 'topic_id', 'order_index', 'title', 'url', 'source', 'format',
+  'length', 'note', 'icon', 'provider', 'external_id', 'duration_seconds',
+  'embeddable', 'icon_key',
+]);
+
 function deriveResourceMedia(r) {
   const watch = r.url.match(/youtube\.com\/watch\?v=([A-Za-z0-9_-]{11})/);
   const short = r.url.match(/youtu\.be\/([A-Za-z0-9_-]{11})/);
@@ -103,15 +111,19 @@ function deriveResourceMedia(r) {
     else iconKey = 'web';
   }
 
-  return {
+  const derived = {
     ...r,
     icon: null,
     provider,
     external_id: externalId,
     embeddable,
     icon_key: iconKey,
+    // Some seed files use `duration` (plain string) instead of `duration_seconds` (int).
     duration_seconds: r.duration_seconds ?? null,
   };
+
+  // Strip any keys not in the schema so PostgREST never sees an unknown column.
+  return Object.fromEntries(Object.entries(derived).filter(([k]) => RESOURCE_COLUMNS.has(k)));
 }
 
 // cohort_courses and skill_resources are composite-PK tables, so
