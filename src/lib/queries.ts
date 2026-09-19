@@ -140,12 +140,14 @@ export async function getMarketplaceCourses(supabase: Client): Promise<Marketpla
     let topicCount = 0;
     let resourceCount = 0;
     let newResourceCount = 0;
-    for (const phase of t.phases) {
-      topicCount += phase.topics.length;
-      for (const topic of phase.topics) {
-        resourceCount += topic.resources.length;
-        for (const r of topic.resources) {
-          if (new Date(r.created_at).getTime() >= newCutoff) newResourceCount++;
+    for (const phase of (t.phases ?? [])) {
+      const topics = phase.topics ?? [];
+      topicCount += topics.length;
+      for (const topic of topics) {
+        const resources = topic.resources ?? [];
+        resourceCount += resources.length;
+        for (const r of resources) {
+          if (r.created_at && new Date(r.created_at).getTime() >= newCutoff) newResourceCount++;
         }
       }
     }
