@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { ICONS, FALLBACK_ICON, LockMark, CheckCircleMark, SparkMark } from "@/components/icons";
 import { TierBadge } from "@/components/marketplace/tier-badge";
@@ -116,14 +117,19 @@ export function SkillsView({ groups }: { groups: TrackSkillGroup[] }) {
                             </span>
                           </div>
                           {!skill.unlocked && skill.totalCount > 0 && (
-                            <div className="mt-2 h-2 w-full overflow-hidden rounded-sm border-2 border-ink bg-paper-3">
-                              <div
-                                className="h-full bg-accent"
-                                style={{
-                                  width: `${Math.min(100, Math.round((skill.doneCount / skill.totalCount) * 100))}%`,
-                                }}
-                              />
-                            </div>
+                            <Link href={`/track/${skill.domain}`} className="block">
+                              <div className="mt-2 h-2 w-full overflow-hidden rounded-sm border-2 border-ink bg-paper-3">
+                                <div
+                                  className="h-full bg-accent"
+                                  style={{
+                                    width: `${Math.min(100, Math.round((skill.doneCount / skill.totalCount) * 100))}%`,
+                                  }}
+                                />
+                              </div>
+                              <div className="mt-1 text-[11px] font-medium text-ink-3 hover:text-ink">
+                                Go to course →
+                              </div>
+                            </Link>
                           )}
                         </div>
                       </div>

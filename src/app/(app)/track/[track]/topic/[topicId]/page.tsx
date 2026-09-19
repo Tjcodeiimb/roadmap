@@ -60,23 +60,35 @@ export default async function TopicPage({
 
       <div>
         <div className="mb-3 text-sm font-semibold text-ink">Resources</div>
-        <div className="flex flex-col gap-2.5">
-          {resources.map((r) => (
-            <ResourceCard
-              key={r.id}
-              id={r.id}
-              iconKey={r.icon_key}
-              title={r.title}
-              url={r.url}
-              source={r.source}
-              format={r.format}
-              length={r.length}
-              note={r.note}
-              status={r.status}
-            />
-          ))}
-        </div>
+        {resources.length === 0 ? (
+          <div className="rounded-md border-2 border-dashed border-ink/30 p-6 text-center text-sm text-ink-3">
+            No resources added yet — check back soon.
+          </div>
+        ) : (
+          <div className="flex flex-col gap-2.5">
+            {resources.map((r) => (
+              <ResourceCard
+                key={r.id}
+                id={r.id}
+                iconKey={r.icon_key}
+                title={r.title}
+                url={r.url}
+                source={r.source}
+                format={r.format}
+                length={r.length}
+                note={r.note}
+                status={r.status}
+              />
+            ))}
+          </div>
+        )}
       </div>
+
+      {/* Bottom status control — repeat mark-done so user doesn't have to scroll back up */}
+      {status !== "done" && (
+        <StatusControl topicId={topic.id} status={status} path={`/track/${track}/topic/${topicId}`} />
+      )}
+
     </div>
   );
 }

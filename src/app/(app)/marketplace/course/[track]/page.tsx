@@ -91,6 +91,8 @@ export default async function CourseDetailPage({
           ))}
         </div>
       </div>
+
+      <EnrollButton kind="track" id={track.id} label={track.label} enrolled={enrolled} continueHref={`/track/${track.id}`} />
     </div>
   );
 }
