@@ -8,7 +8,8 @@
     "effort_per_week": "3-4 hrs",
     "icon_key": "consulting",
     "published": true,
-    "summary": "Learn to write technical content professionals trust — from foundational clarity principles to API reference docs, user guides, SOPs, docs-as-code workflows, and documentation maintenance at scale."
+    "summary": "Learn to write technical content professionals trust — from foundational clarity principles to API reference docs, user guides, SOPs, docs-as-code workflows, and documentation maintenance at scale.",
+    "name": "tech-writing"
   },
   "phases": [
     {
