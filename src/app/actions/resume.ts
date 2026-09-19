@@ -60,6 +60,9 @@ export async function saveResumeDoc(id: string, doc: ResumeDoc) {
     .eq("id", id);
 
   if (error) return { error: error.message };
+  // Without this the resume list kept a stale updated-at and entry count until
+  // some other action happened to bust the cache.
+  revalidatePath("/resume");
   return { success: true as const };
 }
 

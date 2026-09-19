@@ -19,14 +19,16 @@ export async function setTopicStatus(topicId: string, status: Status, path?: str
 
 export async function reviewTopic(topicId: string, quality: 0 | 1 | 2) {
   const supabase = await createClient();
-  const { error } = await supabase.rpc("review_topic", {
+  const { data, error } = await supabase.rpc("review_topic", {
     p_topic_id: topicId,
     p_quality: quality,
   });
   if (error) return { error: error.message };
   revalidatePath("/review");
   revalidatePath("/dashboard");
-  return { success: true };
+  // The RPC returns the card's real next review date; the old fixed labels
+  // ("Rescheduled for tomorrow") were wrong for every stage past the first.
+  return { success: true, nextReviewDate: data as string | null };
 }
 
 // Called once per session load (dashboard mount) — mirrors the original

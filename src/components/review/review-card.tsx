@@ -24,7 +24,14 @@ export function ReviewCard({ item }: { item: ReviewItem }) {
         setDone(false);
         return;
       }
-      showToast(REVIEW_QUALITY_LABELS[quality] + " ✓");
+      showToast(
+        result?.nextReviewDate
+          ? `Next review ${new Date(result.nextReviewDate + "T00:00:00").toLocaleDateString(undefined, {
+              month: "short",
+              day: "numeric",
+            })} ✓`
+          : REVIEW_QUALITY_LABELS[quality] + " ✓"
+      );
       router.refresh();
     });
   }

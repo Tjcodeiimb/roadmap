@@ -39,15 +39,6 @@ export default async function TrackPage({
   );
   const pct = resourceTotal > 0 ? Math.round((resourceDone / resourceTotal) * 100) : 0;
 
-  const phaseProgress = phases.map((p) => ({
-    title: p.title,
-    done: p.topics.reduce(
-      (m, t) => m + (t.resourceTotal ? t.resourceDone : t.status === "done" ? 1 : 0),
-      0
-    ),
-    total: p.topics.reduce((m, t) => m + (t.resourceTotal || 1), 0),
-  }));
-
   const color = trackColor(track.id);
 
   return (
@@ -70,7 +61,6 @@ export default async function TrackPage({
           doneTopics={doneTopics}
           activeTopics={activeTopics}
           totalTopics={totalTopics}
-          phases={phaseProgress}
         />
       </div>
 

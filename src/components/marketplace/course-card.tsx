@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/ui/reveal";
@@ -26,7 +23,6 @@ export function CourseCard({
 
   return (
     <Reveal index={index}>
-      <motion.div whileHover={{ y: -3, transition: { duration: 0.15, ease: "easeOut" } }}>
       <Card className="press flex h-full flex-col gap-4" style={{ backgroundColor: trackColor(course.id) }}>
         <div className="flex items-start gap-3">
           <div
@@ -48,16 +44,16 @@ export function CourseCard({
             </div>
             <TierBadge tier={course.tier} />
             {course.newResourceCount > 0 && (
-              <span className="ml-2 inline-flex items-center gap-0.5 align-middle text-[11px] font-medium" style={{ color: ink, opacity: 0.75 }}>
+              <span className="ml-2 inline-flex items-center gap-0.5 align-middle text-[11px] font-medium" style={{ color: ink }}>
                 <SparkMark size={11} /> {course.newResourceCount} new
               </span>
             )}
           </div>
         </div>
 
-        <p className="text-sm leading-relaxed" style={{ color: ink, opacity: 0.85 }}>{course.summary}</p>
+        <p className="text-sm leading-relaxed" style={{ color: ink }}>{course.summary}</p>
 
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs" style={{ color: ink, opacity: 0.75 }}>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs" style={{ color: ink }}>
           {course.estimatedHours != null && (
             <span className="flex items-center gap-1">
               <ClockMark size={13} /> {course.estimatedHours}h total
@@ -81,13 +77,12 @@ export function CourseCard({
         )}
 
         <div className="mt-auto flex items-center justify-between pt-1">
-          <Link href={`/marketplace/course/${course.id}`} className="text-sm font-bold underline decoration-2 underline-offset-4" style={{ color: ink, opacity: 0.8 }}>
+          <Link href={`/marketplace/course/${course.id}`} className="text-sm font-bold underline decoration-2 underline-offset-4" style={{ color: ink }}>
             View syllabus
           </Link>
           <EnrollButton kind="track" id={course.id} label={course.label} enrolled={course.enrolled} continueHref={`/track/${course.id}`} />
         </div>
       </Card>
-      </motion.div>
     </Reveal>
   );
 }

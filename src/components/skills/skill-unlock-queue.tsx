@@ -21,12 +21,23 @@ export function SkillUnlockQueue({ pending }: { pending: PendingSkillUnlock[] })
     if (!fresh.length) return;
     for (const s of fresh) seenIds.current.add(s.skillId);
     setQueue((q) => [...q, ...fresh]);
-    void ackSkills(fresh.map((s) => s.skillId));
   }, [pending]);
+
+  // Acknowledge a skill only once its celebration has actually been shown.
+  // Acking at queue time stamped seen_at before the animation ran, so closing
+  // the tab mid-celebration consumed it forever — exactly what the pending
+  // safety net exists to prevent.
+  function dismissCurrent() {
+    setQueue((q) => {
+      const [shown, ...rest] = q;
+      if (shown) void ackSkills([shown.skillId]);
+      return rest;
+    });
+  }
 
   useEffect(() => {
     if (!queue.length) return;
-    const timer = setTimeout(() => setQueue((q) => q.slice(1)), DISPLAY_MS);
+    const timer = setTimeout(dismissCurrent, DISPLAY_MS);
     return () => clearTimeout(timer);
   }, [queue]);
 
@@ -35,11 +46,7 @@ export function SkillUnlockQueue({ pending }: { pending: PendingSkillUnlock[] })
   return (
     <AnimatePresence>
       {current && (
-        <SkillUnlockOverlay
-          key={current.skillId}
-          skill={current}
-          onDismiss={() => setQueue((q) => q.slice(1))}
-        />
+        <SkillUnlockOverlay key={current.skillId} skill={current} onDismiss={dismissCurrent} />
       )}
     </AnimatePresence>
   );

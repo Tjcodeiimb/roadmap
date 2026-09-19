@@ -2,26 +2,18 @@
 
 import { CheckCircle2, Zap, Circle } from "lucide-react";
 
-interface PhaseData {
-  title: string;
-  done: number;
-  total: number;
-}
-
 export function CourseProgressBanner({
   color,
   pct,
   doneTopics,
   activeTopics,
   totalTopics,
-  phases,
 }: {
   color: string;
   pct: number;
   doneTopics: number;
   activeTopics: number;
   totalTopics: number;
-  phases: PhaseData[];
 }) {
   const todoTopics = totalTopics - doneTopics - activeTopics;
 
@@ -83,35 +75,6 @@ export function CourseProgressBanner({
         )}
       </div>
 
-      {/* Per-phase breakdown */}
-      {phases.length > 0 && (
-        <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
-          {phases.map((phase, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <span className="w-14 shrink-0 text-[10px] font-bold uppercase tracking-wide text-ink-3">
-                Ph.{i + 1}
-              </span>
-              <div className="flex-1 h-2 overflow-hidden rounded-sm border border-ink bg-paper-2">
-                {phase.total > 0 && (
-                  <div
-                    className="h-full transition-all duration-500"
-                    style={{
-                      width: `${(phase.done / phase.total) * 100}%`,
-                      backgroundColor:
-                        phase.done === phase.total && phase.done > 0
-                          ? "var(--success)"
-                          : color,
-                    }}
-                  />
-                )}
-              </div>
-              <span className="w-8 shrink-0 text-right text-[10px] font-bold text-ink-3">
-                {phase.done}/{phase.total}
-              </span>
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 }

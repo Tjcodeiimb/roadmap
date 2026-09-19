@@ -219,6 +219,7 @@
   --color-login-bg: var(--login-bg);
   --font-sans: var(--font-display);
   --font-display: var(--font-display);
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   --radius-lg: var(--radius-lg);
   --radius-md: var(--radius-md);
   --radius-sm: var(--radius-sm);

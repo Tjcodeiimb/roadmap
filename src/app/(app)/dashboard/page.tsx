@@ -110,7 +110,7 @@ export default async function DashboardPage() {
                     </ProgressRing>
                     <div>
                       <div className="font-display text-lg font-bold" style={{ color: trackInk(s.track.id) }}>{s.track.label}</div>
-                      <div className="text-sm" style={{ color: trackInk(s.track.id), opacity: 0.8 }}>
+                      <div className="text-sm" style={{ color: trackInk(s.track.id) }}>
                         {s.doneTopics} of {s.totalTopics} topics done
                       </div>
                     </div>
@@ -131,7 +131,7 @@ export default async function DashboardPage() {
                   <Link
                     href={`/track/${s.track.id}`}
                     className="text-sm font-bold underline decoration-2 underline-offset-4"
-                    style={{ color: trackInk(s.track.id), opacity: 0.8 }}
+                    style={{ color: trackInk(s.track.id) }}
                   >
                     View full roadmap
                   </Link>

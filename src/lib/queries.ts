@@ -823,38 +823,23 @@ export interface SkillProgress {
 // Mirrors evaluate_skills()'s consumed-resource logic in JS for display —
 // read-only, so a plain RLS-scoped query is enough; no RPC needed.
 export async function getSkillProgress(supabase: Client): Promise<SkillProgress[]> {
-  const [{ data: skills }, { data: skillResources }, { data: userSkills }] = await Promise.all([
-    supabase.from("skills").select("*").order("domain"),
-    supabase.from("skill_resources").select("skill_id, resource_id"),
-    supabase.from("user_skills").select("skill_id, unlocked_at"),
-  ]);
+  // The counting happens in the database. Doing it here meant sending every
+  // mapped resource id (~700) as an .in() filter, which overran the gateway's
+  // request-line limit and failed silently as "0 / N" for every skill.
+  const [{ data: skills }, { data: counts, error: countsError }, { data: userSkills }] =
+    await Promise.all([
+      supabase.from("skills").select("*").order("domain"),
+      supabase.rpc("get_skill_progress"),
+      supabase.from("user_skills").select("skill_id, unlocked_at"),
+    ]);
 
-  const resourceIds = [...new Set((skillResources ?? []).map((sr) => sr.resource_id))];
-  const [{ data: resources }, { data: resourceProgress }] = await Promise.all([
-    supabase.from("resources").select("id, topic_id").in("id", resourceIds.length ? resourceIds : ["__none__"]),
-    supabase
-      .from("user_resource_progress")
-      .select("resource_id, status")
-      .in("resource_id", resourceIds.length ? resourceIds : ["__none__"]),
-  ]);
-  const topicIds = [...new Set((resources ?? []).map((r) => r.topic_id))];
-  const { data: topicProgress } = await supabase
-    .from("user_progress")
-    .select("topic_id, status")
-    .in("topic_id", topicIds.length ? topicIds : ["__none__"]);
+  if (countsError) console.error("get_skill_progress failed:", countsError.message);
 
-  const doneResourceSet = new Set(
-    (resourceProgress ?? []).filter((p) => p.status === "done").map((p) => p.resource_id)
-  );
-  const doneTopicSet = new Set((topicProgress ?? []).filter((p) => p.status === "done").map((p) => p.topic_id));
-  const topicByResource = new Map((resources ?? []).map((r) => [r.id, r.topic_id]));
-  const consumedSet = new Set(
-    resourceIds.filter((id) => doneResourceSet.has(id) || doneTopicSet.has(topicByResource.get(id) ?? ""))
-  );
+  const countsBySkill = new Map((counts ?? []).map((c) => [c.skill_id, c]));
   const unlockedBySkill = new Map((userSkills ?? []).map((u) => [u.skill_id, u.unlocked_at]));
 
   return (skills ?? []).map((s) => {
-    const mapped = (skillResources ?? []).filter((sr) => sr.skill_id === s.id);
+    const c = countsBySkill.get(s.id);
     return {
       id: s.id,
       name: s.name,
@@ -865,8 +850,8 @@ export async function getSkillProgress(supabase: Client): Promise<SkillProgress[
       xpReward: s.xp_reward,
       unlocked: unlockedBySkill.has(s.id),
       unlockedAt: unlockedBySkill.get(s.id) ?? null,
-      doneCount: mapped.filter((sr) => consumedSet.has(sr.resource_id)).length,
-      totalCount: mapped.length,
+      doneCount: c?.done_count ?? 0,
+      totalCount: c?.total_count ?? 0,
     };
   });
 }

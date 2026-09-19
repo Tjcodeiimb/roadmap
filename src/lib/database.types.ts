@@ -583,9 +583,15 @@ export type Database = {
         Args: { p_user_id: string };
         Returns: string[];
       };
+      // Returns the card's new next_review_date so the UI can state the real
+      // date instead of a hardcoded label.
       review_topic: {
         Args: { p_topic_id: string; p_quality: number };
-        Returns: void;
+        Returns: string;
+      };
+      get_skill_progress: {
+        Args: Record<string, never>;
+        Returns: { skill_id: string; done_count: number; total_count: number }[];
       };
       touch_streak: {
         Args: Record<string, never>;
