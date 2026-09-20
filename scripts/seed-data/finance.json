@@ -1316,6 +1316,17 @@
       "icon_key": "link"
     },
     {
+      "id": "fin-p3-r4",
+      "topic_id": "fin-p3-t1",
+      "order_index": 3,
+      "title": "Foreign Exchange (Forex): Definition & Overview",
+      "url": "https://corporatefinanceinstitute.com/resources/fx-trading/foreign-exchange-forex/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Currency as an asset class — the one instrument family not otherwise covered."
+    },
+    {
       "id": "fin-p3-r3",
       "topic_id": "fin-p3-t2",
       "order_index": 1,
@@ -1434,6 +1445,17 @@
       "icon": null
     },
     {
+      "id": "fin-p2-r6",
+      "topic_id": "fin-p2-t2",
+      "order_index": 3,
+      "title": "Capital Structure",
+      "url": "https://corporatefinanceinstitute.com/resources/corporate-finance/capital-structure/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "The debt-versus-equity mix and what drives the choice."
+    },
+    {
       "id": "fin-p4-r5",
       "topic_id": "fin-p10-t1",
       "order_index": 1,
@@ -1480,6 +1502,17 @@
       "length": null,
       "note": "Gordon Growth vs. exit-multiple methods; why terminal value dominates DCF output and how to sensitivity-test it",
       "icon": null
+    },
+    {
+      "id": "fin-p10-r8",
+      "topic_id": "fin-p10-t1",
+      "order_index": 5,
+      "title": "Sensitivity Analysis in Financial Modeling",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/sensitivity-analysis-modeling/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Building the data tables behind a defensible valuation range."
     },
     {
       "id": "fin-p4-r3",
@@ -1614,6 +1647,17 @@
       "icon": null
     },
     {
+      "id": "fin-p8-r7",
+      "topic_id": "fin-p8-t3",
+      "order_index": 3,
+      "title": "Credit Rating: S&P, Moody's & Fitch Scales",
+      "url": "https://corporatefinanceinstitute.com/resources/fixed-income/credit-rating/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "What the agency scales mean and where the investment-grade line sits."
+    },
+    {
       "id": "fin-p8-r3",
       "topic_id": "fin-p8-t2",
       "order_index": 1,
@@ -1708,6 +1752,17 @@
       "icon": null
     },
     {
+      "id": "fin-p10-r7",
+      "topic_id": "fin-p4-t1",
+      "order_index": 3,
+      "title": "Football Field Chart: Valuation Range Summary",
+      "url": "https://corporatefinanceinstitute.com/resources/valuation/football-field-chart/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How the valuation range gets drawn for the deck."
+    },
+    {
       "id": "fin-p5-r10",
       "topic_id": "fin-p5-t3",
       "order_index": 1,
@@ -1739,6 +1794,17 @@
       "format": "article",
       "length": null,
       "note": "Merger-model concepts as they get asked."
+    },
+    {
+      "id": "fin-p5-r5",
+      "topic_id": "fin-p5-t3",
+      "order_index": 4,
+      "title": "Accretion/Dilution Analysis",
+      "url": "https://www.wallstreetprep.com/knowledge/accretion-dilution/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "The EPS impact worked through on its own terms."
     },
     {
       "id": "fin-p5-r3",
@@ -1978,6 +2044,17 @@
       "format": "article",
       "length": null,
       "note": "The RX technical set with worked answers."
+    },
+    {
+      "id": "fin-p8-r8",
+      "topic_id": "fin-p13-t2",
+      "order_index": 4,
+      "title": "Financial Restructuring: Overview & Process",
+      "url": "https://www.wallstreetprep.com/knowledge/financial-restructuring/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "The restructuring process in one piece, alongside the 11-part series."
     },
     {
       "id": "fin-p15-r1",

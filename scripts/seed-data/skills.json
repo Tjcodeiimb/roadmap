@@ -7069,6 +7069,34 @@
     {
       "skill_id": "skill-topic-fin-p7-t3",
       "resource_id": "fin-p7-r10"
+    },
+    {
+      "skill_id": "skill-topic-fin-p2-t2",
+      "resource_id": "fin-p2-r6"
+    },
+    {
+      "skill_id": "skill-topic-fin-p3-t1",
+      "resource_id": "fin-p3-r4"
+    },
+    {
+      "skill_id": "skill-topic-fin-p4-t1",
+      "resource_id": "fin-p10-r7"
+    },
+    {
+      "skill_id": "skill-topic-fin-p5-t3",
+      "resource_id": "fin-p5-r5"
+    },
+    {
+      "skill_id": "skill-topic-fin-p8-t3",
+      "resource_id": "fin-p8-r7"
+    },
+    {
+      "skill_id": "skill-topic-fin-p10-t1",
+      "resource_id": "fin-p10-r8"
+    },
+    {
+      "skill_id": "skill-topic-fin-p13-t2",
+      "resource_id": "fin-p8-r8"
     }
   ]
 }
