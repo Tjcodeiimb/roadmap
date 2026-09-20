@@ -3,7 +3,7 @@
     "id": "finance",
     "name": "finance",
     "label": "Finance",
-    "estimated_hours": 185
+    "estimated_hours": 250
   },
   "phases": [
     {
@@ -16,27 +16,36 @@
       "color": null
     },
     {
-      "id": "fin-p2",
-      "track_id": "finance",
-      "order_index": 2,
-      "title": "Corporate Finance",
-      "description": "Learn how firms fund themselves and choose investments — capital structure, WACC, capital budgeting, working capital.",
-      "estimated_weeks": "4-6",
-      "color": null
-    },
-    {
       "id": "fin-p3",
       "track_id": "finance",
-      "order_index": 3,
+      "order_index": 2,
       "title": "Markets & Instruments",
       "description": "Understand the instruments (equity, debt, derivatives) and the players — how sell-side and buy-side firms differ.",
       "estimated_weeks": "3-5",
       "color": null
     },
     {
-      "id": "fin-p8",
+      "id": "fin-p2",
+      "track_id": "finance",
+      "order_index": 3,
+      "title": "Corporate Finance",
+      "description": "Learn how firms fund themselves and choose investments — capital structure, WACC, capital budgeting, working capital.",
+      "estimated_weeks": "4-6",
+      "color": null
+    },
+    {
+      "id": "fin-p10",
       "track_id": "finance",
       "order_index": 4,
+      "title": "Equity Research & Valuation",
+      "description": "Go deep on the analyst's toolkit — build a DCF from discount-rate first principles, run a rigorous comps screen, and use precedent transactions and trading multiples to triangulate an enterprise value.",
+      "estimated_weeks": "5-7",
+      "color": null
+    },
+    {
+      "id": "fin-p8",
+      "track_id": "finance",
+      "order_index": 5,
       "title": "Advanced Financial Modeling",
       "description": "Go beyond reading statements — build a fully integrated 3-statement model from scratch, layer in acquisition debt with an LBO model, and analyze credit risk the way a lender does.",
       "estimated_weeks": "5-7",
@@ -45,19 +54,10 @@
     {
       "id": "fin-p5",
       "track_id": "finance",
-      "order_index": 5,
+      "order_index": 6,
       "title": "Investment Banking & M&A",
       "description": "Learn how deals are structured and value is created or destroyed — synergies, due diligence, post-merger integration.",
       "estimated_weeks": "4-6",
-      "color": null
-    },
-    {
-      "id": "fin-p10",
-      "track_id": "finance",
-      "order_index": 6,
-      "title": "Equity Research & Valuation",
-      "description": "Go deep on the analyst's toolkit — build a DCF from discount-rate first principles, run a rigorous comps screen, and use precedent transactions and trading multiples to triangulate an enterprise value.",
-      "estimated_weeks": "5-7",
       "color": null
     },
     {
@@ -79,18 +79,36 @@
       "color": null
     },
     {
-      "id": "fin-p11",
+      "id": "fin-p15",
       "track_id": "finance",
       "order_index": 9,
+      "title": "Private Credit, Distressed & Special Situations",
+      "description": "Buying and holding debt rather than advising on it: bilateral lending that never gets syndicated, and investing in claims on companies in trouble.",
+      "estimated_weeks": "4–6",
+      "color": null
+    },
+    {
+      "id": "fin-p11",
+      "track_id": "finance",
+      "order_index": 10,
       "title": "Structured Finance & Derivatives",
       "description": "Understand how assets are pooled and tranched into securities, how options and Greeks govern hedging decisions, and how interest-rate and credit derivatives reshape risk across a portfolio.",
       "estimated_weeks": "4-6",
       "color": null
     },
     {
+      "id": "fin-p14",
+      "track_id": "finance",
+      "order_index": 11,
+      "title": "Specialised Coverage & Asset-Class Modelling",
+      "description": "Where the standard model breaks. A bank has no EBITDA and no free cash flow; a building is priced on NOI and a cap rate; a toll road is a debt-sizing exercise with no terminal value. Each needs its own mental model.",
+      "estimated_weeks": "6–8",
+      "color": null
+    },
+    {
       "id": "fin-p12",
       "track_id": "finance",
-      "order_index": 10,
+      "order_index": 12,
       "title": "Forensic Financial Analysis",
       "description": "Look past the headline numbers — detect earnings manipulation through accruals analysis, identify off-balance-sheet exposure hidden in SPVs, and spot the red flags that preceded the biggest accounting scandals.",
       "estimated_weeks": "4-6",
@@ -99,7 +117,7 @@
     {
       "id": "fin-p7",
       "track_id": "finance",
-      "order_index": 11,
+      "order_index": 13,
       "title": "Applied",
       "description": "Apply it all to real filings and mock deals — read 10-Ks/10-Qs, practice deal exercises, prep for finance interviews.",
       "estimated_weeks": "4-6",
@@ -115,8 +133,21 @@
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "Learn what each of the three statements reports and how they lock together: net income flows to retained earnings, and the cash flow statement reconciles accrual profit back to cash. The literacy everything later assumes.",
+      "steps": [
+        {
+          "t": "Name the three",
+          "d": "Say what each statement measures and over what period."
+        },
+        {
+          "t": "Trace one dollar",
+          "d": "Follow a sale from revenue through receivables to cash collected."
+        },
+        {
+          "t": "Link them",
+          "d": "Start from net income and rebuild the cash flow statement's operating section."
+        }
+      ]
     },
     {
       "id": "fin-p1-t2",
@@ -126,30 +157,49 @@
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "Understand the accrual mechanics behind the numbers — revenue recognition, matching, depreciation, deferred taxes, working capital — and where management judgement enters. This is what separates reading a statement from trusting it.",
+      "steps": [
+        {
+          "t": "Split cash from profit",
+          "d": "Work an example where the two diverge and explain why."
+        },
+        {
+          "t": "Work the accruals",
+          "d": "Book revenue recognition, prepaid expenses and depreciation by hand."
+        },
+        {
+          "t": "Find the judgement",
+          "d": "Pick a filing and list three policy choices management could have made differently."
+        }
+      ]
     },
     {
-      "id": "fin-p2-t1",
-      "phase_id": "fin-p2",
-      "order_index": 1,
-      "title": "Cost of Capital & WACC",
+      "id": "fin-p1-t3",
+      "phase_id": "fin-p1",
+      "order_index": 3,
+      "title": "Time Value of Money & Discounting",
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
-    },
-    {
-      "id": "fin-p2-t2",
-      "phase_id": "fin-p2",
-      "order_index": 2,
-      "title": "Corporate Finance Courses",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "Money today is worth more than money later, and every valuation in this course rests on that. Present and future value, compounding, annuities and perpetuities, and the discount rate as the price of waiting.",
+      "steps": [
+        {
+          "t": "Compound forwards",
+          "d": "Grow a sum at a rate over n periods and see the curve bend."
+        },
+        {
+          "t": "Discount backwards",
+          "d": "Bring a future cash flow to today, then flex the rate and watch the value move."
+        },
+        {
+          "t": "Value a stream",
+          "d": "Price an annuity and a perpetuity from first principles."
+        },
+        {
+          "t": "Connect it",
+          "d": "Discount a three-year forecast by hand — this is a DCF in miniature."
+        }
+      ]
     },
     {
       "id": "fin-p3-t1",
@@ -159,30 +209,221 @@
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "Work through the three instrument families — equity, debt, derivatives — and what each one is a claim on, how it is issued, and what drives its price.",
+      "steps": [
+        {
+          "t": "Sort the claims",
+          "d": "Place equity, debt and derivatives on a seniority and payoff map."
+        },
+        {
+          "t": "Follow an issuance",
+          "d": "Track a share and a bond from issuer to investor."
+        },
+        {
+          "t": "Price-check one",
+          "d": "Name the two or three variables that move each instrument most."
+        }
+      ]
     },
     {
       "id": "fin-p3-t2",
       "phase_id": "fin-p3",
       "order_index": 2,
-      "title": "Buy-Side vs Sell-Side",
+      "title": "The Industry Map: Buy-Side vs Sell-Side",
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "Map the industry: who manages capital and who intermediates it, how banks, asset managers, hedge funds and research desks make money, and which seat does which work.",
+      "steps": [
+        {
+          "t": "Split the sides",
+          "d": "List who raises capital, who allocates it, and who advises."
+        },
+        {
+          "t": "Follow a trade",
+          "d": "Trace one order from a buy-side PM through a sell-side desk."
+        },
+        {
+          "t": "Pick a seat",
+          "d": "Write what a day looks like in two roles you might actually want."
+        }
+      ]
     },
     {
       "id": "fin-p6-t2",
       "phase_id": "fin-p3",
       "order_index": 3,
-      "title": "Portfolio Construction",
+      "title": "Risk, Return & Portfolio Construction",
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "Risk and return as a pair: diversification, correlation, beta and the risk-free rate, then how asset allocation turns them into a portfolio. These primitives feed the cost of equity in the next phase.",
+      "steps": [
+        {
+          "t": "Measure risk",
+          "d": "Compute volatility and correlation for two assets and combine them."
+        },
+        {
+          "t": "Diversify",
+          "d": "Build a two- and then five-asset portfolio and watch risk fall faster than return."
+        },
+        {
+          "t": "Set an allocation",
+          "d": "Write a policy mix for one stated objective and defend the weights."
+        }
+      ]
+    },
+    {
+      "id": "fin-p3-t4",
+      "phase_id": "fin-p3",
+      "order_index": 4,
+      "title": "The Map of Finance: Coverage vs Product Groups",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Where the seats actually are inside a bank: industry coverage versus product groups (M&A, leveraged finance, ECM/DCM, restructuring), and the financial sponsors desk that sits between the bank and private equity.",
+      "steps": [
+        {
+          "t": "Split coverage from product",
+          "d": "Work out who originates a deal and who executes it."
+        },
+        {
+          "t": "Map a live deal",
+          "d": "Take one announced transaction and name every group that touched it."
+        },
+        {
+          "t": "Understand the sponsors seat",
+          "d": "Why FSG is the strongest feeder into private equity."
+        },
+        {
+          "t": "Pick two targets",
+          "d": "Choose two groups you would actually recruit for and justify it."
+        }
+      ]
+    },
+    {
+      "id": "fin-p2-t1",
+      "phase_id": "fin-p2",
+      "order_index": 1,
+      "title": "Cost of Capital & WACC",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Build a discount rate from its parts: cost of equity via CAPM, after-tax cost of debt, and the market-value weights between them. You learn the formula here; the valuation phase stress-tests it inside a live DCF.",
+      "steps": [
+        {
+          "t": "Build cost of equity",
+          "d": "Assemble CAPM from risk-free rate, beta and equity risk premium."
+        },
+        {
+          "t": "Price the debt",
+          "d": "Get to an after-tax cost of debt and justify the tax shield."
+        },
+        {
+          "t": "Weight it",
+          "d": "Combine at market values, then flex beta and see WACC move."
+        }
+      ]
+    },
+    {
+      "id": "fin-p2-t2",
+      "phase_id": "fin-p2",
+      "order_index": 2,
+      "title": "Capital Structure & Capital Budgeting",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How a firm decides what to fund and how to fund it: NPV and IRR project selection, the debt-versus-equity trade-off, and working capital policy.",
+      "steps": [
+        {
+          "t": "Rank projects",
+          "d": "Compute NPV and IRR on the same cash flows and explain where they disagree."
+        },
+        {
+          "t": "Trade off structure",
+          "d": "Argue debt versus equity for one firm on cost, flexibility and risk."
+        },
+        {
+          "t": "Size working capital",
+          "d": "Build a cash conversion cycle and say what shortening it is worth."
+        }
+      ]
+    },
+    {
+      "id": "fin-p10-t1",
+      "phase_id": "fin-p10",
+      "order_index": 1,
+      "title": "DCF Deep Dive",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Go beyond a basic DCF — build a rigorous WACC from scratch, stress-test terminal value assumptions with sensitivity tables, and understand why terminal value typically drives 60–80% of valuation output.",
+      "steps": [
+        {
+          "t": "Forecast free cash flow",
+          "d": "Build unlevered FCF off the operating model."
+        },
+        {
+          "t": "Set the discount rate",
+          "d": "Rebuild WACC for this company, not a textbook one."
+        },
+        {
+          "t": "Test terminal value",
+          "d": "Compute it both ways and show what share of value it carries."
+        },
+        {
+          "t": "Sensitise",
+          "d": "Run a WACC-versus-growth grid and state the range you would defend."
+        }
+      ]
+    },
+    {
+      "id": "fin-p10-t2",
+      "phase_id": "fin-p10",
+      "order_index": 2,
+      "title": "Comparable Company Analysis (Comps)",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Screen and select a peer group, calculate EV/EBITDA, P/E, and EV/Revenue multiples consistently across companies, and build a football-field valuation range.",
+      "steps": [
+        {
+          "t": "Screen the peers",
+          "d": "Pick a comp set and write the criteria that admitted each one."
+        },
+        {
+          "t": "Calendarise",
+          "d": "Put everyone on the same fiscal basis and use LTM or NTM consistently."
+        },
+        {
+          "t": "Spread the multiples",
+          "d": "Compute EV/EBITDA, P/E and EV/Revenue, then benchmark on median not mean."
+        }
+      ]
+    },
+    {
+      "id": "fin-p10-t3",
+      "phase_id": "fin-p10",
+      "order_index": 3,
+      "title": "Precedent Transactions & Control Premiums",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Distinguish trading comps (current market prices) from deal comps (acquisition premiums baked in), and use precedent transactions to anchor the control premium in a negotiated sale.",
+      "steps": [
+        {
+          "t": "Screen the deals",
+          "d": "Build a precedent set filtered on sector, size and vintage."
+        },
+        {
+          "t": "Strip the premium",
+          "d": "Back out the control premium implied by each transaction."
+        },
+        {
+          "t": "Reconcile",
+          "d": "Explain why deal comps sit above trading comps and when they shouldn't."
+        }
+      ]
     },
     {
       "id": "fin-p8-t1",
@@ -193,62 +434,144 @@
       "tags": [],
       "estimated_time": null,
       "description": "Build a fully linked income statement, balance sheet, and cash flow statement in Excel from scratch — the foundational build behind every advanced model, versus just reading one.",
-      "steps": []
-    },
-    {
-      "id": "fin-p8-t2",
-      "phase_id": "fin-p8",
-      "order_index": 2,
-      "title": "LBO Modeling",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "Model a leveraged buyout end to end: sources & uses, acquisition debt tranches, cash sweeps, and the return math (IRR/MOIC) private equity firms underwrite deals on.",
-      "steps": []
+      "steps": [
+        {
+          "t": "Lay the drivers",
+          "d": "Build an assumptions block and forecast the income statement off it."
+        },
+        {
+          "t": "Close the loop",
+          "d": "Link the cash flow statement so the balance sheet balances with no plug."
+        },
+        {
+          "t": "Break it on purpose",
+          "d": "Change one driver and find every cell that should have moved."
+        }
+      ]
     },
     {
       "id": "fin-p8-t3",
       "phase_id": "fin-p8",
-      "order_index": 3,
+      "order_index": 2,
       "title": "Credit Analysis & Debt Schedules",
       "section": null,
       "tags": [],
       "estimated_time": null,
       "description": "Analyze a borrower the way a lender does — leverage and coverage ratios, covenant headroom — and build a debt schedule with interest, amortization, and cash sweep mechanics.",
-      "steps": []
+      "steps": [
+        {
+          "t": "Run the ratios",
+          "d": "Compute leverage, interest coverage and fixed-charge coverage on a real borrower."
+        },
+        {
+          "t": "Test the covenants",
+          "d": "Find headroom and the EBITDA decline that breaches."
+        },
+        {
+          "t": "Build the schedule",
+          "d": "Model each tranche with interest, amortisation and sweep, circularity handled."
+        }
+      ]
     },
     {
-      "id": "fin-p4-t1",
-      "phase_id": "fin-p5",
-      "order_index": 1,
-      "title": "Pitch Books",
+      "id": "fin-p8-t2",
+      "phase_id": "fin-p8",
+      "order_index": 3,
+      "title": "LBO Modeling",
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "Model a leveraged buyout end to end: sources & uses, acquisition debt tranches, cash sweeps, and the return math (IRR/MOIC) private equity firms underwrite deals on.",
+      "steps": [
+        {
+          "t": "Build sources & uses",
+          "d": "Fund a purchase price and reconcile to the entry equity cheque."
+        },
+        {
+          "t": "Layer the debt",
+          "d": "Tranche the capital structure and run interest and mandatory amortisation."
+        },
+        {
+          "t": "Sweep the cash",
+          "d": "Pay down with free cash flow, then exit and solve IRR and MOIC."
+        },
+        {
+          "t": "Sensitise",
+          "d": "Flex entry multiple, leverage and exit multiple in a returns grid."
+        }
+      ]
     },
     {
       "id": "fin-p5-t1",
       "phase_id": "fin-p5",
-      "order_index": 2,
+      "order_index": 1,
       "title": "The M&A Deal Process & Due Diligence",
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "The deal from mandate to close: buyer outreach, LOI, confirmatory diligence and signing, plus what diligence actually interrogates across financial, legal and commercial workstreams.",
+      "steps": [
+        {
+          "t": "Chart the timeline",
+          "d": "Lay out mandate, marketing, LOI, diligence, signing and close with who drives each."
+        },
+        {
+          "t": "Work a diligence list",
+          "d": "Pull a checklist and mark the ten items that would kill a deal."
+        },
+        {
+          "t": "Find the break",
+          "d": "Pick a collapsed deal and identify where in the process it failed."
+        }
+      ]
     },
     {
-      "id": "fin-p5-t2",
+      "id": "fin-p5-t5",
       "phase_id": "fin-p5",
-      "order_index": 3,
-      "title": "Synergies & Post-Merger Integration",
+      "order_index": 2,
+      "title": "Sell-Side Process: Teaser, NDA & CIM",
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "What bankers actually produce between mandate and close, and how a buyer reads it: the anonymous teaser, the NDA, the CIM, the process letter and the buyer list.",
+      "steps": [
+        {
+          "t": "Work the sequence",
+          "d": "Teaser to NDA to CIM to bids — what each document is for and who sees it."
+        },
+        {
+          "t": "Dissect a CIM",
+          "d": "Read a real one and note what it asserts, what it omits, and why it never states a price."
+        },
+        {
+          "t": "Build a buyer list",
+          "d": "Segment strategics vs sponsors for a target and justify the cut."
+        }
+      ]
+    },
+    {
+      "id": "fin-p4-t1",
+      "phase_id": "fin-p5",
+      "order_index": 3,
+      "title": "Pitch Books",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "What a pitch book is for and how it is assembled — situation overview, market update, valuation football field, and the recommendation the whole deck exists to support.",
+      "steps": [
+        {
+          "t": "Read a real deck",
+          "d": "Dissect a published pitch book and name what each section is doing."
+        },
+        {
+          "t": "Build the football field",
+          "d": "Assemble a valuation range from DCF, comps and precedents."
+        },
+        {
+          "t": "Write the ask",
+          "d": "Draft the recommendation page and make every prior slide support it."
+        }
+      ]
     },
     {
       "id": "fin-p5-t3",
@@ -275,9 +598,33 @@
       ]
     },
     {
-      "id": "fin-p5-t4",
+      "id": "fin-p5-t2",
       "phase_id": "fin-p5",
       "order_index": 5,
+      "title": "Synergies & Post-Merger Integration",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Where the premium is supposed to come back from: cost and revenue synergies, how each is quantified and phased, and why integration is where most of the value is lost.",
+      "steps": [
+        {
+          "t": "Split the synergies",
+          "d": "Separate cost from revenue and say which one underwriters believe."
+        },
+        {
+          "t": "Quantify and phase",
+          "d": "Put a number and a realisation timeline on three specific synergies."
+        },
+        {
+          "t": "Net the costs",
+          "d": "Subtract integration costs and restate the premium the deal can bear."
+        }
+      ]
+    },
+    {
+      "id": "fin-p5-t4",
+      "phase_id": "fin-p5",
+      "order_index": 6,
       "title": "Equity & Debt Capital Markets",
       "section": null,
       "tags": [],
@@ -299,63 +646,6 @@
       ]
     },
     {
-      "id": "fin-p5-t5",
-      "phase_id": "fin-p5",
-      "order_index": 6,
-      "title": "Sell-Side Process: Teaser, NDA & CIM",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "What bankers actually produce between mandate and close, and how a buyer reads it: the anonymous teaser, the NDA, the CIM, the process letter and the buyer list.",
-      "steps": [
-        {
-          "t": "Work the sequence",
-          "d": "Teaser to NDA to CIM to bids — what each document is for and who sees it."
-        },
-        {
-          "t": "Dissect a CIM",
-          "d": "Read a real one and note what it asserts, what it omits, and why it never states a price."
-        },
-        {
-          "t": "Build a buyer list",
-          "d": "Segment strategics vs sponsors for a target and justify the cut."
-        }
-      ]
-    },
-    {
-      "id": "fin-p10-t1",
-      "phase_id": "fin-p10",
-      "order_index": 1,
-      "title": "DCF Deep Dive",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "Go beyond a basic DCF — build a rigorous WACC from scratch, stress-test terminal value assumptions with sensitivity tables, and understand why terminal value typically drives 60–80% of valuation output.",
-      "steps": []
-    },
-    {
-      "id": "fin-p10-t2",
-      "phase_id": "fin-p10",
-      "order_index": 2,
-      "title": "Comparable Company Analysis (Comps)",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "Screen and select a peer group, calculate EV/EBITDA, P/E, and EV/Revenue multiples consistently across companies, and build a football-field valuation range.",
-      "steps": []
-    },
-    {
-      "id": "fin-p10-t3",
-      "phase_id": "fin-p10",
-      "order_index": 3,
-      "title": "Trading Multiples & Precedent Transactions",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "Distinguish trading comps (current market prices) from deal comps (acquisition premiums baked in), and use precedent transactions to anchor the control premium in a negotiated sale.",
-      "steps": []
-    },
-    {
       "id": "fin-p9-t1",
       "phase_id": "fin-p9",
       "order_index": 1,
@@ -364,34 +654,25 @@
       "tags": [],
       "estimated_time": null,
       "description": "How PE funds are structured (GP/LP, fees, carry), how they source and screen deals, and how a buyout thesis turns into an investment.",
-      "steps": []
-    },
-    {
-      "id": "fin-p9-t2",
-      "phase_id": "fin-p9",
-      "order_index": 2,
-      "title": "Hedge Fund Strategies",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "Survey the core hedge fund strategies — long/short equity, global macro, quant, event-driven, arbitrage — and how each generates returns.",
-      "steps": []
-    },
-    {
-      "id": "fin-p9-t3",
-      "phase_id": "fin-p9",
-      "order_index": 3,
-      "title": "Venture Capital Basics",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "How VC funds are structured and how they evaluate, price, and structure early-stage investments — from thesis to term sheet.",
-      "steps": []
+      "steps": [
+        {
+          "t": "Map the fund",
+          "d": "GP versus LP, management fee, carry and the fund lifecycle."
+        },
+        {
+          "t": "Screen a target",
+          "d": "Apply a buyout screen to a real company and pass or kill it."
+        },
+        {
+          "t": "Write the thesis",
+          "d": "State the entry case, the value-creation plan and the exit in one page."
+        }
+      ]
     },
     {
       "id": "fin-p9-t4",
       "phase_id": "fin-p9",
-      "order_index": 4,
+      "order_index": 2,
       "title": "Fund Economics & Value Creation",
       "section": null,
       "tags": [],
@@ -409,6 +690,82 @@
         {
           "t": "Judge the levers",
           "d": "Decide which lever did the work — and whether it was skill or the market."
+        }
+      ]
+    },
+    {
+      "id": "fin-p9-t2",
+      "phase_id": "fin-p9",
+      "order_index": 3,
+      "title": "Hedge Fund Strategies",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Survey the core hedge fund strategies — long/short equity, global macro, quant, event-driven, arbitrage — and how each generates returns.",
+      "steps": [
+        {
+          "t": "Survey the strategies",
+          "d": "Define long/short, macro, quant, event-driven and arbitrage by return source."
+        },
+        {
+          "t": "Match risk to strategy",
+          "d": "Name what each one is really exposed to."
+        },
+        {
+          "t": "Pitch one trade",
+          "d": "Write a thesis, the catalyst and how you would size it."
+        }
+      ]
+    },
+    {
+      "id": "fin-p9-t3",
+      "phase_id": "fin-p9",
+      "order_index": 4,
+      "title": "Venture Capital Basics",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How VC funds are structured and how they evaluate, price, and structure early-stage investments — from thesis to term sheet.",
+      "steps": [
+        {
+          "t": "Follow the rounds",
+          "d": "Seed through Series C — who invests, what changes each time."
+        },
+        {
+          "t": "Price a round",
+          "d": "Work pre- and post-money, option pool and the founder dilution."
+        },
+        {
+          "t": "Read a term sheet",
+          "d": "Find liquidation preference, participation and anti-dilution and say who they protect."
+        }
+      ]
+    },
+    {
+      "id": "fin-p9-t5",
+      "phase_id": "fin-p9",
+      "order_index": 5,
+      "title": "Growth Equity & Secondaries",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The two private-equity adjacencies with their own recruiting tracks: growth equity's minority, low-leverage case study, and the secondaries market's pricing at a discount to NAV.",
+      "steps": [
+        {
+          "t": "Run a growth case",
+          "d": "Work cohort retention and unit economics on a real-shaped business."
+        },
+        {
+          "t": "Price a minority stake",
+          "d": "Value it without leverage — the LBO maths does not apply."
+        },
+        {
+          "t": "Discount a portfolio",
+          "d": "Value an LP position at a discount to NAV and justify the discount."
+        },
+        {
+          "t": "Walk a continuation fund",
+          "d": "Follow a GP-led secondary from motive to close."
         }
       ]
     },
@@ -465,37 +822,248 @@
       ]
     },
     {
-      "id": "fin-p11-t1",
-      "phase_id": "fin-p11",
+      "id": "fin-p15-t1",
+      "phase_id": "fin-p15",
       "order_index": 1,
-      "title": "Securitization & ABS/MBS Basics",
+      "title": "Private Credit & Direct Lending",
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "How loans are pooled and tranched into asset-backed securities — the mechanics of cash-flow waterfalls, credit enhancement, and the key differences between ABS and MBS.",
-      "steps": []
+      "description": "Non-bank lenders underwrite bilaterally and hold to maturity, so documentation and downside protection matter more than syndication flex. The fastest-growing seat in the market.",
+      "steps": [
+        {
+          "t": "Contrast the models",
+          "d": "Direct lending versus broadly syndicated leveraged finance."
+        },
+        {
+          "t": "Structure a unitranche",
+          "d": "Roll first and second lien into one tranche and price the all-in yield."
+        },
+        {
+          "t": "Build the downside",
+          "d": "Model a case that trips a covenant and see what the lender can do."
+        },
+        {
+          "t": "Follow the capital",
+          "d": "Understand the BDC and fund structures behind the money."
+        }
+      ]
+    },
+    {
+      "id": "fin-p15-t2",
+      "phase_id": "fin-p15",
+      "order_index": 2,
+      "title": "Distressed Debt & Event-Driven Investing",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Buying claims rather than advising on them. Find the fulcrum security, value the estate, and take a view on recovery or control — a different discipline from the restructuring advisory taught earlier.",
+      "steps": [
+        {
+          "t": "Find the fulcrum",
+          "d": "Locate the security that converts to equity in a reorganisation."
+        },
+        {
+          "t": "Value a claim",
+          "d": "Price the claim, not the company — at a price, with a recovery view."
+        },
+        {
+          "t": "Model loan-to-own",
+          "d": "Run a recovery waterfall and the path to control."
+        },
+        {
+          "t": "Size a spread",
+          "d": "Frame a catalyst and size a merger-arbitrage position."
+        }
+      ]
     },
     {
       "id": "fin-p11-t2",
       "phase_id": "fin-p11",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Options & Greeks Fundamentals",
       "section": null,
       "tags": [],
       "estimated_time": null,
       "description": "How call and put options are priced, how payoff diagrams work, and how the Greeks — delta, gamma, theta, vega — measure each dimension of an option position's risk.",
-      "steps": []
+      "steps": [
+        {
+          "t": "Draw the payoffs",
+          "d": "Diagram long and short calls and puts at expiry."
+        },
+        {
+          "t": "Decompose the price",
+          "d": "Separate intrinsic from time value and see what moves each."
+        },
+        {
+          "t": "Work the Greeks",
+          "d": "Show how delta, gamma, theta and vega each change a position's P&L."
+        },
+        {
+          "t": "Hedge one",
+          "d": "Delta-hedge a position and explain why it needs re-hedging."
+        }
+      ]
     },
     {
       "id": "fin-p11-t3",
       "phase_id": "fin-p11",
-      "order_index": 3,
+      "order_index": 2,
       "title": "Interest Rate & Credit Derivatives",
       "section": null,
       "tags": [],
       "estimated_time": null,
       "description": "How interest rate swaps transfer rate risk between counterparties, and how credit default swaps transfer credit risk — the instruments at the heart of fixed-income and credit risk management.",
-      "steps": []
+      "steps": [
+        {
+          "t": "Swap the rate",
+          "d": "Build a fixed-for-floating swap and identify each leg's exposure."
+        },
+        {
+          "t": "Find the motive",
+          "d": "Explain why a corporate borrower would enter one."
+        },
+        {
+          "t": "Buy protection",
+          "d": "Price a CDS as insurance and define exactly what triggers a credit event."
+        }
+      ]
+    },
+    {
+      "id": "fin-p11-t1",
+      "phase_id": "fin-p11",
+      "order_index": 3,
+      "title": "Securitization & ABS/MBS Basics",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How loans are pooled and tranched into asset-backed securities — the mechanics of cash-flow waterfalls, credit enhancement, and the key differences between ABS and MBS.",
+      "steps": [
+        {
+          "t": "Pool and tranche",
+          "d": "Take a loan pool and cut it into senior, mezzanine and equity."
+        },
+        {
+          "t": "Run the waterfall",
+          "d": "Allocate cash and losses through the stack in order."
+        },
+        {
+          "t": "Add enhancement",
+          "d": "Apply overcollateralisation and excess spread, then compare ABS to MBS."
+        }
+      ]
+    },
+    {
+      "id": "fin-p11-t4",
+      "phase_id": "fin-p11",
+      "order_index": 4,
+      "title": "Risk, Capital & ALM",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The risk seat's own vocabulary: value at risk for market risk, risk-weighted assets and CET1 for capital, CVA for counterparty exposure, and EVE and NII for the banking book.",
+      "steps": [
+        {
+          "t": "Compute VaR",
+          "d": "Calculate it, then say plainly what it does not tell you."
+        },
+        {
+          "t": "Read a capital stack",
+          "d": "Find RWA and CET1 in a real bank disclosure."
+        },
+        {
+          "t": "Price counterparty risk",
+          "d": "Understand CVA and why Basel III charged for it."
+        },
+        {
+          "t": "Measure IRRBB",
+          "d": "Work economic value of equity and net interest income sensitivity."
+        }
+      ]
+    },
+    {
+      "id": "fin-p14-t1",
+      "phase_id": "fin-p14",
+      "order_index": 1,
+      "title": "FIG: Modelling Banks & Insurers",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Banks have no EBITDA and no free cash flow. You model the balance sheet first, drive earnings off net interest margin and provisions, and value on price-to-tangible-book and a dividend discount model.",
+      "steps": [
+        {
+          "t": "Build from the balance sheet",
+          "d": "Start with assets and funding, not revenue."
+        },
+        {
+          "t": "Drive the earnings",
+          "d": "Model net interest margin, provisions and regulatory capital."
+        },
+        {
+          "t": "Value it properly",
+          "d": "Use P/TBV and DDM — EV/EBITDA is meaningless here."
+        },
+        {
+          "t": "Run a bank merger",
+          "d": "Work tangible book dilution and the earn-back period."
+        }
+      ]
+    },
+    {
+      "id": "fin-p14-t2",
+      "phase_id": "fin-p14",
+      "order_index": 2,
+      "title": "Real Estate Finance & REITs",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Property is valued on net operating income and a cap rate, not an EBITDA multiple. REITs report FFO and AFFO instead of EPS and trade at a premium or discount to net asset value.",
+      "steps": [
+        {
+          "t": "Underwrite a property",
+          "d": "Build NOI, apply a cap rate, and get to an exit value."
+        },
+        {
+          "t": "Bridge to NAV",
+          "d": "Assemble a REIT net asset value and compare it to the share price."
+        },
+        {
+          "t": "Reconcile the metrics",
+          "d": "Tie FFO, AFFO and CAD back to net income."
+        },
+        {
+          "t": "Split a waterfall",
+          "d": "Work a JV equity promote between sponsor and investor."
+        }
+      ]
+    },
+    {
+      "id": "fin-p14-t3",
+      "phase_id": "fin-p14",
+      "order_index": 3,
+      "title": "Project & Infrastructure Finance",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Non-recourse, single-asset financing sized off contracted cash flows. The model is a debt-sizing exercise around DSCR and LLCR inside an SPV, with no terminal value anywhere in it.",
+      "steps": [
+        {
+          "t": "Build CFADS",
+          "d": "Construct cash flow available for debt service for one asset."
+        },
+        {
+          "t": "Sculpt the debt",
+          "d": "Size and shape repayment to a target DSCR."
+        },
+        {
+          "t": "Test the covenants",
+          "d": "Work LLCR and the lender protections around it."
+        },
+        {
+          "t": "Contrast the paradigm",
+          "d": "Say why corporate finance intuitions fail on a project."
+        }
+      ]
     },
     {
       "id": "fin-p12-t1",
@@ -506,7 +1074,20 @@
       "tags": [],
       "estimated_time": null,
       "description": "Assess whether reported earnings reflect real cash generation or aggressive accrual-accounting choices — the foundation of any forensic analysis.",
-      "steps": []
+      "steps": [
+        {
+          "t": "Compare the two",
+          "d": "Put net income next to cash from operations over five years."
+        },
+        {
+          "t": "Test the accruals",
+          "d": "Compute the accrual ratio and flag the years it spikes."
+        },
+        {
+          "t": "Chase the driver",
+          "d": "Tie a spike to a specific policy or one-off and judge whether earnings are real."
+        }
+      ]
     },
     {
       "id": "fin-p12-t2",
@@ -517,7 +1098,20 @@
       "tags": [],
       "estimated_time": null,
       "description": "Identify leverage and commitments that do not appear on the balance sheet — operating leases, SPVs, synthetic securitizations — and understand when accounting standards require consolidation.",
-      "steps": []
+      "steps": [
+        {
+          "t": "Hunt the footnotes",
+          "d": "Find commitments, guarantees and leases disclosed but not on the face."
+        },
+        {
+          "t": "Trace an SPV",
+          "d": "Work out what it holds, who bears the risk, and whether it consolidates."
+        },
+        {
+          "t": "Restate the leverage",
+          "d": "Add the off-balance-sheet items back and recompute the ratios."
+        }
+      ]
     },
     {
       "id": "fin-p12-t3",
@@ -528,7 +1122,20 @@
       "tags": [],
       "estimated_time": null,
       "description": "The warning signs that preceded Enron, WorldCom, and the 2008 crisis — rapidly growing receivables, channel stuffing, related-party transactions, and the Beneish M-Score manipulation detector.",
-      "steps": []
+      "steps": [
+        {
+          "t": "Build a flag list",
+          "d": "Receivables and inventory growing ahead of revenue, margin outliers, related parties."
+        },
+        {
+          "t": "Score it",
+          "d": "Run a Beneish M-Score on one company and interpret the output."
+        },
+        {
+          "t": "Autopsy a scandal",
+          "d": "Take Enron or WorldCom and mark which flags were visible in the last clean filing."
+        }
+      ]
     },
     {
       "id": "fin-p7-t1",
@@ -538,8 +1145,21 @@
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "Navigate a real 10-K and 10-Q section by section — MD&A, risk factors, the footnotes and the segment data — and pull the numbers a model actually needs out of a filing.",
+      "steps": [
+        {
+          "t": "Walk the sections",
+          "d": "Items 1, 1A, 7 and 8 — what each is for and what it hides."
+        },
+        {
+          "t": "Mine the footnotes",
+          "d": "Extract debt terms, leases, segments and share count."
+        },
+        {
+          "t": "Feed the model",
+          "d": "Pull a filing into a driver sheet and reconcile every input to a page number."
+        }
+      ]
     },
     {
       "id": "fin-p7-t2",
@@ -549,8 +1169,53 @@
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "",
-      "steps": []
+      "description": "Rehearse under deal conditions: paper LBOs, timed modelling tests, and the technical question set, until the reasoning is fast enough to survive an interview.",
+      "steps": [
+        {
+          "t": "Do a paper LBO",
+          "d": "Approximate IRR and MOIC with no spreadsheet, under time."
+        },
+        {
+          "t": "Sit a modelling test",
+          "d": "Run the timed LBO test, then diff your build against the solution."
+        },
+        {
+          "t": "Drill technicals",
+          "d": "Work the DCF, comps and accretion/dilution question sets until answers are yours."
+        },
+        {
+          "t": "Mock it",
+          "d": "Run one full interview out loud with someone else scoring."
+        }
+      ]
+    },
+    {
+      "id": "fin-p7-t3",
+      "phase_id": "fin-p7",
+      "order_index": 3,
+      "title": "Indian Capital Markets, SEBI & Career Paths",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The regulatory and market architecture an analyst in India is actually asked about, plus an honest read on CFA versus CA versus FRM and where the Indian deal market hires.",
+      "steps": [
+        {
+          "t": "Map the plumbing",
+          "d": "SEBI, NSE and BSE, the depositories and clearing corporations."
+        },
+        {
+          "t": "Read a primary issue",
+          "d": "DRHP, book-building and the anchor book."
+        },
+        {
+          "t": "Survey the market",
+          "d": "Indian investment banking and private equity, and who hires in Mumbai."
+        },
+        {
+          "t": "Choose a credential",
+          "d": "Pick between CFA, CA and FRM for the seat you actually want."
+        }
+      ]
     }
   ],
   "resources": [
@@ -591,18 +1256,6 @@
       "icon": null
     },
     {
-      "id": "fin-p1-r10",
-      "topic_id": "fin-p1-t1",
-      "order_index": 4,
-      "title": "Financial Statements – Zerodha Varsity Module 3",
-      "url": "https://zerodha.com/varsity/module/fundamental-analysis/",
-      "format": "article",
-      "provider": "external",
-      "source": "Zerodha Varsity",
-      "duration": "3 hours",
-      "icon_key": "link"
-    },
-    {
       "id": "fin-p1-r4",
       "topic_id": "fin-p1-t2",
       "order_index": 1,
@@ -613,6 +1266,112 @@
       "length": null,
       "note": "418,333 enrolled, 4.7★ (8,557 reviews); FREE audit mode",
       "icon": null
+    },
+    {
+      "id": "fin-p1-r10",
+      "topic_id": "fin-p1-t2",
+      "order_index": 2,
+      "title": "Financial Statements – Zerodha Varsity Module 3",
+      "url": "https://zerodha.com/varsity/module/fundamental-analysis/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "3 hours",
+      "icon_key": "link"
+    },
+    {
+      "id": "fin-p3-r1",
+      "topic_id": "fin-p1-t3",
+      "order_index": 1,
+      "title": "Finance and Capital Markets",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance",
+      "source": "Khan Academy",
+      "format": "course",
+      "length": null,
+      "note": "Free series: stocks, bonds, options, swaps, futures",
+      "icon": null
+    },
+    {
+      "id": "fin-p3-r2",
+      "topic_id": "fin-p3-t1",
+      "order_index": 1,
+      "title": "An IPO – Stocks and Bonds",
+      "url": "https://www.classcentral.com/course/youtube-an-ipo-stocks-and-bonds-finance-capital-markets-khan-academy-147477",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "~15 min",
+      "note": "Equity issuance and underwriting explained",
+      "icon": null
+    },
+    {
+      "id": "fin-p3-r10",
+      "topic_id": "fin-p3-t1",
+      "order_index": 2,
+      "title": "Introduction to Stock Markets – Zerodha Varsity Module 1",
+      "url": "https://zerodha.com/varsity/module/introduction-to-stock-markets/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "4 hours",
+      "icon_key": "link"
+    },
+    {
+      "id": "fin-p3-r3",
+      "topic_id": "fin-p3-t2",
+      "order_index": 1,
+      "title": "Buy Side vs Sell Side",
+      "url": "https://corporatefinanceinstitute.com/resources/career/buy-side-vs-sell-side/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Distinguishes the two sides and career paths",
+      "icon": null
+    },
+    {
+      "id": "fin-p6-r4",
+      "topic_id": "fin-p6-t2",
+      "order_index": 1,
+      "title": "The Basics of Portfolio Construction",
+      "url": "https://www.youtube.com/watch?v=3gXhxTm6cA8",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Asset allocation as core driver",
+      "icon": null
+    },
+    {
+      "id": "fin-p6-r5",
+      "topic_id": "fin-p6-t2",
+      "order_index": 2,
+      "title": "Portfolio Construction",
+      "url": "https://www.fe.training/free-resources/portfolio-management/portfolio-construction/",
+      "source": "Financial Edge Training",
+      "format": "article",
+      "length": null,
+      "note": "Free primer on construction process",
+      "icon": null
+    },
+    {
+      "id": "fin-p3-r12",
+      "topic_id": "fin-p3-t4",
+      "order_index": 1,
+      "title": "Industry Groups vs Product Groups",
+      "url": "https://mergersandinquisitions.com/industry-groups-vs-product-groups/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "How a bank is actually organised, and which side originates."
+    },
+    {
+      "id": "fin-p3-r13",
+      "topic_id": "fin-p3-t4",
+      "order_index": 2,
+      "title": "Financial Sponsors Group (FSG): Overview",
+      "url": "https://mergersandinquisitions.com/financial-sponsors-group-fsg/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "The coverage group whose clients are PE firms — the strongest buy-side feeder."
     },
     {
       "id": "fin-p2-r1",
@@ -673,345 +1432,6 @@
       "length": null,
       "note": "Intro + 36 free sessions covering all corporate finance",
       "icon": null
-    },
-    {
-      "id": "fin-p3-r1",
-      "topic_id": "fin-p3-t1",
-      "order_index": 1,
-      "title": "Finance and Capital Markets",
-      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance",
-      "source": "Khan Academy",
-      "format": "course",
-      "length": null,
-      "note": "Free series: stocks, bonds, options, swaps, futures",
-      "icon": null
-    },
-    {
-      "id": "fin-p3-r2",
-      "topic_id": "fin-p3-t1",
-      "order_index": 2,
-      "title": "An IPO – Stocks and Bonds",
-      "url": "https://www.classcentral.com/course/youtube-an-ipo-stocks-and-bonds-finance-capital-markets-khan-academy-147477",
-      "source": "Khan Academy",
-      "format": "video",
-      "length": "~15 min",
-      "note": "Equity issuance and underwriting explained",
-      "icon": null
-    },
-    {
-      "id": "fin-p3-r10",
-      "topic_id": "fin-p3-t1",
-      "order_index": 3,
-      "title": "Introduction to Stock Markets – Zerodha Varsity Module 1",
-      "url": "https://zerodha.com/varsity/module/introduction-to-stock-markets/",
-      "format": "article",
-      "provider": "external",
-      "source": "Zerodha Varsity",
-      "duration": "4 hours",
-      "icon_key": "link"
-    },
-    {
-      "id": "fin-p3-r3",
-      "topic_id": "fin-p3-t2",
-      "order_index": 1,
-      "title": "Buy Side vs Sell Side",
-      "url": "https://corporatefinanceinstitute.com/resources/career/buy-side-vs-sell-side/",
-      "source": "Corporate Finance Institute",
-      "format": "article",
-      "length": null,
-      "note": "Distinguishes the two sides and career paths",
-      "icon": null
-    },
-    {
-      "id": "fin-p6-r4",
-      "topic_id": "fin-p6-t2",
-      "order_index": 1,
-      "title": "The Basics of Portfolio Construction",
-      "url": "https://www.youtube.com/watch?v=3gXhxTm6cA8",
-      "source": "YouTube",
-      "format": "video",
-      "length": null,
-      "note": "Asset allocation as core driver",
-      "icon": null
-    },
-    {
-      "id": "fin-p6-r5",
-      "topic_id": "fin-p6-t2",
-      "order_index": 2,
-      "title": "Portfolio Construction",
-      "url": "https://www.fe.training/free-resources/portfolio-management/portfolio-construction/",
-      "source": "Financial Edge Training",
-      "format": "article",
-      "length": null,
-      "note": "Free primer on construction process",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r1",
-      "topic_id": "fin-p8-t1",
-      "order_index": 1,
-      "title": "3-Statement Model | Complete Guide (Step-by-Step)",
-      "url": "https://www.wallstreetprep.com/knowledge/build-integrated-3-statement-financial-model/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "Builds the IS/BS/CF links from scratch, not just reading them",
-      "icon": null
-    },
-    {
-      "id": "fin-p1-r5",
-      "topic_id": "fin-p8-t1",
-      "order_index": 2,
-      "title": "Financial Modeling Test – CFI",
-      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/financial-modeling-test",
-      "source": "Corporate Finance Institute",
-      "format": "course",
-      "length": null,
-      "note": "Self-assessment: build a model against a timed brief.",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r2",
-      "topic_id": "fin-p8-t1",
-      "order_index": 3,
-      "title": "Introduction to 3-Statement Modeling",
-      "url": "https://www.coursera.org/learn/cfi-introduction-to-3-statement-modeling",
-      "source": "Coursera / Corporate Finance Institute",
-      "format": "course",
-      "length": "~6 hrs",
-      "note": "FREE audit mode",
-      "icon": null
-    },
-    {
-      "id": "fin-p12-r10",
-      "topic_id": "fin-p8-t1",
-      "order_index": 4,
-      "title": "Financial Modelling & Valuation – Zerodha Varsity Module 11",
-      "url": "https://zerodha.com/varsity/module/financial-modelling-and-valuation/",
-      "format": "article",
-      "provider": "external",
-      "source": "Zerodha Varsity",
-      "duration": "4 hours",
-      "icon_key": "link"
-    },
-    {
-      "id": "fin-p8-r3",
-      "topic_id": "fin-p8-t2",
-      "order_index": 1,
-      "title": "Short-Form LBO Model | Free Course + Excel Template",
-      "url": "https://www.wallstreetprep.com/knowledge/lbo-model/",
-      "source": "Wall Street Prep",
-      "format": "article+template",
-      "length": null,
-      "note": "Free downloadable Excel template",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r4",
-      "topic_id": "fin-p8-t2",
-      "order_index": 2,
-      "title": "Simple LBO Model - Excel, Video Tutorial, and Written Guide",
-      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/simple-lbo-model-excel/",
-      "source": "Breaking Into Wall Street",
-      "format": "video+article",
-      "length": null,
-      "note": "Video + written guide with Excel file",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r5",
-      "topic_id": "fin-p8-t3",
-      "order_index": 1,
-      "title": "Credit Analysis | Financial Ratios + Lending Process",
-      "url": "https://www.wallstreetprep.com/knowledge/credit-risk-analysis/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "Leverage/coverage ratios and the lender's underwriting process",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r6",
-      "topic_id": "fin-p8-t3",
-      "order_index": 2,
-      "title": "Debt Schedule: Video Tutorial and Excel Example",
-      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/debt-schedule/",
-      "source": "Breaking Into Wall Street",
-      "format": "video+template",
-      "length": null,
-      "note": "Interest, amortization, and cash sweep mechanics with an Excel example",
-      "icon": null
-    },
-    {
-      "id": "fin-p4-r1",
-      "topic_id": "fin-p4-t1",
-      "order_index": 1,
-      "title": "Investment Banking Pitch Book – How to Create a Pitch Book",
-      "url": "https://www.fe.training/free-resources/investment-banking/investment-banking-pitch-book/",
-      "source": "Financial Edge Training",
-      "format": "article",
-      "length": null,
-      "note": "Pitch book types and structure",
-      "icon": null
-    },
-    {
-      "id": "fin-p4-r2",
-      "topic_id": "fin-p4-t1",
-      "order_index": 2,
-      "title": "Investment Banking Pitch Books: Design, Examples & Templates",
-      "url": "https://mergersandinquisitions.com/investment-banking-pitch-books/",
-      "source": "Mergers & Inquisitions",
-      "format": "article",
-      "length": null,
-      "note": "Buy-side/sell-side deck examples",
-      "icon": null
-    },
-    {
-      "id": "fin-p5-r1",
-      "topic_id": "fin-p5-t1",
-      "order_index": 1,
-      "title": "Mergers & Acquisitions (M&A): Types, Steps & Strategies",
-      "url": "https://www.oddo-bhf.com/resources-your-gateway-to-a-wealth-of-knowledge/corporate-finance-resources/mergers-acquisitions-types-steps-strategies/",
-      "source": "ODDO BHF",
-      "format": "article",
-      "length": null,
-      "note": "Overview of the deal lifecycle",
-      "icon": null
-    },
-    {
-      "id": "fin-p5-r2",
-      "topic_id": "fin-p5-t1",
-      "order_index": 2,
-      "title": "Due Diligence in M&A Transactions [Process + Checklist]",
-      "url": "https://mnacommunity.com/insights/due-diligence-in-mergers-and-acquisitions/",
-      "source": "M&A Community",
-      "format": "article",
-      "length": null,
-      "note": "Checklist-driven due diligence guide",
-      "icon": null
-    },
-    {
-      "id": "fin-p5-r3",
-      "topic_id": "fin-p5-t2",
-      "order_index": 1,
-      "title": "M&A Synergies Explained",
-      "url": "https://burniegroup.com/ma-synergies-explained/",
-      "source": "Burnie Group",
-      "format": "article",
-      "length": null,
-      "note": "Revenue/cost synergies by function",
-      "icon": null
-    },
-    {
-      "id": "fin-p5-r4",
-      "topic_id": "fin-p5-t2",
-      "order_index": 2,
-      "title": "Post-merger integration",
-      "url": "https://en.wikipedia.org/wiki/Post-merger_integration",
-      "source": "Wikipedia",
-      "format": "article",
-      "length": null,
-      "note": "PMI challenges and culture",
-      "icon": null
-    },
-    {
-      "id": "fin-p5-r10",
-      "topic_id": "fin-p5-t3",
-      "order_index": 1,
-      "title": "Merger Model: M&A Training Tutorial + Excel Template",
-      "url": "https://www.wallstreetprep.com/knowledge/merger-model/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "Full build. Article is free; the Excel template asks for an email."
-    },
-    {
-      "id": "fin-p5-r11",
-      "topic_id": "fin-p5-t3",
-      "order_index": 2,
-      "title": "Merger Model: Accretion/Dilution",
-      "url": "https://www.streetofwalls.com/articles/investment-banking/recruiting-interviewing/merger-model-accretion-dilution/",
-      "source": "Street of Walls",
-      "format": "article",
-      "length": null,
-      "note": "The accretion/dilution logic in interview form."
-    },
-    {
-      "id": "fin-p5-r12",
-      "topic_id": "fin-p5-t3",
-      "order_index": 3,
-      "title": "M&A Interview Questions",
-      "url": "https://www.wallstreetprep.com/knowledge/ma-interview-questions/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "Merger-model concepts as they get asked."
-    },
-    {
-      "id": "fin-p5-r13",
-      "topic_id": "fin-p5-t4",
-      "order_index": 1,
-      "title": "Equity Capital Markets (ECM): The Definitive Guide",
-      "url": "https://mergersandinquisitions.com/equity-capital-markets/",
-      "source": "Mergers & Inquisitions",
-      "format": "article",
-      "length": null,
-      "note": "Origination vs syndicate, IPOs, follow-ons, converts."
-    },
-    {
-      "id": "fin-p5-r14",
-      "topic_id": "fin-p5-t4",
-      "order_index": 2,
-      "title": "Initial Public Offering (IPO): Definition + Process",
-      "url": "https://www.wallstreetprep.com/knowledge/ipo-initial-public-offering/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "Underwriters, valuation, roadshow, pricing."
-    },
-    {
-      "id": "fin-p5-r15",
-      "topic_id": "fin-p5-t4",
-      "order_index": 3,
-      "title": "Debt Capital Markets (DCM) Explained",
-      "url": "https://mergersandinquisitions.com/debt-capital-markets/",
-      "source": "Mergers & Inquisitions",
-      "format": "article",
-      "length": null,
-      "note": "Investment-grade issuance, and how DCM differs from LevFin."
-    },
-    {
-      "id": "fin-p5-r16",
-      "topic_id": "fin-p5-t4",
-      "order_index": 4,
-      "title": "Investor Bulletin: Investing in an IPO",
-      "url": "https://www.sec.gov/files/ipo-investorbulletin.pdf",
-      "source": "SEC",
-      "format": "pdf",
-      "length": null,
-      "note": "Regulator primary source on registration and Form S-1."
-    },
-    {
-      "id": "fin-p5-r17",
-      "topic_id": "fin-p5-t5",
-      "order_index": 1,
-      "title": "Confidential Information Memorandum: Guide + Examples",
-      "url": "https://mergersandinquisitions.com/confidential-information-memorandum/",
-      "source": "Mergers & Inquisitions",
-      "format": "article",
-      "length": null,
-      "note": "Teaser to NDA to CIM, with real examples."
-    },
-    {
-      "id": "fin-p5-r18",
-      "topic_id": "fin-p5-t5",
-      "order_index": 2,
-      "title": "CIM — What It Is",
-      "url": "https://corporatefinanceinstitute.com/resources/valuation/cim-confidential-information-memorandum/",
-      "source": "Corporate Finance Institute",
-      "format": "article",
-      "length": null,
-      "note": "Short companion; note it deliberately omits valuation."
     },
     {
       "id": "fin-p4-r5",
@@ -1098,21 +1518,9 @@
       "icon": null
     },
     {
-      "id": "fin-p6-r1",
-      "topic_id": "fin-p10-t3",
-      "order_index": 1,
-      "title": "Equity Research Report: Samples, Tutorials, and Explanations",
-      "url": "https://mergersandinquisitions.com/equity-research-report/",
-      "source": "Mergers & Inquisitions",
-      "format": "article+samples",
-      "length": null,
-      "note": "Free sample reports; ratings explained",
-      "icon": null
-    },
-    {
       "id": "fin-p10-r5",
       "topic_id": "fin-p10-t3",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Precedent Transaction Analysis | Transaction Comps Tutorial",
       "url": "https://www.wallstreetprep.com/knowledge/precedent-transaction-analysis/",
       "source": "Wall Street Prep",
@@ -1124,7 +1532,7 @@
     {
       "id": "fin-p10-r6",
       "topic_id": "fin-p10-t3",
-      "order_index": 3,
+      "order_index": 2,
       "title": "Precedent Transaction Analysis: Tutorial and Excel Examples",
       "url": "https://breakingintowallstreet.com/kb/valuation/precedent-transaction-analysis/",
       "source": "Breaking Into Wall Street",
@@ -1132,6 +1540,273 @@
       "length": null,
       "note": "Step-by-step walkthrough with free Excel template; explains spread vs. spot multiples and data sourcing",
       "icon": null
+    },
+    {
+      "id": "fin-p8-r1",
+      "topic_id": "fin-p8-t1",
+      "order_index": 1,
+      "title": "3-Statement Model | Complete Guide (Step-by-Step)",
+      "url": "https://www.wallstreetprep.com/knowledge/build-integrated-3-statement-financial-model/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Builds the IS/BS/CF links from scratch, not just reading them",
+      "icon": null
+    },
+    {
+      "id": "fin-p1-r5",
+      "topic_id": "fin-p8-t1",
+      "order_index": 2,
+      "title": "Financial Modeling Test – CFI",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/financial-modeling-test",
+      "source": "Corporate Finance Institute",
+      "format": "course",
+      "length": null,
+      "note": "Self-assessment: build a model against a timed brief.",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r2",
+      "topic_id": "fin-p8-t1",
+      "order_index": 3,
+      "title": "Introduction to 3-Statement Modeling",
+      "url": "https://www.coursera.org/learn/cfi-introduction-to-3-statement-modeling",
+      "source": "Coursera / Corporate Finance Institute",
+      "format": "course",
+      "length": "~6 hrs",
+      "note": "FREE audit mode",
+      "icon": null
+    },
+    {
+      "id": "fin-p12-r10",
+      "topic_id": "fin-p8-t1",
+      "order_index": 4,
+      "title": "Financial Modelling & Valuation – Zerodha Varsity Module 11",
+      "url": "https://zerodha.com/varsity/module/financial-modelling-and-valuation/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "4 hours",
+      "icon_key": "link"
+    },
+    {
+      "id": "fin-p8-r5",
+      "topic_id": "fin-p8-t3",
+      "order_index": 1,
+      "title": "Credit Analysis | Financial Ratios + Lending Process",
+      "url": "https://www.wallstreetprep.com/knowledge/credit-risk-analysis/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Leverage/coverage ratios and the lender's underwriting process",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r6",
+      "topic_id": "fin-p8-t3",
+      "order_index": 2,
+      "title": "Debt Schedule: Video Tutorial and Excel Example",
+      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/debt-schedule/",
+      "source": "Breaking Into Wall Street",
+      "format": "video+template",
+      "length": null,
+      "note": "Interest, amortization, and cash sweep mechanics with an Excel example",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r3",
+      "topic_id": "fin-p8-t2",
+      "order_index": 1,
+      "title": "Short-Form LBO Model | Free Course + Excel Template",
+      "url": "https://www.wallstreetprep.com/knowledge/lbo-model/",
+      "source": "Wall Street Prep",
+      "format": "article+template",
+      "length": null,
+      "note": "Free downloadable Excel template",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r4",
+      "topic_id": "fin-p8-t2",
+      "order_index": 2,
+      "title": "Simple LBO Model - Excel, Video Tutorial, and Written Guide",
+      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/simple-lbo-model-excel/",
+      "source": "Breaking Into Wall Street",
+      "format": "video+article",
+      "length": null,
+      "note": "Video + written guide with Excel file",
+      "icon": null
+    },
+    {
+      "id": "fin-p5-r1",
+      "topic_id": "fin-p5-t1",
+      "order_index": 1,
+      "title": "Mergers & Acquisitions (M&A): Types, Steps & Strategies",
+      "url": "https://www.oddo-bhf.com/resources-your-gateway-to-a-wealth-of-knowledge/corporate-finance-resources/mergers-acquisitions-types-steps-strategies/",
+      "source": "ODDO BHF",
+      "format": "article",
+      "length": null,
+      "note": "Overview of the deal lifecycle",
+      "icon": null
+    },
+    {
+      "id": "fin-p5-r2",
+      "topic_id": "fin-p5-t1",
+      "order_index": 2,
+      "title": "Due Diligence in M&A Transactions [Process + Checklist]",
+      "url": "https://mnacommunity.com/insights/due-diligence-in-mergers-and-acquisitions/",
+      "source": "M&A Community",
+      "format": "article",
+      "length": null,
+      "note": "Checklist-driven due diligence guide",
+      "icon": null
+    },
+    {
+      "id": "fin-p5-r17",
+      "topic_id": "fin-p5-t5",
+      "order_index": 1,
+      "title": "Confidential Information Memorandum: Guide + Examples",
+      "url": "https://mergersandinquisitions.com/confidential-information-memorandum/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Teaser to NDA to CIM, with real examples."
+    },
+    {
+      "id": "fin-p5-r18",
+      "topic_id": "fin-p5-t5",
+      "order_index": 2,
+      "title": "CIM — What It Is",
+      "url": "https://corporatefinanceinstitute.com/resources/valuation/cim-confidential-information-memorandum/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Short companion; note it deliberately omits valuation."
+    },
+    {
+      "id": "fin-p4-r1",
+      "topic_id": "fin-p4-t1",
+      "order_index": 1,
+      "title": "Investment Banking Pitch Book – How to Create a Pitch Book",
+      "url": "https://www.fe.training/free-resources/investment-banking/investment-banking-pitch-book/",
+      "source": "Financial Edge Training",
+      "format": "article",
+      "length": null,
+      "note": "Pitch book types and structure",
+      "icon": null
+    },
+    {
+      "id": "fin-p4-r2",
+      "topic_id": "fin-p4-t1",
+      "order_index": 2,
+      "title": "Investment Banking Pitch Books: Design, Examples & Templates",
+      "url": "https://mergersandinquisitions.com/investment-banking-pitch-books/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Buy-side/sell-side deck examples",
+      "icon": null
+    },
+    {
+      "id": "fin-p5-r10",
+      "topic_id": "fin-p5-t3",
+      "order_index": 1,
+      "title": "Merger Model: M&A Training Tutorial + Excel Template",
+      "url": "https://www.wallstreetprep.com/knowledge/merger-model/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Full build. Article is free; the Excel template asks for an email."
+    },
+    {
+      "id": "fin-p5-r11",
+      "topic_id": "fin-p5-t3",
+      "order_index": 2,
+      "title": "Merger Model: Accretion/Dilution",
+      "url": "https://www.streetofwalls.com/articles/investment-banking/recruiting-interviewing/merger-model-accretion-dilution/",
+      "source": "Street of Walls",
+      "format": "article",
+      "length": null,
+      "note": "The accretion/dilution logic in interview form."
+    },
+    {
+      "id": "fin-p5-r12",
+      "topic_id": "fin-p5-t3",
+      "order_index": 3,
+      "title": "M&A Interview Questions",
+      "url": "https://www.wallstreetprep.com/knowledge/ma-interview-questions/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Merger-model concepts as they get asked."
+    },
+    {
+      "id": "fin-p5-r3",
+      "topic_id": "fin-p5-t2",
+      "order_index": 1,
+      "title": "M&A Synergies Explained",
+      "url": "https://burniegroup.com/ma-synergies-explained/",
+      "source": "Burnie Group",
+      "format": "article",
+      "length": null,
+      "note": "Revenue/cost synergies by function",
+      "icon": null
+    },
+    {
+      "id": "fin-p5-r4",
+      "topic_id": "fin-p5-t2",
+      "order_index": 2,
+      "title": "Post-merger integration",
+      "url": "https://en.wikipedia.org/wiki/Post-merger_integration",
+      "source": "Wikipedia",
+      "format": "article",
+      "length": null,
+      "note": "PMI challenges and culture",
+      "icon": null
+    },
+    {
+      "id": "fin-p5-r13",
+      "topic_id": "fin-p5-t4",
+      "order_index": 1,
+      "title": "Equity Capital Markets (ECM): The Definitive Guide",
+      "url": "https://mergersandinquisitions.com/equity-capital-markets/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Origination vs syndicate, IPOs, follow-ons, converts."
+    },
+    {
+      "id": "fin-p5-r14",
+      "topic_id": "fin-p5-t4",
+      "order_index": 2,
+      "title": "Initial Public Offering (IPO): Definition + Process",
+      "url": "https://www.wallstreetprep.com/knowledge/ipo-initial-public-offering/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Underwriters, valuation, roadshow, pricing."
+    },
+    {
+      "id": "fin-p5-r15",
+      "topic_id": "fin-p5-t4",
+      "order_index": 3,
+      "title": "Debt Capital Markets (DCM) Explained",
+      "url": "https://mergersandinquisitions.com/debt-capital-markets/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Investment-grade issuance, and how DCM differs from LevFin."
+    },
+    {
+      "id": "fin-p5-r16",
+      "topic_id": "fin-p5-t4",
+      "order_index": 4,
+      "title": "Investor Bulletin: Investing in an IPO",
+      "url": "https://www.sec.gov/files/ipo-investorbulletin.pdf",
+      "source": "SEC",
+      "format": "pdf",
+      "length": null,
+      "note": "Regulator primary source on registration and Form S-1."
     },
     {
       "id": "fin-p9-r1",
@@ -1156,6 +1831,17 @@
       "length": null,
       "note": "GP/LP roles, carry, and fund mechanics",
       "icon": null
+    },
+    {
+      "id": "fin-p9-r7",
+      "topic_id": "fin-p9-t4",
+      "order_index": 1,
+      "title": "How Distribution Waterfalls Work in PE & VC",
+      "url": "https://carta.com/learn/private-funds/management/distribution-waterfall/",
+      "source": "Carta",
+      "format": "article",
+      "length": null,
+      "note": "LP/GP splits, carry, European vs American."
     },
     {
       "id": "fin-p9-r3",
@@ -1206,15 +1892,37 @@
       "icon": null
     },
     {
-      "id": "fin-p9-r7",
-      "topic_id": "fin-p9-t4",
+      "id": "fin-p9-r8",
+      "topic_id": "fin-p9-t5",
       "order_index": 1,
-      "title": "How Distribution Waterfalls Work in PE & VC",
-      "url": "https://carta.com/learn/private-funds/management/distribution-waterfall/",
+      "title": "Growth Equity: Recruiting, Careers, Case Study",
+      "url": "https://mergersandinquisitions.com/growth-equity/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Includes a sample Excel case."
+    },
+    {
+      "id": "fin-p9-r9",
+      "topic_id": "fin-p9-t5",
+      "order_index": 2,
+      "title": "Private Equity Secondaries",
+      "url": "https://mergersandinquisitions.com/private-equity-secondaries/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "LP-led and GP-led, and how continuation vehicles work."
+    },
+    {
+      "id": "fin-p9-r10",
+      "topic_id": "fin-p9-t5",
+      "order_index": 3,
+      "title": "GP-Led Secondaries: How They Work",
+      "url": "https://carta.com/learn/private-funds/private-equity/strategies/secondaries/gp-led-secondaries/",
       "source": "Carta",
       "format": "article",
       "length": null,
-      "note": "LP/GP splits, carry, European vs American."
+      "note": "The continuation-fund mechanic in detail."
     },
     {
       "id": "fin-p13-r1",
@@ -1272,28 +1980,59 @@
       "note": "The RX technical set with worked answers."
     },
     {
-      "id": "fin-p11-r1",
-      "topic_id": "fin-p11-t1",
+      "id": "fin-p15-r1",
+      "topic_id": "fin-p15-t1",
       "order_index": 1,
-      "title": "Asset-Backed Securities (ABS) | Definition, Structure & Types",
-      "url": "https://corporatefinanceinstitute.com/resources/fixed-income/asset-backed-securities-abs/",
-      "source": "Corporate Finance Institute",
+      "title": "Direct Lending: Industry, Funds & Careers",
+      "url": "https://mergersandinquisitions.com/direct-lending/",
+      "source": "Mergers & Inquisitions",
       "format": "article",
       "length": null,
-      "note": "Securitization mechanics, tranche structure, credit enhancement, and key differences between ABS and MBS",
-      "icon": null
+      "note": "How non-bank lending differs from syndicated levfin."
     },
     {
-      "id": "fin-p11-r2",
-      "topic_id": "fin-p11-t1",
+      "id": "fin-p15-r2",
+      "topic_id": "fin-p15-t1",
       "order_index": 2,
-      "title": "Finance Theory I | MIT OpenCourseWare",
-      "url": "https://ocw.mit.edu/courses/15-401-finance-theory-i-fall-2008/",
-      "source": "MIT OpenCourseWare",
-      "format": "course",
+      "title": "Unitranche Debt: Hybrid Loan Structure",
+      "url": "https://www.wallstreetprep.com/knowledge/unitranche-debt/",
+      "source": "Wall Street Prep",
+      "format": "article",
       "length": null,
-      "note": "Full MIT Sloan MBA course — free video lectures, slides, and problem sets; covers fixed income, securitization, forwards, and options",
-      "icon": null
+      "note": "First and second lien rolled into a single tranche."
+    },
+    {
+      "id": "fin-p15-r3",
+      "topic_id": "fin-p15-t2",
+      "order_index": 1,
+      "title": "Distressed Debt Hedge Funds: Detailed Guide",
+      "url": "https://mergersandinquisitions.com/distressed-debt-hedge-funds/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Investing in claims — distinct from restructuring advisory."
+    },
+    {
+      "id": "fin-p15-r4",
+      "topic_id": "fin-p15-t2",
+      "order_index": 2,
+      "title": "Event-Driven Hedge Funds",
+      "url": "https://mergersandinquisitions.com/event-driven-hedge-funds/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Catalyst-led strategies and the trades behind them."
+    },
+    {
+      "id": "fin-p15-r5",
+      "topic_id": "fin-p15-t2",
+      "order_index": 3,
+      "title": "Merger Arbitrage",
+      "url": "https://mergersandinquisitions.com/merger-arbitrage/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Spread maths and deal-break risk."
     },
     {
       "id": "fin-p11-r3",
@@ -1368,6 +2107,162 @@
       "icon": null
     },
     {
+      "id": "fin-p11-r1",
+      "topic_id": "fin-p11-t1",
+      "order_index": 1,
+      "title": "Asset-Backed Securities (ABS) | Definition, Structure & Types",
+      "url": "https://corporatefinanceinstitute.com/resources/fixed-income/asset-backed-securities-abs/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Securitization mechanics, tranche structure, credit enhancement, and key differences between ABS and MBS",
+      "icon": null
+    },
+    {
+      "id": "fin-p11-r2",
+      "topic_id": "fin-p11-t1",
+      "order_index": 2,
+      "title": "Finance Theory I | MIT OpenCourseWare",
+      "url": "https://ocw.mit.edu/courses/15-401-finance-theory-i-fall-2008/",
+      "source": "MIT OpenCourseWare",
+      "format": "course",
+      "length": null,
+      "note": "Full MIT Sloan MBA course — free video lectures, slides, and problem sets; covers fixed income, securitization, forwards, and options",
+      "icon": null
+    },
+    {
+      "id": "fin-p11-r14",
+      "topic_id": "fin-p11-t4",
+      "order_index": 1,
+      "title": "Value at Risk (VaR)",
+      "url": "https://corporatefinanceinstitute.com/resources/career-map/sell-side/risk-management/value-at-risk-var/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "The market-risk workhorse, and its limits."
+    },
+    {
+      "id": "fin-p11-r15",
+      "topic_id": "fin-p11-t4",
+      "order_index": 2,
+      "title": "Counterparty Credit Risk in Basel III",
+      "url": "https://www.bis.org/fsi/fsisummaries/ccr_in_b3.htm",
+      "source": "Bank for International Settlements",
+      "format": "article",
+      "length": null,
+      "note": "Regulator primary source on CCR and the CVA charge."
+    },
+    {
+      "id": "fin-p11-r16",
+      "topic_id": "fin-p11-t4",
+      "order_index": 3,
+      "title": "IRRBB: Pillar 2 Standardised Framework",
+      "url": "https://www.bis.org/fsi/fsisummaries/irrbb.htm",
+      "source": "Bank for International Settlements",
+      "format": "article",
+      "length": null,
+      "note": "Economic value of equity and banking-book rate risk."
+    },
+    {
+      "id": "fin-p14-r1",
+      "topic_id": "fin-p14-t1",
+      "order_index": 1,
+      "title": "Valuing Financial Service Firms",
+      "url": "https://pages.stern.nyu.edu/~adamodar/pdfiles/papers/finfirm09.pdf",
+      "source": "Damodaran, NYU Stern",
+      "format": "pdf",
+      "length": null,
+      "note": "Why standard DCF breaks on banks, and what to do instead."
+    },
+    {
+      "id": "fin-p14-r2",
+      "topic_id": "fin-p14-t1",
+      "order_index": 2,
+      "title": "Bank & Insurance Financial Modeling 101",
+      "url": "https://mergersandinquisitions.com/bank-insurance-modeling-101/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Balance-sheet-first modelling, NIM and provisions."
+    },
+    {
+      "id": "fin-p14-r3",
+      "topic_id": "fin-p14-t1",
+      "order_index": 3,
+      "title": "Price to Tangible Book Value (P/TBV)",
+      "url": "https://www.wallstreetprep.com/knowledge/price-to-tangible-book-value-ptbv/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "The multiple that replaces EV/EBITDA for financials."
+    },
+    {
+      "id": "fin-p14-r4",
+      "topic_id": "fin-p14-t2",
+      "order_index": 1,
+      "title": "REIT Valuation: 4 Common Approaches",
+      "url": "https://www.wallstreetprep.com/knowledge/reit-valuation-4-most-common-approaches-used-in-practice/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "NAV, DCF, dividend discount and cap rates."
+    },
+    {
+      "id": "fin-p14-r5",
+      "topic_id": "fin-p14-t2",
+      "order_index": 2,
+      "title": "Library of Real Estate Excel Models",
+      "url": "https://www.adventuresincre.com/library-real-estate-excel-models/",
+      "source": "Adventures in CRE",
+      "format": "practice",
+      "length": null,
+      "note": "Pay-what-you-can, so a free download path exists."
+    },
+    {
+      "id": "fin-p14-r6",
+      "topic_id": "fin-p14-t2",
+      "order_index": 3,
+      "title": "Real Estate Investment Banking",
+      "url": "https://mergersandinquisitions.com/real-estate-investment-banking-group/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "How RE deals and valuation differ from corporate."
+    },
+    {
+      "id": "fin-p14-r7",
+      "topic_id": "fin-p14-t3",
+      "order_index": 1,
+      "title": "Debt Sizing in Project Finance",
+      "url": "https://www.wallstreetprep.com/knowledge/debt-sizing-in-project-finance/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Sizing off DSCR and LLCR rather than leverage multiples."
+    },
+    {
+      "id": "fin-p14-r8",
+      "topic_id": "fin-p14-t3",
+      "order_index": 2,
+      "title": "Debt Service Coverage Ratio: Full Tutorial",
+      "url": "https://breakingintowallstreet.com/kb/project-finance/debt-service-coverage-ratio/",
+      "source": "Breaking Into Wall Street",
+      "format": "article",
+      "length": null,
+      "note": "CFADS over debt service, with an Excel walk-through."
+    },
+    {
+      "id": "fin-p14-r9",
+      "topic_id": "fin-p14-t3",
+      "order_index": 3,
+      "title": "Infrastructure Private Equity",
+      "url": "https://mergersandinquisitions.com/infrastructure-private-equity/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Deals, returns and how the seat recruits."
+    },
+    {
       "id": "fin-p12-r1",
       "topic_id": "fin-p12-t1",
       "order_index": 1,
@@ -1428,9 +2323,21 @@
       "icon": null
     },
     {
-      "id": "fin-p7-r1",
+      "id": "fin-p6-r1",
       "topic_id": "fin-p7-t1",
       "order_index": 1,
+      "title": "Equity Research Report: Samples, Tutorials, and Explanations",
+      "url": "https://mergersandinquisitions.com/equity-research-report/",
+      "source": "Mergers & Inquisitions",
+      "format": "article+samples",
+      "length": null,
+      "note": "Free sample reports; ratings explained",
+      "icon": null
+    },
+    {
+      "id": "fin-p7-r1",
+      "topic_id": "fin-p7-t1",
+      "order_index": 2,
       "title": "How to Read a 10-K/10-Q",
       "url": "https://www.sec.gov/fast-answers/answersreada10khtm.html",
       "source": "U.S. SEC",
@@ -1442,7 +2349,7 @@
     {
       "id": "fin-p7-r2",
       "topic_id": "fin-p7-t1",
-      "order_index": 2,
+      "order_index": 3,
       "title": "Free Form 10-K Guide",
       "url": "https://www.fe.training/free-resources/investment-banking/form-10-k/",
       "source": "Financial Edge Training",
@@ -1483,6 +2390,39 @@
       "format": "article",
       "length": null,
       "note": "A timed test with full solutions."
+    },
+    {
+      "id": "fin-p7-r8",
+      "topic_id": "fin-p7-t3",
+      "order_index": 1,
+      "title": "SEBI Investor Education Reading Material",
+      "url": "https://investor.sebi.gov.in/iematerial.html",
+      "source": "SEBI",
+      "format": "article",
+      "length": null,
+      "note": "Regulator primary source on Indian securities markets."
+    },
+    {
+      "id": "fin-p7-r9",
+      "topic_id": "fin-p7-t3",
+      "order_index": 2,
+      "title": "NCFM Self-Study Modules",
+      "url": "https://www.nseindia.com/static/learn/self-study-ncfm-modules-all",
+      "source": "NSE India",
+      "format": "course",
+      "length": null,
+      "note": "Trading, clearing, settlement and the legal framework."
+    },
+    {
+      "id": "fin-p7-r10",
+      "topic_id": "fin-p7-t3",
+      "order_index": 3,
+      "title": "Investment Banking in India: Full Guide",
+      "url": "https://mergersandinquisitions.com/investment-banking-in-india/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Banks, recruiting, salaries and exits in the Indian market."
     }
   ]
 }

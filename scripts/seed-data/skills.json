@@ -3379,6 +3379,106 @@
       "icon_key": "finance",
       "xp_reward": 120,
       "threshold": 0
+    },
+    {
+      "id": "skill-topic-fin-p1-t3",
+      "name": "Time Value of Money",
+      "domain": "finance",
+      "description": "Present and future value, compounding, annuities and perpetuities — the arithmetic every valuation in the track rests on.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-fin-p3-t4",
+      "name": "Industry Map: Groups & Products",
+      "domain": "finance",
+      "description": "Coverage versus product groups, and where the financial sponsors desk sits between a bank and private equity.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-fin-p9-t5",
+      "name": "Growth Equity & Secondaries",
+      "domain": "finance",
+      "description": "Minority growth investing without leverage, and pricing an LP position at a discount to NAV.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-fin-p15-t1",
+      "name": "Private Credit & Direct Lending",
+      "domain": "finance",
+      "description": "Bilateral underwriting held to maturity: unitranche structures, negotiated covenants and downside protection.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-fin-p15-t2",
+      "name": "Distressed & Event-Driven Investing",
+      "domain": "finance",
+      "description": "Fulcrum securities, valuing a claim at a price, loan-to-own and merger-arbitrage spreads.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-fin-p11-t4",
+      "name": "Risk, Capital & ALM",
+      "domain": "finance",
+      "description": "Value at risk, risk-weighted assets and CET1, counterparty CVA, and banking-book rate risk.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-fin-p14-t1",
+      "name": "FIG Modelling: Banks & Insurers",
+      "domain": "finance",
+      "description": "Balance-sheet-first modelling, net interest margin and provisions, and valuing on P/TBV rather than EV/EBITDA.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-fin-p14-t2",
+      "name": "Real Estate Finance & REITs",
+      "domain": "finance",
+      "description": "NOI and cap rates, REIT NAV bridges, FFO and AFFO, and JV equity waterfalls.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-fin-p14-t3",
+      "name": "Project & Infrastructure Finance",
+      "domain": "finance",
+      "description": "CFADS, debt sculpting to a target DSCR, LLCR, and non-recourse structures with no terminal value.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-fin-p7-t3",
+      "name": "Indian Capital Markets & SEBI",
+      "domain": "finance",
+      "description": "SEBI and exchange architecture, the primary-issue process, and the Indian deal market and credential paths.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
     }
   ],
   "skill_resources": [
@@ -6865,6 +6965,110 @@
     {
       "skill_id": "skill-topic-fin-p7-t2",
       "resource_id": "fin-p7-r7"
+    },
+    {
+      "skill_id": "skill-topic-fin-p1-t3",
+      "resource_id": "fin-p3-r1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p3-t4",
+      "resource_id": "fin-p3-r12"
+    },
+    {
+      "skill_id": "skill-topic-fin-p3-t4",
+      "resource_id": "fin-p3-r13"
+    },
+    {
+      "skill_id": "skill-topic-fin-p9-t5",
+      "resource_id": "fin-p9-r8"
+    },
+    {
+      "skill_id": "skill-topic-fin-p9-t5",
+      "resource_id": "fin-p9-r9"
+    },
+    {
+      "skill_id": "skill-topic-fin-p9-t5",
+      "resource_id": "fin-p9-r10"
+    },
+    {
+      "skill_id": "skill-topic-fin-p15-t1",
+      "resource_id": "fin-p15-r1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p15-t1",
+      "resource_id": "fin-p15-r2"
+    },
+    {
+      "skill_id": "skill-topic-fin-p15-t2",
+      "resource_id": "fin-p15-r3"
+    },
+    {
+      "skill_id": "skill-topic-fin-p15-t2",
+      "resource_id": "fin-p15-r4"
+    },
+    {
+      "skill_id": "skill-topic-fin-p15-t2",
+      "resource_id": "fin-p15-r5"
+    },
+    {
+      "skill_id": "skill-topic-fin-p11-t4",
+      "resource_id": "fin-p11-r14"
+    },
+    {
+      "skill_id": "skill-topic-fin-p11-t4",
+      "resource_id": "fin-p11-r15"
+    },
+    {
+      "skill_id": "skill-topic-fin-p11-t4",
+      "resource_id": "fin-p11-r16"
+    },
+    {
+      "skill_id": "skill-topic-fin-p14-t1",
+      "resource_id": "fin-p14-r1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p14-t1",
+      "resource_id": "fin-p14-r2"
+    },
+    {
+      "skill_id": "skill-topic-fin-p14-t1",
+      "resource_id": "fin-p14-r3"
+    },
+    {
+      "skill_id": "skill-topic-fin-p14-t2",
+      "resource_id": "fin-p14-r4"
+    },
+    {
+      "skill_id": "skill-topic-fin-p14-t2",
+      "resource_id": "fin-p14-r5"
+    },
+    {
+      "skill_id": "skill-topic-fin-p14-t2",
+      "resource_id": "fin-p14-r6"
+    },
+    {
+      "skill_id": "skill-topic-fin-p14-t3",
+      "resource_id": "fin-p14-r7"
+    },
+    {
+      "skill_id": "skill-topic-fin-p14-t3",
+      "resource_id": "fin-p14-r8"
+    },
+    {
+      "skill_id": "skill-topic-fin-p14-t3",
+      "resource_id": "fin-p14-r9"
+    },
+    {
+      "skill_id": "skill-topic-fin-p7-t3",
+      "resource_id": "fin-p7-r8"
+    },
+    {
+      "skill_id": "skill-topic-fin-p7-t3",
+      "resource_id": "fin-p7-r9"
+    },
+    {
+      "skill_id": "skill-topic-fin-p7-t3",
+      "resource_id": "fin-p7-r10"
     }
   ]
 }
