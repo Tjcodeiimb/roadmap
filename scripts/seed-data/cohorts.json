@@ -92,11 +92,11 @@
       "id": "founder",
       "name": "founder",
       "label": "Founder",
-      "summary": "What it takes to start and run the thing yourself: unit economics and the full finance stack, how to sell it, what moves people, and how to be known for it.",
-      "tier": "advanced",
+      "summary": "What it takes to start and run the thing yourself: unit economics, runway and cap tables, reporting that holds up to a board, how to sell it, what moves people, and how to be known for it.",
+      "tier": "intermediate",
       "order_index": 9,
       "icon_key": "compass",
-      "estimated_hours": 280,
+      "estimated_hours": 150,
       "published": true
     }
   ],
@@ -268,28 +268,23 @@
     },
     {
       "cohort_id": "founder",
-      "track_id": "finance",
+      "track_id": "fpa-reporting",
       "order_index": 2
     },
     {
       "cohort_id": "founder",
-      "track_id": "fpa-reporting",
+      "track_id": "sales",
       "order_index": 3
     },
     {
       "cohort_id": "founder",
-      "track_id": "sales",
+      "track_id": "psychology",
       "order_index": 4
     },
     {
       "cohort_id": "founder",
-      "track_id": "psychology",
-      "order_index": 5
-    },
-    {
-      "cohort_id": "founder",
       "track_id": "personal-branding",
-      "order_index": 6
+      "order_index": 5
     }
   ]
 }
