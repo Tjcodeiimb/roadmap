@@ -2,7 +2,8 @@
   "track": {
     "id": "finance",
     "name": "finance",
-    "label": "Finance"
+    "label": "Finance",
+    "estimated_hours": 185
   },
   "phases": [
     {
@@ -33,11 +34,11 @@
       "color": null
     },
     {
-      "id": "fin-p4",
+      "id": "fin-p8",
       "track_id": "finance",
       "order_index": 4,
-      "title": "Investment Banking",
-      "description": "Walk the IB deal process — pitch books, comparable company analysis (comps), and DCF modeling.",
+      "title": "Advanced Financial Modeling",
+      "description": "Go beyond reading statements — build a fully integrated 3-statement model from scratch, layer in acquisition debt with an LBO model, and analyze credit risk the way a lender does.",
       "estimated_weeks": "5-7",
       "color": null
     },
@@ -45,60 +46,42 @@
       "id": "fin-p5",
       "track_id": "finance",
       "order_index": 5,
-      "title": "M&A",
+      "title": "Investment Banking & M&A",
       "description": "Learn how deals are structured and value is created or destroyed — synergies, due diligence, post-merger integration.",
-      "estimated_weeks": "4-6",
-      "color": null
-    },
-    {
-      "id": "fin-p6",
-      "track_id": "finance",
-      "order_index": 6,
-      "title": "Equity",
-      "description": "Master the equity research process and valuation toolkit (DCF, comps, precedent transactions) plus portfolio construction basics.",
-      "estimated_weeks": "4-6",
-      "color": null
-    },
-    {
-      "id": "fin-p7",
-      "track_id": "finance",
-      "order_index": 7,
-      "title": "Applied",
-      "description": "Apply it all to real filings and mock deals — read 10-Ks/10-Qs, practice deal exercises, prep for finance interviews.",
-      "estimated_weeks": "4-6",
-      "color": null
-    },
-    {
-      "id": "fin-p8",
-      "track_id": "finance",
-      "order_index": 8,
-      "title": "Advanced Financial Modeling",
-      "description": "Go beyond reading statements — build a fully integrated 3-statement model from scratch, layer in acquisition debt with an LBO model, and analyze credit risk the way a lender does.",
-      "estimated_weeks": "5-7",
-      "color": null
-    },
-    {
-      "id": "fin-p9",
-      "track_id": "finance",
-      "order_index": 9,
-      "title": "Private Equity & Alternative Investments",
-      "description": "Explore the buy-side beyond public markets — how private equity funds source and structure deals, how hedge funds generate returns across strategies, and how venture capital evaluates early-stage bets.",
       "estimated_weeks": "4-6",
       "color": null
     },
     {
       "id": "fin-p10",
       "track_id": "finance",
-      "order_index": 10,
+      "order_index": 6,
       "title": "Equity Research & Valuation",
       "description": "Go deep on the analyst's toolkit — build a DCF from discount-rate first principles, run a rigorous comps screen, and use precedent transactions and trading multiples to triangulate an enterprise value.",
       "estimated_weeks": "5-7",
       "color": null
     },
     {
+      "id": "fin-p9",
+      "track_id": "finance",
+      "order_index": 7,
+      "title": "Private Equity & Alternative Investments",
+      "description": "Explore the buy-side beyond public markets — how private equity funds source and structure deals, how hedge funds generate returns across strategies, and how venture capital evaluates early-stage bets.",
+      "estimated_weeks": "4-6",
+      "color": null
+    },
+    {
+      "id": "fin-p13",
+      "track_id": "finance",
+      "order_index": 8,
+      "title": "Leveraged Finance, Credit & Restructuring",
+      "description": "The debt side of the deal, and what happens when it goes wrong: the leveraged product set, how credit agreements actually constrain a borrower, and the in- and out-of-court routes through distress.",
+      "estimated_weeks": "6–8",
+      "color": null
+    },
+    {
       "id": "fin-p11",
       "track_id": "finance",
-      "order_index": 11,
+      "order_index": 9,
       "title": "Structured Finance & Derivatives",
       "description": "Understand how assets are pooled and tranched into securities, how options and Greeks govern hedging decisions, and how interest-rate and credit derivatives reshape risk across a portfolio.",
       "estimated_weeks": "4-6",
@@ -107,9 +90,18 @@
     {
       "id": "fin-p12",
       "track_id": "finance",
-      "order_index": 12,
+      "order_index": 10,
       "title": "Forensic Financial Analysis",
       "description": "Look past the headline numbers — detect earnings manipulation through accruals analysis, identify off-balance-sheet exposure hidden in SPVs, and spot the red flags that preceded the biggest accounting scandals.",
+      "estimated_weeks": "4-6",
+      "color": null
+    },
+    {
+      "id": "fin-p7",
+      "track_id": "finance",
+      "order_index": 11,
+      "title": "Applied",
+      "description": "Apply it all to real filings and mock deals — read 10-Ks/10-Qs, practice deal exercises, prep for finance interviews.",
       "estimated_weeks": "4-6",
       "color": null
     }
@@ -182,98 +174,10 @@
       "steps": []
     },
     {
-      "id": "fin-p4-t1",
-      "phase_id": "fin-p4",
-      "order_index": 1,
-      "title": "Pitch Books",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "",
-      "steps": []
-    },
-    {
-      "id": "fin-p4-t2",
-      "phase_id": "fin-p4",
-      "order_index": 2,
-      "title": "Comparable Company Analysis (Comps)",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "",
-      "steps": []
-    },
-    {
-      "id": "fin-p4-t3",
-      "phase_id": "fin-p4",
-      "order_index": 3,
-      "title": "DCF Modeling",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "",
-      "steps": []
-    },
-    {
-      "id": "fin-p5-t1",
-      "phase_id": "fin-p5",
-      "order_index": 1,
-      "title": "The M&A Deal Process & Due Diligence",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "",
-      "steps": []
-    },
-    {
-      "id": "fin-p5-t2",
-      "phase_id": "fin-p5",
-      "order_index": 2,
-      "title": "Synergies & Post-Merger Integration",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "",
-      "steps": []
-    },
-    {
-      "id": "fin-p6-t1",
-      "phase_id": "fin-p6",
-      "order_index": 1,
-      "title": "Equity Research & Valuation",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "",
-      "steps": []
-    },
-    {
       "id": "fin-p6-t2",
-      "phase_id": "fin-p6",
-      "order_index": 2,
+      "phase_id": "fin-p3",
+      "order_index": 3,
       "title": "Portfolio Construction",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "",
-      "steps": []
-    },
-    {
-      "id": "fin-p7-t1",
-      "phase_id": "fin-p7",
-      "order_index": 1,
-      "title": "Reading 10-Ks & 10-Qs",
-      "section": null,
-      "tags": [],
-      "estimated_time": null,
-      "description": "",
-      "steps": []
-    },
-    {
-      "id": "fin-p7-t2",
-      "phase_id": "fin-p7",
-      "order_index": 2,
-      "title": "Deal Practice & Interview Prep",
       "section": null,
       "tags": [],
       "estimated_time": null,
@@ -314,37 +218,109 @@
       "steps": []
     },
     {
-      "id": "fin-p9-t1",
-      "phase_id": "fin-p9",
+      "id": "fin-p4-t1",
+      "phase_id": "fin-p5",
       "order_index": 1,
-      "title": "Private Equity Fundamentals",
+      "title": "Pitch Books",
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "How PE funds are structured (GP/LP, fees, carry), how they source and screen deals, and how a buyout thesis turns into an investment.",
+      "description": "",
       "steps": []
     },
     {
-      "id": "fin-p9-t2",
-      "phase_id": "fin-p9",
+      "id": "fin-p5-t1",
+      "phase_id": "fin-p5",
       "order_index": 2,
-      "title": "Hedge Fund Strategies",
+      "title": "The M&A Deal Process & Due Diligence",
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "Survey the core hedge fund strategies — long/short equity, global macro, quant, event-driven, arbitrage — and how each generates returns.",
+      "description": "",
       "steps": []
     },
     {
-      "id": "fin-p9-t3",
-      "phase_id": "fin-p9",
+      "id": "fin-p5-t2",
+      "phase_id": "fin-p5",
       "order_index": 3,
-      "title": "Venture Capital Basics",
+      "title": "Synergies & Post-Merger Integration",
       "section": null,
       "tags": [],
       "estimated_time": null,
-      "description": "How VC funds are structured and how they evaluate, price, and structure early-stage investments — from thesis to term sheet.",
+      "description": "",
       "steps": []
+    },
+    {
+      "id": "fin-p5-t3",
+      "phase_id": "fin-p5",
+      "order_index": 4,
+      "title": "Merger Models & Accretion/Dilution",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Build a pro-forma EPS bridge: consideration mix, synergies, foregone interest and the break-even premium. The most-tested technical in an IB interview.",
+      "steps": [
+        {
+          "t": "Build the pro-forma",
+          "d": "Combine the two P&Ls, layer in the financing, and get to pro-forma EPS."
+        },
+        {
+          "t": "Find the break-even",
+          "d": "Solve for the premium at which the deal stops being accretive."
+        },
+        {
+          "t": "Flex the consideration",
+          "d": "Rerun it as all-cash, all-stock and mixed; explain why the answer moves."
+        }
+      ]
+    },
+    {
+      "id": "fin-p5-t4",
+      "phase_id": "fin-p5",
+      "order_index": 5,
+      "title": "Equity & Debt Capital Markets",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How companies actually raise money: the IPO process end to end, follow-ons and convertibles on the equity side, investment-grade issuance on the debt side, and how ECM and DCM desks differ from M&A.",
+      "steps": [
+        {
+          "t": "Walk an IPO",
+          "d": "Underwriter selection, S-1, roadshow, bookbuilding, pricing and the first day."
+        },
+        {
+          "t": "Read a real S-1",
+          "d": "Pull one from EDGAR and find the risk factors, use of proceeds and dilution."
+        },
+        {
+          "t": "Contrast the desks",
+          "d": "ECM vs DCM vs LevFin — who does what, and what the work looks like day to day."
+        }
+      ]
+    },
+    {
+      "id": "fin-p5-t5",
+      "phase_id": "fin-p5",
+      "order_index": 6,
+      "title": "Sell-Side Process: Teaser, NDA & CIM",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "What bankers actually produce between mandate and close, and how a buyer reads it: the anonymous teaser, the NDA, the CIM, the process letter and the buyer list.",
+      "steps": [
+        {
+          "t": "Work the sequence",
+          "d": "Teaser to NDA to CIM to bids — what each document is for and who sees it."
+        },
+        {
+          "t": "Dissect a CIM",
+          "d": "Read a real one and note what it asserts, what it omits, and why it never states a price."
+        },
+        {
+          "t": "Build a buyer list",
+          "d": "Segment strategics vs sponsors for a target and justify the cut."
+        }
+      ]
     },
     {
       "id": "fin-p10-t1",
@@ -378,6 +354,115 @@
       "estimated_time": null,
       "description": "Distinguish trading comps (current market prices) from deal comps (acquisition premiums baked in), and use precedent transactions to anchor the control premium in a negotiated sale.",
       "steps": []
+    },
+    {
+      "id": "fin-p9-t1",
+      "phase_id": "fin-p9",
+      "order_index": 1,
+      "title": "Private Equity Fundamentals",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How PE funds are structured (GP/LP, fees, carry), how they source and screen deals, and how a buyout thesis turns into an investment.",
+      "steps": []
+    },
+    {
+      "id": "fin-p9-t2",
+      "phase_id": "fin-p9",
+      "order_index": 2,
+      "title": "Hedge Fund Strategies",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Survey the core hedge fund strategies — long/short equity, global macro, quant, event-driven, arbitrage — and how each generates returns.",
+      "steps": []
+    },
+    {
+      "id": "fin-p9-t3",
+      "phase_id": "fin-p9",
+      "order_index": 3,
+      "title": "Venture Capital Basics",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How VC funds are structured and how they evaluate, price, and structure early-stage investments — from thesis to term sheet.",
+      "steps": []
+    },
+    {
+      "id": "fin-p9-t4",
+      "phase_id": "fin-p9",
+      "order_index": 4,
+      "title": "Fund Economics & Value Creation",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How a fund actually makes money and how returns get attributed: hurdle, catch-up, European vs American waterfall, and splitting an outcome into deleveraging, EBITDA growth and multiple expansion.",
+      "steps": [
+        {
+          "t": "Split a waterfall",
+          "d": "Run an exit through European and American structures and compare GP take."
+        },
+        {
+          "t": "Attribute a return",
+          "d": "Decompose an IRR into deleveraging, earnings growth and multiple arbitrage."
+        },
+        {
+          "t": "Judge the levers",
+          "d": "Decide which lever did the work — and whether it was skill or the market."
+        }
+      ]
+    },
+    {
+      "id": "fin-p13-t1",
+      "phase_id": "fin-p13",
+      "order_index": 1,
+      "title": "Leveraged Loans & High Yield",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The leveraged product set: term loan B versus senior notes, pricing and call protection, and the CLO and high-yield-fund buyer base that decides what can actually get financed.",
+      "steps": [
+        {
+          "t": "Separate the instruments",
+          "d": "Term loan B vs senior notes: security, seniority, floating vs fixed, call protection."
+        },
+        {
+          "t": "Follow the money",
+          "d": "Work out who buys each — CLOs, HY funds, direct lenders — and how that shapes terms."
+        },
+        {
+          "t": "Price a deal",
+          "d": "Take a recent LBO and reason through why its capital structure was built the way it was."
+        }
+      ]
+    },
+    {
+      "id": "fin-p13-t2",
+      "phase_id": "fin-p13",
+      "order_index": 2,
+      "title": "Restructuring & Chapter 11",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "In-court versus out-of-court, creditor hierarchy and the absolute priority rule, DIP financing, liquidation analysis and the plan of reorganisation — plus how restructuring interviews differ from standard IB.",
+      "steps": [
+        {
+          "t": "Learn the waterfall",
+          "d": "Absolute priority rule: who gets paid, in what order, and where the fulcrum security sits."
+        },
+        {
+          "t": "Compare the routes",
+          "d": "Out-of-court exchange vs Chapter 11 — the trade-offs on speed, cost and holdouts."
+        },
+        {
+          "t": "Build a liquidation analysis",
+          "d": "Recovery by class, and what it implies for where value breaks."
+        },
+        {
+          "t": "Drill the technicals",
+          "d": "Work the RX interview question set until the answers are yours."
+        }
+      ]
     },
     {
       "id": "fin-p11-t1",
@@ -444,6 +529,28 @@
       "estimated_time": null,
       "description": "The warning signs that preceded Enron, WorldCom, and the 2008 crisis — rapidly growing receivables, channel stuffing, related-party transactions, and the Beneish M-Score manipulation detector.",
       "steps": []
+    },
+    {
+      "id": "fin-p7-t1",
+      "phase_id": "fin-p7",
+      "order_index": 1,
+      "title": "Reading 10-Ks & 10-Qs",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "",
+      "steps": []
+    },
+    {
+      "id": "fin-p7-t2",
+      "phase_id": "fin-p7",
+      "order_index": 2,
+      "title": "Deal Practice & Interview Prep",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "",
+      "steps": []
     }
   ],
   "resources": [
@@ -460,15 +567,15 @@
       "icon": null
     },
     {
-      "id": "fin-p1-r2",
+      "id": "fin-p12-r4",
       "topic_id": "fin-p1-t1",
       "order_index": 2,
-      "title": "The connection between balance sheet, P&L and cash flow statement",
-      "url": "https://zerodha.com/varsity/chapter/the-connection-between-balance-sheet-pl-statement-and-cash-flow-statement/",
-      "source": "Zerodha Varsity",
-      "format": "article",
-      "length": "~15 min",
-      "note": "How the three statements link",
+      "title": "Beginner's Guide to Financial Statements",
+      "url": "https://www.sec.gov/oiea/reports-and-publications/investor-publications/beginners-guide-financial-statements",
+      "source": "U.S. SEC",
+      "format": "guide",
+      "length": null,
+      "note": "SEC investor education guide on reading financial statements — a strong foundation before learning what is missing from them",
       "icon": null
     },
     {
@@ -484,6 +591,18 @@
       "icon": null
     },
     {
+      "id": "fin-p1-r10",
+      "topic_id": "fin-p1-t1",
+      "order_index": 4,
+      "title": "Financial Statements – Zerodha Varsity Module 3",
+      "url": "https://zerodha.com/varsity/module/fundamental-analysis/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "3 hours",
+      "icon_key": "link"
+    },
+    {
       "id": "fin-p1-r4",
       "topic_id": "fin-p1-t2",
       "order_index": 1,
@@ -493,18 +612,6 @@
       "format": "course",
       "length": null,
       "note": "418,333 enrolled, 4.7★ (8,557 reviews); FREE audit mode",
-      "icon": null
-    },
-    {
-      "id": "fin-p1-r5",
-      "topic_id": "fin-p1-t2",
-      "order_index": 2,
-      "title": "Accounting Fundamentals",
-      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/financial-modeling-test",
-      "source": "Corporate Finance Institute",
-      "format": "course",
-      "length": null,
-      "note": "Builds all three statements; free first module",
       "icon": null
     },
     {
@@ -592,6 +699,18 @@
       "icon": null
     },
     {
+      "id": "fin-p3-r10",
+      "topic_id": "fin-p3-t1",
+      "order_index": 3,
+      "title": "Introduction to Stock Markets – Zerodha Varsity Module 1",
+      "url": "https://zerodha.com/varsity/module/introduction-to-stock-markets/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "4 hours",
+      "icon_key": "link"
+    },
+    {
       "id": "fin-p3-r3",
       "topic_id": "fin-p3-t2",
       "order_index": 1,
@@ -601,6 +720,126 @@
       "format": "article",
       "length": null,
       "note": "Distinguishes the two sides and career paths",
+      "icon": null
+    },
+    {
+      "id": "fin-p6-r4",
+      "topic_id": "fin-p6-t2",
+      "order_index": 1,
+      "title": "The Basics of Portfolio Construction",
+      "url": "https://www.youtube.com/watch?v=3gXhxTm6cA8",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Asset allocation as core driver",
+      "icon": null
+    },
+    {
+      "id": "fin-p6-r5",
+      "topic_id": "fin-p6-t2",
+      "order_index": 2,
+      "title": "Portfolio Construction",
+      "url": "https://www.fe.training/free-resources/portfolio-management/portfolio-construction/",
+      "source": "Financial Edge Training",
+      "format": "article",
+      "length": null,
+      "note": "Free primer on construction process",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r1",
+      "topic_id": "fin-p8-t1",
+      "order_index": 1,
+      "title": "3-Statement Model | Complete Guide (Step-by-Step)",
+      "url": "https://www.wallstreetprep.com/knowledge/build-integrated-3-statement-financial-model/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Builds the IS/BS/CF links from scratch, not just reading them",
+      "icon": null
+    },
+    {
+      "id": "fin-p1-r5",
+      "topic_id": "fin-p8-t1",
+      "order_index": 2,
+      "title": "Financial Modeling Test – CFI",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/financial-modeling-test",
+      "source": "Corporate Finance Institute",
+      "format": "course",
+      "length": null,
+      "note": "Self-assessment: build a model against a timed brief.",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r2",
+      "topic_id": "fin-p8-t1",
+      "order_index": 3,
+      "title": "Introduction to 3-Statement Modeling",
+      "url": "https://www.coursera.org/learn/cfi-introduction-to-3-statement-modeling",
+      "source": "Coursera / Corporate Finance Institute",
+      "format": "course",
+      "length": "~6 hrs",
+      "note": "FREE audit mode",
+      "icon": null
+    },
+    {
+      "id": "fin-p12-r10",
+      "topic_id": "fin-p8-t1",
+      "order_index": 4,
+      "title": "Financial Modelling & Valuation – Zerodha Varsity Module 11",
+      "url": "https://zerodha.com/varsity/module/financial-modelling-and-valuation/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "4 hours",
+      "icon_key": "link"
+    },
+    {
+      "id": "fin-p8-r3",
+      "topic_id": "fin-p8-t2",
+      "order_index": 1,
+      "title": "Short-Form LBO Model | Free Course + Excel Template",
+      "url": "https://www.wallstreetprep.com/knowledge/lbo-model/",
+      "source": "Wall Street Prep",
+      "format": "article+template",
+      "length": null,
+      "note": "Free downloadable Excel template",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r4",
+      "topic_id": "fin-p8-t2",
+      "order_index": 2,
+      "title": "Simple LBO Model - Excel, Video Tutorial, and Written Guide",
+      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/simple-lbo-model-excel/",
+      "source": "Breaking Into Wall Street",
+      "format": "video+article",
+      "length": null,
+      "note": "Video + written guide with Excel file",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r5",
+      "topic_id": "fin-p8-t3",
+      "order_index": 1,
+      "title": "Credit Analysis | Financial Ratios + Lending Process",
+      "url": "https://www.wallstreetprep.com/knowledge/credit-risk-analysis/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Leverage/coverage ratios and the lender's underwriting process",
+      "icon": null
+    },
+    {
+      "id": "fin-p8-r6",
+      "topic_id": "fin-p8-t3",
+      "order_index": 2,
+      "title": "Debt Schedule: Video Tutorial and Excel Example",
+      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/debt-schedule/",
+      "source": "Breaking Into Wall Street",
+      "format": "video+template",
+      "length": null,
+      "note": "Interest, amortization, and cash sweep mechanics with an Excel example",
       "icon": null
     },
     {
@@ -625,54 +864,6 @@
       "format": "article",
       "length": null,
       "note": "Buy-side/sell-side deck examples",
-      "icon": null
-    },
-    {
-      "id": "fin-p4-r3",
-      "topic_id": "fin-p4-t2",
-      "order_index": 1,
-      "title": "Comparable Company Analysis (CCA) Tutorial",
-      "url": "https://breakingintowallstreet.com/kb/valuation/comparable-company-analysis-cca/",
-      "source": "Breaking Into Wall Street",
-      "format": "article+video",
-      "length": "~21 min",
-      "note": "Full walkthrough with free Excel template",
-      "icon": null
-    },
-    {
-      "id": "fin-p4-r4",
-      "topic_id": "fin-p4-t2",
-      "order_index": 2,
-      "title": "Comparable Company Analysis – Complete Guide",
-      "url": "https://corporatefinanceinstitute.com/resources/valuation/comparable-company-analysis/",
-      "source": "Corporate Finance Institute",
-      "format": "article+template",
-      "length": null,
-      "note": "Step-by-step with free template",
-      "icon": null
-    },
-    {
-      "id": "fin-p4-r5",
-      "topic_id": "fin-p4-t3",
-      "order_index": 1,
-      "title": "DCF Model Training: 6 Steps to Building a DCF Model in Excel",
-      "url": "https://www.wallstreetprep.com/knowledge/dcf-model-training-6-steps-building-dcf-model-excel/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "Definitive free six-step DCF reference",
-      "icon": null
-    },
-    {
-      "id": "fin-p4-r6",
-      "topic_id": "fin-p4-t3",
-      "order_index": 2,
-      "title": "Financial Modeling Quick Lessons: Building a DCF",
-      "url": "https://www.youtube.com/watch?v=XL71PBhcs2M",
-      "source": "YouTube",
-      "format": "video",
-      "length": null,
-      "note": "Builds a one-page IB-standard DCF",
       "icon": null
     },
     {
@@ -724,8 +915,191 @@
       "icon": null
     },
     {
+      "id": "fin-p5-r10",
+      "topic_id": "fin-p5-t3",
+      "order_index": 1,
+      "title": "Merger Model: M&A Training Tutorial + Excel Template",
+      "url": "https://www.wallstreetprep.com/knowledge/merger-model/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Full build. Article is free; the Excel template asks for an email."
+    },
+    {
+      "id": "fin-p5-r11",
+      "topic_id": "fin-p5-t3",
+      "order_index": 2,
+      "title": "Merger Model: Accretion/Dilution",
+      "url": "https://www.streetofwalls.com/articles/investment-banking/recruiting-interviewing/merger-model-accretion-dilution/",
+      "source": "Street of Walls",
+      "format": "article",
+      "length": null,
+      "note": "The accretion/dilution logic in interview form."
+    },
+    {
+      "id": "fin-p5-r12",
+      "topic_id": "fin-p5-t3",
+      "order_index": 3,
+      "title": "M&A Interview Questions",
+      "url": "https://www.wallstreetprep.com/knowledge/ma-interview-questions/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Merger-model concepts as they get asked."
+    },
+    {
+      "id": "fin-p5-r13",
+      "topic_id": "fin-p5-t4",
+      "order_index": 1,
+      "title": "Equity Capital Markets (ECM): The Definitive Guide",
+      "url": "https://mergersandinquisitions.com/equity-capital-markets/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Origination vs syndicate, IPOs, follow-ons, converts."
+    },
+    {
+      "id": "fin-p5-r14",
+      "topic_id": "fin-p5-t4",
+      "order_index": 2,
+      "title": "Initial Public Offering (IPO): Definition + Process",
+      "url": "https://www.wallstreetprep.com/knowledge/ipo-initial-public-offering/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Underwriters, valuation, roadshow, pricing."
+    },
+    {
+      "id": "fin-p5-r15",
+      "topic_id": "fin-p5-t4",
+      "order_index": 3,
+      "title": "Debt Capital Markets (DCM) Explained",
+      "url": "https://mergersandinquisitions.com/debt-capital-markets/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Investment-grade issuance, and how DCM differs from LevFin."
+    },
+    {
+      "id": "fin-p5-r16",
+      "topic_id": "fin-p5-t4",
+      "order_index": 4,
+      "title": "Investor Bulletin: Investing in an IPO",
+      "url": "https://www.sec.gov/files/ipo-investorbulletin.pdf",
+      "source": "SEC",
+      "format": "pdf",
+      "length": null,
+      "note": "Regulator primary source on registration and Form S-1."
+    },
+    {
+      "id": "fin-p5-r17",
+      "topic_id": "fin-p5-t5",
+      "order_index": 1,
+      "title": "Confidential Information Memorandum: Guide + Examples",
+      "url": "https://mergersandinquisitions.com/confidential-information-memorandum/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Teaser to NDA to CIM, with real examples."
+    },
+    {
+      "id": "fin-p5-r18",
+      "topic_id": "fin-p5-t5",
+      "order_index": 2,
+      "title": "CIM — What It Is",
+      "url": "https://corporatefinanceinstitute.com/resources/valuation/cim-confidential-information-memorandum/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Short companion; note it deliberately omits valuation."
+    },
+    {
+      "id": "fin-p4-r5",
+      "topic_id": "fin-p10-t1",
+      "order_index": 1,
+      "title": "DCF Model Training: 6 Steps to Building a DCF Model in Excel",
+      "url": "https://www.wallstreetprep.com/knowledge/dcf-model-training-6-steps-building-dcf-model-excel/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Definitive free six-step DCF reference",
+      "icon": null
+    },
+    {
+      "id": "fin-p10-r1",
+      "topic_id": "fin-p10-t1",
+      "order_index": 2,
+      "title": "Walk Me Through a DCF | Interview Question & Answer",
+      "url": "https://www.wallstreetprep.com/knowledge/walk-me-through-dcf/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "How to articulate the full DCF logic — assumptions, WACC, terminal value, and equity bridge — under interview pressure",
+      "icon": null
+    },
+    {
+      "id": "fin-p4-r6",
+      "topic_id": "fin-p10-t1",
+      "order_index": 3,
+      "title": "Financial Modeling Quick Lessons: Building a DCF",
+      "url": "https://www.youtube.com/watch?v=XL71PBhcs2M",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Builds a one-page IB-standard DCF",
+      "icon": null
+    },
+    {
+      "id": "fin-p10-r2",
+      "topic_id": "fin-p10-t1",
+      "order_index": 4,
+      "title": "Terminal Value | Formula, Methods & Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/terminal-value/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Gordon Growth vs. exit-multiple methods; why terminal value dominates DCF output and how to sensitivity-test it",
+      "icon": null
+    },
+    {
+      "id": "fin-p4-r3",
+      "topic_id": "fin-p10-t2",
+      "order_index": 1,
+      "title": "Comparable Company Analysis (CCA) Tutorial",
+      "url": "https://breakingintowallstreet.com/kb/valuation/comparable-company-analysis-cca/",
+      "source": "Breaking Into Wall Street",
+      "format": "article+video",
+      "length": "~21 min",
+      "note": "Full walkthrough with free Excel template",
+      "icon": null
+    },
+    {
+      "id": "fin-p10-r3",
+      "topic_id": "fin-p10-t2",
+      "order_index": 2,
+      "title": "Comparable Company Analysis | Trading Comps Tutorial",
+      "url": "https://www.wallstreetprep.com/knowledge/comparable-company-analysis-comps/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Advanced comps guide covering peer selection, calendarisation, NTM vs. LTM multiples, and median vs. mean benchmarking",
+      "icon": null
+    },
+    {
+      "id": "fin-p10-r4",
+      "topic_id": "fin-p10-t2",
+      "order_index": 3,
+      "title": "Valuation Online Class (25 free sessions)",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/webcastvalonline.htm",
+      "source": "Aswath Damodaran, NYU Stern",
+      "format": "video+slides",
+      "length": null,
+      "note": "25 free Damodaran sessions covering relative valuation, multiples, and the interplay between intrinsic and comparative value",
+      "icon": null
+    },
+    {
       "id": "fin-p6-r1",
-      "topic_id": "fin-p6-t1",
+      "topic_id": "fin-p10-t3",
       "order_index": 1,
       "title": "Equity Research Report: Samples, Tutorials, and Explanations",
       "url": "https://mergersandinquisitions.com/equity-research-report/",
@@ -736,171 +1110,27 @@
       "icon": null
     },
     {
-      "id": "fin-p6-r2",
-      "topic_id": "fin-p6-t1",
+      "id": "fin-p10-r5",
+      "topic_id": "fin-p10-t3",
       "order_index": 2,
-      "title": "Aswath Damodaran on Valuation (playlist)",
-      "url": "https://www.youtube.com/playlist?list=PLeBox1GIuOW_7LAvk-Iz-Vm5luPJhu6_H",
-      "source": "YouTube / NYU Stern",
-      "format": "playlist",
+      "title": "Precedent Transaction Analysis | Transaction Comps Tutorial",
+      "url": "https://www.wallstreetprep.com/knowledge/precedent-transaction-analysis/",
+      "source": "Wall Street Prep",
+      "format": "article",
       "length": null,
-      "note": "DCF and relative valuation",
+      "note": "How to screen deal comps, calculate acquisition multiples, and apply a control premium to trading value",
       "icon": null
     },
     {
-      "id": "fin-p6-r3",
-      "topic_id": "fin-p6-t1",
+      "id": "fin-p10-r6",
+      "topic_id": "fin-p10-t3",
       "order_index": 3,
-      "title": "Aswath Damodaran (official channel)",
-      "url": "https://www.youtube.com/@AswathDamodaranonValuation",
-      "source": "YouTube",
-      "format": "channel",
-      "length": null,
-      "note": "Full valuation & corporate finance courses",
-      "icon": null
-    },
-    {
-      "id": "fin-p6-r4",
-      "topic_id": "fin-p6-t2",
-      "order_index": 1,
-      "title": "The Basics of Portfolio Construction",
-      "url": "https://www.youtube.com/watch?v=3gXhxTm6cA8",
-      "source": "YouTube",
-      "format": "video",
-      "length": null,
-      "note": "Asset allocation as core driver",
-      "icon": null
-    },
-    {
-      "id": "fin-p6-r5",
-      "topic_id": "fin-p6-t2",
-      "order_index": 2,
-      "title": "Portfolio Construction",
-      "url": "https://www.fe.training/free-resources/portfolio-management/portfolio-construction/",
-      "source": "Financial Edge Training",
-      "format": "article",
-      "length": null,
-      "note": "Free primer on construction process",
-      "icon": null
-    },
-    {
-      "id": "fin-p7-r1",
-      "topic_id": "fin-p7-t1",
-      "order_index": 1,
-      "title": "How to Read a 10-K/10-Q",
-      "url": "https://www.sec.gov/fast-answers/answersreada10khtm.html",
-      "source": "U.S. SEC",
-      "format": "article",
-      "length": null,
-      "note": "Authoritative regulator primer",
-      "icon": null
-    },
-    {
-      "id": "fin-p7-r2",
-      "topic_id": "fin-p7-t1",
-      "order_index": 2,
-      "title": "Free Form 10-K Guide",
-      "url": "https://www.fe.training/free-resources/investment-banking/form-10-k/",
-      "source": "Financial Edge Training",
-      "format": "article",
-      "length": null,
-      "note": "Section-by-section 10-K navigation",
-      "icon": null
-    },
-    {
-      "id": "fin-p7-r3",
-      "topic_id": "fin-p7-t2",
-      "order_index": 1,
-      "title": "JPMorgan Investment Banking Job Simulation",
-      "url": "https://www.theforage.com/blog/skills/comparable-company-analysis",
-      "source": "Forage",
-      "format": "virtual experience",
-      "length": "3-4 hrs",
-      "note": "Free; comps, DCF, M&A screening, presentations; J.P.Morgan certificate",
-      "icon": null
-    },
-    {
-      "id": "fin-p7-r4",
-      "topic_id": "fin-p7-t2",
-      "order_index": 2,
-      "title": "Comparative Company Analysis Tutorial",
-      "url": "https://www.streetofwalls.com/articles/investment-banking/recruiting-interviewing/comparative-company-analysis/",
-      "source": "Street of Walls",
-      "format": "article",
-      "length": null,
-      "note": "Interview-oriented technical practice",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r1",
-      "topic_id": "fin-p8-t1",
-      "order_index": 1,
-      "title": "3-Statement Model | Complete Guide (Step-by-Step)",
-      "url": "https://www.wallstreetprep.com/knowledge/build-integrated-3-statement-financial-model/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "Builds the IS/BS/CF links from scratch, not just reading them",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r2",
-      "topic_id": "fin-p8-t1",
-      "order_index": 2,
-      "title": "Introduction to 3-Statement Modeling",
-      "url": "https://www.coursera.org/learn/cfi-introduction-to-3-statement-modeling",
-      "source": "Coursera / Corporate Finance Institute",
-      "format": "course",
-      "length": "~6 hrs",
-      "note": "FREE audit mode",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r3",
-      "topic_id": "fin-p8-t2",
-      "order_index": 1,
-      "title": "Short-Form LBO Model | Free Course + Excel Template",
-      "url": "https://www.wallstreetprep.com/knowledge/lbo-model/",
-      "source": "Wall Street Prep",
+      "title": "Precedent Transaction Analysis: Tutorial and Excel Examples",
+      "url": "https://breakingintowallstreet.com/kb/valuation/precedent-transaction-analysis/",
+      "source": "Breaking Into Wall Street",
       "format": "article+template",
       "length": null,
-      "note": "Free downloadable Excel template",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r4",
-      "topic_id": "fin-p8-t2",
-      "order_index": 2,
-      "title": "Simple LBO Model - Excel, Video Tutorial, and Written Guide",
-      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/simple-lbo-model-excel/",
-      "source": "Breaking Into Wall Street",
-      "format": "video+article",
-      "length": null,
-      "note": "Video + written guide with Excel file",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r5",
-      "topic_id": "fin-p8-t3",
-      "order_index": 1,
-      "title": "Credit Analysis | Financial Ratios + Lending Process",
-      "url": "https://www.wallstreetprep.com/knowledge/credit-risk-analysis/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "Leverage/coverage ratios and the lender's underwriting process",
-      "icon": null
-    },
-    {
-      "id": "fin-p8-r6",
-      "topic_id": "fin-p8-t3",
-      "order_index": 2,
-      "title": "Debt Schedule: Video Tutorial and Excel Example",
-      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/debt-schedule/",
-      "source": "Breaking Into Wall Street",
-      "format": "video+template",
-      "length": null,
-      "note": "Interest, amortization, and cash sweep mechanics with an Excel example",
+      "note": "Step-by-step walkthrough with free Excel template; explains spread vs. spot multiples and data sourcing",
       "icon": null
     },
     {
@@ -976,76 +1206,70 @@
       "icon": null
     },
     {
-      "id": "fin-p10-r1",
-      "topic_id": "fin-p10-t1",
+      "id": "fin-p9-r7",
+      "topic_id": "fin-p9-t4",
       "order_index": 1,
-      "title": "Walk Me Through a DCF | Interview Question & Answer",
-      "url": "https://www.wallstreetprep.com/knowledge/walk-me-through-dcf/",
-      "source": "Wall Street Prep",
+      "title": "How Distribution Waterfalls Work in PE & VC",
+      "url": "https://carta.com/learn/private-funds/management/distribution-waterfall/",
+      "source": "Carta",
       "format": "article",
       "length": null,
-      "note": "How to articulate the full DCF logic — assumptions, WACC, terminal value, and equity bridge — under interview pressure",
-      "icon": null
+      "note": "LP/GP splits, carry, European vs American."
     },
     {
-      "id": "fin-p10-r2",
-      "topic_id": "fin-p10-t1",
-      "order_index": 2,
-      "title": "Terminal Value | Formula, Methods & Calculator",
-      "url": "https://www.wallstreetprep.com/knowledge/terminal-value/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "Gordon Growth vs. exit-multiple methods; why terminal value dominates DCF output and how to sensitivity-test it",
-      "icon": null
-    },
-    {
-      "id": "fin-p10-r3",
-      "topic_id": "fin-p10-t2",
+      "id": "fin-p13-r1",
+      "topic_id": "fin-p13-t1",
       "order_index": 1,
-      "title": "Comparable Company Analysis | Trading Comps Tutorial",
-      "url": "https://www.wallstreetprep.com/knowledge/comparable-company-analysis-comps/",
+      "title": "Leveraged Finance (LevFin): Ultimate Guide",
+      "url": "https://www.wallstreetprep.com/knowledge/ultimate-guide-to-debt-leveraged-finance/",
       "source": "Wall Street Prep",
       "format": "article",
       "length": null,
-      "note": "Advanced comps guide covering peer selection, calendarisation, NTM vs. LTM multiples, and median vs. mean benchmarking",
-      "icon": null
+      "note": "The single best free overview of the leveraged debt market."
     },
     {
-      "id": "fin-p10-r4",
-      "topic_id": "fin-p10-t2",
+      "id": "fin-p13-r2",
+      "topic_id": "fin-p13-t1",
       "order_index": 2,
-      "title": "Valuation Online Class (25 free sessions)",
-      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/webcastvalonline.htm",
-      "source": "Aswath Damodaran, NYU Stern",
-      "format": "video+slides",
+      "title": "Leveraged Finance 101: A Covenant Handbook",
+      "url": "https://www.stblaw.com/docs/default-source/publications/leveraged-finance-101---a-covenant-handbook.pdf",
+      "source": "Simpson Thacher",
+      "format": "pdf",
       "length": null,
-      "note": "25 free Damodaran sessions covering relative valuation, multiples, and the interplay between intrinsic and comparative value",
-      "icon": null
+      "note": "Law-firm primary source on covenant mechanics — incurrence vs maintenance, baskets, restricted payments."
     },
     {
-      "id": "fin-p10-r5",
-      "topic_id": "fin-p10-t3",
+      "id": "fin-p13-r3",
+      "topic_id": "fin-p13-t2",
       "order_index": 1,
-      "title": "Precedent Transaction Analysis | Transaction Comps Tutorial",
-      "url": "https://www.wallstreetprep.com/knowledge/precedent-transaction-analysis/",
+      "title": "Financial Restructuring — Free 11-Part Series",
+      "url": "https://www.wallstreetprep.com/knowledge/quick-lesson-demystifying-financial-restructuring/",
+      "source": "Wall Street Prep",
+      "format": "course",
+      "length": null,
+      "note": "Distress, priority waterfall, valuing a distressed firm, distressed debt investing."
+    },
+    {
+      "id": "fin-p13-r4",
+      "topic_id": "fin-p13-t2",
+      "order_index": 2,
+      "title": "Restructuring Investment Banking: How to Get In",
+      "url": "https://mergersandinquisitions.com/restructuring-investment-banking-group/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "What debtor-side bankers actually do, and how RX recruiting differs."
+    },
+    {
+      "id": "fin-p13-r5",
+      "topic_id": "fin-p13-t2",
+      "order_index": 3,
+      "title": "Restructuring Interview Questions",
+      "url": "https://www.wallstreetprep.com/knowledge/restructuring-interview-guide-technical-questions/",
       "source": "Wall Street Prep",
       "format": "article",
       "length": null,
-      "note": "How to screen deal comps, calculate acquisition multiples, and apply a control premium to trading value",
-      "icon": null
-    },
-    {
-      "id": "fin-p10-r6",
-      "topic_id": "fin-p10-t3",
-      "order_index": 2,
-      "title": "Precedent Transaction Analysis: Tutorial and Excel Examples",
-      "url": "https://breakingintowallstreet.com/kb/valuation/precedent-transaction-analysis/",
-      "source": "Breaking Into Wall Street",
-      "format": "article+template",
-      "length": null,
-      "note": "Step-by-step walkthrough with free Excel template; explains spread vs. spot multiples and data sourcing",
-      "icon": null
+      "note": "The RX technical set with worked answers."
     },
     {
       "id": "fin-p11-r1",
@@ -1094,6 +1318,30 @@
       "length": null,
       "note": "What each Greek measures, how they interact, and how traders use them to manage options risk exposure",
       "icon": null
+    },
+    {
+      "id": "fin-p11-r10",
+      "topic_id": "fin-p11-t2",
+      "order_index": 3,
+      "title": "Options Theory for Professional Trading – Zerodha Varsity Module 5",
+      "url": "https://zerodha.com/varsity/module/option-theory/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "6 hours",
+      "icon_key": "link"
+    },
+    {
+      "id": "fin-p11-r11",
+      "topic_id": "fin-p11-t2",
+      "order_index": 4,
+      "title": "Option Strategies – Zerodha Varsity Module 6",
+      "url": "https://zerodha.com/varsity/module/option-strategies/",
+      "format": "article",
+      "provider": "external",
+      "source": "Zerodha Varsity",
+      "duration": "5 hours",
+      "icon_key": "link"
     },
     {
       "id": "fin-p11-r5",
@@ -1156,18 +1404,6 @@
       "icon": null
     },
     {
-      "id": "fin-p12-r4",
-      "topic_id": "fin-p12-t2",
-      "order_index": 2,
-      "title": "Beginner's Guide to Financial Statements",
-      "url": "https://www.sec.gov/oiea/reports-and-publications/investor-publications/beginners-guide-financial-statements",
-      "source": "U.S. SEC",
-      "format": "guide",
-      "length": null,
-      "note": "SEC investor education guide on reading financial statements — a strong foundation before learning what is missing from them",
-      "icon": null
-    },
-    {
       "id": "fin-p12-r5",
       "topic_id": "fin-p12-t3",
       "order_index": 1,
@@ -1192,76 +1428,61 @@
       "icon": null
     },
     {
-      "id": "fin-p1-r10",
-      "topic_id": "fin-p1-t1",
-      "order_index": 10,
-      "title": "Financial Statements – Zerodha Varsity Module 3",
-      "url": "https://zerodha.com/varsity/module/fundamental-analysis/",
+      "id": "fin-p7-r1",
+      "topic_id": "fin-p7-t1",
+      "order_index": 1,
+      "title": "How to Read a 10-K/10-Q",
+      "url": "https://www.sec.gov/fast-answers/answersreada10khtm.html",
+      "source": "U.S. SEC",
       "format": "article",
-      "provider": "external",
-      "source": "Zerodha Varsity",
-      "duration": "3 hours",
-      "icon_key": "link"
+      "length": null,
+      "note": "Authoritative regulator primer",
+      "icon": null
     },
     {
-      "id": "fin-p3-r10",
-      "topic_id": "fin-p3-t1",
-      "order_index": 10,
-      "title": "Introduction to Stock Markets – Zerodha Varsity Module 1",
-      "url": "https://zerodha.com/varsity/module/introduction-to-stock-markets/",
+      "id": "fin-p7-r2",
+      "topic_id": "fin-p7-t1",
+      "order_index": 2,
+      "title": "Free Form 10-K Guide",
+      "url": "https://www.fe.training/free-resources/investment-banking/form-10-k/",
+      "source": "Financial Edge Training",
       "format": "article",
-      "provider": "external",
-      "source": "Zerodha Varsity",
-      "duration": "4 hours",
-      "icon_key": "link"
+      "length": null,
+      "note": "Section-by-section 10-K navigation",
+      "icon": null
     },
     {
-      "id": "fin-p3-r11",
-      "topic_id": "fin-p3-t1",
-      "order_index": 11,
-      "title": "Technical Analysis – Zerodha Varsity Module 2",
-      "url": "https://zerodha.com/varsity/module/technical-analysis/",
-      "format": "article",
-      "provider": "external",
-      "source": "Zerodha Varsity",
-      "duration": "5 hours",
-      "icon_key": "link"
+      "id": "fin-p7-r5",
+      "topic_id": "fin-p7-t2",
+      "order_index": 1,
+      "title": "JPMorganChase Investment Banking Simulation",
+      "url": "https://www.theforage.com/simulations/JPMorgan%20Chase/investment-banking-hkyd",
+      "source": "Forage",
+      "format": "practice",
+      "length": null,
+      "note": "Free but needs a Forage account. Build a DCF for a real-shaped M&A brief."
     },
     {
-      "id": "fin-p11-r10",
-      "topic_id": "fin-p11-t2",
-      "order_index": 10,
-      "title": "Options Theory for Professional Trading – Zerodha Varsity Module 5",
-      "url": "https://zerodha.com/varsity/module/option-theory/",
+      "id": "fin-p7-r6",
+      "topic_id": "fin-p7-t2",
+      "order_index": 2,
+      "title": "Paper LBO Tutorial",
+      "url": "https://www.wallstreetprep.com/knowledge/paper-lbo/",
+      "source": "Wall Street Prep",
       "format": "article",
-      "provider": "external",
-      "source": "Zerodha Varsity",
-      "duration": "6 hours",
-      "icon_key": "link"
+      "length": null,
+      "note": "Approximate IRR and MoM with pen and paper — the PE screen itself."
     },
     {
-      "id": "fin-p11-r11",
-      "topic_id": "fin-p11-t2",
-      "order_index": 11,
-      "title": "Option Strategies – Zerodha Varsity Module 6",
-      "url": "https://zerodha.com/varsity/module/option-strategies/",
+      "id": "fin-p7-r7",
+      "topic_id": "fin-p7-t2",
+      "order_index": 3,
+      "title": "Basic LBO Model Test: 1-Hour Tutorial",
+      "url": "https://www.wallstreetprep.com/knowledge/lbo-modeling-test-example-solutions/",
+      "source": "Wall Street Prep",
       "format": "article",
-      "provider": "external",
-      "source": "Zerodha Varsity",
-      "duration": "5 hours",
-      "icon_key": "link"
-    },
-    {
-      "id": "fin-p12-r10",
-      "topic_id": "fin-p12-t3",
-      "order_index": 10,
-      "title": "Financial Modelling & Valuation – Zerodha Varsity Module 11",
-      "url": "https://zerodha.com/varsity/module/financial-modelling-and-valuation/",
-      "format": "article",
-      "provider": "external",
-      "source": "Zerodha Varsity",
-      "duration": "4 hours",
-      "icon_key": "link"
+      "length": null,
+      "note": "A timed test with full solutions."
     }
   ]
 }

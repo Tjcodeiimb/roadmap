@@ -158,6 +158,23 @@ function main() {
       resources.set(resource.id, { file });
     }
 
+    // A topic with no resources can never complete: progress is derived from
+    // resource completion, and sync_topic_progress returns early when a topic
+    // has none. One empty topic silently caps its whole track below 100%, so
+    // this is an error rather than a warning.
+    const resourceCountByTopic = new Map();
+    for (const resource of fileResources) {
+      resourceCountByTopic.set(
+        resource.topic_id,
+        (resourceCountByTopic.get(resource.topic_id) ?? 0) + 1
+      );
+    }
+    for (const topic of fileTopics) {
+      if (!resourceCountByTopic.get(topic.id)) {
+        fail(`${file}: topic "${topic.id}" (${topic.title}) has no resources — it could never be completed`);
+      }
+    }
+
     console.log(
       `  ${file}: ${filePhases.length} phases, ${fileTopics.length} topics, ${fileResources.length} resources`
     );

@@ -353,18 +353,6 @@
       "icon": null
     },
     {
-      "id": "fpa-p2-r2",
-      "topic_id": "fpa-p2-t1",
-      "order_index": 2,
-      "title": "FP&A Career Guide — Wall Street Prep",
-      "url": "https://www.wallstreetprep.com/knowledge/financial-planning-and-analysis-fpa/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "The budgeting and forecasting sections of WSP's FP&A guide cover the pros and cons of different budget approaches including ZBB and activity-based budgeting.",
-      "icon": null
-    },
-    {
       "id": "fpa-p2-r3",
       "topic_id": "fpa-p2-t2",
       "order_index": 1,
@@ -413,21 +401,9 @@
       "icon": null
     },
     {
-      "id": "fpa-p3-r1",
-      "topic_id": "fpa-p3-t1",
-      "order_index": 1,
-      "title": "Budget to Actual Variance Analysis — Wall Street Prep",
-      "url": "https://www.wallstreetprep.com/knowledge/budget-actual-variance-analysis-fpa/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "The definitive free guide to budget-vs-actual analysis — covers price, volume, and mix variances with worked examples and the narrative structure FP&A uses.",
-      "icon": null
-    },
-    {
       "id": "fpa-p3-r2",
       "topic_id": "fpa-p3-t1",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Variance Analysis — Corporate Finance Institute",
       "url": "https://corporatefinanceinstitute.com/resources/accounting/variance-analysis/",
       "source": "Corporate Finance Institute",
@@ -470,18 +446,6 @@
       "format": "article",
       "length": null,
       "note": "Covers the structured approach to diagnosing variance causes — fishbone diagrams, 5-Whys, and how to separate noise from signal in monthly results.",
-      "icon": null
-    },
-    {
-      "id": "fpa-p3-r6",
-      "topic_id": "fpa-p3-t3",
-      "order_index": 2,
-      "title": "Financial Planning and Analysis (FP&A) Career Guide — Wall Street Prep",
-      "url": "https://www.wallstreetprep.com/knowledge/financial-planning-and-analysis-fpa/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "The commentary and investigation section explains how experienced FP&A analysts present variance findings to leadership — the narrative, not just the numbers.",
       "icon": null
     },
     {
@@ -533,21 +497,9 @@
       "icon": null
     },
     {
-      "id": "fpa-p4-r5",
-      "topic_id": "fpa-p4-t3",
-      "order_index": 1,
-      "title": "Financial Analysis in FP&A: Top Resources — CFI",
-      "url": "https://corporatefinanceinstitute.com/resources/fpa/financial-analysis-in-fpa-resources/",
-      "source": "Corporate Finance Institute",
-      "format": "article",
-      "length": null,
-      "note": "The KPI and dashboard section links through to CFI's analytical frameworks for selecting the right performance metrics for each business type.",
-      "icon": null
-    },
-    {
       "id": "fpa-p4-r6",
       "topic_id": "fpa-p4-t3",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Helpful FP&A Resources — Planful Blog",
       "url": "https://planful.com/blog/what-were-reading-financial-planning-resources/",
       "source": "Planful",
@@ -569,33 +521,9 @@
       "icon": null
     },
     {
-      "id": "fpa-p5-r2",
-      "topic_id": "fpa-p5-t1",
-      "order_index": 2,
-      "title": "What is FP&A? — Corporate Finance Institute",
-      "url": "https://corporatefinanceinstitute.com/resources/career/financial-planning-and-analysis-fpa",
-      "source": "Corporate Finance Institute",
-      "format": "article",
-      "length": null,
-      "note": "The section on communication and stakeholder management explains how FP&A professionals frame numbers for non-finance audiences in board and leadership settings.",
-      "icon": null
-    },
-    {
-      "id": "fpa-p5-r3",
-      "topic_id": "fpa-p5-t2",
-      "order_index": 1,
-      "title": "FP&A Career Guide — Wall Street Prep",
-      "url": "https://www.wallstreetprep.com/knowledge/financial-planning-and-analysis-fpa/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "WSP's guide includes a section on financial storytelling — the Situation-Complication-Resolution framework applied to management reporting.",
-      "icon": null
-    },
-    {
       "id": "fpa-p5-r4",
       "topic_id": "fpa-p5-t2",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Learn FP&A — CFI Topic Hub",
       "url": "https://corporatefinanceinstitute.com/resources/fpa",
       "source": "Corporate Finance Institute",
@@ -617,18 +545,6 @@
       "icon": null
     },
     {
-      "id": "fpa-p5-r6",
-      "topic_id": "fpa-p5-t3",
-      "order_index": 2,
-      "title": "Variance Analysis — Corporate Finance Institute",
-      "url": "https://corporatefinanceinstitute.com/resources/accounting/variance-analysis/",
-      "source": "Corporate Finance Institute",
-      "format": "article",
-      "length": null,
-      "note": "Shows how different variance types map to different chart forms — when to use a bar chart breakdown vs a bridge vs a trend line in a management pack.",
-      "icon": null
-    },
-    {
       "id": "fpa-p6-r1",
       "topic_id": "fpa-p6-t1",
       "order_index": 1,
@@ -638,18 +554,6 @@
       "format": "guide",
       "length": null,
       "note": "CFI's full Excel library for finance professionals — covers structured table design, named ranges, audit-trail formulas, and model layout best practices.",
-      "icon": null
-    },
-    {
-      "id": "fpa-p6-r2",
-      "topic_id": "fpa-p6-t1",
-      "order_index": 2,
-      "title": "FP&A Free Resources — Wall Street Prep",
-      "url": "https://www.wallstreetprep.com/free-resources/",
-      "source": "Wall Street Prep",
-      "format": "guide",
-      "length": null,
-      "note": "Free Excel templates for FP&A use cases — budgets, variance tables, and reporting packs you can use as the starting point for your own models.",
       "icon": null
     },
     {
@@ -665,33 +569,9 @@
       "icon": null
     },
     {
-      "id": "fpa-p6-r4",
-      "topic_id": "fpa-p6-t2",
-      "order_index": 2,
-      "title": "Rolling Forecast Best Practices Guide — Wall Street Prep",
-      "url": "https://www.wallstreetprep.com/knowledge/rolling-forecast-best-practices-guide-fpa-professionals/",
-      "source": "Wall Street Prep",
-      "format": "article",
-      "length": null,
-      "note": "The tools section covers how Power Query and connected data sources eliminate the monthly manual consolidation that consumes FP&A bandwidth.",
-      "icon": null
-    },
-    {
-      "id": "fpa-p6-r5",
-      "topic_id": "fpa-p6-t3",
-      "order_index": 1,
-      "title": "Helpful FP&A Resources — Planful Blog",
-      "url": "https://planful.com/blog/what-were-reading-financial-planning-resources/",
-      "source": "Planful",
-      "format": "article",
-      "length": null,
-      "note": "Planful practitioners explain what enterprise FP&A platforms do that Excel cannot — connected planning, multi-user collaboration, and audit trails at scale.",
-      "icon": null
-    },
-    {
       "id": "fpa-p6-r6",
       "topic_id": "fpa-p6-t3",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Learn FP&A — CFI Topic Hub",
       "url": "https://corporatefinanceinstitute.com/resources/fpa",
       "source": "Corporate Finance Institute",
