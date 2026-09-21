@@ -144,6 +144,12 @@ function main() {
       if (!topics.has(resource.topic_id)) {
         fail(`${file}: resource "${resource.id}" references unknown topic_id "${resource.topic_id}"`);
       }
+      // `duration` is not a column. Five seed files once used it instead of
+      // `length`, and seed.mjs silently dropped every one — 149 resources
+      // reached production with no duration shown at all.
+      if ('duration' in resource) {
+        fail(`${file}: resource "${resource.id}" uses "duration" — the field is "length"; "duration" is never written to the database`);
+      }
       if (!resource.url) {
         fail(`${file}: resource "${resource.id}" missing url`);
       } else {
