@@ -241,8 +241,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p1-r2",
@@ -253,8 +253,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p1-r3",
@@ -265,8 +265,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p1-r4",
@@ -277,8 +277,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p1-r5",
@@ -289,8 +289,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p1-r6",
@@ -301,8 +301,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p2-r1",
@@ -313,8 +313,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p2-r2",
@@ -325,8 +325,8 @@
       "format": "course",
       "provider": "external",
       "source": "Coursera / Yale",
-      "duration": "8 hrs",
-      "icon_key": null
+      "icon_key": null,
+      "length": "8 hrs"
     },
     {
       "id": "neg-p2-r3",
@@ -337,8 +337,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p2-r4",
@@ -349,8 +349,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p2-r5",
@@ -361,8 +361,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p2-r6",
@@ -373,8 +373,8 @@
       "format": "video",
       "provider": "external",
       "source": "YouTube",
-      "duration": "12 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "12 min"
     },
     {
       "id": "neg-p3-r1",
@@ -385,8 +385,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p3-r2",
@@ -397,8 +397,8 @@
       "format": "video",
       "provider": "external",
       "source": "YouTube",
-      "duration": "18 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "18 min"
     },
     {
       "id": "neg-p3-r3",
@@ -409,8 +409,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "20 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "20 min"
     },
     {
       "id": "neg-p3-r4",
@@ -421,8 +421,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p3-r5",
@@ -433,8 +433,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p3-r6",
@@ -445,8 +445,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p4-r1",
@@ -457,8 +457,8 @@
       "format": "article",
       "provider": "external",
       "source": "HBR",
-      "duration": "20 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "20 min"
     },
     {
       "id": "neg-p4-r2",
@@ -469,8 +469,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p4-r3",
@@ -481,8 +481,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p4-r4",
@@ -493,8 +493,8 @@
       "format": "video",
       "provider": "external",
       "source": "YouTube",
-      "duration": "60 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "60 min"
     },
     {
       "id": "neg-p4-r5",
@@ -505,8 +505,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p4-r6",
@@ -517,8 +517,8 @@
       "format": "article",
       "provider": "external",
       "source": "LinkedIn",
-      "duration": "10 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "10 min"
     },
     {
       "id": "neg-p5-r1",
@@ -529,8 +529,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p5-r2",
@@ -541,8 +541,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p5-r3",
@@ -553,8 +553,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p5-r4",
@@ -565,8 +565,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p5-r5",
@@ -577,8 +577,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p5-r6",
@@ -589,8 +589,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p6-r1",
@@ -601,8 +601,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p6-r2",
@@ -613,8 +613,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p6-r3",
@@ -625,8 +625,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p6-r4",
@@ -637,8 +637,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p6-r5",
@@ -649,8 +649,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     },
     {
       "id": "neg-p6-r6",
@@ -661,8 +661,8 @@
       "format": "article",
       "provider": "external",
       "source": "Harvard PON",
-      "duration": "15 min",
-      "icon_key": null
+      "icon_key": null,
+      "length": "15 min"
     }
   ]
 }
