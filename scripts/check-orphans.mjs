@@ -1,15 +1,26 @@
 #!/usr/bin/env node
 /**
- * Reports rows that exist in the database but not in the seed files.
+ * Reports where the database and the seed files disagree — in both directions.
  *
- * The seed script only ever upserts, so anything removed from a seed JSON
- * lingers in the database indefinitely. That is how seven perfectly good
- * Finance resources went missing from finance.json while still being served to
- * learners — nobody noticed until a hand-written count came out seven too high.
+ * Two independent failure modes, because the seed script only ever upserts and
+ * is only ever run by hand:
  *
- * Read-only. It never deletes anything: an orphan can equally be content added
- * through the admin editor, which is legitimate and must not be discarded. It
- * tells you what to look at, and you decide.
+ * 1. ORPHANS — a row removed from a seed JSON lingers in the database forever.
+ *    That is how seven perfectly good Finance resources went missing from
+ *    finance.json while still being served to learners; nobody noticed until a
+ *    hand-written count came out seven too high.
+ *
+ * 2. DRIFT — a row edited in a seed JSON never reaches the database until
+ *    someone re-seeds. This is the quieter and more dangerous one, because
+ *    nothing looks wrong: the row exists, the page renders, and the learner
+ *    clicks a link that was fixed weeks ago in git and is still dead in
+ *    production. Repairing 87 rotted URLs in the seed files changed nothing
+ *    for a single user until a migration carried them across.
+ *
+ * Read-only. It never writes anything: a difference can equally be content
+ * edited through the admin panel, which is legitimate and must not be
+ * clobbered. It tells you what to look at, and you decide — adopt it back into
+ * the seed file, or carry it to the database with a migration.
  *
  *   node scripts/check-orphans.mjs
  *
@@ -39,7 +50,9 @@ if (!url || !key) {
 }
 const supabase = createClient(url, key, { auth: { persistSession: false } });
 
-const seedIds = { phases: new Set(), topics: new Set(), resources: new Set(), skills: new Set() };
+// id -> the seed row itself, so fields can be compared and not just presence.
+const seed = { phases: new Map(), topics: new Map(), resources: new Map(), skills: new Map() };
+const seedFileOf = new Map(); // id -> which seed file it came from
 for (const file of readdirSync(seedDir).filter((f) => f.endsWith(".json"))) {
   let data;
   try {
@@ -48,10 +61,13 @@ for (const file of readdirSync(seedDir).filter((f) => f.endsWith(".json"))) {
     continue;
   }
   if (!data || typeof data !== "object") continue;
-  for (const p of data.phases ?? []) seedIds.phases.add(p.id);
-  for (const t of data.topics ?? []) seedIds.topics.add(t.id);
-  for (const r of data.resources ?? []) seedIds.resources.add(r.id);
-  for (const s of data.skills ?? []) seedIds.skills.add(s.id);
+  for (const table of ["phases", "topics", "resources", "skills"]) {
+    for (const row of data[table] ?? []) {
+      if (!row?.id) continue;
+      seed[table].set(row.id, row);
+      seedFileOf.set(row.id, file);
+    }
+  }
 }
 
 // Supabase caps a select at 1000 rows by default, and the catalogue is past
@@ -68,24 +84,74 @@ async function fetchAll(table, columns) {
   }
 }
 
+// A seed file may legitimately omit an optional field; the database then holds
+// null. That is not drift. Drift is the seed file asserting a value the
+// database does not have.
+function normalize(value) {
+  if (value == null) return null;
+  const text = String(value).trim();
+  return text === "" ? null : text;
+}
+
 let orphanCount = 0;
+let driftCount = 0;
 try {
-for (const [table, cols, label] of [
-  ["phases", "id, title, track_id", (r) => `${r.id}  ${r.title}  (track ${r.track_id})`],
-  ["topics", "id, title, phase_id", (r) => `${r.id}  ${r.title}  (phase ${r.phase_id})`],
-  ["resources", "id, title, topic_id, url", (r) => `${r.id}  ${r.title}\n      ${r.url}`],
-  ["skills", "id, name", (r) => `${r.id}  ${r.name}`],
+for (const [table, cols, label, driftFields] of [
+  ["phases", "id, title, track_id", (r) => `${r.id}  ${r.title}  (track ${r.track_id})`, ["title"]],
+  ["topics", "id, title, phase_id", (r) => `${r.id}  ${r.title}  (phase ${r.phase_id})`, ["title"]],
+  [
+    "resources",
+    "id, title, topic_id, url, length, note",
+    (r) => `${r.id}  ${r.title}\n      ${r.url}`,
+    // url is what rots; length is what the `duration`-vs-`length` mix-up
+    // stranded for 149 rows; title and note are what a re-sourced link changes
+    // alongside it.
+    ["url", "title", "length", "note"],
+  ],
+  ["skills", "id, name", (r) => `${r.id}  ${r.name}`, ["name"]],
 ]) {
   const rows = await fetchAll(table, cols);
-  const orphans = rows.filter((r) => !seedIds[table].has(r.id));
-  console.log(`\n${table}: ${rows.length} in database, ${seedIds[table].size} in seed files`);
+  const orphans = rows.filter((r) => !seed[table].has(r.id));
+  console.log(`\n${table}: ${rows.length} in database, ${seed[table].size} in seed files`);
+
   if (!orphans.length) {
     console.log("  no orphans");
+  } else {
+    orphanCount += orphans.length;
+    console.log(`  ${orphans.length} present in the database but NOT in any seed file:`);
+    for (const r of orphans) console.log(`    - ${label(r)}`);
+  }
+
+  // Rows present on both sides whose fields no longer match.
+  const drifted = [];
+  for (const dbRow of rows) {
+    const seedRow = seed[table].get(dbRow.id);
+    if (!seedRow) continue;
+    const diffs = driftFields
+      .map((field) => ({ field, seed: normalize(seedRow[field]), db: normalize(dbRow[field]) }))
+      // Only the seed asserting something the database lacks or contradicts.
+      // The reverse is usually an admin-panel edit, which is legitimate.
+      .filter((d) => d.seed !== null && d.seed !== d.db);
+    if (diffs.length) drifted.push({ id: dbRow.id, diffs });
+  }
+
+  if (!drifted.length) {
+    console.log("  no drift");
     continue;
   }
-  orphanCount += orphans.length;
-  console.log(`  ${orphans.length} present in the database but NOT in any seed file:`);
-  for (const r of orphans) console.log(`    - ${label(r)}`);
+  driftCount += drifted.length;
+  console.log(
+    `  ${drifted.length} row(s) whose seed file and database disagree ` +
+      `(the seed edit never reached the database):`
+  );
+  for (const { id, diffs } of drifted) {
+    console.log(`    - ${id}  (${seedFileOf.get(id) ?? "?"})`);
+    for (const d of diffs) {
+      console.log(`        ${d.field}:`);
+      console.log(`          seed: ${d.seed}`);
+      console.log(`          db:   ${d.db ?? "(null)"}`);
+    }
+  }
 }
 } catch (err) {
   console.error(`\nCould not read the database: ${err.message}`);
@@ -93,9 +159,20 @@ for (const [table, cols, label] of [
   process.exit(1);
 }
 
-console.log(
-  orphanCount === 0
-    ? "\nDatabase and seed files agree."
-    : `\n${orphanCount} orphaned row(s). Each is either content to adopt back into the seed ` +
-        `files, or something to delete with a migration — decide per row, and do not bulk-delete.`
-);
+console.log("");
+if (orphanCount === 0 && driftCount === 0) {
+  console.log("Database and seed files agree.");
+} else {
+  if (orphanCount > 0) {
+    console.log(
+      `${orphanCount} orphaned row(s) — each is either content to adopt back into the seed ` +
+        `files, or something to delete with a migration. Decide per row; do not bulk-delete.`
+    );
+  }
+  if (driftCount > 0) {
+    console.log(
+      `${driftCount} drifted row(s) — the seed files are ahead of the database. Learners are ` +
+        `still being served the old values. Carry them across with a migration, or re-seed.`
+    );
+  }
+}
