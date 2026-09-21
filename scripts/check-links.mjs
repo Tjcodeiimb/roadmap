@@ -106,14 +106,59 @@ async function main() {
   console.log(`Checking ${allResources.length} resource URLs (concurrency ${CONCURRENCY})...`);
   const results = await runPool(allResources, checkOne, CONCURRENCY);
 
-  const dead = results.filter((r) => !r.ok && !r.blocked);
+  function hostOf(u) {
+    try {
+      return new URL(u).host;
+    } catch {
+      return '(unparseable)';
+    }
+  }
+
+  // A 404 only means "gone" if the host answers other requests normally.
+  // Some sites — hbr.org and pon.harvard.edu are the worst offenders — serve
+  // 404 to anything that looks automated rather than a 403. Twenty-five HBR
+  // articles do not vanish on the same afternoon, so when EVERY url on a host
+  // 404s and none succeeds, the host is blocking, not broken.
+  const byHost = new Map();
+  for (const r of results) {
+    const h = hostOf(r.resource.url);
+    if (!byHost.has(h)) byHost.set(h, { ok: 0, dead: [], blocked: [] });
+    const e = byHost.get(h);
+    if (r.ok) e.ok++;
+    else if (r.blocked) e.blocked.push(r);
+    else e.dead.push(r);
+  }
+
+  const dead = [];      // host answers fine elsewhere -> genuinely gone
+  const hostWide = [];  // every url on this host failed -> probably blocking
+  for (const [host, e] of byHost) {
+    if (!e.dead.length) continue;
+    const wholeHostFails = e.ok === 0 && e.dead.length + e.blocked.length >= 3;
+    if (wholeHostFails) hostWide.push([host, e.dead]);
+    else dead.push(...e.dead);
+  }
+
   const blocked = results.filter((r) => !r.ok && r.blocked);
-  const okCount = results.length - dead.length - blocked.length;
+  const hostWideCount = hostWide.reduce((n, [, rs]) => n + rs.length, 0);
+  const okCount = results.filter((r) => r.ok).length;
 
   // Only the dead ones are printed per-line. Listing every success buried the
   // handful of real problems in hundreds of lines nobody read.
+  if (hostWide.length) {
+    console.log(
+      `\nHOST-WIDE 404s — every url on these hosts failed, so the host is ` +
+        `almost certainly refusing automated requests rather than having deleted ` +
+        `the pages (${hostWideCount}). Spot-check one in a browser before touching any:`
+    );
+    for (const [host, rs] of hostWide.sort((a, b) => b[1].length - a[1].length)) {
+      console.log(`  ${host} (${rs.length}): ${rs.map((r) => r.resource.id).join(', ')}`);
+    }
+  }
+
   if (dead.length) {
-    console.log(`\nDEAD — the page is gone, replace these (${dead.length}):`);
+    console.log(
+      `\nDEAD — the host serves other pages fine, so these really are gone (${dead.length}):`
+    );
     for (const r of dead) {
       console.log(`  ${r.status}  ${r.resource.file}  ${r.resource.id}\n       ${r.resource.url}`);
     }
@@ -140,8 +185,8 @@ async function main() {
   }
 
   console.log(
-    `\n${TRACK_FILES.length} track files, ${results.length} URLs: ` +
-      `${okCount} OK, ${dead.length} dead, ${blocked.length} inconclusive.`
+    `\n${TRACK_FILES.length} track files, ${results.length} URLs: ${okCount} OK, ` +
+      `${dead.length} dead, ${hostWideCount} host-wide 404s, ${blocked.length} inconclusive.`
   );
   if (dead.length > 0) {
     console.error('\nReplace the dead URLs before seeding.');
