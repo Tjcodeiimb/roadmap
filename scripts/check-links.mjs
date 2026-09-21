@@ -114,11 +114,14 @@ async function main() {
     }
   }
 
-  // A 404 only means "gone" if the host answers other requests normally.
-  // Some sites — hbr.org and pon.harvard.edu are the worst offenders — serve
-  // 404 to anything that looks automated rather than a 403. Twenty-five HBR
-  // articles do not vanish on the same afternoon, so when EVERY url on a host
-  // 404s and none succeeds, the host is blocking, not broken.
+  // Grouping by host is for DIAGNOSIS ONLY — it never downgrades a failure.
+  //
+  // An earlier version of this assumed that when every url on a host 404s the
+  // host must be refusing bots, and excluded those from the failure count. A
+  // browser check killed that theory: hbr.org really does 404 on all 25 of the
+  // urls in our seed data. They were never real. A whole host failing usually
+  // means the urls were fabricated in a batch, which is the most important
+  // thing this tool can tell you — exactly what must not be hidden.
   const byHost = new Map();
   for (const r of results) {
     const h = hostOf(r.resource.url);
@@ -129,12 +132,12 @@ async function main() {
     else e.dead.push(r);
   }
 
-  const dead = [];      // host answers fine elsewhere -> genuinely gone
-  const hostWide = [];  // every url on this host failed -> probably blocking
+  // Every dead link counts as dead. The split below only decides how it reads.
+  const dead = [];      // host serves other pages fine -> an isolated rotted link
+  const hostWide = [];  // every url on this host failed -> suspect a bad batch
   for (const [host, e] of byHost) {
     if (!e.dead.length) continue;
-    const wholeHostFails = e.ok === 0 && e.dead.length + e.blocked.length >= 3;
-    if (wholeHostFails) hostWide.push([host, e.dead]);
+    if (e.ok === 0 && e.dead.length + e.blocked.length >= 3) hostWide.push([host, e.dead]);
     else dead.push(...e.dead);
   }
 
@@ -146,9 +149,9 @@ async function main() {
   // handful of real problems in hundreds of lines nobody read.
   if (hostWide.length) {
     console.log(
-      `\nHOST-WIDE 404s — every url on these hosts failed, so the host is ` +
-        `almost certainly refusing automated requests rather than having deleted ` +
-        `the pages (${hostWideCount}). Spot-check one in a browser before touching any:`
+      `\nHOST-WIDE 404s — EVERY url on these hosts is dead (${hostWideCount}). ` +
+        `These count as broken. A whole host failing at once usually means the ` +
+        `urls were never real, so treat the entire group as suspect:`
     );
     for (const [host, rs] of hostWide.sort((a, b) => b[1].length - a[1].length)) {
       console.log(`  ${host} (${rs.length}): ${rs.map((r) => r.resource.id).join(', ')}`);
@@ -186,9 +189,29 @@ async function main() {
 
   console.log(
     `\n${TRACK_FILES.length} track files, ${results.length} URLs: ${okCount} OK, ` +
-      `${dead.length} dead, ${hostWideCount} host-wide 404s, ${blocked.length} inconclusive.`
+      `${dead.length + hostWideCount} dead (${hostWideCount} of them host-wide), ` +
+      `${blocked.length} inconclusive.`
   );
-  if (dead.length > 0) {
+
+  // Per-track totals: rot is rarely evenly spread, and a track where half the
+  // links are dead needs re-sourcing wholesale rather than link by link.
+  const perFile = new Map();
+  for (const r of results) {
+    const f = r.resource.file;
+    if (!perFile.has(f)) perFile.set(f, { total: 0, bad: 0 });
+    perFile.get(f).total++;
+    if (!r.ok && !r.blocked) perFile.get(f).bad++;
+  }
+  const worst = [...perFile.entries()].filter(([, v]) => v.bad > 0)
+    .sort((a, b) => b[1].bad / b[1].total - a[1].bad / a[1].total);
+  if (worst.length) {
+    console.log('\nDead links by track (worst first):');
+    for (const [f, v] of worst) {
+      console.log(`  ${String(Math.round((v.bad / v.total) * 100)).padStart(3)}%  ${String(v.bad).padStart(3)}/${String(v.total).padEnd(4)} ${f}`);
+    }
+  }
+
+  if (dead.length + hostWideCount > 0) {
     console.error('\nReplace the dead URLs before seeding.');
     process.exit(1);
   }
