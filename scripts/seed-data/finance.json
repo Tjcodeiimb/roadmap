@@ -3,7 +3,7 @@
     "id": "finance",
     "name": "finance",
     "label": "Finance",
-    "estimated_hours": 250
+    "estimated_hours": 600
   },
   "phases": [
     {
@@ -16,9 +16,18 @@
       "color": null
     },
     {
-      "id": "fin-p3",
+      "id": "fin-p16",
       "track_id": "finance",
       "order_index": 2,
+      "title": "Financial Statement Analysis & Ratios",
+      "description": "Go beyond reading the statements to interrogating them: decompose ROE with DuPont analysis, normalize statements with common-size and trend analysis, and analyze cash flow through the working-capital cycle.",
+      "estimated_weeks": "2-3",
+      "color": null
+    },
+    {
+      "id": "fin-p3",
+      "track_id": "finance",
+      "order_index": 3,
       "title": "Markets & Instruments",
       "description": "Understand the instruments (equity, debt, derivatives) and the players — how sell-side and buy-side firms differ.",
       "estimated_weeks": "3-5",
@@ -27,34 +36,106 @@
     {
       "id": "fin-p2",
       "track_id": "finance",
-      "order_index": 3,
+      "order_index": 4,
       "title": "Corporate Finance",
       "description": "Learn how firms fund themselves and choose investments — capital structure, WACC, capital budgeting, working capital.",
       "estimated_weeks": "4-6",
       "color": null
     },
     {
+      "id": "fin-p29",
+      "track_id": "finance",
+      "order_index": 5,
+      "title": "Advanced Accounting I: Revenue, Leases & Tax",
+      "description": "The accounting mechanics FMVA calls out as advanced: multi-step revenue recognition, on-balance-sheet leases, and the deferred-tax and stock-comp lines that quietly move every forecast.",
+      "estimated_weeks": "3-4",
+      "color": null
+    },
+    {
+      "id": "fin-p30",
+      "track_id": "finance",
+      "order_index": 6,
+      "title": "Advanced Accounting II: Consolidation & Complex Entities",
+      "description": "How a group of companies becomes one set of financial statements: consolidation and the equity method, the goodwill an acquisition creates and when it breaks, pensions, and the GAAP/IFRS/Ind AS differences an analyst has to reconcile.",
+      "estimated_weeks": "3-4",
+      "color": null
+    },
+    {
+      "id": "fin-p19",
+      "track_id": "finance",
+      "order_index": 7,
+      "title": "Budgeting, Forecasting & Cash Flow Planning",
+      "description": "Build the planning toolkit CFI's FMVA core assumes: budgeting approaches and the annual cycle, short-term 13-week and monthly cash-flow forecasting, and scenario and sensitivity analysis for stress-testing a model's assumptions.",
+      "estimated_weeks": "3-4",
+      "color": null
+    },
+    {
+      "id": "fin-p17",
+      "track_id": "finance",
+      "order_index": 8,
+      "title": "Financial Modelling Fundamentals & Best Practice",
+      "description": "Learn how professional models are actually built: structure and design conventions, driver-based revenue and cost forecasts, the supporting schedules that feed a 3-statement model, and how to handle circularity and audit a model for errors.",
+      "estimated_weeks": "3-4",
+      "color": null
+    },
+    {
+      "id": "fin-p20",
+      "track_id": "finance",
+      "order_index": 9,
+      "title": "Dashboards & Financial Data Visualization",
+      "description": "Turn analysis into something a decision-maker can act on: data visualization principles for financial reporting, and building interactive dashboards in Excel with charts, KPIs, and variance views.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
       "id": "fin-p10",
       "track_id": "finance",
-      "order_index": 4,
+      "order_index": 10,
       "title": "Equity Research & Valuation",
       "description": "Go deep on the analyst's toolkit — build a DCF from discount-rate first principles, run a rigorous comps screen, and use precedent transactions and trading multiples to triangulate an enterprise value.",
       "estimated_weeks": "5-7",
       "color": null
     },
     {
+      "id": "fin-p18",
+      "track_id": "finance",
+      "order_index": 11,
+      "title": "Advanced Valuation Technique",
+      "description": "The technical layer most courses skip: bridging enterprise value to equity value with the treasury stock method, choosing and applying terminal value methods correctly with mid-year and stub-period conventions, and synthesizing methods into a football field.",
+      "estimated_weeks": "2-3",
+      "color": null
+    },
+    {
       "id": "fin-p8",
       "track_id": "finance",
-      "order_index": 5,
+      "order_index": 12,
       "title": "Advanced Financial Modeling",
       "description": "Go beyond reading statements — build a fully integrated 3-statement model from scratch, layer in acquisition debt with an LBO model, and analyze credit risk the way a lender does.",
       "estimated_weeks": "5-7",
       "color": null
     },
     {
+      "id": "fin-p31",
+      "track_id": "finance",
+      "order_index": 13,
+      "title": "Fixed Income Analytics",
+      "description": "Price a bond off its cash flows, measure how its price moves when rates move, and read the spread between it and a risk-free benchmark as the market's own estimate of default risk.",
+      "estimated_weeks": "3-4",
+      "color": null
+    },
+    {
+      "id": "fin-p32",
+      "track_id": "finance",
+      "order_index": 14,
+      "title": "Credit Ratings & Loan Documentation",
+      "description": "How a rating agency actually assigns a letter grade, and what a credit agreement's covenants really let a lender do when a borrower deteriorates — the two pieces of the credit toolkit fin-p8's ratio-and-covenant-headroom work assumes but does not itself teach.",
+      "estimated_weeks": "2-3",
+      "color": null
+    },
+    {
       "id": "fin-p5",
       "track_id": "finance",
-      "order_index": 6,
+      "order_index": 15,
       "title": "Investment Banking & M&A",
       "description": "Learn how deals are structured and value is created or destroyed — synergies, due diligence, post-merger integration.",
       "estimated_weeks": "4-6",
@@ -63,16 +144,25 @@
     {
       "id": "fin-p9",
       "track_id": "finance",
-      "order_index": 7,
+      "order_index": 16,
       "title": "Private Equity & Alternative Investments",
       "description": "Explore the buy-side beyond public markets — how private equity funds source and structure deals, how hedge funds generate returns across strategies, and how venture capital evaluates early-stage bets.",
       "estimated_weeks": "4-6",
       "color": null
     },
     {
+      "id": "fin-p35",
+      "track_id": "finance",
+      "order_index": 17,
+      "title": "Quantitative Portfolio Management",
+      "description": "The buy-side quant toolkit: price risk and return with CAPM and factor models, attribute a portfolio's performance to the decisions that drove it, and use regression, simulation and tail-risk measures to know what could go wrong.",
+      "estimated_weeks": "3-4",
+      "color": null
+    },
+    {
       "id": "fin-p13",
       "track_id": "finance",
-      "order_index": 8,
+      "order_index": 18,
       "title": "Leveraged Finance, Credit & Restructuring",
       "description": "The debt side of the deal, and what happens when it goes wrong: the leveraged product set, how credit agreements actually constrain a borrower, and the in- and out-of-court routes through distress.",
       "estimated_weeks": "6–8",
@@ -81,7 +171,7 @@
     {
       "id": "fin-p15",
       "track_id": "finance",
-      "order_index": 9,
+      "order_index": 19,
       "title": "Private Credit, Distressed & Special Situations",
       "description": "Buying and holding debt rather than advising on it: bilateral lending that never gets syndicated, and investing in claims on companies in trouble.",
       "estimated_weeks": "4–6",
@@ -90,34 +180,124 @@
     {
       "id": "fin-p11",
       "track_id": "finance",
-      "order_index": 10,
+      "order_index": 20,
       "title": "Structured Finance & Derivatives",
       "description": "Understand how assets are pooled and tranched into securities, how options and Greeks govern hedging decisions, and how interest-rate and credit derivatives reshape risk across a portfolio.",
       "estimated_weeks": "4-6",
       "color": null
     },
     {
+      "id": "fin-p33",
+      "track_id": "finance",
+      "order_index": 21,
+      "title": "Derivatives Pricing & Real Options",
+      "description": "Beyond the Greeks and CDS mechanics already covered: how forwards, futures and swaps are actually priced off no-arbitrage, how an option's price is built up on a binomial tree or in closed form, and how the same option logic prices flexibility inside a capital project.",
+      "estimated_weeks": "3-4",
+      "color": null
+    },
+    {
+      "id": "fin-p34",
+      "track_id": "finance",
+      "order_index": 22,
+      "title": "Corporate Treasury & Risk Management",
+      "description": "The treasury seat's job: keep the company liquid day to day, hedge the FX and interest-rate exposures the business creates just by operating, and decide which risks are worth paying to remove.",
+      "estimated_weeks": "2-3",
+      "color": null
+    },
+    {
       "id": "fin-p14",
       "track_id": "finance",
-      "order_index": 11,
+      "order_index": 23,
       "title": "Specialised Coverage & Asset-Class Modelling",
       "description": "Where the standard model breaks. A bank has no EBITDA and no free cash flow; a building is priced on NOI and a cap rate; a toll road is a debt-sizing exercise with no terminal value. Each needs its own mental model.",
       "estimated_weeks": "6–8",
       "color": null
     },
     {
+      "id": "fin-p22",
+      "track_id": "finance",
+      "order_index": 24,
+      "title": "Real Estate Finance & Deal Modelling",
+      "description": "Underwrite and model real property deals beyond REIT-level analysis: acquisitions, ground-up development, debt sizing and the promote structures that split profit between sponsors and investors.",
+      "estimated_weeks": "2-3",
+      "color": null
+    },
+    {
+      "id": "fin-p23",
+      "track_id": "finance",
+      "order_index": 25,
+      "title": "Natural Resources: Mining, Oil & Gas Modelling",
+      "description": "Model extractive-industry assets, where value comes from a depleting reserve rather than a growing business: mining NAV off a metal price deck, and oil & gas NAV off production decline curves.",
+      "estimated_weeks": "2",
+      "color": null
+    },
+    {
+      "id": "fin-p24",
+      "track_id": "finance",
+      "order_index": 26,
+      "title": "Renewables, Power & Infrastructure Deal Modelling",
+      "description": "Model contracted-cash-flow assets beyond the single project finance topic in fin-p14-t3: renewable power projects priced off a PPA and capacity factor, non-recourse debt sculpted to a target DSCR, and infrastructure PPPs paid on availability rather than usage.",
+      "estimated_weeks": "2",
+      "color": null
+    },
+    {
+      "id": "fin-p25",
+      "track_id": "finance",
+      "order_index": 27,
+      "title": "Growth-Industry & Consumer Sector Modelling",
+      "description": "Build the revenue engine right for four industries that do not run on a standard operating model: SaaS (cohorts and recurring revenue), marketplaces (GMV and take rate), restaurants/retail (unit economics and comps), and biotech (a drug pipeline valued on probability of success, not certainty).",
+      "estimated_weeks": "2-3",
+      "color": null
+    },
+    {
+      "id": "fin-p26",
+      "track_id": "finance",
+      "order_index": 28,
+      "title": "Advanced M&A Deal Modelling",
+      "description": "Push the LBO (fin-p8-t2) and merger model (fin-p5-t3) skills to what a PE associate or M&A banker actually builds on the job: a multi-tranche capital structure with a full returns-attribution bridge, mental-math paper LBOs, purchase price allocation and pro-forma consolidation, and the SOTP/contribution/fairness-opinion toolkit used on complex deals.",
+      "estimated_weeks": "2-3",
+      "color": null
+    },
+    {
+      "id": "fin-p27",
+      "track_id": "finance",
+      "order_index": 29,
+      "title": "PE & VC Fund Modelling and Deal Mechanics",
+      "description": "Move from a single deal to the fund wrapper around it: build the fund-level cash flow model that produces the J-curve, calculate the return metrics LPs actually track (beyond the waterfall concepts already covered in fin-p9-t4), and master the cap table math — dilution, option pools and liquidation preferences — behind every VC term sheet.",
+      "estimated_weeks": "2",
+      "color": null
+    },
+    {
       "id": "fin-p12",
       "track_id": "finance",
-      "order_index": 12,
+      "order_index": 30,
       "title": "Forensic Financial Analysis",
       "description": "Look past the headline numbers — detect earnings manipulation through accruals analysis, identify off-balance-sheet exposure hidden in SPVs, and spot the red flags that preceded the biggest accounting scandals.",
       "estimated_weeks": "4-6",
       "color": null
     },
     {
+      "id": "fin-p36",
+      "track_id": "finance",
+      "order_index": 31,
+      "title": "Macro, ESG & Professional Standards",
+      "description": "The context every number above sits inside: the macro cycle that moves rates and spreads, the ESG factors now built into mainstream investment processes, and the ethical code that governs the profession itself.",
+      "estimated_weeks": "2-3",
+      "color": null
+    },
+    {
+      "id": "fin-p21",
+      "track_id": "finance",
+      "order_index": 32,
+      "title": "Financial Communication & Presenting Finance",
+      "description": "The skill that decides whether good analysis changes a decision: structuring a financial narrative, writing with the clarity finance leaders expect, and building and delivering the deck that presents it.",
+      "estimated_weeks": "2",
+      "color": null
+    },
+    {
       "id": "fin-p7",
       "track_id": "finance",
-      "order_index": 13,
+      "order_index": 33,
       "title": "Applied",
       "description": "Apply it all to real filings and mock deals — read 10-Ks/10-Qs, practice deal exercises, prep for finance interviews.",
       "estimated_weeks": "4-6",
@@ -1214,6 +1394,1792 @@
         {
           "t": "Choose a credential",
           "d": "Pick between CFA, CA and FRM for the seat you actually want."
+        }
+      ]
+    },
+    {
+      "id": "fin-p16-t1",
+      "phase_id": "fin-p16",
+      "order_index": 1,
+      "title": "Ratio Analysis & DuPont Decomposition",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Break return on equity into its profitability, efficiency and leverage drivers with DuPont analysis, and use the full ratio toolkit to judge a company's financial health.",
+      "steps": [
+        {
+          "t": "Pull the ratios",
+          "d": "Calculate profitability, efficiency, liquidity and solvency ratios from one company's statements."
+        },
+        {
+          "t": "Decompose ROE",
+          "d": "Split ROE into net margin, asset turnover and the equity multiplier with 3-step DuPont."
+        },
+        {
+          "t": "Explain the change",
+          "d": "Take two years of the same company and say which DuPont driver moved ROE and why."
+        }
+      ]
+    },
+    {
+      "id": "fin-p16-t2",
+      "phase_id": "fin-p16",
+      "order_index": 2,
+      "title": "Common-Size and Trend Analysis",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Normalize statements to a base (common-size/vertical analysis) and compare periods (horizontal/trend analysis) to spot structural shifts a raw dollar figure hides.",
+      "steps": [
+        {
+          "t": "Build a common-size statement",
+          "d": "Express every income statement line as a percent of revenue and every balance sheet line as a percent of assets."
+        },
+        {
+          "t": "Run a horizontal analysis",
+          "d": "Index 3-5 years of the same statement to a base year and compute period-over-period growth."
+        },
+        {
+          "t": "Spot the shift",
+          "d": "Identify one margin or mix change a peer comparison of common-size statements reveals."
+        }
+      ]
+    },
+    {
+      "id": "fin-p16-t3",
+      "phase_id": "fin-p16",
+      "order_index": 3,
+      "title": "Cash Flow Analysis, Working Capital & the Cash Conversion Cycle",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Analyze how efficiently a company turns sales into cash: working capital mechanics, and the cash conversion cycle as the standard lens on that efficiency.",
+      "steps": [
+        {
+          "t": "Compute the cycle",
+          "d": "Calculate DIO, DSO and DPO for a real company and combine them into the cash conversion cycle."
+        },
+        {
+          "t": "Benchmark it",
+          "d": "Compare that cycle against a close peer and identify which leg drives the difference."
+        },
+        {
+          "t": "Trace the cash impact",
+          "d": "Show how a one-day change in DSO moves free cash flow."
+        }
+      ]
+    },
+    {
+      "id": "fin-p19-t1",
+      "phase_id": "fin-p19",
+      "order_index": 1,
+      "title": "Budgeting Approaches & the Annual Planning Cycle",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Understand how companies build an annual budget, the main budgeting methods and their trade-offs, and how actuals get checked against plan.",
+      "steps": [
+        {
+          "t": "Map the cycle",
+          "d": "Lay out the steps from target-setting through budget committee approval."
+        },
+        {
+          "t": "Compare methods",
+          "d": "Contrast incremental, zero-based and activity-based budgeting on effort versus control."
+        },
+        {
+          "t": "Run a variance check",
+          "d": "Compute a budget-to-actual variance and classify it as favorable or unfavorable."
+        }
+      ]
+    },
+    {
+      "id": "fin-p19-t2",
+      "phase_id": "fin-p19",
+      "order_index": 2,
+      "title": "13-Week and Monthly Cash-Flow Forecasting",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Build short-term liquidity forecasts the way treasury and FP&A teams actually run them: the direct-method 13-week rolling forecast and the monthly indirect-method view.",
+      "steps": [
+        {
+          "t": "Build the 13-week grid",
+          "d": "Lay out weekly cash inflows and outflows with the direct method and roll it forward one week."
+        },
+        {
+          "t": "Build the monthly view",
+          "d": "Forecast a monthly cash flow model over a 12-18 month rolling horizon."
+        },
+        {
+          "t": "Stress the runway",
+          "d": "Flex a collections assumption and see how many weeks of runway change."
+        }
+      ]
+    },
+    {
+      "id": "fin-p19-t3",
+      "phase_id": "fin-p19",
+      "order_index": 3,
+      "title": "Scenario & Sensitivity Analysis",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Test which assumptions actually move a model's output using Excel data tables and a scenario manager, and present the results so a decision-maker can act on them.",
+      "steps": [
+        {
+          "t": "Build a data table",
+          "d": "Sensitize one output to two input variables with a two-variable data table."
+        },
+        {
+          "t": "Set up scenarios",
+          "d": "Define base, upside and downside cases in a scenario manager."
+        },
+        {
+          "t": "Rank the drivers",
+          "d": "Identify which two assumptions move the output the most."
+        }
+      ]
+    },
+    {
+      "id": "fin-p17-t1",
+      "phase_id": "fin-p17",
+      "order_index": 1,
+      "title": "Model Structure, Design & Best Practices",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Learn the conventions that make a model intuitive and error-resistant: consistent formatting, separating inputs from calculations from outputs, and documenting assumptions.",
+      "steps": [
+        {
+          "t": "Separate the layers",
+          "d": "Rebuild a messy model into distinct assumptions, calculation and output sheets."
+        },
+        {
+          "t": "Apply formatting conventions",
+          "d": "Color hardcodes blue and formulas black, and label every unit and time period."
+        },
+        {
+          "t": "Document the assumptions",
+          "d": "Write a one-line rationale next to each hardcoded driver."
+        }
+      ]
+    },
+    {
+      "id": "fin-p17-t2",
+      "phase_id": "fin-p17",
+      "order_index": 2,
+      "title": "Driver-Based Forecasting: Revenue & Cost Builds",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Forecast revenue and cost of goods sold from operating drivers (price, volume, mix) rather than a flat growth rate, and know when a bottom-up build is worth the extra effort.",
+      "steps": [
+        {
+          "t": "Pick the drivers",
+          "d": "Decompose revenue into price and volume for one segment."
+        },
+        {
+          "t": "Build bottom-up",
+          "d": "Forecast three years of revenue and COGS from unit economics rather than a growth assumption."
+        },
+        {
+          "t": "Sanity-check top-down",
+          "d": "Cross-check the bottom-up build against a simple growth-rate forecast."
+        }
+      ]
+    },
+    {
+      "id": "fin-p17-t3",
+      "phase_id": "fin-p17",
+      "order_index": 3,
+      "title": "Supporting Schedules: PP&E, Working Capital, Debt & Equity",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Build the schedules that feed a 3-statement model: a PP&E roll-forward, working-capital and balance-sheet line forecasts, and a debt schedule with interest and mandatory repayments.",
+      "steps": [
+        {
+          "t": "Roll forward PP&E",
+          "d": "Link beginning balance, capex and depreciation into an ending balance."
+        },
+        {
+          "t": "Forecast the balance sheet",
+          "d": "Project working-capital and other balance-sheet lines off their own drivers."
+        },
+        {
+          "t": "Build a debt schedule",
+          "d": "Lay out each tranche's balance, interest and scheduled amortization."
+        }
+      ]
+    },
+    {
+      "id": "fin-p17-t4",
+      "phase_id": "fin-p17",
+      "order_index": 4,
+      "title": "Circularity, Balancing & Model Auditing",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Understand why circular references appear once debt and interest are linked together, how to handle them safely, and how to audit a finished model for errors before anyone relies on it.",
+      "steps": [
+        {
+          "t": "Trigger the circularity",
+          "d": "Link interest expense to average debt and watch the circular reference appear."
+        },
+        {
+          "t": "Add a circuit breaker",
+          "d": "Build an error-trap toggle that can turn iterative calculation on and off."
+        },
+        {
+          "t": "Audit the model",
+          "d": "Run a formula-error and formatting pass over a finished model before sign-off."
+        }
+      ]
+    },
+    {
+      "id": "fin-p18-t1",
+      "phase_id": "fin-p18",
+      "order_index": 1,
+      "title": "EV-to-Equity Bridge & the Treasury Stock Method",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Bridge enterprise value to equity value correctly, and use the treasury stock method to convert dilutive options and warrants into a fully diluted share count.",
+      "steps": [
+        {
+          "t": "Build the bridge",
+          "d": "Subtract net debt, preferred stock and minority interest from enterprise value to reach equity value."
+        },
+        {
+          "t": "Apply the treasury method",
+          "d": "Compute the net new shares from in-the-money options assuming proceeds buy back shares."
+        },
+        {
+          "t": "Reconcile per-share value",
+          "d": "Divide equity value by fully diluted shares to get value per share."
+        }
+      ]
+    },
+    {
+      "id": "fin-p18-t2",
+      "phase_id": "fin-p18",
+      "order_index": 2,
+      "title": "Terminal Value, Mid-Year Convention & Stub Periods",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Choose between the Gordon growth and exit multiple terminal value methods, cross-check one against the other, and apply mid-year discounting and stub periods without silently mixing conventions.",
+      "steps": [
+        {
+          "t": "Compute both methods",
+          "d": "Calculate terminal value with Gordon growth and with an exit multiple, and cross-check them."
+        },
+        {
+          "t": "Apply mid-year discounting",
+          "d": "Halve the first period's discount factor and adjust every later period by 0.5."
+        },
+        {
+          "t": "Handle a stub period",
+          "d": "Discount a first-year cash flow that covers less than a full 12 months correctly."
+        }
+      ]
+    },
+    {
+      "id": "fin-p18-t3",
+      "phase_id": "fin-p18",
+      "order_index": 3,
+      "title": "Valuation Synthesis: the Football Field",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Bring DCF, comps and precedent transactions together into a single football field chart that shows the range and the overlap across methods.",
+      "steps": [
+        {
+          "t": "Gather the ranges",
+          "d": "Pull the low/high value range from each valuation method you've built."
+        },
+        {
+          "t": "Build the chart",
+          "d": "Lay the ranges out as horizontal bars on a shared value-per-share axis."
+        },
+        {
+          "t": "Read the overlap",
+          "d": "Identify where the ranges converge and what that implies about the valuation."
+        }
+      ]
+    },
+    {
+      "id": "fin-p20-t1",
+      "phase_id": "fin-p20",
+      "order_index": 1,
+      "title": "Data Visualization Principles for Financial Reporting",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Choose the right chart for the message, and apply the principles that make a financial visual persuasive rather than merely decorative.",
+      "steps": [
+        {
+          "t": "Match chart to message",
+          "d": "Pick the chart type that fits a trend, a comparison and a composition question."
+        },
+        {
+          "t": "Cut the clutter",
+          "d": "Strip a cluttered chart down to the data that supports its one point."
+        },
+        {
+          "t": "Design one dashboard tile",
+          "d": "Build a single KPI tile with a clear label, value and trend indicator."
+        }
+      ]
+    },
+    {
+      "id": "fin-p20-t2",
+      "phase_id": "fin-p20",
+      "order_index": 2,
+      "title": "Building Interactive Finance Dashboards in Excel",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Build a working Excel dashboard with pivot tables, slicers and sparklines that lets a viewer explore variance without touching a formula.",
+      "steps": [
+        {
+          "t": "Build the pivot base",
+          "d": "Set up the pivot tables that will power every chart and KPI card."
+        },
+        {
+          "t": "Add interactivity",
+          "d": "Wire up slicers so one control filters every chart on the dashboard."
+        },
+        {
+          "t": "Add sparklines",
+          "d": "Drop in-cell sparklines next to a KPI table to show its recent trend."
+        }
+      ]
+    },
+    {
+      "id": "fin-p21-t1",
+      "phase_id": "fin-p21",
+      "order_index": 1,
+      "title": "Financial Storytelling & Data Narrative",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Turn a set of numbers into a structured narrative that leads an audience from context to insight to recommended action.",
+      "steps": [
+        {
+          "t": "Start from the outcome",
+          "d": "Write the one-sentence conclusion before building the supporting slides."
+        },
+        {
+          "t": "Structure the narrative",
+          "d": "Sequence context, insight and recommendation using a repeatable framework."
+        },
+        {
+          "t": "Cut to the headline",
+          "d": "Rewrite a data-dense slide so its title states the takeaway, not the topic."
+        }
+      ]
+    },
+    {
+      "id": "fin-p21-t2",
+      "phase_id": "fin-p21",
+      "order_index": 2,
+      "title": "Business & Financial Writing",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Write the memo, executive summary or email that gets a busy reader to the decision quickly: lead with the conclusion, and cut every sentence that doesn't earn its place.",
+      "steps": [
+        {
+          "t": "Lead with the takeaway",
+          "d": "Rewrite a memo so its first line states the conclusion, not the background."
+        },
+        {
+          "t": "Cut the length",
+          "d": "Halve a paragraph's word count without losing its meaning."
+        },
+        {
+          "t": "Draft an executive summary",
+          "d": "Write a one-page executive summary for a business plan or proposal."
+        }
+      ]
+    },
+    {
+      "id": "fin-p21-t3",
+      "phase_id": "fin-p21",
+      "order_index": 3,
+      "title": "Presenting Finance to Leadership & Building the Deck",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Structure a management presentation the way a finance team actually builds one, and use PowerPoint efficiently enough to iterate under deadline pressure.",
+      "steps": [
+        {
+          "t": "Structure the deck",
+          "d": "Lay out a presentation from problem through methodology to financial implications and recommendation."
+        },
+        {
+          "t": "Speed up the build",
+          "d": "Apply keyboard-driven PowerPoint techniques to reformat a slide in under a minute."
+        },
+        {
+          "t": "Rehearse the delivery",
+          "d": "Present the deck's key slide out loud and time it to under two minutes."
+        }
+      ]
+    },
+    {
+      "id": "fin-p22-t1",
+      "phase_id": "fin-p22",
+      "order_index": 1,
+      "title": "Acquisition Underwriting: Income Capitalization & Pro Forma",
+      "section": null,
+      "tags": [
+        "real estate",
+        "valuation"
+      ],
+      "estimated_time": null,
+      "description": "Go beyond the REIT-level FFO/AFFO view (fin-p14-t2) into deal-level underwriting: build a property-level pro forma and value it off NOI and a market cap rate the way an acquisitions analyst does.",
+      "steps": [
+        {
+          "t": "Build the income capitalization formula",
+          "d": "Work through A.CRE's walkthrough of Value = NOI ÷ Cap Rate and rebuild it on a simple rent roll."
+        },
+        {
+          "t": "Read Damodaran's real estate valuation chapter",
+          "d": "Note where DCF-based property valuation agrees with, and departs from, cap-rate shorthand."
+        },
+        {
+          "t": "Build a full property pro forma",
+          "d": "Follow the BIWS walkthrough to construct revenue, vacancy, opex and NOI lines for an office or multifamily asset."
+        },
+        {
+          "t": "Underwrite a deal end to end",
+          "d": "Use the free Ai1 model to underwrite one acquisition and one development scenario, and compare the assumptions each requires."
+        }
+      ]
+    },
+    {
+      "id": "fin-p22-t2",
+      "phase_id": "fin-p22",
+      "order_index": 2,
+      "title": "Debt Sizing & Real Estate Equity Waterfalls",
+      "section": null,
+      "tags": [
+        "real estate",
+        "capital structure"
+      ],
+      "estimated_time": null,
+      "description": "Size acquisition debt the way a CRE lender does (DSCR, debt yield, loan constant), then build the promote structure that splits a deal's profit between the sponsor and LP investors across return tiers.",
+      "steps": [
+        {
+          "t": "Size a loan off DSCR",
+          "d": "Work the PropertyMetrics DSCR walkthrough and back into a maximum loan amount from a target coverage ratio."
+        },
+        {
+          "t": "Cross-check with debt yield",
+          "d": "Recompute the same loan's size using the debt yield method and compare the two constraints."
+        },
+        {
+          "t": "Read the waterfall guide",
+          "d": "Work through Break Into CRE's guide to see how preferred return, catch-up and promote tiers stack."
+        },
+        {
+          "t": "Build a 3-tier waterfall",
+          "d": "Follow the Adventures in CRE model and video to build IRR-hurdle-based waterfall tiers in Excel and test how promote changes with hold period."
+        }
+      ]
+    },
+    {
+      "id": "fin-p22-t3",
+      "phase_id": "fin-p22",
+      "order_index": 3,
+      "title": "Ground-Up Development: Land Residual & Construction Pro Forma",
+      "section": null,
+      "tags": [
+        "real estate",
+        "development"
+      ],
+      "estimated_time": null,
+      "description": "Model a development deal from raw land: back into a maximum land price with a residual land value analysis, then build the construction-phase cash flow and lease-up that feeds the stabilized pro forma.",
+      "steps": [
+        {
+          "t": "Compute residual land value",
+          "d": "Follow the A.CRE walkthrough to back a maximum land bid out of projected sellout value, hard/soft costs and required developer profit."
+        },
+        {
+          "t": "Build the development pro forma",
+          "d": "Add a construction draw schedule and lease-up curve ahead of the stabilized NOI you built in t1."
+        },
+        {
+          "t": "Watch a full development model build",
+          "d": "Follow the multifamily development walkthrough end to end and note every line item you have not yet built yourself."
+        },
+        {
+          "t": "Stress-test the numbers",
+          "d": "Flex construction cost overruns and a slower lease-up in your model and see how much they move the developer's profit and IRR."
+        }
+      ]
+    },
+    {
+      "id": "fin-p23-t1",
+      "phase_id": "fin-p23",
+      "order_index": 1,
+      "title": "Mining Valuation: Reserves Classification, NAV & Price Decks",
+      "section": null,
+      "tags": [
+        "mining",
+        "natural resources",
+        "NAV"
+      ],
+      "estimated_time": null,
+      "description": "Mining assets are valued by summing the discounted cash flows of each individual mine (a NAV, sum-of-the-parts approach), driven off reserve/resource classification and a metal price deck rather than a revenue multiple.",
+      "steps": [
+        {
+          "t": "Learn the NAV framework",
+          "d": "Read CFI's overview of mining asset valuation and note why P/NAV, not a revenue multiple, is the standard trading metric."
+        },
+        {
+          "t": "Understand reserve classification",
+          "d": "Read through NI 43-101's measured/indicated/inferred resource and reserve categories and why 'inferred' cannot be used in an economic study."
+        },
+        {
+          "t": "Build reserve life into NAV",
+          "d": "Work through the guide on mining NAV, reserve life and commodity sensitivity, and note how mine life caps the DCF horizon."
+        },
+        {
+          "t": "Watch a full model build",
+          "d": "Follow the in-depth mining financial model walkthrough and rebuild its production, cost and NAV tabs for one commodity."
+        }
+      ]
+    },
+    {
+      "id": "fin-p23-t2",
+      "phase_id": "fin-p23",
+      "order_index": 2,
+      "title": "Oil & Gas Modelling: Decline Curves, Type Curves & NAV",
+      "section": null,
+      "tags": [
+        "oil and gas",
+        "energy",
+        "NAV"
+      ],
+      "estimated_time": null,
+      "description": "An E&P company's production declines to zero as its wells deplete, so revenue is modelled off a decline curve rather than a growth assumption, and the company is valued as a NAV of its existing and type-curve-driven future wells.",
+      "steps": [
+        {
+          "t": "Model a production decline curve",
+          "d": "Follow the BIWS NAV model video to build annual production off an assumed decline rate for a single well."
+        },
+        {
+          "t": "Apply a type curve to new wells",
+          "d": "Work through the type-curve tutorial to see how a new well's expected production profile is used to model undrilled locations."
+        },
+        {
+          "t": "Build the full NAV model",
+          "d": "Use the crash-course Excel files to build out an E&P NAV model combining existing production and type-curve-driven new wells."
+        },
+        {
+          "t": "Read why NAV, not DCF-to-infinity, is used",
+          "d": "Read the energy NAV explainer and write one paragraph on why terminal value has no place in this model."
+        }
+      ]
+    },
+    {
+      "id": "fin-p23-t3",
+      "phase_id": "fin-p23",
+      "order_index": 3,
+      "title": "Commodity Price Decks & Sensitivity Analysis",
+      "section": null,
+      "tags": [
+        "commodities",
+        "sensitivity analysis"
+      ],
+      "estimated_time": null,
+      "description": "The commodity price deck is usually the single most debated input in a natural-resources model, so build the scenario structure (strip, consensus, management, bull/bear) and the two-way sensitivity tables that stress-test it.",
+      "steps": [
+        {
+          "t": "Learn the scenario structure",
+          "d": "Read how energy bankers build strip, consensus-deck, management-case and bull/bear price scenarios into one model."
+        },
+        {
+          "t": "Understand the forward curve",
+          "d": "Read the forward curve reference and note how strip pricing is derived from futures contracts rather than assumed."
+        },
+        {
+          "t": "Build two-way data tables",
+          "d": "Follow the Wall Street Prep sensitivity lesson to build a two-way Excel data table flexing price and discount rate against NAV."
+        },
+        {
+          "t": "Re-run your mining or O&G NAV under three decks",
+          "d": "Rerun the model you built in t1 or t2 under a bull, base and bear price deck and report how much NAV moves."
+        }
+      ]
+    },
+    {
+      "id": "fin-p24-t1",
+      "phase_id": "fin-p24",
+      "order_index": 1,
+      "title": "Renewable Power Project Modelling: PPA & Capacity Factor",
+      "section": null,
+      "tags": [
+        "renewables",
+        "power",
+        "project finance"
+      ],
+      "estimated_time": null,
+      "description": "A solar or wind project's revenue is production (driven by capacity factor) times a contracted PPA price, not a market-priced merchant curve, which is what lets it be financed with cheap, highly-levered non-recourse debt.",
+      "steps": [
+        {
+          "t": "Learn the contracted cash-flow model",
+          "d": "Read how a renewable project's model differs from a merchant gas plant's: PPA-fixed price times production, plus tax credits."
+        },
+        {
+          "t": "Understand capacity factor",
+          "d": "Read the EIA definition and note why a 30% solar capacity factor still supports a highly-levered financing."
+        },
+        {
+          "t": "Read how financial PPAs are structured",
+          "d": "Work through EPA's explainer on financial (virtual) PPAs and how the strike-price swap hedges the generator's revenue."
+        },
+        {
+          "t": "Build a solar project model",
+          "d": "Download one of Edward Bodmer's solar project finance models and trace production, PPA revenue and debt service through to equity IRR."
+        }
+      ]
+    },
+    {
+      "id": "fin-p24-t2",
+      "phase_id": "fin-p24",
+      "order_index": 2,
+      "title": "Advanced Project Finance: CFADS & Debt Sculpting",
+      "section": null,
+      "tags": [
+        "project finance",
+        "debt structuring"
+      ],
+      "estimated_time": null,
+      "description": "Go beyond the single DSCR/LLCR sizing pass in fin-p14-t3: build Cash Flow Available for Debt Service (CFADS) precisely, then sculpt principal repayment period by period so the DSCR sits exactly at its covenant floor across the loan life.",
+      "steps": [
+        {
+          "t": "Build CFADS from the cash flow statement",
+          "d": "Follow the BIWS tutorial to strip a project's cash flow down to CFADS, distinct from EBITDA or free cash flow."
+        },
+        {
+          "t": "Distinguish sizing from sculpting",
+          "d": "Work through the debt-sculpting-vs-sizing tutorial and note why a sculpted repayment profile is not the same as a level amortization schedule."
+        },
+        {
+          "t": "Sculpt debt service to a target DSCR",
+          "d": "Follow the Forvis Mazars walkthrough to build a sculpted debt schedule that holds DSCR at its minimum every period without a circular VBA macro."
+        },
+        {
+          "t": "Extend to multiple tranches and a DSRA",
+          "d": "Work through Bodmer's sculpting course materials to add a debt service reserve account and see how sculpting changes with two debt tranches."
+        }
+      ]
+    },
+    {
+      "id": "fin-p24-t3",
+      "phase_id": "fin-p24",
+      "order_index": 3,
+      "title": "Infrastructure & PPP Modelling",
+      "section": null,
+      "tags": [
+        "infrastructure",
+        "PPP"
+      ],
+      "estimated_time": null,
+      "description": "Public infrastructure that has no user-fee revenue of its own (a courthouse, a school) is financed instead against a government's availability payment, a fixed obligation once the asset is certified ready for use.",
+      "steps": [
+        {
+          "t": "Read the PPP handbook's financing chapter",
+          "d": "Read ADB's PPP handbook section on how a concession is financed and what risks are transferred to the private partner."
+        },
+        {
+          "t": "Learn the availability payment structure",
+          "d": "Work through the APMG explainer on availability payments and how they differ from a toll or user-fee concession."
+        },
+        {
+          "t": "Read a real-world availability payment fact sheet",
+          "d": "Read FHWA's fact sheet on availability payment P3s and note why lenders accept lower rates on this structure."
+        },
+        {
+          "t": "Compare the three project finance structures",
+          "d": "Write one paragraph contrasting the renewable PPA project (t1), a merchant/sculpted debt deal (t2) and an availability-payment PPP on what backs the debt."
+        }
+      ]
+    },
+    {
+      "id": "fin-p25-t1",
+      "phase_id": "fin-p25",
+      "order_index": 1,
+      "title": "SaaS & Tech: Cohort Analysis, Unit Economics & ARR",
+      "section": null,
+      "tags": [
+        "SaaS",
+        "unit economics"
+      ],
+      "estimated_time": null,
+      "description": "Model a subscription business off ARR, cohort-level retention and the LTV/CAC relationship rather than a traditional revenue build, and know which multiple (ARR vs. revenue) the market actually prices it on.",
+      "steps": [
+        {
+          "t": "Learn the core SaaS metrics",
+          "d": "Work through David Skok's SaaS Metrics 2.0 definitions for MRR, ARR, churn, CAC and LTV."
+        },
+        {
+          "t": "Build a cohort retention table",
+          "d": "Follow ChartMogul's cohort analysis walkthrough and build a cohort-by-tenure retention grid in a spreadsheet."
+        },
+        {
+          "t": "Build a full SaaS metrics model",
+          "d": "Follow the BIWS video and Excel example to model ARR, CAC payback and the LTV/CAC ratio together."
+        },
+        {
+          "t": "Apply the ARR multiple",
+          "d": "Read Wall Street Prep's ARR multiple lesson and note why SaaS companies are priced on ARR rather than trailing revenue."
+        }
+      ]
+    },
+    {
+      "id": "fin-p25-t2",
+      "phase_id": "fin-p25",
+      "order_index": 2,
+      "title": "E-Commerce & Marketplace Revenue Modelling",
+      "section": null,
+      "tags": [
+        "e-commerce",
+        "marketplace",
+        "GMV"
+      ],
+      "estimated_time": null,
+      "description": "A marketplace's real top line is GMV, not revenue: model gross merchandise volume, the take rate that converts it into revenue, and liquidity — and know why quoting GMV as revenue overstates the business.",
+      "steps": [
+        {
+          "t": "Learn the marketplace metric set",
+          "d": "Read a16z's 13 metrics for marketplace companies and separate GMV from revenue in your head permanently."
+        },
+        {
+          "t": "Learn the broader startup metric set",
+          "d": "Read a16z's 16 startup metrics to place marketplace-specific metrics alongside general SaaS/e-commerce ones."
+        },
+        {
+          "t": "Read how young growth companies get valued",
+          "d": "Work through Damodaran's chapter on valuing young or start-up firms and note how a market-size-down revenue build feeds a DCF with almost no current revenue."
+        },
+        {
+          "t": "Build a GMV-to-revenue bridge",
+          "d": "In a spreadsheet, build GMV growth, apply a take rate, and bridge to net revenue and contribution margin for a hypothetical marketplace."
+        }
+      ]
+    },
+    {
+      "id": "fin-p25-t3",
+      "phase_id": "fin-p25",
+      "order_index": 3,
+      "title": "Consumer, Retail & Restaurant Unit Economics",
+      "section": null,
+      "tags": [
+        "retail",
+        "restaurant",
+        "unit economics"
+      ],
+      "estimated_time": null,
+      "description": "Chains are valued store by store: same-store sales isolates organic growth from new-unit growth, and four-wall economics and payback period decide whether opening the next unit creates value.",
+      "steps": [
+        {
+          "t": "Learn same-store sales",
+          "d": "Read CFI's explainer and compute a comp-sales figure that excludes stores open under 12 months."
+        },
+        {
+          "t": "Learn four-wall unit economics",
+          "d": "Read the QSR unit economics explainer and compute four-wall EBITDA margin from a sample P&L."
+        },
+        {
+          "t": "Compute new-unit payback",
+          "d": "Use the Wall Street Prep payback period lesson to compute how many years a new store or restaurant takes to repay its build-out cost."
+        },
+        {
+          "t": "Build a chain expansion model",
+          "d": "Combine same-store sales growth with a new-unit build schedule to project a growing chain's system-wide revenue."
+        }
+      ]
+    },
+    {
+      "id": "fin-p25-t4",
+      "phase_id": "fin-p25",
+      "order_index": 4,
+      "title": "Healthcare & Biotech: rNPV and Pipeline Valuation",
+      "section": null,
+      "tags": [
+        "healthcare",
+        "biotech",
+        "rNPV"
+      ],
+      "estimated_time": null,
+      "description": "A clinical-stage biotech has no revenue and a high chance of failure, so its pipeline is valued with risk-adjusted NPV: probability-weight each drug's cash flows by phase before discounting, rather than assuming they arrive with certainty.",
+      "steps": [
+        {
+          "t": "Learn the rNPV method",
+          "d": "Read the core explainer on why clinical risk is probability-weighted separately from financial (discount-rate) risk."
+        },
+        {
+          "t": "Get real probability-of-success data",
+          "d": "Read BIO's clinical development success rates report and pull the phase-to-phase transition probabilities it reports by therapeutic area."
+        },
+        {
+          "t": "Build a one-drug rNPV",
+          "d": "Follow the BayBridge Bio walkthrough to build a single asset's rNPV: peak sales, phase-by-phase PoS, and a low discount rate on the risk-adjusted cash flows."
+        },
+        {
+          "t": "Roll up a multi-asset pipeline",
+          "d": "Extend your one-drug rNPV to three assets at different phases and sum them into one pipeline value."
+        }
+      ]
+    },
+    {
+      "id": "fin-p26-t1",
+      "phase_id": "fin-p26",
+      "order_index": 1,
+      "title": "Full LBO Build: Sources & Uses to Returns Attribution",
+      "section": null,
+      "tags": [
+        "LBO",
+        "private equity"
+      ],
+      "estimated_time": null,
+      "description": "Go past the single-tranche LBO in fin-p8-t2 into what a real deal looks like: a multi-tranche debt stack with different pricing and amortization on each piece, and a formal returns-attribution bridge that decomposes IRR into deleveraging, EBITDA growth and multiple expansion.",
+      "steps": [
+        {
+          "t": "Rebuild the cash sweep in detail",
+          "d": "Follow the full cash-flow-sweep tutorial and extend your fin-p8-t2 model to sweep multiple tranches in seniority order."
+        },
+        {
+          "t": "Work a 4-hour advanced LBO test",
+          "d": "Complete Wall Street Prep's advanced LBO modeling test end to end under time pressure, matching what a PE associate interview actually looks like."
+        },
+        {
+          "t": "Learn the three value-creation levers",
+          "d": "Read how deleveraging, EBITDA growth and multiple expansion typically split a deal's return, and why debt paydown alone can produce a real IRR."
+        },
+        {
+          "t": "Build your own attribution bridge",
+          "d": "Follow the CFI walkthrough to decompose your advanced LBO's equity value creation into the three levers and chart the bridge."
+        }
+      ]
+    },
+    {
+      "id": "fin-p26-t2",
+      "phase_id": "fin-p26",
+      "order_index": 2,
+      "title": "Paper LBO & Quick IRR Math",
+      "section": null,
+      "tags": [
+        "LBO",
+        "interview skills"
+      ],
+      "estimated_time": null,
+      "description": "A PE interview routinely asks for an LBO's IRR with no Excel and five minutes: build the mental-math shortcuts (Rule of 72/115) that get you a Sources & Uses table and an approximate return in your head.",
+      "steps": [
+        {
+          "t": "Work through a full paper LBO example",
+          "d": "Follow the BIWS paper LBO walkthrough end to end without opening a spreadsheet."
+        },
+        {
+          "t": "Learn the mental-math shortcuts",
+          "d": "Read the Rule of 72/115 framework and practice converting a MOIC and holding period into an approximate IRR in under 10 seconds."
+        },
+        {
+          "t": "Drill with a template",
+          "d": "Use the free paper LBO template to run 5 practice scenarios back to back, timing yourself under 5 minutes each."
+        },
+        {
+          "t": "Check your math against a real model",
+          "d": "Take one scenario and build it properly in Excel from t1's structure, and compare your paper answer to the exact IRR."
+        }
+      ]
+    },
+    {
+      "id": "fin-p26-t3",
+      "phase_id": "fin-p26",
+      "order_index": 3,
+      "title": "Advanced Merger Model: PPA & Pro-Forma Balance Sheet",
+      "section": null,
+      "tags": [
+        "M&A",
+        "merger model"
+      ],
+      "estimated_time": null,
+      "description": "Extend the accretion/dilution model in fin-p5-t3 with purchase price allocation: revalue the target's assets to fair value, calculate the resulting goodwill, and consolidate both companies' balance sheets on day one.",
+      "steps": [
+        {
+          "t": "Learn the PPA formula",
+          "d": "Read Wall Street Prep's walkthrough of allocating purchase price across tangible assets, identifiable intangibles and goodwill."
+        },
+        {
+          "t": "Build a PPA in Excel",
+          "d": "Follow the BIWS video and Excel example to calculate write-ups, deferred tax liabilities and resulting goodwill for one deal."
+        },
+        {
+          "t": "Consolidate the balance sheet",
+          "d": "Follow Macabacus's PPA guide to combine acquirer and target balance sheets into one pro-forma day-one balance sheet."
+        },
+        {
+          "t": "Feed PPA back into your merger model",
+          "d": "Add the new D&A from write-ups and the new goodwill into the EPS accretion/dilution model from fin-p5-t3 and see how much it changes the result."
+        }
+      ]
+    },
+    {
+      "id": "fin-p26-t4",
+      "phase_id": "fin-p26",
+      "order_index": 4,
+      "title": "Contribution Analysis, SOTP & Fairness Opinions",
+      "section": null,
+      "tags": [
+        "M&A",
+        "valuation"
+      ],
+      "estimated_time": null,
+      "description": "Round out the deal-modelling toolkit with the frameworks used on complex or contested transactions: contribution analysis to set ownership splits in a merger of equals, sum-of-the-parts to value a conglomerate, and the fairness opinion a board relies on to approve a deal.",
+      "steps": [
+        {
+          "t": "Build a contribution analysis",
+          "d": "Follow Macabacus's example to compute each company's percentage contribution to combined revenue, EBITDA and net income, and compare it to the proposed ownership split."
+        },
+        {
+          "t": "Build an SOTP valuation",
+          "d": "Read the SOTP methodology guide and value a hypothetical multi-segment company by valuing and summing each segment separately."
+        },
+        {
+          "t": "Learn what a fairness opinion actually says",
+          "d": "Read CFI's overview and note precisely what question a fairness opinion answers, and what it deliberately does not answer."
+        },
+        {
+          "t": "Read real fairness opinion practice",
+          "d": "Read the M&I guide on fairness opinions, including how banks are paid for them and the conflicts that raises."
+        }
+      ]
+    },
+    {
+      "id": "fin-p27-t1",
+      "phase_id": "fin-p27",
+      "order_index": 1,
+      "title": "Fund Cash Flow Modelling: Capital Calls & the J-Curve",
+      "section": null,
+      "tags": [
+        "private equity",
+        "fund modelling"
+      ],
+      "estimated_time": null,
+      "description": "Build the fund-level cash flow model itself, not just the waterfall concepts in fin-p9-t4: a commitment-pacing schedule, capital calls, fee accrual and distributions that together produce the fund's characteristic J-shaped cash flow curve.",
+      "steps": [
+        {
+          "t": "Learn why the J-curve happens",
+          "d": "Read Wall Street Prep's explanation of why fees and early capital calls make early fund years look negative."
+        },
+        {
+          "t": "Read an institutional LP's framing",
+          "d": "Read Hamilton Lane's introduction to J-curves and note how they discuss flattening it across a portfolio of fund vintages."
+        },
+        {
+          "t": "Build the model's tab structure",
+          "d": "Follow the walkthrough of capital calls, distributions and the J-curve to lay out a commitment-pacing tab, a fee-accrual tab and a distribution tab."
+        },
+        {
+          "t": "Chart your own J-curve",
+          "d": "Build a 10-year capital call and distribution schedule for a hypothetical fund and chart cumulative net cash flow to see the J shape emerge."
+        }
+      ]
+    },
+    {
+      "id": "fin-p27-t2",
+      "phase_id": "fin-p27",
+      "order_index": 2,
+      "title": "Return Metrics: IRR vs MOIC vs DPI/TVPI",
+      "section": null,
+      "tags": [
+        "private equity",
+        "performance metrics"
+      ],
+      "estimated_time": null,
+      "description": "Calculate the four numbers every LP asks a GP for, and know when each one is the right answer: IRR (time-weighted), MOIC (magnitude only), and DPI/TVPI (cash returned vs. total value, realized vs. unrealized).",
+      "steps": [
+        {
+          "t": "Calculate MOIC",
+          "d": "Work the Wall Street Prep MOIC lesson and compute it for a simple two-cash-flow investment."
+        },
+        {
+          "t": "Calculate DPI, RVPI and TVPI",
+          "d": "Follow the BIWS walkthrough and confirm for yourself that TVPI = DPI + RVPI on a sample fund."
+        },
+        {
+          "t": "Read the LP-side framing",
+          "d": "Read Carta's overview of fund performance metrics and note which metric LPs weight most heavily at different points in a fund's life."
+        },
+        {
+          "t": "Recompute your J-curve model's metrics",
+          "d": "Add IRR, MOIC, DPI and TVPI formulas to the cash flow model from t1 and track how each evolves year by year."
+        }
+      ]
+    },
+    {
+      "id": "fin-p27-t3",
+      "phase_id": "fin-p27",
+      "order_index": 3,
+      "title": "Cap Tables, Dilution & Liquidation Preferences",
+      "section": null,
+      "tags": [
+        "venture capital",
+        "cap table"
+      ],
+      "estimated_time": null,
+      "description": "Go past the thesis-and-term-sheet view in fin-p9-t3 into the actual math: build a cap table across financing rounds, calculate dilution including the option pool shuffle, and model how a liquidation preference stack pays out at exit.",
+      "steps": [
+        {
+          "t": "Build a cap table",
+          "d": "Follow Carta's cap table explainer and lay out founders, an option pool and one priced round with ownership percentages."
+        },
+        {
+          "t": "Work the option pool shuffle",
+          "d": "Read CRV's dilution guide and recompute your cap table's founder ownership with the pool created pre-money vs. post-money."
+        },
+        {
+          "t": "Model liquidation preferences",
+          "d": "Follow the guide on modelling liquidation preferences to add 1x non-participating preferred stock to your cap table."
+        },
+        {
+          "t": "Build an exit waterfall",
+          "d": "Follow Carta's waterfall analysis guide to calculate each shareholder's payout at three different exit values, including where the preference stops binding."
+        }
+      ]
+    },
+    {
+      "id": "fin-p29-t1",
+      "phase_id": "fin-p29",
+      "order_index": 1,
+      "title": "Revenue Recognition (ASC 606 / IFRS 15)",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The five-step model that now governs revenue recognition under both US GAAP and IFRS — identifying the contract and performance obligations, pricing them, and timing recognition to when control transfers, not when cash is collected.",
+      "steps": [
+        {
+          "t": "Learn the five steps",
+          "d": "Work through contract, performance obligations, transaction price, allocation and recognition in order."
+        },
+        {
+          "t": "Read the standard",
+          "d": "Skim the IFRS 15 core principle and see how closely it mirrors ASC 606."
+        },
+        {
+          "t": "Apply it to a contract",
+          "d": "Take a multi-element contract (software plus support) and split the transaction price across obligations."
+        },
+        {
+          "t": "Spot the judgement calls",
+          "d": "Identify where management discretion over timing or allocation could move reported revenue."
+        }
+      ]
+    },
+    {
+      "id": "fin-p29-t2",
+      "phase_id": "fin-p29",
+      "order_index": 2,
+      "title": "Leases (ASC 842 / IFRS 16)",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Since 2019 almost every lease sits on the balance sheet as a right-of-use asset and a lease liability. Learn the classification test, the journal entries, and why finance and operating leases still hit the income statement differently under US GAAP.",
+      "steps": [
+        {
+          "t": "Classify a lease",
+          "d": "Run a lease through the finance-vs-operating test under ASC 842."
+        },
+        {
+          "t": "Book day one",
+          "d": "Record the initial right-of-use asset and lease liability at present value."
+        },
+        {
+          "t": "Run it forward",
+          "d": "Amortise a finance lease and straight-line an operating lease and compare the expense patterns."
+        },
+        {
+          "t": "Contrast IFRS",
+          "d": "Note that IFRS 16 drops the lessee operating-lease category entirely and say what that does to EBITDA."
+        }
+      ]
+    },
+    {
+      "id": "fin-p29-t3",
+      "phase_id": "fin-p29",
+      "order_index": 3,
+      "title": "Deferred Tax, NOLs & Stock-Based Compensation",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Three line items that separate GAAP earnings from cash and from each other: the deferred tax assets and liabilities that arise when book and tax timing diverge, the NOLs a loss-making company carries forward, and the non-cash stock compensation expense that dilutes shareholders without ever touching cash flow.",
+      "steps": [
+        {
+          "t": "Build a DTA/DTL",
+          "d": "Take one timing difference (depreciation or an accrual) and compute the resulting deferred tax balance."
+        },
+        {
+          "t": "Carry an NOL forward",
+          "d": "Walk a loss through a valuation allowance and into future tax savings."
+        },
+        {
+          "t": "Expense the options",
+          "d": "Recognise stock-based compensation over a vesting schedule and trace it through the cash flow statement add-back."
+        },
+        {
+          "t": "Reconcile dilution",
+          "d": "Connect SBC to the diluted share count a model should be forecasting."
+        }
+      ]
+    },
+    {
+      "id": "fin-p30-t1",
+      "phase_id": "fin-p30",
+      "order_index": 1,
+      "title": "Consolidation, NCI & the Equity Method",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Three ways to account for an equity stake depending on control: cost method below 20%, equity method for 20-50% influence, and full consolidation with a non-controlling interest line above 50%. Get the thresholds and the mechanics of each.",
+      "steps": [
+        {
+          "t": "Place the thresholds",
+          "d": "Map ownership percentage to cost, equity-method and consolidation treatment."
+        },
+        {
+          "t": "Run the equity method",
+          "d": "Roll a one-line equity-method investment forward through income, dividends and impairment."
+        },
+        {
+          "t": "Consolidate a subsidiary",
+          "d": "Combine 100% of a partly-owned subsidiary's statements and carve out the NCI."
+        },
+        {
+          "t": "Read a real NCI line",
+          "d": "Find non-controlling interest in a filing and say what it implies about the parent's actual claim on earnings."
+        }
+      ]
+    },
+    {
+      "id": "fin-p30-t2",
+      "phase_id": "fin-p30",
+      "order_index": 2,
+      "title": "Goodwill, Purchase Price Allocation & Impairment",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "What happens to the balance sheet the day after an acquisition closes: fair-valuing the target's assets, booking the residual as goodwill, and testing that goodwill for impairment every year after.",
+      "steps": [
+        {
+          "t": "Allocate the price",
+          "d": "Fair-value tangible and intangible assets acquired and compute the goodwill residual."
+        },
+        {
+          "t": "Amortise the intangibles",
+          "d": "Schedule the new intangible assets PPA creates and their effect on post-deal EPS."
+        },
+        {
+          "t": "Test for impairment",
+          "d": "Run a qualitative screen, then a quantitative fair-value test on a goodwill balance."
+        },
+        {
+          "t": "Read a real writedown",
+          "d": "Find a disclosed goodwill impairment and identify the triggering event management cited."
+        }
+      ]
+    },
+    {
+      "id": "fin-p30-t3",
+      "phase_id": "fin-p30",
+      "order_index": 3,
+      "title": "Pensions & Post-Employment Benefits",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Defined benefit plans put a long-dated, discount-rate-sensitive liability on the balance sheet and a multi-part expense on the income statement — service cost, interest cost, and the return on plan assets, all before a single benefit is paid.",
+      "steps": [
+        {
+          "t": "Split the plan types",
+          "d": "Contrast defined contribution and defined benefit obligations."
+        },
+        {
+          "t": "Build the expense",
+          "d": "Assemble pension expense from service cost, interest cost and expected return on assets."
+        },
+        {
+          "t": "Flex the discount rate",
+          "d": "Move the discount rate and see the obligation and expense both move."
+        },
+        {
+          "t": "Find the funded status",
+          "d": "Locate a company's pension funded status in its footnotes and say what it means for future cash contributions."
+        }
+      ]
+    },
+    {
+      "id": "fin-p30-t4",
+      "phase_id": "fin-p30",
+      "order_index": 4,
+      "title": "IFRS vs US GAAP vs Ind AS",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The framework differences that matter for cross-border comparability: LIFO, development-cost capitalisation, cash flow classification, and the specific carve-outs India's Ind AS makes from the IFRS it is based on.",
+      "steps": [
+        {
+          "t": "List the big three",
+          "d": "Name the inventory, development-cost and cash-flow-classification differences between GAAP and IFRS."
+        },
+        {
+          "t": "Restate one metric",
+          "d": "Adjust a GAAP company's operating cash flow to an IFRS peer's classification convention."
+        },
+        {
+          "t": "Place Ind AS",
+          "d": "Identify two areas where Ind AS carves out from the IFRS standard it is based on."
+        },
+        {
+          "t": "Judge comparability",
+          "d": "Decide whether a cross-border comp set needs restating before you trust the multiples."
+        }
+      ]
+    },
+    {
+      "id": "fin-p31-t1",
+      "phase_id": "fin-p31",
+      "order_index": 1,
+      "title": "Bond Pricing, Yields & the Yield Curve",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "A bond's price is the present value of its coupons and principal at the market yield. Learn to price a bond from its cash flows, read yield to maturity as an IRR, and plot the yield curve that every other rate in the market is set relative to.",
+      "steps": [
+        {
+          "t": "Price from cash flows",
+          "d": "Discount a bond's coupons and principal at a given yield to get its price."
+        },
+        {
+          "t": "Solve for YTM",
+          "d": "Go the other way — take a market price and solve for the yield that produces it."
+        },
+        {
+          "t": "Plot the curve",
+          "d": "Chart yields across maturities and name the shape — normal, flat, inverted."
+        },
+        {
+          "t": "Read the signal",
+          "d": "Explain what an inverted curve is telling the market about future rates."
+        }
+      ]
+    },
+    {
+      "id": "fin-p31-t2",
+      "phase_id": "fin-p31",
+      "order_index": 2,
+      "title": "Duration, Convexity & Interest Rate Risk",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Duration approximates how much a bond's price moves for a 1% change in rates; convexity corrects for the fact that relationship curves rather than moves in a straight line. Together they are how a fixed-income desk sizes interest-rate risk.",
+      "steps": [
+        {
+          "t": "Compute modified duration",
+          "d": "Calculate duration for a bond and use it to estimate a price move from a rate change."
+        },
+        {
+          "t": "Add convexity",
+          "d": "Layer the convexity adjustment on top and see the estimate improve for a larger rate move."
+        },
+        {
+          "t": "Compare two bonds",
+          "d": "Take a short- and long-maturity bond and explain why their durations differ so much."
+        },
+        {
+          "t": "Hedge a portfolio",
+          "d": "Size a rate hedge using dollar duration on a small bond portfolio."
+        }
+      ]
+    },
+    {
+      "id": "fin-p31-t3",
+      "phase_id": "fin-p31",
+      "order_index": 3,
+      "title": "Credit Spreads & Relative Value",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The spread over a government benchmark is the market's price for a bond's default risk. Learn to read spread levels and spread widening or tightening as a signal, and how a credit investor decides one bond is cheap relative to another.",
+      "steps": [
+        {
+          "t": "Strip out the risk-free rate",
+          "d": "Decompose a corporate bond's yield into a benchmark rate plus a credit spread."
+        },
+        {
+          "t": "Compare spreads",
+          "d": "Rank several issuers' spreads and connect the ranking to their credit quality."
+        },
+        {
+          "t": "Read spread direction",
+          "d": "Explain what widening spreads across the market are signalling versus one issuer alone."
+        },
+        {
+          "t": "Call relative value",
+          "d": "Pick the richer of two similar bonds on a spread basis and justify the call."
+        }
+      ]
+    },
+    {
+      "id": "fin-p32-t1",
+      "phase_id": "fin-p32",
+      "order_index": 1,
+      "title": "Credit Rating Methodology & the Rating Scale",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "What AAA through D actually mean, and how an agency gets from a company's financials to a letter grade — the scorecard, the qualitative overlay, and the investment-grade/speculative-grade line that decides who is allowed to buy the bond.",
+      "steps": [
+        {
+          "t": "Learn the scale",
+          "d": "Map the AAA-to-D scale to investment grade versus speculative grade for one agency."
+        },
+        {
+          "t": "Follow a methodology",
+          "d": "Read how a rating agency's scorecard weighs size, leverage and business risk into a rating."
+        },
+        {
+          "t": "Explain the IG line",
+          "d": "Say why crossing from BBB- to BB+ triggers forced selling by some institutional holders."
+        },
+        {
+          "t": "Rate a company yourself",
+          "d": "Apply a simplified scorecard to a real issuer and compare your rating to the agency's."
+        }
+      ]
+    },
+    {
+      "id": "fin-p32-t2",
+      "phase_id": "fin-p32",
+      "order_index": 2,
+      "title": "Loan & Credit Agreement Mechanics",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "What is actually in the document that governs a loan: maintenance versus incurrence covenants, why cov-lite structures shifted market power to borrowers, and what a lender can and cannot do when a covenant is breached.",
+      "steps": [
+        {
+          "t": "Contrast the covenant types",
+          "d": "Distinguish maintenance covenants (tested every quarter) from incurrence covenants (tested on an action)."
+        },
+        {
+          "t": "Read a cov-lite structure",
+          "d": "Explain why cov-lite loans shifted negotiating leverage from lenders to sponsors."
+        },
+        {
+          "t": "Walk a breach",
+          "d": "Trace what happens contractually the moment a maintenance covenant is breached."
+        },
+        {
+          "t": "Map the document",
+          "d": "Skim a real credit agreement's table of contents and locate the covenants and events-of-default sections."
+        }
+      ]
+    },
+    {
+      "id": "fin-p33-t1",
+      "phase_id": "fin-p33",
+      "order_index": 1,
+      "title": "Forwards, Futures & Cost-of-Carry Pricing",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Why a forward or futures price is what it is: the no-arbitrage relationship between spot price, the cost of financing and holding the underlying, and any income it throws off in between.",
+      "steps": [
+        {
+          "t": "Build the cost of carry",
+          "d": "Add financing cost and subtract any yield on the underlying to get from spot to forward price."
+        },
+        {
+          "t": "Prove no-arbitrage",
+          "d": "Show what a cash-and-carry trade earns if the market price deviates from the theoretical forward."
+        },
+        {
+          "t": "Price a currency forward",
+          "d": "Apply the interest-rate-differential version of the formula to an FX forward."
+        },
+        {
+          "t": "Contrast forwards and futures",
+          "d": "Explain what daily marking-to-market and exchange clearing change versus an OTC forward."
+        }
+      ]
+    },
+    {
+      "id": "fin-p33-t2",
+      "phase_id": "fin-p33",
+      "order_index": 2,
+      "title": "Swap Valuation",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How the fixed and floating legs of an interest rate swap are each valued as a bond, why the swap is worth zero at inception, and how its mark-to-market value moves as rates move afterward.",
+      "steps": [
+        {
+          "t": "Value the fixed leg",
+          "d": "Discount the fixed coupon stream at the swap curve to get its present value."
+        },
+        {
+          "t": "Value the floating leg",
+          "d": "Show why the floating leg reprices to par at each reset and what that implies for its value."
+        },
+        {
+          "t": "Net the two legs",
+          "d": "Combine both legs into the swap's mark-to-market value from the payer's side."
+        },
+        {
+          "t": "Move the curve",
+          "d": "Shift rates after inception and recompute the swap's now-nonzero value."
+        }
+      ]
+    },
+    {
+      "id": "fin-p33-t3",
+      "phase_id": "fin-p33",
+      "order_index": 3,
+      "title": "Option Pricing: Binomial Trees & Black-Scholes",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The two ways an option actually gets priced: a discrete binomial lattice that a spreadsheet can build step by step, and the closed-form Black-Scholes formula the lattice converges to as the steps shrink.",
+      "steps": [
+        {
+          "t": "Build one step",
+          "d": "Price a single-period binomial option using the up/down replicating portfolio."
+        },
+        {
+          "t": "Extend the tree",
+          "d": "Add steps and watch the binomial price converge toward the Black-Scholes value."
+        },
+        {
+          "t": "Apply Black-Scholes",
+          "d": "Price a European call from spot, strike, volatility, rate and time to expiry."
+        },
+        {
+          "t": "Stress the inputs",
+          "d": "Flex volatility and time and see which Greek each move is really testing."
+        }
+      ]
+    },
+    {
+      "id": "fin-p33-t4",
+      "phase_id": "fin-p33",
+      "order_index": 4,
+      "title": "Real Options in Capital Budgeting",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "A standard NPV ignores the value of managerial flexibility. Real options — to defer, expand, contract or abandon a project — apply option-pricing logic to that flexibility, and can make an uncertain project more valuable, not less.",
+      "steps": [
+        {
+          "t": "Name the option types",
+          "d": "Distinguish the option to defer, expand, contract and abandon a project."
+        },
+        {
+          "t": "Reframe the uncertainty",
+          "d": "Explain why higher volatility raises a real option's value when it lowers a plain NPV."
+        },
+        {
+          "t": "Value one option",
+          "d": "Price the option to expand a project using a simplified binomial framework."
+        },
+        {
+          "t": "Decide with it",
+          "d": "Compare a project's static NPV to its expanded NPV-plus-option-value and say which one should drive the decision."
+        }
+      ]
+    },
+    {
+      "id": "fin-p34-t1",
+      "phase_id": "fin-p34",
+      "order_index": 1,
+      "title": "Cash & Liquidity Management",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Treasury's daily job: make sure cash is in the right entity, the right currency and the right account to meet every obligation that falls due, while putting idle cash to short-term use.",
+      "steps": [
+        {
+          "t": "Separate the concepts",
+          "d": "Distinguish being profitable from being liquid and say why the second one keeps a company alive."
+        },
+        {
+          "t": "Build a cash position",
+          "d": "Roll up cash across accounts and entities into a single daily position."
+        },
+        {
+          "t": "Look 90 days out",
+          "d": "Forecast a rolling liquidity runway and identify the first quarter it gets tight."
+        },
+        {
+          "t": "Park the surplus",
+          "d": "Choose a short-term investment ladder for cash not needed within the runway."
+        }
+      ]
+    },
+    {
+      "id": "fin-p34-t2",
+      "phase_id": "fin-p34",
+      "order_index": 2,
+      "title": "FX Exposure & Hedging",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "A company that sells or sources across currencies is short or long FX whether it hedges or not. Learn to separate transaction, translation and economic exposure, and hedge the one that actually threatens cash flow.",
+      "steps": [
+        {
+          "t": "Classify the exposure",
+          "d": "Sort a multinational's currency risk into transaction, translation and economic exposure."
+        },
+        {
+          "t": "Hedge a transaction",
+          "d": "Lock in a receivable's value with a forward contract and compute the hedged outcome."
+        },
+        {
+          "t": "Judge translation risk",
+          "d": "Explain why translation exposure is non-cash and decide whether it is worth hedging at all."
+        },
+        {
+          "t": "Set a hedging policy",
+          "d": "Write a simple policy for what share of 12-month exposure gets hedged and with what instrument."
+        }
+      ]
+    },
+    {
+      "id": "fin-p34-t3",
+      "phase_id": "fin-p34",
+      "order_index": 3,
+      "title": "Interest Rate Risk Management for Corporates",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "A borrower with floating-rate debt is exposed to rising rates; one with fixed-rate debt is exposed to being stuck above market if rates fall. Learn how corporates use swaps and caps to manage that trade-off.",
+      "steps": [
+        {
+          "t": "Frame the exposure",
+          "d": "State what rising and falling rates each do to a floating-rate borrower's interest expense."
+        },
+        {
+          "t": "Swap the profile",
+          "d": "Convert floating-rate debt to fixed with a payer swap and recompute the all-in cost."
+        },
+        {
+          "t": "Compare a cap",
+          "d": "Contrast a rate cap's asymmetric protection against a swap's full fix."
+        },
+        {
+          "t": "Set the mix",
+          "d": "Decide what fixed/floating split a company should target and defend the call."
+        }
+      ]
+    },
+    {
+      "id": "fin-p35-t1",
+      "phase_id": "fin-p35",
+      "order_index": 1,
+      "title": "CAPM, Factor Models & the Efficient Frontier",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Markowitz's efficient frontier shows the best risk-return trade-offs diversification can buy; CAPM reduces that to one systematic-risk factor, and multi-factor models like Fama-French add size, value and other factors to explain far more of a portfolio's return.",
+      "steps": [
+        {
+          "t": "Plot the frontier",
+          "d": "Combine two risky assets across weights and trace out the risk-return curve."
+        },
+        {
+          "t": "Isolate systematic risk",
+          "d": "Reduce the frontier's insight to a single beta against the market under CAPM."
+        },
+        {
+          "t": "Add the factors",
+          "d": "Layer size and value factors onto CAPM and see how much more return variation they explain."
+        },
+        {
+          "t": "Judge the fit",
+          "d": "Compare CAPM's and a three-factor model's explanatory power on the same portfolio."
+        }
+      ]
+    },
+    {
+      "id": "fin-p35-t2",
+      "phase_id": "fin-p35",
+      "order_index": 2,
+      "title": "Asset Allocation & Performance Attribution",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Once a portfolio has beaten (or lagged) its benchmark, attribution decomposes why: how much came from over- or under-weighting sectors versus picking better securities within them.",
+      "steps": [
+        {
+          "t": "Set a policy mix",
+          "d": "Choose a benchmark asset allocation and state the return and risk it implies."
+        },
+        {
+          "t": "Split the active return",
+          "d": "Decompose a portfolio's excess return into allocation and selection effects using the Brinson model."
+        },
+        {
+          "t": "Add interaction",
+          "d": "Account for the interaction term between allocation and selection and explain what it captures."
+        },
+        {
+          "t": "Judge the manager",
+          "d": "Decide, from the attribution, whether skill showed up in allocation calls or stock picks."
+        }
+      ]
+    },
+    {
+      "id": "fin-p35-t3",
+      "phase_id": "fin-p35",
+      "order_index": 3,
+      "title": "Regression & Statistical Methods for Finance",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Beta, factor loadings and correlation are all regression outputs. Learn to run and interpret a linear regression in a finance context, and to compute the covariance-based beta by hand as well as in Excel.",
+      "steps": [
+        {
+          "t": "Run a regression",
+          "d": "Regress a stock's returns on the market's and read the slope as beta."
+        },
+        {
+          "t": "Check the fit",
+          "d": "Interpret the R-squared and say how much of the stock's return the market explains."
+        },
+        {
+          "t": "Compute it by hand",
+          "d": "Get to the same beta from the covariance/variance formula, then from Excel's SLOPE function."
+        },
+        {
+          "t": "Extend to multi-factor",
+          "d": "Add a second explanatory variable and read the resulting multi-factor loadings."
+        }
+      ]
+    },
+    {
+      "id": "fin-p35-t4",
+      "phase_id": "fin-p35",
+      "order_index": 4,
+      "title": "Monte Carlo Simulation, VaR/ES & Stress Testing",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Three ways to answer 'how bad could this get': simulate thousands of random paths, summarize the loss distribution's tail as a VaR or expected-shortfall number, and run a specific adverse scenario end to end.",
+      "steps": [
+        {
+          "t": "Simulate a path",
+          "d": "Build a simple Monte Carlo simulation of a portfolio's value over many random draws."
+        },
+        {
+          "t": "Read off VaR",
+          "d": "Take the simulated loss distribution's percentile as the portfolio's Value at Risk."
+        },
+        {
+          "t": "Go past VaR",
+          "d": "Compute expected shortfall as the average loss beyond that percentile and say what it adds."
+        },
+        {
+          "t": "Run a stress scenario",
+          "d": "Apply a named adverse scenario (like a regulator's severely-adverse case) and compare its loss to VaR."
+        }
+      ]
+    },
+    {
+      "id": "fin-p36-t1",
+      "phase_id": "fin-p36",
+      "order_index": 1,
+      "title": "Macroeconomics for Finance Professionals",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The handful of macro indicators every desk watches: GDP growth, inflation, and the policy rate a central bank sets in response to both — and how each one moves through to equity, credit and FX markets.",
+      "steps": [
+        {
+          "t": "Read the dashboard",
+          "d": "Explain what GDP, inflation and unemployment each say about where an economy sits in its cycle."
+        },
+        {
+          "t": "Follow the transmission",
+          "d": "Trace how a central bank rate change moves through borrowing costs to spending and asset prices."
+        },
+        {
+          "t": "Connect to markets",
+          "d": "Say what a surprise inflation print typically does to bond yields and equity multiples same-day."
+        },
+        {
+          "t": "Position for a view",
+          "d": "State a macro view and name which trade or sector allocation would express it."
+        }
+      ]
+    },
+    {
+      "id": "fin-p36-t2",
+      "phase_id": "fin-p36",
+      "order_index": 2,
+      "title": "ESG & Sustainable Finance",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "How environmental, social and governance factors entered mainstream investment analysis: the UN-backed principles investors sign onto, the regulatory push behind disclosure, and where ESG genuinely changes a valuation versus where it is a label.",
+      "steps": [
+        {
+          "t": "Define the three letters",
+          "d": "Give a concrete example of an E, an S and a G factor for one real company."
+        },
+        {
+          "t": "Trace the principles",
+          "d": "Summarise what a signatory to the UN Principles for Responsible Investment actually commits to."
+        },
+        {
+          "t": "Find the regulatory push",
+          "d": "Identify one disclosure requirement driving ESG reporting in a major market."
+        },
+        {
+          "t": "Separate signal from label",
+          "d": "Decide whether an ESG factor you researched changes cash flows or risk, or is mostly marketing."
+        }
+      ]
+    },
+    {
+      "id": "fin-p36-t3",
+      "phase_id": "fin-p36",
+      "order_index": 3,
+      "title": "Ethics & Professional Standards",
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The code that governs the profession when no regulator is watching: duty to clients, independence and objectivity, and the standards that decide what a real conflict of interest looks like versus a manageable one.",
+      "steps": [
+        {
+          "t": "Learn the code",
+          "d": "Summarise the CFA Institute Code of Ethics' core duties in your own words."
+        },
+        {
+          "t": "Map the standards",
+          "d": "Pick three of the seven Standards of Professional Conduct and give an example violation of each."
+        },
+        {
+          "t": "Spot a conflict",
+          "d": "Identify a real conflict of interest in a case and say what disclosure or firewall would resolve it."
+        },
+        {
+          "t": "Apply it to yourself",
+          "d": "Write the one situation in your own work where you are most likely to face this kind of pressure."
         }
       ]
     }
@@ -2500,6 +4466,2394 @@
       "format": "article",
       "length": null,
       "note": "Banks, recruiting, salaries and exits in the Indian market."
+    },
+    {
+      "id": "fin-p16-r1",
+      "topic_id": "fin-p16-t1",
+      "order_index": 1,
+      "title": "Financial Ratios Definitive Guide",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/financial-ratios-definitive-guide",
+      "source": "Corporate Finance Institute",
+      "format": "guide",
+      "length": null,
+      "note": "30+ profitability, efficiency, liquidity and solvency ratios plus the DuPont pyramid, in one reference guide.",
+      "icon": null
+    },
+    {
+      "id": "fin-p16-r2",
+      "topic_id": "fin-p16-t1",
+      "order_index": 2,
+      "title": "DuPont Analysis",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/dupont-analysis/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How to build the 3-factor and 5-factor DuPont breakdown of ROE.",
+      "icon": null
+    },
+    {
+      "id": "fin-p16-r3",
+      "topic_id": "fin-p16-t1",
+      "order_index": 3,
+      "title": "3 Step DuPont Analysis for ROE | Financial Statement Analysis",
+      "url": "https://www.youtube.com/watch?v=LpaUJdYtW9o",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Walks through disaggregating ROE into profit margin, asset turnover and equity multiplier with an example.",
+      "icon": null
+    },
+    {
+      "id": "fin-p16-r4",
+      "topic_id": "fin-p16-t2",
+      "order_index": 1,
+      "title": "Horizontal Analysis",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/horizontal-analysis/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How to compare a statement across periods to identify revenue, margin and cyclical trends.",
+      "icon": null
+    },
+    {
+      "id": "fin-p16-r5",
+      "topic_id": "fin-p16-t2",
+      "order_index": 2,
+      "title": "Common Size Analysis",
+      "url": "https://www.wallstreetoasis.com/resources/skills/finance/common-size-analysis",
+      "source": "Wall Street Oasis",
+      "format": "article",
+      "length": null,
+      "note": "How to express every line item as a percent of a base (revenue or total assets) to compare periods or peers.",
+      "icon": null
+    },
+    {
+      "id": "fin-p16-r6",
+      "topic_id": "fin-p16-t2",
+      "order_index": 3,
+      "title": "Horizontal Analysis | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/horizontal-analysis/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "A second worked treatment of horizontal/time-series analysis with formulas and examples.",
+      "icon": null
+    },
+    {
+      "id": "fin-p16-r7",
+      "topic_id": "fin-p16-t3",
+      "order_index": 1,
+      "title": "Cash Conversion Cycle | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/cash-conversion-cycle-ccc/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Formula and worked example for DIO + DSO - DPO and what it says about working-capital efficiency.",
+      "icon": null
+    },
+    {
+      "id": "fin-p16-r8",
+      "topic_id": "fin-p16-t3",
+      "order_index": 2,
+      "title": "Working Capital Forecasting & Ratio Analysis",
+      "url": "https://macabacus.com/operating-model/working-capital",
+      "source": "Macabacus",
+      "format": "article",
+      "length": null,
+      "note": "How bankers benchmark the cash conversion cycle against peers during diligence.",
+      "icon": null
+    },
+    {
+      "id": "fin-p16-r9",
+      "topic_id": "fin-p16-t3",
+      "order_index": 3,
+      "title": "Working Capital | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/working-capital/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "How working-capital changes flow into the operating section of the cash flow statement.",
+      "icon": null
+    },
+    {
+      "id": "fin-p19-r1",
+      "topic_id": "fin-p19-t1",
+      "order_index": 1,
+      "title": "Types of Budgets - The Four Most Common Budgeting Methods",
+      "url": "https://www.wallstreetoasis.com/resources/skills/accounting/types-of-budgets-budgeting-methods",
+      "source": "Wall Street Oasis",
+      "format": "article",
+      "length": null,
+      "note": "Compares incremental, activity-based, value-proposition and zero-based budgeting.",
+      "icon": null
+    },
+    {
+      "id": "fin-p19-r2",
+      "topic_id": "fin-p19-t1",
+      "order_index": 2,
+      "title": "The Budgeting Process: Step-by-Step Guide for FP&A Professionals",
+      "url": "https://corporatefinanceinstitute.com/resources/fpa/budgeting-process-guide-fpa/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Walks the annual budget cycle from target-setting through committee review and approval.",
+      "icon": null
+    },
+    {
+      "id": "fin-p19-r3",
+      "topic_id": "fin-p19-t1",
+      "order_index": 3,
+      "title": "Variance Analysis (Budget vs Actual)",
+      "url": "https://www.youtube.com/watch?v=MC4FXGLQrVw",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "A worked budget-to-actual variance analysis, the core FP&A skill this topic builds toward.",
+      "icon": null
+    },
+    {
+      "id": "fin-p19-r4",
+      "topic_id": "fin-p19-t2",
+      "order_index": 1,
+      "title": "13-Week Cash Flow Model (TWCF) | Template Example",
+      "url": "https://www.wallstreetprep.com/knowledge/demystifying-the-13-week-cash-flow-model-in-excel/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Direct-method weekly cash receipts-less-disbursements build used in restructuring and treasury.",
+      "icon": null
+    },
+    {
+      "id": "fin-p19-r5",
+      "topic_id": "fin-p19-t2",
+      "order_index": 2,
+      "title": "Monthly Cash Flow Forecast Model - Example, How to Use",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/monthly-cash-flow-forecast-model/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How a rolling monthly cash flow forecast is rolled forward as each month closes.",
+      "icon": null
+    },
+    {
+      "id": "fin-p19-r6",
+      "topic_id": "fin-p19-t2",
+      "order_index": 3,
+      "title": "What is 13-Week Cash Flow Forecasting?",
+      "url": "https://treasury.ripple.com/posts/what-is-13-week-cash-flow-forecasting",
+      "source": "Ripple Treasury",
+      "format": "article",
+      "length": null,
+      "note": "Why the 13-week window is the treasury-industry standard and what banks/investors expect from it.",
+      "icon": null
+    },
+    {
+      "id": "fin-p19-r7",
+      "topic_id": "fin-p19-t3",
+      "order_index": 1,
+      "title": "Sensitivity Analysis (What-If) | Excel Tutorial Lesson",
+      "url": "https://www.wallstreetprep.com/knowledge/financial-modeling-techniques-sensitivity-what-if-analysis-2/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "How a two-variable data table shows how an output changes across two flexed assumptions.",
+      "icon": null
+    },
+    {
+      "id": "fin-p19-r8",
+      "topic_id": "fin-p19-t3",
+      "order_index": 2,
+      "title": "Scenario Analysis | Excel Tutorial Lesson",
+      "url": "https://www.wallstreetprep.com/knowledge/financial-modeling-techniques-selecting-operating-and-financing-scenarios/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "How to build a scenario manager that stress-tests a model across base/upside/downside cases.",
+      "icon": null
+    },
+    {
+      "id": "fin-p19-r9",
+      "topic_id": "fin-p19-t3",
+      "order_index": 3,
+      "title": "Sensitivity Analysis Excel: Tutorial, Video, and Template",
+      "url": "https://breakingintowallstreet.com/kb/excel/sensitivity-analysis-excel/",
+      "source": "Breaking Into Wall Street",
+      "format": "article",
+      "length": null,
+      "note": "Step-by-step tutorial and template for building sensitivity tables in Excel.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r1",
+      "topic_id": "fin-p17-t1",
+      "order_index": 1,
+      "title": "Financial Modeling Best Practices: Excel Makeovers/Manicures",
+      "url": "https://breakingintowallstreet.com/kb/finance/financial-modeling-best-practices/",
+      "source": "Breaking Into Wall Street",
+      "format": "article",
+      "length": null,
+      "note": "Formatting, named-range and formula-efficiency conventions that make a model intuitive to audit.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r2",
+      "topic_id": "fin-p17-t1",
+      "order_index": 2,
+      "title": "Financial Modeling Guide | Excel Training Tutorial",
+      "url": "https://www.wallstreetprep.com/knowledge/financial-modeling/",
+      "source": "Wall Street Prep",
+      "format": "guide",
+      "length": null,
+      "note": "Overview of model structure and why there's little Street-wide consistency in how models are organized.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r3",
+      "topic_id": "fin-p17-t1",
+      "order_index": 3,
+      "title": "Financial Modeling Assumptions: What They Are and How to Create Them",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/financial-modeling-assumptions/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How to set and document the assumptions a model's forecasts are built on.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r4",
+      "topic_id": "fin-p17-t2",
+      "order_index": 1,
+      "title": "Bottom-Up Forecasting | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/bottom-up-forecasting/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Forecasting revenue from unit economics (price x volume) rather than an aggregate growth rate.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r5",
+      "topic_id": "fin-p17-t2",
+      "order_index": 2,
+      "title": "Income Statement Forecasting | Projection Guide",
+      "url": "https://www.wallstreetprep.com/knowledge/income-statement-forecasting/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "How to project the income statement line by line off its own drivers.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r6",
+      "topic_id": "fin-p17-t2",
+      "order_index": 3,
+      "title": "Wall Street Financial Analyst Projections Guide",
+      "url": "https://macabacus.com/merger-model/wall-street-projections",
+      "source": "Macabacus",
+      "format": "article",
+      "length": null,
+      "note": "How sell-side analysts build segment-level revenue and cost projections.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r7",
+      "topic_id": "fin-p17-t3",
+      "order_index": 1,
+      "title": "Property, Plant and Equipment (PP&E) | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/property-plant-equipment-ppe/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "How to roll forward a PP&E schedule from beginning balance plus capex minus depreciation.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r8",
+      "topic_id": "fin-p17-t3",
+      "order_index": 2,
+      "title": "Debt Schedule | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/debt-schedule/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "How to lay out each debt tranche's balance, interest and scheduled amortization.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r9",
+      "topic_id": "fin-p17-t3",
+      "order_index": 3,
+      "title": "Forecasting Balance Sheet Items",
+      "url": "https://www.wallstreetoasis.com/resources/financial-modeling/forecast-balance-sheet-items-financial-model",
+      "source": "Wall Street Oasis",
+      "format": "article",
+      "length": null,
+      "note": "How working-capital and other balance-sheet lines get forecast in supporting schedules before rolling up.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r10",
+      "topic_id": "fin-p17-t4",
+      "order_index": 1,
+      "title": "Circular Reference Excel - How to Find and Fix Them",
+      "url": "https://breakingintowallstreet.com/kb/excel/circular-reference-excel/",
+      "source": "Breaking Into Wall Street",
+      "format": "article",
+      "length": null,
+      "note": "Why linking interest expense into the income statement creates a circular reference, and how to fix it.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r11",
+      "topic_id": "fin-p17-t4",
+      "order_index": 2,
+      "title": "Forecasting Finance - Debt, Interest, Equity, How to",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/forecasting-finance-equity-debt-and-interest/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Where circular references come from when forecasting debt/interest and equity together, and how to solve them.",
+      "icon": null
+    },
+    {
+      "id": "fin-p17-r12",
+      "topic_id": "fin-p17-t4",
+      "order_index": 3,
+      "title": "Error Trapping in Excel Through Flagging and Custom-Built Error Checks",
+      "url": "https://macabacus.com/blog/error-trapping-excel-flagging-custom-built-error-checks",
+      "source": "Macabacus",
+      "format": "article",
+      "length": null,
+      "note": "How to build custom error-check flags so a model surfaces problems instead of silently breaking.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-r1",
+      "topic_id": "fin-p18-t1",
+      "order_index": 1,
+      "title": "Equity Value to Enterprise Value Bridge | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/equity-value-to-enterprise-value-bridge/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "The formula and adjustments (net debt, preferred, minority interest) that bridge EV to equity value.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-r2",
+      "topic_id": "fin-p18-t1",
+      "order_index": 2,
+      "title": "Treasury Stock Method (TSM) | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/treasury-stock-method/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "How the treasury stock method converts in-the-money options/warrants into a diluted share count.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-r3",
+      "topic_id": "fin-p18-t1",
+      "order_index": 3,
+      "title": "M&A Enterprise Value",
+      "url": "https://macabacus.com/merger-model/enterprise-value",
+      "source": "Macabacus",
+      "format": "article",
+      "length": null,
+      "note": "How the treasury method's diluted share count feeds into an enterprise value build.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-r4",
+      "topic_id": "fin-p18-t2",
+      "order_index": 1,
+      "title": "DCF - Terminal Value - Gordon Growth Method Intuition",
+      "url": "https://breakingintowallstreet.com/kb/discounted-cash-flow-analysis-dcf/dcf-terminal-value/",
+      "source": "Breaking Into Wall Street",
+      "format": "video",
+      "length": null,
+      "note": "Video walkthrough of the intuition behind the Gordon growth terminal value formula.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-r5",
+      "topic_id": "fin-p18-t2",
+      "order_index": 2,
+      "title": "Mid-Year Convention DCF and Mid-Year Discounting",
+      "url": "https://breakingintowallstreet.com/kb/discounted-cash-flow-analysis-dcf/mid-year-convention-dcf/",
+      "source": "Breaking Into Wall Street",
+      "format": "article",
+      "length": null,
+      "note": "How to combine mid-year discounting with a stub period without mixing conventions.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-r6",
+      "topic_id": "fin-p18-t2",
+      "order_index": 3,
+      "title": "Terminal Value",
+      "url": "https://corporatefinanceinstitute.com/resources/valuation/terminal-value/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Compares the perpetuity growth and exit multiple methods and their limitations.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-r7",
+      "topic_id": "fin-p18-t3",
+      "order_index": 1,
+      "title": "Football Field Chart - Download Free Excel Template",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/football-field-chart/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Free template for a football field summarizing DCF, comps and precedent-transaction ranges.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-r8",
+      "topic_id": "fin-p18-t3",
+      "order_index": 2,
+      "title": "Football Field Valuation Chart | Excel Tutorial + Example",
+      "url": "https://www.wallstreetprep.com/knowledge/football-field-valuation-real-example-excel-template/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "A worked, real-company example of building the football field chart in Excel.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-r9",
+      "topic_id": "fin-p18-t3",
+      "order_index": 3,
+      "title": "How to Create a Football Field Chart in Excel for Financial Valuations",
+      "url": "https://www.youtube.com/watch?v=jHYOLmgZJsI",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Quick video build of a football field chart depicting multiple valuation methods.",
+      "icon": null
+    },
+    {
+      "id": "fin-p20-r1",
+      "topic_id": "fin-p20-t1",
+      "order_index": 1,
+      "title": "Building Effective Data Visuals For Financial Presentations",
+      "url": "https://corporatefinanceinstitute.com/resources/fpa/building-effective-data-visuals/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Principles for creating clear, impactful visuals that support a financial argument rather than decorate it.",
+      "icon": null
+    },
+    {
+      "id": "fin-p20-r2",
+      "topic_id": "fin-p20-t1",
+      "order_index": 2,
+      "title": "Excel Chart Examples",
+      "url": "https://exceljet.net/charts",
+      "source": "ExcelJet",
+      "format": "article",
+      "length": null,
+      "note": "Real-world examples of which Excel chart type fits which comparison, trend or composition question.",
+      "icon": null
+    },
+    {
+      "id": "fin-p20-r3",
+      "topic_id": "fin-p20-t1",
+      "order_index": 3,
+      "title": "Designing awesome financial metrics dashboard [tutorial]",
+      "url": "https://chandoo.org/wp/financial-dashboard-tutorial/",
+      "source": "Chandoo.org",
+      "format": "article",
+      "length": null,
+      "note": "Breaks the design of a financial metrics dashboard into concrete, actionable steps and good practices.",
+      "icon": null
+    },
+    {
+      "id": "fin-p20-r4",
+      "topic_id": "fin-p20-t2",
+      "order_index": 1,
+      "title": "Build an Interactive Excel Dashboard with Pivot Tables",
+      "url": "https://www.excelcampus.com/charts/excel-dahsboard-tutorial-full-buildout/",
+      "source": "Excel Campus",
+      "format": "practice",
+      "length": null,
+      "note": "Full build-out of an interactive dashboard using only pivot tables and charts, no complex formulas.",
+      "icon": null
+    },
+    {
+      "id": "fin-p20-r5",
+      "topic_id": "fin-p20-t2",
+      "order_index": 2,
+      "title": "Excel Dashboard to Track Budget and Actuals with Variances",
+      "url": "https://www.xelplus.com/excel-budget-actual-dashboard/",
+      "source": "XelPlus (Leila Gharani)",
+      "format": "practice",
+      "length": null,
+      "note": "Builds a finance-specific dashboard combining charts, tables and variance formatting.",
+      "icon": null
+    },
+    {
+      "id": "fin-p20-r6",
+      "topic_id": "fin-p20-t2",
+      "order_index": 3,
+      "title": "How Sparklines are useful for Excel BI dashboards",
+      "url": "https://www.youtube.com/watch?v=SCVJdLYeWVY",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "How to use line, column and win/loss sparklines to add trend context inside a dashboard table.",
+      "icon": null
+    },
+    {
+      "id": "fin-p21-r1",
+      "topic_id": "fin-p21-t1",
+      "order_index": 1,
+      "title": "BUILD Framework: 5 Steps for Data Storytelling",
+      "url": "https://corporatefinanceinstitute.com/resources/fpa/build-framework-data-storytelling/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "A repeatable 5-step framework: begin with the outcome, understand the audience, illustrate, link, drive action.",
+      "icon": null
+    },
+    {
+      "id": "fin-p21-r2",
+      "topic_id": "fin-p21-t1",
+      "order_index": 2,
+      "title": "FP&A Storytelling: 5 Techniques to Make Your Message Stick",
+      "url": "https://corporatefinanceinstitute.com/resources/fpa/fpa-storytelling-techniques/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Turning financial insight into a structured narrative with audience-specific framing and a call to action.",
+      "icon": null
+    },
+    {
+      "id": "fin-p21-r3",
+      "topic_id": "fin-p21-t1",
+      "order_index": 3,
+      "title": "End Boring Finance Presentations With My 5 Commandments Of Data Storytelling",
+      "url": "https://www.youtube.com/watch?v=4eOFsI7lYY4",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Five rules for turning a dry finance presentation into a story that holds attention.",
+      "icon": null
+    },
+    {
+      "id": "fin-p21-r4",
+      "topic_id": "fin-p21-t2",
+      "order_index": 1,
+      "title": "Business Plan - Overview, Importance, Key Features",
+      "url": "https://www.wallstreetoasis.com/resources/skills/credit/business-plan",
+      "source": "Wall Street Oasis",
+      "format": "article",
+      "length": null,
+      "note": "Covers how to structure a business plan and write an executive summary that fits on one page.",
+      "icon": null
+    },
+    {
+      "id": "fin-p21-r5",
+      "topic_id": "fin-p21-t2",
+      "order_index": 2,
+      "title": "General Guidelines for Business Writing",
+      "url": "https://owl.purdue.edu/owl/subject_specific_writing/professional_technical_writing/business_writing_for_administrative_and_clerical_staff/general_guidelines.html",
+      "source": "Purdue OWL",
+      "format": "guide",
+      "length": null,
+      "note": "University writing-lab guidance on concision, tone and putting the most important information first.",
+      "icon": null
+    },
+    {
+      "id": "fin-p21-r6",
+      "topic_id": "fin-p21-t2",
+      "order_index": 3,
+      "title": "The Art of Communication in FP&A: Present Data with Impact",
+      "url": "https://corporatefinanceinstitute.com/resources/fpa/fpa-communication-presenting-data/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How to translate financial data into a clear, decision-ready recommendation.",
+      "icon": null
+    },
+    {
+      "id": "fin-p21-r7",
+      "topic_id": "fin-p21-t3",
+      "order_index": 1,
+      "title": "Effective Presentation Structure: A Finance Guide",
+      "url": "https://corporatefinanceinstitute.com/resources/career/financial-presentation-structure-guide/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "A logical progression from problem to methodology to key findings to financial implications for a leadership audience.",
+      "icon": null
+    },
+    {
+      "id": "fin-p21-r8",
+      "topic_id": "fin-p21-t3",
+      "order_index": 2,
+      "title": "PowerPoint Hacks for Investment Banking and Consulting",
+      "url": "https://www.wallstreetprep.com/knowledge/powerpoint-hacks-for-investment-banking-and-consulting/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Techniques for building pitchbook- and client-deck-quality slides efficiently under deadline pressure.",
+      "icon": null
+    },
+    {
+      "id": "fin-p21-r9",
+      "topic_id": "fin-p21-t3",
+      "order_index": 3,
+      "title": "Create the PERFECT PowerPoint as a Finance Pro (2025 Tutorial)",
+      "url": "https://www.youtube.com/watch?v=y6_tr_ttbTI",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Walks through building a finance presentation, including storytelling and slide structure.",
+      "icon": null
+    },
+    {
+      "id": "fin-p1-t3-r1",
+      "topic_id": "fin-p1-t3",
+      "order_index": 2,
+      "title": "Perpetuity | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/perpetuity/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Formula and use of a perpetuity - a cash flow stream with no end - which underlies terminal value.",
+      "icon": null
+    },
+    {
+      "id": "fin-p1-t3-r2",
+      "topic_id": "fin-p1-t3",
+      "order_index": 3,
+      "title": "Time Value of Money - Explained (Step by Step Beginner's Guide)",
+      "url": "https://www.youtube.com/watch?v=_Kn5Q3DyZmY",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Step-by-step walkthrough of the time value of money concept, formula, and present/future value examples.",
+      "icon": null
+    },
+    {
+      "id": "fin-p3-t2-r1",
+      "topic_id": "fin-p3-t2",
+      "order_index": 2,
+      "title": "Buy Side vs Sell Side - Differences, Meaning",
+      "url": "https://www.wallstreetoasis.com/resources/careers/jobs/buy-side-vs-sell-side",
+      "source": "Wall Street Oasis",
+      "format": "article",
+      "length": null,
+      "note": "Contrasts buy-side and sell-side firm types, incentives and day-to-day work.",
+      "icon": null
+    },
+    {
+      "id": "fin-p3-t2-r2",
+      "topic_id": "fin-p3-t2",
+      "order_index": 3,
+      "title": "Buy Side vs Sell Side | Capital Markets",
+      "url": "https://www.youtube.com/watch?v=zWE6dkGHo_A",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Explains the buy side (investment managers, pension funds, hedge funds) versus the sell side in capital markets.",
+      "icon": null
+    },
+    {
+      "id": "fin-p9-t4-r1",
+      "topic_id": "fin-p9-t4",
+      "order_index": 2,
+      "title": "Carried Interest Explained: What It Means and How It Works",
+      "url": "https://corporatefinanceinstitute.com/resources/career-map/buy-side/private-equity/carried-interest-explained",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How the 20% carry is earned, the conditions that must be met, and how it aligns GP and LP incentives.",
+      "icon": null
+    },
+    {
+      "id": "fin-p9-t4-r2",
+      "topic_id": "fin-p9-t4",
+      "order_index": 3,
+      "title": "Total Value to Paid-In Capital (TVPI Multiple) | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/tvpi-total-value-to-paid-in-capital/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "The fund performance metric LPs use alongside the waterfall to judge value creation.",
+      "icon": null
+    },
+    {
+      "id": "fin-p12-t2-r1",
+      "topic_id": "fin-p12-t2",
+      "order_index": 2,
+      "title": "Off-Balance Sheet Financing: Meaning, Types & Examples",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/off-balance-sheet-financing/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Common off-balance-sheet methods (leases, SPVs, factoring) and the disclosure rules that govern them.",
+      "icon": null
+    },
+    {
+      "id": "fin-p12-t2-r2",
+      "topic_id": "fin-p12-t2",
+      "order_index": 3,
+      "title": "Enron Scandal - Overview, Role of MTM, Agency Conflicts",
+      "url": "https://corporatefinanceinstitute.com/resources/esg/enron-scandal/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "The case study in SPE abuse this topic is built around: how Enron used special purpose entities to hide losses.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r1",
+      "topic_id": "fin-p22-t1",
+      "order_index": 1,
+      "title": "A.CRE 101: How to Use the Income Capitalization Approach to Value Income-Producing Property",
+      "url": "https://www.adventuresincre.com/acre-101-income-approach-value-income-producing-property/",
+      "source": "Adventures in CRE",
+      "format": "article",
+      "length": "15 min",
+      "note": "Walks through Value = NOI ÷ Cap Rate with a worked numeric example.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r2",
+      "topic_id": "fin-p22-t1",
+      "order_index": 2,
+      "title": "Chapter 26: Valuing Real Estate",
+      "url": "https://pages.stern.nyu.edu/~adamodar/pdfiles/valn2ed/ch26.pdf",
+      "source": "Aswath Damodaran / NYU Stern",
+      "format": "pdf",
+      "length": "~30 min",
+      "note": "Damodaran's textbook chapter on applying DCF to real property, and where it agrees or departs from cap-rate shortcuts.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r3",
+      "topic_id": "fin-p22-t1",
+      "order_index": 3,
+      "title": "Real Estate Pro-Forma: Calculations, Examples, and Scenarios",
+      "url": "https://breakingintowallstreet.com/kb/real-estate-modeling/real-estate-pro-forma-model/",
+      "source": "Breaking Into Wall Street",
+      "format": "video",
+      "length": "~25 min",
+      "note": "Free lesson building the revenue-to-NOI pro forma for office and multifamily properties, with scenario add-ons.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r4",
+      "topic_id": "fin-p22-t1",
+      "order_index": 4,
+      "title": "All-in-One (Ai1) Underwriting Model for Real Estate Development and Acquisition",
+      "url": "https://www.adventuresincre.com/all-in-one-underwriting-model-for-real-estate-development-and-acquisition/",
+      "source": "Adventures in CRE",
+      "format": "practice",
+      "length": "~3 hrs",
+      "note": "Free downloadable Excel model for underwriting both acquisitions and ground-up development in one workbook.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r5",
+      "topic_id": "fin-p22-t2",
+      "order_index": 1,
+      "title": "How to Calculate the Debt Service Coverage Ratio (DSCR)",
+      "url": "https://propertymetrics.com/blog/how-to-calculate-the-debt-service-coverage-ratio-dscr/",
+      "source": "PropertyMetrics",
+      "format": "article",
+      "length": "10 min",
+      "note": "Shows how lenders back a maximum loan amount out of NOI and a target DSCR.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r6",
+      "topic_id": "fin-p22-t2",
+      "order_index": 2,
+      "title": "How to Calculate the Debt Yield Ratio",
+      "url": "https://propertymetrics.com/blog/how-to-calculate-the-debt-yield-ratio/",
+      "source": "PropertyMetrics",
+      "format": "article",
+      "length": "10 min",
+      "note": "The second loan-sizing constraint lenders apply alongside DSCR, and when it binds tighter.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r7",
+      "topic_id": "fin-p22-t2",
+      "order_index": 3,
+      "title": "A Guide to Real Estate Equity Waterfalls",
+      "url": "https://breakintocre.com/a-guide-to-real-estate-equity-waterfalls/",
+      "source": "Break Into CRE",
+      "format": "article",
+      "length": "15 min",
+      "note": "Explains preferred return, catch-up and promote tiers and how the sponsor's split increases as the deal outperforms.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r8",
+      "topic_id": "fin-p22-t2",
+      "order_index": 4,
+      "title": "Watch Me Build a Basic Real Estate Equity Waterfall Model with IRR Hurdles",
+      "url": "https://www.youtube.com/watch?v=OsEkz3Hahco",
+      "source": "Adventures in CRE (YouTube)",
+      "format": "video",
+      "length": "~30 min",
+      "note": "Builds a real IRR-hurdle waterfall in Excel from scratch, tier by tier.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r9",
+      "topic_id": "fin-p22-t2",
+      "order_index": 5,
+      "title": "Real Estate Equity Waterfall Model — IRR and Equity Multiple Hurdles",
+      "url": "https://www.adventuresincre.com/real-estate-equity-waterfall-model/",
+      "source": "Adventures in CRE",
+      "format": "practice",
+      "length": "~1 hr",
+      "note": "Free downloadable 3-tier waterfall workbook to rebuild and stress-test against the video walkthrough.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r10",
+      "topic_id": "fin-p22-t3",
+      "order_index": 1,
+      "title": "Calculating Residual Land Value in Excel",
+      "url": "https://www.adventuresincre.com/calculating-residual-land-value-excel/",
+      "source": "Adventures in CRE",
+      "format": "article",
+      "length": "15 min",
+      "note": "Backs a maximum land price out of projected sellout value, cost budget and required developer profit.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r11",
+      "topic_id": "fin-p22-t3",
+      "order_index": 2,
+      "title": "Apartment Development Model in Excel",
+      "url": "https://www.adventuresincre.com/apartment-development-model/",
+      "source": "Adventures in CRE",
+      "format": "practice",
+      "length": "~2 hrs",
+      "note": "Ground-up multifamily development workbook with a construction draw schedule and lease-up curve feeding the stabilized pro forma.",
+      "icon": null
+    },
+    {
+      "id": "fin-p22-r12",
+      "topic_id": "fin-p22-t3",
+      "order_index": 3,
+      "title": "Multifamily Development Model Walkthrough",
+      "url": "https://www.youtube.com/watch?v=ueN7G2i7yXA",
+      "source": "Break Into CRE (YouTube)",
+      "format": "video",
+      "length": "~20 min",
+      "note": "Walks through a complete ground-up multifamily development model end to end.",
+      "icon": null
+    },
+    {
+      "id": "fin-p23-r1",
+      "topic_id": "fin-p23-t1",
+      "order_index": 1,
+      "title": "Mining Asset Valuation Techniques",
+      "url": "https://corporatefinanceinstitute.com/resources/valuation/mining-asset-valuation-techniques/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": "12 min",
+      "note": "Explains why mining companies trade on P/NAV and how NAV sums each mine's independently valued DCF.",
+      "icon": null
+    },
+    {
+      "id": "fin-p23-r2",
+      "topic_id": "fin-p23-t1",
+      "order_index": 2,
+      "title": "National Instrument 43-101",
+      "url": "https://en.wikipedia.org/wiki/National_Instrument_43-101",
+      "source": "Wikipedia",
+      "format": "article",
+      "length": "10 min",
+      "note": "Reference on the measured/indicated/inferred reserve and resource classification a modeller must respect (inferred resources cannot feed an economic study).",
+      "icon": null
+    },
+    {
+      "id": "fin-p23-r3",
+      "topic_id": "fin-p23-t1",
+      "order_index": 3,
+      "title": "Mining and Natural Resources Valuation: NAV, Reserve Life, and Commodity Sensitivity",
+      "url": "https://ibinterviewquestions.com/guides/valuation-investment-banking/mining-natural-resources-valuation-nav-reserve-life",
+      "source": "IB Interview Questions",
+      "format": "guide",
+      "length": "20 min",
+      "note": "Ties reserve life directly into the NAV model's cash-flow horizon and shows how sensitive value is to grade and strip ratio.",
+      "icon": null
+    },
+    {
+      "id": "fin-p23-r4",
+      "topic_id": "fin-p23-t1",
+      "order_index": 4,
+      "title": "Mining Industry Financial Model (In-Depth Guide)",
+      "url": "https://www.youtube.com/watch?v=1s3U5x-eLMM",
+      "source": "YouTube",
+      "format": "video",
+      "length": "~40 min",
+      "note": "Full build of a mining model's assumptions, financials, valuation and sensitivity tabs.",
+      "icon": null
+    },
+    {
+      "id": "fin-p23-r5",
+      "topic_id": "fin-p23-t2",
+      "order_index": 1,
+      "title": "NAV Model (Oil & Gas): Production Decline Curve",
+      "url": "https://breakingintowallstreet.com/kb/oil-gas-modeling/nav-model-oil-and-gas/",
+      "source": "Breaking Into Wall Street",
+      "format": "video",
+      "length": "~20 min",
+      "note": "Builds a well's annual production off an assumed decline rate, the base layer of an E&P NAV model.",
+      "icon": null
+    },
+    {
+      "id": "fin-p23-r6",
+      "topic_id": "fin-p23-t2",
+      "order_index": 2,
+      "title": "Type Curve Oil and Gas: Full Tutorial",
+      "url": "https://breakingintowallstreet.com/kb/oil-gas-modeling/type-curve-oil-and-gas/",
+      "source": "Breaking Into Wall Street",
+      "format": "guide",
+      "length": "20 min",
+      "note": "Explains how a type curve models expected production from undrilled locations in a NAV model.",
+      "icon": null
+    },
+    {
+      "id": "fin-p23-r7",
+      "topic_id": "fin-p23-t2",
+      "order_index": 3,
+      "title": "Oil & Gas Modeling: Full Crash Course Tutorial + Excel Files",
+      "url": "https://mergersandinquisitions.com/oil-gas-modeling-101/",
+      "source": "Mergers & Inquisitions",
+      "format": "course",
+      "length": "~3 hrs",
+      "note": "Free crash course with downloadable Excel files to build a complete E&P NAV model.",
+      "icon": null
+    },
+    {
+      "id": "fin-p23-r8",
+      "topic_id": "fin-p23-t2",
+      "order_index": 4,
+      "title": "The NAV Model: Energy's Signature Valuation Method",
+      "url": "https://ibinterviewquestions.com/guides/energy-investment-banking/nav-model-energy-signature-valuation",
+      "source": "IB Interview Questions",
+      "format": "article",
+      "length": "15 min",
+      "note": "Explains why energy companies are valued on a depleting-reserve NAV instead of a perpetual-growth DCF.",
+      "icon": null
+    },
+    {
+      "id": "fin-p23-r9",
+      "topic_id": "fin-p23-t3",
+      "order_index": 1,
+      "title": "Commodity Price Scenarios in Energy Financial Models",
+      "url": "https://ibinterviewquestions.com/guides/energy-investment-banking/commodity-price-scenarios-in-financial-models",
+      "source": "IB Interview Questions",
+      "format": "article",
+      "length": "15 min",
+      "note": "Lays out the strip, consensus-deck, management-case and bull/bear price scenario structure bankers run in parallel.",
+      "icon": null
+    },
+    {
+      "id": "fin-p23-r10",
+      "topic_id": "fin-p23-t3",
+      "order_index": 2,
+      "title": "Forward Curve",
+      "url": "https://en.wikipedia.org/wiki/Forward_curve",
+      "source": "Wikipedia",
+      "format": "article",
+      "length": "8 min",
+      "note": "Explains how strip/futures-based commodity pricing is read off a forward curve rather than assumed flat.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r1",
+      "topic_id": "fin-p24-t1",
+      "order_index": 1,
+      "title": "Renewable Power: Solar, Wind, and the Contracted Cash Flow Model",
+      "url": "https://ibinterviewquestions.com/guides/energy-investment-banking/renewable-power-solar-wind-contracted-cash-flow",
+      "source": "IB Interview Questions",
+      "format": "article",
+      "length": "18 min",
+      "note": "Contrasts a renewable project's PPA-contracted revenue model with a merchant gas plant's market-priced one.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r2",
+      "topic_id": "fin-p24-t1",
+      "order_index": 2,
+      "title": "Capacity factor",
+      "url": "https://www.eia.gov/tools/glossary/index.php?id=Capacity_factor",
+      "source": "U.S. Energy Information Administration",
+      "format": "article",
+      "length": "3 min",
+      "note": "Government-standard definition of the ratio driving a renewable project's modelled production.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r3",
+      "topic_id": "fin-p24-t1",
+      "order_index": 3,
+      "title": "Financial PPA",
+      "url": "https://www.epa.gov/green-power-markets/financial-ppa",
+      "source": "US EPA",
+      "format": "article",
+      "length": "10 min",
+      "note": "Explains the strike-price swap structure of a financial (virtual) PPA and why it makes project revenue bankable.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r4",
+      "topic_id": "fin-p24-t1",
+      "order_index": 4,
+      "title": "Solar Project Finance Models",
+      "url": "https://edbodmer.com/solar-models/",
+      "source": "Edward Bodmer",
+      "format": "practice",
+      "length": "~2 hrs",
+      "note": "Free downloadable solar project finance models of varying complexity, including sculpted financing.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r5",
+      "topic_id": "fin-p24-t2",
+      "order_index": 1,
+      "title": "Cash Flow Available for Debt Service (CFADS): Full Tutorial",
+      "url": "https://breakingintowallstreet.com/kb/project-finance/cash-flow-available-for-debt-service-cfads/",
+      "source": "Breaking Into Wall Street",
+      "format": "guide",
+      "length": "20 min",
+      "note": "Builds CFADS from the cash flow statement, distinct from EBITDA or unlevered free cash flow.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r6",
+      "topic_id": "fin-p24-t2",
+      "order_index": 2,
+      "title": "Debt Sculpting vs Debt Sizing in Project Finance: Full Tutorial",
+      "url": "https://breakingintowallstreet.com/kb/project-finance/debt-sculpting-vs-debt-sizing/",
+      "source": "Breaking Into Wall Street",
+      "format": "guide",
+      "length": "20 min",
+      "note": "Clarifies the distinction between sizing a debt quantum and sculpting its repayment shape.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r7",
+      "topic_id": "fin-p24-t2",
+      "order_index": 3,
+      "title": "Sculpted Debt Service (DSCR/CFADS)",
+      "url": "https://financialmodelling.forvismazars.com/resources/sculpted-debt-service-dscr-cfads/",
+      "source": "Forvis Mazars Financial Modelling",
+      "format": "guide",
+      "length": "25 min",
+      "note": "Step-by-step build of a sculpted repayment schedule that holds DSCR at its covenant floor every period.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r8",
+      "topic_id": "fin-p24-t2",
+      "order_index": 4,
+      "title": "Project Finance Structuring with Sculpting — Part 1",
+      "url": "https://edbodmer.com/sculpting-course/",
+      "source": "Edward Bodmer",
+      "format": "course",
+      "length": "~2 hrs",
+      "note": "Extends sculpting to multiple debt tranches, DSRA mechanics and circular-reference handling.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r9",
+      "topic_id": "fin-p24-t3",
+      "order_index": 1,
+      "title": "Public-Private Partnership (PPP) Handbook",
+      "url": "https://www.adb.org/sites/default/files/institutional-document/31484/public-private-partnership.pdf",
+      "source": "Asian Development Bank",
+      "format": "pdf",
+      "length": "~40 min",
+      "note": "Institutional handbook covering how PPP concessions are structured, financed and risk-allocated.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r10",
+      "topic_id": "fin-p24-t3",
+      "order_index": 2,
+      "title": "4.10 Availability Payments",
+      "url": "https://ppp-certification.com/ppp-certification-guide/410-availability-payments",
+      "source": "APMG PPP Certification Program",
+      "format": "article",
+      "length": "12 min",
+      "note": "Explains the availability-payment mechanism and how it differs from a demand-risk (toll) concession.",
+      "icon": null
+    },
+    {
+      "id": "fin-p24-r11",
+      "topic_id": "fin-p24-t3",
+      "order_index": 3,
+      "title": "Availability Payments",
+      "url": "https://www.fhwa.dot.gov/ipd/fact_sheets/availability_payments.aspx",
+      "source": "Federal Highway Administration",
+      "format": "article",
+      "length": "8 min",
+      "note": "U.S. government fact sheet on real availability-payment P3 deals and why lenders price them tighter.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r1",
+      "topic_id": "fin-p25-t1",
+      "order_index": 1,
+      "title": "SaaS Metrics 2.0 - Detailed Definitions",
+      "url": "https://www.forentrepreneurs.com/saas-metrics-2-definitions-2/",
+      "source": "For Entrepreneurs (David Skok)",
+      "format": "article",
+      "length": "25 min",
+      "note": "The definitive practitioner reference defining MRR, ARR, churn, CAC and LTV precisely, from a VC who popularized these metrics.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r2",
+      "topic_id": "fin-p25-t1",
+      "order_index": 2,
+      "title": "SaaS Metrics Refresher #6: Cohort Analysis",
+      "url": "https://chartmogul.com/blog/saas-metrics-refresher-cohort-analysis/",
+      "source": "ChartMogul",
+      "format": "article",
+      "length": "12 min",
+      "note": "Shows how to group customers into cohorts and read retention/churn curves across them.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r3",
+      "topic_id": "fin-p25-t1",
+      "order_index": 3,
+      "title": "SaaS Metrics: Full Guide, Video Tutorial, and Excel Examples",
+      "url": "https://breakingintowallstreet.com/kb/venture-capital/saas-metrics/",
+      "source": "Breaking Into Wall Street",
+      "format": "video",
+      "length": "~30 min",
+      "note": "Free video and Excel walkthrough covering ARR, LTV, CAC, the LTV/CAC ratio and CAC payback period together.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r4",
+      "topic_id": "fin-p25-t1",
+      "order_index": 4,
+      "title": "ARR Multiple",
+      "url": "https://www.wallstreetprep.com/knowledge/arr-multiple/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "10 min",
+      "note": "Explains why SaaS companies are valued on a multiple of ARR rather than trailing revenue.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r5",
+      "topic_id": "fin-p25-t2",
+      "order_index": 1,
+      "title": "13 Metrics for Marketplace Companies",
+      "url": "https://a16z.com/13-metrics-for-marketplace-companies/",
+      "source": "Andreessen Horowitz",
+      "format": "article",
+      "length": "15 min",
+      "note": "The standard VC framework for GMV, take rate and liquidity, and why GMV is not revenue.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r6",
+      "topic_id": "fin-p25-t2",
+      "order_index": 2,
+      "title": "16 Startup Metrics",
+      "url": "https://a16z.com/16-startup-metrics/",
+      "source": "Andreessen Horowitz",
+      "format": "article",
+      "length": "15 min",
+      "note": "The broader metric set investors expect a growth-stage tech or e-commerce company to report.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r7",
+      "topic_id": "fin-p25-t2",
+      "order_index": 3,
+      "title": "Chapter 23: Valuing Young or Start-Up Firms",
+      "url": "https://pages.stern.nyu.edu/~adamodar/pdfiles/valn2ed/ch23.pdf",
+      "source": "Aswath Damodaran / NYU Stern",
+      "format": "pdf",
+      "length": "~30 min",
+      "note": "Damodaran's textbook chapter on building a DCF for a company with little current revenue, using a market-size-down revenue path.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r8",
+      "topic_id": "fin-p25-t3",
+      "order_index": 1,
+      "title": "Same Store Sales",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/same-store-sales/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": "8 min",
+      "note": "Explains why comp-store sales isolate organic growth from new-unit growth in a retail or restaurant chain.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r9",
+      "topic_id": "fin-p25-t3",
+      "order_index": 2,
+      "title": "QSR Unit Economics Explained: What Every Investor Needs to Know",
+      "url": "https://qsr.pro/articles/qsr-unit-economics-explained-what-every-investor-needs-to-know",
+      "source": "QSR Pro",
+      "format": "article",
+      "length": "12 min",
+      "note": "Walks through AUV and four-wall EBITDA margin and why margin, not AUV, decides unit quality.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r10",
+      "topic_id": "fin-p25-t3",
+      "order_index": 3,
+      "title": "Payback Period",
+      "url": "https://www.wallstreetprep.com/knowledge/payback-period/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "8 min",
+      "note": "The formula and calculation used to decide whether a new store or restaurant unit pays back its build-out cost fast enough.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r11",
+      "topic_id": "fin-p25-t4",
+      "order_index": 1,
+      "title": "Risk-Adjusted NPV: The Core Biotech Valuation Method",
+      "url": "https://ibinterviewquestions.com/guides/healthcare-investment-banking/risk-adjusted-npv-biotech-valuation",
+      "source": "IB Interview Questions",
+      "format": "article",
+      "length": "18 min",
+      "note": "Explains why clinical risk is probability-weighted separately from the financial discount rate in rNPV.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r12",
+      "topic_id": "fin-p25-t4",
+      "order_index": 2,
+      "title": "Clinical Development Success Rates and Contributing Factors 2011-2020",
+      "url": "https://www.bio.org/clinical-development-success-rates-and-contributing-factors-2011-2020",
+      "source": "Biotechnology Innovation Organization (BIO)",
+      "format": "pdf",
+      "length": "~20 min",
+      "note": "The industry-standard phase-by-phase probability-of-success data an rNPV model is actually built on.",
+      "icon": null
+    },
+    {
+      "id": "fin-p25-r13",
+      "topic_id": "fin-p25-t4",
+      "order_index": 3,
+      "title": "How to Calculate the Value of Drugs and Biotech Companies",
+      "url": "https://www.baybridgebio.com/drug_valuation",
+      "source": "BayBridge Bio",
+      "format": "guide",
+      "length": "~30 min",
+      "note": "Hands-on walkthrough building an rNPV for a single drug asset from peak sales through phase-adjusted probabilities.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r1",
+      "topic_id": "fin-p26-t1",
+      "order_index": 1,
+      "title": "Cash Flow Sweep in LBO Models: Full Tutorial",
+      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/cash-flow-sweep/",
+      "source": "Breaking Into Wall Street",
+      "format": "guide",
+      "length": "20 min",
+      "note": "Extends the cash sweep mechanic to multiple debt tranches swept in seniority order.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r2",
+      "topic_id": "fin-p26-t1",
+      "order_index": 2,
+      "title": "Advanced LBO Modeling Test",
+      "url": "https://www.wallstreetprep.com/knowledge/advanced-lbo-modeling-test-4-hour-example/",
+      "source": "Wall Street Prep",
+      "format": "practice",
+      "length": "~4 hrs",
+      "note": "A timed, institutional-grade LBO test matching what a PE associate interview actually requires.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r3",
+      "topic_id": "fin-p26-t1",
+      "order_index": 3,
+      "title": "The Three Value Creation Levers in an LBO",
+      "url": "https://ibinterviewquestions.com/guides/valuation-investment-banking/three-value-creation-levers-lbo",
+      "source": "IB Interview Questions",
+      "format": "article",
+      "length": "15 min",
+      "note": "Explains how deleveraging, EBITDA growth and multiple expansion typically split a deal's total return.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r4",
+      "topic_id": "fin-p26-t1",
+      "order_index": 4,
+      "title": "LBO Returns Attribution: Breaking Down What Drives Equity Value",
+      "url": "https://corporatefinanceinstitute.com/resources/valuation/lbo-returns-attribution",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": "12 min",
+      "note": "Shows how to build the equity-value bridge that decomposes an LBO's return into its three levers.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r5",
+      "topic_id": "fin-p26-t2",
+      "order_index": 1,
+      "title": "Paper LBO Example: Tutorial For Private Equity Interviews",
+      "url": "https://breakingintowallstreet.com/kb/leveraged-buyouts-and-lbo-models/paper-lbo-example/",
+      "source": "Breaking Into Wall Street",
+      "format": "guide",
+      "length": "20 min",
+      "note": "Walks a full paper LBO from Sources & Uses through exit equity value with no spreadsheet.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r6",
+      "topic_id": "fin-p26-t2",
+      "order_index": 2,
+      "title": "Paper LBO: The Mental Math Framework for Interviews",
+      "url": "https://ibinterviewquestions.com/guides/valuation-investment-banking/paper-lbo-mental-math-framework-interviews",
+      "source": "IB Interview Questions",
+      "format": "article",
+      "length": "15 min",
+      "note": "The Rule of 72/115 shortcuts for converting a MOIC and holding period into an approximate IRR by hand.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r7",
+      "topic_id": "fin-p26-t2",
+      "order_index": 3,
+      "title": "Free Paper LBO Template",
+      "url": "https://www.fe.training/free-resources/private-equity/paper-lbo/",
+      "source": "Financial Edge Training",
+      "format": "practice",
+      "length": "~1 hr",
+      "note": "A free downloadable template for drilling multiple paper LBO scenarios under time pressure.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r8",
+      "topic_id": "fin-p26-t3",
+      "order_index": 1,
+      "title": "Purchase Price Allocation",
+      "url": "https://www.wallstreetprep.com/knowledge/purchase-price-allocation-ppa/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "12 min",
+      "note": "The formula for allocating purchase price across tangible assets, intangibles and goodwill.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r9",
+      "topic_id": "fin-p26-t3",
+      "order_index": 2,
+      "title": "Purchase Price Allocation: Excel Examples and Video Tutorial",
+      "url": "https://breakingintowallstreet.com/kb/ma-and-merger-models/purchase-price-allocation/",
+      "source": "Breaking Into Wall Street",
+      "format": "video",
+      "length": "~25 min",
+      "note": "Builds write-ups, deferred tax liabilities and resulting goodwill for a real deal in Excel.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r10",
+      "topic_id": "fin-p26-t3",
+      "order_index": 3,
+      "title": "M&A Purchase Price Allocation Guide & Methods",
+      "url": "https://macabacus.com/accounting/purchase-price-allocation1",
+      "source": "Macabacus",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Shows how PPA outputs feed into a consolidated pro-forma day-one balance sheet.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r11",
+      "topic_id": "fin-p26-t4",
+      "order_index": 1,
+      "title": "M&A Contribution Analysis - Examples, Templates",
+      "url": "https://macabacus.com/merger-model/contribution-analysis",
+      "source": "Macabacus",
+      "format": "guide",
+      "length": "12 min",
+      "note": "Computes each company's percentage contribution to combined financials to set a merger-of-equals ownership split.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r12",
+      "topic_id": "fin-p26-t4",
+      "order_index": 2,
+      "title": "Sum-of-the-Parts Valuation Methodology",
+      "url": "https://ibinterviewquestions.com/guides/valuation-investment-banking/sum-of-the-parts-valuation-methodology",
+      "source": "IB Interview Questions",
+      "format": "article",
+      "length": "15 min",
+      "note": "How to value and sum each segment of a multi-business conglomerate separately.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r13",
+      "topic_id": "fin-p26-t4",
+      "order_index": 3,
+      "title": "Fairness Opinion Overview",
+      "url": "https://corporatefinanceinstitute.com/resources/valuation/fairness-opinion-overview/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": "10 min",
+      "note": "States precisely what question a fairness opinion answers, and what it deliberately does not.",
+      "icon": null
+    },
+    {
+      "id": "fin-p26-r14",
+      "topic_id": "fin-p26-t4",
+      "order_index": 4,
+      "title": "Investment Banking Fairness Opinions: Guide, Examples, and Fees",
+      "url": "https://mergersandinquisitions.com/investment-banking-fairness-opinions/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": "20 min",
+      "note": "Covers how banks are paid for fairness opinions and the conflicts of interest that practice raises.",
+      "icon": null
+    },
+    {
+      "id": "fin-p27-r1",
+      "topic_id": "fin-p27-t1",
+      "order_index": 1,
+      "title": "J-Curve Effect",
+      "url": "https://www.wallstreetprep.com/knowledge/j-curve/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "10 min",
+      "note": "Explains why fund cash flows to LPs turn negative in early years before turning positive.",
+      "icon": null
+    },
+    {
+      "id": "fin-p27-r2",
+      "topic_id": "fin-p27-t1",
+      "order_index": 2,
+      "title": "J-Curves: An Introduction",
+      "url": "https://www.hamiltonlane.com/en-us/education/private-markets-education/j-curves",
+      "source": "Hamilton Lane",
+      "format": "article",
+      "length": "12 min",
+      "note": "An institutional LP's perspective on the J-curve and how a portfolio of fund vintages can flatten it.",
+      "icon": null
+    },
+    {
+      "id": "fin-p27-r3",
+      "topic_id": "fin-p27-t1",
+      "order_index": 3,
+      "title": "Capital Calls, Distributions, and the J-Curve",
+      "url": "https://apers.app/learn/capital-structure/equity/capital-calls-distributions-j-curve",
+      "source": "Apers",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Lays out the multi-tab Excel structure (pacing, fee accrual, distributions) a real fund cash flow model needs.",
+      "icon": null
+    },
+    {
+      "id": "fin-p27-r4",
+      "topic_id": "fin-p27-t2",
+      "order_index": 1,
+      "title": "Multiple on Invested Capital (MOIC)",
+      "url": "https://www.wallstreetprep.com/knowledge/moic-multiple-on-invested-capital/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "8 min",
+      "note": "MOIC formula and why it ignores time, unlike IRR.",
+      "icon": null
+    },
+    {
+      "id": "fin-p27-r5",
+      "topic_id": "fin-p27-t2",
+      "order_index": 2,
+      "title": "Private Equity Fund Performance Metrics: TVPI, DPI, IRR",
+      "url": "https://breakingintowallstreet.com/kb/financial-sponsors/private-equity-fund-performance-metrics/",
+      "source": "Breaking Into Wall Street",
+      "format": "guide",
+      "length": "20 min",
+      "note": "Works through TVPI = DPI + RVPI with a numeric fund example.",
+      "icon": null
+    },
+    {
+      "id": "fin-p27-r6",
+      "topic_id": "fin-p27-t2",
+      "order_index": 3,
+      "title": "Venture Capital & Private Equity Fund Performance Metrics",
+      "url": "https://carta.com/learn/private-funds/management/fund-performance/",
+      "source": "Carta",
+      "format": "article",
+      "length": "12 min",
+      "note": "The LP-side view of which metric matters most at different points in a fund's life.",
+      "icon": null
+    },
+    {
+      "id": "fin-p27-r7",
+      "topic_id": "fin-p27-t3",
+      "order_index": 1,
+      "title": "What is a Cap Table? Key Concepts & Examples",
+      "url": "https://carta.com/learn/startups/equity-management/cap-table/",
+      "source": "Carta",
+      "format": "article",
+      "length": "12 min",
+      "note": "Lays out founders, option pool and investor rows the way the industry's dominant cap-table platform models them.",
+      "icon": null
+    },
+    {
+      "id": "fin-p27-r8",
+      "topic_id": "fin-p27-t3",
+      "order_index": 2,
+      "title": "Equity Dilution Explained: A Founder's Guide",
+      "url": "https://www.crv.com/content/equity-dilution",
+      "source": "CRV",
+      "format": "article",
+      "length": "15 min",
+      "note": "A VC firm's own explanation of the option pool shuffle and how pre- vs post-money pool sizing changes founder dilution.",
+      "icon": null
+    },
+    {
+      "id": "fin-p27-r9",
+      "topic_id": "fin-p27-t3",
+      "order_index": 3,
+      "title": "Modelling Cap Table Liquidation Preferences",
+      "url": "https://www.allied.vc/guides/modelling-liquidation-preferences-in-cap-tables",
+      "source": "Allied Venture Partners",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Hands-on guide to adding 1x non-participating preferred stock into a cap table model.",
+      "icon": null
+    },
+    {
+      "id": "fin-p27-r10",
+      "topic_id": "fin-p27-t3",
+      "order_index": 4,
+      "title": "Waterfall Analysis: How to Model Exit Waterfalls",
+      "url": "https://carta.com/learn/startups/exit-strategies/waterfall-analysis/",
+      "source": "Carta",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Builds an exit waterfall showing each shareholder class's payout at different exit values.",
+      "icon": null
+    },
+    {
+      "id": "fin-p29-t1-r1",
+      "topic_id": "fin-p29-t1",
+      "order_index": 1,
+      "title": "ASC 606 Revenue Recognition | 5-Step Model + Examples",
+      "url": "https://www.wallstreetprep.com/knowledge/asc-606/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "10 min",
+      "note": "Walks all five steps with a worked multi-element contract example.",
+      "icon": null
+    },
+    {
+      "id": "fin-p29-t1-r2",
+      "topic_id": "fin-p29-t1",
+      "order_index": 2,
+      "title": "IFRS 15 Revenue from Contracts with Customers",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ifrs-15-revenue-from-contracts-with-customers/",
+      "source": "IFRS Foundation",
+      "format": "guide",
+      "length": null,
+      "note": "The official standard summary — core principle and the five-step approach as issued by the IASB.",
+      "icon": null
+    },
+    {
+      "id": "fin-p29-t1-r3",
+      "topic_id": "fin-p29-t1",
+      "order_index": 3,
+      "title": "ASC 606 Revenue Recognition in Plain English: A CPA's Walkthrough of the 5-Step Model",
+      "url": "https://www.youtube.com/watch?v=I8dBdXuT7cA",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "CPA-led walkthrough of the five-step model in plain language.",
+      "icon": null
+    },
+    {
+      "id": "fin-p29-t2-r1",
+      "topic_id": "fin-p29-t2",
+      "order_index": 1,
+      "title": "Capital Lease vs. Operating Lease | Difference + Examples",
+      "url": "https://www.wallstreetprep.com/knowledge/capital-lease-vs-operating-lease/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "The classification test and how each lease type flows through the three statements under ASC 842.",
+      "icon": null
+    },
+    {
+      "id": "fin-p29-t2-r2",
+      "topic_id": "fin-p29-t2",
+      "order_index": 2,
+      "title": "IFRS 16 Leases",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ifrs-16-leases/",
+      "source": "IFRS Foundation",
+      "format": "guide",
+      "length": null,
+      "note": "The official single-lessee-model standard — why IFRS dropped the operating-lease distinction GAAP keeps.",
+      "icon": null
+    },
+    {
+      "id": "fin-p29-t2-r3",
+      "topic_id": "fin-p29-t2",
+      "order_index": 3,
+      "title": "ASC 842 Lease Accounting Guide: Examples, Journal Entries & More",
+      "url": "https://finquery.com/blog/asc-842-summary-new-lease-accounting-standards/",
+      "source": "FinQuery",
+      "format": "guide",
+      "length": null,
+      "note": "Full worked journal entries for initial recognition and subsequent measurement under ASC 842.",
+      "icon": null
+    },
+    {
+      "id": "fin-p29-t3-r1",
+      "topic_id": "fin-p29-t3",
+      "order_index": 1,
+      "title": "Deferred Tax Liability (DTL) | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/deferred-tax-liability-dtl/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "How book/tax timing differences create a deferred tax balance, with a worked calculation.",
+      "icon": null
+    },
+    {
+      "id": "fin-p29-t3-r2",
+      "topic_id": "fin-p29-t3",
+      "order_index": 2,
+      "title": "Net Operating Loss (NOL) - Tax Carryforward Rules",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/nol-tax-loss-carryforward/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How an NOL becomes a deferred tax asset and the valuation-allowance judgement behind it.",
+      "icon": null
+    },
+    {
+      "id": "fin-p29-t3-r3",
+      "topic_id": "fin-p29-t3",
+      "order_index": 3,
+      "title": "Stock Based Compensation (SBC) | Journal Entry + Examples",
+      "url": "https://www.wallstreetprep.com/knowledge/stock-based-compensation-sbc/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "SBC as a non-cash expense — journal entries, forecasting convention and the dilution it creates.",
+      "icon": null
+    },
+    {
+      "id": "fin-p29-t3-r4",
+      "topic_id": "fin-p29-t3",
+      "order_index": 4,
+      "title": "Net Operating Losses (NOLs) on the 3 Financial Statements",
+      "url": "https://www.youtube.com/watch?v=p_53cPDNxCQ",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Traces how an NOL and its deferred tax asset move through the income statement, balance sheet and cash flow statement together.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t1-r1",
+      "topic_id": "fin-p30-t1",
+      "order_index": 1,
+      "title": "Consolidation Accounting - Meaning, Rules, Example, Method",
+      "url": "https://www.wallstreetmojo.com/consolidation-accounting/",
+      "source": "WallStreetMojo",
+      "format": "article",
+      "length": null,
+      "note": "How 100% of a partly-owned subsidiary's statements get consolidated, with the NCI carve-out.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t1-r2",
+      "topic_id": "fin-p30-t1",
+      "order_index": 2,
+      "title": "Non-Controlling Interest (NCI) | Formula + Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/non-controlling-interest/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Where NCI sits on the balance sheet and how to back it out of enterprise value.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t1-r3",
+      "topic_id": "fin-p30-t1",
+      "order_index": 3,
+      "title": "Equity Method Accounting - Definition, Explanation, Examples",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/equity-method/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "The 20-50% ownership treatment — one-line consolidation of the investee's income.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t2-r1",
+      "topic_id": "fin-p30-t2",
+      "order_index": 1,
+      "title": "Modeling Goodwill for M&A and Impairment Testing",
+      "url": "https://macabacus.com/blog/modeling-goodwill-for-ma-and-impairment-testing",
+      "source": "Macabacus",
+      "format": "article",
+      "length": null,
+      "note": "How goodwill is created in a model and how the impairment test is structured.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t2-r2",
+      "topic_id": "fin-p30-t2",
+      "order_index": 2,
+      "title": "Goodwill Amortization | GAAP vs. Tax Accounting Criteria",
+      "url": "https://www.wallstreetprep.com/knowledge/goodwill-amortization-difference-gaap-tax-accounting/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Why goodwill is not amortized under GAAP book accounting but is periodically tested instead.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t2-r3",
+      "topic_id": "fin-p30-t2",
+      "order_index": 3,
+      "title": "Goodwill Impairment - Balance Sheet Accounting, Example, Definition",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/goodwill-impairment-accounting/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "The triggering events and income-statement impact of a goodwill write-down.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t3-r1",
+      "topic_id": "fin-p30-t3",
+      "order_index": 1,
+      "title": "Defined Benefit Plan - Definition, Types, Example, Explanation",
+      "url": "https://www.wallstreetmojo.com/defined-benefit-plan/",
+      "source": "WallStreetMojo",
+      "format": "article",
+      "length": null,
+      "note": "Why the employer bears the investment risk in a defined benefit plan, unlike a defined contribution plan.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t3-r2",
+      "topic_id": "fin-p30-t3",
+      "order_index": 2,
+      "title": "IAS 19 Explained: Accounting for Employee Benefits",
+      "url": "https://www.youtube.com/watch?v=Bz5qMIZbGJo",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Basic principles of defined contribution versus defined benefit accounting under IFRS.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t4-r1",
+      "topic_id": "fin-p30-t4",
+      "order_index": 1,
+      "title": "US GAAP vs. IFRS | Differences + Cheat Sheet",
+      "url": "https://www.wallstreetprep.com/knowledge/us-gaap-vs-ifrs-differences-similarities-examples-pdf-cheat-sheet/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "The LIFO, development-cost and cash-flow-classification differences that matter most for cross-border comps.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t4-r2",
+      "topic_id": "fin-p30-t4",
+      "order_index": 2,
+      "title": "IFRS vs. US GAAP - Definition, Differences, Terms",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/ifrs-vs-us-gaap/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "A second pass through the same differences, framed for an analyst reconciling two filings.",
+      "icon": null
+    },
+    {
+      "id": "fin-p30-t4-r3",
+      "topic_id": "fin-p30-t4",
+      "order_index": 3,
+      "title": "Indian GAAP, IFRS and Ind AS - A Comparison",
+      "url": "https://www.iasplus.com/en/publications/india/ifrs-and-ind-as",
+      "source": "IAS Plus (Deloitte)",
+      "format": "guide",
+      "length": null,
+      "note": "Deloitte's comparison of Ind AS against IFRS, including where India carved out its own treatment.",
+      "icon": null
+    },
+    {
+      "id": "fin-p31-t1-r1",
+      "topic_id": "fin-p31-t1",
+      "order_index": 1,
+      "title": "Bond Pricing Formula | How to Calculate Bond Price?",
+      "url": "https://www.wallstreetmojo.com/bond-pricing-formula/",
+      "source": "WallStreetMojo",
+      "format": "article",
+      "length": null,
+      "note": "Discounting a bond's coupons and principal at the market yield to arrive at its price, worked from the annuity-plus-lump-sum formula.",
+      "icon": null
+    },
+    {
+      "id": "fin-p31-t1-r2",
+      "topic_id": "fin-p31-t1",
+      "order_index": 2,
+      "title": "Should We Fear the Inverted Yield Curve?",
+      "url": "https://www.stlouisfed.org/publications/page-one-economics/2019/11/29/should-we-fear-the-inverted-yield-curve",
+      "source": "Federal Reserve Bank of St. Louis",
+      "format": "article",
+      "length": null,
+      "note": "The central bank's own explanation of normal versus inverted curves and why inversions have preceded past recessions.",
+      "icon": null
+    },
+    {
+      "id": "fin-p31-t1-r3",
+      "topic_id": "fin-p31-t1",
+      "order_index": 3,
+      "title": "The yield curve",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/stock-and-bonds/bonds-tutorial/v/the-yield-curve",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": null,
+      "note": "Sal Khan builds the yield curve concept up from treasury prices and yields.",
+      "icon": null
+    },
+    {
+      "id": "fin-p31-t2-r1",
+      "topic_id": "fin-p31-t2",
+      "order_index": 1,
+      "title": "Duration - Definition, Finance, Types, Formulas",
+      "url": "https://corporatefinanceinstitute.com/resources/fixed-income/duration/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Modified duration as the price-sensitivity measure — the core formula and a worked example.",
+      "icon": null
+    },
+    {
+      "id": "fin-p31-t2-r2",
+      "topic_id": "fin-p31-t2",
+      "order_index": 2,
+      "title": "Fixed Income Interest Rate Risk - Impact of bond features and convexity",
+      "url": "https://corporatefinanceinstitute.com/resources/fixed-income/fixed-income-interest-rate-risk/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Why convexity corrects duration's linear approximation for larger rate moves.",
+      "icon": null
+    },
+    {
+      "id": "fin-p31-t2-r3",
+      "topic_id": "fin-p31-t2",
+      "order_index": 3,
+      "title": "Bond Duration and Bond Convexity Explained",
+      "url": "https://www.youtube.com/watch?v=9GOfBq5Go9U",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Ryan O'Connell, CFA, FRM works duration and convexity together on worked bond examples.",
+      "icon": null
+    },
+    {
+      "id": "fin-p31-t3-r1",
+      "topic_id": "fin-p31-t3",
+      "order_index": 1,
+      "title": "Credit Spreads: Pricing Risk in Bonds",
+      "url": "https://www.pimco.com/lat/en/resources/education-center/fixed-income/credit-spreads-pricing-risk-in-bonds",
+      "source": "PIMCO",
+      "format": "article",
+      "length": null,
+      "note": "How a spread over the risk-free benchmark prices default risk, with real blue-chip vs. lower-rated examples.",
+      "icon": null
+    },
+    {
+      "id": "fin-p31-t3-r2",
+      "topic_id": "fin-p31-t3",
+      "order_index": 2,
+      "title": "Ratings and Spreads",
+      "url": "https://www.fe.training/free-resources/credit/ratings-and-spreads/",
+      "source": "Financial Edge Training",
+      "format": "article",
+      "length": null,
+      "note": "Connects a bond's credit rating directly to the spread the market prices it at.",
+      "icon": null
+    },
+    {
+      "id": "fin-p32-t1-r1",
+      "topic_id": "fin-p32-t1",
+      "order_index": 1,
+      "title": "The ABCs of Credit Ratings",
+      "url": "https://www.sec.gov/investor/alerts/ib_creditratings.pdf",
+      "source": "U.S. SEC",
+      "format": "pdf",
+      "length": null,
+      "note": "The regulator's own investor-education explainer on what a credit rating is and is not.",
+      "icon": null
+    },
+    {
+      "id": "fin-p32-t1-r2",
+      "topic_id": "fin-p32-t1",
+      "order_index": 2,
+      "title": "Understanding Credit Ratings",
+      "url": "https://www.spglobal.com/ratings/en/credit-ratings/about/understanding-credit-ratings",
+      "source": "S&P Global Ratings",
+      "format": "guide",
+      "length": null,
+      "note": "The AAA-to-D scale and what each rating band says about capacity to meet obligations, from the agency itself.",
+      "icon": null
+    },
+    {
+      "id": "fin-p32-t1-r3",
+      "topic_id": "fin-p32-t1",
+      "order_index": 3,
+      "title": "Corporate Methodology Overview",
+      "url": "https://methodologies.moodys.com/corporate-methodology-overview/content/index.html",
+      "source": "Moody's Ratings",
+      "format": "guide",
+      "length": null,
+      "note": "How Moody's scorecard and qualitative overlay actually combine into a corporate family rating.",
+      "icon": null
+    },
+    {
+      "id": "fin-p32-t2-r1",
+      "topic_id": "fin-p32-t2",
+      "order_index": 1,
+      "title": "Covenant-Lite Loans (Cov-Lite) | Debt Structure + Characteristics",
+      "url": "https://www.wallstreetprep.com/knowledge/covenant-lite-loans/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Why cov-lite structures replaced maintenance covenants with looser bond-style incurrence tests.",
+      "icon": null
+    },
+    {
+      "id": "fin-p32-t2-r2",
+      "topic_id": "fin-p32-t2",
+      "order_index": 2,
+      "title": "Breach of Covenant - Overview, Importance, and Examples",
+      "url": "https://corporatefinanceinstitute.com/resources/commercial-lending/breach-of-covenant/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "What contractually happens the moment a covenant is breached.",
+      "icon": null
+    },
+    {
+      "id": "fin-p32-t2-r3",
+      "topic_id": "fin-p32-t2",
+      "order_index": 3,
+      "title": "Legal & Documentation",
+      "url": "https://www.lsta.org/university/legal-documentation/",
+      "source": "LSTA",
+      "format": "guide",
+      "length": null,
+      "note": "The loan market's own trade association on how a credit agreement is actually structured and negotiated.",
+      "icon": null
+    },
+    {
+      "id": "fin-p33-t1-r1",
+      "topic_id": "fin-p33-t1",
+      "order_index": 1,
+      "title": "Forward Price - Overview, Formulas, and Worked Example",
+      "url": "https://corporatefinanceinstitute.com/resources/derivatives/forward-price/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "The cost-of-carry formula, including the currency-forward interest-rate-differential version.",
+      "icon": null
+    },
+    {
+      "id": "fin-p33-t1-r2",
+      "topic_id": "fin-p33-t1",
+      "order_index": 2,
+      "title": "Forward Contracts - What Are They, Vs Futures",
+      "url": "https://www.wallstreetmojo.com/forward-contracts/",
+      "source": "WallStreetMojo",
+      "format": "article",
+      "length": null,
+      "note": "How a forward contract is structured and used, as the base case before the futures comparison.",
+      "icon": null
+    },
+    {
+      "id": "fin-p33-t1-r3",
+      "topic_id": "fin-p33-t1",
+      "order_index": 3,
+      "title": "FRM: Cost of carry model to price forwards & futures",
+      "url": "https://www.youtube.com/watch?v=4ANPFbW_8BI",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "The cost-of-carry model worked through at FRM level, linking spot price to theoretical futures price.",
+      "icon": null
+    },
+    {
+      "id": "fin-p33-t2-r1",
+      "topic_id": "fin-p33-t2",
+      "order_index": 1,
+      "title": "Swap Rate - Definition, Role in Interest Rate and Currency Swaps",
+      "url": "https://corporatefinanceinstitute.com/resources/derivatives/swap-rate/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How the swap rate is set so the fixed and floating legs have equal value at inception.",
+      "icon": null
+    },
+    {
+      "id": "fin-p33-t2-r2",
+      "topic_id": "fin-p33-t2",
+      "order_index": 2,
+      "title": "FRM: How to value an interest rate swap",
+      "url": "https://www.youtube.com/watch?v=Y7SY5GJOtP0",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Values a plain-vanilla swap as the difference between a fixed-rate and a floating-rate bond.",
+      "icon": null
+    },
+    {
+      "id": "fin-p33-t3-r1",
+      "topic_id": "fin-p33-t3",
+      "order_index": 1,
+      "title": "Option Pricing Models - Definition, Types, How to Use",
+      "url": "https://corporatefinanceinstitute.com/resources/derivatives/option-pricing-models/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Contrasts the binomial lattice and Black-Scholes closed-form approaches and how one converges to the other.",
+      "icon": null
+    },
+    {
+      "id": "fin-p33-t3-r2",
+      "topic_id": "fin-p33-t3",
+      "order_index": 2,
+      "title": "Black Scholes Calculator - Free Template, Option Price",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/black-scholes-calculator/",
+      "source": "Corporate Finance Institute",
+      "format": "practice",
+      "length": null,
+      "note": "A free downloadable Black-Scholes template to price a call and stress-test each input.",
+      "icon": null
+    },
+    {
+      "id": "fin-p33-t4-r1",
+      "topic_id": "fin-p33-t4",
+      "order_index": 1,
+      "title": "Real Options and Rules of Thumb in Capital Budgeting",
+      "url": "https://www.kellogg.northwestern.edu/faculty/mcdonald/htm/realopt.pdf",
+      "source": "Robert L. McDonald, Kellogg School of Management",
+      "format": "pdf",
+      "length": null,
+      "note": "The academic treatment of real options — why volatility that hurts NPV can raise option value.",
+      "icon": null
+    },
+    {
+      "id": "fin-p33-t4-r2",
+      "topic_id": "fin-p33-t4",
+      "order_index": 2,
+      "title": "What are Real Options? - Real Options Valuation Method For Capital Budgeting Decisions",
+      "url": "https://www.youtube.com/watch?v=oOKSfUp0qls",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Introduces the option to expand, contract, delay and abandon a project and why NPV alone understates value.",
+      "icon": null
+    },
+    {
+      "id": "fin-p34-t1-r1",
+      "topic_id": "fin-p34-t1",
+      "order_index": 1,
+      "title": "Treasury Management: How Top Corporations Optimize Liquidity and Financial Risk",
+      "url": "https://corporatefinanceinstitute.com/resources/fpa/treasury-management/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "The treasury function's three pillars — liquidity, risk and capital allocation — with real company examples.",
+      "icon": null
+    },
+    {
+      "id": "fin-p34-t1-r2",
+      "topic_id": "fin-p34-t1",
+      "order_index": 2,
+      "title": "Cash vs. Liquidity in Corporate Finance and Accounting",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/cash-vs-liquidity/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Why a profitable company can still go bankrupt, and a liquid one almost never does.",
+      "icon": null
+    },
+    {
+      "id": "fin-p34-t2-r1",
+      "topic_id": "fin-p34-t2",
+      "order_index": 1,
+      "title": "Currency Forward - Definition, How It Works, Uses, Examples",
+      "url": "https://corporatefinanceinstitute.com/resources/foreign-exchange/currency-forward/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "How a corporate locks in a future exchange rate, and transaction versus translation risk.",
+      "icon": null
+    },
+    {
+      "id": "fin-p34-t2-r2",
+      "topic_id": "fin-p34-t2",
+      "order_index": 2,
+      "title": "Foreign Exchange Risks - What Are They, Types, Examples",
+      "url": "https://www.wallstreetmojo.com/foreign-exchange-risks/",
+      "source": "WallStreetMojo",
+      "format": "article",
+      "length": null,
+      "note": "Defines transaction, translation and economic exposure side by side, and why only some are hedgeable.",
+      "icon": null
+    },
+    {
+      "id": "fin-p34-t3-r1",
+      "topic_id": "fin-p34-t3",
+      "order_index": 1,
+      "title": "Interest Rate Risk | Definition + Example",
+      "url": "https://www.wallstreetprep.com/knowledge/interest-rate-risk/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "What rising and falling rates each do to a floating-rate borrower's interest expense.",
+      "icon": null
+    },
+    {
+      "id": "fin-p34-t3-r2",
+      "topic_id": "fin-p34-t3",
+      "order_index": 2,
+      "title": "Creating an interest rate risk management strategy",
+      "url": "https://www.usbank.com/corporate-and-commercial-banking/insights/credit-finance/lending/interest-rate-risk-management.html",
+      "source": "U.S. Bank",
+      "format": "article",
+      "length": null,
+      "note": "A lender's own guide to swaps and caps as the two standard ways corporates manage rate exposure.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t1-r1",
+      "topic_id": "fin-p35-t1",
+      "order_index": 1,
+      "title": "Efficient Frontier - Overview, How It Works, Example, Significance",
+      "url": "https://corporatefinanceinstitute.com/resources/capital-markets/efficient-frontier/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "The set of portfolios that maximise return for each level of risk, built up from Markowitz's original logic.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t1-r2",
+      "topic_id": "fin-p35-t1",
+      "order_index": 2,
+      "title": "Modern Portfolio Theory: Definition, Examples, & Limitations",
+      "url": "https://www.britannica.com/money/modern-portfolio-theory-explained",
+      "source": "Britannica Money",
+      "format": "article",
+      "length": null,
+      "note": "Why low or negative covariance between assets is what actually reduces portfolio risk, plus MPT's real-world limitations.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t1-r3",
+      "topic_id": "fin-p35-t1",
+      "order_index": 3,
+      "title": "Fama-French Three-Factor Model - Components, Formula & Uses",
+      "url": "https://corporatefinanceinstitute.com/resources/valuation/fama-french-three-factor-model/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Adds size and value factors to CAPM's single market factor and explains roughly 90% of return variation versus CAPM's 70%.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t2-r1",
+      "topic_id": "fin-p35-t2",
+      "order_index": 1,
+      "title": "Brinson Attribution Model: Allocation, Selection & Interaction",
+      "url": "https://ryanoconnellfinance.com/brinson-attribution-model/",
+      "source": "Ryan O'Connell, CFA",
+      "format": "article",
+      "length": null,
+      "note": "Walks the allocation, selection and interaction decomposition of a portfolio's active return.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t2-r2",
+      "topic_id": "fin-p35-t2",
+      "order_index": 2,
+      "title": "Performance Attribution",
+      "url": "https://rpc.cfainstitute.org/sites/default/files/-/media/documents/book/rf-lit-review/2019/rflr-performance-attribution.pdf",
+      "source": "CFA Institute Research Foundation",
+      "format": "pdf",
+      "length": null,
+      "note": "A literature-review-level treatment of how attribution methodology has developed since Brinson.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t3-r1",
+      "topic_id": "fin-p35-t3",
+      "order_index": 1,
+      "title": "Regression Analysis - Definition, Formulas, Explanation, Examples",
+      "url": "https://corporatefinanceinstitute.com/resources/data-science/regression-analysis/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "The linear regression mechanics that sit underneath every beta and factor loading in this phase.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t3-r2",
+      "topic_id": "fin-p35-t3",
+      "order_index": 2,
+      "title": "What is Beta in Finance? Formula & Examples",
+      "url": "https://corporatefinanceinstitute.com/resources/valuation/what-is-beta-guide/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Beta as a regression slope coefficient, worked from weekly stock and index returns.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t3-r3",
+      "topic_id": "fin-p35-t3",
+      "order_index": 3,
+      "title": "SLOPE Function - Definition, Formula, Example, Use",
+      "url": "https://corporatefinanceinstitute.com/resources/excel/slope-function-beta/",
+      "source": "Corporate Finance Institute",
+      "format": "practice",
+      "length": null,
+      "note": "Hands-on: compute beta directly in Excel with the SLOPE function on real return series.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t4-r1",
+      "topic_id": "fin-p35-t4",
+      "order_index": 1,
+      "title": "Monte Carlo Simulation - How it Works, Application",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/monte-carlo-simulation/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": null,
+      "note": "Repeated random sampling applied to portfolio risk analysis and project NPV — the base technique behind simulation-based VaR.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t4-r2",
+      "topic_id": "fin-p35-t4",
+      "order_index": 2,
+      "title": "Basics of Value-at-Risk (VaR): Parametric, Historical, and Monte Carlo",
+      "url": "https://www.youtube.com/watch?v=ThIYsyKXHds",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Compares the three standard ways to compute VaR side by side.",
+      "icon": null
+    },
+    {
+      "id": "fin-p35-t4-r3",
+      "topic_id": "fin-p35-t4",
+      "order_index": 3,
+      "title": "The Fed - 2026 Stress Test Scenarios",
+      "url": "https://www.federalreserve.gov/publications/2026-stress-test-scenarios.htm",
+      "source": "Federal Reserve",
+      "format": "guide",
+      "length": null,
+      "note": "The regulator's own baseline, adverse and severely-adverse scenarios used to stress-test bank capital.",
+      "icon": null
+    },
+    {
+      "id": "fin-p36-t1-r1",
+      "topic_id": "fin-p36-t1",
+      "order_index": 1,
+      "title": "Learning the Significance of Key Economic Indicators",
+      "url": "https://www.pimco.com/us/en/resources/education/learning-the-significance-of-key-economic-indicators",
+      "source": "PIMCO",
+      "format": "guide",
+      "length": null,
+      "note": "How a major asset manager reads GDP, inflation and rate indicators into a market view.",
+      "icon": null
+    },
+    {
+      "id": "fin-p36-t1-r2",
+      "topic_id": "fin-p36-t1",
+      "order_index": 2,
+      "title": "Understanding Economic Indicators and Market Trends",
+      "url": "https://www.youtube.com/watch?v=jKSR4uDp8gg",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "A finance-explainer walk-through of the indicators desks watch and why they matter to markets.",
+      "icon": null
+    },
+    {
+      "id": "fin-p36-t2-r1",
+      "topic_id": "fin-p36-t2",
+      "order_index": 1,
+      "title": "Overview of sustainable finance",
+      "url": "https://finance.ec.europa.eu/sustainable-finance/overview-sustainable-finance_en",
+      "source": "European Commission",
+      "format": "guide",
+      "length": null,
+      "note": "The regulator's own framing of sustainable finance and the disclosure rules behind it.",
+      "icon": null
+    },
+    {
+      "id": "fin-p36-t2-r2",
+      "topic_id": "fin-p36-t2",
+      "order_index": 2,
+      "title": "Principles of Responsible Investment",
+      "url": "https://www.unpri.org/about-us/what-are-the-principles-for-responsible-investment",
+      "source": "UN-backed Principles for Responsible Investment",
+      "format": "guide",
+      "length": null,
+      "note": "The six principles signatories commit to when they build ESG into investment decisions and ownership practice.",
+      "icon": null
+    },
+    {
+      "id": "fin-p36-t3-r1",
+      "topic_id": "fin-p36-t3",
+      "order_index": 1,
+      "title": "Code of Ethics and Standards of Professional Conduct",
+      "url": "https://www.cfainstitute.org/standards/professionals/code-ethics-standards",
+      "source": "CFA Institute",
+      "format": "guide",
+      "length": null,
+      "note": "The Code's core duties and the seven Standards of Professional Conduct, from the body that writes them.",
+      "icon": null
+    },
+    {
+      "id": "fin-p36-t3-r2",
+      "topic_id": "fin-p36-t3",
+      "order_index": 2,
+      "title": "Code of Ethics and Standards of Professional Conduct (2025 Level I CFA Exam – Ethics – Module 2)",
+      "url": "https://www.youtube.com/watch?v=_CYxBqNp3aI",
+      "source": "YouTube",
+      "format": "video",
+      "length": null,
+      "note": "Walks through the Code and Standards with worked exam-style examples of violations.",
+      "icon": null
     }
   ]
 }

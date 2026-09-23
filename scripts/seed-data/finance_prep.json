@@ -1,0 +1,2520 @@
+{
+  "track": {
+    "id": "finance-prep",
+    "name": "finance-prep",
+    "label": "Finance & Business Operations Prep",
+    "tier": "foundational",
+    "summary": "Everything a finance or operations role assumes on day one: accounting, the three statements, business math, corporate finance, how operations turn into numbers, and the tools to show your work.",
+    "domain": "finance",
+    "estimated_hours": 140,
+    "effort_per_week": "4-6 hrs",
+    "icon_key": "finance",
+    "published": true
+  },
+  "phases": [
+    {
+      "id": "fprep-p1",
+      "track_id": "finance-prep",
+      "order_index": 1,
+      "title": "Accounting Foundations I: The Equation, Debits & Credits",
+      "description": "The accounting equation and double-entry bookkeeping, the language every other topic in this course builds on.",
+      "estimated_weeks": "1",
+      "color": null
+    },
+    {
+      "id": "fprep-p2",
+      "track_id": "finance-prep",
+      "order_index": 2,
+      "title": "Accounting Foundations II: The Accounting Cycle & Adjustments",
+      "description": "How transactions flow from journal to trial balance, and why accrual accounting needs adjusting entries.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
+      "id": "fprep-p3",
+      "track_id": "finance-prep",
+      "order_index": 3,
+      "title": "Accounting Foundations III: Inventory, Depreciation & Closing the Books",
+      "description": "How companies allocate the cost of inventory and long-lived assets over time, and how the books are closed at period end.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
+      "id": "fprep-p4",
+      "track_id": "finance-prep",
+      "order_index": 4,
+      "title": "Reading the Three Financial Statements",
+      "description": "Turning the bookkeeping mechanics of Phases 1-3 into fluent reading of an income statement, balance sheet and cash flow statement, and how the three connect.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
+      "id": "fprep-p5",
+      "track_id": "finance-prep",
+      "order_index": 5,
+      "title": "Reading a Real Annual Report",
+      "description": "Where the statements live inside an actual 10-K or annual report, and the narrative sections (MD&A, footnotes, auditor's report) around them.",
+      "estimated_weeks": "1",
+      "color": null
+    },
+    {
+      "id": "fprep-p6",
+      "track_id": "finance-prep",
+      "order_index": 6,
+      "title": "Business Math for Finance",
+      "description": "The arithmetic every finance role assumes: growth rates and compounding, plus enough statistics and probability to read a variance or a forecast confidently.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
+      "id": "fprep-p7",
+      "track_id": "finance-prep",
+      "order_index": 7,
+      "title": "Time Value of Money & Corporate Finance Math",
+      "description": "A dollar today is worth more than a dollar tomorrow: present and future value, annuities and perpetuities, and the NPV/IRR decision rules built on them.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
+      "id": "fprep-p8",
+      "track_id": "finance-prep",
+      "order_index": 8,
+      "title": "Corporate Finance Fundamentals",
+      "description": "How a company finances itself, what that financing costs, and how it decides which projects are worth funding.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
+      "id": "fprep-p9",
+      "track_id": "finance-prep",
+      "order_index": 9,
+      "title": "Economics for Business",
+      "description": "The supply/demand and market-structure vocabulary behind pricing decisions, plus enough macro (GDP, inflation, rates, FX) to read business news intelligently.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
+      "id": "fprep-p10",
+      "track_id": "finance-prep",
+      "order_index": 10,
+      "title": "Business & Revenue Models, Cost Behaviour & Break-Even",
+      "description": "How a business actually makes money, how its costs behave as volume changes, and the break-even math that ties the two together.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
+      "id": "fprep-p11",
+      "track_id": "finance-prep",
+      "order_index": 11,
+      "title": "Costing Methods & Unit Economics",
+      "description": "How a company assigns cost to what it makes -- by job, by process, or by activity -- and how it boils a whole business down to the economics of one customer or unit.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
+      "id": "fprep-p12",
+      "track_id": "finance-prep",
+      "order_index": 12,
+      "title": "Working Capital, Cash & Supply Chain Basics",
+      "description": "How cash gets tied up in day-to-day operations -- inventory, receivables, payables -- and the basics of managing physical supply chains that drive those numbers.",
+      "estimated_weeks": "1-2",
+      "color": null
+    },
+    {
+      "id": "fprep-p13",
+      "track_id": "finance-prep",
+      "order_index": 13,
+      "title": "Budgeting Basics & Management Reporting",
+      "description": "How a company plans its year in numbers, and how it reports on itself internally once actual results come in.",
+      "estimated_weeks": "1",
+      "color": null
+    },
+    {
+      "id": "fprep-p14",
+      "track_id": "finance-prep",
+      "order_index": 14,
+      "title": "Entity Types, Business Law & Tax Basics",
+      "description": "The legal and tax shape a business takes -- sole proprietorship, LLC, corporation -- and the handful of tax and contract basics every finance role bumps into.",
+      "estimated_weeks": "1",
+      "color": null
+    },
+    {
+      "id": "fprep-p15",
+      "track_id": "finance-prep",
+      "order_index": 15,
+      "title": "Excel, PowerPoint & Business Writing for Finance",
+      "description": "The minimum tool fluency to show your work: enough Excel to build the models above, enough PowerPoint to present them, and enough business writing to explain them in a sentence.",
+      "estimated_weeks": "1",
+      "color": null
+    }
+  ],
+  "topics": [
+    {
+      "id": "fprep-p1-t1",
+      "phase_id": "fprep-p1",
+      "order_index": 1,
+      "title": "The Accounting Equation & Double-Entry Bookkeeping",
+      "section": null,
+      "tags": [
+        "accounting",
+        "fundamentals"
+      ],
+      "estimated_time": "2-3 hrs",
+      "description": "Assets = Liabilities + Equity is the identity every transaction must preserve. Understanding why keeps every later statement and model sane.",
+      "steps": [
+        {
+          "t": "Write the equation from memory",
+          "d": "State Assets = Liabilities + Equity for a sole proprietorship, and the equity/net-assets variants for a corporation and a nonprofit."
+        },
+        {
+          "t": "Work through five transactions",
+          "d": "Pick five simple transactions (cash sale, loan, purchase on credit, owner investment, expense paid) and show how each keeps the equation balanced."
+        },
+        {
+          "t": "Read the OpenStax chapter on the equation",
+          "d": "Read the relevant chapter of the free OpenStax accounting textbook and note how it defines an account."
+        },
+        {
+          "t": "Take the AccountingCoach quiz",
+          "d": "Score yourself on the accounting-equation quiz and redo any transaction type you got wrong."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p1-t2",
+      "phase_id": "fprep-p1",
+      "order_index": 2,
+      "title": "Debits, Credits, Journal Entries & T-Accounts",
+      "section": null,
+      "tags": [
+        "accounting",
+        "fundamentals",
+        "bookkeeping"
+      ],
+      "estimated_time": "3-4 hrs",
+      "description": "Debits and credits are just the mechanics for keeping the equation balanced. This topic drills the rules until they are automatic.",
+      "steps": [
+        {
+          "t": "Memorize the five account types' normal balances",
+          "d": "Write out whether assets, liabilities, equity, revenue and expenses normally carry debit or credit balances."
+        },
+        {
+          "t": "Journalize ten transactions",
+          "d": "Write journal entries for ten varied transactions, labelling each debit and credit."
+        },
+        {
+          "t": "Post to T-accounts",
+          "d": "Post your ten journal entries into T-accounts and total each one."
+        },
+        {
+          "t": "Watch a worked T-account example",
+          "d": "Watch the Farber Academy T-accounts video and compare its method to yours."
+        },
+        {
+          "t": "Retake until fluent",
+          "d": "Retake the AccountingCoach debits-and-credits quiz until you can do it without hesitating."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p2-t1",
+      "phase_id": "fprep-p2",
+      "order_index": 1,
+      "title": "The Accounting Cycle & Trial Balance",
+      "section": null,
+      "tags": [
+        "accounting",
+        "bookkeeping"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "The repeatable sequence -- journalize, post, trial balance, adjust, report, close -- that produces a company's books every period.",
+      "steps": [
+        {
+          "t": "List the cycle's steps in order",
+          "d": "Write out the accounting cycle from identifying a transaction through the post-closing trial balance."
+        },
+        {
+          "t": "Build a trial balance",
+          "d": "From a small set of T-accounts, list every account and balance into a trial balance and confirm debits equal credits."
+        },
+        {
+          "t": "Explain why it doesn't balance",
+          "d": "Deliberately introduce one error (a transposed number or a missed entry) and describe how you would find it from an unbalanced trial balance."
+        },
+        {
+          "t": "Compare a manual cycle to software",
+          "d": "Read how the same steps happen instantly inside accounting software today versus a manual ledger."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p2-t2",
+      "phase_id": "fprep-p2",
+      "order_index": 2,
+      "title": "Accruals, Deferrals & Adjusting Entries",
+      "section": null,
+      "tags": [
+        "accounting",
+        "accrual"
+      ],
+      "estimated_time": "2-3 hrs",
+      "description": "Why the books need adjusting before statements can be trusted: expenses and revenues that straddle period boundaries.",
+      "steps": [
+        {
+          "t": "Distinguish accrual from deferral",
+          "d": "State, in your own words, when you'd use an accrual adjusting entry versus a deferral adjusting entry."
+        },
+        {
+          "t": "Work an accrued-expense example",
+          "d": "Journalize the December accrual for a plumbing bill received in January, as in the AccountingCoach example."
+        },
+        {
+          "t": "Work a deferred-expense example",
+          "d": "Journalize splitting a six-month prepaid insurance payment across two accounting periods."
+        },
+        {
+          "t": "Write four more adjusting entries",
+          "d": "Create your own examples of accrued revenue, accrued expense, deferred revenue and deferred expense, and journalize each."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p2-t3",
+      "phase_id": "fprep-p2",
+      "order_index": 3,
+      "title": "Revenue Recognition Basics (Accrual Accounting)",
+      "section": null,
+      "tags": [
+        "accounting",
+        "revenue"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "The rule that revenue is recorded when earned, not when cash arrives -- the foundation later revenue-recognition standards build on.",
+      "steps": [
+        {
+          "t": "State the recognition rule",
+          "d": "Write the rule: revenue is recorded when earned/delivered, matched against when cash may arrive separately."
+        },
+        {
+          "t": "Trace three scenarios",
+          "d": "Work through cash-at-sale, bill-now-pay-later, and pay-in-advance scenarios and identify which account is debited alongside the revenue credit each time."
+        },
+        {
+          "t": "Contrast cash vs accrual",
+          "d": "Watch the Khan Academy video comparing accrual and cash accounting and note one case where they'd report different profit for the same month."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p3-t1",
+      "phase_id": "fprep-p3",
+      "order_index": 1,
+      "title": "Inventory Costing Methods (FIFO, LIFO, Weighted Average)",
+      "section": null,
+      "tags": [
+        "accounting",
+        "inventory"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "The cost-flow assumption a company chooses changes reported profit and inventory value even when nothing physical changes.",
+      "steps": [
+        {
+          "t": "Build one inventory ledger, three ways",
+          "d": "Take one sequence of purchases and one sale quantity, and compute COGS and ending inventory under FIFO, LIFO and weighted average."
+        },
+        {
+          "t": "Explain the profit gap",
+          "d": "In your own words, explain why LIFO produces lower gross profit than FIFO when costs are rising."
+        },
+        {
+          "t": "Identify which method fits which business",
+          "d": "Note which method suits perishable goods versus commodities, and why."
+        },
+        {
+          "t": "Take the AccountingCoach inventory quiz",
+          "d": "Check your understanding of cost-flow assumptions with the self-graded quiz."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p3-t2",
+      "phase_id": "fprep-p3",
+      "order_index": 2,
+      "title": "Depreciation & Amortization",
+      "section": null,
+      "tags": [
+        "accounting",
+        "fixed assets"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "How the cost of long-lived tangible and intangible assets is spread across the periods that benefit from them.",
+      "steps": [
+        {
+          "t": "Compute straight-line depreciation",
+          "d": "Take a cost, salvage value and useful life and compute annual straight-line depreciation."
+        },
+        {
+          "t": "Compute units-of-activity depreciation",
+          "d": "Recompute the same asset's depreciation using usage (e.g. machine hours) instead of time."
+        },
+        {
+          "t": "Distinguish amortization from depreciation",
+          "d": "State which kinds of assets are amortized versus depreciated, and why the distinction matters for a patent versus a machine."
+        },
+        {
+          "t": "Explain the choice to a manager",
+          "d": "Write two sentences explaining why a company might prefer straight-line versus an activity-based method for a given asset."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p3-t3",
+      "phase_id": "fprep-p3",
+      "order_index": 3,
+      "title": "Closing Entries & Preparing the Financial Statements",
+      "section": null,
+      "tags": [
+        "accounting",
+        "bookkeeping"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "The final step of the cycle: zeroing out temporary accounts into retained earnings so next period starts clean, and producing the statements.",
+      "steps": [
+        {
+          "t": "List which accounts close",
+          "d": "Identify which accounts are temporary (closed each period) versus permanent (carried forward)."
+        },
+        {
+          "t": "Journalize the closing entries",
+          "d": "From a small trial balance with revenue and expense accounts, write the closing entries into retained earnings."
+        },
+        {
+          "t": "Produce a post-closing trial balance",
+          "d": "List the balances that remain after closing and confirm only balance-sheet accounts appear."
+        },
+        {
+          "t": "Connect to the balance sheet",
+          "d": "Trace how the closed net income figure flows into the equity section of the balance sheet."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p4-t1",
+      "phase_id": "fprep-p4",
+      "order_index": 1,
+      "title": "The Income Statement",
+      "section": null,
+      "tags": [
+        "financial statements"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "Revenue down to net income, and the operating/non-operating distinctions that matter for interpretation.",
+      "steps": [
+        {
+          "t": "Label a real income statement",
+          "d": "Take a public company's income statement and label revenue, COGS, gross profit, operating expenses, operating income and net income."
+        },
+        {
+          "t": "Watch the Khan Academy walkthrough",
+          "d": "Watch the income-statement introduction video and note anything it defines differently than you expected."
+        },
+        {
+          "t": "Do the practice set",
+          "d": "Complete the Khan Academy 'Interpreting the Income Statement' practice exercises."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p4-t2",
+      "phase_id": "fprep-p4",
+      "order_index": 2,
+      "title": "The Balance Sheet",
+      "section": null,
+      "tags": [
+        "financial statements"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "Assets, liabilities and equity at a point in time, and how current vs. non-current items are ordered.",
+      "steps": [
+        {
+          "t": "Label a real balance sheet",
+          "d": "Take a public company's balance sheet and group each line into current assets, non-current assets, current liabilities, non-current liabilities and equity."
+        },
+        {
+          "t": "Confirm it balances",
+          "d": "Add up each side and confirm assets equal liabilities plus equity."
+        },
+        {
+          "t": "Do the practice set",
+          "d": "Complete the Khan Academy 'Interpreting the Balance Sheet' practice exercises."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p4-t3",
+      "phase_id": "fprep-p4",
+      "order_index": 3,
+      "title": "The Cash Flow Statement & Statement Linkages",
+      "section": null,
+      "tags": [
+        "financial statements"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "Why net income isn't cash, how the cash flow statement reconciles the two, and how all three statements tie together.",
+      "steps": [
+        {
+          "t": "Watch the basic cash flow statement video",
+          "d": "Watch Khan Academy's cash flow statement video and note the three sections: operating, investing, financing."
+        },
+        {
+          "t": "Trace one number across all three statements",
+          "d": "Pick net income from the income statement and trace where it appears (or is adjusted) in the cash flow statement and equity section of the balance sheet."
+        },
+        {
+          "t": "Read the AccountingCoach financial statements explanation",
+          "d": "Read the full explanation covering all three statements together and how they're presented."
+        },
+        {
+          "t": "Watch the balance-sheet/income-statement relationship video",
+          "d": "Watch this short video and write one sentence connecting retained earnings to net income."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p5-t1",
+      "phase_id": "fprep-p5",
+      "order_index": 1,
+      "title": "10-K Structure & Finding Filings on EDGAR",
+      "section": null,
+      "tags": [
+        "annual report",
+        "SEC"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "Where a real 10-K lives, its standard parts (Business, Risk Factors, MD&A, Financial Statements), and how to pull one up yourself.",
+      "steps": [
+        {
+          "t": "Read the SEC's own guide",
+          "d": "Read the SEC/Investor.gov guide on how to read a 10-K and note its list of key sections."
+        },
+        {
+          "t": "Open EDGAR and find a filing",
+          "d": "Use SEC EDGAR's company search to find and open a real company's most recent 10-K."
+        },
+        {
+          "t": "Map the sections",
+          "d": "Inside that 10-K, locate the Business, Risk Factors, MD&A and Financial Statements sections and note their item numbers."
+        },
+        {
+          "t": "Compare to a 10-Q",
+          "d": "Note from the SEC bulletin how a quarterly 10-Q differs from the annual 10-K in scope and detail."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p5-t2",
+      "phase_id": "fprep-p5",
+      "order_index": 2,
+      "title": "MD&A, Footnotes & the Auditor's Report",
+      "section": null,
+      "tags": [
+        "annual report"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "The narrative and disclosure layers around the numbers: management's own explanation, the fine print, and the independent check on it all.",
+      "steps": [
+        {
+          "t": "Read the SEC's beginners guide",
+          "d": "Read the SEC's Beginners' Guide to Financial Statements for its framing of what each statement and disclosure is for."
+        },
+        {
+          "t": "Read an MD&A section",
+          "d": "In the 10-K you opened last topic, read the MD&A and summarize its view of the year's performance in three sentences."
+        },
+        {
+          "t": "Skim the footnotes",
+          "d": "Open the notes to the financial statements in the same filing and identify the first note (accounting policies) and one other note that surprises you."
+        },
+        {
+          "t": "Find the auditor's report",
+          "d": "Locate the independent auditor's report in the filing and identify which opinion it gives (unqualified/clean, or otherwise)."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p6-t1",
+      "phase_id": "fprep-p6",
+      "order_index": 1,
+      "title": "Growth Rates, Percentages & Compounding",
+      "section": null,
+      "tags": [
+        "business math"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "Percentage growth and compounding show up in every model that follows -- revenue growth, interest, inflation, returns.",
+      "steps": [
+        {
+          "t": "Compute simple percentage growth",
+          "d": "Given a starting and ending value across one period, compute the percentage growth by hand."
+        },
+        {
+          "t": "Watch 'growing by a percentage'",
+          "d": "Watch the Khan Academy video and apply the same method to three of your own numbers."
+        },
+        {
+          "t": "Read the compound growth article",
+          "d": "Read Khan Academy's compound-growth article and contrast simple growth compounded once versus compounded across several periods."
+        },
+        {
+          "t": "Compute a CAGR",
+          "d": "Given a beginning and ending value over several years, compute the compound annual growth rate using the CAGR formula."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p6-t2",
+      "phase_id": "fprep-p6",
+      "order_index": 2,
+      "title": "Basic Statistics & Probability for Finance",
+      "section": null,
+      "tags": [
+        "business math",
+        "statistics"
+      ],
+      "estimated_time": "2-3 hrs",
+      "description": "Mean, variance, standard deviation and basic probability -- the vocabulary behind risk, forecasting error and 'expected value.'",
+      "steps": [
+        {
+          "t": "Compute mean and standard deviation by hand",
+          "d": "Take a small data set (e.g. six months of sales) and compute its mean and standard deviation."
+        },
+        {
+          "t": "Read the standard deviation article",
+          "d": "Read Khan Academy's article on the idea of spread and standard deviation, and restate in your own words what a bigger standard deviation means."
+        },
+        {
+          "t": "Explore Seeing Theory's probability chapters",
+          "d": "Work through Seeing Theory's basic probability and compound probability visualizations."
+        },
+        {
+          "t": "Work a probability word problem",
+          "d": "Solve one expected-value word problem (e.g. an insurance or a bet) using the probabilities and payoffs you're given."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p7-t1",
+      "phase_id": "fprep-p7",
+      "order_index": 1,
+      "title": "Present Value & Future Value",
+      "section": null,
+      "tags": [
+        "TVM",
+        "corporate finance"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "The core idea that money now is worth more than the same amount later, and the discounting math that quantifies it.",
+      "steps": [
+        {
+          "t": "Watch the Khan Academy time value of money video",
+          "d": "Watch the video and write the present-value formula PV = FV / (1+r)^n from memory afterward."
+        },
+        {
+          "t": "Compute a future value",
+          "d": "Given a present amount, a rate and a number of periods, compute the future value by hand."
+        },
+        {
+          "t": "Compute a present value",
+          "d": "Given a future amount, a rate and a number of periods, compute the present value by hand."
+        },
+        {
+          "t": "Watch present value 2 and 3",
+          "d": "Watch the follow-up Khan Academy videos and note how the discount rate changes the present value."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p7-t2",
+      "phase_id": "fprep-p7",
+      "order_index": 2,
+      "title": "Annuities & Perpetuities",
+      "section": null,
+      "tags": [
+        "TVM",
+        "corporate finance"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "Valuing a stream of equal payments, whether it ends after a fixed number of periods (annuity) or continues forever (perpetuity).",
+      "steps": [
+        {
+          "t": "Derive the ordinary annuity case",
+          "d": "Read the Wall Street Prep annuity page and work through its present-value-of-an-annuity example by hand."
+        },
+        {
+          "t": "Value a zero-growth perpetuity",
+          "d": "Given a fixed annual payment and a discount rate, compute PV = C / r."
+        },
+        {
+          "t": "Value a growing perpetuity",
+          "d": "Given a first-year payment, a discount rate and a growth rate, compute PV = C / (r - g) and note why r must exceed g."
+        },
+        {
+          "t": "Apply it to a real case",
+          "d": "Value a hypothetical preferred stock paying a fixed annual dividend as a perpetuity."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p7-t3",
+      "phase_id": "fprep-p7",
+      "order_index": 3,
+      "title": "NPV & IRR: The Capital Budgeting Decision Rules",
+      "section": null,
+      "tags": [
+        "TVM",
+        "corporate finance",
+        "capital budgeting"
+      ],
+      "estimated_time": "2-3 hrs",
+      "description": "How a company decides whether a project is worth doing: discount every cash flow back to today (NPV) or solve for the rate that makes NPV zero (IRR).",
+      "steps": [
+        {
+          "t": "Watch present value 4 and discounted cash flow",
+          "d": "Watch the Khan Academy video connecting present value to a full discounted cash flow."
+        },
+        {
+          "t": "Compute an NPV by hand",
+          "d": "Given an initial outlay and three years of cash flows, discount each and sum to a net present value."
+        },
+        {
+          "t": "Read the MIT OCW capital budgeting materials",
+          "d": "Read/skim the MIT Finance Theory I capital budgeting lecture and note its stated limitations of IRR versus NPV."
+        },
+        {
+          "t": "Explain the NPV vs IRR conflict",
+          "d": "Write two sentences on why NPV and IRR can disagree in ranking two mutually exclusive projects, and which rule wins."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p8-t1",
+      "phase_id": "fprep-p8",
+      "order_index": 1,
+      "title": "Debt vs. Equity Financing",
+      "section": null,
+      "tags": [
+        "corporate finance"
+      ],
+      "estimated_time": "1 hr",
+      "description": "The two basic ways a company raises money, and the different claims and risks each gives investors.",
+      "steps": [
+        {
+          "t": "Watch the equity vs debt video",
+          "d": "Watch Khan Academy's equity vs. debt video and write one sentence on what each investor type is owed."
+        },
+        {
+          "t": "List three differences",
+          "d": "Note three differences between debt and equity financing (repayment obligation, tax treatment, control/ownership)."
+        },
+        {
+          "t": "Classify three real securities",
+          "d": "Classify a bond, a share of common stock and a bank loan as debt or equity and justify each."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p8-t2",
+      "phase_id": "fprep-p8",
+      "order_index": 2,
+      "title": "Cost of Capital: Cost of Debt, Cost of Equity & WACC",
+      "section": null,
+      "tags": [
+        "corporate finance",
+        "valuation"
+      ],
+      "estimated_time": "2-3 hrs",
+      "description": "The blended rate a company must earn to satisfy everyone who has financed it -- the discount rate behind every NPV calculation.",
+      "steps": [
+        {
+          "t": "Compute a cost of debt",
+          "d": "Given a company's interest rate on debt and its tax rate, compute the after-tax cost of debt."
+        },
+        {
+          "t": "Compute a cost of equity with CAPM",
+          "d": "Given a risk-free rate, a beta and a market risk premium, compute the cost of equity using Ke = Rf + beta x ERP."
+        },
+        {
+          "t": "Blend them into WACC",
+          "d": "Given the market values of debt and equity, weight the two costs into a single WACC."
+        },
+        {
+          "t": "Read the Macabacus WACC page",
+          "d": "Read through a full worked WACC example and compare its structure to your own calculation."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p8-t3",
+      "phase_id": "fprep-p8",
+      "order_index": 3,
+      "title": "Capital Budgeting Basics: Payback Period & Choosing Among Rules",
+      "section": null,
+      "tags": [
+        "corporate finance",
+        "capital budgeting"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "The simplest capital budgeting rule (how fast do we get our money back?) and why it's used alongside, not instead of, NPV and IRR.",
+      "steps": [
+        {
+          "t": "Compute a payback period",
+          "d": "Given an initial outlay and a series of annual cash inflows, compute how many years it takes to recover the investment."
+        },
+        {
+          "t": "Name payback's blind spot",
+          "d": "State why payback period ignores the time value of money and cash flows after the payback point."
+        },
+        {
+          "t": "Read the capital budgeting methods chapter",
+          "d": "Read the OER chapter comparing payback, NPV and IRR and note when a company might still use payback despite its flaws."
+        },
+        {
+          "t": "Rank three projects",
+          "d": "Given three hypothetical projects' cash flows, rank them by payback period, then by NPV, and note if the rankings differ."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p9-t1",
+      "phase_id": "fprep-p9",
+      "order_index": 1,
+      "title": "Supply, Demand & Market Structures",
+      "section": null,
+      "tags": [
+        "economics",
+        "microeconomics"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "How price and quantity settle at equilibrium, and how that changes depending on how competitive the market is.",
+      "steps": [
+        {
+          "t": "Draw a supply-and-demand shift",
+          "d": "Sketch a market and show what happens to equilibrium price and quantity when demand increases."
+        },
+        {
+          "t": "Watch changes in market equilibrium",
+          "d": "Watch the Khan Academy video and check your sketch against its worked example."
+        },
+        {
+          "t": "Contrast the market structures",
+          "d": "List perfect competition, monopolistic competition, oligopoly and monopoly in order of pricing power, with one real example of each."
+        },
+        {
+          "t": "Explain why it matters for a business",
+          "d": "Write two sentences on how a company's pricing strategy would differ if it operated in a perfectly competitive market versus a monopoly."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p9-t2",
+      "phase_id": "fprep-p9",
+      "order_index": 2,
+      "title": "Macro Indicators: GDP, Inflation & Interest Rates",
+      "section": null,
+      "tags": [
+        "economics",
+        "macroeconomics"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "The handful of numbers -- GDP, CPI/inflation, interest rates -- that every business plan and forecast has to sit inside.",
+      "steps": [
+        {
+          "t": "Watch a GDP calculation video",
+          "d": "Watch the value-added or income/expenditure approach to GDP and note which approach makes more intuitive sense to you."
+        },
+        {
+          "t": "Read about GDP's limitations",
+          "d": "Watch or read the limitations-of-GDP material and list two things GDP doesn't capture."
+        },
+        {
+          "t": "Distinguish nominal from real interest",
+          "d": "Given a nominal rate and inflation rate, compute the approximate real interest rate."
+        },
+        {
+          "t": "Watch the inflation overview",
+          "d": "Watch Khan Academy's inflation overview video and write one sentence on who is helped and who is hurt by unexpected inflation."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p9-t3",
+      "phase_id": "fprep-p9",
+      "order_index": 3,
+      "title": "Foreign Exchange (FX) Basics",
+      "section": null,
+      "tags": [
+        "economics",
+        "FX"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "How currencies are priced against each other and why FX rates matter to any business that buys, sells or borrows across borders.",
+      "steps": [
+        {
+          "t": "Watch the currency exchange introduction",
+          "d": "Watch Khan Academy's video and write down, in your own words, what it means for a currency to 'strengthen' against another."
+        },
+        {
+          "t": "Convert a price both ways",
+          "d": "Given an exchange rate, convert a price from one currency to another and back."
+        },
+        {
+          "t": "Explain the impact on an exporter",
+          "d": "State how a stronger home currency affects a domestic exporter's competitiveness abroad."
+        },
+        {
+          "t": "Try the FX practice set",
+          "d": "Complete Khan Academy's foreign exchange market practice exercise."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p10-t1",
+      "phase_id": "fprep-p10",
+      "order_index": 1,
+      "title": "Business & Revenue Models",
+      "section": null,
+      "tags": [
+        "operations",
+        "business models"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "How a company decides what it sells, to whom, and how it gets paid -- subscription, transaction, service, affiliate and more.",
+      "steps": [
+        {
+          "t": "List five revenue models",
+          "d": "Name five distinct revenue models (e.g. subscription, transaction, service, affiliate, freemium) and one company that uses each."
+        },
+        {
+          "t": "Read the CMU revenue models note",
+          "d": "Read the Swartz Center for Entrepreneurship's revenue models overview and note which model best fits a business you know."
+        },
+        {
+          "t": "Map a business model canvas, lightly",
+          "d": "For one real company, write one sentence each on who its customer is, what it sells them, and how it gets paid."
+        },
+        {
+          "t": "Explain the business-model vs revenue-model distinction",
+          "d": "State in one sentence how a 'business model' (the whole value-creation story) differs from a 'revenue model' (just how money comes in)."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p10-t2",
+      "phase_id": "fprep-p10",
+      "order_index": 2,
+      "title": "Cost Behaviour: Fixed, Variable & Break-Even",
+      "section": null,
+      "tags": [
+        "operations",
+        "cost accounting"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "Which costs move with volume and which don't, and the point at which revenue finally covers them all.",
+      "steps": [
+        {
+          "t": "Classify ten costs",
+          "d": "Take ten costs from a hypothetical small business (rent, materials, hourly labor, insurance, etc.) and classify each as fixed or variable."
+        },
+        {
+          "t": "Watch the fixed/variable/marginal cost video",
+          "d": "Watch Khan Academy's video and check your classifications against its definitions."
+        },
+        {
+          "t": "Compute a break-even quantity",
+          "d": "Given fixed costs, price per unit and variable cost per unit, compute the break-even quantity using Fixed Costs / (Price - Variable Cost)."
+        },
+        {
+          "t": "Re-run it after a cost change",
+          "d": "Increase the variable cost per unit and recompute break-even, noting which direction it moves and why."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p10-t3",
+      "phase_id": "fprep-p10",
+      "order_index": 3,
+      "title": "Contribution Margin, CVP & Pricing Basics",
+      "section": null,
+      "tags": [
+        "operations",
+        "cost accounting",
+        "pricing"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "Contribution margin drives cost-volume-profit analysis and pricing decisions -- how much of each extra sale actually reaches profit.",
+      "steps": [
+        {
+          "t": "Compute contribution margin, in dollars and percent",
+          "d": "Given a selling price and variable cost per unit, compute the contribution margin per unit and the contribution margin ratio."
+        },
+        {
+          "t": "Solve a target-profit problem",
+          "d": "Given a target profit figure, compute the sales volume needed using the same contribution-margin logic as break-even."
+        },
+        {
+          "t": "Watch the price elasticity introduction",
+          "d": "Watch Khan Academy's video and compute one elasticity value using the midpoint method."
+        },
+        {
+          "t": "Connect elasticity to pricing",
+          "d": "State whether a company facing inelastic demand should raise or lower price to increase revenue, and why."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p11-t1",
+      "phase_id": "fprep-p11",
+      "order_index": 1,
+      "title": "Job Order Costing & Process Costing",
+      "section": null,
+      "tags": [
+        "cost accounting"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "Two ways to track manufacturing cost: per unique job (a custom order) or per continuous process (mass production).",
+      "steps": [
+        {
+          "t": "Read both AccountingCoach explanations",
+          "d": "Read the job-order-costing and process-costing pages and write one sentence defining each."
+        },
+        {
+          "t": "Classify five businesses",
+          "d": "For five different businesses (construction firm, soda bottler, consulting firm, furniture batch-maker, oil refinery), decide which costing method fits and why."
+        },
+        {
+          "t": "Read the Lumen 'Jobs v. Processes' chapter",
+          "d": "Read the chapter and note the structural difference in how Work in Process inventory accounts are set up under each method."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p11-t2",
+      "phase_id": "fprep-p11",
+      "order_index": 2,
+      "title": "Activity-Based Costing (ABC)",
+      "section": null,
+      "tags": [
+        "cost accounting"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "A more precise way to assign overhead: trace cost to the activities that actually drive it, then to the products that use those activities.",
+      "steps": [
+        {
+          "t": "Read the AccountingCoach ABC explanation",
+          "d": "Read the full explanation and note the difference between a traditional overhead allocation and an activity-based one."
+        },
+        {
+          "t": "Identify three cost drivers",
+          "d": "For a manufacturer, name three activities (e.g. machine setups, special testing, engineering changes) that could each be their own ABC cost pool."
+        },
+        {
+          "t": "Explain why low-volume products cost more under ABC",
+          "d": "State why a low-volume, highly customized product often gets assigned more overhead under ABC than under a simple machine-hours allocation."
+        },
+        {
+          "t": "Take the ABC quiz",
+          "d": "Check your understanding with the AccountingCoach activity-based-costing quiz."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p11-t3",
+      "phase_id": "fprep-p11",
+      "order_index": 3,
+      "title": "Unit Economics for a Business",
+      "section": null,
+      "tags": [
+        "operations",
+        "unit economics"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "Boiling a whole business down to the profitability of one customer or one unit sold -- the lens investors and operators both use to judge whether growth is healthy.",
+      "steps": [
+        {
+          "t": "Define CAC and LTV",
+          "d": "Write one-sentence definitions of customer acquisition cost and customer lifetime value."
+        },
+        {
+          "t": "Read the Visible.vc unit economics guide",
+          "d": "Read the guide and note the LTV:CAC ratio it flags as a healthy benchmark."
+        },
+        {
+          "t": "Read the a16z startup metrics piece",
+          "d": "Skim the a16z article and list three metrics beyond CAC/LTV that it says investors look at."
+        },
+        {
+          "t": "Compute a simple unit economics case",
+          "d": "Given a CAC, an average revenue per customer per month, a gross margin and a churn rate, estimate whether the LTV:CAC ratio is healthy."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p12-t1",
+      "phase_id": "fprep-p12",
+      "order_index": 1,
+      "title": "Working Capital & the Cash Conversion Cycle",
+      "section": null,
+      "tags": [
+        "working capital"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "Current assets minus current liabilities, and the cycle that shows how many days cash is tied up between paying suppliers and collecting from customers.",
+      "steps": [
+        {
+          "t": "Compute working capital",
+          "d": "Given a list of current assets and current liabilities, compute working capital and say whether it's healthy."
+        },
+        {
+          "t": "Compute current and quick ratios",
+          "d": "From the same numbers, compute the current ratio and the quick ratio, and explain why the quick ratio excludes inventory."
+        },
+        {
+          "t": "Compute a cash conversion cycle",
+          "d": "Given days inventory outstanding, days sales outstanding and days payable outstanding, compute CCC = DIO + DSO - DPO."
+        },
+        {
+          "t": "Explain how to shorten it",
+          "d": "Name one lever a company could pull on each of DIO, DSO and DPO to shorten its cash conversion cycle."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p12-t2",
+      "phase_id": "fprep-p12",
+      "order_index": 2,
+      "title": "Inventory & Supply Chain Fundamentals",
+      "section": null,
+      "tags": [
+        "operations",
+        "supply chain"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "The tradeoff between ordering too often (higher ordering cost) and ordering too much (higher holding cost) that sits behind every inventory decision.",
+      "steps": [
+        {
+          "t": "Compute an EOQ",
+          "d": "Given annual demand, order cost per order and holding cost per unit, compute the economic order quantity using EOQ = sqrt(2DS/H)."
+        },
+        {
+          "t": "Explain the tradeoff",
+          "d": "State in your own words why a bigger order quantity lowers ordering cost but raises holding cost."
+        },
+        {
+          "t": "Skim the MIT OCW supply chain course",
+          "d": "Skim the MIT logistics and supply chain management lecture notes and note one topic (e.g. risk pooling, multi-echelon planning) beyond basic EOQ."
+        },
+        {
+          "t": "Map a simple supply chain",
+          "d": "For a product you use, sketch its supply chain from raw material to your hands, in five steps or fewer."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p13-t1",
+      "phase_id": "fprep-p13",
+      "order_index": 1,
+      "title": "Budgeting Basics & the Master Budget",
+      "section": null,
+      "tags": [
+        "budgeting",
+        "FP&A"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "What a budget is for, and how individual budgets (sales, labor, materials) roll up into one master budget for the year.",
+      "steps": [
+        {
+          "t": "Read what a budget is for",
+          "d": "Read AccountingCoach's explanation of budgeting and note its stated purpose beyond just 'predicting the future.'"
+        },
+        {
+          "t": "Read the master budget introduction",
+          "d": "Read the Lumen Learning chapter and list which lower-level budgets typically roll up into a master budget."
+        },
+        {
+          "t": "Build a one-page mini budget",
+          "d": "For a small hypothetical business, sketch a one-page budget with revenue, a few cost lines, and a bottom-line profit projection."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p13-t2",
+      "phase_id": "fprep-p13",
+      "order_index": 2,
+      "title": "Management Reporting & Variance Basics",
+      "section": null,
+      "tags": [
+        "FP&A",
+        "management accounting"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "How internal reports differ from external financial statements, and the basic mechanics of comparing actual results to budget.",
+      "steps": [
+        {
+          "t": "Read what managerial accounting is",
+          "d": "Read AccountingCoach's explanation and note two ways internal reports can look different from GAAP financial statements."
+        },
+        {
+          "t": "Compute a simple variance",
+          "d": "Given a budgeted and an actual figure for one cost line, compute the variance and label it favorable or unfavorable."
+        },
+        {
+          "t": "Read the budget variances chapter",
+          "d": "Read the Lumen Learning chapter on budget variances and note what 'management by exception' means."
+        },
+        {
+          "t": "Explain a flexible budget in one sentence",
+          "d": "State why a flexible budget adjusts for actual volume before comparing costs, rather than comparing against the original fixed budget."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p14-t1",
+      "phase_id": "fprep-p14",
+      "order_index": 1,
+      "title": "Business Entity Types & Contract Basics",
+      "section": null,
+      "tags": [
+        "business law"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "How a business is legally organized changes who's liable, how it's taxed, and what a contract with it can bind.",
+      "steps": [
+        {
+          "t": "Read the SBA's structure guide",
+          "d": "Read the SBA's page comparing sole proprietorship, LLC and corporation, and note the liability and tax difference for each."
+        },
+        {
+          "t": "Pick a structure for a hypothetical business",
+          "d": "For a small hypothetical consulting business, decide which entity type you'd recommend and justify it in two sentences."
+        },
+        {
+          "t": "Read the Cornell LII contracts overview",
+          "d": "Read the Wex contracts category page and note the definition of a legally binding contract and which contracts must be in writing."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p14-t2",
+      "phase_id": "fprep-p14",
+      "order_index": 2,
+      "title": "Tax Basics for a Business",
+      "section": null,
+      "tags": [
+        "tax"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "The handful of tax types (income, self-employment, employment) a business owner or finance employee needs to recognize, even without doing the filing.",
+      "steps": [
+        {
+          "t": "List the general business tax types",
+          "d": "Read the IRS business-taxes page and list income tax, self-employment tax and employment tax with one sentence on who owes each."
+        },
+        {
+          "t": "Explain pass-through vs. corporate taxation",
+          "d": "State how an LLC's pass-through taxation differs from a C-corporation's, including the double-taxation point for corporate dividends."
+        },
+        {
+          "t": "Skim the small business tax guide",
+          "d": "Skim IRS Publication 334 and note one recordkeeping requirement that surprises you."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p15-t1",
+      "phase_id": "fprep-p15",
+      "order_index": 1,
+      "title": "Excel Quick-Start for Finance",
+      "section": null,
+      "tags": [
+        "excel",
+        "tools"
+      ],
+      "estimated_time": "2 hrs",
+      "description": "Just enough Excel -- SUM, AVERAGE, IF, a lookup function -- to build the small models used throughout this course. Dedicated Excel tracks go far deeper than this.",
+      "steps": [
+        {
+          "t": "Build a simple SUM/AVERAGE sheet",
+          "d": "Enter a small data set and compute totals and averages with SUM and AVERAGE."
+        },
+        {
+          "t": "Write an IF formula",
+          "d": "Write a formula that labels each row 'over budget' or 'on budget' based on a comparison."
+        },
+        {
+          "t": "Use a lookup function",
+          "d": "Use VLOOKUP or XLOOKUP to pull a matching value from a second table."
+        },
+        {
+          "t": "Browse ExcelJet's formula library",
+          "d": "Skim ExcelJet's formula reference and bookmark three functions you expect to need again in this course."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p15-t2",
+      "phase_id": "fprep-p15",
+      "order_index": 2,
+      "title": "PowerPoint Basics for Presenting Numbers",
+      "section": null,
+      "tags": [
+        "powerpoint",
+        "tools"
+      ],
+      "estimated_time": "1 hr",
+      "description": "Enough PowerPoint mechanics to turn an analysis into a handful of clear slides.",
+      "steps": [
+        {
+          "t": "Create a four-slide deck",
+          "d": "Following Microsoft's basic-tasks guide, create a title slide plus three content slides on any small topic."
+        },
+        {
+          "t": "Apply a theme and layout",
+          "d": "Apply one consistent theme and use appropriate slide layouts for a title, a bulleted list, and a chart or table slide."
+        },
+        {
+          "t": "Add one chart or table",
+          "d": "Insert one simple chart or table summarizing a small data set, and title it in one clear sentence."
+        }
+      ]
+    },
+    {
+      "id": "fprep-p15-t3",
+      "phase_id": "fprep-p15",
+      "order_index": 3,
+      "title": "Business Writing for Numbers",
+      "section": null,
+      "tags": [
+        "writing",
+        "communication"
+      ],
+      "estimated_time": "1 hr",
+      "description": "Turning an analysis into a short, clear written summary a busy reader can act on.",
+      "steps": [
+        {
+          "t": "Read the Purdue OWL clarity page",
+          "d": "Read the page on revising for clarity and rewrite one wordy sentence from your own recent work more concisely."
+        },
+        {
+          "t": "Read about prioritizing concerns",
+          "d": "Read Purdue OWL's page on prioritizing concerns in business writing and note what it says should come first in a business message."
+        },
+        {
+          "t": "Write a three-sentence summary",
+          "d": "Take any analysis you've done in this course and summarize it in exactly three sentences a manager could act on."
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "fprep-p1-r1",
+      "topic_id": "fprep-p1-t1",
+      "order_index": 1,
+      "title": "Accounting Equation: In-Depth Explanation with Examples",
+      "url": "https://www.accountingcoach.com/accounting-equation/explanation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "20 min",
+      "note": "Walks through how every transaction type keeps assets equal to liabilities plus equity, with worked examples.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p1-r2",
+      "topic_id": "fprep-p1-t1",
+      "order_index": 2,
+      "title": "Principles of Accounting, Volume 1: Financial Accounting",
+      "url": "https://openstax.org/details/books/principles-financial-accounting",
+      "source": "OpenStax",
+      "format": "guide",
+      "length": "~2 hrs for ch.1-2",
+      "note": "Free peer-reviewed textbook; read the opening chapters for a fuller treatment of the accounting equation and accounts.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p1-r3",
+      "topic_id": "fprep-p1-t1",
+      "order_index": 3,
+      "title": "Accounting and Financial Statements",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/accounting-and-financial-stateme",
+      "source": "Khan Academy",
+      "format": "course",
+      "length": "~3 hrs",
+      "note": "Free video course covering how the three statements are built from the accounting equation upward.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p1-r4",
+      "topic_id": "fprep-p1-t1",
+      "order_index": 4,
+      "title": "Accounting Equation Quiz and Test",
+      "url": "https://www.accountingcoach.com/accounting-equation/quiz",
+      "source": "AccountingCoach",
+      "format": "practice",
+      "length": "15 min",
+      "note": "Self-graded quiz to check you can apply the equation before moving on to debits and credits.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p1-r5",
+      "topic_id": "fprep-p1-t2",
+      "order_index": 5,
+      "title": "Debits and Credits: In-Depth Explanation with Examples",
+      "url": "https://www.accountingcoach.com/debits-and-credits/explanation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "25 min",
+      "note": "Explains the debit/credit rule for each account type and works through why expenses are debited and revenues credited.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p1-r6",
+      "topic_id": "fprep-p1-t2",
+      "order_index": 6,
+      "title": "How to Post Journal Entries to T-Accounts",
+      "url": "https://www.myaccountingcourse.com/accounting-cycle/t-accounts",
+      "source": "My Accounting Course",
+      "format": "article",
+      "length": "10 min",
+      "note": "Shows step by step how a journal entry is posted into the left (debit) and right (credit) sides of a T-account.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p1-r7",
+      "topic_id": "fprep-p1-t2",
+      "order_index": 7,
+      "title": "Accounting Fundamentals | T-Accounts: Debits and Credits",
+      "url": "https://www.youtube.com/watch?v=ZCS4JNB0HYg",
+      "source": "YouTube",
+      "format": "video",
+      "length": "10 min",
+      "note": "Worked video example of building T-accounts from a series of transactions.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p1-r8",
+      "topic_id": "fprep-p1-t2",
+      "order_index": 8,
+      "title": "Debits and Credits Quiz and Test",
+      "url": "https://www.accountingcoach.com/debits-and-credits/quiz",
+      "source": "AccountingCoach",
+      "format": "practice",
+      "length": "15 min",
+      "note": "Drills the debit/credit rule across all five account types until it's automatic.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p2-r1",
+      "topic_id": "fprep-p2-t1",
+      "order_index": 1,
+      "title": "What is the accounting cycle?",
+      "url": "https://www.accountingcoach.com/blog/accounting-cycle",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "10 min",
+      "note": "Lists the accounting-cycle steps from identifying a transaction to preparing an unadjusted trial balance.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p2-r2",
+      "topic_id": "fprep-p2-t1",
+      "order_index": 2,
+      "title": "What is a trial balance?",
+      "url": "https://www.accountingcoach.com/blog/what-is-a-trial-balance",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Explains what a trial balance lists and how it's used to catch debit/credit imbalances.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p2-r3",
+      "topic_id": "fprep-p2-t1",
+      "order_index": 3,
+      "title": "Accounting Cycle - Steps, Flow Chart, Example",
+      "url": "https://www.myaccountingcourse.com/accounting-cycle",
+      "source": "My Accounting Course",
+      "format": "guide",
+      "length": "15 min",
+      "note": "A second walk-through of the full cycle with a flow chart, useful for cross-checking your own list of steps.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p2-r4",
+      "topic_id": "fprep-p2-t2",
+      "order_index": 4,
+      "title": "Adjusting Entries: In-Depth Explanation with Examples",
+      "url": "https://www.accountingcoach.com/adjusting-entries/explanation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "25 min",
+      "note": "Full explanation of the categories of adjusting entries with worked journal entries for each.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p2-r5",
+      "topic_id": "fprep-p2-t2",
+      "order_index": 5,
+      "title": "What are accrual adjusting entries?",
+      "url": "https://www.accountingcoach.com/blog/what-are-accrual-adjusting-entries",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Worked example of an accrued expense (a repair bill received the following period) with the required entry.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p2-r6",
+      "topic_id": "fprep-p2-t2",
+      "order_index": 6,
+      "title": "What is a deferral adjusting entry?",
+      "url": "https://www.accountingcoach.com/blog/what-is-a-deferral-adjusting-entry",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Worked example of splitting a six-month prepaid insurance payment into monthly expense recognition.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p2-r7",
+      "topic_id": "fprep-p2-t3",
+      "order_index": 7,
+      "title": "What is the accrual basis of accounting?",
+      "url": "https://www.accountingcoach.com/blog/acrrual-basis-accounting",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "States the core rule that revenue is recorded when earned and expenses when incurred, regardless of cash timing.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p2-r8",
+      "topic_id": "fprep-p2-t3",
+      "order_index": 8,
+      "title": "Recognizing Revenue under the Accrual Basis",
+      "url": "https://content.one.lumenlearning.com/financialaccounting/chapter/recognizing-revenue-under-the-accrual-basis/",
+      "source": "Lumen Learning",
+      "format": "article",
+      "length": "15 min",
+      "note": "A second, more detailed treatment of when revenue should be recognized under accrual accounting, with examples.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p2-r9",
+      "topic_id": "fprep-p2-t3",
+      "order_index": 9,
+      "title": "Accrual basis of accounting (video)",
+      "url": "https://www.khanacademy.org/v/accrual-basis-of-accounting",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Video contrasting cash and accrual accounting outcomes for the same transactions.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p3-r1",
+      "topic_id": "fprep-p3-t1",
+      "order_index": 1,
+      "title": "Inventory and Cost of Goods Sold: In-Depth Explanation with Examples",
+      "url": "https://www.accountingcoach.com/inventory-and-cost-of-goods-sold/explanation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "30 min",
+      "note": "Works a full numeric example comparing FIFO and LIFO cost of goods sold and resulting gross profit.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p3-r2",
+      "topic_id": "fprep-p3-t1",
+      "order_index": 2,
+      "title": "What is the Weighted Average Method?",
+      "url": "https://www.myaccountingcourse.com/accounting-dictionary/weighted-average-method",
+      "source": "My Accounting Course",
+      "format": "article",
+      "length": "8 min",
+      "note": "Defines and walks through the weighted-average cost calculation missing from most FIFO/LIFO comparisons.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p3-r3",
+      "topic_id": "fprep-p3-t1",
+      "order_index": 3,
+      "title": "Inventory and Cost of Goods Sold Quiz and Test",
+      "url": "https://www.accountingcoach.com/inventory-and-cost-of-goods-sold/quiz",
+      "source": "AccountingCoach",
+      "format": "practice",
+      "length": "15 min",
+      "note": "Self-graded quiz to confirm you can apply each cost-flow assumption correctly.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p3-r4",
+      "topic_id": "fprep-p3-t2",
+      "order_index": 4,
+      "title": "Depreciation: In-Depth Explanation with Examples",
+      "url": "https://www.accountingcoach.com/depreciation/explanation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "30 min",
+      "note": "Covers straight-line and other depreciation methods with worked numeric examples.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p3-r5",
+      "topic_id": "fprep-p3-t2",
+      "order_index": 5,
+      "title": "What is the units-of-activity depreciation?",
+      "url": "https://www.accountingcoach.com/blog/what-is-the-units-of-activity-depreciation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Explains depreciating by usage (machine hours, units produced) instead of by the passage of time.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p3-r6",
+      "topic_id": "fprep-p3-t2",
+      "order_index": 6,
+      "title": "Amortization of Intangible Assets",
+      "url": "https://www.wallstreetprep.com/knowledge/intangible-assets-amortization/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "12 min",
+      "note": "Explains how intangible assets like patents and trademarks are amortized on a straight-line basis, distinct from depreciation.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p3-r7",
+      "topic_id": "fprep-p3-t3",
+      "order_index": 7,
+      "title": "closing entries definition and meaning",
+      "url": "https://www.accountingcoach.com/terms/C/closing-entries",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Defines closing entries and how they zero out revenue, expense and drawing accounts into retained earnings.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p3-r8",
+      "topic_id": "fprep-p3-t3",
+      "order_index": 8,
+      "title": "Bookkeeping: In-Depth Explanation with Examples",
+      "url": "https://www.accountingcoach.com/bookkeeping/explanation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "25 min",
+      "note": "Broader explanation that ties the trial balance, adjusting entries and closing process together into the full cycle.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p3-r9",
+      "topic_id": "fprep-p3-t3",
+      "order_index": 9,
+      "title": "What are the notes to the financial statements?",
+      "url": "https://www.accountingcoach.com/blog/what-are-the-notes-to-the-financial-statements",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Explains why footnotes exist and what the first note (accounting policies) typically covers -- a bridge into reading real statements next.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p4-r1",
+      "topic_id": "fprep-p4-t1",
+      "order_index": 1,
+      "title": "Introduction to the income statement (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/stock-and-bonds/valuation-and-investing/v/introduction-to-the-income-statement",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "12 min",
+      "note": "Walks through the structure of an income statement line by line from revenue to net income.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p4-r2",
+      "topic_id": "fprep-p4-t1",
+      "order_index": 2,
+      "title": "Interpreting the Income Statement (practice)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/accounting-and-financial-stateme/financial-statements-tutorial/e/interpreting-the-income-statement-2",
+      "source": "Khan Academy",
+      "format": "practice",
+      "length": "20 min",
+      "note": "Practice questions that check you can read and interpret a real income statement's line items.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p4-r3",
+      "topic_id": "fprep-p4-t2",
+      "order_index": 3,
+      "title": "Interpreting the Balance Sheet (practice)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/accounting-and-financial-stateme/financial-statements-tutorial/e/interpreting-the-balance-sheet",
+      "source": "Khan Academy",
+      "format": "practice",
+      "length": "20 min",
+      "note": "Practice questions on reading and classifying real balance-sheet line items.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p4-r4",
+      "topic_id": "fprep-p4-t2",
+      "order_index": 4,
+      "title": "Financial Statements: In-Depth Explanation with Examples",
+      "url": "https://www.accountingcoach.com/financial-statements/explanation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "30 min",
+      "note": "Explains the balance sheet's structure and its relationship to the other statements, with a sample layout.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p4-r5",
+      "topic_id": "fprep-p4-t3",
+      "order_index": 5,
+      "title": "Basic cash flow statement (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/accounting-and-financial-stateme/financial-statements-tutorial/v/basic-cash-flow-statement",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Introduces the operating, investing and financing sections of the cash flow statement.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p4-r6",
+      "topic_id": "fprep-p4-t3",
+      "order_index": 6,
+      "title": "Balance sheet and income statement relationship (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/accounting-and-financial-stateme/financial-statements-tutorial/v/balance-sheet-and-income-statement-relationship",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Shows how net income from the income statement flows into retained earnings on the balance sheet.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p4-r7",
+      "topic_id": "fprep-p4-t3",
+      "order_index": 7,
+      "title": "Comparing accrual and cash accounting (video)",
+      "url": "https://www.khanacademy.org/v/comparing-accrual-and-cash-accounting",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Clarifies why cash flow and net income diverge, motivating why a separate cash flow statement is needed.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p5-r1",
+      "topic_id": "fprep-p5-t1",
+      "order_index": 1,
+      "title": "How to Read a 10-K",
+      "url": "https://www.investor.gov/introduction-investing/getting-started/researching-investments/how-read-10-k",
+      "source": "Investor.gov (SEC)",
+      "format": "guide",
+      "length": "15 min",
+      "note": "The SEC's own investor-education page on the purpose and structure of a 10-K.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p5-r2",
+      "topic_id": "fprep-p5-t1",
+      "order_index": 2,
+      "title": "How to Read a 10-K/10-Q",
+      "url": "https://www.sec.gov/resources-for-investors/investor-alerts-bulletins/how-read-10-k10-q",
+      "source": "SEC",
+      "format": "guide",
+      "length": "15 min",
+      "note": "SEC investor bulletin distinguishing what's in a 10-K versus a 10-Q and how to find both.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p5-r3",
+      "topic_id": "fprep-p5-t1",
+      "order_index": 3,
+      "title": "How Do I Use EDGAR? - Search Filings",
+      "url": "https://www.sec.gov/search-filings/edgar-search-assistance/how-do-i-use-edgar",
+      "source": "SEC",
+      "format": "guide",
+      "length": "10 min",
+      "note": "Step-by-step instructions for searching EDGAR by company or by full text to find real filings.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p5-r4",
+      "topic_id": "fprep-p5-t2",
+      "order_index": 4,
+      "title": "Beginners' Guide to Financial Statement",
+      "url": "https://www.sec.gov/about/reports-publications/investorpubsbegfinstmtguide",
+      "source": "SEC",
+      "format": "guide",
+      "length": "20 min",
+      "note": "The SEC's own primer on why financial statements, MD&A and the auditor's opinion exist for investors.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p5-r5",
+      "topic_id": "fprep-p5-t2",
+      "order_index": 5,
+      "title": "AS 3101: The Auditor's Report on an Audit of Financial Statements When the Auditor Expresses an Unqualified Opinion",
+      "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS3101",
+      "source": "PCAOB",
+      "format": "guide",
+      "length": "15 min",
+      "note": "The actual standard governing what a clean auditor's opinion must say -- read the required-elements section to see what you're looking at in a real filing.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p6-r1",
+      "topic_id": "fprep-p6-t1",
+      "order_index": 1,
+      "title": "Compound growth (article)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/financial-literacy-library/x00068c881e87701c:banking/x00068c881e87701c:interest-from-savings-to-investing/a/compound-growth",
+      "source": "Khan Academy",
+      "format": "article",
+      "length": "10 min",
+      "note": "Explains how compounding applies the growth rate to the prior period's total, not just the original amount.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p6-r2",
+      "topic_id": "fprep-p6-t1",
+      "order_index": 2,
+      "title": "Growing by a percentage (video)",
+      "url": "https://www.khanacademy.org/math/algebra-home/alg-basic-eq-ineq/alg-old-school-equations/v/growing-by-a-percentage",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "8 min",
+      "note": "Worked example of computing a new value after a percentage increase, the building block for growth-rate math.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p6-r3",
+      "topic_id": "fprep-p6-t1",
+      "order_index": 3,
+      "title": "Compound Annual Growth Rate (CAGR)",
+      "url": "https://www.wallstreetprep.com/knowledge/cagr-compound-annual-growth-rate/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "12 min",
+      "note": "Gives the CAGR formula (Ending/Beginning)^(1/periods)-1 and shows how it smooths multi-year growth into one rate.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p6-r4",
+      "topic_id": "fprep-p6-t2",
+      "order_index": 4,
+      "title": "Statistics and Probability",
+      "url": "https://www.khanacademy.org/math/statistics-probability",
+      "source": "Khan Academy",
+      "format": "course",
+      "length": "self-paced",
+      "note": "Free course covering descriptive statistics, probability, distributions and inference -- pace yourself to the fundamentals sections.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p6-r5",
+      "topic_id": "fprep-p6-t2",
+      "order_index": 5,
+      "title": "The idea of spread and standard deviation (article)",
+      "url": "https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/a/introduction-to-standard-deviation",
+      "source": "Khan Academy",
+      "format": "article",
+      "length": "10 min",
+      "note": "Explains what standard deviation measures and why a more spread-out distribution has a larger one.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p6-r6",
+      "topic_id": "fprep-p6-t2",
+      "order_index": 6,
+      "title": "Seeing Theory: A Visual Introduction to Probability and Statistics",
+      "url": "https://seeing-theory.brown.edu/",
+      "source": "Brown University",
+      "format": "guide",
+      "length": "1-2 hrs",
+      "note": "Interactive visualizations of basic and compound probability, useful for building intuition beyond formulas.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p7-r1",
+      "topic_id": "fprep-p7-t1",
+      "order_index": 1,
+      "title": "Time value of money (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial/present-value/v/time-value-of-money",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Introduces why the timing of a cash flow changes its value and sets up present/future value.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p7-r2",
+      "topic_id": "fprep-p7-t1",
+      "order_index": 2,
+      "title": "Present value 2 (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial/present-value/v/present-value-2",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Works a present-value example with a specific discount rate and time horizon.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p7-r3",
+      "topic_id": "fprep-p7-t1",
+      "order_index": 3,
+      "title": "Present value 3 (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial/present-value/v/present-value-3",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Continues the present-value series with a further worked example building toward discounted cash flow.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p7-r4",
+      "topic_id": "fprep-p7-t2",
+      "order_index": 4,
+      "title": "Present Value of Annuity Calculator",
+      "url": "https://www.wallstreetprep.com/knowledge/annuity/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "12 min",
+      "note": "Explains the present value of an annuity as the discounted value of a fixed stream of future payments, with the formula and an example.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p7-r5",
+      "topic_id": "fprep-p7-t2",
+      "order_index": 5,
+      "title": "PV of Perpetuity - Formula (with Calculator)",
+      "url": "https://financeformulas.net/Perpetuity.html",
+      "source": "Finance Formulas",
+      "format": "article",
+      "length": "8 min",
+      "note": "Gives the basic PV = payment / discount-rate perpetuity formula and the growing-perpetuity variant, with when each applies.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p7-r6",
+      "topic_id": "fprep-p7-t3",
+      "order_index": 6,
+      "title": "Present value 4 (and discounted cash flow) (video)",
+      "url": "https://www.khanacademy.org/v/present-value-4-and-discounted-cash-flow",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "12 min",
+      "note": "Connects present-value discounting directly to building a discounted cash flow.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p7-r7",
+      "topic_id": "fprep-p7-t3",
+      "order_index": 7,
+      "title": "Capital Budgeting | Finance Theory I",
+      "url": "https://ocw.mit.edu/courses/15-401-finance-theory-i-fall-2008/pages/video-lectures-and-slides/capital-budgeting/",
+      "source": "MIT OpenCourseWare",
+      "format": "video",
+      "length": "~1.5 hrs",
+      "note": "Prof. Andrew Lo's lecture on the NPV rule and its alternatives, including IRR, the profitability index and capital rationing.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p8-r1",
+      "topic_id": "fprep-p8-t1",
+      "order_index": 1,
+      "title": "Equity vs. debt (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/stock-and-bonds/venture-capital-and-capital-markets/v/equity-vs-debt",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Explains debt as issuing bonds versus equity as issuing stock, and what each financing type obligates the company to do.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p8-r2",
+      "topic_id": "fprep-p8-t2",
+      "order_index": 2,
+      "title": "Capital Asset Pricing Model (CAPM)",
+      "url": "https://www.wallstreetprep.com/knowledge/capm-capital-asset-pricing-model/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "15 min",
+      "note": "Gives the CAPM formula (Ke = Rf + beta x ERP) with a worked example for computing cost of equity.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p8-r3",
+      "topic_id": "fprep-p8-t2",
+      "order_index": 3,
+      "title": "Weighted-Average Cost of Capital (WACC)",
+      "url": "https://macabacus.com/valuation/dcf-wacc",
+      "source": "Macabacus",
+      "format": "article",
+      "length": "20 min",
+      "note": "Full worked WACC calculation blending after-tax cost of debt and cost of equity by market-value weights.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p8-r4",
+      "topic_id": "fprep-p8-t3",
+      "order_index": 4,
+      "title": "Module 7: Capital Budgeting Methods",
+      "url": "https://uq.pressbooks.pub/introduction-financial-management/chapter/module-7-capital-budgeting-methods/",
+      "source": "University of Queensland (OER)",
+      "format": "guide",
+      "length": "30 min",
+      "note": "Free textbook chapter comparing payback period, NPV and IRR as capital budgeting decision rules.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p9-r1",
+      "topic_id": "fprep-p9-t1",
+      "order_index": 1,
+      "title": "Supply, demand, and market equilibrium",
+      "url": "https://www.khanacademy.org/economics-finance-domain/microeconomics/supply-demand-equilibrium",
+      "source": "Khan Academy",
+      "format": "course",
+      "length": "~2 hrs",
+      "note": "Free unit covering how supply and demand curves determine price and quantity.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p9-r2",
+      "topic_id": "fprep-p9-t1",
+      "order_index": 2,
+      "title": "Changes in market equilibrium (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/microeconomics/supply-demand-equilibrium/market-equilibrium-tutorial/v/changes-in-market-equilibrium",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Shows how a shift in supply or demand moves the equilibrium price and quantity.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p9-r3",
+      "topic_id": "fprep-p9-t1",
+      "order_index": 3,
+      "title": "Monopolies vs. perfect competition (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/ap-microeconomics/imperfect-competition/ap-monopolies-tutorial/v/monopolies-vs-perfect-competition",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "12 min",
+      "note": "Contrasts a price-taking, many-firm market with a single price-setting monopolist.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p9-r4",
+      "topic_id": "fprep-p9-t1",
+      "order_index": 4,
+      "title": "Oligopolies and monopolistic competition (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/ap-microeconomics/imperfect-competition/monopolistic-competition/v/oligopolies-and-monopolisitc-competition",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "12 min",
+      "note": "Covers the two market structures between perfect competition and monopoly: few sellers (oligopoly) and many differentiated sellers (monopolistic competition).",
+      "icon": null
+    },
+    {
+      "id": "fprep-p9-r5",
+      "topic_id": "fprep-p9-t2",
+      "order_index": 5,
+      "title": "Unit: Economic indicators and the business cycle",
+      "url": "https://www.khanacademy.org/economics-finance-domain/macroeconomics/macro-economic-indicators-and-the-business-cycle",
+      "source": "Khan Academy",
+      "format": "course",
+      "length": "~2 hrs",
+      "note": "Free unit covering GDP measurement, unemployment, inflation and where the economy sits in the business cycle.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p9-r6",
+      "topic_id": "fprep-p9-t2",
+      "order_index": 6,
+      "title": "Limitations of GDP (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/ap-macroeconomics/economic-iondicators-and-the-business-cycle/limitations-of-gdp/v/limitations-of-gdp-ap-macroeconomics-khan-academy",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Explains what GDP leaves out, such as non-market activity and distribution of income.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p9-r7",
+      "topic_id": "fprep-p9-t2",
+      "order_index": 7,
+      "title": "Nominal interest, real interest, and inflation calculations (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/ap-macroeconomics/ap-financial-sector/nominal-v-real-interest-rates-ap/v/nominal-interest-real-interest-and-inflation-calculations-ap-macroeconomics-khan-academy2",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Works through converting a nominal interest rate to a real rate given an inflation rate.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p9-r8",
+      "topic_id": "fprep-p9-t2",
+      "order_index": 8,
+      "title": "Inflation overview (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/inflation-tutorial/inflation-basics-tutorial/v/inflation-overview",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Introduces what inflation is and how it's measured, setting up the winners-and-losers discussion.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p9-r9",
+      "topic_id": "fprep-p9-t3",
+      "order_index": 9,
+      "title": "Currency exchange introduction (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/money-and-banking/currency-tutorial/v/currency-exchange-introduction",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "12 min",
+      "note": "Introduces how currency exchange rates are set and how they can fluctuate.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p9-r10",
+      "topic_id": "fprep-p9-t3",
+      "order_index": 10,
+      "title": "The foreign exchange market (practice)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/ap-macroeconomics/ap-open-economy-international-trade-and-finance/the-foreign-exchange-market/e/the-foreign-exchange-market",
+      "source": "Khan Academy",
+      "format": "practice",
+      "length": "20 min",
+      "note": "Practice questions applying supply and demand for currencies to predict exchange-rate movements.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p10-r1",
+      "topic_id": "fprep-p10-t1",
+      "order_index": 1,
+      "title": "Revenue Models (overview)",
+      "url": "https://www.cmu.edu/swartz-center-for-entrepreneurship/assets/revenue-models.march-2015.pdf",
+      "source": "Carnegie Mellon University",
+      "format": "pdf",
+      "length": "15 min",
+      "note": "A short university entrepreneurship-center note surveying common revenue models startups and businesses choose from.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p10-r2",
+      "topic_id": "fprep-p10-t1",
+      "order_index": 2,
+      "title": "Revenue Model - What Is It, Types, Examples, Vs Business Model",
+      "url": "https://www.wallstreetmojo.com/revenue-model/",
+      "source": "WallStreetMojo",
+      "format": "article",
+      "length": "15 min",
+      "note": "Walks through subscription, affiliate, production and other revenue-model types with named real-world examples.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p10-r3",
+      "topic_id": "fprep-p10-t2",
+      "order_index": 3,
+      "title": "Fixed, variable, and marginal cost (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/ap-microeconomics/production-cost-and-the-perfect-competition-model-temporary/short-run-production-costs/v/fixed-variable-and-marginal-cost",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Defines fixed, variable and marginal cost and works through calculating each for a simple production example.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p10-r4",
+      "topic_id": "fprep-p10-t2",
+      "order_index": 4,
+      "title": "How costs change when fixed and variable costs change (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/ap-microeconomics/production-cost-and-the-perfect-competition-model-temporary/short-run-production-costs/v/how-costs-change-when-fixed-and-variable-costs-change",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Shows how a shift in fixed or variable costs moves a firm's cost curves.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p10-r5",
+      "topic_id": "fprep-p10-t2",
+      "order_index": 5,
+      "title": "Break Even",
+      "url": "https://courses.lumenlearning.com/wm-managerialaccounting/chapter/break-even/",
+      "source": "Lumen Learning",
+      "format": "article",
+      "length": "15 min",
+      "note": "Gives the break-even formula (fixed costs divided by contribution margin per unit) with a worked example.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p10-r6",
+      "topic_id": "fprep-p10-t3",
+      "order_index": 6,
+      "title": "Contribution Margin",
+      "url": "https://courses.lumenlearning.com/wm-managerialaccounting/chapter/contribution-margin/",
+      "source": "Lumen Learning",
+      "format": "article",
+      "length": "15 min",
+      "note": "Defines contribution margin as sales minus variable costs and shows how it's used in CVP planning and target-profit analysis.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p10-r7",
+      "topic_id": "fprep-p10-t3",
+      "order_index": 7,
+      "title": "Introduction to price elasticity of demand (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/microeconomics/elasticity-tutorial/price-elasticity-tutorial/v/introduction-to-price-elasticity-of-demand-ap-microeconomics-khan-academy",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "12 min",
+      "note": "Introduces price elasticity as percent change in quantity divided by percent change in price, and elastic vs inelastic demand.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p10-r8",
+      "topic_id": "fprep-p10-t3",
+      "order_index": 8,
+      "title": "Price elasticity of demand using the midpoint method",
+      "url": "https://www.khanacademy.org/economics-finance-domain/microeconomics/elasticity-tutorial/price-elasticity-of-demand/a/price-elasticity-of-demand",
+      "source": "Khan Academy",
+      "format": "article",
+      "length": "10 min",
+      "note": "Works the midpoint-method elasticity calculation you'll use to check whether demand is elastic or inelastic.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p11-r1",
+      "topic_id": "fprep-p11-t1",
+      "order_index": 1,
+      "title": "What is job order costing?",
+      "url": "https://www.accountingcoach.com/blog/what-is-job-order-costing",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Defines job order costing and when it's used for custom or small-batch products.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p11-r2",
+      "topic_id": "fprep-p11-t1",
+      "order_index": 2,
+      "title": "What is process costing?",
+      "url": "https://www.accountingcoach.com/blog/what-is-process-costing",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Defines process costing for mass-produced, identical products moving through a continuous process.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p11-r3",
+      "topic_id": "fprep-p11-t1",
+      "order_index": 3,
+      "title": "Jobs v. Processes",
+      "url": "https://courses.lumenlearning.com/wm-managerialaccounting/chapter/jobs-v-processes/",
+      "source": "Lumen Learning",
+      "format": "article",
+      "length": "15 min",
+      "note": "Compares the account structures of job costing and process costing side by side, with real-business examples of each.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p11-r4",
+      "topic_id": "fprep-p11-t2",
+      "order_index": 4,
+      "title": "Activity Based Costing: In-Depth Explanation with Examples",
+      "url": "https://www.accountingcoach.com/activity-based-costing/explanation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "25 min",
+      "note": "Full explanation of how ABC assigns overhead to the activities that cause it, then to the products demanding those activities.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p11-r5",
+      "topic_id": "fprep-p11-t2",
+      "order_index": 5,
+      "title": "Activity Based Costing Quiz and Test",
+      "url": "https://www.accountingcoach.com/activity-based-costing/quiz",
+      "source": "AccountingCoach",
+      "format": "practice",
+      "length": "15 min",
+      "note": "Self-graded quiz to check you can apply ABC's logic rather than just recite its definition.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p11-r6",
+      "topic_id": "fprep-p11-t3",
+      "order_index": 6,
+      "title": "Unit Economics for Startups: Why It Matters and How To Calculate It",
+      "url": "https://visible.vc/blog/unit-economics/",
+      "source": "Visible.vc",
+      "format": "article",
+      "length": "15 min",
+      "note": "Explains CAC and LTV and the roughly 3:1 LTV:CAC ratio commonly used as a health benchmark.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p11-r7",
+      "topic_id": "fprep-p11-t3",
+      "order_index": 7,
+      "title": "16 More Startup Metrics",
+      "url": "https://a16z.com/16-more-startup-metrics/",
+      "source": "Andreessen Horowitz",
+      "format": "article",
+      "length": "20 min",
+      "note": "A working investor's list of metrics beyond CAC/LTV, including gross margin, ARPA and net dollar retention.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p12-r1",
+      "topic_id": "fprep-p12-t1",
+      "order_index": 1,
+      "title": "What is the difference between the current ratio and the quick ratio?",
+      "url": "https://www.accountingcoach.com/blog/what-is-the-difference-between-the-current-ratio-and-the-quick-ratio",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Explains both liquidity ratios and why the quick ratio strips out inventory and prepaid expenses.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p12-r2",
+      "topic_id": "fprep-p12-t1",
+      "order_index": 2,
+      "title": "Cash Conversion Cycle: Formula and Excel Examples",
+      "url": "https://breakingintowallstreet.com/kb/financial-statement-analysis/cash-conversion-cycle/",
+      "source": "Breaking Into Wall Street",
+      "format": "article",
+      "length": "20 min",
+      "note": "Full worked example (including a Target vs. Costco comparison) of computing DIO, DSO, DPO and the resulting CCC.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p12-r3",
+      "topic_id": "fprep-p12-t2",
+      "order_index": 3,
+      "title": "9.4: Inventory Models for Certain Demand - Economic Order Quantity (EOQ)",
+      "url": "https://biz.libretexts.org/Courses/Northeast_Wisconsin_Technical_College/Introduction_to_Operations_Management_(NWTC)/09:_Inventory_Management/9.04:_Inventory_Models_for_Certain_Demand_-_Economic_Order_Quantity_(EOQ)",
+      "source": "Business LibreTexts",
+      "format": "article",
+      "length": "20 min",
+      "note": "Free textbook chapter deriving the EOQ formula from the ordering-cost vs. holding-cost tradeoff.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p12-r4",
+      "topic_id": "fprep-p12-t2",
+      "order_index": 4,
+      "title": "Logistics and Supply Chain Management",
+      "url": "https://ocw.mit.edu/courses/esd-273j-logistics-and-supply-chain-management-fall-2009/",
+      "source": "MIT OpenCourseWare",
+      "format": "course",
+      "length": "self-paced",
+      "note": "Free MIT course covering multi-echelon inventory planning, EOQ models and supply chain strategy beyond the basics.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p13-r1",
+      "topic_id": "fprep-p13-t1",
+      "order_index": 1,
+      "title": "What is budgeting?",
+      "url": "https://www.accountingcoach.com/blog/what-is-budgeting",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Explains what budgeting is for: planning, coordinating and giving management a benchmark to compare actual results against.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p13-r2",
+      "topic_id": "fprep-p13-t1",
+      "order_index": 2,
+      "title": "Introduction to Operating Budgets",
+      "url": "https://courses.lumenlearning.com/wm-managerialaccounting/chapter/introduction-to-master-budget/",
+      "source": "Lumen Learning",
+      "format": "article",
+      "length": "15 min",
+      "note": "Shows how sales, labor, materials and cash budgets combine into one master budget for the year.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p13-r3",
+      "topic_id": "fprep-p13-t2",
+      "order_index": 3,
+      "title": "What is managerial accounting?",
+      "url": "https://www.accountingcoach.com/blog/what-is-managerial-accounting",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "8 min",
+      "note": "Explains how internal management reports differ from GAAP-required external financial statements, including department-level schedules.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p13-r4",
+      "topic_id": "fprep-p13-t2",
+      "order_index": 4,
+      "title": "Budget Variances",
+      "url": "https://courses.lumenlearning.com/wm-managerialaccounting/chapter/budget-variances/",
+      "source": "Lumen Learning",
+      "format": "article",
+      "length": "15 min",
+      "note": "Defines budget variance and explains the management-by-exception principle it supports.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p14-r1",
+      "topic_id": "fprep-p14-t1",
+      "order_index": 1,
+      "title": "Choose a business structure",
+      "url": "https://www.sba.gov/business-guide/launch-your-business/choose-business-structure",
+      "source": "U.S. Small Business Administration",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Compares sole proprietorship, LLC and corporation on liability protection, tax treatment and cost/complexity to form.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p14-r2",
+      "topic_id": "fprep-p14-t1",
+      "order_index": 2,
+      "title": "Contracts",
+      "url": "https://www.law.cornell.edu/wex/category/contracts",
+      "source": "Cornell Law School (Legal Information Institute)",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Free legal encyclopedia entry defining what makes an agreement a legally binding contract and which contracts must be written.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p14-r3",
+      "topic_id": "fprep-p14-t2",
+      "order_index": 3,
+      "title": "Business taxes",
+      "url": "https://www.irs.gov/businesses/business-taxes",
+      "source": "IRS",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Official IRS overview of the general types of business tax (income, self-employment, employment, excise) and who owes each.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p14-r4",
+      "topic_id": "fprep-p14-t2",
+      "order_index": 4,
+      "title": "Publication 334: Tax Guide for Small Business",
+      "url": "https://www.irs.gov/publications/p334",
+      "source": "IRS",
+      "format": "pdf",
+      "length": "skim, ~30 min",
+      "note": "The IRS's own small-business tax guide, covering recordkeeping, accounting periods/methods and filing requirements.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p15-r1",
+      "topic_id": "fprep-p15-t1",
+      "order_index": 1,
+      "title": "Excel Formulas",
+      "url": "https://exceljet.net/formulas",
+      "source": "ExcelJet",
+      "format": "guide",
+      "length": "self-paced reference",
+      "note": "A searchable reference of working Excel formula examples, including SUM, IF, VLOOKUP, XLOOKUP and INDEX/MATCH.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p15-r2",
+      "topic_id": "fprep-p15-t2",
+      "order_index": 2,
+      "title": "Basic tasks for creating a PowerPoint presentation",
+      "url": "https://support.microsoft.com/en-us/office/basic-tasks-for-creating-a-powerpoint-presentation-efbbc1cd-c5f1-4264-b48e-c8a7b0334e36",
+      "source": "Microsoft Support",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Official walkthrough of creating slides, choosing layouts and adding content in PowerPoint.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p15-r3",
+      "topic_id": "fprep-p15-t3",
+      "order_index": 3,
+      "title": "Revising for Clarity",
+      "url": "https://owl.purdue.edu/owl/subject_specific_writing/professional_technical_writing/revision_in_business_writing/revising_for_clarity.html",
+      "source": "Purdue OWL",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Shows how to trim a wordy business sentence down to only its essential words, with before/after examples.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p15-r4",
+      "topic_id": "fprep-p15-t3",
+      "order_index": 4,
+      "title": "Higher Order Concerns",
+      "url": "https://owl.purdue.edu/owl/subject_specific_writing/professional_technical_writing/prioritizing_your_concerns_for_effective_business_writing/index.html",
+      "source": "Purdue OWL",
+      "format": "guide",
+      "length": "10 min",
+      "note": "Explains what to prioritize -- audience, purpose, organization -- before worrying about grammar and word choice in a business message.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p15-r5",
+      "topic_id": "fprep-p15-t1",
+      "order_index": 5,
+      "title": "Overview of formulas in Excel",
+      "url": "https://support.microsoft.com/en-us/excel/get-started/overview-of-formulas-in-excel",
+      "source": "Microsoft Support",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Official Microsoft primer on how formulas work (starting with =) and how to build a simple SUM or AVERAGE formula.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p15-r6",
+      "topic_id": "fprep-p15-t2",
+      "order_index": 6,
+      "title": "Add a table to a slide",
+      "url": "https://support.microsoft.com/en-us/powerpoint/training/add-a-table-to-a-slide",
+      "source": "Microsoft Support",
+      "format": "guide",
+      "length": "10 min",
+      "note": "Shows how to insert a table (or a chart, via Insert) directly into a PowerPoint slide to present numbers.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p8-r5",
+      "topic_id": "fprep-p8-t1",
+      "order_index": 2,
+      "title": "Debt vs Equity Financing",
+      "url": "https://corporatefinanceinstitute.com/resources/commercial-lending/debt-vs-equity/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": "10 min",
+      "note": "Lays out the tradeoffs directly: cost, risk, control and repayment priority, and how the mix drives WACC.",
+      "icon": null
+    },
+    {
+      "id": "fprep-p8-r6",
+      "topic_id": "fprep-p8-t3",
+      "order_index": 2,
+      "title": "Capital Budgeting Best Practices",
+      "url": "https://corporatefinanceinstitute.com/resources/fpa/capital-budgeting-best-practices/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": "8 min",
+      "note": "How NPV, IRR and payback period are actually used together, and why sunk costs never belong in the decision.",
+      "icon": null
+    }
+  ]
+}

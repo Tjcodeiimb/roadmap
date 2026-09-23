@@ -85,7 +85,7 @@
       "tier": "advanced",
       "order_index": 8,
       "icon_key": "finance",
-      "estimated_hours": 200,
+      "estimated_hours": 340,
       "published": true
     },
     {
@@ -243,23 +243,28 @@
     },
     {
       "cohort_id": "finance-operator",
-      "track_id": "finance",
+      "track_id": "finance-prep",
       "order_index": 1
     },
     {
       "cohort_id": "finance-operator",
-      "track_id": "fpa-reporting",
+      "track_id": "finance",
       "order_index": 2
     },
     {
       "cohort_id": "finance-operator",
-      "track_id": "startup-finance",
+      "track_id": "fpa-reporting",
       "order_index": 3
     },
     {
       "cohort_id": "finance-operator",
-      "track_id": "consulting",
+      "track_id": "startup-finance",
       "order_index": 4
+    },
+    {
+      "cohort_id": "finance-operator",
+      "track_id": "consulting",
+      "order_index": 5
     },
     {
       "cohort_id": "founder",
