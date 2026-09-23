@@ -405,7 +405,7 @@ interface TrackDetailRow {
 export async function getTrackDetail(supabase: Client, trackId: string) {
   const { data: row, error } = await supabase
     .from("tracks")
-    .select("*, phases(*, topics(*, user_progress(status), resources(id, user_resource_progress(status))))")
+    .select("*, phases(*, topics(*, user_progress(status), resources(id, user_resource_progress!resource_id(status))))")
     .eq("id", trackId)
     .maybeSingle();
   // A real query error (a broken relationship, an RLS misconfiguration) and
@@ -546,13 +546,14 @@ export interface CreditedFrom {
 // resources -> user_resource_progress, all real FKs) replaces 5 fully
 // sequential round-trips with 1 — this is the core "learning loop" page.
 export async function getTopicDetail(supabase: Client, topicId: string) {
-  const { data: row } = await supabase
+  const { data: row, error } = await supabase
     .from("topics")
     .select(
-      "*, phases(*), user_progress(status), resources(*, user_resource_progress(status, credited_via_resource_id))"
+      "*, phases(*), user_progress(status), resources(*, user_resource_progress!resource_id(status, credited_via_resource_id))"
     )
     .eq("id", topicId)
     .maybeSingle();
+  if (error) console.error(`getTopicDetail(${topicId}):`, error.message);
   if (!row) return null;
 
   const { phases: phase, user_progress, resources: rawResources, ...topic } = row as unknown as TopicDetailRow;
@@ -646,16 +647,17 @@ interface ResourceDetailRow {
 // still scopes the embedded user_progress/user_resource_progress rows to
 // the caller, exactly as if queried directly.
 export async function getResourceDetail(supabase: Client, resourceId: string) {
-  const { data: row } = await supabase
+  const { data: row, error } = await supabase
     .from("resources")
     .select(
       "id, topic_id, order_index, title, url, source, format, length, note, provider, external_id, " +
         "duration_seconds, embeddable, icon_key, " +
-        "user_resource_progress(status, seconds_watched, last_position_seconds), " +
+        "user_resource_progress!resource_id(status, seconds_watched, last_position_seconds), " +
         "topics(id, title, phase_id, user_progress(status), phases(id, track_id, tracks(id, label, icon_key)))"
     )
     .eq("id", resourceId)
     .maybeSingle();
+  if (error) console.error(`getResourceDetail(${resourceId}):`, error.message);
   if (!row) return null;
 
   const r = row as unknown as ResourceDetailRow;
