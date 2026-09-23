@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { LayoutDashboard, UserRound, ShieldCheck } from "lucide-react";
-import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark, StackMark, TargetMark, ArticleMark } from "@/components/icons";
+import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark, TargetMark, ArticleMark } from "@/components/icons";
 import { uiTransition } from "@/lib/motion";
 import { trackColor, trackInk } from "@/lib/track-colors";
 import { CourseSwitcherTrigger } from "./course-switcher";
@@ -34,7 +34,6 @@ export function SidebarNav({
   const mainItems = [
     { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
     { href: "/marketplace", label: "Marketplace", icon: CompassMark },
-    { href: "/library", label: "Library", icon: StackMark },
   ];
 
   const courseItems = tracks.map((t) => ({

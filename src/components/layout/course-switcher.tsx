@@ -111,7 +111,7 @@ export function CourseSwitcherModal({
         go: () => {
           if (r.type === "track") router.push(`/track/${r.id}`);
           else if (r.type === "topic" && r.parentTrackId) router.push(`/track/${r.parentTrackId}/topic/${r.id}`);
-          else if (r.type === "resource") router.push(`/library/resource/${r.id}`);
+          else if (r.type === "resource" && r.parentTrackId) router.push(`/track/${r.parentTrackId}/resource/${r.id}`);
           else if (r.type === "cohort") router.push(`/marketplace/cohort/${r.id}`);
           else router.push("/skills");
         },
