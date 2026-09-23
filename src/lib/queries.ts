@@ -403,11 +403,17 @@ interface TrackDetailRow {
 // embedded under topics via its own FK) replaces 4 sequential round-trips
 // with 1 — this page is one of the most frequently visited in the app.
 export async function getTrackDetail(supabase: Client, trackId: string) {
-  const { data: row } = await supabase
+  const { data: row, error } = await supabase
     .from("tracks")
     .select("*, phases(*, topics(*, user_progress(status), resources(id, user_resource_progress(status))))")
     .eq("id", trackId)
     .maybeSingle();
+  // A real query error (a broken relationship, an RLS misconfiguration) and
+  // a genuinely nonexistent track both leave `row` empty, but they aren't
+  // the same problem — treating them identically renders the same "not
+  // found" page either way, hiding an actual bug behind a 404. Logging the
+  // error means it shows up in Vercel's function logs instead of vanishing.
+  if (error) console.error(`getTrackDetail(${trackId}):`, error.message);
   if (!row) return { track: null, phases: [] };
 
   const { phases: rawPhases, ...track } = row as unknown as TrackDetailRow;
