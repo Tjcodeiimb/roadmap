@@ -16,6 +16,8 @@ export const TRACK_FILES = [
   'finance.json',
   'consulting.json',
   'excel.json',
+  'excel_data.json',
+  'excel_finance.json',
   'psychology.json',
   'marketing.json',
   'data.json',
