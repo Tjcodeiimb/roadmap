@@ -40,6 +40,17 @@ export async function touchStreak() {
   return { data: data?.[0] ?? { current_streak: 0, longest_streak: 0 } };
 }
 
+// Called from the track and topic pages, before reading their data, so a
+// duplicate credit granted just now is already reflected in what renders.
+// No revalidatePath: this runs inline during the same request that renders
+// the page, not from a separate mutation the cache needs telling about.
+export async function creditDuplicateResources(trackId: string) {
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("credit_duplicate_resources", { p_track_id: trackId });
+  if (error) return { error: error.message };
+  return { success: true };
+}
+
 export async function completeOnboarding() {
   const supabase = await createClient();
   const {

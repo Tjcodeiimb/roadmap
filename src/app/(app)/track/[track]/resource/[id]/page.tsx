@@ -8,10 +8,21 @@ import { AutoCompleteOnOpen } from "@/components/resource/auto-complete-on-open"
 import { ICONS, FALLBACK_ICON } from "@/components/icons";
 import { trackColor, trackInk } from "@/lib/track-colors";
 
+// Formerly /library/resource/[id] — the library's own browsable index is
+// gone (every resource is reachable from its topic instead), but this page,
+// the actual place a resource gets watched/read and tracked, still needs
+// somewhere to live. It moved here, under the course it belongs to, rather
+// than being deleted with the rest of the library.
+//
+// The `track` route segment is cosmetic — same as the topic page's own
+// `track` param, it exists for the "back to topic" link, not for the query.
+// getResourceDetail resolves topic and track from the resource id alone, so
+// a stale or hand-edited track segment in the URL can never point this page
+// at the wrong resource; it only ever affects where "back" goes.
 export default async function ResourceDetailPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ track: string; id: string }>;
 }) {
   const { id } = await params;
   const supabase = await createClient();
@@ -21,12 +32,13 @@ export default async function ResourceDetailPage({
   const { resource, topic, track, status, secondsWatched, lastPositionSeconds } = detail;
   const Icon = ICONS[resource.icon_key ?? "web"] ?? FALLBACK_ICON;
   const metaParts = [resource.source, resource.format, resource.length].filter(Boolean);
+  const backHref = track ? `/track/${track.id}/topic/${topic.id}` : "/dashboard";
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-6">
       <AutoCompleteOnOpen resourceId={resource.id} alreadyDone={status === "done"} />
-      <Link href="/library" className="flex w-fit items-center gap-1 text-sm text-ink-2 hover:text-ink">
-        <ChevronLeft size={16} /> Back to library
+      <Link href={backHref} className="flex w-fit items-center gap-1 text-sm text-ink-2 hover:text-ink">
+        <ChevronLeft size={16} /> Back to topic
       </Link>
 
       <div className="flex items-start gap-3">

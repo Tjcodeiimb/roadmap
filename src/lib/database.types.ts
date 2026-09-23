@@ -344,6 +344,7 @@ export type Database = {
           last_position_seconds: number;
           completed_at: string | null;
           updated_at: string;
+          credited_via_resource_id: string | null;
         };
         Insert: {
           user_id: string;
@@ -353,6 +354,7 @@ export type Database = {
           last_position_seconds?: number;
           completed_at?: string | null;
           updated_at?: string;
+          credited_via_resource_id?: string | null;
         };
         Update: Partial<{
           user_id: string;
@@ -362,6 +364,7 @@ export type Database = {
           last_position_seconds: number;
           completed_at: string | null;
           updated_at: string;
+          credited_via_resource_id: string | null;
         }>;
         Relationships: [];
       };
@@ -566,6 +569,13 @@ export type Database = {
       };
       complete_resource: {
         Args: { p_resource_id: string };
+        Returns: string[];
+      };
+      // Credits any resource in this track that duplicates (same url) one the
+      // caller already completed elsewhere. Takes no user id for the same
+      // reason sync_topic_progress doesn't. Returns newly unlocked skill ids.
+      credit_duplicate_resources: {
+        Args: { p_track_id: string };
         Returns: string[];
       };
       // Derives a topic's status from how many of its resources are done.

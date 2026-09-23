@@ -11,7 +11,7 @@ export interface ResourceProgressResult {
 
 // Called on every progress flush from the player (every ~15s of accumulated
 // watch time, plus pause/ended). Only a completing call revalidates —
-// otherwise watching a video would bust the library/dashboard cache every
+// otherwise watching a video would bust the dashboard/track cache every
 // few seconds for no visible benefit.
 export async function updateResourceProgress(
   resourceId: string,
@@ -28,11 +28,10 @@ export async function updateResourceProgress(
   });
   if (error) return { success: false, error: error.message, unlockedSkillIds: [] };
   if (complete) {
-    revalidatePath("/library");
-    revalidatePath(`/library/resource/${resourceId}`);
     revalidatePath("/dashboard");
     // Completing a resource can now change its topic's status (and the next
-    // topic's), so the roadmap behind this page is stale too.
+    // topic's), so the roadmap and the resource's own page (both under
+    // /track) are stale too.
     revalidatePath("/track", "layout");
   }
   return { success: true, unlockedSkillIds: data ?? [] };
@@ -43,8 +42,6 @@ export async function completeResource(resourceId: string): Promise<ResourceProg
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("complete_resource", { p_resource_id: resourceId });
   if (error) return { success: false, error: error.message, unlockedSkillIds: [] };
-  revalidatePath("/library");
-  revalidatePath(`/library/resource/${resourceId}`);
   revalidatePath("/dashboard");
   revalidatePath("/track", "layout");
   return { success: true, unlockedSkillIds: data ?? [] };

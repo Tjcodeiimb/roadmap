@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getTopicDetail } from "@/lib/queries";
+import { creditDuplicateResources } from "@/app/actions/progress";
 import { ResourceCard } from "@/components/track/resource-card";
 import { TopicProgressHeader } from "@/components/track/topic-progress-header";
 import { Reveal } from "@/components/ui/reveal";
@@ -15,6 +16,9 @@ export default async function TopicPage({
 }) {
   const { track, topicId } = await params;
   const supabase = await createClient();
+  // See migration 0024 — credits any resource in this topic that duplicates
+  // one the learner already finished elsewhere, before reading progress.
+  await creditDuplicateResources(track);
   const detail = await getTopicDetail(supabase, topicId);
   if (!detail) notFound();
 
@@ -81,6 +85,7 @@ export default async function TopicPage({
               <Reveal key={r.id} index={i}>
               <ResourceCard
                 id={r.id}
+                track={track}
                 iconKey={r.icon_key}
                 title={r.title}
                 url={r.url}
@@ -89,6 +94,7 @@ export default async function TopicPage({
                 length={r.length}
                 note={r.note}
                 status={r.status}
+                creditedFrom={r.creditedFrom}
               />
               </Reveal>
             ))}

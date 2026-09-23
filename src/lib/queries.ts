@@ -523,8 +523,17 @@ interface TopicDetailRow {
     duration_seconds: number | null;
     embeddable: boolean;
     icon_key: string | null;
-    user_resource_progress: { status: string }[];
+    user_resource_progress: { status: string; credited_via_resource_id: string | null }[];
   }[];
+}
+
+// Label for a resource that was auto-completed because the learner already
+// finished an identical resource (same URL) somewhere else — see migration
+// 0024. Resolved in one extra query, only when this topic actually has any,
+// rather than joining it into the main select for every topic view.
+export interface CreditedFrom {
+  resourceTitle: string;
+  trackLabel: string;
 }
 
 // One nested select (topic -> phase, topic -> user_progress, topic ->
@@ -533,7 +542,9 @@ interface TopicDetailRow {
 export async function getTopicDetail(supabase: Client, topicId: string) {
   const { data: row } = await supabase
     .from("topics")
-    .select("*, phases(*), user_progress(status), resources(*, user_resource_progress(status))")
+    .select(
+      "*, phases(*), user_progress(status), resources(*, user_resource_progress(status, credited_via_resource_id))"
+    )
     .eq("id", topicId)
     .maybeSingle();
   if (!row) return null;
@@ -541,149 +552,61 @@ export async function getTopicDetail(supabase: Client, topicId: string) {
   const { phases: phase, user_progress, resources: rawResources, ...topic } = row as unknown as TopicDetailRow;
   const status = (user_progress?.[0]?.status as Status) ?? ("todo" as Status);
 
-  const resources = [...(rawResources ?? [])]
-    .sort((a, b) => a.order_index - b.order_index)
-    .map((res) => {
-      const { user_resource_progress, ...resFields } = res;
-      const rStatus = user_resource_progress?.[0]?.status;
-      return {
-        ...resFields,
-        status: (rStatus === "done" || status === "done"
-          ? "done"
-          : rStatus === "in_progress"
-            ? "in_progress"
-            : "todo") as ResourceBankStatus,
-      };
-    });
+  const sortedResources = [...(rawResources ?? [])].sort((a, b) => a.order_index - b.order_index);
+
+  const creditedFromIds = [
+    ...new Set(
+      sortedResources
+        .map((r) => r.user_resource_progress?.[0]?.credited_via_resource_id)
+        .filter((id): id is string => !!id)
+    ),
+  ];
+  const creditedFromById = creditedFromIds.length
+    ? await getCreditedFromLabels(supabase, creditedFromIds)
+    : new Map<string, CreditedFrom>();
+
+  const resources = sortedResources.map((res) => {
+    const { user_resource_progress, ...resFields } = res;
+    const rp = user_resource_progress?.[0];
+    const rStatus = rp?.status;
+    return {
+      ...resFields,
+      status: (rStatus === "done" || status === "done"
+        ? "done"
+        : rStatus === "in_progress"
+          ? "in_progress"
+          : "todo") as ResourceBankStatus,
+      creditedFrom: rp?.credited_via_resource_id
+        ? creditedFromById.get(rp.credited_via_resource_id) ?? null
+        : null,
+    };
+  });
 
   return { topic, phase, resources, status };
 }
 
-// ---------------------------------------------------------------------------
-// Library — one browsable bank of every resource across enrolled tracks,
-// plus per-resource progress for the embedded player.
-// ---------------------------------------------------------------------------
-
-export interface LibraryResource {
-  id: string;
-  title: string;
-  url: string;
-  source: string | null;
-  format: string | null;
-  length: string | null;
-  note: string | null;
-  iconKey: string | null;
-  provider: string | null;
-  embeddable: boolean;
-  durationSeconds: number | null;
-  topicId: string;
-  topicTitle: string;
-  trackId: string;
-  trackLabel: string;
-  trackIconKey: string | null;
-  status: ResourceBankStatus;
-  secondsWatched: number;
-  lastPositionSeconds: number;
-  updatedAt: string | null;
-}
-
-interface LibraryTrackRow {
-  id: string;
-  label: string;
-  icon_key: string | null;
-  phases: {
-    order_index: number;
-    topics: {
-      id: string;
-      title: string;
-      order_index: number;
-      user_progress: { status: string }[];
-      resources: {
-        id: string;
-        title: string;
-        url: string;
-        source: string | null;
-        format: string | null;
-        length: string | null;
-        note: string | null;
-        icon_key: string | null;
-        provider: string | null;
-        embeddable: boolean;
-        duration_seconds: number | null;
-        order_index: number;
-        user_resource_progress: {
-          status: string;
-          seconds_watched: number;
-          last_position_seconds: number;
-          updated_at: string;
-        }[];
-      }[];
-    }[];
-  }[];
-}
-
-// One nested select (tracks -> phases -> topics -> resources, with both
-// per-user progress tables embedded via their own FKs) replaces what used
-// to be 4 sequential content round-trips plus 2 more for progress.
-// Traversing in the query's own nested order (top-level tracks ordered by
-// `order_index`, sorted by the same field at each inner level) means the
-// result is already in track/topic order — no separate re-sort needed.
-export async function getLibraryResources(supabase: Client, trackIds: string[]): Promise<LibraryResource[]> {
-  if (!trackIds.length) return [];
-
+// Batched, not per-resource: called once per topic view with at most a
+// handful of ids (how many distinct resources in THIS topic were credited
+// from elsewhere), never once per resource.
+async function getCreditedFromLabels(
+  supabase: Client,
+  resourceIds: string[]
+): Promise<Map<string, CreditedFrom>> {
   const { data } = await supabase
-    .from("tracks")
-    .select(
-      "id, label, icon_key, phases(order_index, topics(id, title, order_index, user_progress(status), " +
-        "resources(id, title, url, source, format, length, note, icon_key, provider, embeddable, " +
-        "duration_seconds, order_index, user_resource_progress(status, seconds_watched, last_position_seconds, updated_at))))"
-    )
-    .in("id", trackIds)
-    .order("order_index");
+    .from("resources")
+    .select("id, title, topics(phases(tracks(label)))")
+    .in("id", resourceIds);
 
-  const tracks = (data ?? []) as unknown as LibraryTrackRow[];
-  const rows: LibraryResource[] = [];
-
-  for (const track of tracks) {
-    const phases = [...(track.phases ?? [])].sort((a, b) => a.order_index - b.order_index);
-    for (const phase of phases) {
-      const topics = [...(phase.topics ?? [])].sort((a, b) => a.order_index - b.order_index);
-      for (const topic of topics) {
-        const doneTopic = topic.user_progress?.[0]?.status === "done";
-        const resources = [...(topic.resources ?? [])].sort((a, b) => a.order_index - b.order_index);
-        for (const r of resources) {
-          const rp = r.user_resource_progress?.[0];
-          const status: ResourceBankStatus =
-            rp?.status === "done" || doneTopic ? "done" : rp?.status === "in_progress" ? "in_progress" : "todo";
-
-          rows.push({
-            id: r.id,
-            title: r.title,
-            url: r.url,
-            source: r.source,
-            format: r.format,
-            length: r.length,
-            note: r.note,
-            iconKey: r.icon_key,
-            provider: r.provider,
-            embeddable: r.embeddable,
-            durationSeconds: r.duration_seconds,
-            topicId: topic.id,
-            topicTitle: topic.title,
-            trackId: track.id,
-            trackLabel: track.label,
-            trackIconKey: track.icon_key,
-            status,
-            secondsWatched: rp?.seconds_watched ?? 0,
-            lastPositionSeconds: rp?.last_position_seconds ?? 0,
-            updatedAt: rp?.updated_at ?? null,
-          });
-        }
-      }
-    }
+  const map = new Map<string, CreditedFrom>();
+  for (const row of (data ?? []) as unknown as {
+    id: string;
+    title: string;
+    topics: { phases: { tracks: { label: string } | null } | null } | null;
+  }[]) {
+    const trackLabel = row.topics?.phases?.tracks?.label;
+    if (trackLabel) map.set(row.id, { resourceTitle: row.title, trackLabel });
   }
-
-  return rows;
+  return map;
 }
 
 interface ResourceDetailRow {
