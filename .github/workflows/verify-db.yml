@@ -1,0 +1,32 @@
+name: Verify database against seed files
+
+# Read-only. Compares the live content tables (tracks, phases, topics,
+# resources, skills, cohort and skill links) with scripts/seed-data and prints
+# what differs: rows the seed files no longer have, rows whose seed edits never
+# reached the database, and stale or missing links.
+#
+# It writes nothing and reads no learner data — only catalogue tables. Run it
+# after applying a migration, or any time the app looks out of step with git.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Compare database with seed files (read-only)
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/check-orphans.mjs
