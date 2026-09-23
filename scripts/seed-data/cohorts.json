@@ -8,7 +8,7 @@
       "tier": "foundational",
       "order_index": 1,
       "icon_key": "excel",
-      "estimated_hours": 115,
+      "estimated_hours": 190,
       "published": true
     },
     {
@@ -85,7 +85,7 @@
       "tier": "advanced",
       "order_index": 8,
       "icon_key": "finance",
-      "estimated_hours": 340,
+      "estimated_hours": 425,
       "published": true
     },
     {
@@ -108,18 +108,23 @@
     },
     {
       "cohort_id": "new-analyst-bootcamp",
-      "track_id": "consulting",
+      "track_id": "excel-data",
       "order_index": 2
     },
     {
       "cohort_id": "new-analyst-bootcamp",
-      "track_id": "sql-analytics",
+      "track_id": "consulting",
       "order_index": 3
     },
     {
       "cohort_id": "new-analyst-bootcamp",
-      "track_id": "fpa-reporting",
+      "track_id": "sql-analytics",
       "order_index": 4
+    },
+    {
+      "cohort_id": "new-analyst-bootcamp",
+      "track_id": "fpa-reporting",
+      "order_index": 5
     },
     {
       "cohort_id": "growth-operator",
@@ -253,18 +258,23 @@
     },
     {
       "cohort_id": "finance-operator",
-      "track_id": "fpa-reporting",
+      "track_id": "excel-finance",
       "order_index": 3
     },
     {
       "cohort_id": "finance-operator",
-      "track_id": "startup-finance",
+      "track_id": "fpa-reporting",
       "order_index": 4
     },
     {
       "cohort_id": "finance-operator",
-      "track_id": "consulting",
+      "track_id": "startup-finance",
       "order_index": 5
+    },
+    {
+      "cohort_id": "finance-operator",
+      "track_id": "consulting",
+      "order_index": 6
     },
     {
       "cohort_id": "founder",

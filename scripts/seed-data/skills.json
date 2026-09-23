@@ -6489,6 +6489,956 @@
       "icon_key": "sales",
       "xp_reward": 120,
       "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p1-t11",
+      "name": "Excel Tables & Structured References",
+      "domain": "excel",
+      "description": "Turn a plain range into a real Excel Table so formatting, formulas and filters survive as data grows, and reference columns by name instead of cell address.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p1-t12",
+      "name": "Logical, Text & Date Functions",
+      "domain": "excel",
+      "description": "The functions behind most real business logic: nested conditions, splitting and joining text, and date math for deadlines and durations.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p2-t11",
+      "name": "XLOOKUP, INDEX/MATCH/XMATCH — The Modern Lookup Toolkit",
+      "domain": "excel",
+      "description": "XLOOKUP replaces VLOOKUP in current Excel: it searches in any direction, defaults to an exact match, and pairs with XMATCH for more flexible position-finding.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p2-t12",
+      "name": "Sorting, Filtering & Cleaning Data at Scale",
+      "domain": "excel",
+      "description": "Go beyond a single click on the filter arrow: multi-level sorts, criteria-based filtering, and the fastest ways to clean up messy pasted data.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p5-t11",
+      "name": "Sparklines, Waterfall & Combo Charts",
+      "domain": "excel",
+      "description": "The advanced chart types business reporting actually calls for: a trend in one cell, a bridge from budget to actual, and two series on two scales.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p6-t11",
+      "name": "Power Query for Recurring Reports",
+      "domain": "excel",
+      "description": "Build a query once and refresh it every week instead of rebuilding the report by hand: folder imports, parameters, and refresh settings.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p6-t12",
+      "name": "VBA Fundamentals Beyond the Recorder",
+      "domain": "excel",
+      "description": "The macro recorder only gets you so far — variables, loops and conditionals let you write VBA that adapts instead of replaying the exact same clicks.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p7-t1",
+      "name": "Building a PivotTable for a Business Report",
+      "domain": "excel",
+      "description": "Turn a raw transaction export into a summary a manager can read in ten seconds, without writing a single formula.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p7-t2",
+      "name": "PivotCharts & Slicers",
+      "domain": "excel",
+      "description": "Make a PivotTable interactive: a chart that updates with it, and buttons anyone can click to change what's shown.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p7-t3",
+      "name": "Advanced Pivot Techniques",
+      "domain": "excel",
+      "description": "The techniques that separate a quick summary from a polished report: date grouping, percent-of-total, and pulling one number out with a formula.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p8-t1",
+      "name": "Goal Seek",
+      "domain": "excel",
+      "description": "Work backward from a target result to the input that produces it — the fastest of the three what-if tools when you only need to solve for one number.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p8-t2",
+      "name": "Scenario Manager",
+      "domain": "excel",
+      "description": "Save several named sets of assumptions — best case, worst case, likely case — and switch between them without retyping a single number.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p8-t3",
+      "name": "Data Tables (Sensitivity Tables)",
+      "domain": "excel",
+      "description": "See every combination of one or two inputs at once, in a grid, instead of checking scenarios one at a time.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p9-t1",
+      "name": "Dynamic Array Functions: FILTER, SORT, UNIQUE, SEQUENCE",
+      "domain": "excel",
+      "description": "Functions that return a whole range of results from one formula, spilling into the empty cells around it instead of needing to be copied down.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p9-t2",
+      "name": "LET — Naming Steps Inside a Formula",
+      "domain": "excel",
+      "description": "Give an intermediate calculation a name inside the formula itself, so a long formula reads like a short paragraph and only calculates each step once.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p9-t3",
+      "name": "LAMBDA — Writing Custom Functions",
+      "domain": "excel",
+      "description": "Turn a formula you keep rebuilding into your own named function, callable like SUM or VLOOKUP, with no VBA required.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p10-t1",
+      "name": "Budgets & Expense Trackers",
+      "domain": "excel",
+      "description": "A workbook that tracks planned vs. actual spend by category and flags an overspend automatically.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p10-t2",
+      "name": "Sales & Pipeline Trackers",
+      "domain": "excel",
+      "description": "A lightweight CRM: one row per deal, a stage for each, and a chart that shows where the pipeline is thin.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p10-t3",
+      "name": "Inventory Trackers",
+      "domain": "excel",
+      "description": "Track stock on hand by item, and get a clear signal for what to reorder before it runs out.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p11-t1",
+      "name": "Headcount Planning",
+      "domain": "excel",
+      "description": "Plan who's on the team, when they start, and what it costs — the workbook behind every hiring conversation.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p11-t2",
+      "name": "Project & Time Tracking",
+      "domain": "excel",
+      "description": "A simple Gantt-style project tracker plus a timesheet, without needing a separate project management tool.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p11-t3",
+      "name": "Invoicing Templates",
+      "domain": "excel",
+      "description": "A clean, reusable invoice: line items that total themselves, tax calculated automatically, and a design that looks professional.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p12-t1",
+      "name": "Co-authoring & Comments",
+      "domain": "excel",
+      "description": "Edit the same workbook as a colleague at the same time, and discuss the data in place instead of over email.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p12-t2",
+      "name": "Protecting Sheets & Workbooks",
+      "domain": "excel",
+      "description": "Stop a shared workbook from being edited by accident: lock formulas, lock the sheet structure, or require a password to open it at all.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p12-t3",
+      "name": "Version History & Safe Sharing",
+      "domain": "excel",
+      "description": "Recover from a bad edit, and check a workbook for anything you didn't mean to send before it goes out the door.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p13-t1",
+      "name": "Office Scripts — Automating Excel on the Web",
+      "domain": "excel",
+      "description": "The TypeScript-based successor to VBA macros for Excel on the web: record an action once, then run or share it as a button.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p13-t2",
+      "name": "Power Automate — Flows Triggered by Excel",
+      "domain": "excel",
+      "description": "Trigger an Office Script — or a whole workflow — from outside the workbook: a schedule, a new email, or a Microsoft Forms submission.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p13-t3",
+      "name": "Copilot in Excel",
+      "domain": "excel",
+      "description": "An AI assistant built into Excel that can explain a workbook, generate formulas, and surface insights you'd otherwise have to go find by hand.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p14-t1",
+      "name": "Formula Auditing & Error Checking",
+      "domain": "excel",
+      "description": "Find out what feeds a formula, what it feeds into, and why it's returning an error, before you trust the number it shows.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p14-t2",
+      "name": "Workbook Design & Documentation",
+      "domain": "excel",
+      "description": "Structure a workbook so someone who has never seen it — including you, in six months — can understand it in a few minutes.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p14-t3",
+      "name": "Performance & Common Pitfalls",
+      "domain": "excel",
+      "description": "Keep a large workbook fast, and avoid the handful of habits that quietly make every workbook slower and more fragile than it needs to be.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p1-t1",
+      "name": "Formulas, References & Conditional Aggregation",
+      "domain": "excel",
+      "description": "The formula mechanics — relative vs. absolute references — plus the conditional SUM/COUNT/AVERAGE functions an analyst writes daily.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p1-t2",
+      "name": "Excel Tables & Structured References",
+      "domain": "excel",
+      "description": "Convert ranges into Tables so formulas, PivotTables and Power Query all keep working as rows are added.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p1-t3",
+      "name": "Modern Lookups: XLOOKUP & INDEX/MATCH",
+      "domain": "excel",
+      "description": "The lookup toolkit analysts actually use: XLOOKUP for new workbooks, INDEX/MATCH for anywhere XLOOKUP isn't available.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p2-t1",
+      "name": "Text & Date Cleanup Functions",
+      "domain": "excel",
+      "description": "TRIM, CLEAN and the modern TEXTSPLIT family for stripping and slicing dirty text before it reaches a formula or a pivot.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p2-t2",
+      "name": "Flash Fill & Text to Columns",
+      "domain": "excel",
+      "description": "Split and reshape columns interactively, without writing a formula, when the pattern is simple and one-off.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p2-t3",
+      "name": "Duplicates, Blanks & Errors",
+      "domain": "excel",
+      "description": "A repeatable pass to catch the three things that quietly break downstream totals: duplicate rows, blank cells, and formula errors.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p3-t1",
+      "name": "FILTER, SORT, UNIQUE & SEQUENCE for Analysis",
+      "domain": "excel",
+      "description": "Four functions that spill a live, formula-driven extract onto the sheet — the core toolkit for ad hoc analysis without a helper table.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p3-t2",
+      "name": "LET — Naming Steps Inside a Formula",
+      "domain": "excel",
+      "description": "Break a long nested formula into named, reusable pieces so it calculates once and reads like a sentence.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p3-t3",
+      "name": "LAMBDA — Writing Custom, Reusable Functions",
+      "domain": "excel",
+      "description": "Package a LET formula into your own named function, callable anywhere in the workbook like a built-in.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p4-t1",
+      "name": "Connecting to Data: Files, Folders, Web & Databases",
+      "domain": "excel",
+      "description": "Power Query's four-phase model — Connect, Transform, Combine, Load — and the connectors an analyst reaches for most: folders, the web, and databases.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p4-t2",
+      "name": "Combining Queries: Merge, Append & Unpivot",
+      "domain": "excel",
+      "description": "The three moves that turn several ragged tables into one clean one: join sideways, stack vertically, and flatten wide layouts into long ones.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p4-t3",
+      "name": "Shaping Data: Custom Columns & the M Language",
+      "domain": "excel",
+      "description": "Go beyond the point-and-click transforms by writing custom columns and reading the M code behind every step.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p4-t4",
+      "name": "Parameters & Refresh: Making Queries Reusable",
+      "domain": "excel",
+      "description": "Parameterize a query so the same logic runs against a new file, date range or environment, then keep it current with refresh.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p5-t1",
+      "name": "Data Model, Relationships & Star Schema",
+      "domain": "excel",
+      "description": "Load multiple tables into Excel's Data Model and connect them with real relationships instead of VLOOKUPs, using a star schema so it stays fast and simple.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p5-t2",
+      "name": "DAX Fundamentals: CALCULATE & Filter Context",
+      "domain": "excel",
+      "description": "The one idea that unlocks DAX: every measure runs inside a filter context, and CALCULATE is how you change it.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p5-t3",
+      "name": "DAX Time Intelligence & Power Pivot Measures",
+      "domain": "excel",
+      "description": "Purpose-built DAX functions for year-to-date, prior-period and year-over-year measures, on top of a proper date table.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p3-t11",
+      "name": "Calculated Fields, Calculated Items & GETPIVOTDATA",
+      "domain": "excel",
+      "description": "Add a calculation directly inside a PivotTable, and pull a stable value out of one with a formula that survives layout changes.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p3-t12",
+      "name": "Grouping, Advanced Layouts & PivotTables from the Data Model",
+      "domain": "excel",
+      "description": "Group raw dates and numbers into readable buckets, and build a PivotTable straight from the Data Model instead of a single table.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p6-t1",
+      "name": "Descriptive Statistics & the Analysis ToolPak",
+      "domain": "excel",
+      "description": "Enable Excel's built-in statistics add-in and use it to generate a full summary — mean, median, std dev, kurtosis — in one pass instead of one formula at a time.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p6-t2",
+      "name": "Correlation & Regression",
+      "domain": "excel",
+      "description": "Quantify whether two variables move together, then fit a line through them and read what the ToolPak's regression output is actually telling you.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p6-t3",
+      "name": "Hypothesis Testing in Excel",
+      "domain": "excel",
+      "description": "Decide whether a difference between two groups is likely real, using a t-test and a properly interpreted p-value.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p7-t1",
+      "name": "Moving Averages & Seasonality",
+      "domain": "excel",
+      "description": "Smooth a noisy series with a moving average, then separate the seasonal pattern from the underlying trend.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p7-t2",
+      "name": "FORECAST.ETS & the Forecast Sheet",
+      "domain": "excel",
+      "description": "Let Excel's exponential-smoothing engine project a time series forward automatically, with a confidence interval attached.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p8-t1",
+      "name": "Setting Up Solver: Objective, Variables & Constraints",
+      "domain": "excel",
+      "description": "Translate a real optimization question — what mix maximizes profit? — into an objective cell, variable cells and constraints Solver can work with.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p8-t2",
+      "name": "Solver Methods & Sensitivity Reports",
+      "domain": "excel",
+      "description": "Pick the right solving method for the shape of your problem, then read the sensitivity report to see how robust the optimal answer really is.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p9-t1",
+      "name": "Analytical Chart Types: Histogram, Box Plot, Pareto, Scatter & Waterfall",
+      "domain": "excel",
+      "description": "Five chart types built to answer a specific analytical question — distribution, spread, the vital few causes, relationship, and the walk from one total to another.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p9-t2",
+      "name": "Interactive Dashboards: Slicers, Timelines & Layout",
+      "domain": "excel",
+      "description": "Turn a set of PivotTables and charts into a single-page dashboard a reader can filter themselves, without touching a formula.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p10-t1",
+      "name": "Getting Started with Python in Excel",
+      "domain": "excel",
+      "description": "Write your first =PY formula and see Python run in the cloud against your worksheet data, no separate install required.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p10-t2",
+      "name": "Python for Analysis: pandas & Visualization",
+      "domain": "excel",
+      "description": "Use the pandas, Matplotlib and Seaborn libraries that ship with Python in Excel to do analysis a formula alone would struggle with.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p11-t1",
+      "name": "Large Data & Performance",
+      "domain": "excel",
+      "description": "Diagnose why a big workbook has gone slow, and the specific habits — volatile functions, full-column references, unfolded queries — that usually cause it.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p11-t2",
+      "name": "Excel to Power BI: Making the Jump",
+      "domain": "excel",
+      "description": "Recognize the signals that a report has outgrown Excel, and see how far a Power Pivot Data Model already carries over to Power BI.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p12-t1",
+      "name": "Capstone: End-to-End Analysis Project",
+      "domain": "excel",
+      "description": "Every skill in this track, applied in sequence to one dataset: clean it, load it, model it, analyze it, forecast it, and present it on one page.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p1-t1",
+      "name": "Keyboard-Only Navigation & Shortcuts",
+      "domain": "excel",
+      "description": "Move around a workbook, select ranges, and switch sheets without ever touching the mouse — the baseline speed habit every finance role expects.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p1-t2",
+      "name": "Excel Options & Number Formats for Model Setup",
+      "domain": "excel",
+      "description": "Configure calculation settings and number formats before you start building, so the model behaves predictably later.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p2-t1",
+      "name": "Time Value of Money Functions",
+      "domain": "excel",
+      "description": "PV, FV, PMT, RATE and NPER — the five functions behind every loan, annuity and savings calculation.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p2-t2",
+      "name": "NPV, IRR, XIRR & MIRR",
+      "domain": "excel",
+      "description": "Discount a stream of cash flows and find its rate of return — and know when regular NPV/IRR are wrong.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p2-t3",
+      "name": "Depreciation & Date Functions for Models",
+      "domain": "excel",
+      "description": "Depreciate an asset three different ways and handle the date arithmetic that schedules and debt models depend on.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p3-t1",
+      "name": "Lookup Formulas: INDEX/MATCH, XLOOKUP & Why to Avoid OFFSET/INDIRECT",
+      "domain": "excel",
+      "description": "Robust ways to pull a value from a table, and why OFFSET and INDIRECT are a modelling liability even though they can do the same job.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p3-t2",
+      "name": "SUMIFS, SUMPRODUCT & Conditional Aggregation",
+      "domain": "excel",
+      "description": "Summing and counting by condition — the two workhorse functions behind every summary schedule and check row.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p3-t3",
+      "name": "Dynamic Arrays, LET & LAMBDA",
+      "domain": "excel",
+      "description": "Modern Excel 365 formulas that spill results across a range and let you name and reuse logic inside a single formula.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p4-t1",
+      "name": "Revenue & Opex Build",
+      "domain": "excel",
+      "description": "Forecast the top of the income statement from explicit business drivers instead of a hardcoded growth rate.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p4-t2",
+      "name": "Working Capital Schedule",
+      "domain": "excel",
+      "description": "Forecast operating assets and liabilities as a percent of sales or COGS, and turn that into the change in NWC the cash flow statement needs.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p4-t3",
+      "name": "PP&E / Capex & Depreciation Schedule",
+      "domain": "excel",
+      "description": "Roll forward gross PP&E, accumulated depreciation and net PP&E so capex, depreciation and the balance sheet all reconcile.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p5-t1",
+      "name": "Building a Debt Schedule",
+      "domain": "excel",
+      "description": "Track each tranche of debt — beginning balance, draws, repayments, interest, ending balance — across every forecast period.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p5-t2",
+      "name": "Circular References, Circuit Breakers & Iterative Calculation",
+      "domain": "excel",
+      "description": "Interest calculated on an average or ending debt balance feeds back into the cash flow that determines that same balance — handle the resulting circularity deliberately, not by accident.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p6-t1",
+      "name": "Discounted Cash Flow Model",
+      "domain": "excel",
+      "description": "Project unlevered free cash flow, discount it at WACC, and add a terminal value to get an intrinsic enterprise value.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p6-t2",
+      "name": "Trading & Transaction Comps Table",
+      "domain": "excel",
+      "description": "Value a company against what the market actually pays for similar businesses, using a clean, formula-driven comps table.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p7-t1",
+      "name": "LBO Model From Scratch",
+      "domain": "excel",
+      "description": "Fund an acquisition mostly with debt, run the target's cash flow through a debt paydown, and solve for the sponsor's return at exit.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p7-t2",
+      "name": "Merger Model & Accretion/Dilution Analysis",
+      "domain": "excel",
+      "description": "Combine an acquirer and target's financials, layer in the deal's financing, and test whether the combined EPS beats the acquirer's standalone EPS.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p8-t1",
+      "name": "Monte Carlo Fundamentals: RAND, NORM.INV & Distributions",
+      "domain": "excel",
+      "description": "Turn a single-point forecast into a probability distribution using nothing but built-in Excel functions.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p8-t2",
+      "name": "Data-Table-Driven Simulation & Tornado Charts",
+      "domain": "excel",
+      "description": "Repeat a randomized model thousands of times without an add-in, and rank which assumption actually drives the spread of outcomes.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p9-t1",
+      "name": "Football Field & Valuation Range Charts",
+      "domain": "excel",
+      "description": "Show several valuation methodologies' low-high ranges on one chart, the way a banker's fairness-opinion deck does.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p9-t2",
+      "name": "Waterfall / Bridge Charts",
+      "domain": "excel",
+      "description": "Show how a starting number is bridged to an ending number through a series of positive and negative steps.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p9-t3",
+      "name": "Variance Charts (Actual vs Budget)",
+      "domain": "excel",
+      "description": "Make a budget-vs-actual gap visible at a glance instead of buried in a table of numbers.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p10-t1",
+      "name": "Finance Dashboard Design Principles",
+      "domain": "excel",
+      "description": "The layout and formatting choices that make a dashboard readable in thirty seconds instead of five minutes.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p10-t2",
+      "name": "Building an Excel Finance Dashboard",
+      "domain": "excel",
+      "description": "Wire slicers and dynamic titles into a dashboard so one control updates every chart and KPI on the page at once.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p11-t1",
+      "name": "VBA Fundamentals for Analysts",
+      "domain": "excel",
+      "description": "Record your first macro, then read and edit the code it generates in the Visual Basic Editor.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p11-t2",
+      "name": "Loops, Automation & Report Generation",
+      "domain": "excel",
+      "description": "Repeat an action across a range, a collection of sheets, or a folder of files instead of doing it by hand.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p11-t3",
+      "name": "User-Defined Functions (UDFs) for Finance",
+      "domain": "excel",
+      "description": "Write your own worksheet function in VBA when nothing built into Excel does the calculation you need.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p12-t1",
+      "name": "Power Query Fundamentals for Finance Data",
+      "domain": "excel",
+      "description": "Connect, transform and load data through Power Query's editor instead of formulas or copy-paste.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p12-t2",
+      "name": "Cleaning & Combining GL Extracts and Bank Statements",
+      "domain": "excel",
+      "description": "Turn a messy general ledger or bank export into a clean, analysis-ready table every time it refreshes.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p12-t3",
+      "name": "Multi-Entity / Multi-File Consolidations",
+      "domain": "excel",
+      "description": "Combine a folder of identically structured entity or period files into one consolidated table that updates itself.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p13-t1",
+      "name": "Timed Modelling Speed Drills",
+      "domain": "excel",
+      "description": "Deliberate, timed repetition — not more new material — is what actually makes shortcuts and formulas automatic.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p14-t1",
+      "name": "Practice Case Studies & Modelling Tests",
+      "domain": "excel",
+      "description": "Everything from this track, applied under a clock, against a case study you haven't seen before.",
+      "tier": "advanced",
+      "icon_key": "excel",
+      "xp_reward": 120,
+      "threshold": 0
     }
   ],
   "skill_resources": [
@@ -12891,6 +13841,1146 @@
     {
       "skill_id": "skill-topic-pb-p6-t3",
       "resource_id": "pb-p6-r6"
+    },
+    {
+      "skill_id": "skill-topic-exc-p1-t1",
+      "resource_id": "exc-p1-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p1-t2",
+      "resource_id": "exc-p1-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p1-t3",
+      "resource_id": "exc-p1-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p1-t11",
+      "resource_id": "exc-p1-t11-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p1-t11",
+      "resource_id": "exc-p1-t11-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p1-t11",
+      "resource_id": "exc-p1-t11-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p1-t12",
+      "resource_id": "exc-p1-t12-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p1-t12",
+      "resource_id": "exc-p1-t12-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p1-t12",
+      "resource_id": "exc-p1-t12-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p2-t1",
+      "resource_id": "exc-p2-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p2-t2",
+      "resource_id": "exc-p2-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p2-t11",
+      "resource_id": "exc-p2-t11-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p2-t11",
+      "resource_id": "exc-p2-t11-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p2-t11",
+      "resource_id": "exc-p2-t11-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p2-t12",
+      "resource_id": "exc-p2-t12-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p2-t12",
+      "resource_id": "exc-p2-t12-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p2-t12",
+      "resource_id": "exc-p2-t12-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p5-t1",
+      "resource_id": "exc-p5-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p5-t3",
+      "resource_id": "exc-p5-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p5-t11",
+      "resource_id": "exc-p5-t11-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p5-t11",
+      "resource_id": "exc-p5-t11-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p5-t11",
+      "resource_id": "exc-p5-t11-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p6-t1",
+      "resource_id": "exc-p6-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p6-t3",
+      "resource_id": "exc-p6-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p6-t11",
+      "resource_id": "exc-p6-t11-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p6-t11",
+      "resource_id": "exc-p6-t11-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p6-t11",
+      "resource_id": "exc-p6-t11-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p6-t12",
+      "resource_id": "exc-p6-t12-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p6-t12",
+      "resource_id": "exc-p6-t12-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p6-t12",
+      "resource_id": "exc-p6-t12-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p7-t1",
+      "resource_id": "exc-p7-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p7-t1",
+      "resource_id": "exc-p7-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p7-t1",
+      "resource_id": "exc-p7-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p7-t2",
+      "resource_id": "exc-p7-r4"
+    },
+    {
+      "skill_id": "skill-topic-exc-p7-t2",
+      "resource_id": "exc-p7-r5"
+    },
+    {
+      "skill_id": "skill-topic-exc-p7-t2",
+      "resource_id": "exc-p7-r6"
+    },
+    {
+      "skill_id": "skill-topic-exc-p7-t3",
+      "resource_id": "exc-p7-r7"
+    },
+    {
+      "skill_id": "skill-topic-exc-p7-t3",
+      "resource_id": "exc-p7-r8"
+    },
+    {
+      "skill_id": "skill-topic-exc-p7-t3",
+      "resource_id": "exc-p7-r9"
+    },
+    {
+      "skill_id": "skill-topic-exc-p8-t1",
+      "resource_id": "exc-p8-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p8-t1",
+      "resource_id": "exc-p8-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p8-t2",
+      "resource_id": "exc-p8-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p8-t2",
+      "resource_id": "exc-p8-r4"
+    },
+    {
+      "skill_id": "skill-topic-exc-p8-t3",
+      "resource_id": "exc-p8-r5"
+    },
+    {
+      "skill_id": "skill-topic-exc-p8-t3",
+      "resource_id": "exc-p8-r6"
+    },
+    {
+      "skill_id": "skill-topic-exc-p9-t1",
+      "resource_id": "exc-p9-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p9-t1",
+      "resource_id": "exc-p9-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p9-t1",
+      "resource_id": "exc-p9-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p9-t2",
+      "resource_id": "exc-p9-r4"
+    },
+    {
+      "skill_id": "skill-topic-exc-p9-t2",
+      "resource_id": "exc-p9-r5"
+    },
+    {
+      "skill_id": "skill-topic-exc-p9-t3",
+      "resource_id": "exc-p9-r6"
+    },
+    {
+      "skill_id": "skill-topic-exc-p9-t3",
+      "resource_id": "exc-p9-r7"
+    },
+    {
+      "skill_id": "skill-topic-exc-p9-t3",
+      "resource_id": "exc-p9-r8"
+    },
+    {
+      "skill_id": "skill-topic-exc-p10-t1",
+      "resource_id": "exc-p10-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p10-t1",
+      "resource_id": "exc-p10-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p10-t2",
+      "resource_id": "exc-p10-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p10-t2",
+      "resource_id": "exc-p10-r4"
+    },
+    {
+      "skill_id": "skill-topic-exc-p10-t3",
+      "resource_id": "exc-p10-r5"
+    },
+    {
+      "skill_id": "skill-topic-exc-p10-t3",
+      "resource_id": "exc-p10-r6"
+    },
+    {
+      "skill_id": "skill-topic-exc-p11-t1",
+      "resource_id": "exc-p11-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p11-t1",
+      "resource_id": "exc-p11-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p11-t2",
+      "resource_id": "exc-p11-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p11-t2",
+      "resource_id": "exc-p11-r4"
+    },
+    {
+      "skill_id": "skill-topic-exc-p11-t3",
+      "resource_id": "exc-p11-r5"
+    },
+    {
+      "skill_id": "skill-topic-exc-p11-t3",
+      "resource_id": "exc-p11-r6"
+    },
+    {
+      "skill_id": "skill-topic-exc-p12-t1",
+      "resource_id": "exc-p12-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p12-t1",
+      "resource_id": "exc-p12-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p12-t2",
+      "resource_id": "exc-p12-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p12-t2",
+      "resource_id": "exc-p12-r4"
+    },
+    {
+      "skill_id": "skill-topic-exc-p12-t3",
+      "resource_id": "exc-p12-r5"
+    },
+    {
+      "skill_id": "skill-topic-exc-p12-t3",
+      "resource_id": "exc-p12-r6"
+    },
+    {
+      "skill_id": "skill-topic-exc-p13-t1",
+      "resource_id": "exc-p13-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p13-t1",
+      "resource_id": "exc-p13-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p13-t2",
+      "resource_id": "exc-p13-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p13-t2",
+      "resource_id": "exc-p13-r4"
+    },
+    {
+      "skill_id": "skill-topic-exc-p13-t3",
+      "resource_id": "exc-p13-r5"
+    },
+    {
+      "skill_id": "skill-topic-exc-p13-t3",
+      "resource_id": "exc-p13-r6"
+    },
+    {
+      "skill_id": "skill-topic-exc-p14-t1",
+      "resource_id": "exc-p14-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p14-t1",
+      "resource_id": "exc-p14-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p14-t2",
+      "resource_id": "exc-p14-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p14-t2",
+      "resource_id": "exc-p14-r4"
+    },
+    {
+      "skill_id": "skill-topic-exc-p14-t3",
+      "resource_id": "exc-p14-r5"
+    },
+    {
+      "skill_id": "skill-topic-exc-p14-t3",
+      "resource_id": "exc-p14-r6"
+    },
+    {
+      "skill_id": "skill-topic-exc-p3-t3",
+      "resource_id": "exc-p3-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p1-t1",
+      "resource_id": "exd-p1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p1-t1",
+      "resource_id": "exd-p1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p1-t1",
+      "resource_id": "exd-p1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p1-t2",
+      "resource_id": "exd-p1-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p1-t2",
+      "resource_id": "exd-p1-r5"
+    },
+    {
+      "skill_id": "skill-topic-exd-p1-t2",
+      "resource_id": "exd-p1-r6"
+    },
+    {
+      "skill_id": "skill-topic-exd-p1-t3",
+      "resource_id": "exd-p1-r7"
+    },
+    {
+      "skill_id": "skill-topic-exd-p1-t3",
+      "resource_id": "exd-p1-r8"
+    },
+    {
+      "skill_id": "skill-topic-exd-p1-t3",
+      "resource_id": "exd-p1-r9"
+    },
+    {
+      "skill_id": "skill-topic-exd-p2-t1",
+      "resource_id": "exd-p2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p2-t1",
+      "resource_id": "exd-p2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p2-t1",
+      "resource_id": "exd-p2-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p2-t2",
+      "resource_id": "exd-p2-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p2-t2",
+      "resource_id": "exd-p2-r5"
+    },
+    {
+      "skill_id": "skill-topic-exd-p2-t2",
+      "resource_id": "exd-p2-r6"
+    },
+    {
+      "skill_id": "skill-topic-exd-p2-t3",
+      "resource_id": "exd-p2-r7"
+    },
+    {
+      "skill_id": "skill-topic-exd-p2-t3",
+      "resource_id": "exd-p2-r8"
+    },
+    {
+      "skill_id": "skill-topic-exd-p2-t3",
+      "resource_id": "exd-p2-r9"
+    },
+    {
+      "skill_id": "skill-topic-exd-p2-t3",
+      "resource_id": "exd-p2-r10"
+    },
+    {
+      "skill_id": "skill-topic-exd-p3-t1",
+      "resource_id": "exd-p3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p3-t1",
+      "resource_id": "exd-p3-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p3-t1",
+      "resource_id": "exd-p3-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p3-t1",
+      "resource_id": "exd-p3-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p3-t2",
+      "resource_id": "exd-p3-r5"
+    },
+    {
+      "skill_id": "skill-topic-exd-p3-t2",
+      "resource_id": "exd-p3-r6"
+    },
+    {
+      "skill_id": "skill-topic-exd-p3-t2",
+      "resource_id": "exd-p3-r7"
+    },
+    {
+      "skill_id": "skill-topic-exd-p3-t3",
+      "resource_id": "exd-p3-r8"
+    },
+    {
+      "skill_id": "skill-topic-exd-p3-t3",
+      "resource_id": "exd-p3-r9"
+    },
+    {
+      "skill_id": "skill-topic-exd-p3-t3",
+      "resource_id": "exd-p3-r10"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t1",
+      "resource_id": "exd-p4-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t1",
+      "resource_id": "exd-p4-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t1",
+      "resource_id": "exd-p4-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t2",
+      "resource_id": "exd-p4-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t2",
+      "resource_id": "exd-p4-r5"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t2",
+      "resource_id": "exd-p4-r6"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t3",
+      "resource_id": "exd-p4-r7"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t3",
+      "resource_id": "exd-p4-r8"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t3",
+      "resource_id": "exd-p4-r9"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t4",
+      "resource_id": "exd-p4-r10"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t4",
+      "resource_id": "exd-p4-r11"
+    },
+    {
+      "skill_id": "skill-topic-exd-p4-t4",
+      "resource_id": "exd-p4-r12"
+    },
+    {
+      "skill_id": "skill-topic-exd-p5-t1",
+      "resource_id": "exd-p5-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p5-t1",
+      "resource_id": "exd-p5-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p5-t1",
+      "resource_id": "exd-p5-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p5-t2",
+      "resource_id": "exd-p5-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p5-t2",
+      "resource_id": "exd-p5-r5"
+    },
+    {
+      "skill_id": "skill-topic-exd-p5-t2",
+      "resource_id": "exd-p5-r6"
+    },
+    {
+      "skill_id": "skill-topic-exd-p5-t3",
+      "resource_id": "exd-p5-r7"
+    },
+    {
+      "skill_id": "skill-topic-exd-p5-t3",
+      "resource_id": "exd-p5-r8"
+    },
+    {
+      "skill_id": "skill-topic-exd-p5-t3",
+      "resource_id": "exd-p5-r9"
+    },
+    {
+      "skill_id": "skill-topic-exc-p3-t11",
+      "resource_id": "exc-p3-t11-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p3-t11",
+      "resource_id": "exc-p3-t11-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p3-t11",
+      "resource_id": "exc-p3-t11-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p3-t12",
+      "resource_id": "exc-p3-t12-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p3-t12",
+      "resource_id": "exc-p3-t12-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p3-t12",
+      "resource_id": "exc-p3-t12-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t1",
+      "resource_id": "exd-p6-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t1",
+      "resource_id": "exd-p6-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t1",
+      "resource_id": "exd-p6-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t2",
+      "resource_id": "exd-p6-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t2",
+      "resource_id": "exd-p6-r5"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t2",
+      "resource_id": "exd-p6-r6"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t3",
+      "resource_id": "exd-p6-r7"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t3",
+      "resource_id": "exd-p6-r8"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t3",
+      "resource_id": "exd-p6-r9"
+    },
+    {
+      "skill_id": "skill-topic-exd-p7-t1",
+      "resource_id": "exd-p7-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p7-t1",
+      "resource_id": "exd-p7-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p7-t1",
+      "resource_id": "exd-p7-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p7-t2",
+      "resource_id": "exd-p7-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p7-t2",
+      "resource_id": "exd-p7-r5"
+    },
+    {
+      "skill_id": "skill-topic-exd-p7-t2",
+      "resource_id": "exd-p7-r6"
+    },
+    {
+      "skill_id": "skill-topic-exd-p8-t1",
+      "resource_id": "exd-p8-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p8-t1",
+      "resource_id": "exd-p8-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p8-t1",
+      "resource_id": "exd-p8-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p8-t2",
+      "resource_id": "exd-p8-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p8-t2",
+      "resource_id": "exd-p8-r5"
+    },
+    {
+      "skill_id": "skill-topic-exd-p8-t2",
+      "resource_id": "exd-p8-r6"
+    },
+    {
+      "skill_id": "skill-topic-exd-p9-t1",
+      "resource_id": "exd-p9-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p9-t1",
+      "resource_id": "exd-p9-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p9-t1",
+      "resource_id": "exd-p9-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p9-t1",
+      "resource_id": "exd-p9-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p9-t1",
+      "resource_id": "exd-p9-r5"
+    },
+    {
+      "skill_id": "skill-topic-exd-p9-t2",
+      "resource_id": "exd-p9-r6"
+    },
+    {
+      "skill_id": "skill-topic-exd-p9-t2",
+      "resource_id": "exd-p9-r7"
+    },
+    {
+      "skill_id": "skill-topic-exd-p9-t2",
+      "resource_id": "exd-p9-r8"
+    },
+    {
+      "skill_id": "skill-topic-exd-p10-t1",
+      "resource_id": "exd-p10-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p10-t1",
+      "resource_id": "exd-p10-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p10-t2",
+      "resource_id": "exd-p10-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p10-t2",
+      "resource_id": "exd-p10-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p11-t1",
+      "resource_id": "exd-p11-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p11-t1",
+      "resource_id": "exd-p11-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p11-t1",
+      "resource_id": "exd-p11-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p11-t2",
+      "resource_id": "exd-p11-r4"
+    },
+    {
+      "skill_id": "skill-topic-exd-p11-t2",
+      "resource_id": "exd-p11-r5"
+    },
+    {
+      "skill_id": "skill-topic-exd-p11-t2",
+      "resource_id": "exd-p11-r6"
+    },
+    {
+      "skill_id": "skill-topic-exd-p12-t1",
+      "resource_id": "exd-p12-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p12-t1",
+      "resource_id": "exd-p12-r2"
+    },
+    {
+      "skill_id": "skill-topic-exd-p12-t1",
+      "resource_id": "exd-p12-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t1",
+      "resource_id": "exc-p4-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t1",
+      "resource_id": "exc-p4-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t1",
+      "resource_id": "exc-p4-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t1",
+      "resource_id": "exc-p4-t1-r4"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t1",
+      "resource_id": "exc-p4-t1-r5"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t1",
+      "resource_id": "exc-p4-t1-r6"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t2",
+      "resource_id": "exc-p4-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t2",
+      "resource_id": "exc-p4-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t3",
+      "resource_id": "exc-p4-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t3",
+      "resource_id": "exc-p4-t3-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t3",
+      "resource_id": "exc-p4-t3-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p4-t3",
+      "resource_id": "exc-p4-t3-r4"
+    },
+    {
+      "skill_id": "skill-topic-exf-p1-t1",
+      "resource_id": "exf-p1-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p1-t1",
+      "resource_id": "exf-p1-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p1-t1",
+      "resource_id": "exf-p1-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p1-t2",
+      "resource_id": "exf-p1-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p1-t2",
+      "resource_id": "exf-p1-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p1-t2",
+      "resource_id": "exf-p1-t2-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t1",
+      "resource_id": "exf-p2-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t1",
+      "resource_id": "exf-p2-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t1",
+      "resource_id": "exf-p2-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t2",
+      "resource_id": "exf-p2-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t2",
+      "resource_id": "exf-p2-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t2",
+      "resource_id": "exf-p2-t2-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t2",
+      "resource_id": "exf-p2-t2-r4"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t3",
+      "resource_id": "exf-p2-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t3",
+      "resource_id": "exf-p2-t3-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t3",
+      "resource_id": "exf-p2-t3-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t3",
+      "resource_id": "exf-p2-t3-r4"
+    },
+    {
+      "skill_id": "skill-topic-exf-p2-t3",
+      "resource_id": "exf-p2-t3-r5"
+    },
+    {
+      "skill_id": "skill-topic-exf-p3-t1",
+      "resource_id": "exf-p3-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p3-t1",
+      "resource_id": "exf-p3-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p3-t1",
+      "resource_id": "exf-p3-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p3-t1",
+      "resource_id": "exf-p3-t1-r4"
+    },
+    {
+      "skill_id": "skill-topic-exf-p3-t2",
+      "resource_id": "exf-p3-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p3-t2",
+      "resource_id": "exf-p3-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p3-t2",
+      "resource_id": "exf-p3-t2-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p3-t3",
+      "resource_id": "exf-p3-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p3-t3",
+      "resource_id": "exf-p3-t3-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p3-t3",
+      "resource_id": "exf-p3-t3-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p4-t1",
+      "resource_id": "exf-p4-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p4-t1",
+      "resource_id": "exf-p4-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p4-t1",
+      "resource_id": "exf-p4-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p4-t2",
+      "resource_id": "exf-p4-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p4-t2",
+      "resource_id": "exf-p4-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p4-t2",
+      "resource_id": "exf-p4-t2-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p4-t3",
+      "resource_id": "exf-p4-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p4-t3",
+      "resource_id": "exf-p4-t3-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p4-t3",
+      "resource_id": "exf-p4-t3-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p5-t1",
+      "resource_id": "exf-p5-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p5-t1",
+      "resource_id": "exf-p5-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p5-t1",
+      "resource_id": "exf-p5-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p5-t2",
+      "resource_id": "exf-p5-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p5-t2",
+      "resource_id": "exf-p5-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p5-t2",
+      "resource_id": "exf-p5-t2-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p6-t1",
+      "resource_id": "exf-p6-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p6-t1",
+      "resource_id": "exf-p6-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p6-t1",
+      "resource_id": "exf-p6-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p6-t2",
+      "resource_id": "exf-p6-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p6-t2",
+      "resource_id": "exf-p6-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p7-t1",
+      "resource_id": "exf-p7-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p7-t1",
+      "resource_id": "exf-p7-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p7-t1",
+      "resource_id": "exf-p7-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p7-t2",
+      "resource_id": "exf-p7-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p7-t2",
+      "resource_id": "exf-p7-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p7-t2",
+      "resource_id": "exf-p7-t2-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p8-t1",
+      "resource_id": "exf-p8-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p8-t1",
+      "resource_id": "exf-p8-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p8-t1",
+      "resource_id": "exf-p8-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p8-t2",
+      "resource_id": "exf-p8-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p8-t2",
+      "resource_id": "exf-p8-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p9-t1",
+      "resource_id": "exf-p9-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p9-t1",
+      "resource_id": "exf-p9-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p9-t1",
+      "resource_id": "exf-p9-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p9-t2",
+      "resource_id": "exf-p9-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p9-t2",
+      "resource_id": "exf-p9-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p9-t3",
+      "resource_id": "exf-p9-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p9-t3",
+      "resource_id": "exf-p9-t3-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p9-t3",
+      "resource_id": "exf-p9-t3-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p10-t1",
+      "resource_id": "exf-p10-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p10-t1",
+      "resource_id": "exf-p10-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p10-t2",
+      "resource_id": "exf-p10-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p10-t2",
+      "resource_id": "exf-p10-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p11-t1",
+      "resource_id": "exf-p11-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p11-t1",
+      "resource_id": "exf-p11-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p11-t1",
+      "resource_id": "exf-p11-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p11-t2",
+      "resource_id": "exf-p11-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p11-t2",
+      "resource_id": "exf-p11-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p11-t2",
+      "resource_id": "exf-p11-t2-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p11-t3",
+      "resource_id": "exf-p11-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p11-t3",
+      "resource_id": "exf-p11-t3-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p12-t1",
+      "resource_id": "exf-p12-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p12-t1",
+      "resource_id": "exf-p12-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p12-t2",
+      "resource_id": "exf-p12-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p12-t2",
+      "resource_id": "exf-p12-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p12-t3",
+      "resource_id": "exf-p12-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p12-t3",
+      "resource_id": "exf-p12-t3-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p13-t1",
+      "resource_id": "exf-p13-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p13-t1",
+      "resource_id": "exf-p13-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p14-t1",
+      "resource_id": "exf-p14-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p14-t1",
+      "resource_id": "exf-p14-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p14-t1",
+      "resource_id": "exf-p14-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exf-p14-t1",
+      "resource_id": "exf-p14-t1-r4"
     }
   ]
 }
