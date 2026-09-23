@@ -210,6 +210,22 @@ function main() {
     );
   }
 
+  // Topic equivalences
+  const equivalencesData = loadJson('topic_equivalences.json');
+  if (equivalencesData) {
+    for (const link of equivalencesData.topic_equivalence_groups ?? []) {
+      if (!link.group_id) {
+        fail(`topic_equivalences.json: entry missing group_id (topic_id "${link.topic_id}")`);
+      }
+      if (!topics.has(link.topic_id)) {
+        fail(`topic_equivalences.json: group "${link.group_id}" references unknown topic_id "${link.topic_id}"`);
+      }
+    }
+    console.log(
+      `  topic_equivalences.json: ${equivalencesData.topic_equivalence_groups?.length ?? 0} topic equivalence links`
+    );
+  }
+
   console.log(`\n${errors} error(s), ${warnings} warning(s).`);
   if (errors > 0) {
     console.error('Validation failed.');

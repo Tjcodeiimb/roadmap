@@ -13,7 +13,6 @@ import type { PendingSkillUnlock } from "@/lib/queries";
 
 export function AppShell({
   tracks,
-  reviewCount,
   isAdmin,
   leaderboardEnabled,
   xp,
@@ -25,7 +24,6 @@ export function AppShell({
   children,
 }: {
   tracks: NavTrack[];
-  reviewCount: number;
   isAdmin: boolean;
   leaderboardEnabled: boolean;
   xp: number;
@@ -48,7 +46,7 @@ export function AppShell({
       <div className="app-canvas flex h-screen overflow-hidden bg-paper">
         <aside className="z-[1] hidden h-full w-64 shrink-0 flex-col gap-6 overflow-y-auto border-r-2 border-ink bg-paper-2 p-5 md:flex">
           <Brand />
-          <SidebarNav tracks={tracks} reviewCount={reviewCount} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} onOpenSwitcher={() => setSwitcherOpen(true)} />
+          <SidebarNav tracks={tracks} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} onOpenSwitcher={() => setSwitcherOpen(true)} />
           <div className="mt-auto flex flex-col gap-3">
             <XPWidget xp={xp} streak={streak} />
             <div className="flex items-center justify-between gap-2 px-1">
@@ -116,7 +114,7 @@ export function AppShell({
                   </button>
                 </div>
                 <div onClick={() => setDrawerOpen(false)}>
-                  <SidebarNav tracks={tracks} reviewCount={reviewCount} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} onOpenSwitcher={() => setSwitcherOpen(true)} />
+                  <SidebarNav tracks={tracks} isAdmin={isAdmin} leaderboardEnabled={leaderboardEnabled} onOpenSwitcher={() => setSwitcherOpen(true)} />
                 </div>
                 <div className="mt-auto flex flex-col gap-3">
                   <XPWidget xp={xp} streak={streak} />

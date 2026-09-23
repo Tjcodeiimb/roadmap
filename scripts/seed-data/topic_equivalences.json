@@ -1,0 +1,6 @@
+{
+  "topic_equivalence_groups": [
+    { "group_id": "wacc-cost-of-capital", "topic_id": "fprep-p8-t2" },
+    { "group_id": "wacc-cost-of-capital", "topic_id": "fin-p2-t1" }
+  ]
+}

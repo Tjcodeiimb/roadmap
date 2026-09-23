@@ -897,63 +897,6 @@ export async function getUserStreak(supabase: Client) {
   return data ?? { current_streak: 0, longest_streak: 0, last_visit_date: null };
 }
 
-export interface ReviewItem {
-  topicId: string;
-  title: string;
-  phaseTitle: string;
-  section: string | null;
-  estimatedTime: string | null;
-  reps: number;
-  nextReviewDate: string;
-}
-
-interface SpacedRepetitionRow {
-  topic_id: string;
-  reps: number;
-  next_review_date: string;
-  topics: { title: string; section: string | null; estimated_time: string | null; phases: { title: string } | null } | null;
-}
-
-// Embedding topics/phases directly under spaced_repetition (both real FKs)
-// replaces what used to be 2 extra sequential round-trips (topics, then
-// phases) with nothing extra at all — due/upcoming stay the only 2 queries,
-// now run fully in parallel with no follow-up.
-export async function getReviewQueue(supabase: Client) {
-  const today = new Date().toISOString().slice(0, 10);
-  const embed = "topic_id, reps, next_review_date, topics(title, section, estimated_time, phases(title))";
-
-  const [{ data: due }, { data: upcoming }] = await Promise.all([
-    supabase.from("spaced_repetition").select(embed).lte("next_review_date", today).order("next_review_date"),
-    supabase
-      .from("spaced_repetition")
-      .select(embed)
-      .gt("next_review_date", today)
-      .order("next_review_date")
-      .limit(6),
-  ]);
-
-  function toItem(row: SpacedRepetitionRow): ReviewItem | null {
-    if (!row.topics) return null;
-    return {
-      topicId: row.topic_id,
-      title: row.topics.title,
-      phaseTitle: row.topics.phases?.title ?? "",
-      section: row.topics.section,
-      estimatedTime: row.topics.estimated_time,
-      reps: row.reps,
-      nextReviewDate: row.next_review_date,
-    };
-  }
-
-  const dueRows = (due ?? []) as unknown as SpacedRepetitionRow[];
-  const upcomingRows = (upcoming ?? []) as unknown as SpacedRepetitionRow[];
-
-  return {
-    due: dueRows.map(toItem).filter((x): x is ReviewItem => !!x),
-    upcoming: upcomingRows.map(toItem).filter((x): x is ReviewItem => !!x),
-  };
-}
-
 export async function getBuildProjects(supabase: Client) {
   const { data } = await supabase.from("build_projects").select("*").order("created_at", { ascending: false });
   return data ?? [];

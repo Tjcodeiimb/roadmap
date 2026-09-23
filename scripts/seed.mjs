@@ -185,10 +185,12 @@ async function main() {
 
   const skillsData = loadJson('skills.json');
   const cohortsData = loadJson('cohorts.json');
+  const equivalencesData = loadJson('topic_equivalences.json');
 
   console.log(
     `Seeding ${tracks.length} tracks, ${allPhases.length} phases, ${allTopics.length} topics, ` +
-      `${allResources.length} resources, ${skillsData.skills.length} skills, ${cohortsData.cohorts.length} cohorts...`
+      `${allResources.length} resources, ${skillsData.skills.length} skills, ${cohortsData.cohorts.length} cohorts, ` +
+      `${equivalencesData.topic_equivalence_groups.length} topic equivalences...`
   );
 
   // Order matters throughout: parents before children, because of foreign keys.
@@ -200,6 +202,7 @@ async function main() {
   await upsert('cohorts', cohortsData.cohorts);
   await upsert('cohort_courses', cohortsData.cohort_courses, 'cohort_id,track_id');
   await upsert('skill_resources', skillsData.skill_resources, 'skill_id,resource_id');
+  await upsert('topic_equivalence_groups', equivalencesData.topic_equivalence_groups, 'group_id,topic_id');
   await pruneCohortCourses(cohortsData);
 
   console.log('Done. All tracks, skills and cohorts are now live in the database.');

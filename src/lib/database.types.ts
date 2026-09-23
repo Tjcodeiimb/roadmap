@@ -443,36 +443,6 @@ export type Database = {
         }>;
         Relationships: [];
       };
-      spaced_repetition: {
-        Row: {
-          user_id: string;
-          topic_id: string;
-          next_review_date: string;
-          interval_stage: number;
-          ease: number;
-          reps: number;
-          updated_at: string;
-        };
-        Insert: {
-          user_id: string;
-          topic_id: string;
-          next_review_date: string;
-          interval_stage?: number;
-          ease?: number;
-          reps?: number;
-          updated_at?: string;
-        };
-        Update: Partial<{
-          user_id: string;
-          topic_id: string;
-          next_review_date: string;
-          interval_stage: number;
-          ease: number;
-          reps: number;
-          updated_at: string;
-        }>;
-        Relationships: [];
-      };
       build_projects: {
         Row: {
           id: string;
@@ -572,9 +542,11 @@ export type Database = {
         Returns: string[];
       };
       // Credits any resource in this track that duplicates (same url) one the
-      // caller already completed elsewhere. Takes no user id for the same
-      // reason sync_topic_progress doesn't. Returns newly unlocked skill ids.
-      credit_duplicate_resources: {
+      // caller already completed elsewhere, or belongs to a topic asserted
+      // equivalent (topic_equivalence_groups) to one already finished in
+      // full. Takes no user id for the same reason sync_topic_progress
+      // doesn't. Returns newly unlocked skill ids.
+      credit_cross_course_progress: {
         Args: { p_track_id: string };
         Returns: string[];
       };
@@ -592,12 +564,6 @@ export type Database = {
       evaluate_skills: {
         Args: { p_user_id: string };
         Returns: string[];
-      };
-      // Returns the card's new next_review_date so the UI can state the real
-      // date instead of a hardcoded label.
-      review_topic: {
-        Args: { p_topic_id: string; p_quality: number };
-        Returns: string;
       };
       get_skill_progress: {
         Args: Record<string, never>;

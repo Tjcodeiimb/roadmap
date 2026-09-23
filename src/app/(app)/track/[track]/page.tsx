@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getTrackDetail } from "@/lib/queries";
-import { creditDuplicateResources } from "@/app/actions/progress";
+import { creditCrossCourseProgress } from "@/app/actions/progress";
 import { TopicRow } from "@/components/track/topic-row";
 import { LeaveCourseButton } from "@/components/track/leave-course-button";
 import { CourseProgressBanner } from "@/components/track/course-progress-banner";
@@ -15,10 +15,11 @@ export default async function TrackPage({
   const { track: trackId } = await params;
   const supabase = await createClient();
   // Credits any resource here that duplicates one the learner already
-  // finished elsewhere (see migration 0024), before reading the progress
-  // that decides these progress bars — so a duplicate credit granted just
+  // finished elsewhere, or belongs to a topic asserted equivalent to one
+  // finished elsewhere (migrations 0024 and 0026), before reading the
+  // progress that decides these progress bars — so a credit granted just
   // now is already reflected on this render, not one page load later.
-  await creditDuplicateResources(trackId);
+  await creditCrossCourseProgress(trackId);
   const { track, phases } = await getTrackDetail(supabase, trackId);
   if (!track) notFound();
 

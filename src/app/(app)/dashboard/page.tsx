@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
-import { getProfile, getSelectedTracks, getTrackSummaries, getReviewQueue, getSkillProgress } from "@/lib/queries";
+import { getProfile, getSelectedTracks, getTrackSummaries, getSkillProgress } from "@/lib/queries";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { ProgressRing } from "@/components/ui/progress-ring";
 import { DiscoverRail } from "@/components/dashboard/discover-rail";
 import { ArrowRight } from "lucide-react";
-import { BurstMark, RepeatMark, CompassMark } from "@/components/icons";
+import { BurstMark, CompassMark } from "@/components/icons";
 import { trackColor, trackInk } from "@/lib/track-colors";
 import { Marquee } from "@/components/ui/marquee";
 
@@ -19,9 +19,8 @@ export default async function DashboardPage() {
   if (!user) return null;
 
   const [profile, trackIds] = await Promise.all([getProfile(supabase, user.id), getSelectedTracks(supabase)]);
-  const [summaries, review, skills] = await Promise.all([
+  const [summaries, skills] = await Promise.all([
     getTrackSummaries(supabase, trackIds),
-    getReviewQueue(supabase),
     getSkillProgress(supabase),
   ]);
 
@@ -50,27 +49,9 @@ export default async function DashboardPage() {
           `${skills.filter((s) => s.unlocked).length} skills unlocked`,
           `${summaries.length} course${summaries.length === 1 ? "" : "s"} in progress`,
           `${summaries.reduce((n, s) => n + s.doneTopics, 0)} topics done`,
-          `${review.due.length} review${review.due.length === 1 ? "" : "s"} due`,
           `${almostUnlocked.length} skill${almostUnlocked.length === 1 ? "" : "s"} almost unlocked`,
         ]}
       />
-
-      {review.due.length > 0 && (
-        <Link href="/review">
-          <Card className="press flex items-center gap-4 bg-accent-soft">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-ink bg-accent text-accent-ink">
-              <RepeatMark size={18} />
-            </div>
-            <div className="flex-1">
-              <div className="font-semibold text-ink">
-                {review.due.length} review{review.due.length === 1 ? "" : "s"} today
-              </div>
-              <div className="text-sm text-ink-2">A quick spaced-repetition check-in — a couple of minutes.</div>
-            </div>
-            <ArrowRight size={18} className="text-ink-2" />
-          </Card>
-        </Link>
-      )}
 
       <DiscoverRail summaries={summaries} almostUnlocked={almostUnlocked} />
 

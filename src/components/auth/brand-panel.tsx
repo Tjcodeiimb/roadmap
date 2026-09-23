@@ -1,12 +1,12 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { CompassMark, TargetMark, RepeatMark } from "@/components/icons";
+import { CompassMark, TargetMark, LinkMark } from "@/components/icons";
 
 const FEATURES = [
   { Icon: CompassMark, text: "14 curated tracks — AI, Finance, Consulting, and more" },
   { Icon: TargetMark, text: "Earn XP, build streaks, unlock resume-ready skills" },
-  { Icon: RepeatMark, text: "Spaced-repetition review keeps what you learn stuck" },
+  { Icon: LinkMark, text: "Curated cohort bundles that string courses together" },
 ];
 
 const STATS = [

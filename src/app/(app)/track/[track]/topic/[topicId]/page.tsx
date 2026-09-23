@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getTopicDetail } from "@/lib/queries";
-import { creditDuplicateResources } from "@/app/actions/progress";
+import { creditCrossCourseProgress } from "@/app/actions/progress";
 import { ResourceCard } from "@/components/track/resource-card";
 import { TopicProgressHeader } from "@/components/track/topic-progress-header";
 import { Reveal } from "@/components/ui/reveal";
@@ -16,9 +16,11 @@ export default async function TopicPage({
 }) {
   const { track, topicId } = await params;
   const supabase = await createClient();
-  // See migration 0024 — credits any resource in this topic that duplicates
-  // one the learner already finished elsewhere, before reading progress.
-  await creditDuplicateResources(track);
+  // Migrations 0024 and 0026 — credits any resource in this topic that
+  // duplicates one the learner already finished elsewhere, or belongs to a
+  // topic asserted equivalent to one finished elsewhere, before reading
+  // progress.
+  await creditCrossCourseProgress(track);
   const detail = await getTopicDetail(supabase, topicId);
   if (!detail) notFound();
 

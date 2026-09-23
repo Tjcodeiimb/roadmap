@@ -62,7 +62,6 @@ export function OnboardingWizard() {
               />
               <HowItem iconKey="bolt" title="Earn XP" desc="Complete topics to level up. Progress is saved to your account automatically." />
               <HowItem iconKey="streak" title="Build a streak" desc="Visit most days to keep your streak alive." />
-              <HowItem iconKey="repeat" title="Spaced review" desc="Finished topics resurface for a quick review, right when you're about to forget them." />
             </div>
             <button
               type="button"

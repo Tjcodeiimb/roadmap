@@ -32,9 +32,6 @@ export default function DashboardLoading() {
         ))}
       </div>
 
-      {/* Review card */}
-      <Skeleton className="h-14 w-full rounded-md" />
-
       {/* DiscoverRail heading + cards */}
       <div>
         <Skeleton className="mb-3 h-4 w-40" />

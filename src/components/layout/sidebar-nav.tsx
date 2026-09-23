@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { LayoutDashboard, UserRound, ShieldCheck } from "lucide-react";
-import { ICONS, FALLBACK_ICON, RepeatMark, TrophyMark, CompassMark, TargetMark, ArticleMark } from "@/components/icons";
+import { ICONS, FALLBACK_ICON, TrophyMark, CompassMark, TargetMark, ArticleMark } from "@/components/icons";
 import { uiTransition } from "@/lib/motion";
 import { trackColor, trackInk } from "@/lib/track-colors";
 import { CourseSwitcherTrigger } from "./course-switcher";
@@ -18,13 +18,11 @@ export interface NavTrack {
 
 export function SidebarNav({
   tracks,
-  reviewCount,
   isAdmin,
   leaderboardEnabled,
   onOpenSwitcher,
 }: {
   tracks: NavTrack[];
-  reviewCount: number;
   isAdmin: boolean;
   leaderboardEnabled: boolean;
   onOpenSwitcher: () => void;
@@ -44,7 +42,6 @@ export function SidebarNav({
   }));
 
   const toolItems = [
-    { href: "/review", label: "Review", icon: RepeatMark, badge: reviewCount },
     { href: "/skills", label: "Skills", icon: TargetMark },
     { href: "/resume", label: "Resume", icon: ArticleMark },
     { href: "/profile", label: "Profile", icon: UserRound },

@@ -13,22 +13,7 @@ export async function setTopicStatus(topicId: string, status: Status, path?: str
   if (error) return { error: error.message };
   if (path) revalidatePath(path);
   revalidatePath("/dashboard");
-  revalidatePath("/review");
   return { success: true };
-}
-
-export async function reviewTopic(topicId: string, quality: 0 | 1 | 2) {
-  const supabase = await createClient();
-  const { data, error } = await supabase.rpc("review_topic", {
-    p_topic_id: topicId,
-    p_quality: quality,
-  });
-  if (error) return { error: error.message };
-  revalidatePath("/review");
-  revalidatePath("/dashboard");
-  // The RPC returns the card's real next review date; the old fixed labels
-  // ("Rescheduled for tomorrow") were wrong for every stage past the first.
-  return { success: true, nextReviewDate: data as string | null };
 }
 
 // Called once per session load (dashboard mount) — mirrors the original
@@ -41,12 +26,15 @@ export async function touchStreak() {
 }
 
 // Called from the track and topic pages, before reading their data, so a
-// duplicate credit granted just now is already reflected in what renders.
-// No revalidatePath: this runs inline during the same request that renders
+// cross-course credit granted just now is already reflected in what
+// renders. Covers two cases (migrations 0024 and 0026): an identical
+// resource completed under a different course, and a different topic
+// asserted (by topic_equivalence_groups) to teach the same material. No
+// revalidatePath: this runs inline during the same request that renders
 // the page, not from a separate mutation the cache needs telling about.
-export async function creditDuplicateResources(trackId: string) {
+export async function creditCrossCourseProgress(trackId: string) {
   const supabase = await createClient();
-  const { error } = await supabase.rpc("credit_duplicate_resources", { p_track_id: trackId });
+  const { error } = await supabase.rpc("credit_cross_course_progress", { p_track_id: trackId });
   if (error) return { error: error.message };
   return { success: true };
 }
