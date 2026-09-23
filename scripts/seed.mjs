@@ -16,6 +16,7 @@ import { createClient } from '@supabase/supabase-js';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { TRACK_FILES } from './lib/track-files.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -38,36 +39,6 @@ function loadJson(file) {
   return JSON.parse(readFileSync(join(__dirname, 'seed-data', file), 'utf8'));
 }
 
-const TRACK_FILES = [
-  'ai.json',
-  'finance.json',
-  'consulting.json',
-  'excel.json',
-  'psychology.json',
-  'marketing.json',
-  'data.json',
-  'product.json',
-  'sales.json',
-  'ux.json',
-  'operations.json',
-  'cybersecurity.json',
-  'people.json',
-  'market_research.json',
-  // sustainability.json intentionally excluded - that track is soft-hidden
-  // (see migration 0007_hide_sustainability_track.sql) rather than deleted,
-  // so re-seeding must not touch it or re-publish it.
-  // Job-ready tracks (batch 2)
-  'prompt_engineering.json',
-  'ai_nocode.json',
-  'langchain_rag.json',
-  'sql_analytics.json',
-  'fpa_reporting.json',
-  'startup_finance.json',
-  'negotiation.json',
-  'exec_communication.json',
-  'tech_writing.json',
-  'personal_branding.json',
-];
 
 // Mirrors migration 0002's SQL backfill in JS — same priority order,
 // including the legacy emoji fallback — so re-seeding is idempotent for the
@@ -158,6 +129,41 @@ async function upsertEach(table, rows, conflictTarget = 'id') {
   console.log(`  ${table}: ${rows.length} rows`);
 }
 
+// Upserting never deletes, so every course ever dropped from a cohort stayed in
+// it in production: a database check found seven such leftovers, including
+// Finance still inside Founder after 0016 removed it. cohorts.json is the
+// source of truth for which courses a cohort contains, so remove any link it no
+// longer lists.
+//
+// Scoped to cohorts defined in cohorts.json, and to the link table only: no
+// cohort, course or learner row is touched. Removing a link does not unenroll
+// anyone — enrollments live in user_track_selection.
+async function pruneCohortCourses(cohortsData) {
+  const cohortIds = cohortsData.cohorts.map((c) => c.id);
+  const wanted = new Set(cohortsData.cohort_courses.map((l) => `${l.cohort_id}|${l.track_id}`));
+  const { data, error } = await supabase
+    .from('cohort_courses')
+    .select('cohort_id, track_id')
+    .in('cohort_id', cohortIds);
+  if (error) {
+    console.error('Failed reading cohort_courses:', error.message);
+    process.exit(1);
+  }
+  const stale = data.filter((l) => !wanted.has(`${l.cohort_id}|${l.track_id}`));
+  for (const l of stale) {
+    const { error: delError } = await supabase
+      .from('cohort_courses')
+      .delete()
+      .eq('cohort_id', l.cohort_id)
+      .eq('track_id', l.track_id);
+    if (delError) {
+      console.error(`Failed removing ${l.cohort_id} -> ${l.track_id}:`, delError.message);
+      process.exit(1);
+    }
+    console.log(`  cohort_courses: removed ${l.cohort_id} -> ${l.track_id} (no longer in cohorts.json)`);
+  }
+}
+
 async function main() {
   const tracks = [];
   const allPhases = [];
@@ -194,6 +200,7 @@ async function main() {
   await upsert('cohorts', cohortsData.cohorts);
   await upsert('cohort_courses', cohortsData.cohort_courses, 'cohort_id,track_id');
   await upsert('skill_resources', skillsData.skill_resources, 'skill_id,resource_id');
+  await pruneCohortCourses(cohortsData);
 
   console.log('Done. All tracks, skills and cohorts are now live in the database.');
 }

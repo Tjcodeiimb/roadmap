@@ -53,6 +53,12 @@ const supabase = createClient(url, key, { auth: { persistSession: false } });
 // id -> the seed row itself, so fields can be compared and not just presence.
 const seed = { phases: new Map(), topics: new Map(), resources: new Map(), skills: new Map() };
 const seedFileOf = new Map(); // id -> which seed file it came from
+const seedTracks = new Set();
+// Link tables have composite keys and no content of their own, so they can
+// only be orphaned, never drift. They matter because seeding never deletes a
+// link: a course dropped from a cohort, or a resource unmapped from a skill,
+// stays live until a migration removes it.
+const seedLinks = { cohort_courses: new Set(), skill_resources: new Set() };
 for (const file of readdirSync(seedDir).filter((f) => f.endsWith(".json"))) {
   let data;
   try {
@@ -68,6 +74,9 @@ for (const file of readdirSync(seedDir).filter((f) => f.endsWith(".json"))) {
       seedFileOf.set(row.id, file);
     }
   }
+  if (data.track?.id) seedTracks.add(data.track.id);
+  for (const l of data.cohort_courses ?? []) seedLinks.cohort_courses.add(`${l.cohort_id}|${l.track_id}`);
+  for (const l of data.skill_resources ?? []) seedLinks.skill_resources.add(`${l.skill_id}|${l.resource_id}`);
 }
 
 // Supabase caps a select at 1000 rows by default, and the catalogue is past
@@ -151,6 +160,40 @@ for (const [table, cols, label, driftFields] of [
       console.log(`          seed: ${d.seed}`);
       console.log(`          db:   ${d.db ?? "(null)"}`);
     }
+  }
+}
+
+const dbTracks = await fetchAll("tracks", "id, label");
+const orphanTracks = dbTracks.filter((t) => !seedTracks.has(t.id));
+console.log(`\ntracks: ${dbTracks.length} in database, ${seedTracks.size} in seed files`);
+if (orphanTracks.length) {
+  orphanCount += orphanTracks.length;
+  console.log(`  ${orphanTracks.length} present in the database but NOT in any seed file:`);
+  for (const t of orphanTracks) console.log(`    - ${t.id}  ${t.label}`);
+} else {
+  console.log("  no orphans");
+}
+
+for (const [table, a, b] of [
+  ["cohort_courses", "cohort_id", "track_id"],
+  ["skill_resources", "skill_id", "resource_id"],
+]) {
+  const rows = await fetchAll(table, `${a}, ${b}`);
+  const orphans = rows.filter((r) => !seedLinks[table].has(`${r[a]}|${r[b]}`));
+  const dbKeys = new Set(rows.map((r) => `${r[a]}|${r[b]}`));
+  const missing = [...seedLinks[table]].filter((k) => !dbKeys.has(k));
+  console.log(`\n${table}: ${rows.length} links in database, ${seedLinks[table].size} in seed files`);
+  if (!orphans.length) console.log("  no orphaned links");
+  else {
+    orphanCount += orphans.length;
+    console.log(`  ${orphans.length} link(s) in the database but NOT in the seed files:`);
+    for (const r of orphans) console.log(`    - ${r[a]} -> ${r[b]}`);
+  }
+  if (!missing.length) console.log("  no missing links");
+  else {
+    driftCount += missing.length;
+    console.log(`  ${missing.length} link(s) in the seed files but NOT in the database:`);
+    for (const k of missing) console.log(`    - ${k.replace("|", " -> ")}`);
   }
 }
 } catch (err) {

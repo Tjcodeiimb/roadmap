@@ -12,38 +12,11 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { TRACK_FILES } from './lib/track-files.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, 'seed-data');
 
-const TRACK_FILES = [
-  'ai.json',
-  'finance.json',
-  'consulting.json',
-  'excel.json',
-  'psychology.json',
-  'marketing.json',
-  'data.json',
-  'product.json',
-  'sales.json',
-  'ux.json',
-  'operations.json',
-  'cybersecurity.json',
-  'people.json',
-  'market_research.json',
-  // sustainability.json intentionally excluded - soft-hidden, not seeded.
-  // Job-ready tracks (batch 2)
-  'prompt_engineering.json',
-  'ai_nocode.json',
-  'langchain_rag.json',
-  'sql_analytics.json',
-  'fpa_reporting.json',
-  'startup_finance.json',
-  'negotiation.json',
-  'exec_communication.json',
-  'tech_writing.json',
-  'personal_branding.json',
-];
 
 let errors = 0;
 let warnings = 0;
