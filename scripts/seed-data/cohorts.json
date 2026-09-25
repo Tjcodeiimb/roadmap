@@ -98,6 +98,17 @@
       "icon_key": "compass",
       "estimated_hours": 150,
       "published": true
+    },
+    {
+      "id": "distressed-consulting",
+      "name": "distressed-consulting",
+      "label": "Distressed Consulting",
+      "summary": "Deep financial modeling plus the restructuring-specific core — 13-week cash flow, distressed valuation, and the Chapter 11 process — built from what firms like Alvarez & Marsal and FTI Consulting actually look for in entry-level hires.",
+      "tier": "advanced",
+      "order_index": 10,
+      "icon_key": "finance",
+      "estimated_hours": 480,
+      "published": true
     }
   ],
   "cohort_courses": [
@@ -300,6 +311,46 @@
       "cohort_id": "founder",
       "track_id": "personal-branding",
       "order_index": 5
+    },
+    {
+      "cohort_id": "distressed-consulting",
+      "track_id": "finance-prep",
+      "order_index": 1
+    },
+    {
+      "cohort_id": "distressed-consulting",
+      "track_id": "excel-finance",
+      "order_index": 2
+    },
+    {
+      "cohort_id": "distressed-consulting",
+      "track_id": "finance",
+      "order_index": 3
+    },
+    {
+      "cohort_id": "distressed-consulting",
+      "track_id": "fpa-reporting",
+      "order_index": 4
+    },
+    {
+      "cohort_id": "distressed-consulting",
+      "track_id": "restructuring",
+      "order_index": 5
+    },
+    {
+      "cohort_id": "distressed-consulting",
+      "track_id": "consulting",
+      "order_index": 6
+    },
+    {
+      "cohort_id": "distressed-consulting",
+      "track_id": "negotiation",
+      "order_index": 7
+    },
+    {
+      "cohort_id": "distressed-consulting",
+      "track_id": "exec-communication",
+      "order_index": 8
     }
   ]
 }

@@ -7439,6 +7439,206 @@
       "icon_key": "excel",
       "xp_reward": 120,
       "threshold": 0
+    },
+    {
+      "id": "skill-rx-cashflow",
+      "name": "13-Week Cash Flow Modeling",
+      "domain": "restructuring",
+      "description": "Can build a direct-method 13-week cash flow model from scratch, set a defensible minimum cash threshold with a liquidity bridge and variance process, and stress-test the model for a lender presentation.",
+      "tier": "intermediate",
+      "icon_key": null,
+      "xp_reward": 150,
+      "threshold": 0
+    },
+    {
+      "id": "skill-rx-distressed-valuation",
+      "name": "Distressed Valuation & Credit Analysis",
+      "domain": "restructuring",
+      "description": "Can value a distressed company under liquidation and going-concern scenarios, map the capital structure to identify the fulcrum security, and build a recovery waterfall across claim classes.",
+      "tier": "advanced",
+      "icon_key": null,
+      "xp_reward": 175,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p1-t1",
+      "name": "Why Companies Fail — Liquidity, Solvency & the Distress Cycle",
+      "domain": "restructuring",
+      "description": "Distinguish a liquidity problem from a solvency problem, learn the early warning signs of financial distress, and understand the cycle that pulls a company from underperformance toward restructuring.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p1-t2",
+      "name": "The Restructuring Industry Landscape — Consulting Firms, RX Banks & Law Firms",
+      "domain": "restructuring",
+      "description": "Map the players — turnaround consultancies like A&M and FTI, restructuring investment banks like PJT and Houlihan Lokey, and the law firms that run the courtroom side of a case.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p1-t3",
+      "name": "Breaking In — Case Competitions, TMA, and the Audit-to-Restructuring Pipeline",
+      "domain": "restructuring",
+      "description": "Learn the real, recurring paths into the industry: the Big 4 audit/valuation/FDD-to-restructuring pipeline, TMA and TMA NextGen as a genuine student differentiator, and named case competitions that award real interviews.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p2-t1",
+      "name": "Chapter 11 vs. Chapter 7 vs. Out-of-Court Workouts",
+      "domain": "restructuring",
+      "description": "Compare reorganization under Chapter 11, liquidation under Chapter 7, and negotiated out-of-court workouts — and understand why a company and its advisors choose one path over another.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p2-t2",
+      "name": "DIP Financing, Creditor Committees & Claims Administration",
+      "domain": "restructuring",
+      "description": "Learn how debtor-in-possession financing keeps a bankrupt company running, how the official creditors' committee operates, and how proofs of claim and bar dates administer who gets to be paid.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p2-t3",
+      "name": "Absolute Priority, Cramdown & a Brief Look at UK Administration/CVA",
+      "domain": "restructuring",
+      "description": "Understand the absolute priority rule and how a plan gets 'crammed down' over an objecting class, then contrast the US process with UK administration and Company Voluntary Arrangements.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p3-t1",
+      "name": "Building a 13-Week Cash Flow Model From Scratch",
+      "domain": "restructuring",
+      "description": "Build a direct-method, weekly cash flow model from receipts and disbursements — the exact tool A&M and FTI use as the entry point to almost every restructuring engagement.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p3-t2",
+      "name": "Minimum Cash, Liquidity Bridges & Variance Analysis",
+      "domain": "restructuring",
+      "description": "Set a defensible minimum cash threshold, build a liquidity bridge that ties covenant headroom to the forecast, and run the weekly actual-vs-forecast variance process that keeps the model credible.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p3-t3",
+      "name": "Stress-Testing and Presenting a 13-Week Cash Flow to Lenders",
+      "domain": "restructuring",
+      "description": "Build base, downside, and stress scenarios into the model, then present it to a skeptical lender group who will challenge every assumption behind it.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p4-t1",
+      "name": "Liquidation Value vs. Going-Concern Value",
+      "domain": "restructuring",
+      "description": "Learn the liquidation analysis that sets the 'floor' recovery for creditors, and understand when a business is worth more sold whole and operating than broken apart.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p4-t2",
+      "name": "Capital Structure, Debt Tranches & the Fulcrum Security",
+      "domain": "restructuring",
+      "description": "Map a distressed company's capital stack from senior secured debt down to equity, and identify the fulcrum security — the tranche where enterprise value runs out and control converts to equity.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p4-t3",
+      "name": "Recovery Analysis & the Distribution Waterfall",
+      "domain": "restructuring",
+      "description": "Build a recovery waterfall that ranks every class of claim by priority and pays them out until enterprise value is exhausted — the core output of any distressed valuation exercise.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p5-t1",
+      "name": "Diagnosing the Business — Cost Structure & EBITDA Bridge Analysis",
+      "domain": "restructuring",
+      "description": "Break a company's cost base down into its real drivers and build an EBITDA bridge that explains, bar by bar, exactly what moved profitability between two periods.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p5-t2",
+      "name": "Building the Long-Term Business Plan",
+      "domain": "restructuring",
+      "description": "Translate the diagnostic and the 13-week forecast into a multi-year business plan that underpins valuation, lender negotiations, and the plan of reorganization itself.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p5-t3",
+      "name": "Case Studies in Real-World Corporate Turnarounds",
+      "domain": "restructuring",
+      "description": "Study well-documented turnarounds and liquidations — American Airlines, Hertz, and Toys 'R' Us among them — to see how the tools in this course played out in practice.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p6-t1",
+      "name": "The Restructuring Interview — Technical Case Prep",
+      "domain": "restructuring",
+      "description": "Prepare for an interview process that is unusually technical and light on behavioral questions — candidates report Excel tests and simplified cash-flow model walkthroughs, not case-study frameworks.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p6-t2",
+      "name": "Positioning Your Story — From Audit/Finance Background to Restructuring",
+      "domain": "restructuring",
+      "description": "Turn a Big 4 audit, FDD, or valuation background into a convincing restructuring narrative — what transfers directly, what you need to backfill, and how to frame the pivot.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-rx-p6-t3",
+      "name": "Certifications & Career Pathway — CIRA, CTP, CFA",
+      "domain": "restructuring",
+      "description": "Understand CIRA, CTP, and the CFA charter as career-progression credentials you pursue once you're in the industry, not requirements to break in.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
     }
   ],
   "skill_resources": [
@@ -14981,6 +15181,262 @@
     {
       "skill_id": "skill-topic-exf-p14-t1",
       "resource_id": "exf-p14-t1-r4"
+    },
+    {
+      "skill_id": "skill-rx-cashflow",
+      "resource_id": "rx-p3-r1"
+    },
+    {
+      "skill_id": "skill-rx-cashflow",
+      "resource_id": "rx-p3-r2"
+    },
+    {
+      "skill_id": "skill-rx-cashflow",
+      "resource_id": "rx-p3-r3"
+    },
+    {
+      "skill_id": "skill-rx-cashflow",
+      "resource_id": "rx-p3-r4"
+    },
+    {
+      "skill_id": "skill-rx-cashflow",
+      "resource_id": "rx-p3-r5"
+    },
+    {
+      "skill_id": "skill-rx-cashflow",
+      "resource_id": "rx-p3-r6"
+    },
+    {
+      "skill_id": "skill-rx-cashflow",
+      "resource_id": "rx-p3-r7"
+    },
+    {
+      "skill_id": "skill-rx-distressed-valuation",
+      "resource_id": "rx-p4-r1"
+    },
+    {
+      "skill_id": "skill-rx-distressed-valuation",
+      "resource_id": "rx-p4-r2"
+    },
+    {
+      "skill_id": "skill-rx-distressed-valuation",
+      "resource_id": "rx-p4-r3"
+    },
+    {
+      "skill_id": "skill-rx-distressed-valuation",
+      "resource_id": "rx-p4-r4"
+    },
+    {
+      "skill_id": "skill-rx-distressed-valuation",
+      "resource_id": "rx-p4-r5"
+    },
+    {
+      "skill_id": "skill-rx-distressed-valuation",
+      "resource_id": "rx-p4-r6"
+    },
+    {
+      "skill_id": "skill-rx-distressed-valuation",
+      "resource_id": "rx-p4-r7"
+    },
+    {
+      "skill_id": "skill-topic-rx-p1-t1",
+      "resource_id": "rx-p1-r1"
+    },
+    {
+      "skill_id": "skill-topic-rx-p1-t1",
+      "resource_id": "rx-p1-r2"
+    },
+    {
+      "skill_id": "skill-topic-rx-p1-t2",
+      "resource_id": "rx-p1-r3"
+    },
+    {
+      "skill_id": "skill-topic-rx-p1-t2",
+      "resource_id": "rx-p1-r4"
+    },
+    {
+      "skill_id": "skill-topic-rx-p1-t2",
+      "resource_id": "rx-p1-r5"
+    },
+    {
+      "skill_id": "skill-topic-rx-p1-t3",
+      "resource_id": "rx-p1-r6"
+    },
+    {
+      "skill_id": "skill-topic-rx-p1-t3",
+      "resource_id": "rx-p1-r7"
+    },
+    {
+      "skill_id": "skill-topic-rx-p1-t3",
+      "resource_id": "rx-p1-r8"
+    },
+    {
+      "skill_id": "skill-topic-rx-p1-t3",
+      "resource_id": "rx-p1-r9"
+    },
+    {
+      "skill_id": "skill-topic-rx-p2-t1",
+      "resource_id": "rx-p2-r1"
+    },
+    {
+      "skill_id": "skill-topic-rx-p2-t1",
+      "resource_id": "rx-p2-r2"
+    },
+    {
+      "skill_id": "skill-topic-rx-p2-t1",
+      "resource_id": "rx-p2-r3"
+    },
+    {
+      "skill_id": "skill-topic-rx-p2-t2",
+      "resource_id": "rx-p2-r4"
+    },
+    {
+      "skill_id": "skill-topic-rx-p2-t2",
+      "resource_id": "rx-p2-r5"
+    },
+    {
+      "skill_id": "skill-topic-rx-p2-t2",
+      "resource_id": "rx-p2-r6"
+    },
+    {
+      "skill_id": "skill-topic-rx-p2-t3",
+      "resource_id": "rx-p2-r7"
+    },
+    {
+      "skill_id": "skill-topic-rx-p2-t3",
+      "resource_id": "rx-p2-r8"
+    },
+    {
+      "skill_id": "skill-topic-rx-p2-t3",
+      "resource_id": "rx-p2-r9"
+    },
+    {
+      "skill_id": "skill-topic-rx-p3-t1",
+      "resource_id": "rx-p3-r1"
+    },
+    {
+      "skill_id": "skill-topic-rx-p3-t1",
+      "resource_id": "rx-p3-r2"
+    },
+    {
+      "skill_id": "skill-topic-rx-p3-t1",
+      "resource_id": "rx-p3-r3"
+    },
+    {
+      "skill_id": "skill-topic-rx-p3-t2",
+      "resource_id": "rx-p3-r4"
+    },
+    {
+      "skill_id": "skill-topic-rx-p3-t2",
+      "resource_id": "rx-p3-r5"
+    },
+    {
+      "skill_id": "skill-topic-rx-p3-t3",
+      "resource_id": "rx-p3-r6"
+    },
+    {
+      "skill_id": "skill-topic-rx-p3-t3",
+      "resource_id": "rx-p3-r7"
+    },
+    {
+      "skill_id": "skill-topic-rx-p4-t1",
+      "resource_id": "rx-p4-r1"
+    },
+    {
+      "skill_id": "skill-topic-rx-p4-t1",
+      "resource_id": "rx-p4-r2"
+    },
+    {
+      "skill_id": "skill-topic-rx-p4-t2",
+      "resource_id": "rx-p4-r3"
+    },
+    {
+      "skill_id": "skill-topic-rx-p4-t2",
+      "resource_id": "rx-p4-r4"
+    },
+    {
+      "skill_id": "skill-topic-rx-p4-t2",
+      "resource_id": "rx-p4-r5"
+    },
+    {
+      "skill_id": "skill-topic-rx-p4-t3",
+      "resource_id": "rx-p4-r6"
+    },
+    {
+      "skill_id": "skill-topic-rx-p4-t3",
+      "resource_id": "rx-p4-r7"
+    },
+    {
+      "skill_id": "skill-topic-rx-p5-t1",
+      "resource_id": "rx-p5-r1"
+    },
+    {
+      "skill_id": "skill-topic-rx-p5-t1",
+      "resource_id": "rx-p5-r2"
+    },
+    {
+      "skill_id": "skill-topic-rx-p5-t1",
+      "resource_id": "rx-p5-r3"
+    },
+    {
+      "skill_id": "skill-topic-rx-p5-t2",
+      "resource_id": "rx-p5-r4"
+    },
+    {
+      "skill_id": "skill-topic-rx-p5-t2",
+      "resource_id": "rx-p5-r5"
+    },
+    {
+      "skill_id": "skill-topic-rx-p5-t2",
+      "resource_id": "rx-p5-r6"
+    },
+    {
+      "skill_id": "skill-topic-rx-p5-t3",
+      "resource_id": "rx-p5-r7"
+    },
+    {
+      "skill_id": "skill-topic-rx-p5-t3",
+      "resource_id": "rx-p5-r8"
+    },
+    {
+      "skill_id": "skill-topic-rx-p5-t3",
+      "resource_id": "rx-p5-r9"
+    },
+    {
+      "skill_id": "skill-topic-rx-p6-t1",
+      "resource_id": "rx-p6-r1"
+    },
+    {
+      "skill_id": "skill-topic-rx-p6-t1",
+      "resource_id": "rx-p6-r2"
+    },
+    {
+      "skill_id": "skill-topic-rx-p6-t1",
+      "resource_id": "rx-p6-r3"
+    },
+    {
+      "skill_id": "skill-topic-rx-p6-t2",
+      "resource_id": "rx-p6-r4"
+    },
+    {
+      "skill_id": "skill-topic-rx-p6-t2",
+      "resource_id": "rx-p6-r5"
+    },
+    {
+      "skill_id": "skill-topic-rx-p6-t2",
+      "resource_id": "rx-p6-r6"
+    },
+    {
+      "skill_id": "skill-topic-rx-p6-t3",
+      "resource_id": "rx-p6-r7"
+    },
+    {
+      "skill_id": "skill-topic-rx-p6-t3",
+      "resource_id": "rx-p6-r8"
+    },
+    {
+      "skill_id": "skill-topic-rx-p6-t3",
+      "resource_id": "rx-p6-r9"
     }
   ]
 }

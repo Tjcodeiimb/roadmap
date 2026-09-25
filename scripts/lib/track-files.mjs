@@ -38,4 +38,5 @@ export const TRACK_FILES = [
   'exec_communication.json',
   'tech_writing.json',
   'personal_branding.json',
+  'restructuring.json',
 ];
