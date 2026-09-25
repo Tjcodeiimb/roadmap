@@ -245,18 +245,6 @@
       "length": "15 min"
     },
     {
-      "id": "xcomm-p1-r2",
-      "topic_id": "xcomm-p1-t1",
-      "order_index": 2,
-      "title": "What Is Executive Presence? Building Influence for Action",
-      "url": "https://www.duarte.com/resources/communication-skills/what-is-executive-presence/",
-      "format": "article",
-      "provider": "external",
-      "source": "Duarte",
-      "icon_key": null,
-      "length": "15 min"
-    },
-    {
       "id": "xcomm-p1-r3",
       "topic_id": "xcomm-p1-t2",
       "order_index": 1,
@@ -305,21 +293,9 @@
       "length": "12 min"
     },
     {
-      "id": "xcomm-p2-r1",
-      "topic_id": "xcomm-p2-t1",
-      "order_index": 1,
-      "title": "The Pyramid Principle Explained — Video Summary",
-      "url": "https://www.youtube.com/watch?v=_gBMnOILwLA",
-      "format": "video",
-      "provider": "external",
-      "source": "YouTube",
-      "icon_key": null,
-      "length": "10 min"
-    },
-    {
       "id": "xcomm-p2-r2",
       "topic_id": "xcomm-p2-t1",
-      "order_index": 2,
+      "order_index": 1,
       "title": "The Minto Pyramid — Answer-First Thinking Tool",
       "url": "https://untools.co/minto-pyramid/",
       "format": "article",
@@ -377,21 +353,9 @@
       "length": "6 hrs"
     },
     {
-      "id": "xcomm-p3-r1",
-      "topic_id": "xcomm-p3-t1",
-      "order_index": 1,
-      "title": "The 3-Act Structure for Business Communication — Duarte",
-      "url": "https://www.duarte.com/blog/business-communication-demands-3-act-story-structure/",
-      "format": "article",
-      "provider": "external",
-      "source": "Duarte",
-      "icon_key": null,
-      "length": "15 min"
-    },
-    {
       "id": "xcomm-p3-r2",
       "topic_id": "xcomm-p3-t1",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Structure Your Presentation Like a Story",
       "url": "https://hbr.org/2012/10/structure-your-presentation-li",
       "format": "article",
@@ -485,18 +449,6 @@
       "length": "20 min"
     },
     {
-      "id": "xcomm-p4-r4",
-      "topic_id": "xcomm-p4-t2",
-      "order_index": 2,
-      "title": "Cole Nussbaumer Knaflic — Storytelling with Data YouTube Channel",
-      "url": "https://www.youtube.com/@storytellingwithdata",
-      "format": "video",
-      "provider": "external",
-      "source": "YouTube",
-      "icon_key": null,
-      "length": "20 min"
-    },
-    {
       "id": "xcomm-p4-r5",
       "topic_id": "xcomm-p4-t3",
       "order_index": 1,
@@ -545,21 +497,9 @@
       "length": "12 min"
     },
     {
-      "id": "xcomm-p5-r3",
-      "topic_id": "xcomm-p5-t2",
-      "order_index": 1,
-      "title": "How to Handle a Question You Don't Want to Answer",
-      "url": "https://www.gsb.stanford.edu/insights/how-handle-question-you-dont-want-answer",
-      "format": "article",
-      "provider": "external",
-      "source": "Stanford GSB",
-      "icon_key": null,
-      "length": "10 min"
-    },
-    {
       "id": "xcomm-p5-r4",
       "topic_id": "xcomm-p5-t2",
-      "order_index": 2,
+      "order_index": 1,
       "title": "When a Tough Question Puts You on the Spot",
       "url": "https://hbr.org/2022/12/when-a-tough-question-puts-you-on-the-spot",
       "format": "article",
@@ -601,18 +541,6 @@
       "format": "article",
       "provider": "external",
       "source": "George Mason University Writing Center",
-      "icon_key": null,
-      "length": "15 min"
-    },
-    {
-      "id": "xcomm-p6-r2",
-      "topic_id": "xcomm-p6-t1",
-      "order_index": 2,
-      "title": "Writing a Policy Memo — USC Research Guides",
-      "url": "https://libguides.usc.edu/writingguide/assignments/policymemo",
-      "format": "article",
-      "provider": "external",
-      "source": "USC Libraries",
       "icon_key": null,
       "length": "15 min"
     },

@@ -1437,18 +1437,6 @@
       "icon": null
     },
     {
-      "id": "fprep-p2-r3",
-      "topic_id": "fprep-p2-t1",
-      "order_index": 3,
-      "title": "Accounting Cycle - Steps, Flow Chart, Example",
-      "url": "https://www.myaccountingcourse.com/accounting-cycle",
-      "source": "My Accounting Course",
-      "format": "guide",
-      "length": "15 min",
-      "note": "A second walk-through of the full cycle with a flow chart, useful for cross-checking your own list of steps.",
-      "icon": null
-    },
-    {
       "id": "fprep-p2-r4",
       "topic_id": "fprep-p2-t2",
       "order_index": 4,

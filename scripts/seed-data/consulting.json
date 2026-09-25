@@ -481,21 +481,9 @@
       "icon": null
     },
     {
-      "id": "con-p6-r1",
-      "topic_id": "con-p6-t1",
-      "order_index": 1,
-      "title": "Wharton Consulting Club Casebook 2024-2025 (PDF)",
-      "url": "https://www.scribd.com/document/798989037/WCC-Casebook-202425",
-      "source": "Scribd",
-      "format": "pdf",
-      "length": null,
-      "note": "Flagship casebook; Scribd may require account",
-      "icon": null
-    },
-    {
       "id": "con-p6-r2",
       "topic_id": "con-p6-t1",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Free Consulting Case Books: Wharton, Booth, INSEAD PDFs (2026)",
       "url": "https://www.roadtooffer.com/blog/road-to-offer-free-case-book-vault",
       "source": "RoadToOffer",

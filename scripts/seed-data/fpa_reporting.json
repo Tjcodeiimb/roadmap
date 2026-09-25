@@ -269,21 +269,9 @@
   ],
   "resources": [
     {
-      "id": "fpa-p1-r1",
-      "topic_id": "fpa-p1-t1",
-      "order_index": 1,
-      "title": "What is FP&A? — Corporate Finance Institute",
-      "url": "https://corporatefinanceinstitute.com/resources/career/financial-planning-and-analysis-fpa",
-      "source": "Corporate Finance Institute",
-      "format": "article",
-      "length": null,
-      "note": "CFI's free overview of the FP&A function — covers the core responsibilities, team structure, and how FP&A differs from accounting and controllership.",
-      "icon": null
-    },
-    {
       "id": "fpa-p1-r2",
       "topic_id": "fpa-p1-t1",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Financial Planning and Analysis (FP&A) Career Guide — Wall Street Prep",
       "url": "https://www.wallstreetprep.com/knowledge/financial-planning-and-analysis-fpa/",
       "source": "Wall Street Prep",

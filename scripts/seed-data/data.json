@@ -6,7 +6,7 @@
     "tier": "intermediate",
     "summary": "Learn the core toolkit of a data analyst — turning raw, messy data into clear answers and visuals that drive real decisions — through the analytics process, SQL, statistics, and data visualization.",
     "domain": "data",
-    "estimated_hours": 70,
+    "estimated_hours": 82,
     "effort_per_week": "4-6 hrs",
     "icon_key": "data",
     "published": true
@@ -65,6 +65,15 @@
       "description": "Python and pandas basics for when a spreadsheet or SQL query isn't enough — loading, wrangling, and exploring data in code.",
       "estimated_weeks": "2-3",
       "color": null
+    },
+    {
+      "id": "dat-p7",
+      "track_id": "data",
+      "order_index": 7,
+      "title": "Geospatial Analytics & Location Intelligence",
+      "description": "Location intelligence for real business decisions — reading and mapping geospatial data in Python, the GIS platforms analysts actually reach for, and applied predictive modeling for retail site selection and store-footprint optimization.",
+      "estimated_weeks": "2-3",
+      "color": null
     }
   ],
   "topics": [
@@ -83,7 +92,10 @@
     { "id": "dat-p5-t3", "phase_id": "dat-p5", "order_index": 3, "title": "Building Dashboards with Free BI Tools", "section": null, "tags": [], "estimated_time": null, "description": "Hands-on practice building an interactive dashboard in a free tool like Looker Studio or Tableau Public.", "steps": [] },
     { "id": "dat-p6-t1", "phase_id": "dat-p6", "order_index": 1, "title": "Python Basics for Data Analysis", "section": null, "tags": [], "estimated_time": null, "description": "Enough Python syntax — variables, loops, functions — to start automating the analysis work a spreadsheet can't.", "steps": [] },
     { "id": "dat-p6-t2", "phase_id": "dat-p6", "order_index": 2, "title": "Pandas Fundamentals", "section": null, "tags": [], "estimated_time": null, "description": "Load, index, filter, and summarize tabular data with pandas DataFrames, the workhorse of Python data analysis.", "steps": [] },
-    { "id": "dat-p6-t3", "phase_id": "dat-p6", "order_index": 3, "title": "Exploratory Data Analysis with Pandas", "section": null, "tags": [], "estimated_time": null, "description": "Combine pandas with basic plotting to explore a new dataset and spot patterns before formal analysis begins.", "steps": [] }
+    { "id": "dat-p6-t3", "phase_id": "dat-p6", "order_index": 3, "title": "Exploratory Data Analysis with Pandas", "section": null, "tags": [], "estimated_time": null, "description": "Combine pandas with basic plotting to explore a new dataset and spot patterns before formal analysis begins.", "steps": [] },
+    { "id": "dat-p7-t1", "phase_id": "dat-p7", "order_index": 1, "title": "Geospatial Data & Python — GeoPandas, Shapefiles & Mapping Fundamentals", "section": null, "tags": [], "estimated_time": null, "description": "What geospatial (vector) data actually is, and how to read, manipulate, and map shapefiles and GeoJSON with geopandas — including basic spatial joins.", "steps": [] },
+    { "id": "dat-p7-t2", "phase_id": "dat-p7", "order_index": 2, "title": "GIS Visualization Platforms — ArcGIS, QGIS, CARTO & Alteryx", "section": null, "tags": [], "estimated_time": null, "description": "What each tool in a location-analytics stack is actually for — desktop GIS mapping in ArcGIS/QGIS, cloud-based dashboards in CARTO, and no-code data prep with built-in predictive modeling in Alteryx.", "steps": [] },
+    { "id": "dat-p7-t3", "phase_id": "dat-p7", "order_index": 3, "title": "Location Analytics in Practice — Retail Site Selection, Store Footprint & Applied Predictive Modeling", "section": null, "tags": [], "estimated_time": null, "description": "How consulting and advisory firms actually use this toolkit — retail site-selection and store-footprint optimization, using Gradient Boosting and Random Forest to predict foot traffic and demand.", "steps": [] }
   ],
   "resources": [
     { "id": "dat-p1-r1", "topic_id": "dat-p1-t1", "order_index": 1, "title": "Google Data Analytics Professional Certificate", "url": "https://www.coursera.org/professional-certificates/google-data-analytics", "source": "Coursera / Google", "format": "course", "length": "Self-paced (free to audit)", "note": "The industry-standard intro cert — free to audit in full; only the graded certificate itself is paid.", "icon": null },
@@ -117,6 +129,17 @@
     { "id": "dat-p6-r3", "topic_id": "dat-p6-t2", "order_index": 3, "title": "Pandas", "url": "https://www.kaggle.com/learn/pandas", "source": "Kaggle Learn", "format": "course", "length": "~4 hours", "note": "Covers indexing, filtering, grouping, and combining DataFrames — the core pandas operations analysts use daily.", "icon": null },
     { "id": "dat-p6-r4", "topic_id": "dat-p6-t2", "order_index": 4, "title": "Learn Pandas & Python for Data Analysis [Full Course]", "url": "https://www.freecodecamp.org/news/learn-pandas-for-data-science/", "source": "freeCodeCamp", "format": "video", "length": "~5 hours", "note": "Project-based practice with pandas across several small real datasets.", "icon": null },
     { "id": "dat-p6-r5", "topic_id": "dat-p6-t3", "order_index": 5, "title": "Learn Data Analysis with Python – A Free 4-Hour Course", "url": "https://www.freecodecamp.org/news/learn-data-analysis-with-python-course/", "source": "freeCodeCamp", "format": "video", "length": "~4 hours", "note": "Puts pandas, NumPy, Matplotlib, and Seaborn together into one exploratory analysis workflow.", "icon": null },
-    { "id": "dat-p6-r6", "topic_id": "dat-p6-t3", "order_index": 6, "title": "Exploratory Data Analysis with pandas", "url": "https://towardsdatascience.com/exploratory-data-analysis-with-pandas-508a5e8a5964/", "source": "Towards Data Science", "format": "article", "length": "~10 min read", "note": "A tighter, article-length version of the same EDA workflow with pandas-specific tricks.", "icon": null }
+    { "id": "dat-p6-r6", "topic_id": "dat-p6-t3", "order_index": 6, "title": "Exploratory Data Analysis with pandas", "url": "https://towardsdatascience.com/exploratory-data-analysis-with-pandas-508a5e8a5964/", "source": "Towards Data Science", "format": "article", "length": "~10 min read", "note": "A tighter, article-length version of the same EDA workflow with pandas-specific tricks.", "icon": null },
+    { "id": "dat-p7-r1", "topic_id": "dat-p7-t1", "order_index": 1, "title": "Geospatial Analysis", "url": "https://www.kaggle.com/learn/geospatial-analysis", "source": "Kaggle Learn", "format": "course", "length": "~4 hours", "note": "Free micro-course covering GeoPandas, coordinate reference systems, and spatial joins using real shapefile and GeoJSON datasets.", "icon": null },
+    { "id": "dat-p7-r2", "topic_id": "dat-p7-t1", "order_index": 2, "title": "Getting Started", "url": "https://geopandas.org/en/stable/getting_started.html", "source": "GeoPandas", "format": "article", "length": "~15 min read", "note": "GeoPandas' own official guide to GeoDataFrames and reading/mapping shapefiles and GeoJSON — the primary reference for the library.", "icon": null },
+    { "id": "dat-p7-r3", "topic_id": "dat-p7-t1", "order_index": 3, "title": "GeoPandas Basics: Maps, Projections, and Spatial Joins", "url": "https://realpython.com/geopandas/", "source": "Real Python", "format": "article", "length": "~25 min read", "note": "A hands-on walkthrough of loading geospatial data, changing coordinate systems, and joining data by location with a real NYC boroughs example.", "icon": null },
+    { "id": "dat-p7-r4", "topic_id": "dat-p7-t2", "order_index": 4, "title": "QGIS Tutorials and Tips", "url": "https://www.qgistutorials.com/en/index.html", "source": "QGIS Tutorials and Tips", "format": "practice", "length": "Self-paced", "note": "Free, step-by-step QGIS tutorials from beginner mapmaking to spatial analysis — no license needed since QGIS is free and open-source.", "icon": null },
+    { "id": "dat-p7-r5", "topic_id": "dat-p7-t2", "order_index": 5, "title": "Get Started with ArcGIS Pro", "url": "https://learn.arcgis.com/en/projects/get-started-with-arcgis-pro/", "source": "Esri", "format": "course", "length": "Self-paced", "note": "Esri's own quick-start path through ArcGIS Pro, the desktop GIS tool many consulting and real-estate analytics teams standardize on alongside QGIS.", "icon": null },
+    { "id": "dat-p7-r6", "topic_id": "dat-p7-t2", "order_index": 6, "title": "CARTO Academy", "url": "https://academy.carto.com/", "source": "CARTO", "format": "course", "length": "Self-paced", "note": "CARTO's own tutorials and quick-start guides for building cloud-based location intelligence maps and dashboards.", "icon": null },
+    { "id": "dat-p7-r7", "topic_id": "dat-p7-t2", "order_index": 7, "title": "What Is Spatial Analysis?", "url": "https://www.alteryx.com/solutions/analytics-need/location-intelligence", "source": "Alteryx", "format": "article", "length": "~10 min read", "note": "Alteryx's own overview of its no-code spatial and location-intelligence tools, for prepping geospatial data before visualization or modeling.", "icon": null },
+    { "id": "dat-p7-r8", "topic_id": "dat-p7-t3", "order_index": 8, "title": "Real Estate Optimization | Retail & Consumer Products", "url": "https://www.fticonsulting.com/industries/retail-and-consumer-products/real-estate-optimization", "source": "FTI Consulting", "format": "article", "length": "~5 min read", "note": "How a real consulting practice evaluates store performance to inform openings, relocations, remodels, and closings across a retail portfolio.", "icon": null },
+    { "id": "dat-p7-r9", "topic_id": "dat-p7-t3", "order_index": 9, "title": "A&M Real Estate", "url": "https://www.alvarezandmarsal.com/am-real-estate", "source": "Alvarez & Marsal", "format": "article", "length": "~5 min read", "note": "Alvarez & Marsal's own real estate advisory page — the practice area behind the GIS/Python/Alteryx toolkit this phase is built around.", "icon": null },
+    { "id": "dat-p7-r10", "topic_id": "dat-p7-t3", "order_index": 10, "title": "Forest Model Tool", "url": "https://help.alteryx.com/current/en/designer/tools/predictive/forest-model-tool.html", "source": "Alteryx", "format": "article", "length": "~10 min read", "note": "Documentation for Alteryx's drag-and-drop Random Forest tool, used in practice for foot-traffic and demand prediction without writing model code.", "icon": null },
+    { "id": "dat-p7-r11", "topic_id": "dat-p7-t3", "order_index": 11, "title": "Boosted Model Tool", "url": "https://help.alteryx.com/current/en/designer/tools/predictive/boosted-model-tool.html", "source": "Alteryx", "format": "article", "length": "~10 min read", "note": "Documentation for Alteryx's Gradient Boosting tool — the same no-code approach applied to site-selection scoring and demand prediction.", "icon": null }
   ]
 }

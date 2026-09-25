@@ -7639,6 +7639,36 @@
       "icon_key": "finance",
       "xp_reward": 120,
       "threshold": 0
+    },
+    {
+      "id": "skill-topic-dat-p7-t1",
+      "name": "Geospatial Data & Python — GeoPandas, Shapefiles & Mapping Fundamentals",
+      "domain": "data",
+      "description": "What geospatial (vector) data actually is, and how to read, manipulate, and map shapefiles and GeoJSON with geopandas — including basic spatial joins.",
+      "tier": "advanced",
+      "icon_key": "data",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-dat-p7-t2",
+      "name": "GIS Visualization Platforms — ArcGIS, QGIS, CARTO & Alteryx",
+      "domain": "data",
+      "description": "What each tool in a location-analytics stack is actually for — desktop GIS mapping in ArcGIS/QGIS, cloud-based dashboards in CARTO, and no-code data prep with built-in predictive modeling in Alteryx.",
+      "tier": "advanced",
+      "icon_key": "data",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-dat-p7-t3",
+      "name": "Location Analytics in Practice — Retail Site Selection, Store Footprint & Applied Predictive Modeling",
+      "domain": "data",
+      "description": "How consulting and advisory firms actually use this toolkit — retail site-selection and store-footprint optimization, using Gradient Boosting and Random Forest to predict foot traffic and demand.",
+      "tier": "advanced",
+      "icon_key": "data",
+      "xp_reward": 120,
+      "threshold": 0
     }
   ],
   "skill_resources": [
@@ -9065,10 +9095,6 @@
     {
       "skill_id": "skill-topic-con-p5-t3",
       "resource_id": "con-p5-r4"
-    },
-    {
-      "skill_id": "skill-topic-con-p6-t1",
-      "resource_id": "con-p6-r1"
     },
     {
       "skill_id": "skill-topic-con-p6-t1",
@@ -10776,10 +10802,6 @@
     },
     {
       "skill_id": "skill-fpa-reporting",
-      "resource_id": "fpa-p1-r1"
-    },
-    {
-      "skill_id": "skill-fpa-reporting",
       "resource_id": "fpa-p1-r2"
     },
     {
@@ -10916,15 +10938,7 @@
     },
     {
       "skill_id": "skill-xcomm-presence",
-      "resource_id": "xcomm-p1-r2"
-    },
-    {
-      "skill_id": "skill-xcomm-presence",
       "resource_id": "xcomm-p1-r3"
-    },
-    {
-      "skill_id": "skill-xcomm-presence",
-      "resource_id": "xcomm-p2-r1"
     },
     {
       "skill_id": "skill-xcomm-presence",
@@ -10933,10 +10947,6 @@
     {
       "skill_id": "skill-xcomm-presence",
       "resource_id": "xcomm-p2-r3"
-    },
-    {
-      "skill_id": "skill-xcomm-storytelling",
-      "resource_id": "xcomm-p3-r1"
     },
     {
       "skill_id": "skill-xcomm-storytelling",
@@ -10953,10 +10963,6 @@
     {
       "skill_id": "skill-xcomm-storytelling",
       "resource_id": "xcomm-p5-r1"
-    },
-    {
-      "skill_id": "skill-xcomm-storytelling",
-      "resource_id": "xcomm-p5-r3"
     },
     {
       "skill_id": "skill-tw-docs-fundamentals",
@@ -11297,10 +11303,6 @@
     {
       "skill_id": "skill-topic-fprep-p2-t1",
       "resource_id": "fprep-p2-r2"
-    },
-    {
-      "skill_id": "skill-topic-fprep-p2-t1",
-      "resource_id": "fprep-p2-r3"
     },
     {
       "skill_id": "skill-topic-fprep-p2-t2",
@@ -13220,10 +13222,6 @@
     },
     {
       "skill_id": "skill-topic-fpa-p1-t1",
-      "resource_id": "fpa-p1-r1"
-    },
-    {
-      "skill_id": "skill-topic-fpa-p1-t1",
       "resource_id": "fpa-p1-r2"
     },
     {
@@ -13615,10 +13613,6 @@
       "resource_id": "xcomm-p1-r1"
     },
     {
-      "skill_id": "skill-topic-xcomm-p1-t1",
-      "resource_id": "xcomm-p1-r2"
-    },
-    {
       "skill_id": "skill-topic-xcomm-p1-t2",
       "resource_id": "xcomm-p1-r3"
     },
@@ -13633,10 +13627,6 @@
     {
       "skill_id": "skill-topic-xcomm-p1-t3",
       "resource_id": "xcomm-p1-r6"
-    },
-    {
-      "skill_id": "skill-topic-xcomm-p2-t1",
-      "resource_id": "xcomm-p2-r1"
     },
     {
       "skill_id": "skill-topic-xcomm-p2-t1",
@@ -13657,10 +13647,6 @@
     {
       "skill_id": "skill-topic-xcomm-p2-t3",
       "resource_id": "xcomm-p2-r6"
-    },
-    {
-      "skill_id": "skill-topic-xcomm-p3-t1",
-      "resource_id": "xcomm-p3-r1"
     },
     {
       "skill_id": "skill-topic-xcomm-p3-t1",
@@ -13695,10 +13681,6 @@
       "resource_id": "xcomm-p4-r3"
     },
     {
-      "skill_id": "skill-topic-xcomm-p4-t2",
-      "resource_id": "xcomm-p4-r4"
-    },
-    {
       "skill_id": "skill-topic-xcomm-p4-t3",
       "resource_id": "xcomm-p4-r5"
     },
@@ -13716,10 +13698,6 @@
     },
     {
       "skill_id": "skill-topic-xcomm-p5-t2",
-      "resource_id": "xcomm-p5-r3"
-    },
-    {
-      "skill_id": "skill-topic-xcomm-p5-t2",
       "resource_id": "xcomm-p5-r4"
     },
     {
@@ -13733,10 +13711,6 @@
     {
       "skill_id": "skill-topic-xcomm-p6-t1",
       "resource_id": "xcomm-p6-r1"
-    },
-    {
-      "skill_id": "skill-topic-xcomm-p6-t1",
-      "resource_id": "xcomm-p6-r2"
     },
     {
       "skill_id": "skill-topic-xcomm-p6-t2",
@@ -14799,10 +14773,6 @@
       "resource_id": "exc-p4-t2-r1"
     },
     {
-      "skill_id": "skill-topic-exc-p4-t2",
-      "resource_id": "exc-p4-t2-r2"
-    },
-    {
       "skill_id": "skill-topic-exc-p4-t3",
       "resource_id": "exc-p4-t3-r1"
     },
@@ -14825,10 +14795,6 @@
     {
       "skill_id": "skill-topic-exf-p1-t1",
       "resource_id": "exf-p1-t1-r2"
-    },
-    {
-      "skill_id": "skill-topic-exf-p1-t1",
-      "resource_id": "exf-p1-t1-r3"
     },
     {
       "skill_id": "skill-topic-exf-p1-t2",
@@ -15040,19 +15006,11 @@
     },
     {
       "skill_id": "skill-topic-exf-p8-t1",
-      "resource_id": "exf-p8-t1-r2"
-    },
-    {
-      "skill_id": "skill-topic-exf-p8-t1",
       "resource_id": "exf-p8-t1-r3"
     },
     {
       "skill_id": "skill-topic-exf-p8-t2",
       "resource_id": "exf-p8-t2-r1"
-    },
-    {
-      "skill_id": "skill-topic-exf-p8-t2",
-      "resource_id": "exf-p8-t2-r2"
     },
     {
       "skill_id": "skill-topic-exf-p9-t1",
@@ -15437,6 +15395,50 @@
     {
       "skill_id": "skill-topic-rx-p6-t3",
       "resource_id": "rx-p6-r9"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t1",
+      "resource_id": "dat-p7-r1"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t1",
+      "resource_id": "dat-p7-r2"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t1",
+      "resource_id": "dat-p7-r3"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t2",
+      "resource_id": "dat-p7-r4"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t2",
+      "resource_id": "dat-p7-r5"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t2",
+      "resource_id": "dat-p7-r6"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t2",
+      "resource_id": "dat-p7-r7"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t3",
+      "resource_id": "dat-p7-r8"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t3",
+      "resource_id": "dat-p7-r9"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t3",
+      "resource_id": "dat-p7-r10"
+    },
+    {
+      "skill_id": "skill-topic-dat-p7-t3",
+      "resource_id": "dat-p7-r11"
     }
   ]
 }
