@@ -7669,6 +7669,206 @@
       "icon_key": "data",
       "xp_reward": 120,
       "threshold": 0
+    },
+    {
+      "id": "skill-bl-ch11process",
+      "name": "The Chapter 11 Process",
+      "domain": "restructuring",
+      "description": "Can walk a Chapter 11 case end-to-end: what first-day motions actually ask for, what's really negotiated in a DIP financing agreement, and how a plan of reorganization moves from draft through disclosure statement to confirmation.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 150,
+      "threshold": 0
+    },
+    {
+      "id": "skill-bl-creditorpriority",
+      "name": "Creditor Priority & Legal Mechanisms",
+      "domain": "restructuring",
+      "description": "Can recognize the specific Bankruptcy Code mechanisms that drive deal terms — Section 365 executory contracts, Section 363 sales, preference and fraudulent transfer actions, the absolute priority rule and cramdown, secured/unsecured creditor rights, and KEIP/KERP rules.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 175,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p1-t1",
+      "name": "The Automatic Stay — What Freezes the Moment a Case Is Filed",
+      "domain": "restructuring",
+      "description": "Understand exactly what the automatic stay does and doesn't stop the instant a bankruptcy petition is filed, why it's called 'automatic,' and the statutory exceptions and relief-from-stay process that restructuring professionals need to recognize.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p1-t2",
+      "name": "Chapters 7, 11, and 15 — Liquidation, Reorganization, and Cross-Border Cases Compared",
+      "domain": "restructuring",
+      "description": "Compare liquidation under Chapter 7, reorganization under Chapter 11, and the ancillary cross-border framework of Chapter 15 — and understand why the choice of chapter shapes everything that follows in a case.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p1-t3",
+      "name": "Who's in the Room — Debtor's Counsel, the UCC and Its Counsel, the U.S. Trustee, and the Judge",
+      "domain": "restructuring",
+      "description": "Map the actual participants in a Chapter 11 case: debtor's counsel and its fiduciary duties, the Official Committee of Unsecured Creditors and its own counsel, the U.S. Trustee's oversight role, and the bankruptcy judge.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p2-t1",
+      "name": "First-Day Motions and the First 30 Days of a Case",
+      "domain": "restructuring",
+      "description": "Learn what first-day motions actually ask for — cash management, critical vendors, wages, utilities — and why the first-day hearing sets the tone for the entire case.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p2-t2",
+      "name": "DIP Financing Agreements — What's Actually in Them and Why Lenders Get Control",
+      "domain": "restructuring",
+      "description": "Go inside an actual DIP credit agreement: budget covenants, milestones, roll-up provisions, priming liens, and the superpriority status that gives DIP lenders outsized leverage over the case.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p2-t3",
+      "name": "The Plan of Reorganization and Disclosure Statement — From Draft to Confirmation",
+      "domain": "restructuring",
+      "description": "Follow a plan of reorganization from drafting through disclosure statement approval, creditor solicitation, voting, and the confirmation hearing that determines whether a debtor emerges from Chapter 11.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p3-t1",
+      "name": "Executory Contracts and Unexpired Leases (Section 365) — Assume, Assign, or Reject",
+      "domain": "restructuring",
+      "description": "Understand the debtor's powerful Section 365 right to cherry-pick which contracts and leases to keep, cure and assume, assign to a third party, or reject — and what that means for counterparties.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p3-t2",
+      "name": "Section 363 Sales — Stalking Horse Bids, Auctions, and Selling Assets Free and Clear",
+      "domain": "restructuring",
+      "description": "Learn how a Section 363 sale lets a debtor sell assets outside a plan, free and clear of liens and claims, through a stalking-horse bid, court-supervised auction, and sale hearing.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p3-t3",
+      "name": "Preferences and Fraudulent Transfers (Sections 547/548) — Clawing Back Pre-Bankruptcy Payments",
+      "domain": "restructuring",
+      "description": "Understand how a trustee or debtor in possession can claw back payments made shortly before filing under the preference rules of Section 547 and the actual and constructive fraud tests of Section 548.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p4-t1",
+      "name": "The Absolute Priority Rule and Cramdown, in Depth",
+      "domain": "restructuring",
+      "description": "Go beyond the one-line definition: study how the absolute priority rule actually gets litigated, what 'fair and equitable' requires class by class, the new value exception, and how a plan gets crammed down over an objecting class.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p4-t2",
+      "name": "Secured vs. Unsecured Creditor Rights and Contractual Subordination",
+      "domain": "restructuring",
+      "description": "Understand what actually separates a secured claim from an unsecured one in a bankruptcy case, and how contractual subordination agreements between creditors get enforced under Section 510.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p4-t3",
+      "name": "Executive Retention Pay in Bankruptcy — KEIP/KERP Rules and Why They're Controversial",
+      "domain": "restructuring",
+      "description": "Learn the BAPCPA-era rules under Section 503(c) that sharply limit retention bonuses (KERPs) but allow incentive plans tied to difficult-to-reach milestones (KEIPs) — and why courts scrutinize the difference so closely.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p5-t1",
+      "name": "Chapter 15 — How Cross-Border Insolvency Actually Works",
+      "domain": "restructuring",
+      "description": "Understand how a foreign representative petitions a U.S. court for recognition of a foreign proceeding as 'main' or 'non-main,' and what powers and protections recognition actually confers.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p5-t2",
+      "name": "UK Administration, CVAs, and Schemes of Arrangement — A Working Comparison to Chapter 11",
+      "domain": "restructuring",
+      "description": "Build a working comparison of the major UK restructuring tools — Administration, Company Voluntary Arrangements, Schemes of Arrangement, and the newer Part 26A Restructuring Plan — against U.S. Chapter 11.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p5-t3",
+      "name": "Out-of-Court Workouts and Exchange Offers — The Legal Mechanics When You Avoid Court",
+      "domain": "restructuring",
+      "description": "Learn how companies restructure debt entirely outside of bankruptcy court through negotiated workouts and exchange offers, and the securities-law and intercreditor mechanics that make them work.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p6-t1",
+      "name": "How Restructuring Advisors and Lawyers Actually Divide the Work",
+      "domain": "restructuring",
+      "description": "Understand the practical division of labor on a real case between debtor's counsel, the investment bank or turnaround consultant, and the chief restructuring officer — and how the best teams coordinate.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p6-t2",
+      "name": "Adversary Proceedings and Bankruptcy Litigation Basics",
+      "domain": "restructuring",
+      "description": "Learn what turns a bankruptcy case into a lawsuit: the categories of disputes that must be filed as adversary proceedings under Rule 7001, and how that litigation track runs alongside the main case.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p6-t3",
+      "name": "Reading a First-Day Declaration and Other Real Case Filings",
+      "domain": "restructuring",
+      "description": "Read an actual first-day declaration from a major, well-documented Chapter 11 case and learn how to extract the business history, capital structure, and narrative that every other filing in the case builds on.",
+      "tier": "advanced",
+      "icon_key": "finance",
+      "xp_reward": 120,
+      "threshold": 0
     }
   ],
   "skill_resources": [
@@ -15359,6 +15559,282 @@
     {
       "skill_id": "skill-topic-dat-p7-t3",
       "resource_id": "dat-p7-r11"
+    },
+    {
+      "skill_id": "skill-bl-ch11process",
+      "resource_id": "bl-p2-r1"
+    },
+    {
+      "skill_id": "skill-bl-ch11process",
+      "resource_id": "bl-p2-r2"
+    },
+    {
+      "skill_id": "skill-bl-ch11process",
+      "resource_id": "bl-p2-r3"
+    },
+    {
+      "skill_id": "skill-bl-ch11process",
+      "resource_id": "bl-p2-r4"
+    },
+    {
+      "skill_id": "skill-bl-ch11process",
+      "resource_id": "bl-p2-r5"
+    },
+    {
+      "skill_id": "skill-bl-ch11process",
+      "resource_id": "bl-p2-r6"
+    },
+    {
+      "skill_id": "skill-bl-ch11process",
+      "resource_id": "bl-p2-r7"
+    },
+    {
+      "skill_id": "skill-bl-ch11process",
+      "resource_id": "bl-p2-r8"
+    },
+    {
+      "skill_id": "skill-bl-ch11process",
+      "resource_id": "bl-p2-r9"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p3-r1"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p3-r2"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p3-r3"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p3-r4"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p3-r5"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p3-r6"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p3-r7"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p4-r1"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p4-r2"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p4-r3"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p4-r4"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p4-r5"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p4-r6"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p4-r7"
+    },
+    {
+      "skill_id": "skill-bl-creditorpriority",
+      "resource_id": "bl-p4-r8"
+    },
+    {
+      "skill_id": "skill-topic-bl-p1-t1",
+      "resource_id": "bl-p1-r1"
+    },
+    {
+      "skill_id": "skill-topic-bl-p1-t1",
+      "resource_id": "bl-p1-r2"
+    },
+    {
+      "skill_id": "skill-topic-bl-p1-t2",
+      "resource_id": "bl-p1-r3"
+    },
+    {
+      "skill_id": "skill-topic-bl-p1-t2",
+      "resource_id": "bl-p1-r4"
+    },
+    {
+      "skill_id": "skill-topic-bl-p1-t3",
+      "resource_id": "bl-p1-r5"
+    },
+    {
+      "skill_id": "skill-topic-bl-p1-t3",
+      "resource_id": "bl-p1-r6"
+    },
+    {
+      "skill_id": "skill-topic-bl-p1-t3",
+      "resource_id": "bl-p1-r7"
+    },
+    {
+      "skill_id": "skill-topic-bl-p2-t1",
+      "resource_id": "bl-p2-r1"
+    },
+    {
+      "skill_id": "skill-topic-bl-p2-t1",
+      "resource_id": "bl-p2-r2"
+    },
+    {
+      "skill_id": "skill-topic-bl-p2-t1",
+      "resource_id": "bl-p2-r3"
+    },
+    {
+      "skill_id": "skill-topic-bl-p2-t2",
+      "resource_id": "bl-p2-r4"
+    },
+    {
+      "skill_id": "skill-topic-bl-p2-t2",
+      "resource_id": "bl-p2-r5"
+    },
+    {
+      "skill_id": "skill-topic-bl-p2-t2",
+      "resource_id": "bl-p2-r6"
+    },
+    {
+      "skill_id": "skill-topic-bl-p2-t3",
+      "resource_id": "bl-p2-r7"
+    },
+    {
+      "skill_id": "skill-topic-bl-p2-t3",
+      "resource_id": "bl-p2-r8"
+    },
+    {
+      "skill_id": "skill-topic-bl-p2-t3",
+      "resource_id": "bl-p2-r9"
+    },
+    {
+      "skill_id": "skill-topic-bl-p3-t1",
+      "resource_id": "bl-p3-r1"
+    },
+    {
+      "skill_id": "skill-topic-bl-p3-t1",
+      "resource_id": "bl-p3-r2"
+    },
+    {
+      "skill_id": "skill-topic-bl-p3-t1",
+      "resource_id": "bl-p3-r3"
+    },
+    {
+      "skill_id": "skill-topic-bl-p3-t2",
+      "resource_id": "bl-p3-r4"
+    },
+    {
+      "skill_id": "skill-topic-bl-p3-t2",
+      "resource_id": "bl-p3-r5"
+    },
+    {
+      "skill_id": "skill-topic-bl-p3-t3",
+      "resource_id": "bl-p3-r6"
+    },
+    {
+      "skill_id": "skill-topic-bl-p3-t3",
+      "resource_id": "bl-p3-r7"
+    },
+    {
+      "skill_id": "skill-topic-bl-p4-t1",
+      "resource_id": "bl-p4-r1"
+    },
+    {
+      "skill_id": "skill-topic-bl-p4-t1",
+      "resource_id": "bl-p4-r2"
+    },
+    {
+      "skill_id": "skill-topic-bl-p4-t1",
+      "resource_id": "bl-p4-r3"
+    },
+    {
+      "skill_id": "skill-topic-bl-p4-t2",
+      "resource_id": "bl-p4-r4"
+    },
+    {
+      "skill_id": "skill-topic-bl-p4-t2",
+      "resource_id": "bl-p4-r5"
+    },
+    {
+      "skill_id": "skill-topic-bl-p4-t3",
+      "resource_id": "bl-p4-r6"
+    },
+    {
+      "skill_id": "skill-topic-bl-p4-t3",
+      "resource_id": "bl-p4-r7"
+    },
+    {
+      "skill_id": "skill-topic-bl-p4-t3",
+      "resource_id": "bl-p4-r8"
+    },
+    {
+      "skill_id": "skill-topic-bl-p5-t1",
+      "resource_id": "bl-p5-r1"
+    },
+    {
+      "skill_id": "skill-topic-bl-p5-t1",
+      "resource_id": "bl-p5-r2"
+    },
+    {
+      "skill_id": "skill-topic-bl-p5-t2",
+      "resource_id": "bl-p5-r3"
+    },
+    {
+      "skill_id": "skill-topic-bl-p5-t2",
+      "resource_id": "bl-p5-r4"
+    },
+    {
+      "skill_id": "skill-topic-bl-p5-t2",
+      "resource_id": "bl-p5-r5"
+    },
+    {
+      "skill_id": "skill-topic-bl-p5-t3",
+      "resource_id": "bl-p5-r6"
+    },
+    {
+      "skill_id": "skill-topic-bl-p5-t3",
+      "resource_id": "bl-p5-r7"
+    },
+    {
+      "skill_id": "skill-topic-bl-p6-t1",
+      "resource_id": "bl-p6-r1"
+    },
+    {
+      "skill_id": "skill-topic-bl-p6-t1",
+      "resource_id": "bl-p6-r2"
+    },
+    {
+      "skill_id": "skill-topic-bl-p6-t2",
+      "resource_id": "bl-p6-r3"
+    },
+    {
+      "skill_id": "skill-topic-bl-p6-t2",
+      "resource_id": "bl-p6-r4"
+    },
+    {
+      "skill_id": "skill-topic-bl-p6-t3",
+      "resource_id": "bl-p6-r5"
+    },
+    {
+      "skill_id": "skill-topic-bl-p6-t3",
+      "resource_id": "bl-p6-r6"
+    },
+    {
+      "skill_id": "skill-topic-bl-p6-t3",
+      "resource_id": "bl-p6-r7"
     }
   ]
 }

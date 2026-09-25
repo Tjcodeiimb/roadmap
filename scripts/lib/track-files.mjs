@@ -39,4 +39,5 @@ export const TRACK_FILES = [
   'tech_writing.json',
   'personal_branding.json',
   'restructuring.json',
+  'bankruptcy_law.json',
 ];
