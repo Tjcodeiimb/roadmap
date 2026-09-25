@@ -3186,21 +3186,9 @@
   ],
   "resources": [
     {
-      "id": "fin-p1-r1",
-      "topic_id": "fin-p1-t1",
-      "order_index": 1,
-      "title": "Financial Statements in 14 Minutes – A Beginners Guide",
-      "url": "https://www.youtube.com/watch?v=Yx-qIKRIcqo",
-      "source": "YouTube",
-      "format": "video",
-      "length": "~14 min",
-      "note": "Fast, clear beginner overview of all three statements",
-      "icon": null
-    },
-    {
       "id": "fin-p12-r4",
       "topic_id": "fin-p1-t1",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Beginner's Guide to Financial Statements",
       "url": "https://www.sec.gov/oiea/reports-and-publications/investor-publications/beginners-guide-financial-statements",
       "source": "U.S. SEC",
@@ -3212,7 +3200,7 @@
     {
       "id": "fin-p1-r3",
       "topic_id": "fin-p1-t1",
-      "order_index": 3,
+      "order_index": 2,
       "title": "Connecting the Income Statement, Balance Sheet, and Cash Flow Statement",
       "url": "https://www.youtube.com/watch?v=pRfP-vIkMak",
       "source": "YouTube",
@@ -3305,21 +3293,9 @@
       "icon": null
     },
     {
-      "id": "fin-p6-r4",
-      "topic_id": "fin-p6-t2",
-      "order_index": 1,
-      "title": "The Basics of Portfolio Construction",
-      "url": "https://www.youtube.com/watch?v=3gXhxTm6cA8",
-      "source": "YouTube",
-      "format": "video",
-      "length": null,
-      "note": "Asset allocation as core driver",
-      "icon": null
-    },
-    {
       "id": "fin-p6-r5",
       "topic_id": "fin-p6-t2",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Portfolio Construction",
       "url": "https://www.fe.training/free-resources/portfolio-management/portfolio-construction/",
       "source": "Financial Edge Training",
@@ -3351,39 +3327,15 @@
       "note": "The coverage group whose clients are PE firms — the strongest buy-side feeder."
     },
     {
-      "id": "fin-p2-r1",
-      "topic_id": "fin-p2-t1",
-      "order_index": 1,
-      "title": "WACC Explained for Beginners",
-      "url": "https://www.youtube.com/watch?v=crMSEf3_8X0",
-      "source": "YouTube",
-      "format": "video",
-      "length": null,
-      "note": "Beginner walk-through of the discount-rate concept",
-      "icon": null
-    },
-    {
       "id": "fin-p2-r2",
       "topic_id": "fin-p2-t1",
-      "order_index": 2,
+      "order_index": 1,
       "title": "WACC Guide",
       "url": "https://www.wallstreetprep.com/knowledge/wacc/",
       "source": "Wall Street Prep",
       "format": "article",
       "length": null,
       "note": "Ties WACC to DCF and capital structure",
-      "icon": null
-    },
-    {
-      "id": "fin-p2-r5",
-      "topic_id": "fin-p2-t1",
-      "order_index": 3,
-      "title": "Chapter 10 – Cost of Capital",
-      "url": "https://pressbooks.pub/fundamentaloffinance/chapter/chapter-10-cost-of-capital/",
-      "source": "Fundamentals of Finance (Pressbooks)",
-      "format": "open textbook",
-      "length": null,
-      "note": "Free chapter on WACC and hurdle rates",
       "icon": null
     },
     {
@@ -3481,21 +3433,9 @@
       "note": "Building the data tables behind a defensible valuation range."
     },
     {
-      "id": "fin-p4-r3",
-      "topic_id": "fin-p10-t2",
-      "order_index": 1,
-      "title": "Comparable Company Analysis (CCA) Tutorial",
-      "url": "https://breakingintowallstreet.com/kb/valuation/comparable-company-analysis-cca/",
-      "source": "Breaking Into Wall Street",
-      "format": "article+video",
-      "length": "~21 min",
-      "note": "Full walkthrough with free Excel template",
-      "icon": null
-    },
-    {
       "id": "fin-p10-r3",
       "topic_id": "fin-p10-t2",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Comparable Company Analysis | Trading Comps Tutorial",
       "url": "https://www.wallstreetprep.com/knowledge/comparable-company-analysis-comps/",
       "source": "Wall Street Prep",
@@ -3507,7 +3447,7 @@
     {
       "id": "fin-p10-r4",
       "topic_id": "fin-p10-t2",
-      "order_index": 3,
+      "order_index": 2,
       "title": "Valuation Online Class (25 free sessions)",
       "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/webcastvalonline.htm",
       "source": "Aswath Damodaran, NYU Stern",
@@ -3526,18 +3466,6 @@
       "format": "article",
       "length": null,
       "note": "How to screen deal comps, calculate acquisition multiples, and apply a control premium to trading value",
-      "icon": null
-    },
-    {
-      "id": "fin-p10-r6",
-      "topic_id": "fin-p10-t3",
-      "order_index": 2,
-      "title": "Precedent Transaction Analysis: Tutorial and Excel Examples",
-      "url": "https://breakingintowallstreet.com/kb/valuation/precedent-transaction-analysis/",
-      "source": "Breaking Into Wall Street",
-      "format": "article+template",
-      "length": null,
-      "note": "Step-by-step walkthrough with free Excel template; explains spread vs. spot multiples and data sourcing",
       "icon": null
     },
     {
@@ -3694,21 +3622,9 @@
       "note": "Short companion; note it deliberately omits valuation."
     },
     {
-      "id": "fin-p4-r1",
-      "topic_id": "fin-p4-t1",
-      "order_index": 1,
-      "title": "Investment Banking Pitch Book – How to Create a Pitch Book",
-      "url": "https://www.fe.training/free-resources/investment-banking/investment-banking-pitch-book/",
-      "source": "Financial Edge Training",
-      "format": "article",
-      "length": null,
-      "note": "Pitch book types and structure",
-      "icon": null
-    },
-    {
       "id": "fin-p4-r2",
       "topic_id": "fin-p4-t1",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Investment Banking Pitch Books: Design, Examples & Templates",
       "url": "https://mergersandinquisitions.com/investment-banking-pitch-books/",
       "source": "Mergers & Inquisitions",
@@ -3720,7 +3636,7 @@
     {
       "id": "fin-p10-r7",
       "topic_id": "fin-p4-t1",
-      "order_index": 3,
+      "order_index": 2,
       "title": "Football Field Chart: Valuation Range Summary",
       "url": "https://corporatefinanceinstitute.com/resources/valuation/football-field-chart/",
       "source": "Corporate Finance Institute",
@@ -3740,20 +3656,9 @@
       "note": "Full build. Article is free; the Excel template asks for an email."
     },
     {
-      "id": "fin-p5-r11",
-      "topic_id": "fin-p5-t3",
-      "order_index": 2,
-      "title": "Merger Model: Accretion/Dilution",
-      "url": "https://www.streetofwalls.com/articles/investment-banking/recruiting-interviewing/merger-model-accretion-dilution/",
-      "source": "Street of Walls",
-      "format": "article",
-      "length": null,
-      "note": "The accretion/dilution logic in interview form."
-    },
-    {
       "id": "fin-p5-r12",
       "topic_id": "fin-p5-t3",
-      "order_index": 3,
+      "order_index": 2,
       "title": "M&A Interview Questions",
       "url": "https://www.wallstreetprep.com/knowledge/ma-interview-questions/",
       "source": "Wall Street Prep",
@@ -3764,7 +3669,7 @@
     {
       "id": "fin-p5-r5",
       "topic_id": "fin-p5-t3",
-      "order_index": 4,
+      "order_index": 3,
       "title": "Accretion/Dilution Analysis",
       "url": "https://www.wallstreetprep.com/knowledge/financial-modeling-quick-lesson-accretion-dilution-model/",
       "source": "Wall Street Prep",
@@ -3885,18 +3790,6 @@
       "format": "article",
       "length": null,
       "note": "Long/short, macro, quant, event-driven, arbitrage",
-      "icon": null
-    },
-    {
-      "id": "fin-p9-r4",
-      "topic_id": "fin-p9-t2",
-      "order_index": 2,
-      "title": "Hedge Fund Strategies",
-      "url": "https://www.streetofwalls.com/finance-training-courses/hedge-fund-training/hedge-fund-strategies/",
-      "source": "Street of Walls",
-      "format": "article",
-      "length": null,
-      "note": "Overview of the 7 core hedge fund strategies",
       "icon": null
     },
     {
@@ -4504,21 +4397,9 @@
       "icon": null
     },
     {
-      "id": "fin-p16-r4",
-      "topic_id": "fin-p16-t2",
-      "order_index": 1,
-      "title": "Horizontal Analysis",
-      "url": "https://corporatefinanceinstitute.com/resources/accounting/horizontal-analysis/",
-      "source": "Corporate Finance Institute",
-      "format": "article",
-      "length": null,
-      "note": "How to compare a statement across periods to identify revenue, margin and cyclical trends.",
-      "icon": null
-    },
-    {
       "id": "fin-p16-r5",
       "topic_id": "fin-p16-t2",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Common Size Analysis",
       "url": "https://www.wallstreetoasis.com/resources/skills/finance/common-size-analysis",
       "source": "Wall Street Oasis",
@@ -4530,7 +4411,7 @@
     {
       "id": "fin-p16-r6",
       "topic_id": "fin-p16-t2",
-      "order_index": 3,
+      "order_index": 2,
       "title": "Horizontal Analysis | Formula + Calculator",
       "url": "https://www.wallstreetprep.com/knowledge/horizontal-analysis/",
       "source": "Wall Street Prep",
@@ -4900,39 +4781,15 @@
       "icon": null
     },
     {
-      "id": "fin-p18-r7",
-      "topic_id": "fin-p18-t3",
-      "order_index": 1,
-      "title": "Football Field Chart - Download Free Excel Template",
-      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/football-field-chart/",
-      "source": "Corporate Finance Institute",
-      "format": "article",
-      "length": null,
-      "note": "Free template for a football field summarizing DCF, comps and precedent-transaction ranges.",
-      "icon": null
-    },
-    {
       "id": "fin-p18-r8",
       "topic_id": "fin-p18-t3",
-      "order_index": 2,
+      "order_index": 1,
       "title": "Football Field Valuation Chart | Excel Tutorial + Example",
       "url": "https://www.wallstreetprep.com/knowledge/football-field-valuation-real-example-excel-template/",
       "source": "Wall Street Prep",
       "format": "article",
       "length": null,
       "note": "A worked, real-company example of building the football field chart in Excel.",
-      "icon": null
-    },
-    {
-      "id": "fin-p18-r9",
-      "topic_id": "fin-p18-t3",
-      "order_index": 3,
-      "title": "How to Create a Football Field Chart in Excel for Financial Valuations",
-      "url": "https://www.youtube.com/watch?v=jHYOLmgZJsI",
-      "source": "YouTube",
-      "format": "video",
-      "length": null,
-      "note": "Quick video build of a football field chart depicting multiple valuation methods.",
       "icon": null
     },
     {
@@ -5137,30 +4994,6 @@
       "format": "video",
       "length": null,
       "note": "Step-by-step walkthrough of the time value of money concept, formula, and present/future value examples.",
-      "icon": null
-    },
-    {
-      "id": "fin-p3-t2-r1",
-      "topic_id": "fin-p3-t2",
-      "order_index": 2,
-      "title": "Buy Side vs Sell Side - Differences, Meaning",
-      "url": "https://www.wallstreetoasis.com/resources/careers/jobs/buy-side-vs-sell-side",
-      "source": "Wall Street Oasis",
-      "format": "article",
-      "length": null,
-      "note": "Contrasts buy-side and sell-side firm types, incentives and day-to-day work.",
-      "icon": null
-    },
-    {
-      "id": "fin-p3-t2-r2",
-      "topic_id": "fin-p3-t2",
-      "order_index": 3,
-      "title": "Buy Side vs Sell Side | Capital Markets",
-      "url": "https://www.youtube.com/watch?v=zWE6dkGHo_A",
-      "source": "YouTube",
-      "format": "video",
-      "length": null,
-      "note": "Explains the buy side (investment managers, pension funds, hedge funds) versus the sell side in capital markets.",
       "icon": null
     },
     {
@@ -6076,18 +5909,6 @@
       "icon": null
     },
     {
-      "id": "fin-p29-t1-r3",
-      "topic_id": "fin-p29-t1",
-      "order_index": 3,
-      "title": "ASC 606 Revenue Recognition in Plain English: A CPA's Walkthrough of the 5-Step Model",
-      "url": "https://www.youtube.com/watch?v=I8dBdXuT7cA",
-      "source": "YouTube",
-      "format": "video",
-      "length": null,
-      "note": "CPA-led walkthrough of the five-step model in plain language.",
-      "icon": null
-    },
-    {
       "id": "fin-p29-t2-r1",
       "topic_id": "fin-p29-t2",
       "order_index": 1,
@@ -6280,21 +6101,9 @@
       "icon": null
     },
     {
-      "id": "fin-p30-t4-r2",
-      "topic_id": "fin-p30-t4",
-      "order_index": 2,
-      "title": "IFRS vs. US GAAP - Definition, Differences, Terms",
-      "url": "https://corporatefinanceinstitute.com/resources/accounting/ifrs-vs-us-gaap/",
-      "source": "Corporate Finance Institute",
-      "format": "article",
-      "length": null,
-      "note": "A second pass through the same differences, framed for an analyst reconciling two filings.",
-      "icon": null
-    },
-    {
       "id": "fin-p30-t4-r3",
       "topic_id": "fin-p30-t4",
-      "order_index": 3,
+      "order_index": 2,
       "title": "Indian GAAP, IFRS and Ind AS - A Comparison",
       "url": "https://www.iasplus.com/en/publications/india/ifrs-and-ind-as",
       "source": "IAS Plus (Deloitte)",

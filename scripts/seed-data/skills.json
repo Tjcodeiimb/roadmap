@@ -8174,10 +8174,6 @@
     },
     {
       "skill_id": "skill-finance-statements",
-      "resource_id": "fin-p1-r1"
-    },
-    {
-      "skill_id": "skill-finance-statements",
       "resource_id": "fin-p1-r3"
     },
     {
@@ -8190,15 +8186,7 @@
     },
     {
       "skill_id": "skill-finance-valuation",
-      "resource_id": "fin-p4-r1"
-    },
-    {
-      "skill_id": "skill-finance-valuation",
       "resource_id": "fin-p4-r2"
-    },
-    {
-      "skill_id": "skill-finance-valuation",
-      "resource_id": "fin-p4-r3"
     },
     {
       "skill_id": "skill-finance-valuation",
@@ -8766,10 +8754,6 @@
     },
     {
       "skill_id": "skill-topic-fin-p1-t1",
-      "resource_id": "fin-p1-r1"
-    },
-    {
-      "skill_id": "skill-topic-fin-p1-t1",
       "resource_id": "fin-p1-r3"
     },
     {
@@ -8782,15 +8766,7 @@
     },
     {
       "skill_id": "skill-topic-fin-p2-t1",
-      "resource_id": "fin-p2-r1"
-    },
-    {
-      "skill_id": "skill-topic-fin-p2-t1",
       "resource_id": "fin-p2-r2"
-    },
-    {
-      "skill_id": "skill-topic-fin-p2-t1",
-      "resource_id": "fin-p2-r5"
     },
     {
       "skill_id": "skill-topic-fin-p2-t2",
@@ -8814,10 +8790,6 @@
     },
     {
       "skill_id": "skill-topic-fin-p4-t1",
-      "resource_id": "fin-p4-r1"
-    },
-    {
-      "skill_id": "skill-topic-fin-p4-t1",
       "resource_id": "fin-p4-r2"
     },
     {
@@ -8835,10 +8807,6 @@
     {
       "skill_id": "skill-topic-fin-p5-t2",
       "resource_id": "fin-p5-r4"
-    },
-    {
-      "skill_id": "skill-topic-fin-p6-t2",
-      "resource_id": "fin-p6-r4"
     },
     {
       "skill_id": "skill-topic-fin-p6-t2",
@@ -8889,10 +8857,6 @@
       "resource_id": "fin-p9-r3"
     },
     {
-      "skill_id": "skill-topic-fin-p9-t2",
-      "resource_id": "fin-p9-r4"
-    },
-    {
       "skill_id": "skill-topic-fin-p9-t3",
       "resource_id": "fin-p9-r5"
     },
@@ -8919,10 +8883,6 @@
     {
       "skill_id": "skill-topic-fin-p10-t3",
       "resource_id": "fin-p10-r5"
-    },
-    {
-      "skill_id": "skill-topic-fin-p10-t3",
-      "resource_id": "fin-p10-r6"
     },
     {
       "skill_id": "skill-topic-fin-p11-t1",
@@ -8987,10 +8947,6 @@
     {
       "skill_id": "skill-finance-equity-research-valuation",
       "resource_id": "fin-p10-r5"
-    },
-    {
-      "skill_id": "skill-finance-equity-research-valuation",
-      "resource_id": "fin-p10-r6"
     },
     {
       "skill_id": "skill-finance-structured-finance",
@@ -11066,10 +11022,6 @@
     },
     {
       "skill_id": "skill-topic-fin-p5-t3",
-      "resource_id": "fin-p5-r11"
-    },
-    {
-      "skill_id": "skill-topic-fin-p5-t3",
       "resource_id": "fin-p5-r12"
     },
     {
@@ -11681,24 +11633,12 @@
       "resource_id": "fin-p3-r10"
     },
     {
-      "skill_id": "skill-topic-fin-p3-t2",
-      "resource_id": "fin-p3-t2-r1"
-    },
-    {
-      "skill_id": "skill-topic-fin-p3-t2",
-      "resource_id": "fin-p3-t2-r2"
-    },
-    {
       "skill_id": "skill-topic-fin-p10-t1",
       "resource_id": "fin-p4-r5"
     },
     {
       "skill_id": "skill-topic-fin-p10-t1",
       "resource_id": "fin-p4-r6"
-    },
-    {
-      "skill_id": "skill-topic-fin-p10-t2",
-      "resource_id": "fin-p4-r3"
     },
     {
       "skill_id": "skill-topic-fin-p8-t1",
@@ -11747,10 +11687,6 @@
     {
       "skill_id": "skill-topic-fin-p16-t1",
       "resource_id": "fin-p16-r3"
-    },
-    {
-      "skill_id": "skill-topic-fin-p16-t2",
-      "resource_id": "fin-p16-r4"
     },
     {
       "skill_id": "skill-topic-fin-p16-t2",
@@ -11882,15 +11818,7 @@
     },
     {
       "skill_id": "skill-topic-fin-p18-t3",
-      "resource_id": "fin-p18-r7"
-    },
-    {
-      "skill_id": "skill-topic-fin-p18-t3",
       "resource_id": "fin-p18-r8"
-    },
-    {
-      "skill_id": "skill-topic-fin-p18-t3",
-      "resource_id": "fin-p18-r9"
     },
     {
       "skill_id": "skill-topic-fin-p20-t1",
@@ -12241,10 +12169,6 @@
       "resource_id": "fin-p29-t1-r2"
     },
     {
-      "skill_id": "skill-topic-fin-p29-t1",
-      "resource_id": "fin-p29-t1-r3"
-    },
-    {
       "skill_id": "skill-topic-fin-p29-t2",
       "resource_id": "fin-p29-t2-r1"
     },
@@ -12307,10 +12231,6 @@
     {
       "skill_id": "skill-topic-fin-p30-t4",
       "resource_id": "fin-p30-t4-r1"
-    },
-    {
-      "skill_id": "skill-topic-fin-p30-t4",
-      "resource_id": "fin-p30-t4-r2"
     },
     {
       "skill_id": "skill-topic-fin-p30-t4",
