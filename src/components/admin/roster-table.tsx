@@ -2,6 +2,7 @@
 
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { setUserRole } from "@/app/actions/admin";
 
 interface Row {
@@ -37,7 +38,11 @@ export function RosterTable({ rows }: { rows: Row[] }) {
         <tbody>
           {rows.map((r) => (
             <tr key={r.id} className="border-t-2 border-ink">
-              <td className="py-2.5 font-medium text-ink">{r.full_name ?? "—"}</td>
+              <td className="py-2.5 font-medium text-ink">
+                <Link href={`/admin/user/${r.id}`} className="underline decoration-2 underline-offset-2 hover:text-accent">
+                  {r.full_name ?? "—"}
+                </Link>
+              </td>
               <td className="py-2.5 text-ink-2">{r.email}</td>
               <td className="py-2.5">
                 <span className="rounded-sm border-2 border-ink bg-paper-3 px-2 py-0.5 text-xs font-bold text-ink-2">{r.role}</span>

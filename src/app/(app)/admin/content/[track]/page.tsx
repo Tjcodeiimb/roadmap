@@ -4,6 +4,7 @@ import { ChevronLeft } from "lucide-react";
 import { requireAdminPage } from "@/lib/admin-guard";
 import { getTrackContentTree } from "@/lib/queries";
 import { ContentEditor } from "@/components/admin/content-editor";
+import { TrackNameEditor } from "@/components/admin/track-name-editor";
 
 export default async function AdminContentPage({
   params,
@@ -21,8 +22,8 @@ export default async function AdminContentPage({
         <ChevronLeft size={16} /> Back to admin
       </Link>
       <div>
-        <h1 className="font-display text-3xl font-extrabold tracking-tight text-ink">{track.label} content</h1>
-        <p className="mt-2 text-ink-2">Edit phases, topics and resources. Changes are live immediately — no redeploy.</p>
+        <TrackNameEditor trackId={track.id} initialLabel={track.label} />
+        <p className="mt-2 text-ink-2">Edit the course name, phases, topics and resources. Changes are live immediately — no redeploy.</p>
       </div>
       <ContentEditor trackId={track.id} initialPhases={phases} />
     </div>

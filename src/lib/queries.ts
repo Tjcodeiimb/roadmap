@@ -966,6 +966,115 @@ export async function getAdminRoster(supabase: Client) {
   return data ?? [];
 }
 
+export interface AdminUserTrackProgress {
+  track: { id: string; label: string };
+  totalTopics: number;
+  doneTopics: number;
+}
+
+export interface AdminUserSkill {
+  id: string;
+  name: string;
+  domain: string;
+  tier: string;
+  unlockedAt: string;
+}
+
+export interface AdminUserResumeSummary {
+  id: string;
+  title: string;
+  updatedAt: string;
+}
+
+export interface AdminUserDetail {
+  tracks: AdminUserTrackProgress[];
+  xp: number;
+  currentStreak: number;
+  longestStreak: number;
+  skills: AdminUserSkill[];
+  resumes: AdminUserResumeSummary[];
+}
+
+// Deliberate, explicit trade-off for a small trusted test group (migration
+// 0030): this reads any user's rows across tables that are normally
+// self-scoped by RLS, which is why every query here filters by an explicit
+// p_userId rather than relying on auth.uid(). It only works for the caller
+// if they're an admin -- migration 0030's "admin read" policies are what
+// actually make these selects return rows for someone other than the
+// caller; a non-admin calling this gets back nothing for any of it.
+export async function getAdminUserDetail(supabase: Client, userId: string): Promise<AdminUserDetail> {
+  const [{ data: enrolled }, { data: progress }, { data: xpRow }, { data: streakRow }, { data: skillRows }, { data: resumeRows }] =
+    await Promise.all([
+      supabase.from("user_track_selection").select("track_id").eq("user_id", userId).eq("status", "active"),
+      supabase.from("user_progress").select("topic_id, status").eq("user_id", userId),
+      supabase.from("user_xp").select("total_xp").eq("user_id", userId).maybeSingle(),
+      supabase.from("user_streak").select("current_streak, longest_streak").eq("user_id", userId).maybeSingle(),
+      supabase
+        .from("user_skills")
+        .select("skill_id, unlocked_at, skills(id, name, domain, tier)")
+        .eq("user_id", userId)
+        .order("unlocked_at", { ascending: false }),
+      supabase.from("resumes").select("id, title, updated_at").eq("user_id", userId).order("updated_at", { ascending: false }),
+    ]);
+
+  const trackIds = (enrolled ?? []).map((r) => r.track_id);
+  const statusByTopic = new Map((progress ?? []).map((p) => [p.topic_id, p.status]));
+
+  let tracks: AdminUserTrackProgress[] = [];
+  if (trackIds.length) {
+    const { data: trackRows } = await supabase
+      .from("tracks")
+      .select("id, label, phases(topics(id))")
+      .in("id", trackIds);
+    tracks = ((trackRows ?? []) as unknown as { id: string; label: string; phases: { topics: { id: string }[] }[] }[]).map(
+      (t) => {
+        const topicIds = t.phases.flatMap((p) => p.topics.map((topic) => topic.id));
+        const doneTopics = topicIds.filter((id) => statusByTopic.get(id) === "done").length;
+        return { track: { id: t.id, label: t.label }, totalTopics: topicIds.length, doneTopics };
+      }
+    );
+  }
+
+  const skills = (
+    (skillRows ?? []) as unknown as {
+      skill_id: string;
+      unlocked_at: string;
+      skills: { id: string; name: string; domain: string; tier: string } | null;
+    }[]
+  )
+    .filter((r) => r.skills)
+    .map((r) => ({
+      id: r.skill_id,
+      name: r.skills!.name,
+      domain: r.skills!.domain,
+      tier: r.skills!.tier,
+      unlockedAt: r.unlocked_at,
+    }));
+
+  return {
+    tracks,
+    xp: xpRow?.total_xp ?? 0,
+    currentStreak: streakRow?.current_streak ?? 0,
+    longestStreak: streakRow?.longest_streak ?? 0,
+    skills,
+    resumes: (resumeRows ?? []).map((r) => ({ id: r.id, title: r.title, updatedAt: r.updated_at })),
+  };
+}
+
+// Same as getResume, but for an admin reading someone else's resume by id --
+// scoped by userId as well as id so an admin can't be handed an arbitrary
+// resume id belonging to a track they weren't looking at.
+export async function getAdminUserResume(supabase: Client, userId: string, resumeId: string) {
+  const { data } = await supabase
+    .from("resumes")
+    .select("id, title, doc, updated_at")
+    .eq("id", resumeId)
+    .eq("user_id", userId)
+    .maybeSingle();
+  if (!data) return null;
+  return { id: data.id, title: data.title, doc: hydrateResumeDoc(data.doc), updatedAt: data.updated_at };
+}
+
 export interface BrokenLinkRow {
   id: string;
   title: string;

@@ -26,6 +26,66 @@ function slugify(input: string) {
 }
 
 // ---------------------------------------------------------------------------
+// Tracks (courses)
+// ---------------------------------------------------------------------------
+
+export async function createTrack(label: string) {
+  const { supabase, error } = await requireAdmin();
+  if (!supabase) return { error };
+
+  const { data: existing } = await supabase.from("tracks").select("order_index").order("order_index", { ascending: false }).limit(1);
+  const nextOrder = (existing?.[0]?.order_index ?? 0) + 1;
+  const id = `${slugify(label)}-${Date.now().toString(36)}`;
+
+  const { error: dbError } = await supabase
+    .from("tracks")
+    .insert({ id, name: id, label, order_index: nextOrder, summary: "", published: true });
+  if (dbError) return { error: dbError.message };
+  revalidatePath("/admin");
+  revalidatePath("/marketplace");
+  return { success: true, id };
+}
+
+export async function updateTrack(
+  id: string,
+  fields: {
+    label?: string;
+    summary?: string;
+    domain?: string | null;
+    estimated_hours?: number | null;
+    effort_per_week?: string | null;
+    published?: boolean;
+  }
+) {
+  const { supabase, error } = await requireAdmin();
+  if (!supabase) return { error };
+  const { error: dbError } = await supabase.from("tracks").update(fields).eq("id", id);
+  if (dbError) return { error: dbError.message };
+  revalidatePath("/admin");
+  revalidatePath(`/admin/content/${id}`);
+  revalidatePath("/marketplace");
+  revalidatePath("/dashboard");
+  return { success: true };
+}
+
+// Cascades everywhere a foreign key points at tracks.id "on delete
+// cascade": phases -> topics -> resources -> skill_resources /
+// user_resource_progress / topic_equivalence_groups, and separately
+// user_track_selection and user_cohort_enrollment's cohort_courses link.
+// Deleting a course is genuinely permanent for every learner in it -- their
+// enrollment row and progress on that course's topics/resources go with it.
+export async function deleteTrack(id: string) {
+  const { supabase, error } = await requireAdmin();
+  if (!supabase) return { error };
+  const { error: dbError } = await supabase.from("tracks").delete().eq("id", id);
+  if (dbError) return { error: dbError.message };
+  revalidatePath("/admin");
+  revalidatePath("/marketplace");
+  revalidatePath("/dashboard");
+  return { success: true };
+}
+
+// ---------------------------------------------------------------------------
 // Phases
 // ---------------------------------------------------------------------------
 
