@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import type { MediaProvider } from "@/lib/database.types";
 
 async function requireAdmin() {
   const supabase = await createClient();
@@ -23,6 +24,22 @@ function slugify(input: string) {
     .trim()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
+}
+
+// Mirrors scripts/seed.mjs's deriveResourceMedia exactly. The in-app YouTube
+// player embeds by `provider`/`external_id`/`embeddable` (stored columns),
+// never by re-parsing `url` live -- so every write that sets `url` must
+// recompute these alongside it, or a replaced link keeps embedding the OLD
+// video (or a brand-new YouTube link never embeds at all).
+function deriveResourceMedia(url: string) {
+  const watch = url.match(/youtube\.com\/watch\?v=([A-Za-z0-9_-]{11})/);
+  const short = url.match(/youtu\.be\/([A-Za-z0-9_-]{11})/);
+  const externalId = watch?.[1] ?? short?.[1] ?? null;
+  const isYouTube = /youtube\.com|youtu\.be/i.test(url);
+  const isVimeo = /vimeo\.com/i.test(url);
+  const provider: MediaProvider = isYouTube ? "youtube" : isVimeo ? "vimeo" : "external";
+  const embeddable = provider === "youtube" && externalId != null;
+  return { provider, external_id: externalId, embeddable };
 }
 
 // ---------------------------------------------------------------------------
@@ -238,7 +255,7 @@ export async function createResource(topicId: string, trackId: string, title: st
 
   const { error: dbError } = await supabase
     .from("resources")
-    .insert({ id, topic_id: topicId, title, url, order_index: nextOrder });
+    .insert({ id, topic_id: topicId, title, url, order_index: nextOrder, ...deriveResourceMedia(url) });
   if (dbError) return { error: dbError.message };
   revalidatePath(`/admin/content/${trackId}`);
   return { success: true };
@@ -258,7 +275,11 @@ export async function updateResource(
 ) {
   const { supabase, error } = await requireAdmin();
   if (!supabase) return { error };
-  const { error: dbError } = await supabase.from("resources").update(fields).eq("id", id);
+  // Replacing the link means re-deriving provider/external_id/embeddable from
+  // the new url -- otherwise the embedded player keeps playing whatever
+  // video the OLD url pointed to (see deriveResourceMedia above).
+  const payload = fields.url ? { ...fields, ...deriveResourceMedia(fields.url) } : fields;
+  const { error: dbError } = await supabase.from("resources").update(payload).eq("id", id);
   if (dbError) return { error: dbError.message };
   revalidatePath(`/admin/content/${trackId}`);
   return { success: true };

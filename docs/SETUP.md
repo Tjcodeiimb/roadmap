@@ -60,11 +60,13 @@ together with a handful of copy-paste values, and you're live.
    leaderboard always-on for everyone (name + XP only); `0010_resumes.sql`
    adds the resume builder's table.
 
-> **On `0010_resumes.sql`:** resumes hold the most sensitive data in this
-> database — phone numbers, dates of birth, full work history. Its RLS policy
-> is strictly `auth.uid() = user_id` with **no** admin escape hatch, unlike
-> `profiles`, which admins can read for the roster screen. Don't add one, and
-> don't add a resume view to the admin panel.
+> **On `0010_resumes.sql`:** resumes hold sensitive data — phone numbers,
+> dates of birth, full work history. `0030_admin_full_account_visibility.sql`
+> (below) later adds an admin **read-only** escape hatch on this table (and
+> on progress/XP/streak/skills/enrollment), by explicit request, on the
+> understanding that this deployment is a small, trusted test group. If that
+> stops being true, drop `0030`'s `"admin read"` policies to go back to
+> `auth.uid() = user_id` only.
 
 > **Important:** run a migration *before* deploying code that depends on it.
 > Each file is additive and safe to re-run, so if you're unsure whether one
