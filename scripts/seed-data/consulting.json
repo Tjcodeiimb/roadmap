@@ -448,12 +448,12 @@
       "id": "con-p5-r2",
       "topic_id": "con-p5-t1",
       "order_index": 2,
-      "title": "Business Analytics with Excel: Elementary to Advanced (J. Cutrone)",
-      "url": "https://www.coursera.org/learn/business-analytics-excel",
-      "source": "Coursera / Johns Hopkins",
-      "format": "course",
+      "title": "Learn to Use Power Query and Power Pivot in Excel",
+      "url": "https://support.microsoft.com/en-us/office/learn-to-use-power-query-and-power-pivot-in-excel-42d895c2-d1d7-41d0-88da-d1ed7ecc102d",
+      "source": "Microsoft Support",
+      "format": "guide",
       "length": null,
-      "note": "4.8★ (4,064 reviews); FREE audit mode",
+      "note": "Official Microsoft guide to combining Power Query and Power Pivot for real business-analytics workflows in Excel.",
       "icon": null
     },
     {

@@ -344,13 +344,13 @@
       "id": "xcomm-p2-r6",
       "topic_id": "xcomm-p2-t3",
       "order_index": 2,
-      "title": "Business Writing (Free Audit) — Coursera",
-      "url": "https://www.coursera.org/learn/business-writing",
-      "format": "course",
+      "title": "General Guidelines for Business Writing",
+      "url": "https://owl.purdue.edu/owl/subject_specific_writing/professional_technical_writing/business_writing_for_administrative_and_clerical_staff/general_guidelines.html",
+      "format": "guide",
       "provider": "external",
-      "source": "Coursera",
+      "source": "Purdue OWL",
       "icon_key": null,
-      "length": "6 hrs"
+      "length": "15 min"
     },
     {
       "id": "xcomm-p3-r2",
@@ -584,13 +584,13 @@
       "id": "xcomm-p6-r6",
       "topic_id": "xcomm-p6-t3",
       "order_index": 2,
-      "title": "Effective Communication Skills (Free Audit) — Coursera",
-      "url": "https://www.coursera.org/learn/communication-skills",
-      "format": "course",
+      "title": "How to Write Concisely",
+      "url": "https://hbr.org/2022/06/how-to-write-concisely",
+      "format": "article",
       "provider": "external",
-      "source": "Coursera",
+      "source": "Harvard Business Review",
       "icon_key": null,
-      "length": "8 hrs"
+      "length": "10 min"
     }
   ]
 }
