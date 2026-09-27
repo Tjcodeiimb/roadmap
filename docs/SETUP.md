@@ -219,11 +219,20 @@ in Supabase, once:
 4. Go through the short onboarding walkthrough, then browse the
    **Marketplace** and enroll in a course or cohort bundle — the dashboard
    stays empty until you enroll in something.
-5. Back in Supabase → **SQL Editor** → run this once, with your real email:
+5. Back in Supabase → **SQL Editor** → run this once, with your real email.
+   `0013_security_fixes.sql` added a trigger that blocks any change to
+   `profiles.role` unless the caller is already an admin (closing off a
+   privilege-escalation bug) — the SQL Editor runs as the Postgres
+   superuser with no logged-in user, so it has to be told to skip that
+   check for this one bootstrap statement:
    ```sql
+   alter table public.profiles disable trigger trg_guard_profile_privileged_columns;
+
    update public.profiles
    set role = 'admin'
    where id = (select id from auth.users where email = 'you@upforge.com');
+
+   alter table public.profiles enable trigger trg_guard_profile_privileged_columns;
    ```
 6. Refresh the app. You'll now see an **Admin** item in the sidebar.
 
