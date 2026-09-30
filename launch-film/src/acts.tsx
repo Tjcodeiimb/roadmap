@@ -35,7 +35,8 @@ const ENROLL = { x: MARGIN + 335 * UI_ZOOM, y: LAND_Y + 212 * UI_ZOOM };
 const MON_CURSOR: CursorKey[] = [
   { f: mon(4, 2), x: 1010, y: 1900 },
   { f: MON.tap, x: ENROLL.x, y: ENROLL.y, click: true },
-  { f: mon(5, 2), x: 1200, y: 1560 },
+  // leave right after the press so "Enroll" -> "Continue" is visible (lead ~18 frames)
+  { f: mon(5, 1), x: 1200, y: 1560, lead: 14 },
 ];
 
 export const Mon: React.FC<ActProps> = ({ f }) => {
@@ -395,8 +396,8 @@ export const Sat: React.FC<ActProps> = ({ f }) => {
 // ---- SUN: the week, then the end card ----------------------------------------------------------------
 const sun = at('sun');
 export const SUN = {
-  strip: [sun(22, 1), sun(22, 3)] as const, // the week strip glides to the middle of the page
-  xp: sun(22, 3),
+  strip: [sun(22, 0, 2), sun(22, 2)] as const, // the week strip glides to the middle of the page
+  xp: sun(22, 2),
   outro: sun(23, 0), // the whole pad tears away
   tile: sun(23, 1),
   name: sun(23, 2),
