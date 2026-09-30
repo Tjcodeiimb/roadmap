@@ -1,0 +1,26 @@
+{
+  "name": "launch-film",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio",
+    "cues": "tsx scripts/export-cues.ts",
+    "render": "node scripts/render.mjs out/film.mp4",
+    "render:final": "node scripts/render.mjs out/film.mp4 --blur",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource/space-mono": "^5.3.0",
+    "@remotion/cli": "4.0.529",
+    "lucide-react": "^1.28.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "4.0.529"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.0"
+  }
+}
