@@ -25,7 +25,7 @@ DMAJ9 = (38, [54, 57, 61, 64, 66])
 def chord_bar(n):
     if n <= 1:
         return DARK[0]
-    if n >= 15:
+    if bar(n) >= fr(CUES['acts']['cta']['from']) - 0.01:
         return DMAJ9
     return LIGHT[(n - 2) % 4]
 
@@ -134,7 +134,7 @@ def build_music():
         if s % 2 == 1:
             place(drums, shaker(), t, 0.14, 0.25)
     groove_from = 4
-    for n in range(3, 15):
+    for n in range(3, int(fr(CUES['acts']['cta']['from']) // BAR) + 2):
         root, tones = chord_bar(n)
         rs = ab(AB['resume'])
         for s in range(16):

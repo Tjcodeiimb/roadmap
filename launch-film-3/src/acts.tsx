@@ -38,7 +38,7 @@ export const HEAP: Piece[] = [
   { j: J('thread', 'Roadmap to learn finance', 290, 200, '1/41'), x: 370, y: 318 + DY, r: 10, land: s16(11) },
 ];
 export const GROUND = { lines: [at('ground', 0.25), at('ground', 1.5), at('ground', 3)], stamp: at('ground', 3.5) };
-export const TURN = { tile: ACT.turn.from, enter: at('turn', 0.5), fall: 20, scatter: 34, stats: at('turn', 3), statsOut: at('turn', 5.6) };
+export const TURN = { tile: ACT.turn.from, enter: at('turn', 0.5), fall: 20, scatter: 34, stats: at('turn', 5), statsOut: at('turn', 10.6) };
 const TILE = { size: 240, x: 540 };
 const FALL_DUR = 16;
 export const STATS: Stat[] = [
@@ -116,7 +116,7 @@ const GroundRoom: React.FC<{ F: number }> = ({ F }) => {
 export const COH = {
   title: at('cohort', -0.5), pass: at('cohort', -0.4), sub: at('cohort', 1.5),
   fan: [2, 2.5, 3, 3.5, 4].map((k) => at('cohort', k)), stamp: at('cohort', 4.75),
-  enroll: at('cohort', 6.8), s1: at('cohort', 7), s2: at('cohort', 8), row: at('cohort', 8), s3: at('cohort', 9), fill: [9.3, 9.6, 9.9, 10.2, 10.5].map((k) => at('cohort', k)),
+  enroll: at('cohort', 7.8), s1: at('cohort', 8), s2: at('cohort', 9), row: at('cohort', 9), s3: at('cohort', 10), fill: [10.3, 10.6, 10.9, 11.2, 11.5].map((k) => at('cohort', k)),
 };
 const PASS = { x: 1250, y: 700 };
 const FAN_A = [-30, -15, 0, 15, 30];
