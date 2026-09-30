@@ -7,6 +7,7 @@ import { ExcelMark } from './icons/domains';
 import { C, F, shadow } from './theme';
 import { COHORT, OTHER_COHORTS } from './data';
 import { TierBadge, pressStyle } from './ui';
+import { Glyph } from './parts';
 
 export const SCREEN = { w: 1440, h: 900 };
 export const LID = { w: 1000, bezel: 20 };
@@ -44,7 +45,7 @@ export const Browser: React.FC<{ tabs: string[]; active?: number; path: string; 
       <div style={{ display: 'flex', gap: 3, flex: 1, minWidth: 0, overflow: 'hidden' }}>
         {tabs.map((t, i) => (
           <div key={i} style={{ flex: '1 1 0', minWidth: 22, maxWidth: 220, height: 34, borderRadius: '8px 8px 0 0', border: `2px solid ${C.ink}`, borderBottom: 'none', background: i === active ? C.paper : C.paper2, display: 'flex', alignItems: 'center', gap: 6, padding: '0 8px', fontSize: 13, fontWeight: 700, color: C.ink2, whiteSpace: 'nowrap', overflow: 'hidden' }}>
-            <span style={{ width: 12, height: 12, flexShrink: 0, borderRadius: 3, background: t.startsWith('UpForge') ? C.accent : C.ink3 }} />
+            <span style={{ width: 12, height: 12, flexShrink: 0, borderRadius: 3, background: t.startsWith('UpLearn') ? C.accent : C.ink3 }} />
             <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{t}</span>
           </div>
         ))}
@@ -118,8 +119,8 @@ export const AppShell: React.FC<{ active: string; courses: NavCourse[]; xp: numb
     <div style={{ position: 'absolute', inset: 0, display: 'flex', fontFamily: F.display, background: C.paper }}>
       <div style={{ width: SIDEBAR_W, borderRight: `3px solid ${C.ink}`, padding: '20px 14px', display: 'flex', flexDirection: 'column', gap: 6, background: C.paper }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-          <div style={{ width: 36, height: 36, borderRadius: 6, border: `2px solid ${C.ink}`, background: C.accent, color: '#fff', fontWeight: 800, fontSize: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: shadow(2) }}>UF</div>
-          <span style={{ fontWeight: 900, fontSize: 17 }}>UpForge Learning</span>
+          <div style={{ width: 36, height: 36, borderRadius: 6, border: `2px solid ${C.ink}`, background: C.accent, color: '#fff', fontWeight: 800, fontSize: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: shadow(2) }}><Glyph size={22} /></div>
+          <span style={{ fontWeight: 900, fontSize: 19 }}>UpLearn</span>
         </div>
         <Item label="Dashboard" icon={<LayoutDashboard size={17} />} on={active === 'dashboard'} />
         <Item label="Marketplace" icon={<CompassMark size={17} strokeWidth={2} />} on={active === 'marketplace'} />
@@ -254,7 +255,7 @@ export const EditorColumn: React.FC<{ entries: string[]; newCount: number; pops:
       <div style={{ fontSize: 13, color: C.ink2, marginTop: 4 }}>Tools and methods you can actually use on the job.</div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, margin: '14px 0' }}>
         <div style={{ height: 32, padding: '0 12px', display: 'flex', alignItems: 'center', gap: 6, borderRadius: 6, border: `2px solid ${C.ink}`, background: C.accent, color: '#fff', fontWeight: 800, fontSize: 13, ...pressStyle(4, addPress) }}>
-          <Plus size={14} /> Add from UpForge
+          <Plus size={14} /> Add from UpLearn
         </div>
         <span style={{ fontSize: 12, color: C.ink3 }}>{newCount} unlocked skill{newCount === 1 ? '' : 's'} not yet added</span>
       </div>

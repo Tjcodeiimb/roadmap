@@ -320,7 +320,7 @@ export const ResumePage: React.FC<{ skills: string[]; landing?: React.ReactNode;
     <Heading>Work experience</Heading>
     <div style={{ display: 'flex', gap: 14, fontSize: 10, borderBottom: `1px solid ${R.soft}`, paddingBottom: 4 }}>
       <div style={{ whiteSpace: 'nowrap' }}>
-        <div style={{ fontWeight: 700 }}>UpForge Consulting</div>
+        <div style={{ fontWeight: 700 }}>Northwind Consulting</div>
         <div style={{ color: R.muted }}>Business Analyst</div>
         <div style={{ color: R.muted }}>2024 – Present</div>
       </div>

@@ -108,7 +108,7 @@ export const RESUME = {
   name: 'Meera Iyer',
   contact: '+91 98XXX XXXXX  |  meera.iyer@example.com  |  linkedin.com/in/meera-iyer',
   roles: [
-    { org: 'UpForge Consulting', title: 'Business Analyst', when: '2024 – Present', bullets: ['Built weekly KPI dashboards for 3 client engagements', 'Cut month-end reporting time by 30% with templated models'] },
+    { org: 'Northwind Consulting', title: 'Business Analyst', when: '2024 – Present', bullets: ['Built weekly KPI dashboards for 3 client engagements', 'Cut month-end reporting time by 30% with templated models'] },
   ],
   education: [{ degree: 'B.Com (Hons)', institute: 'University of Delhi', grade: '8.4', year: '2024' }],
   skills: ['Excel', 'PowerPoint', 'SQL (basic)', 'Stakeholder communication'],

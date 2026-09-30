@@ -43,7 +43,7 @@ export function InviteForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         type="email"
-        placeholder="name@upforge.com"
+        placeholder="name@uplearn.com"
         required
         className="flex-1 rounded-md border-2 border-ink bg-paper px-3 py-2 text-sm font-medium outline-none"
       />

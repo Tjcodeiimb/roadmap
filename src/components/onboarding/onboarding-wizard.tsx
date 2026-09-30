@@ -39,7 +39,7 @@ export function OnboardingWizard() {
           <Screen key="welcome">
             <SignalMark size={44} className="mx-auto mb-5 text-accent" />
             <h1 className="font-display text-3xl font-extrabold tracking-tight text-ink">
-              Welcome to UpForge Learning
+              Welcome to UpLearn
             </h1>
             <p className="mt-3 text-base text-ink-2">
               A self-paced way to build real skills. No deadlines, no fixed

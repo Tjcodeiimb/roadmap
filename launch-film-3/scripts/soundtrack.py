@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-"""Score for "The Climb": 96 BPM, warm lo-fi that lifts. Key of D.
+"""Score for "The Climb" v2: 104 BPM, 16 bars, warm lo-fi that lifts. Key of D.
 
-  1-3   ground: no drums. Dusty, detuned electric-piano chords (Bbmaj7 - Am7 - Gm7), vinyl crackle,
-        soft paper thuds as the heap lands. Hush on bar 3 beat 4.
-  4     the tile: sub boom, first bright chord (Dmaj7); stone thunks on the rising steps
-  5     overview + fly-in: kick and shaker only, a riser into bar 6
-  6-9   cohort, course: full swung groove, Dmaj7 - Bm7 - Gmaj7 - A6; + pluck arp from bar 8
-  10-11 skills: + bells on the badge landings
-  12-13 resume: hats thin under the printer and chips; hush on bar 13 beat 4
-  14-15 level up: the peak. Brighter pad, bell ladder on each level crossing
-  16-18 CTA: drums out on the cut; keys and pad resolve on Dmaj9, "sent" blip, tail
+  bar 1 - 2.1  ground: no drums; dusty detuned keys (Bbmaj7), crackle, paper thuds; hush before the tile
+  bar 2.1      the tile: sub boom, first bright chord; stone thunks as the steps rise
+  bar 3        overview + numbers: kick and shaker, counter ticks
+  bars 4-14    swung groove Dmaj7 - Bm7 - Gmaj7 - A6; + arp from the course; bells on skills;
+               hats thin under the CV printer; hush before the summit; brightest at level up
+  bar 14.3-16  CTA: drums out on the cut; keys and pad resolve on Dmaj9, "sent" blip, tail
 """
 import os
 
@@ -26,11 +23,19 @@ DMAJ9 = (38, [54, 57, 61, 64, 66])
 
 
 def chord_bar(n):
-    if n <= 3:
-        return DARK[n - 1]
-    if n >= 16:
+    if n <= 1:
+        return DARK[0]
+    if n >= 15:
         return DMAJ9
-    return LIGHT[(n - 4) % 4]
+    return LIGHT[(n - 2) % 4]
+
+
+AB = CUES['actBeats']
+
+
+def ab(beats):
+    """Seconds at a beat count from the top."""
+    return beats * BEAT
 
 
 def chord_at(t):
@@ -107,67 +112,79 @@ def build_music():
     drums, bass, pad, arp, bells, keysb, dust = buf(), buf(), buf(), buf(), buf(), buf(), buf()
     kicks = []
     r = np.random.default_rng(11)
-    # ground: detuned keys, lazy rolled chords, crackle
-    for n in (1, 2, 3):
-        root, tones = chord_bar(n)
-        for j, m in enumerate(tones):
-            place(keysb, keys(m, BAR, r.normal(0, 0.12)), bar(n) + 0.035 * j + r.uniform(0, 0.02), 0.16, -0.3 + 0.2 * j)
-        place(keysb, keys(tones[2] + 12, BEAT * 2, r.normal(0, 0.15)), bar(n, 2.5), 0.08, 0.4)
-        place(bass, bass_note(root - 12, BAR * 0.9), bar(n), 0.28)
-    place(dust, crackle(bar(19)), 0.0, 1.0)
-    # the turn: first bright chord on the tile
+    tile = fr(C_['tile'])
+    cut = fr(C_['acts']['cta']['from'])
+    # ground: detuned keys, lazy rolled chord, crackle
+    root, tones = DARK[0]
+    for j, m in enumerate(tones):
+        place(keysb, keys(m, BAR, r.normal(0, 0.12)), 0.02 + 0.035 * j, 0.16, -0.3 + 0.2 * j)
+    place(keysb, keys(tones[2] + 12, BEAT * 2, r.normal(0, 0.15)), bar(1, 2.5), 0.08, 0.4)
+    place(bass, bass_note(root - 12, BAR * 0.9), 0.0, 0.28)
+    place(dust, crackle(DUR), 0.0, 1.0)
+    # the tile: first bright chord
     for j, m in enumerate(LIGHT[0][1]):
-        place(keysb, keys(m, BAR * 2), fr(C_['tile']) + 0.02 * j, 0.2, -0.3 + 0.2 * j)
-        place(pad, supersaw_note(m, BAR * 2, cutoff=1400, a=0.3, r=1.2), fr(C_['tile']), 0.07)
-    # bar 5: kick + shaker, keys comp
+        place(keysb, keys(m, BAR * 1.5), tile + 0.02 * j, 0.2, -0.3 + 0.2 * j)
+        place(pad, supersaw_note(m, BAR * 1.6, cutoff=1400, a=0.3, r=1.0), tile, 0.07)
+    # bar 3: kick + shaker under the numbers
     for s in range(16):
-        t = s16(5, s)
+        t = s16(3, s)
         if s in (0, 10):
             place(drums, kick_d(), t, 0.8)
             kicks.append((t, 0.8))
         if s % 2 == 1:
             place(drums, shaker(), t, 0.14, 0.25)
-    # bars 6-15 groove
-    for n in range(5, 16):
+    groove_from = 4
+    for n in range(3, 15):
         root, tones = chord_bar(n)
-        thin = n in (12, 13)
-        if n >= 6:
-            for s in range(16):
-                t = s16(n, s)
-                if s in (0, 7, 10):
-                    place(drums, kick_d(), t, 0.9 if s == 0 else 0.7)
-                    kicks.append((t, 1.0 if s == 0 else 0.7))
-                if s in (4, 12):
-                    place(drums, snare_lofi(), t, 0.42, 0.08)
-                if s % 2 == 1 or (not thin and s % 2 == 0 and s not in (0, 4, 8, 12)):
-                    if not (thin and s % 4 == 3):
-                        place(drums, hat(0.06, 0.014, 7000), t, 0.09 if s % 2 else 0.05, 0.3 if s % 4 == 1 else -0.25)
+        rs = ab(AB['resume'])
+        for s in range(16):
+            t = s16(n, s)
+            if t >= cut - 0.01 or n < groove_from:
+                continue
+            thin = rs <= t < ab(AB['level'])
+            hush = ab(AB['level'] - 0.5) <= t < ab(AB['level'])
+            if hush:
+                continue
+            if s in (0, 7, 10):
+                place(drums, kick_d(), t, 0.9 if s == 0 else 0.7)
+                kicks.append((t, 1.0 if s == 0 else 0.7))
+            if s in (4, 12):
+                place(drums, snare_lofi(), t, 0.42, 0.08)
+            if s % 2 == 1 or (not thin and s % 2 == 0 and s not in (0, 4, 8, 12)):
+                if not (thin and s % 4 == 3):
+                    place(drums, hat(0.06, 0.014, 7000), t, 0.09 if s % 2 else 0.05, 0.3 if s % 4 == 1 else -0.25)
+        if n >= groove_from:
             for s, m, ln in [(0, 0, 3), (3, 0, 1), (6, 12, 1.5), (8, 7, 2), (11, 0, 1), (14, 12, 1.5)]:
-                place(bass, bass_note(root - 12 + m, BEAT / 4 * ln), s16(n, s), 0.5)
-            # keys comp: stabs on the and of 1 and 3
+                t = s16(n, s)
+                if t < cut - 0.01 and not (ab(AB['level'] - 0.5) <= t < ab(AB['level'])):
+                    place(bass, bass_note(root - 12 + m, BEAT / 4 * ln), t, 0.5)
             for s in (2, 10):
-                for j, m in enumerate(tones):
-                    place(keysb, keys(m, BEAT), s16(n, s) + 0.012 * j, 0.1, -0.3 + 0.2 * j)
-        if n >= 6:
-            bright = n in (14, 15)
+                if s16(n, s) < cut:
+                    for j, m in enumerate(tones):
+                        place(keysb, keys(m, BEAT), s16(n, s) + 0.012 * j, 0.1, -0.3 + 0.2 * j)
+        if n >= 3 and bar(n) < cut:
+            bright = ab(AB['level']) <= bar(n) + 0.01
             for m in tones[:3]:
-                place(pad, supersaw_note(m, BAR * 1.02, cutoff=2600 if bright else 1300, a=0.15, r=0.3), bar(n), 0.09 if bright else 0.06)
-        if n >= 8 and not thin:
-            for s in range(0, 16, 2 if n < 14 else 1):
-                m = tones[[0, 1, 2, 3, 2, 1][(s // (2 if n < 14 else 1)) % 6]] + 12
-                place(arp, pluck(m, 0.3, 4200, 600), s16(n, s), 0.07 if n < 14 else 0.06, 0.35 if s % 4 else -0.35)
+                place(pad, supersaw_note(m, min(BAR * 1.02, cut - bar(n) + 0.1), cutoff=2600 if bright else 1300, a=0.15, r=0.3), bar(n), 0.09 if bright else 0.06)
+        # arp from the course on, 8ths; 16ths at the summit
+        for s in range(16):
+            t = s16(n, s)
+            if t < ab(AB['course']) or t >= cut or (ab(AB['resume']) <= t < ab(AB['level'])):
+                continue
+            fast = t >= ab(AB['level'])
+            if not fast and s % 2:
+                continue
+            m = tones[[0, 1, 2, 3, 2, 1][(s // (1 if fast else 2)) % 6]] + 12
+            place(arp, pluck(m, 0.3, 4200, 600), t, 0.06 if fast else 0.07, 0.35 if s % 4 else -0.35)
     # CTA: resolve
     root, tones = DMAJ9
     for j, m in enumerate(tones):
-        place(keysb, keys(m, 5.0), bar(16) + 0.04 * j, 0.23, -0.4 + 0.2 * j)
-        place(pad, supersaw_note(m, 6.5, cutoff=1500, a=0.4, r=2.5), bar(16), 0.06)
-    place(bass, bass_note(root - 12, BAR * 1.5), bar(16), 0.4)
+        place(keysb, keys(m, 5.0), cut + 0.04 * j, 0.23, -0.4 + 0.2 * j)
+        place(pad, supersaw_note(m, 5.5, cutoff=1500, a=0.4, r=2.0), cut, 0.06)
+    place(bass, bass_note(root - 12, BAR * 1.5), cut, 0.4)
     for j, m in enumerate([66, 69, 73, 76]):
-        place(keysb, keys(m, 3.5), bar(17, 2) + 0.06 * j, 0.1, 0.3)
-    place(keysb, keys(62, 4.0), bar(18), 0.12)
-    for j, m in enumerate([50, 57, 62, 66]):
-        place(keysb, keys(m, 4.0), bar(18) + 0.05 * j, 0.1)
-    # bells: skills badges, level crossings, stamp
+        place(keysb, keys(m, 3.0), fr(C_['ctaLine']) + 0.06 * j, 0.1, 0.3)
+    # bells: skills badges, level crossings
     for i, f in enumerate(C_['badges']):
         place(bells, fm_bell(74 + [0, 2, 4, 7][i], 1.8, tau=0.5), fr(f), 0.09, 0.3)
     for i, f in enumerate(C_['crossings']):
@@ -179,14 +196,15 @@ def build_music():
 def build_sfx():
     fx, fx_end = buf(), buf()
     r = np.random.default_rng(5)
+    CUT = fr(C_['acts']['cta']['from'])
     for l in C_['lands']:
         place(fx, thud(0.3, 120 + 60 * r.random()), fr(l['f']), 0.35, l['x'] * 0.7)
     for f in C_['lines'] + C_['titles'][1::2] + [C_['ctaWant'], C_['ctaLine']]:
-        place(fx if fr(f) < bar(16) else fx_end, tock(mtof(chord_at(fr(f))[1][0] + 24), 0.1, 0.02, 0.3), fr(f), 0.18, -0.2)
+        place(fx if fr(f) < CUT else fx_end, tock(mtof(chord_at(fr(f))[1][0] + 24), 0.1, 0.02, 0.3), fr(f), 0.18, -0.2)
     for f in C_['titles'][0::2]:
         place(fx, snap(0.35, 0.6, mtof(chord_at(fr(f))[0])), fr(f), 0.28, -0.4)
     for f in C_['stamps']:
-        dst = fx_end if fr(f) >= bar(16) else fx
+        dst = fx_end if fr(f) >= CUT else fx
         place(dst, snap(0.6, 1.2, mtof(38) * 2), fr(f), 0.45)
         place(dst, thud(0.35, 90), fr(f), 0.4)
     # the tile: hush, then boom
@@ -197,7 +215,21 @@ def build_sfx():
         place(fx, thud(0.25, 180 + 40 * r.random()), fr(C_['tile']) + 0.04 + k * 0.035, 0.12, r.uniform(-0.9, 0.9))
     for i, f in enumerate(C_['rises']):
         place(fx, stone(38 + [0, 4, 7, 9, 12][i]), fr(f), 0.4, -0.3 + 0.15 * i)
-    place(fx, riser(bar(6) - bar(5), 200, 5000, True, 50), bar(5), 0.12)
+    for i, f in enumerate(C_['stats']):
+        place(fx, snap(0.4, 0.8, mtof(LIGHT[1][1][i] - 12)), fr(f), 0.3, -0.6 + 0.4 * i)
+        for k in range(8):
+            place(fx, tick(2600 + 120 * k, 0.025, 0.004, 0.4), fr(f) + 0.02 + k * 0.055, 0.05, -0.6 + 0.4 * i)
+    place(fx, riser(fr(C_['climbWin'][1][1]) - fr(C_['stats'][0]), 200, 5000, True, 50), fr(C_['stats'][0]), 0.1)
+    place(fx, key_click(3), fr(C_['enroll']), 0.35)
+    for i, f in enumerate(C_['stickers']):
+        place(fx, snap(0.45, 0.9, mtof(chord_at(fr(f))[1][i] + 12)), fr(f), 0.3, 0.5)
+        place(fx, thud(0.25, 160), fr(f), 0.25, 0.5)
+    for i, f in enumerate(C_['fill']):
+        place(fx, blip(mtof(LIGHT[3][1][i % 4] + 12 + (12 if i == 4 else 0)), True, 0.09), fr(f), 0.13, 0.5)
+    place(fx, ui_click(0.15), fr(C_['resCard']), 0.2, -0.5)
+    place(fx, ui_click(0.15), fr(C_['tray']), 0.2, -0.5)
+    for i, f in enumerate(C_['passes']):
+        place(fx, blip(mtof(73 + 2 * i), True, 0.1), fr(f), 0.12, 0.5)
     for f, (a, z) in zip(C_['climbs'], C_['climbWin']):
         d = max(0.5, fr(z - a) * 1.1)
         place(fx, whoosh(d, 160, 1200, 280, peak=(f - a) / (z - a) / 1.1, width=0.8, air=0.1), fr(a), 0.16)
@@ -218,7 +250,6 @@ def build_sfx():
     for f in C_['prints']:
         for k in range(6):
             place(fx, tick(1500 + 300 * r.random(), 0.03, 0.006, 0.7), fr(f) + k * 0.028, 0.14, 0.4)
-    place(fx, key_click(7), fr(C_['confirm']), 0.35, -0.4)
     for i, f in enumerate(C_['chips']):
         place(fx, whoosh(0.25, 600, 2500, 800, peak=0.8, width=0.3), fr(f) - 0.23, 0.07)
         place(fx, blip(mtof(LIGHT[0][1][i % 4] + 12), True, 0.1), fr(f), 0.15, 0.3)
@@ -228,7 +259,6 @@ def build_sfx():
     place(fx, riser(fr(z) - fr(a), 300, 6000, True, 62), fr(a), 0.1)
     for k in range(18):
         place(fx, tick(3000 + 2000 * r.random(), 0.04, 0.008, 0.3), fr(z) + 0.02 + k * 0.04, 0.07, r.uniform(-0.9, 0.9))
-    place(fx, whoosh(0.6, 200, 1400, 400, peak=0.5, width=0.5), fr(C_['flag'][0]), 0.1, 0.6)
     # CTA
     place(fx_end, snap(0.6, 1.0, mtof(50)), fr(C_['acts']['cta']['from']), 0.3)
     for f in C_['keys']:
@@ -252,11 +282,12 @@ def main():
     music = np.where((t < cut - 0.02)[:, None], filt(music, sos_lp(2600, 2)), music)
     send = filt(m['pad'] * 0.5 + m['keys'] * 0.6 + m['arp'] * 0.6 + m['bells'] * 0.8, sos_hp(250))
     music = music + reverb(send, IR_HALL) * 0.24
+    T, L, CT = fr(C_['tile']), ab(AB['level']), fr(C_['acts']['cta']['from'])
     bus = envelope([
-        (0, 0.9), (bar(3, 2.8), 0.9), (bar(3, 3.1), 0.15), (bar(4) - 0.02, 0.15), (bar(4), 1.0),
-        (bar(6), 0.85), (bar(12), 0.75), (bar(13, 2.8), 0.75), (bar(13, 3.1), 0.15), (bar(14) - 0.02, 0.15), (bar(14), 1.0),
-        (bar(16) - 0.02, 1.0), (bar(16), 0.85), (DUR, 0.85)])
-    dust = m['dust'] * envelope([(0, 1.0), (bar(4), 1.0), (bar(4.5), 0.25), (bar(16), 0.25), (bar(17), 0.6), (DUR, 0.6)])
+        (0, 0.9), (T - 0.4, 0.9), (T - 0.3, 0.15), (T - 0.02, 0.15), (T, 1.0),
+        (ab(AB['cohort']), 0.85), (ab(AB['resume']), 0.75), (L - 0.35, 0.75), (L - 0.25, 0.15), (L - 0.02, 0.15), (L, 1.0),
+        (CT - 0.02, 1.0), (CT, 0.85), (DUR, 0.85)])
+    dust = m['dust'] * envelope([(0, 1.0), (T, 1.0), (T + 1.2, 0.25), (CT, 0.25), (CT + 1.5, 0.6), (DUR, 0.6)])
     mix = music * bus + dust + fx + reverb(filt(fx, sos_hp(400)), IR_ROOM) * 0.16
     low = filt(mix, sos_lp(120, 2))
     mix = mix - low + low.mean(axis=1, keepdims=True)
@@ -276,8 +307,11 @@ def main():
     sf.write(os.path.join(out, 'soundtrack.wav'), mix, SR, subtype='PCM_24')
     q = int(0.25 * SR)
     rms = [20 * np.log10(np.sqrt(np.mean(mix[i:i + q] ** 2)) + 1e-9) for i in range(0, len(mix), q)]
-    for name, a, z in [('ground', 0, bar(3, 3)), ('hush', bar(3, 3), bar(4)), ('turn', bar(4), bar(6)), ('cohort', bar(6), bar(8)), ('course', bar(8), bar(10)), ('skills', bar(10), bar(12)), ('resume', bar(12), bar(13, 3)), ('hush2', bar(13, 3), bar(14)), ('level', bar(14), bar(16)), ('cta', bar(16), total)]:
-        seg = rms[int(a * 4):int(z * 4)]
+    names = ['ground', 'turn', 'cohort', 'course', 'skills', 'resume', 'level', 'cta']
+    edges = [ab(AB[k]) for k in names] + [total]
+    segs = [(n, edges[i], edges[i + 1]) for i, n in enumerate(names)] + [('hush', fr(C_['tile']) - 0.3, fr(C_['tile'])), ('hush2', ab(AB['level']) - 0.25, ab(AB['level']))]
+    for name, a, z in segs:
+        seg = rms[int(a * 4):max(int(a * 4) + 1, int(z * 4))]
         print(f'{name:8s} mean {sum(seg) / len(seg):6.1f} dB')
 
 

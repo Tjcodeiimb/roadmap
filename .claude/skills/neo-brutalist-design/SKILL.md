@@ -1,9 +1,9 @@
 ---
 name: neo-brutalist-design
-description: Apply or maintain the UpForge Learning app's bold, neo-brutalist visual redesign. Use when asked to redesign, restyle, or make the website "bold"/"neo-brutalist"/"brutalist", or when adding any new UI to the app after that redesign has landed (so new components stay consistent with it).
+description: Apply or maintain the UpLearn app's (formerly UpForge Learning) bold, neo-brutalist visual redesign. Use when asked to redesign, restyle, or make the website "bold"/"neo-brutalist"/"brutalist", or when adding any new UI to the app after that redesign has landed (so new components stay consistent with it).
 ---
 
-# Neo-brutalist redesign for UpForge Learning
+# Neo-brutalist redesign for UpLearn
 
 This app currently uses a soft, minimal design system: rounded corners
 (`rounded-2xl`/`rounded-xl`/`rounded-full`), soft ambient shadows

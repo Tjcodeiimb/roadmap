@@ -1,5 +1,6 @@
 "use client";
 
+import { UpLearnGlyph } from "@/components/brand/uplearn-mark";
 import { motion, useReducedMotion } from "framer-motion";
 import { CompassMark, TargetMark, LinkMark } from "@/components/icons";
 
@@ -45,13 +46,13 @@ export function BrandPanel() {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-md border-2 border-ink bg-accent text-lg font-extrabold text-accent-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]">
-          UF
+          <UpLearnGlyph size={28} />
         </div>
         <h1
           className="font-display text-4xl font-extrabold tracking-tight md:text-5xl"
           style={{ color: "var(--login-ink)" }}
         >
-          UpForge Learning
+          UpLearn
         </h1>
         <p className="mt-3 max-w-sm text-base font-bold" style={{ color: "var(--login-ink)", opacity: 0.75 }}>
           The employee training platform built for people who actually finish courses.

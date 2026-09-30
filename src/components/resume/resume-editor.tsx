@@ -263,7 +263,7 @@ export function ResumeEditor({
                   {def.layout === "skills" && (
                     <div className="mb-4 flex flex-wrap items-center gap-2">
                       <Button size="sm" onClick={() => setPickerOpen(true)} disabled={unlockedSkills.length === 0}>
-                        <Plus size={14} /> Add from UpForge
+                        <Plus size={14} /> Add from UpLearn
                       </Button>
                       <span className="text-xs text-ink-3">
                         {unlockedSkills.length === 0

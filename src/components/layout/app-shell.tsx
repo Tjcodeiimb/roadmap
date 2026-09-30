@@ -1,5 +1,6 @@
 "use client";
 
+import { UpLearnGlyph } from "@/components/brand/uplearn-mark";
 import { useState } from "react";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import { Menu, X, LogOut } from "lucide-react";
@@ -143,12 +144,11 @@ function Brand({ compact }: { compact?: boolean }) {
   return (
     <div className="flex items-center gap-2.5">
       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-accent font-display text-sm font-extrabold text-accent-ink shadow-[3px_3px_0_0_var(--brutal-shadow)]">
-        UF
+        <UpLearnGlyph size={20} />
       </div>
       {!compact && (
         <div className="min-w-0">
-          <div className="font-display text-sm font-extrabold leading-tight tracking-tight text-ink">UpForge</div>
-          <div className="text-[10px] font-semibold uppercase tracking-widest text-ink-3">Learning</div>
+          <div className="font-display text-sm font-extrabold leading-tight tracking-tight text-ink">UpLearn</div>
         </div>
       )}
     </div>

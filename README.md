@@ -1,6 +1,6 @@
-# UpForge Learning
+# UpLearn
 
-A self-paced, gamified employee development platform for UpForge Consulting.
+A self-paced, gamified learning platform (formerly UpForge Learning).
 Three tracks — **AI**, **Finance**, **Consulting** — each broken into
 phases → topics → curated free resources. Employees earn XP, keep a streak,
 and get spaced-repetition reminders to revisit what they've learned.

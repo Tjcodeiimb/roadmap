@@ -1,4 +1,4 @@
-# Setup guide — UpForge Learning
+# Setup guide — UpLearn
 
 This walks you (a complete beginner is fine) through turning this code into a
 live, working app at a real URL. Follow the steps in order — later steps
@@ -31,7 +31,7 @@ together with a handful of copy-paste values, and you're live.
 1. Go to [supabase.com](https://supabase.com) and click **Start your project**.
 2. Sign up (GitHub sign-in is the fastest option) — no credit card required.
 3. Click **New project**.
-   - **Name**: `upforge-learning` (or anything you like).
+   - **Name**: `uplearn` (or anything you like).
    - **Database password**: click "Generate a password" and **save it
      somewhere** (a password manager, or a note) — you likely won't need it
      again, but keep it just in case.
@@ -230,7 +230,7 @@ in Supabase, once:
 
    update public.profiles
    set role = 'admin'
-   where id = (select id from auth.users where email = 'you@upforge.com');
+   where id = (select id from auth.users where email = 'you@uplearn.com');
 
    alter table public.profiles enable trigger trg_guard_profile_privileged_columns;
    ```

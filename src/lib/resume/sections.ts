@@ -182,7 +182,7 @@ export const SECTION_DEFS: SectionDef[] = [
     type: "skills",
     title: "SKILLS & CERTIFICATIONS",
     layout: "skills",
-    prompt: "Add skills by hand, or pull in the ones you’ve unlocked on UpForge.",
+    prompt: "Add skills by hand, or pull in the ones you’ve unlocked on UpLearn.",
     fields: [{ key: "name", label: "Skill", placeholder: "Financial modelling" }],
     hasBullets: false,
     maxBullets: 0,

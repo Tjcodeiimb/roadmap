@@ -25,8 +25,8 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "UpForge Learning",
-  description: "UpForge Consulting — employee development platform",
+  title: "UpLearn",
+  description: "UpLearn — curated cohorts, courses, skills and resumes, built from the best free resources",
 };
 
 export default async function RootLayout({

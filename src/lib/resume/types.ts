@@ -4,7 +4,7 @@
 
 export interface ResumeEntry {
   id: string;
-  /** Keyed by SectionDef.fields[].key — e.g. { org: "UpForge", role: "Founder" }. */
+  /** Keyed by SectionDef.fields[].key — e.g. { org: "UpLearn", role: "Founder" }. */
   fields: Record<string, string>;
   bullets: string[];
 }

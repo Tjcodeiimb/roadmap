@@ -65,7 +65,7 @@ export function SkillPicker({
             exit={{ opacity: 0, scale: 0.98 }}
             transition={uiTransition}
             role="dialog"
-            aria-label="Add skills from UpForge"
+            aria-label="Add skills from UpLearn"
             className="fixed left-1/2 top-1/2 z-50 flex max-h-[80vh] w-[min(560px,92vw)] -translate-x-1/2 -translate-y-1/2 flex-col rounded-md border-2 border-ink bg-paper-2 shadow-[8px_8px_0_0_var(--brutal-shadow)]"
           >
             <div className="flex items-center justify-between border-b-2 border-ink px-5 py-3">

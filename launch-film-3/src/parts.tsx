@@ -3,7 +3,7 @@ import { Download, Send, SignalHigh, Wifi, BatteryFull } from 'lucide-react';
 import { PlayMark, CheckCircleMark, ClockMark, SparkMark } from './icons/glyphs';
 import { ArticleMark } from './icons/formats';
 import { ExcelMark } from './icons/domains';
-import { E, hitPulse, prog } from './lib/anim';
+import { E, hitPulse, prog, spr, SPR } from './lib/anim';
 import { C, F, shadow } from './theme';
 import { TierBadge } from './ui';
 
@@ -72,7 +72,15 @@ export const StepTitle: React.FC<{ n: number; t: number; line: string; sub?: str
 );
 
 // ---- the logo -----------------------------------------------------------------------------------------
-/** The UF tile exactly as the app draws it (login brand panel / sidebar): blue, ink border, hard shadow. */
+/** The UpLearn glyph (src/components/brand/uplearn-mark.tsx in the app): a "U" with a yellow up-arrow. */
+export const Glyph: React.FC<{ size: number; color?: string }> = ({ size, color = '#fff' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <path d="M5 3.5v9.5a7 7 0 0 0 14 0V3.5" stroke={color} strokeWidth={3.4} strokeLinecap="square" />
+    <path d="M12 6.2 15.6 11.4h-2.2v4.1h-2.8v-4.1H8.4Z" fill="#ffd83d" stroke={color} strokeWidth={1.1} strokeLinejoin="round" />
+  </svg>
+);
+
+/** The UpLearn tile as the app draws it (login brand panel / sidebar): blue, ink border, hard shadow. */
 export const Tile: React.FC<{ size: number; lift?: number; squash?: number }> = ({ size, lift = 0, squash = 0 }) => (
   <div
     style={{
@@ -82,7 +90,7 @@ export const Tile: React.FC<{ size: number; lift?: number; squash?: number }> = 
       boxShadow: shadow(Math.round(size * 0.06 + lift)), transform: `translate(${-lift}px, ${-lift}px) scale(${1 + squash * 0.5}, ${1 - squash})`, transformOrigin: '50% 100%',
     }}
   >
-    UF
+    <Glyph size={size * 0.62} />
   </div>
 );
 
@@ -209,7 +217,7 @@ export const Mug: React.FC<{ steam: number }> = ({ steam }) => (
       const ph = (steam / 50 + i / 3) % 1;
       return <div key={i} style={{ position: 'absolute', left: 40 + i * 30, top: 30 - ph * 60, width: 10, height: 44, borderRadius: 99, border: `4px solid ${C.ink3}`, borderLeft: 'none', borderBottom: 'none', opacity: Math.sin(ph * Math.PI) * 0.6 }} />;
     })}
-    <div style={{ position: 'absolute', left: 0, bottom: 0, width: 130, height: 120, borderRadius: '8px 8px 22px 22px', border: `4px solid ${C.ink}`, background: C.next, boxShadow: shadow(6), display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: F.display, fontWeight: 800, fontSize: 30, color: C.ink }}>UF</div>
+    <div style={{ position: 'absolute', left: 0, bottom: 0, width: 130, height: 120, borderRadius: '8px 8px 22px 22px', border: `4px solid ${C.ink}`, background: C.next, boxShadow: shadow(6), display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: F.display, fontWeight: 800, fontSize: 30, color: C.ink }}><Glyph size={70} color={C.ink} /></div>
     <div style={{ position: 'absolute', left: 122, bottom: 30, width: 44, height: 56, borderRadius: '0 22px 22px 0', border: `4px solid ${C.ink}`, borderLeft: 'none' }} />
   </div>
 );
@@ -241,7 +249,7 @@ export const Phone: React.FC<{ children: React.ReactNode; banner?: React.ReactNo
 
 export const Notif: React.FC<{ title: string; body: string }> = ({ title, body }) => (
   <div style={{ display: 'flex', gap: 12, alignItems: 'center', padding: 14, borderRadius: 18, border: `3px solid ${C.ink}`, background: C.paper2, boxShadow: shadow(4), fontFamily: F.display }}>
-    <div style={{ width: 44, height: 44, flexShrink: 0, borderRadius: 10, border: `2px solid ${C.ink}`, background: C.accent, color: '#fff', fontWeight: 800, fontSize: 17, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>UF</div>
+    <div style={{ width: 44, height: 44, flexShrink: 0, borderRadius: 10, border: `2px solid ${C.ink}`, background: C.accent, color: '#fff', fontWeight: 800, fontSize: 17, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Glyph size={28} /></div>
     <div style={{ minWidth: 0 }}>
       <div style={{ fontSize: 15, fontWeight: 900, color: C.ink }}>{title}</div>
       <div style={{ fontSize: 14, fontWeight: 600, color: C.ink2, lineHeight: 1.25 }}>{body}</div>
@@ -376,7 +384,7 @@ export const DM: React.FC<{ typed: string; caret: boolean; sent: number; sendPre
       <div style={{ height: 110, display: 'flex', alignItems: 'center', gap: 18, padding: '0 28px', borderBottom: `4px solid ${C.ink}`, background: C.paper }}>
         <Tile size={66} />
         <div>
-          <div style={{ fontSize: 30, fontWeight: 800, color: C.ink }}>UpForge Learning</div>
+          <div style={{ fontSize: 30, fontWeight: 800, color: C.ink }}>UpLearn</div>
           <div style={{ fontSize: 19, fontWeight: 600, color: C.ink3 }}>Direct message</div>
         </div>
       </div>
@@ -405,3 +413,152 @@ export const DM: React.FC<{ typed: string; caret: boolean; sent: number; sendPre
 };
 
 export { ArticleMark };
+
+// ================================ v2 set pieces ================================================
+import { ArrowRight as ArrowR, Check } from 'lucide-react';
+import { ICONS, FALLBACK_ICON } from './icons';
+import { ClockMark as Clock2 } from './icons/glyphs';
+
+// ---- the numbers (screen-space, over the staircase overview) --------------------------------------
+export type Stat = { value: number; suffix?: string; label: string; pre?: string };
+export const StatsBar: React.FC<{ stats: Stat[]; t: number; stagger: number; roll: number; fade: number }> = ({ stats, t, stagger, roll, fade }) => (
+  <div style={{ position: 'absolute', left: 90, right: 90, top: 70, opacity: 1 - fade, transform: `translate(0px, ${-40 * fade}px)` }}>
+    <div style={{ opacity: prog(t, 0, 8, E.ui), fontFamily: F.mono, fontWeight: 700, fontSize: 26, letterSpacing: '0.14em', color: C.ink, marginBottom: 18 }}>ALL FREE. ALL CURATED. ONE PATH.</div>
+    <div style={{ display: 'flex', gap: 26 }}>
+      {stats.map((s, i) => {
+        const ti = t - i * stagger;
+        if (ti < 0) return <div key={s.label} style={{ flex: 1 }} />;
+        const k = Math.min(1, spr(ti, 0, SPR.snap));
+        const v = Math.round(s.value * prog(ti, 0, roll, E.ui));
+        return (
+          <div key={s.label} style={{ flex: 1, height: 190, boxSizing: 'border-box', borderRadius: 14, border: `4px solid ${C.ink}`, background: i === 0 ? C.accent : C.paper2, color: i === 0 ? '#fff' : C.ink, boxShadow: shadow(8), padding: '20px 26px', transform: `translate(0px, ${(1 - k) * 60}px)`, opacity: Math.min(1, k * 2) }}>
+            <div style={{ fontFamily: F.display, fontWeight: 900, fontSize: 84, lineHeight: 1, letterSpacing: '-0.03em', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+              {s.pre ?? ''}{v.toLocaleString('en-US')}{s.suffix ?? ''}
+            </div>
+            <div style={{ marginTop: 14, fontFamily: F.mono, fontWeight: 700, fontSize: 24, letterSpacing: '0.04em', opacity: 0.85, whiteSpace: 'nowrap' }}>{s.label}</div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+);
+
+// ---- the app's cohort detail page (marketplace/cohort/[cohort]) ------------------------------------------
+export const CohortPage: React.FC<{ label: string; hours: number; summary: string; courses: { id: string; label: string; color: string }[]; enrollPress: number; enrolled: boolean; rowPop: number; rowIdx: number; rowEnroll: number }> = ({ label, hours, summary, courses, enrollPress, enrolled, rowPop, rowIdx, rowEnroll }) => (
+  <div style={{ padding: '26px 34px', fontFamily: F.display, color: C.ink }}>
+    <div style={{ fontSize: 15, fontWeight: 700, color: C.ink3, marginBottom: 10 }}>← Marketplace · Cohorts</div>
+    <div style={{ fontSize: 38, fontWeight: 900, letterSpacing: '-0.02em' }}>{label}</div>
+    <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 10 }}>
+      <TierBadge tier="foundational" />
+      <span style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 16, fontWeight: 600, color: C.ink2 }}><Clock2 size={16} /> {hours} hours total across {courses.length} courses</span>
+    </div>
+    <div style={{ marginTop: 12, fontSize: 16, lineHeight: 1.5, color: C.ink2, maxWidth: 760 }}>{summary}</div>
+    <div style={{ marginTop: 16, display: 'inline-flex', alignItems: 'center', gap: 8, height: 50, padding: '0 22px', borderRadius: 8, border: `3px solid ${C.ink}`, background: enrolled ? C.paper2 : C.accent, color: enrolled ? C.ink : '#fff', fontSize: 18, fontWeight: 800, transform: `translate(${4 * enrollPress}px, ${4 * enrollPress}px)`, boxShadow: shadow(4 - 4 * enrollPress) }}>
+      {enrolled ? <>Continue <ArrowR size={18} strokeWidth={2.5} /></> : 'Enroll in cohort'}
+    </div>
+    <div style={{ marginTop: 22, fontSize: 16, fontWeight: 700, marginBottom: 10 }}>What&apos;s included</div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+      {courses.map((c, i) => {
+        const Icon = ICONS[c.id === 'excel-data' ? 'excel' : c.id] ?? FALLBACK_ICON;
+        const on = i === rowIdx;
+        return (
+          <div key={c.id} style={{ display: 'flex', alignItems: 'center', gap: 14, height: 56, padding: '0 18px', borderRadius: 8, border: `3px solid ${C.ink}`, background: on && rowPop > 0 ? C.next : C.paper2, boxShadow: shadow(3), transform: `scale(${1 + (on ? 0.03 * rowPop : 0)})` }}>
+            <span style={{ fontSize: 14, fontWeight: 800, color: C.ink3, width: 14 }}>{i + 1}</span>
+            <span style={{ color: c.color, display: 'flex' }}><Icon size={22} /></span>
+            <span style={{ flex: 1, fontSize: 18, fontWeight: 600 }}>{c.label}</span>
+            {on && rowEnroll >= 0 ? (
+              <span style={{ height: 36, display: 'flex', alignItems: 'center', padding: '0 14px', borderRadius: 6, border: `2px solid ${C.ink}`, background: C.accent, color: '#fff', fontSize: 15, fontWeight: 800, transform: `scale(${Math.min(1, spr(rowEnroll, 0, SPR.pop))})` }}>Enroll</span>
+            ) : (
+              <ArrowR size={18} color={C.ink3} />
+            )}
+          </div>
+        );
+      })}
+    </div>
+  </div>
+);
+
+/** A sticky annotation that slaps onto the frame. */
+export const Sticker: React.FC<{ t: number; rot?: number; bg?: string; fg?: string; children: React.ReactNode; width?: number }> = ({ t, rot = -2, bg = C.login, fg = C.ink, children, width }) => {
+  if (t < 0) return null;
+  const k = prog(t, 0, 7, E.fall);
+  return (
+    <div style={{ width, boxSizing: 'border-box', padding: '20px 26px', borderRadius: 12, border: `4px solid ${C.ink}`, background: bg, color: fg, boxShadow: shadow(8), fontFamily: F.display, fontWeight: 800, fontSize: 38, lineHeight: 1.1, letterSpacing: '-0.01em', transform: `rotate(${rot}deg) scale(${1 + 0.35 * (1 - k)})`, opacity: prog(t, 0, 3, E.linear) }}>
+      {children}
+    </div>
+  );
+};
+
+// ---- IIM CV template card ----------------------------------------------------------------------------
+export const IIM_SECTIONS = ['ACADEMIC QUALIFICATIONS', 'WORK EXPERIENCE', 'POSITIONS OF RESPONSIBILITY', 'PROJECTS', 'SKILLS & CERTIFICATIONS'];
+export const TemplateCard: React.FC<{ done: number; pops: number[] }> = ({ done, pops }) => (
+  <div style={{ width: 640, borderRadius: 10, border: `4px solid ${C.ink}`, background: C.paper2, boxShadow: shadow(10), fontFamily: F.display }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: `3px solid ${C.ink}`, padding: '14px 22px', background: C.paper }}>
+      <div>
+        <div style={{ fontFamily: F.mono, fontSize: 16, fontWeight: 700, color: C.ink3, letterSpacing: '0.08em' }}>CV TEMPLATE</div>
+        <div style={{ fontSize: 28, fontWeight: 900, color: C.ink }}>IIM · B-school format</div>
+      </div>
+      <span style={{ borderRadius: 6, border: `3px solid ${C.ink}`, background: C.accent, color: '#fff', padding: '6px 12px', fontSize: 16, fontWeight: 800 }}>Guided</span>
+    </div>
+    <div style={{ padding: '12px 22px 16px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+      {IIM_SECTIONS.map((s, i) => {
+        const on = i < done;
+        return (
+          <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 12, height: 38, transform: `scale(${1 + 0.04 * (pops[i] ?? 0)})`, transformOrigin: '0 50%' }}>
+            <span style={{ width: 28, height: 28, borderRadius: 6, border: `3px solid ${C.ink}`, background: on ? C.success : C.paper, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{on && <Check size={18} strokeWidth={3.5} />}</span>
+            <span style={{ fontFamily: F.mono, fontSize: 19, fontWeight: 700, color: on ? C.ink : C.ink3 }}>{s}</span>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+);
+
+// ---- the IIM-format resume (the app's preview: fixed black on white, grey section bars) -------------------
+const RV = { ink: '#111111', muted: '#444444', shade: '#d9d9d9', soft: '#efefef' };
+const Bar: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <div style={{ margin: '14px 0 6px', padding: '4px 10px', fontSize: 14, fontWeight: 700, letterSpacing: '0.06em', color: RV.ink, background: RV.shade, border: `1.5px solid ${RV.ink}` }}>{children}</div>
+);
+const Row: React.FC<{ l1: string; l2: string; bullets: string[] }> = ({ l1, l2, bullets }) => (
+  <div style={{ display: 'flex', gap: 14, fontSize: 13, borderBottom: `1px solid ${RV.soft}`, paddingBottom: 4 }}>
+    <div style={{ whiteSpace: 'nowrap' }}><div style={{ fontWeight: 700 }}>{l1}</div><div style={{ color: RV.muted }}>{l2}</div></div>
+    <ul style={{ margin: 0, paddingLeft: 16, lineHeight: 1.45 }}>{bullets.map((b) => <li key={b}>{b}</li>)}</ul>
+  </div>
+);
+export const IIMSheet: React.FC<{ added: string[]; flash: number[] }> = ({ added, flash }) => (
+  <div style={{ width: 600, height: 860, boxSizing: 'border-box', background: '#fff', color: RV.ink, padding: '30px 34px', fontFamily: 'Arial, Helvetica, sans-serif', border: `4px solid ${C.ink}`, boxShadow: shadow(10) }}>
+    <div style={{ textAlign: 'center', fontSize: 28, fontWeight: 700, letterSpacing: '0.03em' }}>MEERA IYER</div>
+    <div style={{ textAlign: 'center', fontSize: 12.5, color: RV.muted, marginTop: 4 }}>meera.iyer@example.com  |  linkedin.com/in/meera-iyer</div>
+    <Bar>ACADEMIC QUALIFICATIONS</Bar>
+    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12.5 }}>
+      <tbody>
+        <tr>{['Degree', 'Institute', 'CGPA', 'Year'].map((h) => <td key={h} style={{ border: `1px solid ${RV.ink}`, background: RV.shade, padding: '3px 6px', fontWeight: 700 }}>{h}</td>)}</tr>
+        <tr>{['B.Com (Hons)', 'University of Delhi', '8.4/10', '2021-24'].map((h) => <td key={h} style={{ border: `1px solid ${RV.ink}`, padding: '3px 6px' }}>{h}</td>)}</tr>
+        <tr>{['XII CBSE', 'DPS R.K. Puram', '94.2%', '2021'].map((h) => <td key={h} style={{ border: `1px solid ${RV.ink}`, padding: '3px 6px' }}>{h}</td>)}</tr>
+      </tbody>
+    </table>
+    <Bar>WORK EXPERIENCE</Bar>
+    <Row l1="Northwind Consulting" l2="Business Analyst" bullets={['Built weekly KPI dashboards for 3 client engagements', 'Cut month-end reporting time by 30% with templated models']} />
+    <Bar>POSITIONS OF RESPONSIBILITY</Bar>
+    <Row l1="Finance Club" l2="Vice President" bullets={['Ran a 12-week valuation workshop series for 140 students']} />
+    <Bar>PROJECTS</Bar>
+    <Row l1="Market entry study" l2="Strategy" bullets={['Sized a Tier-2 city quick-commerce market bottom-up']} />
+    <Bar>SKILLS & CERTIFICATIONS</Bar>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 14, lineHeight: 1.35 }}>
+      <div>PowerPoint · Stakeholder communication</div>
+      {added.map((s, i) => (
+        <div key={s} style={{ alignSelf: 'flex-start', background: `rgba(255, 216, 61, ${flash[i] ?? 0})`, fontWeight: 700, padding: '0 4px', marginLeft: -4 }}>{s}</div>
+      ))}
+    </div>
+  </div>
+);
+
+// ---- leaderboard (the app's /leaderboard rows; names are fictional) -----------------------------------------
+export const LB_ROW = 84;
+export const LeaderRow: React.FC<{ rank: number; name: string; xp: number; you?: boolean }> = ({ rank, name, xp, you }) => (
+  <div style={{ width: 640, height: LB_ROW - 12, boxSizing: 'border-box', display: 'flex', alignItems: 'center', gap: 18, padding: '0 22px', borderRadius: 8, border: `3px solid ${you ? C.login : C.ink}`, background: you ? C.accent : C.paper2, color: you ? '#fff' : C.ink, boxShadow: shadow(5, you ? C.login : '#555'), fontFamily: F.display }}>
+    <div style={{ width: 30, textAlign: 'center', fontWeight: 800, fontSize: 24, opacity: you ? 1 : 0.55 }}>{rank}</div>
+    <div style={{ flex: 1, fontWeight: 800, fontSize: 25 }}>{name}{you && <span style={{ marginLeft: 10, fontSize: 18, fontWeight: 800, color: C.login }}>(you)</span>}</div>
+    <div style={{ fontWeight: 800, fontSize: 24, fontVariantNumeric: 'tabular-nums' }}>{xp.toLocaleString('en-US')} XP</div>
+  </div>
+);
