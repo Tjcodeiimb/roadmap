@@ -45,7 +45,7 @@ export const StepChip: React.FC<{ n: number; t: number; dark?: boolean }> = ({ n
   const bg = dark ? C.login : C.ink;
   const fg = dark ? C.ink : C.paper;
   return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 14, height: 54, padding: '0 18px', borderRadius: 8, border: `3px solid ${dark ? C.paper : C.ink}`, background: bg, color: fg, fontFamily: F.mono, fontWeight: 700, fontSize: 26, letterSpacing: '0.06em', transform: `translate(0px, ${lift}px)`, opacity: Math.min(1, k * 2), boxShadow: shadow(5, dark ? C.paper : C.accent) }}>
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 14, height: 54, padding: '0 18px', borderRadius: 8, border: `3px solid ${dark ? C.paper : C.ink}`, background: bg, color: fg, fontFamily: F.mono, fontWeight: 700, fontSize: 26, letterSpacing: '0.06em', whiteSpace: 'nowrap', transform: `translate(0px, ${lift}px)`, opacity: Math.min(1, k * 2), boxShadow: shadow(5, dark ? C.paper : C.accent) }}>
       STEP {String(n).padStart(2, '0')}
       <span style={{ opacity: 0.55 }}>/ 05</span>
     </div>
@@ -54,7 +54,7 @@ export const StepChip: React.FC<{ n: number; t: number; dark?: boolean }> = ({ n
 
 /** Chip, then the headline wipes in on the next beat, then an optional mono sub-line. */
 export const StepTitle: React.FC<{ n: number; t: number; line: string; sub?: string; subT?: number; x: number; y: number; dark?: boolean; size?: number; bar?: string; width?: number }> = ({ n, t, line, sub, subT = 999, x, y, dark, size = 96, bar = C.accent, width }) => (
-  <div style={{ position: 'absolute', left: x, top: y, width }}>
+  <div style={{ position: 'absolute', left: x, top: y, width: width ?? 'max-content' }}>
     <StepChip n={n} t={t} dark={dark} />
     <div style={{ marginTop: 22 }}>
       <Wipe t={t - 19} bar={bar}>
