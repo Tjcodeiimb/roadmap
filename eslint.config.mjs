@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The launch film is a separate Remotion project with its own package.json and tsconfig.
+    "launch-film/**",
   ]),
 ]);
 
