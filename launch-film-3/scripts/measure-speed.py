@@ -23,7 +23,7 @@ SHUTTER = 240 / 360  # fraction of a frame the shutter is open (must match src/b
 STEP = 3.0  # max px between neighbouring samples at 1080p
 N_MIN, N_MAX = 4, 48
 STILL = 2.0  # px/frame below which a frame renders once
-W, H = 960, 540  # analysis resolution (half of 1920x1080)
+W, H = 960, 600  # analysis resolution (half of 1920x1200)
 
 src, out = sys.argv[1:3]
 dec = subprocess.Popen(

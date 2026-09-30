@@ -18,7 +18,11 @@ import imageio_ffmpeg
 
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 
-W, H = 1920, 1080
+# Frame size from the film's own timeline, so a format change can't desync the raw stream.
+import re as _re
+_tl = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src', 'timeline.ts')).read()
+W = int(_re.search(r'export const W = (\d+)', _tl).group(1))
+H = int(_re.search(r'export const H = (\d+)', _tl).group(1))
 FRAME = W * H * 3  # rgb48le samples per frame
 
 src, groups_path, out = sys.argv[1:4]
