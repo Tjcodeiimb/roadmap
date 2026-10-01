@@ -515,6 +515,138 @@
       "length": null,
       "note": "Full case solved with analysis",
       "icon": null
+    },
+    {
+      "id": "con-p1-t2-x1",
+      "topic_id": "con-p1-t2",
+      "order_index": 2,
+      "title": "Case Interview Frameworks: The Complete Guide",
+      "url": "https://strategyu.co/case-interview-frameworks",
+      "source": "StrategyU",
+      "format": "article",
+      "length": "~20 min read",
+      "note": "Profitability, market entry, M&A and pricing frameworks — and how to adapt them instead of reciting them.",
+      "icon": null
+    },
+    {
+      "id": "con-p1-t2-x2",
+      "topic_id": "con-p1-t2",
+      "order_index": 3,
+      "title": "Case Interview Frameworks: Ultimate Guide",
+      "url": "https://managementconsulted.com/case-interview-frameworks-ultimate-guide/",
+      "source": "Management Consulted",
+      "format": "article",
+      "length": "~20 min read",
+      "note": "A second walk-through of the core frameworks with worked examples for each.",
+      "icon": null
+    },
+    {
+      "id": "con-p3-t1-x1",
+      "topic_id": "con-p3-t1",
+      "order_index": 2,
+      "title": "Hypothesis-Driven Structure in Case Interviews",
+      "url": "https://www.myconsultingcoach.com/case-interview-hypothesis-driven-structure",
+      "source": "MyConsultingCoach",
+      "format": "article",
+      "length": "~15 min read",
+      "note": "Start from a best-guess answer, then decide what data would prove or kill it — the way MBB teams actually work.",
+      "icon": null
+    },
+    {
+      "id": "con-p3-t1-x2",
+      "topic_id": "con-p3-t1",
+      "order_index": 3,
+      "title": "Hypothesis-Driven Approach: Crack Your Case Like a Consultant",
+      "url": "https://www.myconsultingoffer.org/case-study-interview-prep/hypothesis-driven-approach/",
+      "source": "My Consulting Offer",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "Forming, testing and revising hypotheses, with a worked case example.",
+      "icon": null
+    },
+    {
+      "id": "con-p4-t2-x1",
+      "topic_id": "con-p4-t2",
+      "order_index": 2,
+      "title": "The Minto Pyramid — Answer-First Thinking Tool",
+      "url": "https://untools.co/minto-pyramid/",
+      "source": "Untools",
+      "format": "article",
+      "length": "15 min",
+      "note": null,
+      "icon": null
+    },
+    {
+      "id": "con-p4-t2-x2",
+      "topic_id": "con-p4-t2",
+      "order_index": 3,
+      "title": "SCQA Framework: Structure Your Case Recommendation",
+      "url": "https://www.roadtooffer.com/blog/scqa-framework",
+      "source": "Road to Offer",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "Situation, Complication, Question, Answer — the set-up that lets you lead with the answer and still bring the room along.",
+      "icon": null
+    },
+    {
+      "id": "con-p5-t2-x1",
+      "topic_id": "con-p5-t2",
+      "order_index": 2,
+      "title": "PowerPoint Hacks for Investment Banking and Consulting",
+      "url": "https://www.wallstreetprep.com/knowledge/powerpoint-hacks-for-investment-banking-and-consulting/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": null,
+      "note": "Techniques for building pitchbook- and client-deck-quality slides efficiently under deadline pressure.",
+      "icon": null
+    },
+    {
+      "id": "con-p5-t2-x2",
+      "topic_id": "con-p5-t2",
+      "order_index": 3,
+      "title": "Basic tasks for creating a PowerPoint presentation",
+      "url": "https://support.microsoft.com/en-us/office/basic-tasks-for-creating-a-powerpoint-presentation-efbbc1cd-c5f1-4264-b48e-c8a7b0334e36",
+      "source": "Microsoft Support",
+      "format": "guide",
+      "length": "15 min",
+      "note": "Official walkthrough of creating slides, choosing layouts and adding content in PowerPoint.",
+      "icon": null
+    },
+    {
+      "id": "con-p5-t3-x1",
+      "topic_id": "con-p5-t3",
+      "order_index": 2,
+      "title": "How to Read a 10-K",
+      "url": "https://www.investor.gov/introduction-investing/getting-started/researching-investments/how-read-10-k",
+      "source": "Investor.gov (SEC)",
+      "format": "guide",
+      "length": "15 min",
+      "note": "The SEC's own investor-education page on the purpose and structure of a 10-K.",
+      "icon": null
+    },
+    {
+      "id": "con-p5-t3-x2",
+      "topic_id": "con-p5-t3",
+      "order_index": 3,
+      "title": "How Do I Use EDGAR? - Search Filings",
+      "url": "https://www.sec.gov/search-filings/edgar-search-assistance/how-do-i-use-edgar",
+      "source": "SEC",
+      "format": "guide",
+      "length": "10 min",
+      "note": "Step-by-step instructions for searching EDGAR by company or by full text to find real filings.",
+      "icon": null
+    },
+    {
+      "id": "con-p6-t1-x1",
+      "topic_id": "con-p6-t1",
+      "order_index": 2,
+      "title": "MBA Consulting Casebooks: 26 Free Downloads",
+      "url": "https://hackingthecaseinterview.com/pages/mba-consulting-casebooks",
+      "source": "Hacking the Case Interview",
+      "format": "guide",
+      "length": "Reference",
+      "note": "Free MBA consulting-club casebooks in one place, ranked by how close they are to real MBB interviews.",
+      "icon": null
     }
   ]
 }

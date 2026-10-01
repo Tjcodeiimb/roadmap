@@ -3482,6 +3482,18 @@
       "length": null,
       "note": "mckinsey.com · free PDF",
       "icon": "🌐"
+    },
+    {
+      "id": "personal-prompt-library-x1",
+      "topic_id": "personal-prompt-library",
+      "order_index": 2,
+      "title": "Use Prompt Templates and Variables",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-templates-and-variables",
+      "source": "Anthropic",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "Separate the fixed part of a prompt from the parts that change — the basis of a reusable personal prompt library.",
+      "icon": null
     }
   ]
 }

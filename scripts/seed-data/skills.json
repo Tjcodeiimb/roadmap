@@ -7869,6 +7869,26 @@
       "icon_key": "finance",
       "xp_reward": 120,
       "threshold": 0
+    },
+    {
+      "id": "skill-topic-fprep-xl-t4",
+      "name": "Lookups: VLOOKUP & XLOOKUP",
+      "domain": "finance",
+      "description": "Pull a value from another table by matching an id or name — the move behind every reconciliation, mapping table and report you will build.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-fprep-xl-t5",
+      "name": "Tables, Sorting & Filtering",
+      "domain": "finance",
+      "description": "Turn a range into a proper Excel table, then sort, filter and tidy it — the habits that keep a growing data set and every formula pointing at it from breaking.",
+      "tier": "foundational",
+      "icon_key": "finance",
+      "xp_reward": 60,
+      "threshold": 0
     }
   ],
   "skill_resources": [
@@ -15835,6 +15855,278 @@
     {
       "skill_id": "skill-topic-bl-p6-t3",
       "resource_id": "bl-p6-r7"
+    },
+    {
+      "skill_id": "skill-topic-personal-prompt-library",
+      "resource_id": "personal-prompt-library-x1"
+    },
+    {
+      "skill_id": "skill-topic-fprep-xl-t4",
+      "resource_id": "fprep-xl-t4-r1"
+    },
+    {
+      "skill_id": "skill-topic-fprep-xl-t4",
+      "resource_id": "fprep-xl-t4-r2"
+    },
+    {
+      "skill_id": "skill-topic-fprep-xl-t4",
+      "resource_id": "fprep-xl-t4-r3"
+    },
+    {
+      "skill_id": "skill-topic-fprep-xl-t5",
+      "resource_id": "fprep-xl-t5-r1"
+    },
+    {
+      "skill_id": "skill-topic-fprep-xl-t5",
+      "resource_id": "fprep-xl-t5-r2"
+    },
+    {
+      "skill_id": "skill-topic-fprep-xl-t5",
+      "resource_id": "fprep-xl-t5-r3"
+    },
+    {
+      "skill_id": "skill-topic-fin-p1-t1",
+      "resource_id": "fin-p1-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p1-t1",
+      "resource_id": "fin-p1-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-fin-p1-t1",
+      "resource_id": "fin-p1-t1-x3"
+    },
+    {
+      "skill_id": "skill-topic-fin-p1-t2",
+      "resource_id": "fin-p1-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p1-t2",
+      "resource_id": "fin-p1-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-fin-p3-t2",
+      "resource_id": "fin-p3-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p6-t2",
+      "resource_id": "fin-p6-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p6-t2",
+      "resource_id": "fin-p6-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-fin-p2-t1",
+      "resource_id": "fin-p2-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p2-t1",
+      "resource_id": "fin-p2-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-fin-p10-t3",
+      "resource_id": "fin-p10-t3-x1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p10-t3",
+      "resource_id": "fin-p10-t3-x2"
+    },
+    {
+      "skill_id": "skill-topic-fin-p9-t2",
+      "resource_id": "fin-p9-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p9-t2",
+      "resource_id": "fin-p9-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-fin-p18-t3",
+      "resource_id": "fin-p18-t3-x1"
+    },
+    {
+      "skill_id": "skill-topic-fin-p18-t3",
+      "resource_id": "fin-p18-t3-x2"
+    },
+    {
+      "skill_id": "skill-topic-con-p1-t2",
+      "resource_id": "con-p1-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-con-p1-t2",
+      "resource_id": "con-p1-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-con-p3-t1",
+      "resource_id": "con-p3-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-con-p3-t1",
+      "resource_id": "con-p3-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-con-p4-t2",
+      "resource_id": "con-p4-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-con-p4-t2",
+      "resource_id": "con-p4-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-con-p5-t2",
+      "resource_id": "con-p5-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-con-p5-t2",
+      "resource_id": "con-p5-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-con-p5-t3",
+      "resource_id": "con-p5-t3-x1"
+    },
+    {
+      "skill_id": "skill-topic-con-p5-t3",
+      "resource_id": "con-p5-t3-x2"
+    },
+    {
+      "skill_id": "skill-topic-con-p6-t1",
+      "resource_id": "con-p6-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p8-t2",
+      "resource_id": "exf-p8-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p8-t2",
+      "resource_id": "exf-p8-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p1-t1",
+      "resource_id": "fpa-p1-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p1-t1",
+      "resource_id": "fpa-p1-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p2-t1",
+      "resource_id": "fpa-p2-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p3-t1",
+      "resource_id": "fpa-p3-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p3-t1",
+      "resource_id": "fpa-p3-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p3-t3",
+      "resource_id": "fpa-p3-t3-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p4-t3",
+      "resource_id": "fpa-p4-t3-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p4-t3",
+      "resource_id": "fpa-p4-t3-x2"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p5-t1",
+      "resource_id": "fpa-p5-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p5-t1",
+      "resource_id": "fpa-p5-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p5-t2",
+      "resource_id": "fpa-p5-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p5-t2",
+      "resource_id": "fpa-p5-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p5-t3",
+      "resource_id": "fpa-p5-t3-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p5-t3",
+      "resource_id": "fpa-p5-t3-x2"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p6-t1",
+      "resource_id": "fpa-p6-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p6-t1",
+      "resource_id": "fpa-p6-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p6-t2",
+      "resource_id": "fpa-p6-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p6-t2",
+      "resource_id": "fpa-p6-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p6-t3",
+      "resource_id": "fpa-p6-t3-x1"
+    },
+    {
+      "skill_id": "skill-topic-fpa-p6-t3",
+      "resource_id": "fpa-p6-t3-x2"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p1-t1",
+      "resource_id": "xcomm-p1-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p1-t1",
+      "resource_id": "xcomm-p1-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p2-t1",
+      "resource_id": "xcomm-p2-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p2-t1",
+      "resource_id": "xcomm-p2-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p3-t1",
+      "resource_id": "xcomm-p3-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p3-t1",
+      "resource_id": "xcomm-p3-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p4-t2",
+      "resource_id": "xcomm-p4-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p4-t2",
+      "resource_id": "xcomm-p4-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p5-t2",
+      "resource_id": "xcomm-p5-t2-x1"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p5-t2",
+      "resource_id": "xcomm-p5-t2-x2"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p6-t1",
+      "resource_id": "xcomm-p6-t1-x1"
+    },
+    {
+      "skill_id": "skill-topic-xcomm-p6-t1",
+      "resource_id": "xcomm-p6-t1-x2"
     }
   ]
 }

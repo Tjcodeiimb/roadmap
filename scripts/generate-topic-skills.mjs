@@ -66,6 +66,22 @@ function main() {
   const skillIds = new Set(skillsData.skills.map((s) => s.id));
   const linkKeys = new Set(skillsData.skill_resources.map((l) => `${l.skill_id}|${l.resource_id}`));
 
+  // Topics in one equivalence group are the same material taught in several
+  // courses (e.g. the shared "Start Here: Excel Essentials" phases). Each group
+  // owns at most one skill: a member that has no skill of its own yet is
+  // skipped once another member owns one, so a learner never unlocks the same
+  // skill twice under different ids. Existing skills are never re-homed.
+  const groupsOf = new Map();
+  const members = new Map();
+  for (const { group_id: g, topic_id: t } of loadJson('topic_equivalences.json').topic_equivalence_groups) {
+    if (!groupsOf.has(t)) groupsOf.set(t, []);
+    groupsOf.get(t).push(g);
+    if (!members.has(g)) members.set(g, []);
+    members.get(g).push(t);
+  }
+  const groupOwnsSkill = (topicId) =>
+    (groupsOf.get(topicId) ?? []).some((g) => members.get(g).some((m) => m !== topicId && skillIds.has(`skill-topic-${m}`)));
+
   let newSkills = 0;
   let newLinks = 0;
   const perTrack = [];
@@ -87,6 +103,7 @@ function main() {
       const topicResources = resourcesByTopic.get(topic.id) ?? [];
       if (topicResources.length === 0) continue; // nothing to unlock it with
       const skillId = `skill-topic-${topic.id}`;
+      if (!skillIds.has(skillId) && groupOwnsSkill(topic.id)) continue;
 
       if (!skillIds.has(skillId)) {
         const tier = tierForPhase(phaseOrder.get(topic.phase_id) ?? 1, phases.length);

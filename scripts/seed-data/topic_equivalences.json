@@ -1,6 +1,104 @@
 {
   "topic_equivalence_groups": [
-    { "group_id": "wacc-cost-of-capital", "topic_id": "fprep-p8-t2" },
-    { "group_id": "wacc-cost-of-capital", "topic_id": "fin-p2-t1" }
+    {
+      "group_id": "wacc-cost-of-capital",
+      "topic_id": "fprep-p8-t2"
+    },
+    {
+      "group_id": "wacc-cost-of-capital",
+      "topic_id": "fin-p2-t1"
+    },
+    {
+      "group_id": "excel-basics-navigation",
+      "topic_id": "exc-p1-t1"
+    },
+    {
+      "group_id": "excel-basics-navigation",
+      "topic_id": "fprep-xl-t1"
+    },
+    {
+      "group_id": "excel-basics-formulas",
+      "topic_id": "exc-p1-t2"
+    },
+    {
+      "group_id": "excel-basics-formulas",
+      "topic_id": "fprep-xl-t2"
+    },
+    {
+      "group_id": "excel-basics-core-functions",
+      "topic_id": "exc-p1-t3"
+    },
+    {
+      "group_id": "excel-basics-core-functions",
+      "topic_id": "fprep-xl-t3"
+    },
+    {
+      "group_id": "excel-basics-lookups",
+      "topic_id": "fprep-xl-t4"
+    },
+    {
+      "group_id": "excel-basics-tables",
+      "topic_id": "fprep-xl-t5"
+    },
+    {
+      "group_id": "excel-basics-navigation",
+      "topic_id": "exf-p0-t1"
+    },
+    {
+      "group_id": "excel-basics-formulas",
+      "topic_id": "exf-p0-t2"
+    },
+    {
+      "group_id": "excel-basics-core-functions",
+      "topic_id": "exf-p0-t3"
+    },
+    {
+      "group_id": "excel-basics-lookups",
+      "topic_id": "exf-p0-t4"
+    },
+    {
+      "group_id": "excel-basics-tables",
+      "topic_id": "exf-p0-t5"
+    },
+    {
+      "group_id": "excel-basics-navigation",
+      "topic_id": "fin-xl-t1"
+    },
+    {
+      "group_id": "excel-basics-formulas",
+      "topic_id": "fin-xl-t2"
+    },
+    {
+      "group_id": "excel-basics-core-functions",
+      "topic_id": "fin-xl-t3"
+    },
+    {
+      "group_id": "excel-basics-lookups",
+      "topic_id": "fin-xl-t4"
+    },
+    {
+      "group_id": "excel-basics-tables",
+      "topic_id": "fin-xl-t5"
+    },
+    {
+      "group_id": "excel-basics-navigation",
+      "topic_id": "fpa-p0-t1"
+    },
+    {
+      "group_id": "excel-basics-formulas",
+      "topic_id": "fpa-p0-t2"
+    },
+    {
+      "group_id": "excel-basics-core-functions",
+      "topic_id": "fpa-p0-t3"
+    },
+    {
+      "group_id": "excel-basics-lookups",
+      "topic_id": "fpa-p0-t4"
+    },
+    {
+      "group_id": "excel-basics-tables",
+      "topic_id": "fpa-p0-t5"
+    }
   ]
 }

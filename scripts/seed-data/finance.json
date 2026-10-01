@@ -302,6 +302,15 @@
       "description": "Apply it all to real filings and mock deals — read 10-Ks/10-Qs, practice deal exercises, prep for finance interviews.",
       "estimated_weeks": "4-6",
       "color": null
+    },
+    {
+      "id": "fin-xl",
+      "track_id": "finance",
+      "order_index": 0,
+      "title": "Start Here: Excel Essentials",
+      "description": "Every model in this course is built in Excel. If you are new to it, cover the basics here first — they are credited automatically if you have already done them in another course.",
+      "estimated_weeks": "1",
+      "color": null
     }
   ],
   "topics": [
@@ -3182,6 +3191,156 @@
           "d": "Write the one situation in your own work where you are most likely to face this kind of pressure."
         }
       ]
+    },
+    {
+      "id": "fin-xl-t1",
+      "phase_id": "fin-xl",
+      "order_index": 1,
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The ribbon, cells, sheets, and the keyboard habits that make everything else faster.",
+      "steps": [
+        {
+          "t": "Tour the ribbon",
+          "d": "Open each ribbon tab (Home, Insert, Data, Formulas) once and note the three or four commands you'll use most."
+        },
+        {
+          "t": "Navigate without the mouse",
+          "d": "Use Ctrl+Arrow keys to jump to the edge of a data range, and Ctrl+Home to return to A1."
+        },
+        {
+          "t": "Select efficiently",
+          "d": "Select a whole column with Ctrl+Space and a whole row with Shift+Space instead of dragging."
+        },
+        {
+          "t": "Work across sheets",
+          "d": "Add a new sheet, rename its tab, and move between sheets with Ctrl+PageUp/PageDown."
+        },
+        {
+          "t": "Freeze panes on a long sheet",
+          "d": "Freeze the header row on a large dataset so it stays visible while you scroll."
+        }
+      ],
+      "title": "The Excel Interface & Navigation"
+    },
+    {
+      "id": "fin-xl-t2",
+      "phase_id": "fin-xl",
+      "order_index": 2,
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "Relative vs. absolute references, and why a dragged formula breaks without them.",
+      "steps": [
+        {
+          "t": "Write a relative-reference formula",
+          "d": "Enter =A2*B2 and drag it down a column, watching the row numbers update automatically."
+        },
+        {
+          "t": "Lock a reference with $",
+          "d": "Rewrite a formula with $B$1 so dragging it keeps pointing at one fixed tax-rate or fee cell."
+        },
+        {
+          "t": "Mix relative and absolute",
+          "d": "Build a formula that locks the column but not the row (or vice versa) and drag it both across and down."
+        },
+        {
+          "t": "Reference another sheet",
+          "d": "Write a formula that pulls a value from a different sheet, e.g. =Summary!B2."
+        },
+        {
+          "t": "Diagnose a broken drag",
+          "d": "Take a formula that returns the wrong value after being copied, and find which reference should have been absolute."
+        }
+      ],
+      "title": "Formulas & Cell References"
+    },
+    {
+      "id": "fin-xl-t3",
+      "phase_id": "fin-xl",
+      "order_index": 3,
+      "section": null,
+      "tags": [],
+      "estimated_time": null,
+      "description": "The handful of functions that cover most day-to-day spreadsheet work.",
+      "steps": [
+        {
+          "t": "Total a column",
+          "d": "Use =SUM(range) instead of adding cells one by one, and confirm it updates when a value changes."
+        },
+        {
+          "t": "Find the average",
+          "d": "Use =AVERAGE(range) on the same data and compare it to the total."
+        },
+        {
+          "t": "Add a condition with IF",
+          "d": "Write =IF(condition, value_if_true, value_if_false) to label rows as \"Over budget\" or \"On budget\"."
+        },
+        {
+          "t": "Count matching rows",
+          "d": "Use =COUNTIF(range, criteria) to count how many rows meet one condition."
+        },
+        {
+          "t": "Combine two functions",
+          "d": "Nest one function inside another, e.g. =IF(SUM(range)>1000, \"High\", \"Low\")."
+        }
+      ],
+      "title": "Core Functions: SUM, AVERAGE, IF, COUNT"
+    },
+    {
+      "id": "fin-xl-t4",
+      "phase_id": "fin-xl",
+      "order_index": 4,
+      "section": null,
+      "tags": [
+        "excel",
+        "basics"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "Pull a value from another table by matching an id or name — the move behind every reconciliation, mapping table and report you will build.",
+      "steps": [
+        {
+          "t": "Match two lists with VLOOKUP",
+          "d": "Put a small price list on one sheet and an order list on another; pull each price across with VLOOKUP and an exact match."
+        },
+        {
+          "t": "Redo it with XLOOKUP",
+          "d": "Rewrite the same lookup with XLOOKUP and note what got simpler: no column number, no exact-match flag, a built-in \"not found\" value."
+        },
+        {
+          "t": "Break it on purpose",
+          "d": "Insert a column inside the lookup range and watch the VLOOKUP return the wrong field — then confirm XLOOKUP keeps working."
+        }
+      ],
+      "title": "Lookups: VLOOKUP & XLOOKUP"
+    },
+    {
+      "id": "fin-xl-t5",
+      "phase_id": "fin-xl",
+      "order_index": 5,
+      "section": null,
+      "tags": [
+        "excel",
+        "basics"
+      ],
+      "estimated_time": "1-2 hrs",
+      "description": "Turn a range into a proper Excel table, then sort, filter and tidy it — the habits that keep a growing data set and every formula pointing at it from breaking.",
+      "steps": [
+        {
+          "t": "Convert a range to a table",
+          "d": "Select a small data set and press Ctrl+T; note the automatic banding, filters and a total row."
+        },
+        {
+          "t": "Sort and filter",
+          "d": "Sort by two columns at once, then filter to one category and read the totals."
+        },
+        {
+          "t": "Clean with Flash Fill",
+          "d": "Split a \"First Last\" name column into two columns with Flash Fill instead of a formula."
+        }
+      ],
+      "title": "Tables, Sorting & Filtering"
     }
   ],
   "resources": [
@@ -6662,6 +6821,378 @@
       "format": "video",
       "length": null,
       "note": "Walks through the Code and Standards with worked exam-style examples of violations.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t1-r1",
+      "topic_id": "fin-xl-t1",
+      "order_index": 1,
+      "title": "FREE 4 Hour Complete Excel Course",
+      "url": "https://chandoo.org/wp/complete-excel-course-free/",
+      "source": "Chandoo",
+      "format": "course",
+      "length": "~4 hours",
+      "note": "Covers the interface, formulas, pivot tables and lookups end to end.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t1-r2",
+      "topic_id": "fin-xl-t1",
+      "order_index": 2,
+      "title": "Basic tasks in Excel",
+      "url": "https://support.microsoft.com/en-us/office/basic-tasks-in-excel-dc775dd1-fa52-430f-9c3c-d998d1735fca",
+      "source": "Microsoft Support",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "Opening a workbook, entering and formatting data, quick analysis.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t1-r3",
+      "topic_id": "fin-xl-t1",
+      "order_index": 3,
+      "title": "Excel Keyboard Shortcuts List",
+      "url": "https://www.excelcampus.com/shortcuts/",
+      "source": "Excel Campus",
+      "format": "article",
+      "length": "Reference",
+      "note": "Over 270 shortcuts for Windows, Mac and web, organized by category, with a free PDF download.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t2-r1",
+      "topic_id": "fin-xl-t2",
+      "order_index": 1,
+      "title": "Free Excel Formulas Tutorial",
+      "url": "https://edu.gcfglobal.org/en/excelformulas/",
+      "source": "GCFGlobal",
+      "format": "course",
+      "length": "~1 hour",
+      "note": "Simple vs. complex formulas, and relative vs. absolute references.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t2-r2",
+      "topic_id": "fin-xl-t2",
+      "order_index": 2,
+      "title": "Overview of formulas in Excel",
+      "url": "https://support.microsoft.com/en-us/office/formulas-and-functions-294d9486-b332-48ed-b489-abe7d0f9eda9",
+      "source": "Microsoft Support",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "How to create formulas and use built-in functions.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t2-r3",
+      "topic_id": "fin-xl-t2",
+      "order_index": 3,
+      "title": "Named Ranges in Excel",
+      "url": "https://exceljet.net/articles/named-ranges",
+      "source": "Exceljet",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "Naming a cell or range so a formula reads =Revenue-Costs instead of =B2-B3, plus the Name Manager.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t3-r1",
+      "topic_id": "fin-xl-t3",
+      "order_index": 1,
+      "title": "Basic Excel Formulas & Functions with Examples",
+      "url": "https://www.ablebits.com/office-addins-blog/basic-excel-formulas-functions/",
+      "source": "Ablebits",
+      "format": "article",
+      "length": "~15 min read",
+      "note": "SUM, AVERAGE, IF and friends with worked examples.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t3-r2",
+      "topic_id": "fin-xl-t3",
+      "order_index": 2,
+      "title": "Excel functions (by category)",
+      "url": "https://support.microsoft.com/en-us/office/excel-functions-by-category-5f91f4e9-7b42-46d2-9bd1-63f26a86c0eb",
+      "source": "Microsoft Support",
+      "format": "article",
+      "length": "Reference",
+      "note": "The full function reference, browsable by category.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t3-r3",
+      "topic_id": "fin-xl-t3",
+      "order_index": 3,
+      "title": "Excel COUNTIFS, SUMIFS, & AVERAGEIFS (tutorial + examples)",
+      "url": "https://www.youtube.com/watch?v=1WzT6B-1a0M",
+      "source": "YouTube",
+      "format": "video",
+      "length": "Video",
+      "note": "Extending SUM/COUNT/AVERAGE to totals that only include rows matching several conditions.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t4-r1",
+      "topic_id": "fin-xl-t4",
+      "order_index": 1,
+      "title": "Excel VLOOKUP: Top 10 Practical Examples",
+      "url": "https://chandoo.org/wp/vlookup-excel-formula/",
+      "source": "Chandoo",
+      "format": "article",
+      "length": "~15 min read",
+      "note": "Ten real examples, from a basic lookup to handling errors.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t4-r2",
+      "topic_id": "fin-xl-t4",
+      "order_index": 2,
+      "title": "XLOOKUP function",
+      "url": "https://support.microsoft.com/en-us/excel/functions/xlookup-function",
+      "source": "Microsoft Support",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "Full syntax and examples for the function that replaces VLOOKUP in current Excel.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t4-r3",
+      "topic_id": "fin-xl-t4",
+      "order_index": 3,
+      "title": "XLOOKUP vs VLOOKUP",
+      "url": "https://exceljet.net/articles/xlookup-vs-vlookup",
+      "source": "Exceljet",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "Why XLOOKUP's exact-match default and if_not_found argument make it the safer choice.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t5-r1",
+      "topic_id": "fin-xl-t5",
+      "order_index": 1,
+      "title": "Overview of Excel tables",
+      "url": "https://support.microsoft.com/en-us/office/overview-of-excel-tables-7ab0bb7d-3a9e-4b56-a3c9-6c94334e492c",
+      "source": "Microsoft Support",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "What a Table adds over a plain range: banded rows, a total row, calculated columns and auto-expansion.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t5-r2",
+      "topic_id": "fin-xl-t5",
+      "order_index": 2,
+      "title": "Excel: sort by row, by column names and in custom order",
+      "url": "https://www.ablebits.com/office-addins-blog/excel-sort-column-row-custom-list/",
+      "source": "Ablebits",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "Sorting by multiple columns and building a custom sort order.",
+      "icon": null
+    },
+    {
+      "id": "fin-xl-t5-r3",
+      "topic_id": "fin-xl-t5",
+      "order_index": 3,
+      "title": "Using Flash Fill in Excel",
+      "url": "https://support.microsoft.com/en-us/excel/using-flash-fill-in-excel",
+      "source": "Microsoft Support",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "Splitting or combining text by example instead of writing a formula.",
+      "icon": null
+    },
+    {
+      "id": "fin-p1-t1-x1",
+      "topic_id": "fin-p1-t1",
+      "order_index": 3,
+      "title": "Introduction to the income statement (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/stock-and-bonds/valuation-and-investing/v/introduction-to-the-income-statement",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "12 min",
+      "note": "Walks through the structure of an income statement line by line from revenue to net income.",
+      "icon": null
+    },
+    {
+      "id": "fin-p1-t1-x2",
+      "topic_id": "fin-p1-t1",
+      "order_index": 4,
+      "title": "Interpreting the Balance Sheet (practice)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/accounting-and-financial-stateme/financial-statements-tutorial/e/interpreting-the-balance-sheet",
+      "source": "Khan Academy",
+      "format": "practice",
+      "length": "20 min",
+      "note": "Practice questions on reading and classifying real balance-sheet line items.",
+      "icon": null
+    },
+    {
+      "id": "fin-p1-t1-x3",
+      "topic_id": "fin-p1-t1",
+      "order_index": 5,
+      "title": "Basic cash flow statement (video)",
+      "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/accounting-and-financial-stateme/financial-statements-tutorial/v/basic-cash-flow-statement",
+      "source": "Khan Academy",
+      "format": "video",
+      "length": "10 min",
+      "note": "Introduces the operating, investing and financing sections of the cash flow statement.",
+      "icon": null
+    },
+    {
+      "id": "fin-p1-t2-x1",
+      "topic_id": "fin-p1-t2",
+      "order_index": 3,
+      "title": "Accounting Equation: In-Depth Explanation with Examples",
+      "url": "https://www.accountingcoach.com/accounting-equation/explanation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "20 min",
+      "note": "Walks through how every transaction type keeps assets equal to liabilities plus equity, with worked examples.",
+      "icon": null
+    },
+    {
+      "id": "fin-p1-t2-x2",
+      "topic_id": "fin-p1-t2",
+      "order_index": 4,
+      "title": "Debits and Credits: In-Depth Explanation with Examples",
+      "url": "https://www.accountingcoach.com/debits-and-credits/explanation",
+      "source": "AccountingCoach",
+      "format": "article",
+      "length": "25 min",
+      "note": "Explains the debit/credit rule for each account type and works through why expenses are debited and revenues credited.",
+      "icon": null
+    },
+    {
+      "id": "fin-p3-t2-x1",
+      "topic_id": "fin-p3-t2",
+      "order_index": 2,
+      "title": "Buy Side vs Sell Side: Key Differences, Roles and Examples",
+      "url": "https://www.ethosdata.com/blog/buy-side-vs-sell-side-key-differences-roles-and-examples/",
+      "source": "Ethos Data",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "Who buys, who sells, how each side gets paid, and the usual career path from one to the other.",
+      "icon": null
+    },
+    {
+      "id": "fin-p6-t2-x1",
+      "topic_id": "fin-p6-t2",
+      "order_index": 2,
+      "title": "Modern Portfolio Theory",
+      "url": "https://en.wikipedia.org/wiki/Modern_portfolio_theory",
+      "source": "Wikipedia",
+      "format": "article",
+      "length": "~20 min read",
+      "note": "Mean-variance analysis, diversification and the efficient frontier — the formal basis of portfolio construction.",
+      "icon": null
+    },
+    {
+      "id": "fin-p6-t2-x2",
+      "topic_id": "fin-p6-t2",
+      "order_index": 3,
+      "title": "Investing Basics: Modern Portfolio Theory Explained",
+      "url": "https://morningstar.com.au/personal-finance/investing-basics-modern-portfolio-theory-explained",
+      "source": "Morningstar",
+      "format": "article",
+      "length": "~10 min read",
+      "note": "The same ideas in plain English: risk, return and why correlation matters more than any single holding.",
+      "icon": null
+    },
+    {
+      "id": "fin-p2-t1-x1",
+      "topic_id": "fin-p2-t1",
+      "order_index": 2,
+      "title": "Capital Asset Pricing Model (CAPM)",
+      "url": "https://www.wallstreetprep.com/knowledge/capm-capital-asset-pricing-model/",
+      "source": "Wall Street Prep",
+      "format": "article",
+      "length": "15 min",
+      "note": "Gives the CAPM formula (Ke = Rf + beta x ERP) with a worked example for computing cost of equity.",
+      "icon": null
+    },
+    {
+      "id": "fin-p2-t1-x2",
+      "topic_id": "fin-p2-t1",
+      "order_index": 3,
+      "title": "Weighted-Average Cost of Capital (WACC)",
+      "url": "https://macabacus.com/valuation/dcf-wacc",
+      "source": "Macabacus",
+      "format": "article",
+      "length": "20 min",
+      "note": "Full worked WACC calculation blending after-tax cost of debt and cost of equity by market-value weights.",
+      "icon": null
+    },
+    {
+      "id": "fin-p10-t3-x1",
+      "topic_id": "fin-p10-t3",
+      "order_index": 2,
+      "title": "Precedent Transactions Analysis: How to Value a Company Using M&A Data",
+      "url": "https://ryanoconnellfinance.com/precedent-transactions-analysis/",
+      "source": "Ryan O'Connell",
+      "format": "article",
+      "length": "~15 min read",
+      "note": "Selecting comparable deals, building the multiples and reading the control premium baked into them.",
+      "icon": null
+    },
+    {
+      "id": "fin-p10-t3-x2",
+      "topic_id": "fin-p10-t3",
+      "order_index": 3,
+      "title": "Precedent Transaction Analysis: How to Value a Company Using M&A Deals",
+      "url": "https://www.learnsignal.com/blog/precedent-transaction-analysis-ma-valuation-guide/",
+      "source": "LearnSignal",
+      "format": "article",
+      "length": "~15 min read",
+      "note": "Why transaction multiples run 20-40% above trading multiples, and when to trust them.",
+      "icon": null
+    },
+    {
+      "id": "fin-p9-t2-x1",
+      "topic_id": "fin-p9-t2",
+      "order_index": 2,
+      "title": "Types of Hedge Funds",
+      "url": "https://hedgefundalpha.com/education/types-of-hedge-funds/",
+      "source": "Hedge Fund Alpha",
+      "format": "article",
+      "length": "~15 min read",
+      "note": "Long/short equity, global macro, event-driven, relative value and quant — how each makes money and what it risks.",
+      "icon": null
+    },
+    {
+      "id": "fin-p9-t2-x2",
+      "topic_id": "fin-p9-t2",
+      "order_index": 3,
+      "title": "Event-Driven Hedge Funds",
+      "url": "https://mergersandinquisitions.com/event-driven-hedge-funds/",
+      "source": "Mergers & Inquisitions",
+      "format": "article",
+      "length": null,
+      "note": "Catalyst-led strategies and the trades behind them.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-t3-x1",
+      "topic_id": "fin-p18-t3",
+      "order_index": 2,
+      "title": "Building a Football Field Chart in Excel",
+      "url": "https://macabacus.com/blog/build-football-field-chart-excel",
+      "source": "Macabacus",
+      "format": "guide",
+      "length": "~10 min read",
+      "note": "The stacked-bar-with-invisible-series trick that makes a football field chart's bars float.",
+      "icon": null
+    },
+    {
+      "id": "fin-p18-t3-x2",
+      "topic_id": "fin-p18-t3",
+      "order_index": 3,
+      "title": "Football Field Valuation: Excel Template, Tutorial, and Full Explanation",
+      "url": "https://breakingintowallstreet.com/kb/excel/football-field-valuation/",
+      "source": "Breaking Into Wall Street",
+      "format": "video",
+      "length": "~15 min",
+      "note": "A full build across several valuation methodologies with a template to check your work against.",
       "icon": null
     }
   ]
