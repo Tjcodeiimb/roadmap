@@ -587,6 +587,16 @@ export type Database = {
           completions: number;
         }[];
       };
+      get_admin_content_counts: {
+        Args: Record<string, never>;
+        Returns: {
+          track_id: string;
+          phase_count: number;
+          topic_count: number;
+          resource_count: number;
+          learner_count: number;
+        }[];
+      };
       get_admin_roster: {
         Args: Record<string, never>;
         Returns: {

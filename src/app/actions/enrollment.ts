@@ -22,6 +22,29 @@ export async function unenrollTrack(trackId: string) {
   return { success: true };
 }
 
+/**
+ * Leave several courses in one go (the sidebar's manage mode). Loops the same
+ * unenroll_track RPC rather than a new bulk one, so each course keeps the
+ * archive-don't-delete behaviour and the cohort bookkeeping in migration 0027.
+ */
+export async function unenrollTracks(trackIds: string[]) {
+  if (trackIds.length === 0) return { error: "Nothing selected" };
+  const supabase = await createClient();
+
+  const failed: string[] = [];
+  for (const trackId of trackIds) {
+    const { error } = await supabase.rpc("unenroll_track", { p_track_id: trackId });
+    if (error) failed.push(trackId);
+    else revalidatePath(`/track/${trackId}`);
+  }
+  revalidatePath("/dashboard");
+  revalidatePath("/marketplace");
+
+  const left = trackIds.length - failed.length;
+  if (failed.length > 0) return { error: `Left ${left}, but ${failed.length} failed`, left };
+  return { success: true, left };
+}
+
 export async function enrollCohort(cohortId: string) {
   const supabase = await createClient();
   const { error } = await supabase.rpc("enroll_cohort", { p_cohort_id: cohortId });

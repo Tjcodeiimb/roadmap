@@ -960,6 +960,29 @@ export async function getAdminTrackStats(supabase: Client) {
   return data ?? [];
 }
 
+export interface AdminContentCount {
+  phases: number;
+  topics: number;
+  resources: number;
+  learners: number;
+}
+
+/**
+ * Per-course counts for the admin index, keyed by track id. Returns an empty
+ * map if the RPC isn't there yet (migration 0031 is applied by hand), so the
+ * page renders without counts rather than failing.
+ */
+export async function getAdminContentCounts(supabase: Client): Promise<Record<string, AdminContentCount>> {
+  const { data, error } = await supabase.rpc("get_admin_content_counts");
+  if (error || !data) return {};
+  return Object.fromEntries(
+    data.map((r) => [
+      r.track_id,
+      { phases: r.phase_count, topics: r.topic_count, resources: r.resource_count, learners: r.learner_count },
+    ])
+  );
+}
+
 export async function getAdminRoster(supabase: Client) {
   const { data, error } = await supabase.rpc("get_admin_roster");
   if (error) return [];
