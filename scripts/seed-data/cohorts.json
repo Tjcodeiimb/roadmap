@@ -37,11 +37,11 @@
       "id": "sales-distribution",
       "name": "sales-distribution",
       "label": "Sales & Distribution",
-      "summary": "Win the account, close the deal, track the numbers in Excel, and run the operation that actually gets the product to the customer.",
+      "summary": "Understand why people buy, win the account, close the deal, track the numbers in Excel, and run the operation that actually gets the product to the customer.",
       "tier": "foundational",
       "order_index": 4,
       "icon_key": "sales",
-      "estimated_hours": 203,
+      "estimated_hours": 248,
       "published": true
     },
     {
@@ -449,26 +449,6 @@
       "order_index": 5
     },
     {
-      "cohort_id": "sales-distribution",
-      "track_id": "sales",
-      "order_index": 1
-    },
-    {
-      "cohort_id": "sales-distribution",
-      "track_id": "negotiation",
-      "order_index": 2
-    },
-    {
-      "cohort_id": "sales-distribution",
-      "track_id": "excel",
-      "order_index": 3
-    },
-    {
-      "cohort_id": "sales-distribution",
-      "track_id": "operations",
-      "order_index": 4
-    },
-    {
       "cohort_id": "career-launchpad",
       "track_id": "personal-branding",
       "order_index": 1
@@ -507,6 +487,31 @@
       "cohort_id": "ai-at-work",
       "track_id": "exec-communication",
       "order_index": 4
+    },
+    {
+      "cohort_id": "sales-distribution",
+      "track_id": "psychology",
+      "order_index": 1
+    },
+    {
+      "cohort_id": "sales-distribution",
+      "track_id": "sales",
+      "order_index": 2
+    },
+    {
+      "cohort_id": "sales-distribution",
+      "track_id": "negotiation",
+      "order_index": 3
+    },
+    {
+      "cohort_id": "sales-distribution",
+      "track_id": "excel",
+      "order_index": 4
+    },
+    {
+      "cohort_id": "sales-distribution",
+      "track_id": "operations",
+      "order_index": 5
     }
   ]
 }
