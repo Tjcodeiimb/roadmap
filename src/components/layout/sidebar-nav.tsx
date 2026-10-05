@@ -42,12 +42,24 @@ export function SidebarNav({
     { href: "/marketplace", label: "Marketplace", icon: CompassMark },
   ];
 
-  const courseItems = tracks.map((t) => ({
-    href: `/track/${t.id}`,
-    label: t.label,
-    icon: ICONS[t.id] ?? FALLBACK_ICON,
-    trackId: t.id,
-  }));
+  // Courses just left are hidden immediately rather than waiting for
+  // router.refresh() to land — leaving three courses and watching them sit
+  // in the sidebar reads as "it didn't work". `sig` ties the optimistic list
+  // to the server list it was computed against, so when the refresh does
+  // arrive (or the server disagrees) the override drops away by itself,
+  // with no effect to keep in sync.
+  const sig = tracks.map((t) => t.id).join(",");
+  const [left, setLeft] = useState<{ sig: string; ids: string[] }>({ sig, ids: [] });
+  const leftIds = left.sig === sig ? left.ids : [];
+
+  const courseItems = tracks
+    .filter((t) => !leftIds.includes(t.id))
+    .map((t) => ({
+      href: `/track/${t.id}`,
+      label: t.label,
+      icon: ICONS[t.id] ?? FALLBACK_ICON,
+      trackId: t.id,
+    }));
 
   const toolItems = [
     { href: "/courses", label: "Manage courses", icon: StackMark },
@@ -74,14 +86,20 @@ export function SidebarNav({
     startTransition(async () => {
       const result = await unenrollTracks(leaving);
       if (result?.error) {
+        // A partial failure still left some courses, so hide those and say so.
+        if (result.left) setLeft({ sig, ids: leaving.slice(0, result.left) });
         showToast(result.error);
         return;
       }
       showToast(`Left ${result.left} course${result.left === 1 ? "" : "s"} — progress saved`);
+      setLeft({ sig, ids: leaving });
       stopManaging();
+      // refresh() before push(): a push navigation in flight can swallow a
+      // refresh queued in the same tick, which is how the sidebar ended up
+      // still listing courses the learner had just left.
+      router.refresh();
       // Don't strand the reader on a course they just left.
       if (leaving.some((id) => pathname.startsWith(`/track/${id}`))) router.push("/dashboard");
-      router.refresh();
     });
   }
 

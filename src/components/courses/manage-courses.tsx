@@ -24,7 +24,13 @@ export interface ManageCohort {
   courses: { id: string; label: string; enrolled: boolean }[];
 }
 
-export function ManageCourses({ courses, cohorts }: { courses: ManageCourse[]; cohorts: ManageCohort[] }) {
+export function ManageCourses({
+  courses: allCourses,
+  cohorts: allCohorts,
+}: {
+  courses: ManageCourse[];
+  cohorts: ManageCohort[];
+}) {
   const router = useRouter();
   const { showToast } = useToast();
   const [selected, setSelected] = useState<string[]>([]);
@@ -32,19 +38,42 @@ export function ManageCourses({ courses, cohorts }: { courses: ManageCourse[]; c
   const [leavingCohort, setLeavingCohort] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
 
+  // What has just been left is dropped from the lists straight away instead
+  // of waiting for router.refresh(). `sig` ties the override to the server
+  // lists it was computed against, so the refresh landing (or disagreeing)
+  // clears it without an effect to keep in sync.
+  const sig = [...allCourses.map((c) => c.id), "|", ...allCohorts.map((c) => c.id)].join(",");
+  const [gone, setGone] = useState<{ sig: string; courses: string[]; cohorts: string[] }>({
+    sig,
+    courses: [],
+    cohorts: [],
+  });
+  const left = gone.sig === sig ? gone : { sig, courses: [] as string[], cohorts: [] as string[] };
+
+  const courses = allCourses.filter((c) => !left.courses.includes(c.id));
+  const cohorts = allCohorts
+    .filter((c) => !left.cohorts.includes(c.id))
+    .map((c) => ({
+      ...c,
+      courses: c.courses.map((x) => ({ ...x, enrolled: x.enrolled && !left.courses.includes(x.id) })),
+    }));
+
   function toggle(id: string) {
     setConfirming(false);
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
   }
 
   function leaveSelected() {
+    const leaving = selected;
     startTransition(async () => {
-      const result = await unenrollTracks(selected);
+      const result = await unenrollTracks(leaving);
       if (result?.error) {
+        if (result.left) setGone({ ...left, sig, courses: [...left.courses, ...leaving.slice(0, result.left)] });
         showToast(result.error);
         return;
       }
       showToast(`Left ${result.left} course${result.left === 1 ? "" : "s"} — progress saved`);
+      setGone({ ...left, sig, courses: [...left.courses, ...leaving] });
       setSelected([]);
       setConfirming(false);
       router.refresh();
@@ -59,6 +88,11 @@ export function ManageCourses({ courses, cohorts }: { courses: ManageCourse[]; c
         return;
       }
       showToast(`Left ${label} — progress saved`);
+      // Only the bundle card is removed optimistically. Which of its courses
+      // get archived is a server decision — leave_cohort keeps any course the
+      // learner had claimed for themselves — so the course list waits for the
+      // refresh rather than guessing and having a course flicker back.
+      setGone({ ...left, sig, cohorts: [...left.cohorts, id] });
       setLeavingCohort(null);
       router.refresh();
     });
@@ -74,6 +108,8 @@ export function ManageCourses({ courses, cohorts }: { courses: ManageCourse[]; c
         return;
       }
       showToast(`Added ${missing} course${missing === 1 ? "" : "s"} back`);
+      // Re-adding needs the real server list, so clear the override.
+      setGone({ sig: "", courses: [], cohorts: [] });
       router.refresh();
     });
   }
