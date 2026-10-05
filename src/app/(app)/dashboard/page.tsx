@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
-import { getProfile, getSelectedTracks, getTrackSummaries, getSkillProgress } from "@/lib/queries";
+import {
+  getProfile,
+  getSelectedTracks,
+  getTrackSummaries,
+  getSkillProgress,
+  getMyProjects,
+} from "@/lib/queries";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
@@ -19,9 +25,10 @@ export default async function DashboardPage() {
   if (!user) return null;
 
   const [profile, trackIds] = await Promise.all([getProfile(supabase, user.id), getSelectedTracks(supabase)]);
-  const [summaries, skills] = await Promise.all([
+  const [summaries, skills, projects] = await Promise.all([
     getTrackSummaries(supabase, trackIds),
     getSkillProgress(supabase),
+    getMyProjects(supabase),
   ]);
 
   // "Almost unlocked": within 2 resources of a skill's threshold, closest
@@ -48,6 +55,10 @@ export default async function DashboardPage() {
               <Link href="/courses" className="font-bold underline decoration-2 underline-offset-4 hover:text-ink">
                 Manage your courses
               </Link>
+              , or{" "}
+              <Link href="/projects" className="font-bold underline decoration-2 underline-offset-4 hover:text-ink">
+                build something for your CV
+              </Link>
               .
             </>
           )}
@@ -61,6 +72,9 @@ export default async function DashboardPage() {
           `${summaries.length} course${summaries.length === 1 ? "" : "s"} in progress`,
           `${summaries.reduce((n, s) => n + s.doneTopics, 0)} topics done`,
           `${almostUnlocked.length} skill${almostUnlocked.length === 1 ? "" : "s"} almost unlocked`,
+          `${projects.filter((p) => p.status === "done").length} project${
+            projects.filter((p) => p.status === "done").length === 1 ? "" : "s"
+          } finished`,
         ]}
       />
 

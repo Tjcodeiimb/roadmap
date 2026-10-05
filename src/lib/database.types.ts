@@ -3,7 +3,11 @@
 // equivalent (more exhaustive) version of this file from the live schema.
 
 export type Status = "todo" | "next" | "active" | "done";
+/** The old free-form build log (build_projects, migration 0001). */
 export type ProjectStatus = "idea" | "in_progress" | "done";
+/** A project started from a playbook (user_projects, migration 0033). */
+export type UserProjectStatus = "planning" | "in_progress" | "done" | "shelved";
+export type StageStatus = "todo" | "doing" | "done";
 export type ThemeName = "light" | "dark";
 export type Role = "employee" | "admin";
 export type Tier = "foundational" | "intermediate" | "advanced";
@@ -503,6 +507,212 @@ export type Database = {
         }>;
         Relationships: [];
       };
+      // Migration 0033. formats/dos/donts/tools/exports are jsonb reference
+      // lists rendered as lists; the app narrows them through the
+      // PlaybookFormat/PlaybookTool/... interfaces in src/lib/projects.ts
+      // rather than typing them here, because PostgREST hands back `unknown`
+      // for jsonb either way.
+      project_playbooks: {
+        Row: {
+          id: string;
+          name: string;
+          label: string;
+          summary: string;
+          kind: string;
+          tier: Tier;
+          estimated_weeks: string | null;
+          icon_key: string | null;
+          order_index: number;
+          cv_line: string;
+          outcome_label: string;
+          formats: unknown;
+          dos: unknown;
+          donts: unknown;
+          tools: unknown;
+          exports: unknown;
+          published: boolean;
+        };
+        Insert: {
+          id: string;
+          name: string;
+          label: string;
+          summary?: string;
+          kind?: string;
+          tier?: Tier;
+          estimated_weeks?: string | null;
+          icon_key?: string | null;
+          order_index?: number;
+          cv_line?: string;
+          outcome_label?: string;
+          formats?: unknown;
+          dos?: unknown;
+          donts?: unknown;
+          tools?: unknown;
+          exports?: unknown;
+          published?: boolean;
+        };
+        Update: Partial<{
+          id: string;
+          name: string;
+          label: string;
+          summary: string;
+          kind: string;
+          tier: Tier;
+          estimated_weeks: string | null;
+          icon_key: string | null;
+          order_index: number;
+          cv_line: string;
+          outcome_label: string;
+          formats: unknown;
+          dos: unknown;
+          donts: unknown;
+          tools: unknown;
+          exports: unknown;
+          published: boolean;
+        }>;
+        Relationships: [];
+      };
+      project_stages: {
+        Row: {
+          id: string;
+          playbook_id: string;
+          order_index: number;
+          title: string;
+          description: string;
+          checklist: unknown;
+          skill_id: string | null;
+          track_id: string | null;
+          estimated_days: number | null;
+        };
+        Insert: {
+          id: string;
+          playbook_id: string;
+          order_index?: number;
+          title: string;
+          description?: string;
+          checklist?: unknown;
+          skill_id?: string | null;
+          track_id?: string | null;
+          estimated_days?: number | null;
+        };
+        Update: Partial<{
+          id: string;
+          playbook_id: string;
+          order_index: number;
+          title: string;
+          description: string;
+          checklist: unknown;
+          skill_id: string | null;
+          track_id: string | null;
+          estimated_days: number | null;
+        }>;
+        Relationships: [];
+      };
+      project_stage_resources: {
+        Row: {
+          id: string;
+          stage_id: string;
+          order_index: number;
+          title: string;
+          url: string;
+          source: string | null;
+          format: string | null;
+          length: string | null;
+          note: string | null;
+        };
+        Insert: {
+          id: string;
+          stage_id: string;
+          order_index?: number;
+          title: string;
+          url: string;
+          source?: string | null;
+          format?: string | null;
+          length?: string | null;
+          note?: string | null;
+        };
+        Update: Partial<{
+          id: string;
+          stage_id: string;
+          order_index: number;
+          title: string;
+          url: string;
+          source: string | null;
+          format: string | null;
+          length: string | null;
+          note: string | null;
+        }>;
+        Relationships: [];
+      };
+      user_projects: {
+        Row: {
+          id: string;
+          user_id: string;
+          playbook_id: string;
+          title: string;
+          summary: string;
+          link: string;
+          outcome: string;
+          status: UserProjectStatus;
+          created_at: string;
+          updated_at: string;
+          completed_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          playbook_id: string;
+          title: string;
+          summary?: string;
+          link?: string;
+          outcome?: string;
+          status?: UserProjectStatus;
+          created_at?: string;
+          updated_at?: string;
+          completed_at?: string | null;
+        };
+        Update: Partial<{
+          id: string;
+          user_id: string;
+          playbook_id: string;
+          title: string;
+          summary: string;
+          link: string;
+          outcome: string;
+          status: UserProjectStatus;
+          created_at: string;
+          updated_at: string;
+          completed_at: string | null;
+        }>;
+        Relationships: [];
+      };
+      user_project_stages: {
+        Row: {
+          user_id: string;
+          project_id: string;
+          stage_id: string;
+          status: StageStatus;
+          notes: string;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          project_id: string;
+          stage_id: string;
+          status?: StageStatus;
+          notes?: string;
+          updated_at?: string;
+        };
+        Update: Partial<{
+          user_id: string;
+          project_id: string;
+          stage_id: string;
+          status: StageStatus;
+          notes: string;
+          updated_at: string;
+        }>;
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
     Functions: {
@@ -522,6 +732,31 @@ export type Database = {
       };
       enroll_cohort: {
         Args: { p_cohort_id: string };
+        Returns: void;
+      };
+      // Migration 0033. start_project returns the new project's id so the
+      // caller can navigate straight into its workspace.
+      start_project: {
+        Args: { p_playbook_id: string; p_title: string };
+        Returns: string;
+      };
+      set_project_stage: {
+        Args: { p_project_id: string; p_stage_id: string; p_status: StageStatus; p_notes?: string };
+        Returns: void;
+      };
+      update_project: {
+        Args: {
+          p_project_id: string;
+          p_title?: string;
+          p_summary?: string;
+          p_link?: string;
+          p_outcome?: string;
+          p_status?: UserProjectStatus;
+        };
+        Returns: void;
+      };
+      delete_project: {
+        Args: { p_project_id: string };
         Returns: void;
       };
       leave_cohort: {

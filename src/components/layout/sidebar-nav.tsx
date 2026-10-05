@@ -6,7 +6,16 @@ import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { LayoutDashboard, UserRound, ShieldCheck, Check } from "lucide-react";
-import { ICONS, FALLBACK_ICON, TrophyMark, CompassMark, TargetMark, ArticleMark, StackMark } from "@/components/icons";
+import {
+  ICONS,
+  FALLBACK_ICON,
+  TrophyMark,
+  CompassMark,
+  TargetMark,
+  ArticleMark,
+  StackMark,
+  PracticeMark,
+} from "@/components/icons";
 import { uiTransition } from "@/lib/motion";
 import { trackColor, trackInk } from "@/lib/track-colors";
 import { unenrollTracks } from "@/app/actions/enrollment";
@@ -61,10 +70,12 @@ export function SidebarNav({
       trackId: t.id,
     }));
 
+  // Ordered the way the app is meant to be used: learn, build, present.
   const toolItems = [
-    { href: "/courses", label: "Manage courses", icon: StackMark },
     { href: "/skills", label: "Skills", icon: TargetMark },
+    { href: "/projects", label: "Projects", icon: PracticeMark },
     { href: "/resume", label: "Resume", icon: ArticleMark },
+    { href: "/courses", label: "Manage courses", icon: StackMark },
     { href: "/profile", label: "Profile", icon: UserRound },
     ...(leaderboardEnabled ? [{ href: "/leaderboard", label: "Leaderboard", icon: TrophyMark }] : []),
     ...(isAdmin ? [{ href: "/admin", label: "Admin", icon: ShieldCheck }] : []),

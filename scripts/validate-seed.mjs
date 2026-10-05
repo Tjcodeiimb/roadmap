@@ -226,6 +226,70 @@ function main() {
     );
   }
 
+  // Project playbooks. A stage's skill_id and track_id are real foreign keys
+  // in migration 0033, so a typo here fails the seed mid-run rather than at
+  // validation — and the stage's whole tutorial mechanism hangs off them.
+  const projectsData = loadJson('projects.json');
+  if (projectsData) {
+    const skillIds = new Set((loadJson('skills.json')?.skills ?? []).map((s) => s.id));
+    const playbookIds = new Set();
+    const KINDS = new Set(['thesis', 'mvp', 'research', 'report', 'analysis', 'case', 'project']);
+
+    for (const p of projectsData.playbooks ?? []) {
+      if (playbookIds.has(p.id)) fail(`projects.json: duplicate playbook id "${p.id}"`);
+      playbookIds.add(p.id);
+      if (!p.label) fail(`projects.json: playbook "${p.id}" missing label`);
+      if (!p.summary) fail(`projects.json: playbook "${p.id}" missing summary`);
+      if (!p.cv_line) fail(`projects.json: playbook "${p.id}" missing cv_line — the CV entry is the point`);
+      if (!KINDS.has(p.kind)) fail(`projects.json: playbook "${p.id}" has unknown kind "${p.kind}"`);
+      for (const list of ['formats', 'dos', 'donts', 'tools', 'exports']) {
+        if (!Array.isArray(p[list]) || p[list].length === 0) {
+          fail(`projects.json: playbook "${p.id}" has an empty ${list}`);
+        }
+      }
+    }
+
+    const stageIds = new Set();
+    const stagesPerPlaybook = new Map();
+    for (const s of projectsData.stages ?? []) {
+      if (stageIds.has(s.id)) fail(`projects.json: duplicate stage id "${s.id}"`);
+      stageIds.add(s.id);
+      if (!playbookIds.has(s.playbook_id)) {
+        fail(`projects.json: stage "${s.id}" references unknown playbook_id "${s.playbook_id}"`);
+      }
+      if (!s.title) fail(`projects.json: stage "${s.id}" missing title`);
+      if (s.skill_id && !skillIds.has(s.skill_id)) {
+        fail(`projects.json: stage "${s.id}" references unknown skill_id "${s.skill_id}"`);
+      }
+      if (s.track_id && !tracks.has(s.track_id)) {
+        fail(`projects.json: stage "${s.id}" references unknown track_id "${s.track_id}"`);
+      }
+      if (!s.skill_id && !s.track_id) {
+        warn(`projects.json: stage "${s.id}" has neither skill_id nor track_id, so it can offer no tutorial`);
+      }
+      stagesPerPlaybook.set(s.playbook_id, (stagesPerPlaybook.get(s.playbook_id) ?? 0) + 1);
+    }
+
+    for (const id of playbookIds) {
+      if (!stagesPerPlaybook.has(id)) fail(`projects.json: playbook "${id}" has no stages`);
+    }
+
+    const stageResourceIds = new Set();
+    for (const r of projectsData.stage_resources ?? []) {
+      if (stageResourceIds.has(r.id)) fail(`projects.json: duplicate stage resource id "${r.id}"`);
+      stageResourceIds.add(r.id);
+      if (!stageIds.has(r.stage_id)) {
+        fail(`projects.json: stage resource "${r.id}" references unknown stage_id "${r.stage_id}"`);
+      }
+      if (!r.url) fail(`projects.json: stage resource "${r.id}" missing url`);
+    }
+
+    console.log(
+      `  projects.json: ${projectsData.playbooks?.length ?? 0} playbooks, ${projectsData.stages?.length ?? 0} stages, ` +
+        `${projectsData.stage_resources?.length ?? 0} stage resources`
+    );
+  }
+
   console.log(`\n${errors} error(s), ${warnings} warning(s).`);
   if (errors > 0) {
     console.error('Validation failed.');

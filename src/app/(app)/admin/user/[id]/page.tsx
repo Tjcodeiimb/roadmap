@@ -6,6 +6,7 @@ import { getAdminRoster, getAdminUserDetail, getAdminUserResume } from "@/lib/qu
 import { Card } from "@/components/ui/card";
 import { ResumePreview } from "@/components/resume/resume-preview";
 import { trackColor } from "@/lib/track-colors";
+import { PROJECT_STATUS_LABEL } from "@/lib/projects";
 
 export default async function AdminUserDetailPage({
   params,
@@ -95,6 +96,48 @@ export default async function AdminUserDetailPage({
               >
                 {s.name}
               </span>
+            ))}
+          </div>
+        )}
+      </Card>
+
+      <Card>
+        <div className="mb-1 text-sm font-semibold text-ink">Projects ({detail.projects.length})</div>
+        <p className="mb-3 text-xs text-ink-3">
+          What this learner has actually produced. The link is their deliverable — open it to review the work itself.
+        </p>
+        {detail.projects.length === 0 ? (
+          <p className="text-sm text-ink-3">No projects started yet.</p>
+        ) : (
+          <div className="flex flex-col gap-2.5">
+            {detail.projects.map((p) => (
+              <div key={p.id} className="rounded-md border-2 border-ink bg-paper-3 px-3 py-2.5">
+                <div className="flex flex-wrap items-baseline gap-2">
+                  <span className="font-display text-sm font-bold text-ink">{p.title}</span>
+                  <span className="text-xs text-ink-3">{p.playbookLabel}</span>
+                  <span
+                    className={`ml-auto shrink-0 rounded-sm border-2 border-ink px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
+                      p.status === "done" ? "bg-success text-white" : "bg-paper text-ink-2"
+                    }`}
+                  >
+                    {PROJECT_STATUS_LABEL[p.status]}
+                  </span>
+                  <span className="shrink-0 font-mono text-[11px] tabular-nums text-ink-2">
+                    {p.doneStages}/{p.totalStages} stages
+                  </span>
+                </div>
+                {p.outcome && <p className="mt-1 text-sm text-ink-2">{p.outcome}</p>}
+                {p.link && (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block truncate font-mono text-xs text-accent underline decoration-2 underline-offset-2"
+                  >
+                    {p.link}
+                  </a>
+                )}
+              </div>
             ))}
           </div>
         )}

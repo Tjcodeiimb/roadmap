@@ -1,0 +1,2072 @@
+{
+  "playbooks": [
+    {
+      "id": "thesis",
+      "name": "thesis",
+      "label": "Thesis / Dissertation",
+      "summary": "A long-form original study with a question, a method, evidence and a defensible conclusion. The heaviest thing on this list, and the one that carries most weight on a CV when it is actually finished.",
+      "kind": "thesis",
+      "tier": "advanced",
+      "estimated_weeks": "12-16",
+      "icon_key": "article",
+      "order_index": 1,
+      "cv_line": "Thesis: \"<title>\" — <institution>, <year>. <One line on the finding.>",
+      "outcome_label": "A 50–90 page bound thesis, plus a defence",
+      "formats": [
+        {
+          "name": "Abstract",
+          "detail": "The whole study in one paragraph: question, method, finding, implication. Written last, read first.",
+          "length": "200–300 words"
+        },
+        {
+          "name": "Introduction",
+          "detail": "The question, why it matters, and what you will and will not cover.",
+          "length": "8–12% of total"
+        },
+        {
+          "name": "Literature review",
+          "detail": "What is already settled, what is contested, and the gap you are filling. Organised by theme, never as a list of summaries.",
+          "length": "20–25%"
+        },
+        {
+          "name": "Methodology",
+          "detail": "What you did, in enough detail that someone else could repeat it. Includes sampling, instruments and limitations.",
+          "length": "15–20%"
+        },
+        {
+          "name": "Results",
+          "detail": "What you found, with no interpretation. Tables and figures carry this section.",
+          "length": "20–25%"
+        },
+        {
+          "name": "Discussion & conclusion",
+          "detail": "What it means, where it disagrees with the literature, what you would do next.",
+          "length": "15–20%"
+        },
+        {
+          "name": "References & appendices",
+          "detail": "One citation style, applied consistently. Instruments, raw tables and code go in appendices.",
+          "length": "Uncapped"
+        }
+      ],
+      "dos": [
+        "Pick a question narrow enough to answer with data you can genuinely obtain. Scope is the single biggest cause of unfinished theses.",
+        "Write the question as one sentence and show it to your supervisor before anything else.",
+        "Start the citation manager on day one, with every paper you read, including the ones you discard.",
+        "Keep a decisions log: every scope change, every dropped variable, with the date and the reason. Your methodology chapter is this log, rewritten.",
+        "Write the methodology while you are doing the method, not six weeks later from memory.",
+        "Agree the exact submission format and deadline with your department in writing, early."
+      ],
+      "donts": [
+        "Don't start by writing Chapter 1. Start by writing the question and the method.",
+        "Don't collect data before the method is settled and, where relevant, approved — unapproved data can be unusable.",
+        "Don't review literature by summarising paper after paper. Group by argument; a reader wants the state of the debate, not your reading list.",
+        "Don't put interpretation in Results or new results in Discussion. Examiners notice immediately.",
+        "Don't leave formatting, numbering and the reference list to the final week. It reliably takes days, not hours."
+      ],
+      "tools": [
+        {
+          "name": "Zotero",
+          "use": "Reference manager with a Word/Docs plugin",
+          "url": "https://www.zotero.org/",
+          "free": true
+        },
+        {
+          "name": "Overleaf",
+          "use": "LaTeX in the browser, if your department wants LaTeX",
+          "url": "https://www.overleaf.com/",
+          "free": true
+        },
+        {
+          "name": "Google Scholar",
+          "use": "Finding papers, and the citation count that tells you what is canonical",
+          "url": "https://scholar.google.com/",
+          "free": true
+        },
+        {
+          "name": "Connected Papers",
+          "use": "Seeing a paper's neighbourhood so you don't miss the key reference",
+          "url": "https://www.connectedpapers.com/",
+          "free": true
+        },
+        {
+          "name": "Grammarly / LanguageTool",
+          "use": "Last-pass proofreading, not writing",
+          "url": "https://languagetool.org/",
+          "free": true
+        }
+      ],
+      "exports": [
+        {
+          "name": "PDF/A",
+          "detail": "Archival PDF, the usual institutional requirement for deposit.",
+          "how": "In Word: File → Save As → PDF → Options → check ISO 19005-1 compliant (PDF/A)."
+        },
+        {
+          "name": "Print-ready PDF",
+          "detail": "Correct margins for binding, usually a wider inner margin.",
+          "how": "Set mirror margins with a 1.5\" gutter before you paginate, not after."
+        },
+        {
+          "name": "Plain .docx",
+          "detail": "What most supervisors want to comment on.",
+          "how": "Keep a styles-based document — Heading 1/2/3 — so the table of contents generates itself."
+        },
+        {
+          "name": "Data & code appendix",
+          "detail": "A link to a repository with a DOI makes the study checkable.",
+          "how": "Deposit on Zenodo or OSF and cite the DOI in the thesis."
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "mvp",
+      "name": "mvp",
+      "label": "MVP / Product Build",
+      "summary": "The smallest thing you can put in front of real users that proves one idea. Ships with a repo, a README and numbers — the evidence that turns \"I can build\" into something a reviewer can check.",
+      "kind": "mvp",
+      "tier": "intermediate",
+      "estimated_weeks": "6-10",
+      "icon_key": "product",
+      "order_index": 2,
+      "cv_line": "<Product> — built and shipped an MVP used by <N> users; <the one metric that moved>",
+      "outcome_label": "A working build with real users and a public repo",
+      "formats": [
+        {
+          "name": "One-line pitch",
+          "detail": "Who it's for, what it does, why now. If this takes a paragraph, the scope is wrong.",
+          "length": "1 sentence"
+        },
+        {
+          "name": "Problem statement",
+          "detail": "The job the user is trying to do today, and what it costs them. Evidence from interviews, not intuition.",
+          "length": "~200 words"
+        },
+        {
+          "name": "Spec / PRD",
+          "detail": "The one job the MVP does, what is explicitly out of scope, and the acceptance criteria.",
+          "length": "1–2 pages"
+        },
+        {
+          "name": "The build",
+          "detail": "A thin working slice, not a skeleton of everything. One path, end to end, that actually works.",
+          "length": "—"
+        },
+        {
+          "name": "README",
+          "detail": "What it is, a screenshot or demo link, how to run it, what's next, the licence.",
+          "length": "~1 page"
+        },
+        {
+          "name": "Results note",
+          "detail": "Users, the metric, what you learned, what you'd change. This is what makes it a CV line.",
+          "length": "~300 words"
+        }
+      ],
+      "dos": [
+        "Talk to five real users before writing any code, and write down what they said in their words.",
+        "Pick the one job the product does and write the other ideas on a visibly separate out-of-scope list.",
+        "Build the thin slice: one complete path that works, rather than a shell of every screen.",
+        "Instrument it before launch — sign-ups, the one action that matters, and retention after a week. Numbers are what a CV line is made of.",
+        "Ship a README with a screenshot or a live link. Most reviewers decide from the README alone.",
+        "Add a licence. Without one nobody may legally reuse it, including someone evaluating you."
+      ],
+      "donts": [
+        "Don't build authentication, billing and an admin panel before anyone has used the core feature once.",
+        "Don't call a landing page an MVP. An MVP is used; a landing page is read.",
+        "Don't skip the metric because the numbers are small. Five engaged users is a finding; \"it works\" is not.",
+        "Don't leave the repo private and the demo dead. An unreachable project is an unverifiable claim.",
+        "Don't take a feature request from the loudest user as a priority. One user is an anecdote."
+      ],
+      "tools": [
+        {
+          "name": "Figma",
+          "use": "Design and click through the flow before building it",
+          "url": "https://www.figma.com/",
+          "free": true
+        },
+        {
+          "name": "Supabase",
+          "use": "Postgres, auth and storage on a free tier",
+          "url": "https://supabase.com/",
+          "free": true
+        },
+        {
+          "name": "Vercel",
+          "use": "Deploy a web app from a repo, free for personal projects",
+          "url": "https://vercel.com/",
+          "free": true
+        },
+        {
+          "name": "PostHog",
+          "use": "Product analytics with a generous free tier — your metric lives here",
+          "url": "https://posthog.com/",
+          "free": true
+        },
+        {
+          "name": "Plausible / Umami",
+          "use": "Lightweight privacy-friendly traffic numbers",
+          "url": "https://umami.is/",
+          "free": true
+        },
+        {
+          "name": "GitHub",
+          "use": "The repo, the README, the issue list a reviewer reads",
+          "url": "https://github.com/",
+          "free": true
+        }
+      ],
+      "exports": [
+        {
+          "name": "Public repo",
+          "detail": "The default artifact. README, licence, clean commit history.",
+          "how": "Squash the experiments, write a real README, add a LICENSE file, then make it public."
+        },
+        {
+          "name": "Live demo link",
+          "detail": "A reviewer who can click it will. One that 404s is worse than none.",
+          "how": "Deploy to a free host and check the link from a logged-out browser."
+        },
+        {
+          "name": "Demo video",
+          "detail": "90 seconds, no voice needed. Survives the demo being down.",
+          "how": "Screen-record the one happy path, trim the dead air, upload unlisted."
+        },
+        {
+          "name": "One-page case study",
+          "detail": "Problem, what you built, numbers, what you learned. The thing you actually send.",
+          "how": "Export as PDF; link it from both the repo and your CV."
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "research",
+      "name": "research",
+      "label": "Research Study",
+      "summary": "A standalone empirical study — survey, interviews or desk research — run properly enough that someone can act on the answer. Lighter than a thesis, and the same discipline.",
+      "kind": "research",
+      "tier": "intermediate",
+      "estimated_weeks": "6-8",
+      "icon_key": "compass",
+      "order_index": 3,
+      "cv_line": "Research study: <question> — <method, N>; findings used to <decision it informed>",
+      "outcome_label": "A 10–20 page research report with a defensible method",
+      "formats": [
+        {
+          "name": "Executive summary",
+          "detail": "The answer first, in three bullets, for a reader who stops there.",
+          "length": "~150 words"
+        },
+        {
+          "name": "Question & scope",
+          "detail": "What you asked, and the decision it is meant to inform.",
+          "length": "~1 page"
+        },
+        {
+          "name": "Method",
+          "detail": "Design, sample, instrument, dates, limitations. Reproducible by a stranger.",
+          "length": "1–2 pages"
+        },
+        {
+          "name": "Findings",
+          "detail": "One finding per section, each with its evidence. Charts carry the weight.",
+          "length": "4–8 pages"
+        },
+        {
+          "name": "Implications",
+          "detail": "So what, and for whom. The section that stops it being trivia.",
+          "length": "~1 page"
+        },
+        {
+          "name": "Appendix",
+          "detail": "Full instrument, response tables, and the raw data or a link to it.",
+          "length": "Uncapped"
+        }
+      ],
+      "dos": [
+        "Write the decision the study informs before you write the question. A study nobody will act on is a hobby.",
+        "Decide the analysis before collecting the data, and write it down somewhere dated.",
+        "Pilot the survey or interview guide on five people and expect to rewrite a third of it.",
+        "Report your N, your response rate and who you could not reach. Credibility lives in the limitations.",
+        "Quote participants verbatim. Paraphrase is where findings quietly become opinions."
+      ],
+      "donts": [
+        "Don't write leading questions. \"How much do you value X?\" has already assumed the answer.",
+        "Don't mix a 1–5 scale with a 1–7 scale across the same instrument.",
+        "Don't claim significance from 30 convenience responses. Say what it is: indicative.",
+        "Don't bury the answer on page nine. Executive summary first, always.",
+        "Don't delete inconvenient responses. Report them, and say why they are inconvenient."
+      ],
+      "tools": [
+        {
+          "name": "Google Forms",
+          "use": "Free survey hosting with clean CSV export",
+          "url": "https://www.google.com/forms/about/",
+          "free": true
+        },
+        {
+          "name": "Zotero",
+          "use": "Citation management for the desk-research half",
+          "url": "https://www.zotero.org/",
+          "free": true
+        },
+        {
+          "name": "OSF",
+          "use": "Preregister the plan and host the data with a DOI",
+          "url": "https://osf.io/",
+          "free": true
+        },
+        {
+          "name": "Google Dataset Search",
+          "use": "Finding existing data before you collect your own",
+          "url": "https://datasetsearch.research.google.com/",
+          "free": true
+        },
+        {
+          "name": "Otter / Whisper",
+          "use": "Transcribing interviews so you can quote accurately",
+          "url": "https://openai.com/research/whisper",
+          "free": true
+        }
+      ],
+      "exports": [
+        {
+          "name": "PDF report",
+          "detail": "The main deliverable. Numbered sections, captioned figures.",
+          "how": "Export from a styles-based document so the contents page and bookmarks generate themselves."
+        },
+        {
+          "name": "Slide summary",
+          "detail": "Eight to ten slides for people who will not read the report.",
+          "how": "One finding per slide, the chart as the hero, the claim as the title."
+        },
+        {
+          "name": "Data appendix",
+          "detail": "Anonymised responses, so the analysis is checkable.",
+          "how": "Strip identifiers, publish as CSV on OSF or Zenodo, cite the DOI."
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "report",
+      "name": "report",
+      "label": "Business / Consulting Report",
+      "summary": "A recommendation someone can act on, with the analysis behind it. The most reusable deliverable on this list — the same structure carries an internal memo, a client report and a course submission.",
+      "kind": "report",
+      "tier": "foundational",
+      "estimated_weeks": "2-4",
+      "icon_key": "consulting",
+      "order_index": 4,
+      "cv_line": "<Topic> report for <org/course> — recommended <X>; <what was adopted or what it quantified>",
+      "outcome_label": "A 10–15 page report or a 15-slide deck with a clear recommendation",
+      "formats": [
+        {
+          "name": "Executive summary",
+          "detail": "The recommendation, the three reasons, the ask. One page, readable standing up.",
+          "length": "1 page"
+        },
+        {
+          "name": "Situation & question",
+          "detail": "What is happening, and the specific question the report answers.",
+          "length": "~1 page"
+        },
+        {
+          "name": "Analysis",
+          "detail": "One argument per section, each with the numbers under it.",
+          "length": "5–8 pages"
+        },
+        {
+          "name": "Recommendation",
+          "detail": "One recommendation. Alternatives considered and why they lose.",
+          "length": "~1 page"
+        },
+        {
+          "name": "Risks & next steps",
+          "detail": "What could go wrong, and who does what by when.",
+          "length": "~1 page"
+        },
+        {
+          "name": "Appendix",
+          "detail": "Model, assumptions, sources. Everything a sceptic would want to check.",
+          "length": "Uncapped"
+        }
+      ],
+      "dos": [
+        "Answer first. Lead with the recommendation and let the reader stop reading whenever they are convinced.",
+        "Make every section title a claim, not a label: \"Margin is falling because of mix, not price\" beats \"Margin analysis\".",
+        "Put the assumptions in a single visible table. Reviewers attack hidden assumptions and accept stated ones.",
+        "Quantify the recommendation. \"Save ₹40L a year\" survives a meeting; \"improve efficiency\" does not.",
+        "Give one recommendation. Three options with no pick is a decision handed back to the reader."
+      ],
+      "donts": [
+        "Don't build suspense. This is not an essay; the conclusion goes first.",
+        "Don't present a framework as a finding. SWOT is how you thought, not what you concluded.",
+        "Don't use a chart you cannot explain in one sentence.",
+        "Don't hide the weak assumption in a footnote. Someone will find it, and then the whole report is suspect.",
+        "Don't deliver without a next step. A report with no ask does not get acted on."
+      ],
+      "tools": [
+        {
+          "name": "Excel",
+          "use": "The model behind the numbers, with inputs separated from calculations",
+          "url": "https://www.microsoft.com/en-us/microsoft-365/free-office-online-for-the-web",
+          "free": true
+        },
+        {
+          "name": "Google Slides / PowerPoint",
+          "use": "The deck version of the same argument",
+          "url": "https://www.google.com/slides/about/",
+          "free": true
+        },
+        {
+          "name": "Datawrapper",
+          "use": "Charts that are readable without editing, free for public use",
+          "url": "https://www.datawrapper.de/",
+          "free": true
+        },
+        {
+          "name": "Statista / industry bodies",
+          "use": "Market figures you can cite — check the underlying source",
+          "url": "https://www.statista.com/",
+          "free": false
+        }
+      ],
+      "exports": [
+        {
+          "name": "PDF report",
+          "detail": "The archival version. Page numbers, a contents page, a source list.",
+          "how": "Styles-based document, exported to PDF so the bookmarks come across."
+        },
+        {
+          "name": "Slide deck",
+          "detail": "The same argument in 12–15 slides, action titles throughout.",
+          "how": "One claim per slide as the title, one chart as the evidence."
+        },
+        {
+          "name": "One-page summary",
+          "detail": "What most people will actually read.",
+          "how": "Recommendation, three reasons, the number, the ask. One page, no appendix."
+        },
+        {
+          "name": "Model workbook",
+          "detail": "The spreadsheet, shared so the numbers are checkable.",
+          "how": "Colour inputs blue and calculations black, add an assumptions tab, remove dead sheets."
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "analysis",
+      "name": "analysis",
+      "label": "Data Analysis Project",
+      "summary": "One question, one dataset, one defensible answer, with a dashboard or notebook someone else can re-run. The most direct portfolio piece for an analyst role.",
+      "kind": "analysis",
+      "tier": "intermediate",
+      "estimated_weeks": "3-5",
+      "icon_key": "data",
+      "order_index": 5,
+      "cv_line": "<Question> — analysed <N rows / source> and built a <tool> dashboard; found <the finding>",
+      "outcome_label": "A reproducible analysis with a dashboard and a one-page write-up",
+      "formats": [
+        {
+          "name": "Question",
+          "detail": "One sentence, answerable from the data you have.",
+          "length": "1 sentence"
+        },
+        {
+          "name": "Data note",
+          "detail": "Source, licence, period, row count, and what each column means.",
+          "length": "~1 page"
+        },
+        {
+          "name": "Cleaning log",
+          "detail": "Every transformation, in order, re-runnable. The difference between an analysis and a guess.",
+          "length": "—"
+        },
+        {
+          "name": "Analysis",
+          "detail": "The exploration, the test, and the result — including what you expected and did not find.",
+          "length": "2–4 pages"
+        },
+        {
+          "name": "Dashboard or notebook",
+          "detail": "The interactive artifact. Readable by someone who was not there.",
+          "length": "—"
+        },
+        {
+          "name": "One-page write-up",
+          "detail": "Question, method, finding, caveat. What you actually send someone.",
+          "length": "1 page"
+        }
+      ],
+      "dos": [
+        "Check the licence before you use a dataset. A portfolio piece built on data you had no right to use is unusable.",
+        "Profile every column before analysing anything — distinct values, blanks, ranges, impossible numbers.",
+        "Keep the raw file untouched and do every transformation in Power Query, SQL or a script you can re-run.",
+        "Write down what you expected before you look. Otherwise every result confirms what you already thought.",
+        "State the finding with a number and a caveat in the same sentence."
+      ],
+      "donts": [
+        "Don't clean by typing over cells. An untraceable fix is an untrustworthy analysis.",
+        "Don't present correlation as cause. Name the confounder you cannot rule out.",
+        "Don't build twelve charts. Build the two that answer the question and delete the rest.",
+        "Don't leave a dashboard with no title, no date, and no source. Nobody will trust it and nobody will ask.",
+        "Don't drop the outliers because they are inconvenient. Investigate them — they are often the finding."
+      ],
+      "tools": [
+        {
+          "name": "Excel + Power Query",
+          "use": "Repeatable cleaning without writing code",
+          "url": "https://www.microsoft.com/en-us/microsoft-365/free-office-online-for-the-web",
+          "free": true
+        },
+        {
+          "name": "Power BI Desktop",
+          "use": "Free on Windows; the dashboard most employers recognise",
+          "url": "https://powerbi.microsoft.com/en-us/desktop/",
+          "free": true
+        },
+        {
+          "name": "Looker Studio",
+          "use": "Free, browser-based, easy to share a live link",
+          "url": "https://lookerstudio.google.com/",
+          "free": true
+        },
+        {
+          "name": "Google Colab",
+          "use": "Python notebooks with no setup, shareable as a link",
+          "url": "https://colab.research.google.com/",
+          "free": true
+        },
+        {
+          "name": "DB Fiddle / SQLite",
+          "use": "Somewhere to run the SQL and show your working",
+          "url": "https://www.db-fiddle.com/",
+          "free": true
+        }
+      ],
+      "exports": [
+        {
+          "name": "Live dashboard link",
+          "detail": "The artifact a reviewer clicks. Must work logged out.",
+          "how": "Publish from Looker Studio or Power BI and open the link in a private window to check."
+        },
+        {
+          "name": "Notebook",
+          "detail": "The reproducible version, with the cleaning steps visible.",
+          "how": "Colab notebook, outputs saved, data loaded from a URL rather than your drive."
+        },
+        {
+          "name": "One-page PDF",
+          "detail": "Question, method, chart, finding, caveat.",
+          "how": "One chart, one paragraph, one caveat. Export to PDF."
+        },
+        {
+          "name": "Repo",
+          "detail": "Data note, query/script, dashboard screenshot.",
+          "how": "README explaining what the question was and where the data came from."
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "case",
+      "name": "case",
+      "label": "Case Competition Entry",
+      "summary": "A judged recommendation under a deadline. Compressed version of the consulting report, with the scoring rubric as the spec and a Q&A you cannot prepare slides for.",
+      "kind": "case",
+      "tier": "intermediate",
+      "estimated_weeks": "1-3",
+      "icon_key": "trophy",
+      "order_index": 6,
+      "cv_line": "<Competition> — <placement> of <N> teams; recommended <X> backed by a <model type>",
+      "outcome_label": "A 10–15 slide deck, a model, and a rehearsed Q&A",
+      "formats": [
+        {
+          "name": "Title slide",
+          "detail": "The recommendation as the title. Judges have read twenty decks; lead with the answer.",
+          "length": "1 slide"
+        },
+        {
+          "name": "Situation",
+          "detail": "What is true today, in numbers, in one slide.",
+          "length": "1 slide"
+        },
+        {
+          "name": "Recommendation",
+          "detail": "One recommendation, quantified, with the three reasons.",
+          "length": "1–2 slides"
+        },
+        {
+          "name": "Supporting analysis",
+          "detail": "Market size, financials, competitive angle. One claim per slide.",
+          "length": "5–7 slides"
+        },
+        {
+          "name": "Implementation",
+          "detail": "Phases, owners, timeline. Judges mark this and teams skip it.",
+          "length": "1–2 slides"
+        },
+        {
+          "name": "Risks & appendix",
+          "detail": "The three risks with mitigations, and the model behind the numbers.",
+          "length": "2+ slides"
+        }
+      ],
+      "dos": [
+        "Read the rubric and build the deck against it. The rubric is the spec, and most teams never open it.",
+        "Answer the question actually asked, including the parts that are inconvenient for your idea.",
+        "Quantify the recommendation. A judged recommendation without a number loses to one with a rough number.",
+        "Put implementation in. It is usually 15–20% of the marks and routinely left out.",
+        "Rehearse the handoffs between speakers. Judges see unpractised transitions as unpractised thinking."
+      ],
+      "donts": [
+        "Don't present three options and no choice. The decision is what is being marked.",
+        "Don't fill slides with frameworks. A Porter's Five Forces slide with no conclusion is a wasted slide.",
+        "Don't invent numbers. State assumptions and sources; a judge will ask where a figure came from.",
+        "Don't overrun. Being cut off before your recommendation is the worst outcome available.",
+        "Don't let one person answer every question. Judges are marking the team."
+      ],
+      "tools": [
+        {
+          "name": "PowerPoint / Google Slides",
+          "use": "The deck, in whatever the submission format demands",
+          "url": "https://www.google.com/slides/about/",
+          "free": true
+        },
+        {
+          "name": "Excel",
+          "use": "The model behind the recommendation, and the appendix that proves it",
+          "url": "https://www.microsoft.com/en-us/microsoft-365/free-office-online-for-the-web",
+          "free": true
+        },
+        {
+          "name": "Annual reports & investor decks",
+          "use": "Real figures to anchor assumptions on",
+          "url": "https://www.annualreports.com/",
+          "free": true
+        },
+        {
+          "name": "Datawrapper",
+          "use": "Fast, readable charts under time pressure",
+          "url": "https://www.datawrapper.de/",
+          "free": true
+        }
+      ],
+      "exports": [
+        {
+          "name": "Submission deck",
+          "detail": "Exactly the format and page limit asked for. Over-limit entries get disqualified.",
+          "how": "Export to PDF unless they ask for .pptx; check the file size cap."
+        },
+        {
+          "name": "Appendix deck",
+          "detail": "The detail you pull up when challenged.",
+          "how": "Separate file, clearly indexed, so you can find a slide in five seconds."
+        },
+        {
+          "name": "Model workbook",
+          "detail": "Submitted where allowed; it is what separates a quantified case from a story.",
+          "how": "Assumptions tab first, inputs coloured, no dead sheets."
+        }
+      ],
+      "published": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "thesis-s1",
+      "playbook_id": "thesis",
+      "order_index": 1,
+      "title": "Narrow the question until it is answerable",
+      "description": "Most theses fail here, months before anyone notices. A good question is one sentence, has a method attached, and names the data you can actually get.",
+      "checklist": [
+        {
+          "t": "Write it as one sentence",
+          "d": "If it needs two sentences it is two questions. Pick one."
+        },
+        {
+          "t": "Name the method in the same breath",
+          "d": "\"...measured by a survey of 200 X\" or \"...by regression on Y panel data\". A question with no method is a topic, not a question."
+        },
+        {
+          "t": "Prove the data exists",
+          "d": "Find and open the actual dataset, or confirm you can reach the actual people. Do this before committing."
+        },
+        {
+          "t": "Write the limitation you already know about",
+          "d": "Every design has one. Naming it now stops it being a surprise in the viva."
+        },
+        {
+          "t": "Get it signed off",
+          "d": "One sentence, one method, one data source, in an email to your supervisor."
+        }
+      ],
+      "skill_id": "skill-topic-mr-p1-t3",
+      "track_id": "market-research",
+      "estimated_days": 7
+    },
+    {
+      "id": "thesis-s2",
+      "playbook_id": "thesis",
+      "order_index": 2,
+      "title": "Review the literature without drowning in it",
+      "description": "You are mapping a debate, not reading everything. Twenty well-chosen papers organised by argument beats a hundred summarised in sequence.",
+      "checklist": [
+        {
+          "t": "Start from three canonical papers",
+          "d": "Find the three most-cited works on your question and mine their reference lists both directions."
+        },
+        {
+          "t": "Log every paper in Zotero as you read",
+          "d": "Title, the one-line finding, and whether you agree. Retro-fitting this costs days."
+        },
+        {
+          "t": "Group by argument, not by author",
+          "d": "Build a table: position, who holds it, on what evidence. That table becomes your chapter structure."
+        },
+        {
+          "t": "Write the gap in two sentences",
+          "d": "\"Everyone agrees X. Nobody has tested it on Y.\" That is your contribution."
+        }
+      ],
+      "skill_id": "skill-topic-mr-p4-t1",
+      "track_id": "market-research",
+      "estimated_days": 14
+    },
+    {
+      "id": "thesis-s3",
+      "playbook_id": "thesis",
+      "order_index": 3,
+      "title": "Design the method, in writing, before touching data",
+      "description": "Sampling, instrument, variables and the analysis you will run. Written down and dated — this is the chapter that makes the study credible or not.",
+      "checklist": [
+        {
+          "t": "Define the population and the sample",
+          "d": "Who exactly, how many, and recruited how. Convenience sampling is acceptable if you say so."
+        },
+        {
+          "t": "Draft the instrument in full",
+          "d": "Every survey question or interview prompt, written out. Then cut a third of them."
+        },
+        {
+          "t": "Pilot it on five people",
+          "d": "You will find two broken questions. Always."
+        },
+        {
+          "t": "Write the analysis plan",
+          "d": "Name the test before you see the data. This is what separates a finding from a fishing trip."
+        },
+        {
+          "t": "Clear ethics or approval if required",
+          "d": "Human subjects usually need it, and it usually takes longer than you think."
+        }
+      ],
+      "skill_id": "skill-topic-mr-p3-t1",
+      "track_id": "market-research",
+      "estimated_days": 10
+    },
+    {
+      "id": "thesis-s4",
+      "playbook_id": "thesis",
+      "order_index": 4,
+      "title": "Collect and clean the data",
+      "description": "The unglamorous half of the calendar. Keep the raw file untouched and do every transformation in a script or a query you can re-run.",
+      "checklist": [
+        {
+          "t": "Freeze a raw copy",
+          "d": "Never edit the original export. Every cleaning step happens on a copy, reproducibly."
+        },
+        {
+          "t": "Keep a cleaning log",
+          "d": "Rows dropped, why, and how many. The examiner will ask about your N."
+        },
+        {
+          "t": "Profile every column",
+          "d": "Distinct values, blanks, impossible numbers. Find the data-entry errors before they become findings."
+        },
+        {
+          "t": "Document the final N",
+          "d": "Started with X, excluded Y for reason Z, analysed N. One table."
+        }
+      ],
+      "skill_id": "skill-topic-dat-p3-t1",
+      "track_id": "data",
+      "estimated_days": 21
+    },
+    {
+      "id": "thesis-s5",
+      "playbook_id": "thesis",
+      "order_index": 5,
+      "title": "Run the analysis you planned",
+      "description": "The plan from stage 3, executed. Exploratory extras are fine — label them exploratory.",
+      "checklist": [
+        {
+          "t": "Run the pre-planned test first",
+          "d": "Before anything else, so you cannot talk yourself into a different one."
+        },
+        {
+          "t": "Report effect size, not just significance",
+          "d": "A significant result that is tiny is a finding about your sample size."
+        },
+        {
+          "t": "Produce the tables and figures now",
+          "d": "Numbered, captioned, readable in black and white. These are the Results chapter."
+        },
+        {
+          "t": "Mark anything unplanned as exploratory",
+          "d": "Honest and costs you nothing. Hiding it costs you the viva."
+        }
+      ],
+      "skill_id": "skill-topic-exd-p6-t3",
+      "track_id": "excel-data",
+      "estimated_days": 14
+    },
+    {
+      "id": "thesis-s6",
+      "playbook_id": "thesis",
+      "order_index": 6,
+      "title": "Write the chapters in the order that works",
+      "description": "Methodology, then Results, then Discussion, then Introduction, then Abstract last. Writing the introduction first is why so many drafts contradict their own findings.",
+      "checklist": [
+        {
+          "t": "Use Word styles from the first page",
+          "d": "Heading 1/2/3 only. Your contents page, numbering and PDF bookmarks all come free."
+        },
+        {
+          "t": "Write Methodology and Results first",
+          "d": "They are the most factual and the least negotiable. Momentum comes from these."
+        },
+        {
+          "t": "Then Discussion, against the literature",
+          "d": "Each finding: what it means, who it agrees with, who it contradicts."
+        },
+        {
+          "t": "Introduction and Abstract last",
+          "d": "Now you know what the thesis actually says."
+        },
+        {
+          "t": "Full format pass",
+          "d": "References, figure numbering, margins, pagination. Book two days for this."
+        }
+      ],
+      "skill_id": "skill-topic-tw-p1-t3",
+      "track_id": "tech-writing",
+      "estimated_days": 28
+    },
+    {
+      "id": "thesis-s7",
+      "playbook_id": "thesis",
+      "order_index": 7,
+      "title": "Defend it",
+      "description": "A viva tests whether you understand your own limitations. Preparing the attacks yourself is the whole technique.",
+      "checklist": [
+        {
+          "t": "Write the five hardest questions yourself",
+          "d": "Start with your own limitations section. The examiner will."
+        },
+        {
+          "t": "Prepare a ten-slide summary",
+          "d": "Question, method, finding, limitation, next step. Not a tour of the document."
+        },
+        {
+          "t": "Be able to defend the sample",
+          "d": "Why this N, why these people, what it does and does not generalise to."
+        },
+        {
+          "t": "Rehearse out loud, timed",
+          "d": "Twice. Reading it silently does not count."
+        }
+      ],
+      "skill_id": "skill-topic-xcomm-p3-t1",
+      "track_id": "exec-communication",
+      "estimated_days": 7
+    },
+    {
+      "id": "mvp-s1",
+      "playbook_id": "mvp",
+      "order_index": 1,
+      "title": "Find a problem worth solving",
+      "description": "Five conversations before any code. You are listening for what people already do and what it costs them — not for whether they like your idea.",
+      "checklist": [
+        {
+          "t": "Interview five people in the target group",
+          "d": "Ask what they did last time, not what they would do. Past behaviour is evidence; intent is not."
+        },
+        {
+          "t": "Write down their actual words",
+          "d": "Verbatim quotes. Your summary of what they meant is already your bias."
+        },
+        {
+          "t": "Name the current workaround",
+          "d": "Everyone has one — a spreadsheet, a WhatsApp group, doing nothing. That is your real competitor."
+        },
+        {
+          "t": "State the cost of the problem",
+          "d": "Hours, rupees, or errors per week. No measurable cost, no product."
+        }
+      ],
+      "skill_id": "skill-topic-prd-p2-t1",
+      "track_id": "product",
+      "estimated_days": 7
+    },
+    {
+      "id": "mvp-s2",
+      "playbook_id": "mvp",
+      "order_index": 2,
+      "title": "Cut the scope to one job",
+      "description": "Write the out-of-scope list where you can see it. Scope creep is the only reason most MVPs never ship.",
+      "checklist": [
+        {
+          "t": "Write the one-line pitch",
+          "d": "For <user>, <product> does <one job>. If it needs an \"and\", cut something."
+        },
+        {
+          "t": "List everything you are not building",
+          "d": "Explicitly, in the spec. This list is what protects your timeline."
+        },
+        {
+          "t": "Define done",
+          "d": "One sentence describing a user completing the job end to end. That is v1."
+        },
+        {
+          "t": "Set a ship date and keep it",
+          "d": "Scope flexes to fit the date, not the other way round."
+        }
+      ],
+      "skill_id": "skill-topic-prd-p3-t3",
+      "track_id": "product",
+      "estimated_days": 3
+    },
+    {
+      "id": "mvp-s3",
+      "playbook_id": "mvp",
+      "order_index": 3,
+      "title": "Write the spec",
+      "description": "One or two pages: the job, the flow, the acceptance criteria, the out-of-scope list. It exists so you stop re-deciding things at 1am.",
+      "checklist": [
+        {
+          "t": "Describe the happy path as numbered steps",
+          "d": "From landing to the job being done. Count the steps — then remove two."
+        },
+        {
+          "t": "Write acceptance criteria",
+          "d": "\"A new user can do X in under Y seconds without help.\" Testable, not aspirational."
+        },
+        {
+          "t": "Decide the one metric",
+          "d": "The action that means the product worked. Pick it now, before it is convenient to pick a flattering one."
+        },
+        {
+          "t": "Note the data you'll store",
+          "d": "Especially anything personal. Decide now what you do not collect."
+        }
+      ],
+      "skill_id": "skill-topic-prd-p5-t1",
+      "track_id": "product",
+      "estimated_days": 3
+    },
+    {
+      "id": "mvp-s4",
+      "playbook_id": "mvp",
+      "order_index": 4,
+      "title": "Prototype before you build",
+      "description": "A clickable prototype costs a day and finds the flow problems that cost a week in code.",
+      "checklist": [
+        {
+          "t": "Design only the happy path",
+          "d": "Three or four screens. Empty states and errors come later."
+        },
+        {
+          "t": "Make it clickable",
+          "d": "Link the screens so someone can walk the flow without you narrating."
+        },
+        {
+          "t": "Walk three people through it",
+          "d": "Silently. Where they hesitate is where your build will fail."
+        },
+        {
+          "t": "Fix the flow, then stop designing",
+          "d": "The prototype's job is done the moment the flow stops confusing people."
+        }
+      ],
+      "skill_id": "skill-topic-ux-p4-t2",
+      "track_id": "ux",
+      "estimated_days": 4
+    },
+    {
+      "id": "mvp-s5",
+      "playbook_id": "mvp",
+      "order_index": 5,
+      "title": "Build the thin slice",
+      "description": "One complete path that genuinely works, deployed somewhere a stranger can reach. No auth, billing or admin until the core job works.",
+      "checklist": [
+        {
+          "t": "Deploy on day one",
+          "d": "An empty deployed app beats a perfect local one. Everything after is a small change to something live."
+        },
+        {
+          "t": "Build the happy path only",
+          "d": "Resist every edge case until the main path works end to end."
+        },
+        {
+          "t": "Use managed services for the boring parts",
+          "d": "Auth, database, file storage. Writing your own is a project, not a feature."
+        },
+        {
+          "t": "Keep commits legible",
+          "d": "A reviewer reads your commit history as evidence of how you work."
+        }
+      ],
+      "skill_id": null,
+      "track_id": "ai-nocode",
+      "estimated_days": 21
+    },
+    {
+      "id": "mvp-s6",
+      "playbook_id": "mvp",
+      "order_index": 6,
+      "title": "Put it in front of five users",
+      "description": "Watch them use it without helping. Everything you want to explain is a thing the product should have said.",
+      "checklist": [
+        {
+          "t": "Give a task, not a tour",
+          "d": "\"Do X.\" Then stay quiet, however painful it gets."
+        },
+        {
+          "t": "Write down every hesitation",
+          "d": "Where they pause, re-read or click the wrong thing. That list is your backlog."
+        },
+        {
+          "t": "Count completions",
+          "d": "How many finished the task unaided? That number is your first real result."
+        },
+        {
+          "t": "Fix only what blocked people",
+          "d": "Preferences are noise at this stage; blockers are not."
+        }
+      ],
+      "skill_id": "skill-topic-ux-p5-t1",
+      "track_id": "ux",
+      "estimated_days": 5
+    },
+    {
+      "id": "mvp-s7",
+      "playbook_id": "mvp",
+      "order_index": 7,
+      "title": "Instrument it and read the numbers",
+      "description": "Without a metric you have an anecdote. With one you have a CV line someone can ask you about.",
+      "checklist": [
+        {
+          "t": "Track sign-up, the core action, and week-one return",
+          "d": "Three events. More than that and you will not look at any of them."
+        },
+        {
+          "t": "Record the baseline",
+          "d": "Week one's numbers, written down, before you start improving things."
+        },
+        {
+          "t": "Make one change and measure it",
+          "d": "One change, one measurement. Two at once teaches you nothing."
+        },
+        {
+          "t": "Write the honest number",
+          "d": "\"11 of 18 returned in week one.\" Specific and modest beats vague and grand."
+        }
+      ],
+      "skill_id": "skill-topic-prd-p6-t1",
+      "track_id": "product",
+      "estimated_days": 4
+    },
+    {
+      "id": "mvp-s8",
+      "playbook_id": "mvp",
+      "order_index": 8,
+      "title": "Package it so a reviewer can verify it",
+      "description": "The build is not the deliverable; the verifiable build is. README, screenshot, live link, licence, one-page case study.",
+      "checklist": [
+        {
+          "t": "Write the README properly",
+          "d": "What it is, a screenshot, the demo link, how to run it, the licence. In that order."
+        },
+        {
+          "t": "Add a LICENSE file",
+          "d": "MIT unless you have a reason. No licence means nobody may legally reuse it."
+        },
+        {
+          "t": "Record a 90-second demo",
+          "d": "Insurance against the live link being down the day someone looks."
+        },
+        {
+          "t": "Write the one-page case study",
+          "d": "Problem, build, numbers, learning. This is what goes in the CV entry."
+        }
+      ],
+      "skill_id": "skill-topic-tw-p2-t2",
+      "track_id": "tech-writing",
+      "estimated_days": 3
+    },
+    {
+      "id": "research-s1",
+      "playbook_id": "research",
+      "order_index": 1,
+      "title": "Frame the question and the decision behind it",
+      "description": "Name the decision the answer changes. If nothing changes either way, the study is not worth running.",
+      "checklist": [
+        {
+          "t": "Write the decision first",
+          "d": "\"We will do A or B depending on this.\" Then write the question that separates A from B."
+        },
+        {
+          "t": "State what would change your mind",
+          "d": "The result that would make you conclude the opposite. Name it now."
+        },
+        {
+          "t": "Set the scope boundaries",
+          "d": "Which population, which period, which geography. Write down what is excluded."
+        }
+      ],
+      "skill_id": "skill-topic-mr-p1-t1",
+      "track_id": "market-research",
+      "estimated_days": 3
+    },
+    {
+      "id": "research-s2",
+      "playbook_id": "research",
+      "order_index": 2,
+      "title": "Choose primary or secondary — and don't collect what exists",
+      "description": "Most questions are partly answered already. Finding that out costs a day and can save three weeks.",
+      "checklist": [
+        {
+          "t": "Search the existing data first",
+          "d": "Dataset search, official statistics, published industry reports."
+        },
+        {
+          "t": "Decide what genuinely needs primary collection",
+          "d": "Usually a narrow slice, not the whole question."
+        },
+        {
+          "t": "Write down each source's provenance",
+          "d": "Who collected it, when, how, and with what incentive."
+        }
+      ],
+      "skill_id": "skill-topic-mr-p1-t2",
+      "track_id": "market-research",
+      "estimated_days": 4
+    },
+    {
+      "id": "research-s3",
+      "playbook_id": "research",
+      "order_index": 3,
+      "title": "Design the instrument",
+      "description": "Survey questions or an interview guide, written out in full, then cut by a third. Long instruments produce abandoned ones.",
+      "checklist": [
+        {
+          "t": "Write every question out",
+          "d": "Then delete any that will not change a conclusion."
+        },
+        {
+          "t": "Use one consistent scale",
+          "d": "Pick 1–5 or 1–7 and keep it throughout."
+        },
+        {
+          "t": "Remove the leading questions",
+          "d": "Read each one aloud and ask whether it implies its own answer."
+        },
+        {
+          "t": "Pilot on five people",
+          "d": "Time it. Note which questions they ask you to explain, and rewrite those."
+        }
+      ],
+      "skill_id": "skill-topic-mr-p3-t1",
+      "track_id": "market-research",
+      "estimated_days": 5
+    },
+    {
+      "id": "research-s4",
+      "playbook_id": "research",
+      "order_index": 4,
+      "title": "Sample it so the answer means something",
+      "description": "Who you asked decides what the answer is worth. A convenience sample is fine if you say so and reason accordingly.",
+      "checklist": [
+        {
+          "t": "Define the population",
+          "d": "The group the answer is about, precisely."
+        },
+        {
+          "t": "Choose the sampling method and name it",
+          "d": "Random, stratified, convenience, snowball. Each has a known weakness — state yours."
+        },
+        {
+          "t": "Work out the N you need",
+          "d": "And if you cannot reach it, decide in advance how you will caveat the result."
+        },
+        {
+          "t": "Plan for non-response",
+          "d": "Who is systematically missing, and which way that biases the finding."
+        }
+      ],
+      "skill_id": "skill-topic-mr-p3-t2",
+      "track_id": "market-research",
+      "estimated_days": 3
+    },
+    {
+      "id": "research-s5",
+      "playbook_id": "research",
+      "order_index": 5,
+      "title": "Run it",
+      "description": "Fieldwork. Keep the log as you go — dates, counts, anything odd that happened.",
+      "checklist": [
+        {
+          "t": "Keep a fieldwork log",
+          "d": "Dates, invitations sent, responses in, dropouts. Your method section needs these numbers."
+        },
+        {
+          "t": "Record and transcribe interviews",
+          "d": "With consent. Quoting from memory is how findings drift."
+        },
+        {
+          "t": "Don't help respondents",
+          "d": "Every clarification you give is a question you should have written better."
+        },
+        {
+          "t": "Stop when you said you would",
+          "d": "Extending the window to chase a nicer number is a bias, not diligence."
+        }
+      ],
+      "skill_id": "skill-topic-mr-p2-t1",
+      "track_id": "market-research",
+      "estimated_days": 10
+    },
+    {
+      "id": "research-s6",
+      "playbook_id": "research",
+      "order_index": 6,
+      "title": "Analyse and test what you think you found",
+      "description": "Run the planned analysis, then look for the explanation that would make your finding wrong.",
+      "checklist": [
+        {
+          "t": "Clean and document the exclusions",
+          "d": "Incomplete responses, straight-lining, impossible answers. Count them."
+        },
+        {
+          "t": "Run the planned analysis first",
+          "d": "Then anything exploratory, clearly labelled as such."
+        },
+        {
+          "t": "Cross-tabulate the obvious confounder",
+          "d": "Usually the finding is about a subgroup, not the population."
+        },
+        {
+          "t": "Write each finding as a sentence with a number in it",
+          "d": "If you cannot put a number in it, it is an impression."
+        }
+      ],
+      "skill_id": "skill-topic-exd-p6-t2",
+      "track_id": "excel-data",
+      "estimated_days": 6
+    },
+    {
+      "id": "research-s7",
+      "playbook_id": "research",
+      "order_index": 7,
+      "title": "Write the report",
+      "description": "Answer first, method second, evidence third. Written for someone who will read the first page and the charts.",
+      "checklist": [
+        {
+          "t": "Write the executive summary as three bullets",
+          "d": "Each one a finding with a number. Write this last and put it first."
+        },
+        {
+          "t": "One finding per section",
+          "d": "Section title states the finding; the body is its evidence."
+        },
+        {
+          "t": "Make every chart self-explanatory",
+          "d": "Title says the point, axes labelled, source noted. A chart needing narration will be misread."
+        },
+        {
+          "t": "Write limitations without flinching",
+          "d": "Sample, method, period. This section is why a reader trusts the rest."
+        }
+      ],
+      "skill_id": "skill-topic-mr-p6-t2",
+      "track_id": "market-research",
+      "estimated_days": 6
+    },
+    {
+      "id": "report-s1",
+      "playbook_id": "report",
+      "order_index": 1,
+      "title": "Get the question right",
+      "description": "Most bad reports answer a question nobody asked. Write the question down and have it confirmed before you analyse anything.",
+      "checklist": [
+        {
+          "t": "Write the question as a decision",
+          "d": "\"Should we do X?\" or \"Which of X/Y?\" — not \"an analysis of the market\"."
+        },
+        {
+          "t": "Break it into three sub-questions",
+          "d": "Each answerable with data. These become your analysis sections."
+        },
+        {
+          "t": "Write your hypothesis now",
+          "d": "What you expect the answer to be, so you notice when the data disagrees."
+        },
+        {
+          "t": "Confirm it with whoever asked",
+          "d": "In writing. Scope disputes at the end are fatal; at the start they are free."
+        }
+      ],
+      "skill_id": "skill-topic-con-p3-t1",
+      "track_id": "consulting",
+      "estimated_days": 2
+    },
+    {
+      "id": "report-s2",
+      "playbook_id": "report",
+      "order_index": 2,
+      "title": "Structure the answer before gathering anything",
+      "description": "Write the storyline first — the recommendation and the three reasons — then go find out whether it is true. It tells you exactly what to research.",
+      "checklist": [
+        {
+          "t": "Draft the one-page storyline",
+          "d": "Recommendation, three supporting claims, the evidence each one needs."
+        },
+        {
+          "t": "Write every section title as a claim",
+          "d": "If a title could sit on any report, it is a label, not a claim."
+        },
+        {
+          "t": "List the evidence you need per claim",
+          "d": "This is your research plan, and it stops you reading indefinitely."
+        },
+        {
+          "t": "Be willing to rewrite it",
+          "d": "The data will change the storyline once. If it never does, you were not testing anything."
+        }
+      ],
+      "skill_id": "skill-topic-con-p4-t1",
+      "track_id": "consulting",
+      "estimated_days": 2
+    },
+    {
+      "id": "report-s3",
+      "playbook_id": "report",
+      "order_index": 3,
+      "title": "Do the research",
+      "description": "Targeted at the claims in the storyline. Record the source of every number as you take it, not afterwards.",
+      "checklist": [
+        {
+          "t": "Start with official and industry sources",
+          "d": "Regulators, annual reports, industry associations. Cite upstream, not a blog quoting them."
+        },
+        {
+          "t": "Log every figure with its source and date",
+          "d": "One sheet: number, source, URL, date. You will need this for the appendix."
+        },
+        {
+          "t": "Triangulate anything load-bearing",
+          "d": "A number your recommendation depends on needs two independent sources."
+        },
+        {
+          "t": "Note what you could not find",
+          "d": "A named gap is a limitation; an unnamed one reads as an error."
+        }
+      ],
+      "skill_id": "skill-topic-con-p5-t3",
+      "track_id": "consulting",
+      "estimated_days": 5
+    },
+    {
+      "id": "report-s4",
+      "playbook_id": "report",
+      "order_index": 4,
+      "title": "Build the numbers",
+      "description": "A small, auditable model: inputs separated from calculations, assumptions visible, sensitivities run.",
+      "checklist": [
+        {
+          "t": "Separate inputs, calculations and outputs",
+          "d": "Three visually distinct blocks. Blue inputs, black formulas."
+        },
+        {
+          "t": "Put every assumption on one tab",
+          "d": "With its source. This is the first tab a reviewer opens."
+        },
+        {
+          "t": "Run the sensitivity",
+          "d": "Flex the two assumptions that matter most and show the range, not a single point."
+        },
+        {
+          "t": "Sanity-check the magnitude",
+          "d": "Is the answer the right order of magnitude against a known benchmark? Most model errors are 10x errors."
+        }
+      ],
+      "skill_id": "skill-topic-exc-p7-t1",
+      "track_id": "excel",
+      "estimated_days": 4
+    },
+    {
+      "id": "report-s5",
+      "playbook_id": "report",
+      "order_index": 5,
+      "title": "Write the recommendation",
+      "description": "One recommendation, quantified, with the alternatives named and dismissed on stated grounds.",
+      "checklist": [
+        {
+          "t": "State it in one sentence with a number",
+          "d": "\"Exit the B segment; it costs ₹1.2Cr a year at a 4% share.\""
+        },
+        {
+          "t": "Give three reasons, strongest first",
+          "d": "Each traceable to a section of your analysis."
+        },
+        {
+          "t": "Name the alternatives and why they lose",
+          "d": "Shows you considered them, and pre-empts the obvious challenge."
+        },
+        {
+          "t": "Write the ask",
+          "d": "What you want decided, by whom, by when."
+        }
+      ],
+      "skill_id": "skill-topic-xcomm-p2-t3",
+      "track_id": "exec-communication",
+      "estimated_days": 3
+    },
+    {
+      "id": "report-s6",
+      "playbook_id": "report",
+      "order_index": 6,
+      "title": "Make the slides",
+      "description": "The deck is the same argument, not a summary of the document. Action titles, one idea per slide.",
+      "checklist": [
+        {
+          "t": "Action title on every slide",
+          "d": "The title is the takeaway. Read the titles in sequence — they should tell the whole story."
+        },
+        {
+          "t": "One idea per slide",
+          "d": "Two ideas means two slides, or one of them is not needed."
+        },
+        {
+          "t": "Let the chart be the slide",
+          "d": "Highlight the one bar or line that makes the point; grey the rest."
+        },
+        {
+          "t": "Put the detail in an appendix",
+          "d": "Available when challenged, not in the flow."
+        }
+      ],
+      "skill_id": "skill-topic-xcomm-p3-t1",
+      "track_id": "exec-communication",
+      "estimated_days": 3
+    },
+    {
+      "id": "report-s7",
+      "playbook_id": "report",
+      "order_index": 7,
+      "title": "Present it and survive the questions",
+      "description": "You will get between five and ten minutes before the first interruption. Plan for the interruption.",
+      "checklist": [
+        {
+          "t": "Open with the recommendation",
+          "d": "Not the agenda, not the methodology. The answer."
+        },
+        {
+          "t": "Prepare the five hardest questions",
+          "d": "Start with your weakest assumption — that is where the first question lands."
+        },
+        {
+          "t": "Know your numbers without the slides",
+          "d": "Being unable to recall your own figure undoes the whole report."
+        },
+        {
+          "t": "Close on the ask",
+          "d": "Restate what you need decided, and write down what was decided."
+        }
+      ],
+      "skill_id": "skill-topic-xcomm-p5-t1",
+      "track_id": "exec-communication",
+      "estimated_days": 2
+    },
+    {
+      "id": "analysis-s1",
+      "playbook_id": "analysis",
+      "order_index": 1,
+      "title": "Scope a question and find data you may legally use",
+      "description": "Both halves matter. The licence check is thirty seconds and saves a portfolio piece you cannot show.",
+      "checklist": [
+        {
+          "t": "Write the question as one sentence",
+          "d": "Specific enough that a number answers it."
+        },
+        {
+          "t": "Find the data before committing",
+          "d": "Open it. Count the rows. Check the columns you need actually exist."
+        },
+        {
+          "t": "Check and record the licence",
+          "d": "Who may use it, for what. Note it in your data note."
+        },
+        {
+          "t": "Write the data note first",
+          "d": "Source, period, rows, columns and their meanings. Future-you will not remember."
+        }
+      ],
+      "skill_id": null,
+      "track_id": "data",
+      "estimated_days": 2
+    },
+    {
+      "id": "analysis-s2",
+      "playbook_id": "analysis",
+      "order_index": 2,
+      "title": "Profile and clean it, reproducibly",
+      "description": "Where the time actually goes. Every fix happens in a step you can re-run, never by typing over a cell.",
+      "checklist": [
+        {
+          "t": "Freeze the raw file",
+          "d": "Read-only copy. Everything downstream is derived."
+        },
+        {
+          "t": "Profile every column",
+          "d": "Distinct values, blanks, min/max, type. Find the \"-999\" that means missing."
+        },
+        {
+          "t": "Fix in a transformation step",
+          "d": "Power Query, SQL or script. Delete-and-retype is not a cleaning step."
+        },
+        {
+          "t": "Log the row count at each stage",
+          "d": "Started X, dropped Y because Z, left with N."
+        }
+      ],
+      "skill_id": "skill-topic-dat-p3-t1",
+      "track_id": "data",
+      "estimated_days": 5
+    },
+    {
+      "id": "analysis-s3",
+      "playbook_id": "analysis",
+      "order_index": 3,
+      "title": "Shape it into something you can analyse",
+      "description": "One row per observation, one column per variable, one header row. Most analysis pain is a shape problem.",
+      "checklist": [
+        {
+          "t": "Get it to one row per observation",
+          "d": "Unpivot wide data. Columns named 2019, 2020, 2021 are values, not fields."
+        },
+        {
+          "t": "Join in the lookups you need",
+          "d": "Categories, regions, dates. Check the row count did not change after each join."
+        },
+        {
+          "t": "Build a proper date column",
+          "d": "A real date, not text. Half of all analysis bugs are date bugs."
+        },
+        {
+          "t": "Save the query, not the result",
+          "d": "So next month's file runs through the same pipeline untouched."
+        }
+      ],
+      "skill_id": "skill-topic-exc-p6-t11",
+      "track_id": "excel-data",
+      "estimated_days": 3
+    },
+    {
+      "id": "analysis-s4",
+      "playbook_id": "analysis",
+      "order_index": 4,
+      "title": "Explore it before you test anything",
+      "description": "Look at the distributions first. The question you can answer is often not the one you arrived with.",
+      "checklist": [
+        {
+          "t": "Write down what you expect",
+          "d": "Before you look. This is the only way to notice a result that is merely flattering."
+        },
+        {
+          "t": "Plot every variable you care about",
+          "d": "Distribution and over time. Bimodal data means two populations."
+        },
+        {
+          "t": "Investigate the outliers",
+          "d": "Error, or the most interesting thing in the dataset? Find out which."
+        },
+        {
+          "t": "Restate the question if needed",
+          "d": "Honest and common. Record that you did and why."
+        }
+      ],
+      "skill_id": "skill-topic-exd-p6-t1",
+      "track_id": "excel-data",
+      "estimated_days": 3
+    },
+    {
+      "id": "analysis-s5",
+      "playbook_id": "analysis",
+      "order_index": 5,
+      "title": "Test what you think you found",
+      "description": "A difference you can see is not yet a difference that exists. Name the confounder you cannot rule out.",
+      "checklist": [
+        {
+          "t": "Pick the test before running it",
+          "d": "Match it to the data you have, not to the answer you want."
+        },
+        {
+          "t": "Report the effect size",
+          "d": "Significant and trivial is a sentence about your sample size."
+        },
+        {
+          "t": "Split by the obvious confounder",
+          "d": "Usually the effect lives in one subgroup. Say so."
+        },
+        {
+          "t": "Write the caveat in the same sentence as the finding",
+          "d": "\"X is 12% higher, though the Y segment is under-represented.\""
+        }
+      ],
+      "skill_id": "skill-topic-exd-p6-t3",
+      "track_id": "excel-data",
+      "estimated_days": 3
+    },
+    {
+      "id": "analysis-s6",
+      "playbook_id": "analysis",
+      "order_index": 6,
+      "title": "Build the dashboard",
+      "description": "Two or three charts that answer the question, titled so they read without you in the room.",
+      "checklist": [
+        {
+          "t": "Answer the question in the top-left",
+          "d": "The headline number, with its period. Everything else is support."
+        },
+        {
+          "t": "Keep it to two or three charts",
+          "d": "Each must earn its place against the question."
+        },
+        {
+          "t": "Title every chart with its point",
+          "d": "\"Revenue is flat while units grow\", not \"Revenue and units\"."
+        },
+        {
+          "t": "Date and source it",
+          "d": "Every dashboard needs \"as of\" and where the data came from, visibly."
+        }
+      ],
+      "skill_id": "skill-topic-dat-p5-t2",
+      "track_id": "data",
+      "estimated_days": 4
+    },
+    {
+      "id": "analysis-s7",
+      "playbook_id": "analysis",
+      "order_index": 7,
+      "title": "Write the one-pager",
+      "description": "Question, method, finding, caveat. This is the thing you send; the dashboard is the thing they click afterwards.",
+      "checklist": [
+        {
+          "t": "Lead with the finding and its number",
+          "d": "First line, no build-up."
+        },
+        {
+          "t": "Method in three lines",
+          "d": "Source, N, what you did. Enough to be checkable."
+        },
+        {
+          "t": "One chart, the best one",
+          "d": "The chart that makes the point alone."
+        },
+        {
+          "t": "Caveats, then the next question",
+          "d": "What this does not show, and what you would look at next."
+        }
+      ],
+      "skill_id": "skill-topic-xcomm-p2-t3",
+      "track_id": "exec-communication",
+      "estimated_days": 2
+    },
+    {
+      "id": "case-s1",
+      "playbook_id": "case",
+      "order_index": 1,
+      "title": "Read the prompt and the rubric like a judge",
+      "description": "The rubric tells you where the marks are. Reading it first is the cheapest advantage in any competition.",
+      "checklist": [
+        {
+          "t": "List every explicit requirement",
+          "d": "Slide limit, format, time limit, what must be addressed. Tick them off at the end."
+        },
+        {
+          "t": "Write the weighting next to each section",
+          "d": "Then allocate your hours in the same proportion."
+        },
+        {
+          "t": "Underline the actual question",
+          "d": "Prompts bury it in two pages of context. Teams answer the context."
+        },
+        {
+          "t": "Split the work by section, with a merge time",
+          "d": "And agree who owns the final deck."
+        }
+      ],
+      "skill_id": "skill-topic-con-p3-t1",
+      "track_id": "consulting",
+      "estimated_days": 1
+    },
+    {
+      "id": "case-s2",
+      "playbook_id": "case",
+      "order_index": 2,
+      "title": "Size the opportunity",
+      "description": "A number, built from stated assumptions, defensible to within an order of magnitude. Judges care far more about the build than the answer.",
+      "checklist": [
+        {
+          "t": "Build it top-down and bottom-up",
+          "d": "If they disagree by more than 2x, one of your assumptions is wrong."
+        },
+        {
+          "t": "Show the assumptions on the slide",
+          "d": "Judges mark the logic. A naked number invites the worst question."
+        },
+        {
+          "t": "Anchor on one real figure",
+          "d": "From an annual report or official statistic. One real anchor makes the rest credible."
+        },
+        {
+          "t": "Sanity-check against something known",
+          "d": "If your market is bigger than the industry, start again."
+        }
+      ],
+      "skill_id": "skill-topic-con-p3-t2",
+      "track_id": "consulting",
+      "estimated_days": 2
+    },
+    {
+      "id": "case-s3",
+      "playbook_id": "case",
+      "order_index": 3,
+      "title": "Build the financial case",
+      "description": "A small model: revenue build, cost, investment, and a payback or NPV. Simple and auditable beats elaborate and unexplainable.",
+      "checklist": [
+        {
+          "t": "Model three years, not ten",
+          "d": "Nobody believes year seven, and defending it wastes your Q&A."
+        },
+        {
+          "t": "Separate inputs from calculations",
+          "d": "So you can change an assumption live when a judge challenges it."
+        },
+        {
+          "t": "Produce one headline number",
+          "d": "Payback period, NPV or incremental margin. One, on the recommendation slide."
+        },
+        {
+          "t": "Run the downside case",
+          "d": "Have the pessimistic number ready before anyone asks for it."
+        }
+      ],
+      "skill_id": "skill-topic-exc-p4-t1",
+      "track_id": "excel-finance",
+      "estimated_days": 3
+    },
+    {
+      "id": "case-s4",
+      "playbook_id": "case",
+      "order_index": 4,
+      "title": "Pick one recommendation and commit",
+      "description": "The single biggest differentiator. Judges reward a defended choice over a balanced survey every time.",
+      "checklist": [
+        {
+          "t": "State it with a number",
+          "d": "What to do, and what it is worth."
+        },
+        {
+          "t": "Three reasons, strongest first",
+          "d": "Each one traceable to a slide of analysis."
+        },
+        {
+          "t": "Name the alternatives and why they lose",
+          "d": "One line each. Pre-empts the obvious challenge."
+        },
+        {
+          "t": "Write the implementation phases",
+          "d": "Ninety days, six months, year one. Owners named."
+        }
+      ],
+      "skill_id": "skill-topic-con-p4-t1",
+      "track_id": "consulting",
+      "estimated_days": 1
+    },
+    {
+      "id": "case-s5",
+      "playbook_id": "case",
+      "order_index": 5,
+      "title": "Build the deck",
+      "description": "Action titles, one idea per slide, the chart as the argument. Read the titles in order — they should be the whole case.",
+      "checklist": [
+        {
+          "t": "Write all the titles first, as claims",
+          "d": "Then build the slide that proves each one."
+        },
+        {
+          "t": "Read the titles aloud in sequence",
+          "d": "If they do not tell the story on their own, the structure is wrong."
+        },
+        {
+          "t": "One chart per slide, highlighted",
+          "d": "Grey everything except the bar that makes the point."
+        },
+        {
+          "t": "Check every explicit requirement",
+          "d": "Slide count, format, mandatory sections. Then check again."
+        }
+      ],
+      "skill_id": "skill-topic-con-p5-t2",
+      "track_id": "consulting",
+      "estimated_days": 2
+    },
+    {
+      "id": "case-s6",
+      "playbook_id": "case",
+      "order_index": 6,
+      "title": "Rehearse the Q&A, not the pitch",
+      "description": "The pitch you can control. The questions decide it. Prepare the attacks on your own weakest assumption.",
+      "checklist": [
+        {
+          "t": "Run it timed, twice",
+          "d": "Including transitions. Overrunning is an unforced error."
+        },
+        {
+          "t": "Write the ten hardest questions",
+          "d": "Start from your own assumptions. Assign an owner to each."
+        },
+        {
+          "t": "Know which appendix slide answers what",
+          "d": "\"Slide 19\" said calmly is worth several marks."
+        },
+        {
+          "t": "Agree the handoffs",
+          "d": "Who answers what, and how you hand a question across without talking over each other."
+        }
+      ],
+      "skill_id": "skill-topic-xcomm-p5-t1",
+      "track_id": "exec-communication",
+      "estimated_days": 2
+    }
+  ],
+  "stage_resources": [
+    {
+      "id": "thesis-s1-r1",
+      "stage_id": "thesis-s1",
+      "order_index": 1,
+      "title": "Preregistration on OSF",
+      "url": "https://help.osf.io/article/145-preregistration",
+      "source": "Center for Open Science",
+      "format": "guide",
+      "length": "~15 min",
+      "note": "Write down your hypothesis and analysis plan before you collect data. The single cheapest thing you can do for the study's credibility."
+    },
+    {
+      "id": "thesis-s2-r1",
+      "stage_id": "thesis-s2",
+      "order_index": 1,
+      "title": "Research and Citation Resources",
+      "url": "https://owl.purdue.edu/owl/research_and_citation/resources.html",
+      "source": "Purdue OWL",
+      "format": "guide",
+      "length": "Reference",
+      "note": "The free standard for APA, MLA and Chicago, plus how to evaluate a source."
+    },
+    {
+      "id": "thesis-s2-r2",
+      "stage_id": "thesis-s2",
+      "order_index": 2,
+      "title": "Zotero",
+      "url": "https://www.zotero.org/",
+      "source": "Zotero",
+      "format": "web",
+      "length": "Free tool",
+      "note": "Collect citations as you read and generate the bibliography in any style. Start using it on day one, not in week ten."
+    },
+    {
+      "id": "thesis-s3-r1",
+      "stage_id": "thesis-s3",
+      "order_index": 1,
+      "title": "Preregistration on OSF",
+      "url": "https://help.osf.io/article/145-preregistration",
+      "source": "Center for Open Science",
+      "format": "guide",
+      "length": "~15 min",
+      "note": "Write down your hypothesis and analysis plan before you collect data. The single cheapest thing you can do for the study's credibility."
+    },
+    {
+      "id": "thesis-s4-r1",
+      "stage_id": "thesis-s4",
+      "order_index": 1,
+      "title": "Google Dataset Search",
+      "url": "https://datasetsearch.research.google.com/",
+      "source": "Google",
+      "format": "web",
+      "length": "Reference",
+      "note": "Searches dataset metadata across the open web — start here before scraping anything."
+    },
+    {
+      "id": "thesis-s4-r2",
+      "stage_id": "thesis-s4",
+      "order_index": 2,
+      "title": "Our World in Data",
+      "url": "https://ourworldindata.org/",
+      "source": "Our World in Data",
+      "format": "web",
+      "length": "Reference",
+      "note": "Curated, sourced, downloadable data on big topics, with the chart code open."
+    },
+    {
+      "id": "thesis-s6-r1",
+      "stage_id": "thesis-s6",
+      "order_index": 1,
+      "title": "Research and Citation Resources",
+      "url": "https://owl.purdue.edu/owl/research_and_citation/resources.html",
+      "source": "Purdue OWL",
+      "format": "guide",
+      "length": "Reference",
+      "note": "The free standard for APA, MLA and Chicago, plus how to evaluate a source."
+    },
+    {
+      "id": "mvp-s4-r1",
+      "stage_id": "mvp-s4",
+      "order_index": 1,
+      "title": "Figma (free Starter plan)",
+      "url": "https://www.figma.com/",
+      "source": "Figma",
+      "format": "web",
+      "length": "Free tier",
+      "note": "Enough to design and click through a prototype before writing any code."
+    },
+    {
+      "id": "mvp-s8-r1",
+      "stage_id": "mvp-s8",
+      "order_index": 1,
+      "title": "Make a README",
+      "url": "https://makeareadme.com/",
+      "source": "Make a README",
+      "format": "guide",
+      "length": "~10 min",
+      "note": "What a README has to contain. A reviewer reads this before your code, and often instead of it."
+    },
+    {
+      "id": "mvp-s8-r2",
+      "stage_id": "mvp-s8",
+      "order_index": 2,
+      "title": "Choose an open source license",
+      "url": "https://choosealicense.com/",
+      "source": "GitHub",
+      "format": "web",
+      "length": "~5 min",
+      "note": "No licence means nobody may legally reuse your work — including a future employer evaluating it."
+    },
+    {
+      "id": "mvp-s8-r3",
+      "stage_id": "mvp-s8",
+      "order_index": 3,
+      "title": "Licensing a repository",
+      "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository",
+      "source": "GitHub Docs",
+      "format": "article",
+      "length": "~8 min",
+      "note": "How to add the licence file so GitHub detects and displays it."
+    },
+    {
+      "id": "research-s2-r1",
+      "stage_id": "research-s2",
+      "order_index": 1,
+      "title": "Google Dataset Search",
+      "url": "https://datasetsearch.research.google.com/",
+      "source": "Google",
+      "format": "web",
+      "length": "Reference",
+      "note": "Searches dataset metadata across the open web — start here before scraping anything."
+    },
+    {
+      "id": "research-s2-r2",
+      "stage_id": "research-s2",
+      "order_index": 2,
+      "title": "Open Government Data Platform India",
+      "url": "https://data.gov.in/",
+      "source": "Government of India",
+      "format": "web",
+      "length": "Reference",
+      "note": "Official Indian datasets by ministry and sector."
+    },
+    {
+      "id": "research-s2-r3",
+      "stage_id": "research-s2",
+      "order_index": 3,
+      "title": "Our World in Data",
+      "url": "https://ourworldindata.org/",
+      "source": "Our World in Data",
+      "format": "web",
+      "length": "Reference",
+      "note": "Curated, sourced, downloadable data on big topics, with the chart code open."
+    },
+    {
+      "id": "research-s3-r1",
+      "stage_id": "research-s3",
+      "order_index": 1,
+      "title": "Preregistration on OSF",
+      "url": "https://help.osf.io/article/145-preregistration",
+      "source": "Center for Open Science",
+      "format": "guide",
+      "length": "~15 min",
+      "note": "Write down your hypothesis and analysis plan before you collect data. The single cheapest thing you can do for the study's credibility."
+    },
+    {
+      "id": "research-s7-r1",
+      "stage_id": "research-s7",
+      "order_index": 1,
+      "title": "Research and Citation Resources",
+      "url": "https://owl.purdue.edu/owl/research_and_citation/resources.html",
+      "source": "Purdue OWL",
+      "format": "guide",
+      "length": "Reference",
+      "note": "The free standard for APA, MLA and Chicago, plus how to evaluate a source."
+    },
+    {
+      "id": "analysis-s1-r1",
+      "stage_id": "analysis-s1",
+      "order_index": 1,
+      "title": "Google Dataset Search",
+      "url": "https://datasetsearch.research.google.com/",
+      "source": "Google",
+      "format": "web",
+      "length": "Reference",
+      "note": "Searches dataset metadata across the open web — start here before scraping anything."
+    },
+    {
+      "id": "analysis-s1-r2",
+      "stage_id": "analysis-s1",
+      "order_index": 2,
+      "title": "Kaggle Datasets",
+      "url": "https://www.kaggle.com/datasets",
+      "source": "Kaggle",
+      "format": "web",
+      "length": "Free account",
+      "note": "Thousands of cleaned, documented datasets with licences stated. Good for a first analysis project."
+    },
+    {
+      "id": "analysis-s1-r3",
+      "stage_id": "analysis-s1",
+      "order_index": 3,
+      "title": "Open Government Data Platform India",
+      "url": "https://data.gov.in/",
+      "source": "Government of India",
+      "format": "web",
+      "length": "Reference",
+      "note": "Official Indian datasets by ministry and sector."
+    }
+  ]
+}

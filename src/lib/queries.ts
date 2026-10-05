@@ -1,7 +1,25 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { Database, Status, Step, Tier } from "@/lib/database.types";
+import type {
+  Database,
+  StageStatus,
+  Status,
+  Step,
+  Tier,
+  UserProjectStatus,
+} from "@/lib/database.types";
 import { hydrateResumeDoc } from "@/lib/resume/sections";
 import type { ResumeDoc } from "@/lib/resume/types";
+import {
+  parseChecklist,
+  parseExports,
+  parseFormats,
+  parseLines,
+  parseTools,
+  type ChecklistItem,
+  type PlaybookExport,
+  type PlaybookFormat,
+  type PlaybookTool,
+} from "@/lib/projects";
 
 type Client = SupabaseClient<Database>;
 
@@ -1009,6 +1027,18 @@ export interface AdminUserResumeSummary {
   updatedAt: string;
 }
 
+export interface AdminUserProject {
+  id: string;
+  title: string;
+  playbookLabel: string;
+  status: UserProjectStatus;
+  link: string;
+  outcome: string;
+  doneStages: number;
+  totalStages: number;
+  updatedAt: string;
+}
+
 export interface AdminUserDetail {
   tracks: AdminUserTrackProgress[];
   xp: number;
@@ -1016,6 +1046,7 @@ export interface AdminUserDetail {
   longestStreak: number;
   skills: AdminUserSkill[];
   resumes: AdminUserResumeSummary[];
+  projects: AdminUserProject[];
 }
 
 // Deliberate, explicit trade-off for a small trusted test group (migration
@@ -1026,8 +1057,15 @@ export interface AdminUserDetail {
 // actually make these selects return rows for someone other than the
 // caller; a non-admin calling this gets back nothing for any of it.
 export async function getAdminUserDetail(supabase: Client, userId: string): Promise<AdminUserDetail> {
-  const [{ data: enrolled }, { data: progress }, { data: xpRow }, { data: streakRow }, { data: skillRows }, { data: resumeRows }] =
-    await Promise.all([
+  const [
+    { data: enrolled },
+    { data: progress },
+    { data: xpRow },
+    { data: streakRow },
+    { data: skillRows },
+    { data: resumeRows },
+    { data: projectRows },
+  ] = await Promise.all([
       supabase.from("user_track_selection").select("track_id").eq("user_id", userId).eq("status", "active"),
       supabase.from("user_progress").select("topic_id, status").eq("user_id", userId),
       supabase.from("user_xp").select("total_xp").eq("user_id", userId).maybeSingle(),
@@ -1038,6 +1076,14 @@ export async function getAdminUserDetail(supabase: Client, userId: string): Prom
         .eq("user_id", userId)
         .order("unlocked_at", { ascending: false }),
       supabase.from("resumes").select("id, title, updated_at").eq("user_id", userId).order("updated_at", { ascending: false }),
+      supabase
+        .from("user_projects")
+        .select(
+          "id, title, status, link, outcome, updated_at, " +
+            "project_playbooks(label, project_stages(id)), user_project_stages(status)"
+        )
+        .eq("user_id", userId)
+        .order("updated_at", { ascending: false }),
     ]);
 
   const trackIds = (enrolled ?? []).map((r) => r.track_id);
@@ -1074,6 +1120,29 @@ export async function getAdminUserDetail(supabase: Client, userId: string): Prom
       unlockedAt: r.unlocked_at,
     }));
 
+  const projects = (
+    (projectRows ?? []) as unknown as {
+      id: string;
+      title: string;
+      status: UserProjectStatus;
+      link: string;
+      outcome: string;
+      updated_at: string;
+      project_playbooks: { label: string; project_stages: { id: string }[] } | null;
+      user_project_stages: { status: StageStatus }[];
+    }[]
+  ).map((r) => ({
+    id: r.id,
+    title: r.title,
+    playbookLabel: r.project_playbooks?.label ?? "—",
+    status: r.status,
+    link: r.link,
+    outcome: r.outcome,
+    doneStages: (r.user_project_stages ?? []).filter((s) => s.status === "done").length,
+    totalStages: (r.project_playbooks?.project_stages ?? []).length,
+    updatedAt: r.updated_at,
+  }));
+
   return {
     tracks,
     xp: xpRow?.total_xp ?? 0,
@@ -1081,6 +1150,7 @@ export async function getAdminUserDetail(supabase: Client, userId: string): Prom
     longestStreak: streakRow?.longest_streak ?? 0,
     skills,
     resumes: (resumeRows ?? []).map((r) => ({ id: r.id, title: r.title, updatedAt: r.updated_at })),
+    projects,
   };
 }
 
@@ -1215,4 +1285,312 @@ export async function getUnlockedSkills(supabase: Client): Promise<UnlockedSkill
     .map((r) => r.skills)
     .filter((s): s is NonNullable<typeof s> => s != null)
     .map((s) => ({ id: s.id, name: s.name, domain: s.domain, tier: s.tier }));
+}
+
+// ---------------------------------------------------------------------------
+// Projects (migration 0033)
+// ---------------------------------------------------------------------------
+
+export interface PlaybookSummary {
+  id: string;
+  label: string;
+  summary: string;
+  kind: string;
+  tier: string;
+  estimatedWeeks: string | null;
+  iconKey: string | null;
+  outcomeLabel: string;
+  stageCount: number;
+  /** How many of this learner's own projects came from this playbook. */
+  yours: number;
+}
+
+export interface PlaybookStage {
+  id: string;
+  orderIndex: number;
+  title: string;
+  description: string;
+  checklist: ChecklistItem[];
+  estimatedDays: number | null;
+  skill: { id: string; name: string; unlocked: boolean } | null;
+  track: { id: string; label: string } | null;
+  resources: {
+    id: string;
+    title: string;
+    url: string;
+    source: string | null;
+    format: string | null;
+    length: string | null;
+    note: string | null;
+  }[];
+}
+
+export interface PlaybookDetail {
+  id: string;
+  label: string;
+  summary: string;
+  kind: string;
+  tier: string;
+  estimatedWeeks: string | null;
+  iconKey: string | null;
+  cvLine: string;
+  outcomeLabel: string;
+  formats: PlaybookFormat[];
+  dos: string[];
+  donts: string[];
+  tools: PlaybookTool[];
+  exports: PlaybookExport[];
+  stages: PlaybookStage[];
+}
+
+interface PlaybookRow {
+  id: string;
+  label: string;
+  summary: string;
+  kind: string;
+  tier: string;
+  estimated_weeks: string | null;
+  icon_key: string | null;
+  cv_line: string;
+  outcome_label: string;
+  formats: unknown;
+  dos: unknown;
+  donts: unknown;
+  tools: unknown;
+  exports: unknown;
+  project_stages: {
+    id: string;
+    order_index: number;
+    title: string;
+    description: string;
+    checklist: unknown;
+    estimated_days: number | null;
+    skill_id: string | null;
+    track_id: string | null;
+    skills: { id: string; name: string } | null;
+    tracks: { id: string; label: string } | null;
+    project_stage_resources: {
+      id: string;
+      order_index: number;
+      title: string;
+      url: string;
+      source: string | null;
+      format: string | null;
+      length: string | null;
+      note: string | null;
+    }[];
+  }[];
+}
+
+export async function getPlaybooks(supabase: Client): Promise<PlaybookSummary[]> {
+  const [{ data: rows }, { data: mine }] = await Promise.all([
+    supabase
+      .from("project_playbooks")
+      .select(
+        "id, label, summary, kind, tier, estimated_weeks, icon_key, outcome_label, project_stages(id)"
+      )
+      .eq("published", true)
+      .order("order_index"),
+    // RLS scopes this to the caller's own rows.
+    supabase.from("user_projects").select("playbook_id"),
+  ]);
+
+  const playbooks = (rows ?? []) as unknown as (Omit<PlaybookRow, "project_stages" | "cv_line" | "formats" | "dos" | "donts" | "tools" | "exports"> & {
+    project_stages: { id: string }[];
+  })[];
+
+  const counts = new Map<string, number>();
+  for (const p of mine ?? []) counts.set(p.playbook_id, (counts.get(p.playbook_id) ?? 0) + 1);
+
+  return playbooks.map((p) => ({
+    id: p.id,
+    label: p.label,
+    summary: p.summary,
+    kind: p.kind,
+    tier: p.tier,
+    estimatedWeeks: p.estimated_weeks,
+    iconKey: p.icon_key,
+    outcomeLabel: p.outcome_label,
+    stageCount: (p.project_stages ?? []).length,
+    yours: counts.get(p.id) ?? 0,
+  }));
+}
+
+/**
+ * One nested select for the whole playbook, plus one small query for which of
+ * the gate skills this learner has unlocked. The unlocked flag is what decides
+ * whether a stage leads with its tutorial or collapses it — see migration
+ * 0033's note on project_stages.skill_id.
+ */
+export async function getPlaybookDetail(
+  supabase: Client,
+  playbookId: string
+): Promise<PlaybookDetail | null> {
+  const { data } = await supabase
+    .from("project_playbooks")
+    .select(
+      "id, label, summary, kind, tier, estimated_weeks, icon_key, cv_line, outcome_label, " +
+        "formats, dos, donts, tools, exports, " +
+        "project_stages(id, order_index, title, description, checklist, estimated_days, skill_id, track_id, " +
+        "skills(id, name), tracks(id, label), " +
+        "project_stage_resources(id, order_index, title, url, source, format, length, note))"
+    )
+    .eq("id", playbookId)
+    .maybeSingle();
+
+  if (!data) return null;
+  const row = data as unknown as PlaybookRow;
+
+  const skillIds = (row.project_stages ?? []).map((s) => s.skill_id).filter((id): id is string => !!id);
+  const unlocked = new Set(await getUnlockedSkillIds(supabase, skillIds));
+
+  const stages = (row.project_stages ?? [])
+    .slice()
+    .sort((a, b) => a.order_index - b.order_index)
+    .map((s) => ({
+      id: s.id,
+      orderIndex: s.order_index,
+      title: s.title,
+      description: s.description,
+      checklist: parseChecklist(s.checklist),
+      estimatedDays: s.estimated_days,
+      skill: s.skills ? { id: s.skills.id, name: s.skills.name, unlocked: unlocked.has(s.skills.id) } : null,
+      track: s.tracks ? { id: s.tracks.id, label: s.tracks.label } : null,
+      resources: (s.project_stage_resources ?? [])
+        .slice()
+        .sort((a, b) => a.order_index - b.order_index)
+        .map((r) => ({
+          id: r.id,
+          title: r.title,
+          url: r.url,
+          source: r.source,
+          format: r.format,
+          length: r.length,
+          note: r.note,
+        })),
+    }));
+
+  return {
+    id: row.id,
+    label: row.label,
+    summary: row.summary,
+    kind: row.kind,
+    tier: row.tier,
+    estimatedWeeks: row.estimated_weeks,
+    iconKey: row.icon_key,
+    cvLine: row.cv_line,
+    outcomeLabel: row.outcome_label,
+    formats: parseFormats(row.formats),
+    dos: parseLines(row.dos),
+    donts: parseLines(row.donts),
+    tools: parseTools(row.tools),
+    exports: parseExports(row.exports),
+    stages,
+  };
+}
+
+async function getUnlockedSkillIds(supabase: Client, skillIds: string[]): Promise<string[]> {
+  if (!skillIds.length) return [];
+  const { data } = await supabase.from("user_skills").select("skill_id").in("skill_id", skillIds);
+  return (data ?? []).map((r) => r.skill_id);
+}
+
+export interface ProjectSummary {
+  id: string;
+  title: string;
+  playbookId: string;
+  playbookLabel: string;
+  playbookIconKey: string | null;
+  status: UserProjectStatus;
+  updatedAt: string;
+  doneStages: number;
+  totalStages: number;
+}
+
+export async function getMyProjects(supabase: Client): Promise<ProjectSummary[]> {
+  const { data } = await supabase
+    .from("user_projects")
+    .select(
+      "id, title, playbook_id, status, updated_at, " +
+        "project_playbooks(label, icon_key, project_stages(id)), " +
+        "user_project_stages(status)"
+    )
+    .order("updated_at", { ascending: false });
+
+  const rows = (data ?? []) as unknown as {
+    id: string;
+    title: string;
+    playbook_id: string;
+    status: UserProjectStatus;
+    updated_at: string;
+    project_playbooks: { label: string; icon_key: string | null; project_stages: { id: string }[] } | null;
+    user_project_stages: { status: StageStatus }[];
+  }[];
+
+  return rows.map((r) => ({
+    id: r.id,
+    title: r.title,
+    playbookId: r.playbook_id,
+    playbookLabel: r.project_playbooks?.label ?? r.playbook_id,
+    playbookIconKey: r.project_playbooks?.icon_key ?? null,
+    status: r.status,
+    updatedAt: r.updated_at,
+    // Total comes from the playbook, not from the learner's rows: a stage
+    // added to the playbook after they started should widen the denominator
+    // rather than silently disappear.
+    doneStages: (r.user_project_stages ?? []).filter((s) => s.status === "done").length,
+    totalStages: (r.project_playbooks?.project_stages ?? []).length,
+  }));
+}
+
+export interface ProjectDetail {
+  id: string;
+  title: string;
+  summary: string;
+  link: string;
+  outcome: string;
+  status: UserProjectStatus;
+  createdAt: string;
+  completedAt: string | null;
+  playbook: PlaybookDetail;
+  stageState: Record<string, { status: StageStatus; notes: string }>;
+}
+
+export async function getProjectDetail(
+  supabase: Client,
+  projectId: string
+): Promise<ProjectDetail | null> {
+  const { data } = await supabase
+    .from("user_projects")
+    .select("id, title, summary, link, outcome, status, created_at, completed_at, playbook_id")
+    .eq("id", projectId)
+    .maybeSingle();
+  if (!data) return null;
+
+  const [playbook, { data: stageRows }] = await Promise.all([
+    getPlaybookDetail(supabase, data.playbook_id),
+    supabase
+      .from("user_project_stages")
+      .select("stage_id, status, notes")
+      .eq("project_id", projectId),
+  ]);
+  if (!playbook) return null;
+
+  const stageState: Record<string, { status: StageStatus; notes: string }> = {};
+  for (const row of stageRows ?? []) {
+    stageState[row.stage_id] = { status: row.status, notes: row.notes };
+  }
+
+  return {
+    id: data.id,
+    title: data.title,
+    summary: data.summary,
+    link: data.link,
+    outcome: data.outcome,
+    status: data.status,
+    createdAt: data.created_at,
+    completedAt: data.completed_at,
+    playbook,
+    stageState,
+  };
 }
