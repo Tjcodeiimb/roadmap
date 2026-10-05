@@ -40,7 +40,18 @@ export default async function DashboardPage() {
         <h1 className="font-display text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
           Welcome back, {firstName}
         </h1>
-        <p className="mt-2 text-base text-ink-2">Here&apos;s where you left off.</p>
+        <p className="mt-2 text-base text-ink-2">
+          Here&apos;s where you left off.
+          {summaries.length > 0 && (
+            <>
+              {" "}
+              <Link href="/courses" className="font-bold underline decoration-2 underline-offset-4 hover:text-ink">
+                Manage your courses
+              </Link>
+              .
+            </>
+          )}
+        </p>
         <div className="rule-stripes mt-4 h-2 w-full border-2 border-ink" />
       </div>
 

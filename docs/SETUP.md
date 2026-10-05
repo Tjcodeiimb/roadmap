@@ -72,6 +72,14 @@ together with a handful of copy-paste values, and you're live.
 > Each file is additive and safe to re-run, so if you're unsure whether one
 > has been applied, running it again is harmless.
 
+> **The two newest files:** `0031_admin_content_counts.sql` is what puts the
+> live phase/topic/resource/enrolled counts on the admin page's course cards
+> (without it the cards just say "Counts need migration 0031").
+> `0032_scope_cohort_unenroll.sql` fixes two enrollment bugs: leaving one
+> course used to drop you out of *every* bundle containing it, and joining a
+> bundle used to adopt courses you had enrolled in yourself, so leaving the
+> bundle took them with it.
+
 ### 1b. Turn off public sign-up
 
 Employees are invited by an admin, not self-serve, so turn off open signup:

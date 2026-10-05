@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { LayoutDashboard, UserRound, ShieldCheck, Check } from "lucide-react";
-import { ICONS, FALLBACK_ICON, TrophyMark, CompassMark, TargetMark, ArticleMark } from "@/components/icons";
+import { ICONS, FALLBACK_ICON, TrophyMark, CompassMark, TargetMark, ArticleMark, StackMark } from "@/components/icons";
 import { uiTransition } from "@/lib/motion";
 import { trackColor, trackInk } from "@/lib/track-colors";
 import { unenrollTracks } from "@/app/actions/enrollment";
@@ -50,6 +50,7 @@ export function SidebarNav({
   }));
 
   const toolItems = [
+    { href: "/courses", label: "Manage courses", icon: StackMark },
     { href: "/skills", label: "Skills", icon: TargetMark },
     { href: "/resume", label: "Resume", icon: ArticleMark },
     { href: "/profile", label: "Profile", icon: UserRound },
@@ -167,10 +168,16 @@ export function SidebarNav({
           <div className="mt-3 mb-1 flex items-center gap-2 px-1">
             <span className="text-[10px] font-bold uppercase tracking-widest text-ink-3">My Courses</span>
             <div className="flex-1 border-t-2 border-ink/10" />
+            {/* A bordered chip, not a word in the label row: this is the only
+                entry point to leaving several courses at once, and as plain
+                underlined text it read as part of the "My Courses" heading. */}
             <button
               type="button"
               onClick={() => (managing ? stopManaging() : setManaging(true))}
-              className="text-[10px] font-bold uppercase tracking-widest text-ink-3 underline decoration-2 underline-offset-2 hover:text-ink"
+              className={clsx(
+                "press-sm rounded-sm border-2 border-ink px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest shadow-[2px_2px_0_0_var(--brutal-shadow)]",
+                managing ? "bg-accent text-accent-ink" : "bg-paper text-ink-2 hover:text-ink"
+              )}
             >
               {managing ? "Done" : "Manage"}
             </button>
@@ -226,6 +233,13 @@ export function SidebarNav({
                   >
                     Leave selected
                   </button>
+                  <Link
+                    href="/courses"
+                    onClick={stopManaging}
+                    className="text-[11px] font-bold text-ink-3 underline decoration-2 underline-offset-2 hover:text-ink"
+                  >
+                    Bundles &amp; more options
+                  </Link>
                 </>
               )}
             </div>
