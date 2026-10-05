@@ -7889,6 +7889,56 @@
       "icon_key": "finance",
       "xp_reward": 60,
       "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p0-t1",
+      "name": "What a Spreadsheet Is, and Getting Excel for Free",
+      "domain": "excel",
+      "description": "Cells, rows, columns, sheets and workbooks — the five words everything else is built on — and a working copy of Excel at no cost.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p0-t2",
+      "name": "Typing, Editing and Saving Your First Sheet",
+      "domain": "excel",
+      "description": "Getting data in without fighting the software: entering, editing, undoing, autofilling, and knowing where the file actually went.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p0-t3",
+      "name": "Making It Readable: Formatting and Number Formats",
+      "domain": "excel",
+      "description": "The difference between a sheet people trust and one they squint at — and why a date sometimes shows up as 45000.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p0-t4",
+      "name": "Your First Formulas: Arithmetic, AutoSum and the Errors You'll Meet",
+      "domain": "excel",
+      "description": "Starting with =, pointing at cells rather than typing numbers, and reading the five error messages instead of panicking at them.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exc-p0-t5",
+      "name": "Sorting, Filtering, Printing and Sharing Without Breaking It",
+      "domain": "excel",
+      "description": "Finding things in a list that has outgrown one screen, and handing the file to someone else in a state they can use.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
     }
   ],
   "skill_resources": [
@@ -16127,6 +16177,66 @@
     {
       "skill_id": "skill-topic-xcomm-p6-t1",
       "resource_id": "xcomm-p6-t1-x2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t1",
+      "resource_id": "exc-p0-t1-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t1",
+      "resource_id": "exc-p0-t1-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t1",
+      "resource_id": "exc-p0-t1-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t2",
+      "resource_id": "exc-p0-t2-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t2",
+      "resource_id": "exc-p0-t2-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t2",
+      "resource_id": "exc-p0-t2-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t3",
+      "resource_id": "exc-p0-t3-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t3",
+      "resource_id": "exc-p0-t3-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t3",
+      "resource_id": "exc-p0-t3-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t4",
+      "resource_id": "exc-p0-t4-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t4",
+      "resource_id": "exc-p0-t4-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t4",
+      "resource_id": "exc-p0-t4-r3"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t5",
+      "resource_id": "exc-p0-t5-r1"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t5",
+      "resource_id": "exc-p0-t5-r2"
+    },
+    {
+      "skill_id": "skill-topic-exc-p0-t5",
+      "resource_id": "exc-p0-t5-r3"
     }
   ]
 }

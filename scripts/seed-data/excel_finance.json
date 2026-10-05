@@ -4,18 +4,27 @@
     "name": "excel-finance",
     "label": "Excel for Finance",
     "tier": "advanced",
-    "summary": "The Excel craft behind real financial work, from financial functions and model structure to three-statement, DCF and LBO builds, risk simulation and automation.",
+    "summary": "The Excel craft behind real financial work, from a standing start: the basics, financial functions and model structure, then three-statement, DCF and LBO builds, risk simulation and automation.",
     "domain": "excel",
-    "estimated_hours": 93,
+    "estimated_hours": 101,
     "effort_per_week": "5-7 hrs",
     "icon_key": "excel",
     "published": true
   },
   "phases": [
     {
+      "id": "exf-pz",
+      "track_id": "excel-finance",
+      "order_index": 0,
+      "title": "Step Zero: Never Opened a Spreadsheet",
+      "description": "Below the finance basics: what a spreadsheet is, getting Excel free, entering and saving data, the number formats finance runs on, your first formulas, and printing a clean one-pager. Work through this before Start Here if Excel itself is new. Credited from any other Excel course.",
+      "estimated_weeks": "1",
+      "color": null
+    },
+    {
       "id": "exf-p1",
       "track_id": "excel-finance",
-      "order_index": 1,
+      "order_index": 2,
       "title": "Excel Foundations for Finance",
       "description": "Set up Excel the way finance professionals run it: keyboard-only navigation, calculation options, and the number formats a model depends on.",
       "estimated_weeks": "1",
@@ -24,7 +33,7 @@
     {
       "id": "exf-p2",
       "track_id": "excel-finance",
-      "order_index": 2,
+      "order_index": 3,
       "title": "Financial Functions for Analysts",
       "description": "The built-in functions every model leans on: time value of money, NPV/IRR and their irregular-cash-flow variants, depreciation, and date arithmetic.",
       "estimated_weeks": "1-2",
@@ -33,7 +42,7 @@
     {
       "id": "exf-p3",
       "track_id": "excel-finance",
-      "order_index": 3,
+      "order_index": 4,
       "title": "Lookup, Aggregation & Dynamic Array Formulas",
       "description": "The formulas every model is actually built from: robust lookups, conditional sums, and the modern dynamic-array and LET/LAMBDA formulas that replace fragile legacy patterns.",
       "estimated_weeks": "1-2",
@@ -42,7 +51,7 @@
     {
       "id": "exc-p4",
       "track_id": "excel-finance",
-      "order_index": 4,
+      "order_index": 5,
       "title": "Business & Financial Modelling",
       "description": "Structure assumptions, build a 3-statement model, and test it under different scenarios.",
       "estimated_weeks": "2-3",
@@ -51,7 +60,7 @@
     {
       "id": "exf-p4",
       "track_id": "excel-finance",
-      "order_index": 5,
+      "order_index": 6,
       "title": "Operating Model & Supporting Schedules",
       "description": "The supporting schedules a 3-statement model is actually built on: a driver-based revenue and opex build, a working capital schedule, and a PP&E/capex roll-forward.",
       "estimated_weeks": "1-2",
@@ -60,7 +69,7 @@
     {
       "id": "exf-p5",
       "track_id": "excel-finance",
-      "order_index": 6,
+      "order_index": 7,
       "title": "Debt Schedules & Circularity",
       "description": "Build a multi-tranche debt schedule with a revolver and cash sweep, then handle the circular reference that interest-on-average-debt always creates.",
       "estimated_weeks": "1-2",
@@ -69,7 +78,7 @@
     {
       "id": "exf-p6",
       "track_id": "excel-finance",
-      "order_index": 7,
+      "order_index": 8,
       "title": "DCF & Valuation Builds",
       "description": "Discount a company's own projected cash flows to a value, then check that value against what the market pays for comparable companies.",
       "estimated_weeks": "1-2",
@@ -78,7 +87,7 @@
     {
       "id": "exf-p7",
       "track_id": "excel-finance",
-      "order_index": 8,
+      "order_index": 9,
       "title": "LBO & Merger Model Builds",
       "description": "The two transaction models built on everything so far: a leveraged buyout returns model, and a merger model that tests whether a deal helps or hurts the acquirer's EPS.",
       "estimated_weeks": "2",
@@ -87,7 +96,7 @@
     {
       "id": "exf-p8",
       "track_id": "excel-finance",
-      "order_index": 9,
+      "order_index": 10,
       "title": "Monte Carlo Simulation in Excel",
       "description": "Go beyond a single sensitivity table: simulate thousands of scenarios from input distributions and read the resulting range of outcomes.",
       "estimated_weeks": "1",
@@ -96,7 +105,7 @@
     {
       "id": "exf-p9",
       "track_id": "excel-finance",
-      "order_index": 10,
+      "order_index": 11,
       "title": "Finance Charts & Visualization",
       "description": "The chart types finance actually uses in a deck or a board pack: a valuation range, a P&L bridge, and a budget-vs-actual variance view.",
       "estimated_weeks": "1",
@@ -105,7 +114,7 @@
     {
       "id": "exf-p10",
       "track_id": "excel-finance",
-      "order_index": 11,
+      "order_index": 12,
       "title": "Dashboards & Reporting Packs",
       "description": "Turn a model's output into a one-page dashboard a manager can actually read, using the charts already built and a handful of interactive controls.",
       "estimated_weeks": "1",
@@ -114,7 +123,7 @@
     {
       "id": "exf-p11",
       "track_id": "excel-finance",
-      "order_index": 12,
+      "order_index": 13,
       "title": "VBA for Finance",
       "description": "Automate the repetitive parts of the job: record and edit macros, loop through a workbook to build a report, and write your own custom functions.",
       "estimated_weeks": "1-2",
@@ -123,7 +132,7 @@
     {
       "id": "exf-p12",
       "track_id": "excel-finance",
-      "order_index": 13,
+      "order_index": 14,
       "title": "Power Query for Finance",
       "description": "Stop rebuilding the same cleanup by hand every month: connect, clean and combine GL extracts, bank statements and multi-entity files with a query you can just refresh.",
       "estimated_weeks": "1-2",
@@ -132,7 +141,7 @@
     {
       "id": "exf-p13",
       "track_id": "excel-finance",
-      "order_index": 14,
+      "order_index": 15,
       "title": "Speed & Efficiency Drills",
       "description": "Turn everything built so far into actual speed — the keyboard-only, no-mistakes pace a live modeling test or a real deadline demands.",
       "estimated_weeks": "1",
@@ -141,7 +150,7 @@
     {
       "id": "exf-p14",
       "track_id": "excel-finance",
-      "order_index": 15,
+      "order_index": 16,
       "title": "Modelling Tests & Case Studies",
       "description": "The capstone: build under the same time pressure and ambiguity as a real modeling test, then check your work against a real answer key.",
       "estimated_weeks": "1-2",
@@ -150,7 +159,7 @@
     {
       "id": "exf-p0",
       "track_id": "excel-finance",
-      "order_index": 0,
+      "order_index": 1,
       "title": "Start Here: Excel Basics",
       "description": "New to Excel? Start here before the finance-specific craft: navigation, formulas and references, core functions, lookups and tables. Already comfortable, or finished Excel for Business? These are credited automatically — skip ahead.",
       "estimated_weeks": "1",
@@ -158,6 +167,11 @@
     }
   ],
   "topics": [
+    { "id": "exf-pz-t1", "phase_id": "exf-pz", "order_index": 1, "title": "What a Spreadsheet Is, and Getting Excel for Free", "section": null, "tags": ["excel", "zero"], "estimated_time": "1 hr", "description": "Cells, rows, columns, sheets and workbooks — the five words everything else is built on — and a working copy of Excel at no cost.", "steps": [{"t": "Get a working Excel", "d": "Open Excel in the browser free with a Microsoft account, or install LibreOffice Calc if you'd rather be offline. Everything in this phase works in either."},{"t": "Name the parts out loud", "d": "Point at a cell, a row, a column, the formula bar, a sheet tab and the ribbon, and say what each one is. If you can't name it, you'll struggle to follow any tutorial."},{"t": "Find a cell by its address", "d": "Type D7 into the Name Box and press Enter. Understand that D7 means column D, row 7 — this is how every formula refers to data."},{"t": "Open a real financial file", "d": "Open any published financial statement or a free model template and notice the convention: inputs in one block, calculations in another, outputs at the top."}] },
+    { "id": "exf-pz-t2", "phase_id": "exf-pz", "order_index": 2, "title": "Typing, Editing and Saving Your First Sheet", "section": null, "tags": ["excel", "zero"], "estimated_time": "1-2 hrs", "description": "Getting data in without fighting the software: entering, editing, undoing, autofilling, and knowing where the file actually went.", "steps": [{"t": "Enter text, numbers and dates", "d": "Type a label, a number and a date into three cells. Notice Excel right-aligns numbers and dates and left-aligns text — that's how you tell whether it understood you."},{"t": "Edit without retyping", "d": "Double-click a cell (or press F2) to edit in place rather than overwriting, and use Ctrl+Z to undo a mistake instead of starting again."},{"t": "Use the fill handle", "d": "Type Jan in a cell, drag the small square at its corner across, and watch Excel continue the series. Do the same with 1, 2 and with a formula."},{"t": "Save it, and know where", "d": "Save the file, then find it again in your folder or OneDrive. Note the .xlsx extension and what AutoSave is doing on your behalf."},{"t": "Build a 12-month revenue line", "d": "Lay out Jan–Dec across one row with the fill handle and type a revenue figure under each. Keep the months in columns, not rows — models read left to right in time."}] },
+    { "id": "exf-pz-t3", "phase_id": "exf-pz", "order_index": 3, "title": "Making It Readable: Formatting and Number Formats", "section": null, "tags": ["excel", "zero"], "estimated_time": "1-2 hrs", "description": "The difference between a sheet people trust and one they squint at — and why a date sometimes shows up as 45000.", "steps": [{"t": "Fix the column widths", "d": "Double-click a column border to autofit it, and drag another to a width you choose. ##### in a cell means the column is too narrow, not that anything is broken."},{"t": "Apply real number formats", "d": "Format one column as currency, one as percentage and one as a short date. Change a formatted date to General and watch it turn into a serial number like 45000 — formatting changes the display, never the value."},{"t": "Make the header row obvious", "d": "Bold the header row, add a fill colour and a bottom border. One pass, nothing fancy."},{"t": "Align and wrap", "d": "Right-align your numbers, left-align your labels, and wrap one long description so the row stops stretching."},{"t": "Adopt the finance number conventions", "d": "Show thousands with a comma, negatives in brackets, and zero decimal places on large figures — then use a custom format to put units ($000s) in the header instead of on every cell."}] },
+    { "id": "exf-pz-t4", "phase_id": "exf-pz", "order_index": 4, "title": "Your First Formulas: Arithmetic, AutoSum and the Errors You'll Meet", "section": null, "tags": ["excel", "zero"], "estimated_time": "2 hrs", "description": "Starting with =, pointing at cells rather than typing numbers, and reading the five error messages instead of panicking at them.", "steps": [{"t": "Write arithmetic that points at cells", "d": "Compute a total as =B2+B3 rather than =12+9. Change B2 and watch the answer follow — this is the whole reason spreadsheets exist."},{"t": "Use AutoSum, then read what it wrote", "d": "Press Alt+= at the bottom of a column, then look at the =SUM(B2:B11) it produced and say out loud what the colon means."},{"t": "Meet the first five functions", "d": "Use SUM, AVERAGE, COUNT, MIN and MAX on the same column and sanity-check each answer by eye."},{"t": "Mind the order of operations", "d": "Compare =B2+B3*2 with =(B2+B3)*2 and confirm you can predict which is which before pressing Enter."},{"t": "Read the errors", "d": "Deliberately cause #####, #VALUE!, #DIV/0!, #NAME? and #REF!, and write down in one line what each one is telling you."},{"t": "Build a one-line gross margin", "d": "From revenue and cost rows, compute gross profit and gross margin %, and keep the formula identical across all twelve months."}] },
+    { "id": "exf-pz-t5", "phase_id": "exf-pz", "order_index": 5, "title": "Sorting, Filtering, Printing and Sharing Without Breaking It", "section": null, "tags": ["excel", "zero"], "estimated_time": "1-2 hrs", "description": "Finding things in a list that has outgrown one screen, and handing the file to someone else in a state they can use.", "steps": [{"t": "Sort without scrambling the rows", "d": "Sort your list by one column with the whole range selected, then undo and sort with only that column selected to see the damage. Never do the second one again."},{"t": "Filter instead of deleting", "d": "Turn on filters, narrow the list to one category, then clear the filter. Nothing was removed — that's the point."},{"t": "Freeze the header row", "d": "Freeze the top row and scroll. On any list longer than a screen this is not optional."},{"t": "Print on one page", "d": "Set the print area, fit to one page wide, and repeat the header row on every page. Check it in Print Preview before anyone else does."},{"t": "Hand it over properly", "d": "Export a PDF for someone who only needs to read it, and share the file itself only when they need to change it."},{"t": "Print a clean one-pager", "d": "Set your twelve-month sheet to landscape, fit to one page wide, add a header with the file name and date, and export the PDF."}] },
     { "id": "exc-p4-t1", "phase_id": "exc-p4", "order_index": 1, "title": "Financial Modelling Fundamentals", "section": null, "tags": [], "estimated_time": null, "description": "How a model is structured: inputs, calculations, and outputs kept separate, with the formatting and audit conventions that keep it trustworthy.", "steps": [{"t": "Separate inputs, calcs and outputs", "d": "Rebuild a messy sheet into three visually distinct blocks: blue hardcoded inputs, black calculations, and a clearly labelled output block."},{"t": "Apply the FAST colour and layout standard", "d": "Colour every cell in a small model by the FAST convention (blue inputs, black formulas, green links, red external links) and check every formula in a row is identical."},{"t": "Add sign conventions and timing flags", "d": "Decide a consistent sign convention for revenues vs costs and add a header flag row (e.g. historical/forecast switch) that other formulas reference."},{"t": "Build in error checks", "d": "Add a checks row that flags when a balance sheet doesn't balance or a percentage doesn't sum to 100%, and trace it to zero."},{"t": "Practice formula auditing", "d": "Use Trace Precedents/Dependents and the Watch Window to follow a value through a multi-tab model."}] },
     { "id": "exc-p4-t2", "phase_id": "exc-p4", "order_index": 2, "title": "Building a 3-Statement Model", "section": null, "tags": [], "estimated_time": null, "description": "Link the income statement, balance sheet, and cash flow statement into one model, and force the balance sheet to balance.", "steps": [{"t": "Build the operating schedules first", "d": "Build a revenue build and an opex schedule that the income statement will pull from, on their own supporting tab."},{"t": "Link the three statements", "d": "Flow net income into retained earnings, capex/depreciation into PP&E, and the cash flow statement into the cash balance."},{"t": "Add and resolve the balance sheet check", "d": "Add an assets-minus-liabilities-and-equity check row and trace any imbalance back to a broken link."},{"t": "Use a cash flow sweep or revolver plug", "d": "Add a minimum cash balance and a revolver draw/paydown so the model self-balances under different scenarios."}] },
     { "id": "exc-p4-t3", "phase_id": "exc-p4", "order_index": 3, "title": "Scenario & Sensitivity Analysis", "section": null, "tags": [], "estimated_time": null, "description": "Stress-test a model's assumptions with data tables, scenario switches, and Goal Seek instead of trusting a single forecast.", "steps": [{"t": "Build a one- and two-variable data table", "d": "Set up a data table that flexes revenue growth and margin together and shows the output grid."},{"t": "Add a CHOOSE-based scenario switch", "d": "Build a single scenario toggle cell that drives every assumption in the model via CHOOSE or IF."},{"t": "Run Goal Seek on a target output", "d": "Use Goal Seek to find the growth rate that produces a target valuation or breakeven year."},{"t": "Read a tornado chart", "d": "Rank a model's assumptions by how much each one swings the output, and present that as a tornado chart."}] },
@@ -200,6 +214,21 @@
     { "id": "exf-p0-t5", "phase_id": "exf-p0", "order_index": 5, "section": null, "tags": ["excel", "basics"], "estimated_time": "1-2 hrs", "description": "Turn a range into a proper Excel table, then sort, filter and tidy it — the habits that keep a growing data set and every formula pointing at it from breaking.", "steps": [{"t": "Convert a range to a table", "d": "Select a small data set and press Ctrl+T; note the automatic banding, filters and a total row."},{"t": "Sort and filter", "d": "Sort by two columns at once, then filter to one category and read the totals."},{"t": "Clean with Flash Fill", "d": "Split a \"First Last\" name column into two columns with Flash Fill instead of a formula."}], "title": "Tables, Sorting & Filtering" }
   ],
   "resources": [
+    { "id": "exf-pz-t1-r1", "topic_id": "exf-pz-t1", "order_index": 1, "title": "Free Microsoft 365 for the web", "url": "https://www.microsoft.com/en-us/microsoft-365/free-office-online-for-the-web", "source": "Microsoft", "format": "web", "length": "Reference", "note": "Excel in the browser, free with a Microsoft account. Enough for everything in this phase.", "icon": null },
+    { "id": "exf-pz-t1-r2", "topic_id": "exf-pz-t1", "order_index": 2, "title": "Getting Started with Excel", "url": "https://edu.gcfglobal.org/en/excel2016/getting-started-with-excel/1/", "source": "GCFGlobal", "format": "article", "length": "~10 min", "note": "The ribbon, the formula bar, worksheets and the Backstage view, named and pointed at.", "icon": null },
+    { "id": "exf-pz-t1-r3", "topic_id": "exf-pz-t1", "order_index": 3, "title": "Excel training on Microsoft Learn", "url": "https://learn.microsoft.com/en-us/training/browse/?products=office-excel", "source": "Microsoft Learn", "format": "course", "length": "Self-paced", "note": "Structured modules with hands-on practice files. Free; a Microsoft account is needed to track progress.", "icon": null },
+    { "id": "exf-pz-t2-r1", "topic_id": "exf-pz-t2", "order_index": 1, "title": "Cell Basics", "url": "https://edu.gcfglobal.org/en/excel2016/cell-basics/1/", "source": "GCFGlobal", "format": "article", "length": "~12 min", "note": "Entering and editing content, cut/copy/paste, drag and drop, and the fill handle.", "icon": null },
+    { "id": "exf-pz-t2-r2", "topic_id": "exf-pz-t2", "order_index": 2, "title": "Creating and Opening Workbooks", "url": "https://edu.gcfglobal.org/en/excel2016/creating-and-opening-workbooks/1/", "source": "GCFGlobal", "format": "article", "length": "~8 min", "note": "New blank workbook, opening an existing file, and starting from a template.", "icon": null },
+    { "id": "exf-pz-t2-r3", "topic_id": "exf-pz-t2", "order_index": 3, "title": "Excel video training", "url": "https://support.microsoft.com/en-us/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb", "source": "Microsoft Support", "format": "video", "length": "~2 hours total", "note": "Microsoft's own short videos, grouped from first steps upward.", "icon": null },
+    { "id": "exf-pz-t3-r1", "topic_id": "exf-pz-t3", "order_index": 1, "title": "Understanding Number Formats", "url": "https://edu.gcfglobal.org/en/excel2016/understanding-number-formats/1/", "source": "GCFGlobal", "format": "article", "length": "~10 min", "note": "Why a date can show up as 45000, and how currency, percent and date formats actually work.", "icon": null },
+    { "id": "exf-pz-t3-r2", "topic_id": "exf-pz-t3", "order_index": 2, "title": "Formatting Cells", "url": "https://edu.gcfglobal.org/en/excel2016/formatting-cells/1/", "source": "GCFGlobal", "format": "article", "length": "~10 min", "note": "Fonts, alignment, borders and fills — the difference between a sheet people read and one they don't.", "icon": null },
+    { "id": "exf-pz-t3-r3", "topic_id": "exf-pz-t3", "order_index": 3, "title": "Excel Easy", "url": "https://www.excel-easy.com/", "source": "Excel Easy", "format": "course", "length": "Self-paced", "note": "Short, example-first lessons. Good second pass when a concept hasn't landed yet.", "icon": null },
+    { "id": "exf-pz-t4-r1", "topic_id": "exf-pz-t4", "order_index": 1, "title": "Intro to Formulas", "url": "https://edu.gcfglobal.org/en/excel2016/intro-to-formulas/1/", "source": "GCFGlobal", "format": "article", "length": "~12 min", "note": "Starting with =, pointing at cells instead of typing numbers, and the order of operations.", "icon": null },
+    { "id": "exf-pz-t4-r2", "topic_id": "exf-pz-t4", "order_index": 2, "title": "Functions", "url": "https://edu.gcfglobal.org/en/excel2016/functions/full", "source": "GCFGlobal", "format": "article", "length": "~15 min", "note": "AutoSum, SUM/AVERAGE/COUNT/MIN/MAX, and reading a function's arguments.", "icon": null },
+    { "id": "exf-pz-t4-r3", "topic_id": "exf-pz-t4", "order_index": 3, "title": "FREE 4 Hour Complete Excel Course", "url": "https://chandoo.org/wp/complete-excel-course-free/", "source": "Chandoo", "format": "course", "length": "~4 hours", "note": "If you'd rather have one video course than a lesson index, start here.", "icon": null },
+    { "id": "exf-pz-t5-r1", "topic_id": "exf-pz-t5", "order_index": 1, "title": "Freezing Panes and View Options", "url": "https://edu.gcfglobal.org/en/excel2016/freezing-panes-and-view-options/1/", "source": "GCFGlobal", "format": "article", "length": "~8 min", "note": "Keep headers on screen on a long sheet, and split the window to compare two areas.", "icon": null },
+    { "id": "exf-pz-t5-r2", "topic_id": "exf-pz-t5", "order_index": 2, "title": "Printing Workbooks", "url": "https://edu.gcfglobal.org/en/excel2016/printing-workbooks/1/", "source": "GCFGlobal", "format": "article", "length": "~10 min", "note": "Print area, Fit to One Page, orientation and repeating header rows.", "icon": null },
+    { "id": "exf-pz-t5-r3", "topic_id": "exf-pz-t5", "order_index": 3, "title": "Sorting Data", "url": "https://edu.gcfglobal.org/en/excel2016/sorting-data/1/", "source": "GCFGlobal", "format": "article", "length": "~8 min", "note": "Sorting a range vs a whole sheet, and the mistake that scrambles your rows.", "icon": null },
     { "id": "exc-p4-r1", "topic_id": "exc-p4-t1", "order_index": 1, "title": "Learn Excel with Corporate Finance Institute", "url": "https://corporatefinanceinstitute.com/topic/excel/", "source": "CFI", "format": "course", "length": "Self-paced", "note": "CFI's Excel-for-finance hub — video lessons, templates and quizzes.", "icon": null },
     { "id": "exc-p4-r2", "topic_id": "exc-p4-t1", "order_index": 2, "title": "Financial Modeling Guidelines (Free Download)", "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/free-financial-modeling-guide/", "source": "CFI", "format": "pdf", "length": "~30 min read", "note": "Model design, building blocks, and best practices for a robust model.", "icon": null },
     { "id": "exc-p4-r3", "topic_id": "exc-p4-t2", "order_index": 1, "title": "What is a 3-Statement Model? Your Complete Guide", "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/3-statement-model/", "source": "CFI", "format": "article", "length": "~15 min read", "note": "How the income statement, balance sheet and cash flow statement link together.", "icon": null },

@@ -99,6 +99,70 @@
     {
       "group_id": "excel-basics-tables",
       "topic_id": "fpa-p0-t5"
+    },
+    {
+      "group_id": "excel-zero-what-is-a-spreadsheet",
+      "topic_id": "exc-p0-t1"
+    },
+    {
+      "group_id": "excel-zero-entering-data",
+      "topic_id": "exc-p0-t2"
+    },
+    {
+      "group_id": "excel-zero-formatting",
+      "topic_id": "exc-p0-t3"
+    },
+    {
+      "group_id": "excel-zero-first-formulas",
+      "topic_id": "exc-p0-t4"
+    },
+    {
+      "group_id": "excel-zero-sort-filter-print",
+      "topic_id": "exc-p0-t5"
+    },
+    {
+      "group_id": "excel-basics-navigation",
+      "topic_id": "exd-p0-t1"
+    },
+    {
+      "group_id": "excel-zero-what-is-a-spreadsheet",
+      "topic_id": "exd-p0-t2"
+    },
+    {
+      "group_id": "excel-zero-entering-data",
+      "topic_id": "exd-p0-t3"
+    },
+    {
+      "group_id": "excel-zero-formatting",
+      "topic_id": "exd-p0-t4"
+    },
+    {
+      "group_id": "excel-zero-first-formulas",
+      "topic_id": "exd-p0-t5"
+    },
+    {
+      "group_id": "excel-zero-sort-filter-print",
+      "topic_id": "exd-p0-t6"
+    },
+    {
+      "group_id": "excel-zero-what-is-a-spreadsheet",
+      "topic_id": "exf-pz-t1"
+    },
+    {
+      "group_id": "excel-zero-entering-data",
+      "topic_id": "exf-pz-t2"
+    },
+    {
+      "group_id": "excel-zero-formatting",
+      "topic_id": "exf-pz-t3"
+    },
+    {
+      "group_id": "excel-zero-first-formulas",
+      "topic_id": "exf-pz-t4"
+    },
+    {
+      "group_id": "excel-zero-sort-filter-print",
+      "topic_id": "exf-pz-t5"
     }
   ]
 }
