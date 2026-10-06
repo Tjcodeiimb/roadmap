@@ -233,7 +233,10 @@ function main() {
   if (projectsData) {
     const skillIds = new Set((loadJson('skills.json')?.skills ?? []).map((s) => s.id));
     const playbookIds = new Set();
-    const KINDS = new Set(['thesis', 'mvp', 'research', 'report', 'analysis', 'case', 'project']);
+    const KINDS = new Set([
+      'thesis', 'mvp', 'research', 'report', 'analysis', 'case',
+      'model', 'pitch', 'automation', 'workshop', 'project',
+    ]);
 
     for (const p of projectsData.playbooks ?? []) {
       if (playbookIds.has(p.id)) fail(`projects.json: duplicate playbook id "${p.id}"`);

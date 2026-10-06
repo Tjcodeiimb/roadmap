@@ -22,6 +22,10 @@ const PLACEHOLDER: Record<string, string> = {
   report: "e.g. Should we exit the B segment?",
   analysis: "e.g. What drives churn in our first 90 days?",
   case: "e.g. ITC Hotels demerger — strategy case, 2026",
+  model: "e.g. Asian Paints — 3-statement model and DCF",
+  pitch: "e.g. Seed deck for a shift-swap app, ₹2Cr round",
+  automation: "e.g. Weekly collections report, automated",
+  workshop: "e.g. Pivot tables for the ops team, 90 minutes",
 };
 
 export default async function PlaybookPage({ params }: { params: Promise<{ playbook: string }> }) {

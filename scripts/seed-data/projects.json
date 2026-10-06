@@ -674,6 +674,461 @@
         }
       ],
       "published": true
+    },
+    {
+      "id": "model",
+      "name": "model",
+      "label": "Financial Model",
+      "summary": "A working, auditable model of one real company or decision — historicals from filings, a forecast someone can argue with, and a valuation that survives having its assumptions changed in front of you.",
+      "kind": "model",
+      "tier": "advanced",
+      "estimated_weeks": "2-4",
+      "icon_key": "finance",
+      "order_index": 7,
+      "cv_line": "Built a <model type> for <company/decision> — <the number it produced, and what it changed>",
+      "outcome_label": "An auditable workbook plus a one-page output",
+      "formats": [
+        {
+          "name": "Cover and contents",
+          "detail": "What the model is, as of when, in what units, and who built it. The first thing a reviewer looks for and the thing most models omit.",
+          "length": "1 tab"
+        },
+        {
+          "name": "Inputs tab",
+          "detail": "Every hardcoded assumption in one place, coloured blue, each with its source.",
+          "length": "1 tab"
+        },
+        {
+          "name": "Workings",
+          "detail": "Calculations in dated columns, one consistent timeline across every sheet, logic flowing left to right and top to bottom.",
+          "length": "1-3 tabs"
+        },
+        {
+          "name": "Outputs",
+          "detail": "The statements, the valuation and the sensitivities a reader actually looks at.",
+          "length": "1-2 tabs"
+        },
+        {
+          "name": "Control / checks tab",
+          "detail": "Balance-sheet check, cash-flow tie, and a flag that goes red when any of them break.",
+          "length": "1 tab"
+        },
+        {
+          "name": "One-page summary",
+          "detail": "The answer, the three assumptions it depends on, and the range. For the person who will not open the workbook.",
+          "length": "1 page"
+        }
+      ],
+      "dos": [
+        "Separate inputs, calculations and outputs, and colour them so a stranger can tell which is which at a glance.",
+        "Keep one timeline across every sheet: the same period in the same column, everywhere, without exception.",
+        "Write every formula in a row identically across the whole row — one exception in one column is how models get silently wrong.",
+        "Put a checks tab in on day one: balance-sheet check, cash tie, and sum-of-parts ties. Make failures red and visible.",
+        "Source every hardcoded number next to the cell. A number with no source is an opinion.",
+        "Build the historicals before the forecast. The forecast's job is to be consistent with what already happened."
+      ],
+      "donts": [
+        "Don't hardcode a number inside a formula. It is invisible there and it will be wrong later.",
+        "Don't use OFFSET or INDIRECT — they break auditing tools and nobody can trace them.",
+        "Don't link to another workbook. The link will break, usually in front of someone senior.",
+        "Don't build ten years of forecast. Nobody believes year seven, and defending it wastes the review.",
+        "Don't leave iterative calculation on as the fix for circularity — add a circuit breaker you can switch off.",
+        "Don't hide rows or sheets to tidy up. Group them, so a reviewer can see there is something there."
+      ],
+      "tools": [
+        {
+          "name": "Excel",
+          "use": "The model itself; the web version is enough for everything but macros",
+          "url": "https://www.microsoft.com/en-us/microsoft-365/free-office-online-for-the-web",
+          "free": true
+        },
+        {
+          "name": "SEC EDGAR",
+          "use": "Filings for the historicals, free and authoritative",
+          "url": "https://www.sec.gov/edgar/searchedgar/companysearch",
+          "free": true
+        },
+        {
+          "name": "The FAST Standard",
+          "use": "The layout and formatting convention to build against",
+          "url": "https://www.fast-standard.org/",
+          "free": true
+        },
+        {
+          "name": "Screen-recording tool",
+          "use": "Walking a reviewer through the model when you cannot be in the room",
+          "url": "https://obsproject.com/",
+          "free": true
+        }
+      ],
+      "exports": [
+        {
+          "name": "The workbook",
+          "detail": "Inputs blue, checks visible, no dead sheets, no broken external links.",
+          "how": "Delete scratch tabs, set every sheet to A1, save as .xlsx, and reopen it to confirm nothing recalculated differently."
+        },
+        {
+          "name": "One-page PDF summary",
+          "detail": "The answer, the range, and the three assumptions it hangs on.",
+          "how": "Set a print area on the output tab, fit to one page, export to PDF."
+        },
+        {
+          "name": "Assumptions appendix",
+          "detail": "Every input with its source, so a sceptic can check rather than argue.",
+          "how": "Print the inputs tab with the source column visible."
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "pitch",
+      "name": "pitch",
+      "label": "Investor Pitch Deck",
+      "summary": "Ten to twelve slides that get a second meeting: one story, real numbers, a market built from the bottom up, and an ask you can defend down to the line item.",
+      "kind": "pitch",
+      "tier": "intermediate",
+      "estimated_weeks": "1-3",
+      "icon_key": "trend",
+      "order_index": 8,
+      "cv_line": "Pitched <venture> to <audience> — raised / shortlisted / <the concrete outcome>",
+      "outcome_label": "A 10–12 slide deck, an appendix, and a rehearsed Q&A",
+      "formats": [
+        {
+          "name": "Title and one-liner",
+          "detail": "Company, what it does in one sentence, and the ask. A reader should be able to repeat it after one look.",
+          "length": "1 slide"
+        },
+        {
+          "name": "Problem",
+          "detail": "Who has it, what it costs them, and what they do today instead. Evidence, not assertion.",
+          "length": "1 slide"
+        },
+        {
+          "name": "Solution and product",
+          "detail": "What you built, shown rather than described — a screenshot beats three bullets.",
+          "length": "1-2 slides"
+        },
+        {
+          "name": "Why now",
+          "detail": "What changed that makes this possible or necessary this year. The slide most decks skip and most investors ask about.",
+          "length": "1 slide"
+        },
+        {
+          "name": "Market",
+          "detail": "Built bottom-up with your assumptions visible. A top-down \"1% of a $50B market\" slide reads as a red flag.",
+          "length": "1 slide"
+        },
+        {
+          "name": "Traction",
+          "detail": "The chart that goes up, with its axis labelled and its period stated. If it is small, say it is early.",
+          "length": "1 slide"
+        },
+        {
+          "name": "Business model and unit economics",
+          "detail": "What you charge, what it costs to serve, and what a customer is worth.",
+          "length": "1-2 slides"
+        },
+        {
+          "name": "Team",
+          "detail": "Why these people, for this problem. Relevant specifics only.",
+          "length": "1 slide"
+        },
+        {
+          "name": "The ask",
+          "detail": "How much, for what runway, and the three things it buys. Broken down, not a single number.",
+          "length": "1 slide"
+        },
+        {
+          "name": "Appendix",
+          "detail": "Cohorts, pipeline, the model, the competitive detail. Where the hard questions get answered.",
+          "length": "5-15 slides"
+        }
+      ],
+      "dos": [
+        "Write the narrative as ten sentences before you open a slide tool. If the sentences do not follow each other, no amount of design fixes it.",
+        "Make every slide title a claim: \"Retention holds at 62% in month six\" beats \"Retention\".",
+        "Build the market bottom-up and show the arithmetic on the slide.",
+        "Put one idea on each slide and let the chart carry it.",
+        "Break the ask down into what it buys — headcount, runway, a specific milestone.",
+        "Keep an appendix for everything you cut, and know which slide answers which question."
+      ],
+      "donts": [
+        "Don't open with the team or the agenda. Open with what the company does.",
+        "Don't show a hockey-stick projection with no mechanism behind it.",
+        "Don't claim no competition. It reads as not having looked.",
+        "Don't put more than about thirty words on a slide you intend to talk over.",
+        "Don't quote a market size you cannot derive on the spot.",
+        "Don't send a deck that needs you to narrate it — most decks are read, not presented."
+      ],
+      "tools": [
+        {
+          "name": "Google Slides",
+          "use": "The deck, free, and shareable as a link or a PDF",
+          "url": "https://www.google.com/slides/about/",
+          "free": true
+        },
+        {
+          "name": "Y Combinator Library",
+          "use": "Free essays and talks on what investors are actually listening for",
+          "url": "https://www.ycombinator.com/library",
+          "free": true
+        },
+        {
+          "name": "Datawrapper",
+          "use": "Charts that read correctly at a glance",
+          "url": "https://www.datawrapper.de/",
+          "free": true
+        },
+        {
+          "name": "Excel",
+          "use": "The model behind the financials slide and the appendix",
+          "url": "https://www.microsoft.com/en-us/microsoft-365/free-office-online-for-the-web",
+          "free": true
+        }
+      ],
+      "exports": [
+        {
+          "name": "PDF deck",
+          "detail": "What you actually send. Fonts embedded, under 10MB, readable on a phone.",
+          "how": "Export to PDF and open it on a phone before sending — half of first reads happen there."
+        },
+        {
+          "name": "Link version",
+          "detail": "Lets you see whether it was opened and for how long.",
+          "how": "Share as a view-only link with the appendix in the same file."
+        },
+        {
+          "name": "One-page teaser",
+          "detail": "For a cold intro, where a full deck is too much to ask.",
+          "how": "Problem, solution, traction number, ask. One page, no appendix."
+        },
+        {
+          "name": "The model",
+          "detail": "Sent only when asked, and ready the moment it is.",
+          "how": "Clean workbook, assumptions tab first, no scratch sheets."
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "automation",
+      "name": "automation",
+      "label": "Internal Automation",
+      "summary": "Take one recurring manual task and make it run itself — the smallest project on this list, the fastest to finish, and the easiest to put a saved-hours number against on a CV.",
+      "kind": "automation",
+      "tier": "foundational",
+      "estimated_weeks": "1-2",
+      "icon_key": "bolt",
+      "order_index": 9,
+      "cv_line": "Automated <task> — removed <N> hours a week of manual work across <team>",
+      "outcome_label": "A live automation with a documented handover",
+      "formats": [
+        {
+          "name": "Before map",
+          "detail": "The manual process as it runs today: every step, who does it, how long it takes, how often.",
+          "length": "1 page"
+        },
+        {
+          "name": "After map",
+          "detail": "The same process with the automated steps marked and the human decision points left in.",
+          "length": "1 page"
+        },
+        {
+          "name": "The automation",
+          "detail": "The live workflow — trigger, steps, filters, error path.",
+          "length": "—"
+        },
+        {
+          "name": "Failure handling",
+          "detail": "What happens when a step fails, who finds out, and how it is retried.",
+          "length": "~half a page"
+        },
+        {
+          "name": "Handover note",
+          "detail": "How to run it, change it and switch it off. Without this it dies when you leave.",
+          "length": "1 page"
+        },
+        {
+          "name": "Saved-time measurement",
+          "detail": "Before and after, measured not estimated. This is the CV line.",
+          "length": "A few lines"
+        }
+      ],
+      "dos": [
+        "Time the manual task before you automate it. Without a before, there is no after.",
+        "Map the process on paper first — half the steps turn out to be unnecessary rather than automatable.",
+        "Automate the boring majority and leave the judgement calls to a person.",
+        "Make failures loud: a message to a channel someone reads, not a silent log.",
+        "Run it alongside the manual process for a week before switching the manual one off.",
+        "Write the handover note while you build, not afterwards."
+      ],
+      "donts": [
+        "Don't automate a process nobody has agreed on. You will encode one person's version of it.",
+        "Don't let it fail silently. A broken automation that looks fine is worse than no automation.",
+        "Don't hardcode credentials into a step. Use the tool's own secret store.",
+        "Don't give it write access to anything it does not need, and never to production records on day one.",
+        "Don't build a twelve-step workflow first. Build three steps that work, then extend.",
+        "Don't skip the saved-hours measurement — it is the entire reason this is a CV line."
+      ],
+      "tools": [
+        {
+          "name": "n8n",
+          "use": "Self-hostable automation with real error handling and retries",
+          "url": "https://n8n.io/",
+          "free": true
+        },
+        {
+          "name": "Zapier",
+          "use": "The fastest way to connect two SaaS tools; free tier is enough to prove it",
+          "url": "https://zapier.com/",
+          "free": true
+        },
+        {
+          "name": "Make",
+          "use": "Visual workflows with branching, generous free tier",
+          "url": "https://www.make.com/",
+          "free": true
+        },
+        {
+          "name": "Google Apps Script",
+          "use": "Free automation inside Sheets, Docs and Gmail with no third-party tool at all",
+          "url": "https://developers.google.com/apps-script",
+          "free": true
+        }
+      ],
+      "exports": [
+        {
+          "name": "Live workflow",
+          "detail": "Running on a schedule or a trigger, in the account that will own it after you.",
+          "how": "Build it in the team's account, not your personal one, before you call it done."
+        },
+        {
+          "name": "Exported workflow file",
+          "detail": "The JSON export, so it can be rebuilt or reviewed.",
+          "how": "Export from the tool and commit it to a repo beside the handover note."
+        },
+        {
+          "name": "Handover note",
+          "detail": "Run, change, switch off. Written for someone who has never seen it.",
+          "how": "A README in the repo, with a screenshot of the workflow and the owner's name."
+        },
+        {
+          "name": "Before/after measurement",
+          "detail": "The number that makes this worth putting on a CV.",
+          "how": "Timed manual runs before, tool run-logs after, as a two-row table."
+        }
+      ],
+      "published": true
+    },
+    {
+      "id": "workshop",
+      "name": "workshop",
+      "label": "Workshop or Training Session",
+      "summary": "Design and run a session that leaves a room able to do something they couldn't before — the cheapest way to demonstrate that you can teach, facilitate and hold a room.",
+      "kind": "workshop",
+      "tier": "foundational",
+      "estimated_weeks": "1-2",
+      "icon_key": "spark",
+      "order_index": 10,
+      "cv_line": "Designed and ran <session> for <N> <audience> — <what they could do afterwards, or the feedback score>",
+      "outcome_label": "A run session, its materials, and feedback from attendees",
+      "formats": [
+        {
+          "name": "One-line objective",
+          "detail": "What the room can do at the end that they could not at the start. A verb, not a topic.",
+          "length": "1 sentence"
+        },
+        {
+          "name": "Run sheet",
+          "detail": "Minute-by-minute: segment, who talks, what the room does, how long. The document you actually hold.",
+          "length": "1-2 pages"
+        },
+        {
+          "name": "Materials",
+          "detail": "Slides if needed, and the worksheet or template the room works on. The worksheet matters more.",
+          "length": "—"
+        },
+        {
+          "name": "Exercise brief",
+          "detail": "The task the room does, written so it needs no further explanation from you.",
+          "length": "~half a page"
+        },
+        {
+          "name": "Takeaway",
+          "detail": "The one-page thing they leave with and will actually use next week.",
+          "length": "1 page"
+        },
+        {
+          "name": "Feedback form",
+          "detail": "Three questions, collected before anyone leaves the room.",
+          "length": "3 questions"
+        }
+      ],
+      "dos": [
+        "Write the objective as something the room can DO, then design backwards from it.",
+        "Give at least half the time to the room doing something, not to you talking.",
+        "Write the exercise brief so it is self-explanatory — if you have to clarify it live, it is not finished.",
+        "Pilot it on two or three people and expect to cut a quarter of the content.",
+        "Prepare for the technology failing: a printed run sheet and a version that works with no screen.",
+        "Collect feedback in the room. Nobody fills in the form you email afterwards."
+      ],
+      "donts": [
+        "Don't build forty slides. A slide count that high means you are lecturing, not running a workshop.",
+        "Don't open with a round of introductions in a large room — it eats the first twenty minutes.",
+        "Don't demonstrate the whole thing and then ask them to try it. Alternate small chunks.",
+        "Don't leave the exercise open-ended. A specific, bounded task produces better work than \"discuss\".",
+        "Don't skip timing the segments. Overrunning is the failure mode of every first workshop.",
+        "Don't end on questions. End on what they will do differently, in writing."
+      ],
+      "tools": [
+        {
+          "name": "Atlassian Team Playbook",
+          "use": "Free ready-made workshop formats with timings and materials",
+          "url": "https://www.atlassian.com/team-playbook/plays",
+          "free": true
+        },
+        {
+          "name": "Google Slides / Docs",
+          "use": "Materials and the worksheet the room works on",
+          "url": "https://www.google.com/slides/about/",
+          "free": true
+        },
+        {
+          "name": "Miro / FigJam",
+          "use": "A shared board for remote sessions; free tiers cover a single workshop",
+          "url": "https://miro.com/",
+          "free": true
+        },
+        {
+          "name": "Google Forms",
+          "use": "A three-question feedback form, with a CSV you can quote from",
+          "url": "https://www.google.com/forms/about/",
+          "free": true
+        }
+      ],
+      "exports": [
+        {
+          "name": "Run sheet",
+          "detail": "The timed plan, and the artifact that proves you designed rather than improvised.",
+          "how": "A table: time, segment, who, what the room does. Print it."
+        },
+        {
+          "name": "Materials pack",
+          "detail": "Slides, worksheet and brief, in a form someone else could run.",
+          "how": "One folder or PDF, with the run sheet first."
+        },
+        {
+          "name": "Takeaway one-pager",
+          "detail": "What the room leaves with. Often the only thing they keep.",
+          "how": "Export to PDF and hand it out on paper as well as by link."
+        },
+        {
+          "name": "Feedback summary",
+          "detail": "What they said, including what did not work. Quote it on your CV only if it is real.",
+          "how": "Export the form responses and write three lines on what you would change."
+        }
+      ],
+      "published": true
     }
   ],
   "stages": [
@@ -1856,6 +2311,750 @@
       "skill_id": "skill-topic-xcomm-p5-t1",
       "track_id": "exec-communication",
       "estimated_days": 2
+    },
+    {
+      "id": "model-s1",
+      "playbook_id": "model",
+      "order_index": 1,
+      "title": "Decide what the model is for",
+      "description": "A model answers one question. Naming it decides the structure, the granularity and when you are finished.",
+      "checklist": [
+        {
+          "t": "Write the question in one sentence",
+          "d": "\"What is this business worth at a 12% discount rate?\" or \"Can it service the debt through FY27?\""
+        },
+        {
+          "t": "Name the output that answers it",
+          "d": "A valuation range, a DSCR by year, a payback period. Build towards that cell."
+        },
+        {
+          "t": "Pick the granularity",
+          "d": "Monthly for cash and covenants, annual for valuation. Mixing them is a rebuild."
+        },
+        {
+          "t": "Decide what you will not model",
+          "d": "Write the exclusions down. They are the honest answer to \"why isn't X in here?\""
+        }
+      ],
+      "skill_id": "skill-topic-fin-p17-t1",
+      "track_id": "finance",
+      "estimated_days": 1
+    },
+    {
+      "id": "model-s2",
+      "playbook_id": "model",
+      "order_index": 2,
+      "title": "Lay the workbook out before typing a number",
+      "description": "Tab structure, one timeline, colour convention and the checks tab — set up now, or retrofitted painfully later.",
+      "checklist": [
+        {
+          "t": "Create the tabs",
+          "d": "Cover, Inputs, Workings, Outputs, Checks. In that order, every time."
+        },
+        {
+          "t": "Put the timeline in one row and reference it everywhere",
+          "d": "Period end dates across the top, same column for the same period on every sheet."
+        },
+        {
+          "t": "Set the colour convention",
+          "d": "Blue hardcoded inputs, black formulas, green on-sheet links. Write the key on the cover."
+        },
+        {
+          "t": "Build the checks tab empty",
+          "d": "Three labelled rows waiting for formulas, so you cannot forget to add them."
+        }
+      ],
+      "skill_id": "skill-topic-exf-p1-t2",
+      "track_id": "excel-finance",
+      "estimated_days": 1
+    },
+    {
+      "id": "model-s3",
+      "playbook_id": "model",
+      "order_index": 3,
+      "title": "Build the historicals from the filings",
+      "description": "Three years of actuals, typed from a real source, tying to the published statements to the rupee or dollar.",
+      "checklist": [
+        {
+          "t": "Pull the filings",
+          "d": "The last three annual reports or 10-Ks from EDGAR or the company's investor page."
+        },
+        {
+          "t": "Type the three statements in",
+          "d": "Not a paste from a data provider you cannot check. Typing is where you notice the restatements."
+        },
+        {
+          "t": "Tie out every total",
+          "d": "Your revenue, EBITDA and net income must equal the published figures. Fix your sheet, not the source."
+        },
+        {
+          "t": "Compute the historical ratios",
+          "d": "Margins, working capital days, capex as a percentage of revenue. These become your forecast drivers."
+        }
+      ],
+      "skill_id": "skill-topic-fprep-p5-t1",
+      "track_id": "finance-prep",
+      "estimated_days": 4
+    },
+    {
+      "id": "model-s4",
+      "playbook_id": "model",
+      "order_index": 4,
+      "title": "Forecast the operations",
+      "description": "Revenue and cost built from drivers you can defend, not a growth percentage typed over the top.",
+      "checklist": [
+        {
+          "t": "Build revenue from two drivers",
+          "d": "Volume and price, or customers and ARPU. One blended growth rate is not a model."
+        },
+        {
+          "t": "Split costs fixed and variable",
+          "d": "Variable as a percentage of revenue, fixed as a value that grows with inflation."
+        },
+        {
+          "t": "Sense-check every margin against history",
+          "d": "If your forecast margin leaves the historical range, you need a reason in writing."
+        },
+        {
+          "t": "Build the working capital schedule",
+          "d": "Receivable, inventory and payable days driving the balances, not plugged numbers."
+        },
+        {
+          "t": "Add the capex and depreciation schedule",
+          "d": "Opening, additions, depreciation, closing — tying to both the balance sheet and the cash flow."
+        }
+      ],
+      "skill_id": "skill-topic-exc-p4-t2",
+      "track_id": "excel-finance",
+      "estimated_days": 5
+    },
+    {
+      "id": "model-s5",
+      "playbook_id": "model",
+      "order_index": 5,
+      "title": "Close the loop and make it balance",
+      "description": "Debt schedule, interest, and the circularity that comes with them — handled with a circuit breaker rather than iterative calculation left on.",
+      "checklist": [
+        {
+          "t": "Build the debt schedule",
+          "d": "Opening, drawdown, repayment, closing, with interest on the average balance."
+        },
+        {
+          "t": "Add a circuit breaker",
+          "d": "A switch that replaces the circular interest with a hardcode, so you can always break a stuck model."
+        },
+        {
+          "t": "Make the balance sheet balance",
+          "d": "Assets minus liabilities minus equity equals zero, in every single period."
+        },
+        {
+          "t": "Tie the cash flow",
+          "d": "Closing cash on the cash flow statement equals cash on the balance sheet. No exceptions."
+        },
+        {
+          "t": "Turn the checks red on purpose",
+          "d": "Break something deliberately and confirm the checks tab catches it."
+        }
+      ],
+      "skill_id": "skill-topic-fin-p17-t4",
+      "track_id": "finance",
+      "estimated_days": 3
+    },
+    {
+      "id": "model-s6",
+      "playbook_id": "model",
+      "order_index": 6,
+      "title": "Value it",
+      "description": "The output the question asked for, built off the cash flows you just forecast.",
+      "checklist": [
+        {
+          "t": "Derive free cash flow from the statements",
+          "d": "Not from a separate assumption block — it has to fall out of the model you built."
+        },
+        {
+          "t": "Build the discount rate explicitly",
+          "d": "Cost of equity and cost of debt, each with its inputs sourced on the inputs tab."
+        },
+        {
+          "t": "Compute terminal value both ways",
+          "d": "Perpetuity growth and exit multiple, and show both so the reader can pick."
+        },
+        {
+          "t": "Cross-check against comps",
+          "d": "If your DCF value implies a multiple nothing in the sector trades at, say why."
+        }
+      ],
+      "skill_id": "skill-topic-exf-p6-t1",
+      "track_id": "excel-finance",
+      "estimated_days": 3
+    },
+    {
+      "id": "model-s7",
+      "playbook_id": "model",
+      "order_index": 7,
+      "title": "Sensitise it, then audit it",
+      "description": "A single number invites one question. A range with named drivers answers it in advance.",
+      "checklist": [
+        {
+          "t": "Build two data tables",
+          "d": "Flex the two assumptions the answer actually moves on, and present the grid."
+        },
+        {
+          "t": "Draw the tornado",
+          "d": "Rank the drivers by how much they swing the answer. This is the slide people remember."
+        },
+        {
+          "t": "Trace three formulas end to end",
+          "d": "Pick three output cells and follow every precedent back to an input. Fix what surprises you."
+        },
+        {
+          "t": "Hand it to someone else to break",
+          "d": "Give them the workbook with no explanation and watch where they get confused."
+        },
+        {
+          "t": "Write the one-pager",
+          "d": "Answer, range, three assumptions, one chart."
+        }
+      ],
+      "skill_id": "skill-topic-fin-p20-t2",
+      "track_id": "finance",
+      "estimated_days": 3
+    },
+    {
+      "id": "pitch-s1",
+      "playbook_id": "pitch",
+      "order_index": 1,
+      "title": "Decide the ask before the story",
+      "description": "How much, for how long, against which milestone. Everything in the deck argues for this number.",
+      "checklist": [
+        {
+          "t": "Work out the runway you need",
+          "d": "Monthly burn times the months to the next milestone, plus a margin. Not a round number you liked."
+        },
+        {
+          "t": "Name the milestone it buys",
+          "d": "\"₹2Cr ARR\" or \"regulatory approval in two states\". Vague milestones get vague answers."
+        },
+        {
+          "t": "Break the use of funds into three lines",
+          "d": "Usually people, go-to-market, and product. With headcount numbers."
+        },
+        {
+          "t": "Sanity-check the dilution",
+          "d": "At a plausible valuation, what share does this round cost you? Know it before you are asked."
+        }
+      ],
+      "skill_id": "skill-topic-sfin-p6-t1",
+      "track_id": "startup-finance",
+      "estimated_days": 2
+    },
+    {
+      "id": "pitch-s2",
+      "playbook_id": "pitch",
+      "order_index": 2,
+      "title": "Write the story as ten sentences",
+      "description": "The narrative first, in plain text. If the sentences do not follow one another, the deck will not either.",
+      "checklist": [
+        {
+          "t": "Write one sentence per slide",
+          "d": "Ten or twelve lines, in order, in a plain document. No design yet."
+        },
+        {
+          "t": "Read them aloud in sequence",
+          "d": "Each should follow from the last. Where you have to explain a jump, a slide is missing."
+        },
+        {
+          "t": "Cut any sentence that does not advance the ask",
+          "d": "Interesting and irrelevant is the most common deck failure."
+        },
+        {
+          "t": "Give it to someone cold",
+          "d": "Have them read only the sentences and tell you what the company does and what you want."
+        }
+      ],
+      "skill_id": "skill-topic-con-p4-t1",
+      "track_id": "consulting",
+      "estimated_days": 2
+    },
+    {
+      "id": "pitch-s3",
+      "playbook_id": "pitch",
+      "order_index": 3,
+      "title": "Build the market from the bottom up",
+      "description": "A number you derive on the slide, from units you can name — not a share of someone else's headline figure.",
+      "checklist": [
+        {
+          "t": "Count the actual buyers",
+          "d": "Number of businesses or people who could buy, from a registry, census or industry body."
+        },
+        {
+          "t": "Multiply by what they would spend",
+          "d": "Your price, or what they spend on the workaround today."
+        },
+        {
+          "t": "Show the arithmetic on the slide",
+          "d": "Three numbers and an equals sign. It is more convincing than a bigger number with no derivation."
+        },
+        {
+          "t": "Cross-check top-down once",
+          "d": "If the published market size is ten times yours, find out which definition differs."
+        }
+      ],
+      "skill_id": "skill-topic-con-p3-t2",
+      "track_id": "consulting",
+      "estimated_days": 2
+    },
+    {
+      "id": "pitch-s4",
+      "playbook_id": "pitch",
+      "order_index": 4,
+      "title": "Build the traction slide honestly",
+      "description": "The chart that goes up, with the axis labelled and the period named. Small and specific beats big and vague.",
+      "checklist": [
+        {
+          "t": "Pick the one metric that means it works",
+          "d": "Paying customers, weekly active users, revenue. One line, not a dashboard."
+        },
+        {
+          "t": "Label the axes and the period",
+          "d": "An unlabelled up-and-to-the-right chart is read as hiding something."
+        },
+        {
+          "t": "Add the cohort view to the appendix",
+          "d": "Retention by signup month is the question that follows the growth chart."
+        },
+        {
+          "t": "State the stage plainly",
+          "d": "\"Pre-revenue, 40 pilot users\" is a position. A dressed-up version of it is a liability."
+        }
+      ],
+      "skill_id": "skill-topic-prd-p6-t1",
+      "track_id": "product",
+      "estimated_days": 2
+    },
+    {
+      "id": "pitch-s5",
+      "playbook_id": "pitch",
+      "order_index": 5,
+      "title": "Build the business model and unit economics",
+      "description": "What you charge, what serving costs, and what a customer is worth — with the model behind it ready to send.",
+      "checklist": [
+        {
+          "t": "State the pricing in one line",
+          "d": "Per seat, per transaction, per month. With the actual number on the slide."
+        },
+        {
+          "t": "Compute gross margin from real costs",
+          "d": "Including the ones people forget: payment fees, support time, infrastructure."
+        },
+        {
+          "t": "Show CAC and payback if you have them",
+          "d": "If you do not, say so and show the pilot cost of acquiring the users you have."
+        },
+        {
+          "t": "Put the three-year model in the appendix",
+          "d": "Three years, driver-based, with the assumptions on their own tab."
+        }
+      ],
+      "skill_id": "skill-topic-sfin-p2-t3",
+      "track_id": "startup-finance",
+      "estimated_days": 3
+    },
+    {
+      "id": "pitch-s6",
+      "playbook_id": "pitch",
+      "order_index": 6,
+      "title": "Design it so it reads without you",
+      "description": "Most first reads are silent and on a phone. Design for that, not for the room.",
+      "checklist": [
+        {
+          "t": "Put the claim in the title of every slide",
+          "d": "Read the titles in order — they should be the whole pitch."
+        },
+        {
+          "t": "Cut the word count by half",
+          "d": "Then check each slide is legible at thumbnail size."
+        },
+        {
+          "t": "Use one chart per slide, highlighted",
+          "d": "Grey everything except the line that makes the point."
+        },
+        {
+          "t": "Open the PDF on a phone",
+          "d": "If you cannot read the axis labels, nor can the investor on their commute."
+        }
+      ],
+      "skill_id": "skill-topic-xcomm-p3-t2",
+      "track_id": "exec-communication",
+      "estimated_days": 2
+    },
+    {
+      "id": "pitch-s7",
+      "playbook_id": "pitch",
+      "order_index": 7,
+      "title": "Rehearse the questions, not the pitch",
+      "description": "You control the twelve slides. The twenty minutes after them decide the meeting.",
+      "checklist": [
+        {
+          "t": "Deliver it in under ten minutes, timed",
+          "d": "Twice, out loud. Most first meetings give you less time than you planned for."
+        },
+        {
+          "t": "Write the fifteen hardest questions",
+          "d": "Start from your weakest slide. Market size, churn, why the incumbents don't do this."
+        },
+        {
+          "t": "Know which appendix slide answers each",
+          "d": "Being able to say \"slide 19\" and go straight there is worth a lot."
+        },
+        {
+          "t": "Practise the one you dread",
+          "d": "Usually \"what if Google does this?\". Have a real answer, not a deflection."
+        }
+      ],
+      "skill_id": "skill-topic-xcomm-p5-t1",
+      "track_id": "exec-communication",
+      "estimated_days": 2
+    },
+    {
+      "id": "automation-s1",
+      "playbook_id": "automation",
+      "order_index": 1,
+      "title": "Pick a task worth automating",
+      "description": "Frequent, rule-based and annoying. Rare or judgement-heavy tasks cost more to automate than they save.",
+      "checklist": [
+        {
+          "t": "List five recurring manual tasks",
+          "d": "From your own week or your team's. Note how often each happens."
+        },
+        {
+          "t": "Time one run of each",
+          "d": "With a stopwatch, honestly. Estimates are always wrong in the flattering direction."
+        },
+        {
+          "t": "Score them frequency times duration",
+          "d": "Pick the highest. A ten-minute daily task beats a two-hour quarterly one."
+        },
+        {
+          "t": "Check it is rule-based",
+          "d": "If the right action depends on judgement every time, automate the steps around the judgement instead."
+        }
+      ],
+      "skill_id": "skill-topic-ops-p1-t2",
+      "track_id": "operations",
+      "estimated_days": 1
+    },
+    {
+      "id": "automation-s2",
+      "playbook_id": "automation",
+      "order_index": 2,
+      "title": "Map the process as it actually runs",
+      "description": "Every step, including the ones nobody documented. This is where you find out half of them are unnecessary.",
+      "checklist": [
+        {
+          "t": "Write every step in order",
+          "d": "Including opening the tab, copying the field, renaming the file. The invisible steps are the work."
+        },
+        {
+          "t": "Mark who does each one",
+          "d": "Handoffs between people are where the delay lives, and often where the automation pays."
+        },
+        {
+          "t": "Mark the decision points",
+          "d": "Anywhere a human chooses. Those stay human, at least to begin with."
+        },
+        {
+          "t": "Delete the unnecessary steps first",
+          "d": "Removing a step beats automating it. Do that before touching a tool."
+        }
+      ],
+      "skill_id": null,
+      "track_id": "operations",
+      "estimated_days": 1
+    },
+    {
+      "id": "automation-s3",
+      "playbook_id": "automation",
+      "order_index": 3,
+      "title": "Build the happy path only",
+      "description": "Trigger, three steps, one output, working end to end. Edge cases come after something works.",
+      "checklist": [
+        {
+          "t": "Pick the trigger",
+          "d": "A schedule, a new row, an incoming email, a form submission. One trigger, clearly defined."
+        },
+        {
+          "t": "Build three steps and test each",
+          "d": "Run after every step rather than building the whole chain and debugging it blind."
+        },
+        {
+          "t": "Use the tool's secret store for credentials",
+          "d": "Never paste a key or password into a step's field."
+        },
+        {
+          "t": "Run it on real data once, read-only",
+          "d": "Have it report what it would do before letting it write anything."
+        }
+      ],
+      "skill_id": null,
+      "track_id": "ai-nocode",
+      "estimated_days": 3
+    },
+    {
+      "id": "automation-s4",
+      "playbook_id": "automation",
+      "order_index": 4,
+      "title": "Add the AI step, if it earns its place",
+      "description": "Classification, extraction or drafting — where a rule would be brittle. With a check on the output, not blind trust.",
+      "checklist": [
+        {
+          "t": "Decide what it decides",
+          "d": "Categorise this email, pull the amount out of this invoice, draft this reply. One narrow job."
+        },
+        {
+          "t": "Write the prompt with the output format pinned",
+          "d": "Ask for JSON with named fields, so the next step can rely on the shape."
+        },
+        {
+          "t": "Test it on twenty real examples",
+          "d": "Count how many it got right. Below about 90% it needs a human review step, not a fix."
+        },
+        {
+          "t": "Add the fallback",
+          "d": "What happens when the model returns something unparseable. It will."
+        }
+      ],
+      "skill_id": null,
+      "track_id": "prompt-eng",
+      "estimated_days": 2
+    },
+    {
+      "id": "automation-s5",
+      "playbook_id": "automation",
+      "order_index": 5,
+      "title": "Make it fail loudly",
+      "description": "The difference between an automation people trust and one they quietly stop relying on.",
+      "checklist": [
+        {
+          "t": "Add an error branch",
+          "d": "On failure, post to a channel someone reads, with the step name and the input that broke it."
+        },
+        {
+          "t": "Set retries where they help",
+          "d": "Transient network failures retry; a malformed input should not retry forever."
+        },
+        {
+          "t": "Break it on purpose",
+          "d": "Feed it bad input and confirm you hear about it within minutes."
+        },
+        {
+          "t": "Add a run log",
+          "d": "Append each run to a sheet with a timestamp and outcome, so you can see it is still alive."
+        }
+      ],
+      "skill_id": null,
+      "track_id": "ai-nocode",
+      "estimated_days": 1
+    },
+    {
+      "id": "automation-s6",
+      "playbook_id": "automation",
+      "order_index": 6,
+      "title": "Measure it and hand it over",
+      "description": "The saved hours are the CV line, and the handover note is what keeps it running after you.",
+      "checklist": [
+        {
+          "t": "Run both processes for a week",
+          "d": "Manual and automated side by side, so you can prove the output matches."
+        },
+        {
+          "t": "Compute the saved time",
+          "d": "Timed manual duration times frequency, minus the minutes the automation needs. One number."
+        },
+        {
+          "t": "Write the handover note",
+          "d": "What it does, how to change it, how to switch it off, and who owns it now."
+        },
+        {
+          "t": "Move it to the team's account",
+          "d": "An automation running on your personal login is a liability, not a deliverable."
+        }
+      ],
+      "skill_id": "skill-topic-tw-p3-t1",
+      "track_id": "tech-writing",
+      "estimated_days": 2
+    },
+    {
+      "id": "workshop-s1",
+      "playbook_id": "workshop",
+      "order_index": 1,
+      "title": "Write the objective as a verb",
+      "description": "Not \"introduction to X\" — what can they do at 5pm that they couldn't at 2pm, and how would you know.",
+      "checklist": [
+        {
+          "t": "Write one sentence starting \"By the end, each person can…\"",
+          "d": "A verb and an object: build a pivot table from a raw export; run a structured interview."
+        },
+        {
+          "t": "Name how you would check",
+          "d": "The thing they produce in the room that shows it worked."
+        },
+        {
+          "t": "Find out what they already know",
+          "d": "Ask three attendees beforehand. Pitching at the wrong level is the commonest failure."
+        },
+        {
+          "t": "Cut the objective to one",
+          "d": "Two objectives in ninety minutes means neither lands."
+        }
+      ],
+      "skill_id": "skill-topic-xcomm-p2-t3",
+      "track_id": "exec-communication",
+      "estimated_days": 1
+    },
+    {
+      "id": "workshop-s2",
+      "playbook_id": "workshop",
+      "order_index": 2,
+      "title": "Design it as activities, not slides",
+      "description": "Build the run sheet backwards from the objective, with at least half the clock given to the room.",
+      "checklist": [
+        {
+          "t": "Steal a format",
+          "d": "Take an existing play with timings rather than inventing a structure from nothing."
+        },
+        {
+          "t": "Write the run sheet in minutes",
+          "d": "Segment, duration, who talks, what the room does. It must add up to the time you have."
+        },
+        {
+          "t": "Check the talk-to-do ratio",
+          "d": "If you are talking for more than half of it, convert a segment into an exercise."
+        },
+        {
+          "t": "Plan the first five minutes exactly",
+          "d": "Word for word. It sets whether the room participates at all."
+        }
+      ],
+      "skill_id": "skill-topic-con-p4-t3",
+      "track_id": "consulting",
+      "estimated_days": 2
+    },
+    {
+      "id": "workshop-s3",
+      "playbook_id": "workshop",
+      "order_index": 3,
+      "title": "Build the materials, worksheet first",
+      "description": "The worksheet is what the room actually uses. Slides are a backdrop, and fewer is better.",
+      "checklist": [
+        {
+          "t": "Write the exercise brief first",
+          "d": "The task, the inputs, what to produce, how long. Self-contained."
+        },
+        {
+          "t": "Build the worksheet or template",
+          "d": "Half-filled, so the room starts doing rather than staring at a blank page."
+        },
+        {
+          "t": "Keep the slides under ten",
+          "d": "One per segment, as signposts. If a slide carries content, it belongs on the worksheet."
+        },
+        {
+          "t": "Prepare the worked example",
+          "d": "One completed version you can show when the room gets stuck — not before."
+        }
+      ],
+      "skill_id": "skill-topic-xcomm-p3-t1",
+      "track_id": "exec-communication",
+      "estimated_days": 2
+    },
+    {
+      "id": "workshop-s4",
+      "playbook_id": "workshop",
+      "order_index": 4,
+      "title": "Pilot it on two people",
+      "description": "An hour with two colleagues finds the broken brief and the segment that runs twice as long as planned.",
+      "checklist": [
+        {
+          "t": "Run the exercise segment only",
+          "d": "The part most likely to fail. Hand them the brief and stay silent."
+        },
+        {
+          "t": "Time it against your run sheet",
+          "d": "Expect the exercise to take 1.5x what you planned. Adjust the sheet, not the exercise."
+        },
+        {
+          "t": "Note every question they asked you",
+          "d": "Each one is a sentence missing from the brief."
+        },
+        {
+          "t": "Cut a quarter of the content",
+          "d": "Whatever survives the pilot without being missed was never needed."
+        }
+      ],
+      "skill_id": null,
+      "track_id": "ux",
+      "estimated_days": 1
+    },
+    {
+      "id": "workshop-s5",
+      "playbook_id": "workshop",
+      "order_index": 5,
+      "title": "Run it",
+      "description": "Hold the timings, let the room work, and resist filling silence with more explanation.",
+      "checklist": [
+        {
+          "t": "Open with the objective and the finish time",
+          "d": "In the first minute. People participate more when they know the shape."
+        },
+        {
+          "t": "Start the exercise earlier than feels comfortable",
+          "d": "Within the first twenty minutes. Momentum comes from doing."
+        },
+        {
+          "t": "Keep to the run sheet out loud",
+          "d": "\"Five minutes left on this.\" It keeps the room moving and you honest."
+        },
+        {
+          "t": "Close on commitments, not questions",
+          "d": "Each person writes the one thing they will do differently, and reads it out."
+        },
+        {
+          "t": "Collect the feedback before they leave",
+          "d": "Three questions, on paper or a phone link, in the room."
+        }
+      ],
+      "skill_id": "skill-topic-con-p4-t3",
+      "track_id": "consulting",
+      "estimated_days": 1
+    },
+    {
+      "id": "workshop-s6",
+      "playbook_id": "workshop",
+      "order_index": 6,
+      "title": "Write up what happened",
+      "description": "What they could do afterwards, what the feedback said, and what you would change — the part that makes it a CV line.",
+      "checklist": [
+        {
+          "t": "Count completions",
+          "d": "How many people produced the thing the objective named. That is the result."
+        },
+        {
+          "t": "Summarise the feedback honestly",
+          "d": "Including the segment people rated worst. You will run this again."
+        },
+        {
+          "t": "Send the takeaway within a day",
+          "d": "The one-pager plus anything you promised in the room, while it is still warm."
+        },
+        {
+          "t": "Write the three changes for next time",
+          "d": "Specific edits to the run sheet, not resolutions."
+        }
+      ],
+      "skill_id": "skill-topic-ppl-p3-t1",
+      "track_id": "people",
+      "estimated_days": 1
     }
   ],
   "stage_resources": [
@@ -2067,6 +3266,248 @@
       "format": "web",
       "length": "Reference",
       "note": "Official Indian datasets by ministry and sector."
+    },
+    {
+      "id": "thesis-s5-r1",
+      "stage_id": "thesis-s5",
+      "order_index": 1,
+      "title": "Research and Citation Resources",
+      "url": "https://owl.purdue.edu/owl/research_and_citation/resources.html",
+      "source": "Purdue OWL",
+      "format": "guide",
+      "length": "Reference",
+      "note": "Free citation and source-evaluation guidance in every major style."
+    },
+    {
+      "id": "mvp-s5-r1",
+      "stage_id": "mvp-s5",
+      "order_index": 1,
+      "title": "Make a README",
+      "url": "https://makeareadme.com/",
+      "source": "Make a README",
+      "format": "guide",
+      "length": "~10 min",
+      "note": "What a handover document has to contain for someone else to run your thing."
+    },
+    {
+      "id": "report-s4-r1",
+      "stage_id": "report-s4",
+      "order_index": 1,
+      "title": "Free Financial Modeling Guide",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/free-financial-modeling-guide/",
+      "source": "Corporate Finance Institute",
+      "format": "guide",
+      "length": "~45 min",
+      "note": "Structure, formatting and the conventions a reviewer expects."
+    },
+    {
+      "id": "case-s3-r1",
+      "stage_id": "case-s3",
+      "order_index": 1,
+      "title": "Free Financial Modeling Guide",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/free-financial-modeling-guide/",
+      "source": "Corporate Finance Institute",
+      "format": "guide",
+      "length": "~45 min",
+      "note": "Structure, formatting and the conventions a reviewer expects."
+    },
+    {
+      "id": "case-s3-r2",
+      "stage_id": "case-s3",
+      "order_index": 2,
+      "title": "The FAST Standard",
+      "url": "https://www.fast-standard.org/",
+      "source": "FAST Standard",
+      "format": "guide",
+      "length": "Reference",
+      "note": "The closest thing to a universal spreadsheet-modelling standard. Free to download, and what an auditor will judge your layout against."
+    },
+    {
+      "id": "analysis-s3-r1",
+      "stage_id": "analysis-s3",
+      "order_index": 1,
+      "title": "Zapier Help",
+      "url": "https://help.zapier.com/",
+      "source": "Zapier",
+      "format": "guide",
+      "length": "Reference",
+      "note": "How triggers, actions, filters and error handling behave in practice."
+    },
+    {
+      "id": "model-s1-r1",
+      "stage_id": "model-s1",
+      "order_index": 1,
+      "title": "Free Financial Modeling Guide",
+      "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/free-financial-modeling-guide/",
+      "source": "Corporate Finance Institute",
+      "format": "guide",
+      "length": "~45 min",
+      "note": "Structure, formatting and the conventions a reviewer expects."
+    },
+    {
+      "id": "model-s1-r2",
+      "stage_id": "model-s1",
+      "order_index": 2,
+      "title": "The FAST Standard",
+      "url": "https://www.fast-standard.org/",
+      "source": "FAST Standard",
+      "format": "guide",
+      "length": "Reference",
+      "note": "The closest thing to a universal spreadsheet-modelling standard. Free to download, and what an auditor will judge your layout against."
+    },
+    {
+      "id": "model-s2-r1",
+      "stage_id": "model-s2",
+      "order_index": 1,
+      "title": "The FAST Standard",
+      "url": "https://www.fast-standard.org/",
+      "source": "FAST Standard",
+      "format": "guide",
+      "length": "Reference",
+      "note": "The closest thing to a universal spreadsheet-modelling standard. Free to download, and what an auditor will judge your layout against."
+    },
+    {
+      "id": "model-s3-r1",
+      "stage_id": "model-s3",
+      "order_index": 1,
+      "title": "EDGAR company filings",
+      "url": "https://www.sec.gov/edgar/searchedgar/companysearch",
+      "source": "SEC",
+      "format": "web",
+      "length": "Reference",
+      "note": "Company-by-company filing index, free and authoritative."
+    },
+    {
+      "id": "model-s3-r2",
+      "stage_id": "model-s3",
+      "order_index": 2,
+      "title": "Three Financial Statements",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/three-financial-statements/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": "~15 min",
+      "note": "The statements your model has to tie together, and how they link."
+    },
+    {
+      "id": "model-s4-r1",
+      "stage_id": "model-s4",
+      "order_index": 1,
+      "title": "Three Financial Statements",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/three-financial-statements/",
+      "source": "Corporate Finance Institute",
+      "format": "article",
+      "length": "~15 min",
+      "note": "The statements your model has to tie together, and how they link."
+    },
+    {
+      "id": "model-s6-r1",
+      "stage_id": "model-s6",
+      "order_index": 1,
+      "title": "Cash Flow Guide: EBITDA, CF, FCF, FCFF",
+      "url": "https://corporatefinanceinstitute.com/resources/valuation/cash-flow-guide-ebitda-cf-fcf-fcff/",
+      "source": "Corporate Finance Institute",
+      "format": "guide",
+      "length": "~20 min",
+      "note": "Which cash measure belongs in which part of a valuation."
+    },
+    {
+      "id": "pitch-s1-r1",
+      "stage_id": "pitch-s1",
+      "order_index": 1,
+      "title": "Y Combinator Library",
+      "url": "https://www.ycombinator.com/library",
+      "source": "Y Combinator",
+      "format": "course",
+      "length": "Self-paced",
+      "note": "Free essays and talks on fundraising, pitching and early traction."
+    },
+    {
+      "id": "pitch-s5-r1",
+      "stage_id": "pitch-s5",
+      "order_index": 1,
+      "title": "Pricing strategy guide",
+      "url": "https://stripe.com/resources/more/pricing-strategy-guide",
+      "source": "Stripe",
+      "format": "guide",
+      "length": "~20 min",
+      "note": "The revenue models behind a business-model slide, with the trade-offs."
+    },
+    {
+      "id": "pitch-s7-r1",
+      "stage_id": "pitch-s7",
+      "order_index": 1,
+      "title": "Y Combinator Library",
+      "url": "https://www.ycombinator.com/library",
+      "source": "Y Combinator",
+      "format": "course",
+      "length": "Self-paced",
+      "note": "Free essays and talks on fundraising, pitching and early traction."
+    },
+    {
+      "id": "automation-s3-r1",
+      "stage_id": "automation-s3",
+      "order_index": 1,
+      "title": "n8n documentation",
+      "url": "https://docs.n8n.io/",
+      "source": "n8n",
+      "format": "guide",
+      "length": "Reference",
+      "note": "Self-hostable automation, with the error-handling and retry behaviour documented properly."
+    },
+    {
+      "id": "automation-s3-r2",
+      "stage_id": "automation-s3",
+      "order_index": 2,
+      "title": "Zapier Help",
+      "url": "https://help.zapier.com/",
+      "source": "Zapier",
+      "format": "guide",
+      "length": "Reference",
+      "note": "How triggers, actions, filters and error handling behave in practice."
+    },
+    {
+      "id": "automation-s5-r1",
+      "stage_id": "automation-s5",
+      "order_index": 1,
+      "title": "n8n documentation",
+      "url": "https://docs.n8n.io/",
+      "source": "n8n",
+      "format": "guide",
+      "length": "Reference",
+      "note": "Self-hostable automation, with the error-handling and retry behaviour documented properly."
+    },
+    {
+      "id": "automation-s6-r1",
+      "stage_id": "automation-s6",
+      "order_index": 1,
+      "title": "Make a README",
+      "url": "https://makeareadme.com/",
+      "source": "Make a README",
+      "format": "guide",
+      "length": "~10 min",
+      "note": "What a handover document has to contain for someone else to run your thing."
+    },
+    {
+      "id": "workshop-s2-r1",
+      "stage_id": "workshop-s2",
+      "order_index": 1,
+      "title": "Atlassian Team Playbook",
+      "url": "https://www.atlassian.com/team-playbook/plays",
+      "source": "Atlassian",
+      "format": "guide",
+      "length": "Free",
+      "note": "Ready-made workshop formats with timings and materials. Steal the structure."
+    },
+    {
+      "id": "workshop-s2-r2",
+      "stage_id": "workshop-s2",
+      "order_index": 2,
+      "title": "How Plays work",
+      "url": "https://www.atlassian.com/team-playbook",
+      "source": "Atlassian",
+      "format": "web",
+      "length": "~5 min",
+      "note": "What a facilitated session looks like end to end before you design your own."
     }
   ]
 }
