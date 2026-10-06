@@ -7939,6 +7939,116 @@
       "icon_key": "excel",
       "xp_reward": 60,
       "threshold": 0
+    },
+    {
+      "id": "skill-topic-ai-scoping-mvp",
+      "name": "Cutting Scope to One Shippable Thing",
+      "domain": "ai",
+      "description": "How to get from a feature list to the smallest version worth shipping, and what to cut first.",
+      "tier": "intermediate",
+      "icon_key": "ai",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-con-p3-t0",
+      "name": "Estimating From First Principles",
+      "domain": "consulting",
+      "description": "How to build a defensible number with no data, and how to check it before someone else does.",
+      "tier": "intermediate",
+      "icon_key": "consulting",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exd-p6-t4",
+      "name": "What a Time Series Is Made Of",
+      "domain": "excel",
+      "description": "Level, trend, seasonality and noise — the decomposition the forecasting phase assumes you already see.",
+      "tier": "intermediate",
+      "icon_key": "excel",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-exf-p1-t0",
+      "name": "The Three Statements and How They Link",
+      "domain": "excel",
+      "description": "What you are actually modelling: the income statement, balance sheet and cash flow statement, and the lines that tie them together.",
+      "tier": "foundational",
+      "icon_key": "excel",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-psy-p5-t0",
+      "name": "Interface Fundamentals Behind Behavioural Design",
+      "domain": "psychology",
+      "description": "The usability basics the next two topics assume: heuristics, cognitive load and visual hierarchy.",
+      "tier": "advanced",
+      "icon_key": "psychology",
+      "xp_reward": 120,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-prd-p2-t0",
+      "name": "Finding People to Interview",
+      "domain": "product",
+      "description": "The step before discovery: who to talk to, how to reach them, and how to screen out the wrong ones.",
+      "tier": "foundational",
+      "icon_key": "product",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-ops-p1-t4",
+      "name": "Deciding What to Measure, and Getting the Data",
+      "domain": "operations",
+      "description": "Where dashboard numbers come from: picking the measure, instrumenting the process, and checking the data is true.",
+      "tier": "foundational",
+      "icon_key": "operations",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-sec-p3-t0",
+      "name": "Knowing What You Have: Asset Inventory",
+      "domain": "security",
+      "description": "You cannot protect or risk-assess what you have not listed — building and keeping an inventory of systems, data and dependencies.",
+      "tier": "intermediate",
+      "icon_key": "cybersecurity",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-sfin-p1-t4",
+      "name": "Choosing a Revenue Model and a First Price",
+      "domain": "Finance & Business",
+      "description": "The decision unit economics assumes you already made: what you charge for, how often, and how much.",
+      "tier": "foundational",
+      "icon_key": "startup-finance",
+      "xp_reward": 60,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-pb-p4-t0",
+      "name": "Working Out Who to Reach",
+      "domain": "career",
+      "description": "The step before outreach: building a named list of the right people and knowing one real thing about each.",
+      "tier": "intermediate",
+      "icon_key": "sales",
+      "xp_reward": 90,
+      "threshold": 0
+    },
+    {
+      "id": "skill-topic-bl-p4-t0",
+      "name": "The Absolute Priority Rule, From Scratch",
+      "domain": "restructuring",
+      "description": "The waterfall principle the rest of this phase builds on: senior classes paid in full before junior classes get anything.",
+      "tier": "intermediate",
+      "icon_key": "finance",
+      "xp_reward": 90,
+      "threshold": 0
     }
   ],
   "skill_resources": [
@@ -16237,6 +16347,114 @@
     {
       "skill_id": "skill-topic-exc-p0-t5",
       "resource_id": "exc-p0-t5-r3"
+    },
+    {
+      "skill_id": "skill-topic-ai-scoping-mvp",
+      "resource_id": "ai-scoping-mvp-r1"
+    },
+    {
+      "skill_id": "skill-topic-ai-scoping-mvp",
+      "resource_id": "ai-scoping-mvp-r2"
+    },
+    {
+      "skill_id": "skill-topic-ai-scoping-mvp",
+      "resource_id": "ai-scoping-mvp-r3"
+    },
+    {
+      "skill_id": "skill-topic-con-p3-t0",
+      "resource_id": "con-p3-t0-r1"
+    },
+    {
+      "skill_id": "skill-topic-con-p3-t0",
+      "resource_id": "con-p3-t0-r2"
+    },
+    {
+      "skill_id": "skill-topic-con-p3-t0",
+      "resource_id": "con-p3-t0-r3"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t4",
+      "resource_id": "exd-p6-t4-r1"
+    },
+    {
+      "skill_id": "skill-topic-exd-p6-t4",
+      "resource_id": "exd-p6-t4-r2"
+    },
+    {
+      "skill_id": "skill-topic-exf-p1-t0",
+      "resource_id": "exf-p1-t0-r1"
+    },
+    {
+      "skill_id": "skill-topic-exf-p1-t0",
+      "resource_id": "exf-p1-t0-r2"
+    },
+    {
+      "skill_id": "skill-topic-psy-p5-t0",
+      "resource_id": "psy-p5-t0-r1"
+    },
+    {
+      "skill_id": "skill-topic-psy-p5-t0",
+      "resource_id": "psy-p5-t0-r2"
+    },
+    {
+      "skill_id": "skill-topic-psy-p5-t0",
+      "resource_id": "psy-p5-t0-r3"
+    },
+    {
+      "skill_id": "skill-topic-prd-p2-t0",
+      "resource_id": "prd-p2-t0-r1"
+    },
+    {
+      "skill_id": "skill-topic-prd-p2-t0",
+      "resource_id": "prd-p2-t0-r2"
+    },
+    {
+      "skill_id": "skill-topic-prd-p2-t0",
+      "resource_id": "prd-p2-t0-r3"
+    },
+    {
+      "skill_id": "skill-topic-ops-p1-t4",
+      "resource_id": "ops-p1-t4-r1"
+    },
+    {
+      "skill_id": "skill-topic-ops-p1-t4",
+      "resource_id": "ops-p1-t4-r2"
+    },
+    {
+      "skill_id": "skill-topic-sec-p3-t0",
+      "resource_id": "sec-p3-t0-r1"
+    },
+    {
+      "skill_id": "skill-topic-sec-p3-t0",
+      "resource_id": "sec-p3-t0-r2"
+    },
+    {
+      "skill_id": "skill-topic-sec-p3-t0",
+      "resource_id": "sec-p3-t0-r3"
+    },
+    {
+      "skill_id": "skill-topic-sfin-p1-t4",
+      "resource_id": "sfin-p1-t4-r1"
+    },
+    {
+      "skill_id": "skill-topic-sfin-p1-t4",
+      "resource_id": "sfin-p1-t4-r2"
+    },
+    {
+      "skill_id": "skill-topic-pb-p4-t0",
+      "resource_id": "pb-p4-t0-r1"
+    },
+    {
+      "skill_id": "skill-topic-pb-p4-t0",
+      "resource_id": "pb-p4-t0-r2"
+    },
+    {
+      "skill_id": "skill-topic-bl-p4-t0",
+      "resource_id": "bl-p4-t0-r1"
+    },
+    {
+      "skill_id": "skill-topic-bl-p4-t0",
+      "resource_id": "bl-p4-t0-r2"
     }
   ]
 }

@@ -163,6 +163,14 @@
     {
       "group_id": "excel-zero-sort-filter-print",
       "topic_id": "exf-pz-t5"
+    },
+    {
+      "group_id": "research-participant-recruiting",
+      "topic_id": "prd-p2-t0"
+    },
+    {
+      "group_id": "research-participant-recruiting",
+      "topic_id": "ux-p2-t0"
     }
   ]
 }
