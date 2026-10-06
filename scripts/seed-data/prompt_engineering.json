@@ -12,12 +12,60 @@
     "published": true
   },
   "phases": [
-    { "id": "pe-p1", "track_id": "prompt-eng", "order_index": 1, "title": "Foundations of Prompting", "description": "Build a solid mental model of how language models respond to instructions. Cover zero-shot, few-shot, chain-of-thought, and the role of system prompts.", "estimated_weeks": null, "color": null },
-    { "id": "pe-p2", "track_id": "prompt-eng", "order_index": 2, "title": "ChatGPT & Claude for Work", "description": "Apply prompting to real workplace tasks: summarising documents, drafting content, extracting structured data, and classifying text at scale.", "estimated_weeks": null, "color": null },
-    { "id": "pe-p3", "track_id": "prompt-eng", "order_index": 3, "title": "Cursor & Copilot for Non-Engineers", "description": "Use AI code editors to write scripts, automate spreadsheets, and debug errors even without a software engineering background.", "estimated_weeks": null, "color": null },
-    { "id": "pe-p4", "track_id": "prompt-eng", "order_index": 4, "title": "Prompt Patterns & Templates", "description": "Study reusable prompt architectures: ReAct, Tree of Thought, prompt chaining, and meta-prompts that generate other prompts.", "estimated_weeks": null, "color": null },
-    { "id": "pe-p5", "track_id": "prompt-eng", "order_index": 5, "title": "AI Workflows & Automation", "description": "Chain multiple AI tools together, automate repetitive document and data tasks, and bring AI assistants into spreadsheets.", "estimated_weeks": null, "color": null },
-    { "id": "pe-p6", "track_id": "prompt-eng", "order_index": 6, "title": "Evaluation & Safety", "description": "Test prompt outputs systematically, detect hallucinations, and apply responsible-use principles for AI at work.", "estimated_weeks": null, "color": null }
+    {
+      "id": "pe-p1",
+      "track_id": "prompt-eng",
+      "order_index": 1,
+      "title": "Foundations of Prompting",
+      "description": "Build a solid mental model of how language models respond to instructions. Cover zero-shot, few-shot, chain-of-thought, and the role of system prompts.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "pe-p2",
+      "track_id": "prompt-eng",
+      "order_index": 2,
+      "title": "ChatGPT & Claude for Work",
+      "description": "Apply prompting to real workplace tasks: summarising documents, drafting content, extracting structured data, and classifying text at scale.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "pe-p3",
+      "track_id": "prompt-eng",
+      "order_index": 3,
+      "title": "Cursor & Copilot for Non-Engineers",
+      "description": "Use AI code editors to write scripts, automate spreadsheets, and debug errors even without a software engineering background.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "pe-p4",
+      "track_id": "prompt-eng",
+      "order_index": 4,
+      "title": "Prompt Patterns & Templates",
+      "description": "Study reusable prompt architectures: ReAct, Tree of Thought, prompt chaining, and meta-prompts that generate other prompts.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "pe-p5",
+      "track_id": "prompt-eng",
+      "order_index": 5,
+      "title": "AI Workflows & Automation",
+      "description": "Chain multiple AI tools together, automate repetitive document and data tasks, and bring AI assistants into spreadsheets.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "pe-p6",
+      "track_id": "prompt-eng",
+      "order_index": 6,
+      "title": "Evaluation & Safety",
+      "description": "Test prompt outputs systematically, detect hallucinations, and apply responsible-use principles for AI at work.",
+      "estimated_weeks": null,
+      "color": null
+    }
   ],
   "topics": [
     { "id": "pe-p1-t1", "phase_id": "pe-p1", "order_index": 1, "title": "Zero-Shot and Few-Shot Prompting", "section": null, "tags": [], "estimated_time": null, "description": "Understand the difference between zero-shot and few-shot prompting, and learn when to provide examples to steer model output.", "steps": [] },

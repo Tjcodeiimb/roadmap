@@ -12,12 +12,60 @@
     "published": true
   },
   "phases": [
-    { "id": "ainc-p1", "track_id": "ai-nocode", "order_index": 1, "title": "Automation Fundamentals", "description": "Understand what automation is, how triggers and actions work, and how to identify the best candidates for automation in your daily work.", "estimated_weeks": null, "color": null },
-    { "id": "ainc-p2", "track_id": "ai-nocode", "order_index": 2, "title": "Zapier & Make.com", "description": "Build multi-step zaps and Make scenarios with filters, formatters, error handling, and webhook-based triggers.", "estimated_weeks": null, "color": null },
-    { "id": "ainc-p3", "track_id": "ai-nocode", "order_index": 3, "title": "n8n Basics", "description": "Explore the open-source n8n platform, deploy self-hosted flows, and configure integrations with common business tools.", "estimated_weeks": null, "color": null },
-    { "id": "ainc-p4", "track_id": "ai-nocode", "order_index": 4, "title": "AI Steps in Automations", "description": "Add OpenAI and Claude actions inside Zapier and Make scenarios to summarise, classify, extract, and generate content automatically.", "estimated_weeks": null, "color": null },
-    { "id": "ainc-p5", "track_id": "ai-nocode", "order_index": 5, "title": "Connecting Business Tools", "description": "Integrate Slack, Gmail, Notion, Airtable, and Google Sheets into your automations to keep teams and data in sync.", "estimated_weeks": null, "color": null },
-    { "id": "ainc-p6", "track_id": "ai-nocode", "order_index": 6, "title": "Building Real Workflows", "description": "Design and ship end-to-end automation projects from requirements through testing, error monitoring, and maintenance.", "estimated_weeks": null, "color": null }
+    {
+      "id": "ainc-p1",
+      "track_id": "ai-nocode",
+      "order_index": 1,
+      "title": "Automation Fundamentals",
+      "description": "Understand what automation is, how triggers and actions work, and how to identify the best candidates for automation in your daily work.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "ainc-p2",
+      "track_id": "ai-nocode",
+      "order_index": 2,
+      "title": "Zapier & Make.com",
+      "description": "Build multi-step zaps and Make scenarios with filters, formatters, error handling, and webhook-based triggers.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "ainc-p3",
+      "track_id": "ai-nocode",
+      "order_index": 3,
+      "title": "n8n Basics",
+      "description": "Explore the open-source n8n platform, deploy self-hosted flows, and configure integrations with common business tools.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "ainc-p4",
+      "track_id": "ai-nocode",
+      "order_index": 4,
+      "title": "AI Steps in Automations",
+      "description": "Add OpenAI and Claude actions inside Zapier and Make scenarios to summarise, classify, extract, and generate content automatically.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "ainc-p5",
+      "track_id": "ai-nocode",
+      "order_index": 5,
+      "title": "Connecting Business Tools",
+      "description": "Integrate Slack, Gmail, Notion, Airtable, and Google Sheets into your automations to keep teams and data in sync.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "ainc-p6",
+      "track_id": "ai-nocode",
+      "order_index": 6,
+      "title": "Building Real Workflows",
+      "description": "Design and ship end-to-end automation projects from requirements through testing, error monitoring, and maintenance.",
+      "estimated_weeks": null,
+      "color": null
+    }
   ],
   "topics": [
     { "id": "ainc-p1-t1", "phase_id": "ainc-p1", "order_index": 1, "title": "Triggers, Actions, and Conditions", "section": null, "tags": [], "estimated_time": null, "description": "Learn the building blocks of every automation: what fires a workflow, what it does, and how conditions filter which runs proceed.", "steps": [] },

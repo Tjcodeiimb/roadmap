@@ -8,7 +8,14 @@
     "icon_key": null,
     "xp_reward": 100,
     "threshold": 0,
-    "resource_ids": ["sql-p1-r1", "sql-p1-r2", "sql-p1-r3", "sql-p1-r4", "sql-p2-r1", "sql-p2-r2"]
+    "resource_ids": [
+      "sql-p1-r1",
+      "sql-p1-r2",
+      "sql-p1-r3",
+      "sql-p1-r4",
+      "sql-p2-r1",
+      "sql-p2-r2"
+    ]
   },
   {
     "id": "skill-sql-analytics",
@@ -19,7 +26,14 @@
     "icon_key": null,
     "xp_reward": 175,
     "threshold": 0,
-    "resource_ids": ["sql-p3-r1", "sql-p3-r2", "sql-p3-r3", "sql-p3-r4", "sql-p4-r1", "sql-p4-r2"]
+    "resource_ids": [
+      "sql-p3-r1",
+      "sql-p3-r2",
+      "sql-p3-r3",
+      "sql-p3-r4",
+      "sql-p4-r1",
+      "sql-p4-r2"
+    ]
   },
   {
     "id": "skill-fpa-reporting",
@@ -30,7 +44,14 @@
     "icon_key": null,
     "xp_reward": 125,
     "threshold": 0,
-    "resource_ids": ["fpa-p1-r1", "fpa-p1-r2", "fpa-p1-r3", "fpa-p1-r4", "fpa-p2-r1", "fpa-p2-r2"]
+    "resource_ids": [
+      "fpa-p1-r1",
+      "fpa-p1-r2",
+      "fpa-p1-r3",
+      "fpa-p1-r4",
+      "fpa-p2-r1",
+      "fpa-p2-r2"
+    ]
   },
   {
     "id": "skill-fpa-strategic",
@@ -41,7 +62,14 @@
     "icon_key": null,
     "xp_reward": 200,
     "threshold": 0,
-    "resource_ids": ["fpa-p3-r1", "fpa-p3-r2", "fpa-p3-r3", "fpa-p3-r4", "fpa-p4-r1", "fpa-p4-r2"]
+    "resource_ids": [
+      "fpa-p3-r1",
+      "fpa-p3-r2",
+      "fpa-p3-r3",
+      "fpa-p3-r4",
+      "fpa-p4-r1",
+      "fpa-p4-r2"
+    ]
   },
   {
     "id": "skill-sfin-uniteconomics",
@@ -52,7 +80,14 @@
     "icon_key": null,
     "xp_reward": 125,
     "threshold": 0,
-    "resource_ids": ["sfin-p1-r1", "sfin-p1-r2", "sfin-p1-r3", "sfin-p1-r4", "sfin-p2-r1", "sfin-p2-r2"]
+    "resource_ids": [
+      "sfin-p1-r1",
+      "sfin-p1-r2",
+      "sfin-p1-r3",
+      "sfin-p1-r4",
+      "sfin-p2-r1",
+      "sfin-p2-r2"
+    ]
   },
   {
     "id": "skill-sfin-fundraising",
@@ -63,6 +98,13 @@
     "icon_key": null,
     "xp_reward": 200,
     "threshold": 0,
-    "resource_ids": ["sfin-p3-r1", "sfin-p3-r2", "sfin-p3-r3", "sfin-p3-r4", "sfin-p4-r1", "sfin-p4-r2"]
+    "resource_ids": [
+      "sfin-p3-r1",
+      "sfin-p3-r2",
+      "sfin-p3-r3",
+      "sfin-p3-r4",
+      "sfin-p4-r1",
+      "sfin-p4-r2"
+    ]
   }
 ]

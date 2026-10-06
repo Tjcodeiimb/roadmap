@@ -12,12 +12,60 @@
     "published": true
   },
   "phases": [
-    { "id": "rag-p1", "track_id": "langchain-rag", "order_index": 1, "title": "LLM APIs", "description": "Call the OpenAI and Anthropic APIs directly from Python, understand tokens and costs, and learn the Python basics needed to work with LLM responses.", "estimated_weeks": null, "color": null },
-    { "id": "rag-p2", "track_id": "langchain-rag", "order_index": 2, "title": "LangChain Fundamentals", "description": "Use LangChain's chains, prompt templates, LLM wrappers, memory modules, and document loaders to build structured LLM applications.", "estimated_weeks": null, "color": null },
-    { "id": "rag-p3", "track_id": "langchain-rag", "order_index": 3, "title": "Vector Databases & Embeddings", "description": "Understand what vector embeddings are, store them in FAISS and Chroma, and run similarity searches to retrieve semantically relevant content.", "estimated_weeks": null, "color": null },
-    { "id": "rag-p4", "track_id": "langchain-rag", "order_index": 4, "title": "RAG Pipeline", "description": "Build a complete retrieval-augmented generation pipeline end-to-end, covering document ingestion, chunking, retrieval, reranking, and answer generation.", "estimated_weeks": null, "color": null },
-    { "id": "rag-p5", "track_id": "langchain-rag", "order_index": 5, "title": "Agents & Tools", "description": "Build LangChain ReAct agents that call tools, use function calling, and execute multi-step research tasks autonomously.", "estimated_weeks": null, "color": null },
-    { "id": "rag-p6", "track_id": "langchain-rag", "order_index": 6, "title": "Deployment & Production", "description": "Ship a working demo with Streamlit, trace and debug with LangSmith, and put in place cost-monitoring and reliability practices.", "estimated_weeks": null, "color": null }
+    {
+      "id": "rag-p1",
+      "track_id": "langchain-rag",
+      "order_index": 1,
+      "title": "LLM APIs",
+      "description": "Call the OpenAI and Anthropic APIs directly from Python, understand tokens and costs, and learn the Python basics needed to work with LLM responses.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "rag-p2",
+      "track_id": "langchain-rag",
+      "order_index": 2,
+      "title": "LangChain Fundamentals",
+      "description": "Use LangChain's chains, prompt templates, LLM wrappers, memory modules, and document loaders to build structured LLM applications.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "rag-p3",
+      "track_id": "langchain-rag",
+      "order_index": 3,
+      "title": "Vector Databases & Embeddings",
+      "description": "Understand what vector embeddings are, store them in FAISS and Chroma, and run similarity searches to retrieve semantically relevant content.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "rag-p4",
+      "track_id": "langchain-rag",
+      "order_index": 4,
+      "title": "RAG Pipeline",
+      "description": "Build a complete retrieval-augmented generation pipeline end-to-end, covering document ingestion, chunking, retrieval, reranking, and answer generation.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "rag-p5",
+      "track_id": "langchain-rag",
+      "order_index": 5,
+      "title": "Agents & Tools",
+      "description": "Build LangChain ReAct agents that call tools, use function calling, and execute multi-step research tasks autonomously.",
+      "estimated_weeks": null,
+      "color": null
+    },
+    {
+      "id": "rag-p6",
+      "track_id": "langchain-rag",
+      "order_index": 6,
+      "title": "Deployment & Production",
+      "description": "Ship a working demo with Streamlit, trace and debug with LangSmith, and put in place cost-monitoring and reliability practices.",
+      "estimated_weeks": null,
+      "color": null
+    }
   ],
   "topics": [
     { "id": "rag-p1-t1", "phase_id": "rag-p1", "order_index": 1, "title": "OpenAI API Quickstart", "section": null, "tags": [], "estimated_time": null, "description": "Install the OpenAI Python SDK, authenticate with an API key, and send your first chat-completion request from a Python script.", "steps": [] },

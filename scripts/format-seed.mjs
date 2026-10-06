@@ -59,6 +59,12 @@ function block(obj, indent) {
 const INLINE_KEYS = new Set(["topics", "resources"]);
 
 export function formatSeed(data) {
+  // Three of the skills working files are top-level arrays, not objects.
+  // Treating them as objects turned each into {"0": …, "1": …} — a silent
+  // data-destroying rewrite, which is why writeChecked below verifies the
+  // round trip rather than trusting this function.
+  if (Array.isArray(data)) return JSON.stringify(data, null, 2) + "\n";
+
   const keys = Object.keys(data);
   const body = keys.map((key) => {
     const value = data[key];
@@ -70,6 +76,23 @@ export function formatSeed(data) {
     return `  ${JSON.stringify(key)}: ${block(value, 2)}`;
   });
   return `{\n${body.join(",\n")}\n}\n`;
+}
+
+/**
+ * Re-parses the formatted output and refuses to write unless it is deeply
+ * equal to the input. A formatter that can silently change content is worse
+ * than no formatter: the diff looks like whitespace and nobody reads it.
+ */
+function formatChecked(original, file) {
+  const parsed = JSON.parse(original);
+  const formatted = formatSeed(parsed);
+  const reparsed = JSON.parse(formatted);
+  if (JSON.stringify(reparsed) !== JSON.stringify(parsed)) {
+    throw new Error(
+      `${file}: formatting would change the content, not just the layout. Refusing to write.`
+    );
+  }
+  return formatted;
 }
 
 // Importable as a module (formatSeed) without running the CLI.
@@ -88,7 +111,7 @@ let offStyle = 0;
 for (const file of files) {
   const path = join(DATA_DIR, file);
   const original = readFileSync(path, "utf8");
-  const formatted = formatSeed(JSON.parse(original));
+  const formatted = formatChecked(original, file);
   if (original === formatted) continue;
   offStyle++;
   if (write) {

@@ -8,7 +8,14 @@
     "icon_key": null,
     "xp_reward": 150,
     "threshold": 0,
-    "resource_ids": ["pe-p1-r1", "pe-p1-r2", "pe-p1-r3", "pe-p1-r4", "pe-p2-r1", "pe-p2-r2"]
+    "resource_ids": [
+      "pe-p1-r1",
+      "pe-p1-r2",
+      "pe-p1-r3",
+      "pe-p1-r4",
+      "pe-p2-r1",
+      "pe-p2-r2"
+    ]
   },
   {
     "id": "skill-pe-advanced-patterns",
@@ -19,7 +26,14 @@
     "icon_key": null,
     "xp_reward": 200,
     "threshold": 0,
-    "resource_ids": ["pe-p3-r1", "pe-p3-r2", "pe-p4-r1", "pe-p4-r2", "pe-p5-r1", "pe-p5-r2"]
+    "resource_ids": [
+      "pe-p3-r1",
+      "pe-p3-r2",
+      "pe-p4-r1",
+      "pe-p4-r2",
+      "pe-p5-r1",
+      "pe-p5-r2"
+    ]
   },
   {
     "id": "skill-ainc-automation-builder",
@@ -30,7 +44,14 @@
     "icon_key": null,
     "xp_reward": 125,
     "threshold": 0,
-    "resource_ids": ["ainc-p1-r1", "ainc-p1-r2", "ainc-p1-r3", "ainc-p1-r4", "ainc-p2-r1", "ainc-p2-r2"]
+    "resource_ids": [
+      "ainc-p1-r1",
+      "ainc-p1-r2",
+      "ainc-p1-r3",
+      "ainc-p1-r4",
+      "ainc-p2-r1",
+      "ainc-p2-r2"
+    ]
   },
   {
     "id": "skill-ainc-ai-integrations",
@@ -41,7 +62,14 @@
     "icon_key": null,
     "xp_reward": 175,
     "threshold": 0,
-    "resource_ids": ["ainc-p3-r1", "ainc-p3-r2", "ainc-p4-r1", "ainc-p4-r2", "ainc-p5-r1", "ainc-p5-r2"]
+    "resource_ids": [
+      "ainc-p3-r1",
+      "ainc-p3-r2",
+      "ainc-p4-r1",
+      "ainc-p4-r2",
+      "ainc-p5-r1",
+      "ainc-p5-r2"
+    ]
   },
   {
     "id": "skill-rag-llm-api-langchain",
@@ -52,7 +80,14 @@
     "icon_key": null,
     "xp_reward": 200,
     "threshold": 0,
-    "resource_ids": ["rag-p1-r1", "rag-p1-r2", "rag-p1-r3", "rag-p1-r4", "rag-p2-r1", "rag-p2-r2"]
+    "resource_ids": [
+      "rag-p1-r1",
+      "rag-p1-r2",
+      "rag-p1-r3",
+      "rag-p1-r4",
+      "rag-p2-r1",
+      "rag-p2-r2"
+    ]
   },
   {
     "id": "skill-rag-vector-rag-pipeline",
@@ -63,6 +98,13 @@
     "icon_key": null,
     "xp_reward": 250,
     "threshold": 0,
-    "resource_ids": ["rag-p3-r1", "rag-p3-r2", "rag-p4-r1", "rag-p4-r2", "rag-p5-r1", "rag-p5-r2"]
+    "resource_ids": [
+      "rag-p3-r1",
+      "rag-p3-r2",
+      "rag-p4-r1",
+      "rag-p4-r2",
+      "rag-p5-r1",
+      "rag-p5-r2"
+    ]
   }
 ]

@@ -8,7 +8,14 @@
     "icon_key": null,
     "xp_reward": 125,
     "threshold": 0,
-    "resource_ids": ["neg-p1-r1", "neg-p1-r2", "neg-p2-r1", "neg-p2-r2", "neg-p2-r3", "neg-p2-r4"]
+    "resource_ids": [
+      "neg-p1-r1",
+      "neg-p1-r2",
+      "neg-p2-r1",
+      "neg-p2-r2",
+      "neg-p2-r3",
+      "neg-p2-r4"
+    ]
   },
   {
     "id": "skill-neg-dealmaking",
@@ -19,7 +26,14 @@
     "icon_key": null,
     "xp_reward": 175,
     "threshold": 0,
-    "resource_ids": ["neg-p3-r1", "neg-p3-r2", "neg-p4-r1", "neg-p5-r1", "neg-p5-r3", "neg-p5-r5"]
+    "resource_ids": [
+      "neg-p3-r1",
+      "neg-p3-r2",
+      "neg-p4-r1",
+      "neg-p5-r1",
+      "neg-p5-r3",
+      "neg-p5-r5"
+    ]
   },
   {
     "id": "skill-xcomm-presence",
@@ -30,7 +44,14 @@
     "icon_key": null,
     "xp_reward": 125,
     "threshold": 0,
-    "resource_ids": ["xcomm-p1-r1", "xcomm-p1-r2", "xcomm-p1-r3", "xcomm-p2-r1", "xcomm-p2-r2", "xcomm-p2-r3"]
+    "resource_ids": [
+      "xcomm-p1-r1",
+      "xcomm-p1-r2",
+      "xcomm-p1-r3",
+      "xcomm-p2-r1",
+      "xcomm-p2-r2",
+      "xcomm-p2-r3"
+    ]
   },
   {
     "id": "skill-xcomm-storytelling",
@@ -41,7 +62,14 @@
     "icon_key": null,
     "xp_reward": 175,
     "threshold": 0,
-    "resource_ids": ["xcomm-p3-r1", "xcomm-p3-r2", "xcomm-p4-r1", "xcomm-p4-r2", "xcomm-p5-r1", "xcomm-p5-r3"]
+    "resource_ids": [
+      "xcomm-p3-r1",
+      "xcomm-p3-r2",
+      "xcomm-p4-r1",
+      "xcomm-p4-r2",
+      "xcomm-p5-r1",
+      "xcomm-p5-r3"
+    ]
   },
   {
     "id": "skill-tw-docs-fundamentals",
@@ -52,7 +80,14 @@
     "icon_key": null,
     "xp_reward": 100,
     "threshold": 0,
-    "resource_ids": ["tw-p1-r1", "tw-p1-r2", "tw-p1-r3", "tw-p1-r4", "tw-p1-r5", "tw-p1-r6"]
+    "resource_ids": [
+      "tw-p1-r1",
+      "tw-p1-r2",
+      "tw-p1-r3",
+      "tw-p1-r4",
+      "tw-p1-r5",
+      "tw-p1-r6"
+    ]
   },
   {
     "id": "skill-tw-api-docs",
@@ -63,7 +98,14 @@
     "icon_key": null,
     "xp_reward": 150,
     "threshold": 0,
-    "resource_ids": ["tw-p2-r1", "tw-p2-r2", "tw-p2-r3", "tw-p2-r4", "tw-p2-r5", "tw-p2-r6"]
+    "resource_ids": [
+      "tw-p2-r1",
+      "tw-p2-r2",
+      "tw-p2-r3",
+      "tw-p2-r4",
+      "tw-p2-r5",
+      "tw-p2-r6"
+    ]
   },
   {
     "id": "skill-pb-profile",
@@ -74,7 +116,14 @@
     "icon_key": null,
     "xp_reward": 100,
     "threshold": 0,
-    "resource_ids": ["pb-p1-r1", "pb-p1-r2", "pb-p2-r1", "pb-p2-r2", "pb-p2-r3", "pb-p2-r4"]
+    "resource_ids": [
+      "pb-p1-r1",
+      "pb-p1-r2",
+      "pb-p2-r1",
+      "pb-p2-r2",
+      "pb-p2-r3",
+      "pb-p2-r4"
+    ]
   },
   {
     "id": "skill-pb-content",
@@ -85,6 +134,13 @@
     "icon_key": null,
     "xp_reward": 150,
     "threshold": 0,
-    "resource_ids": ["pb-p3-r1", "pb-p3-r2", "pb-p3-r3", "pb-p3-r5", "pb-p5-r1", "pb-p5-r3"]
+    "resource_ids": [
+      "pb-p3-r1",
+      "pb-p3-r2",
+      "pb-p3-r3",
+      "pb-p3-r5",
+      "pb-p5-r1",
+      "pb-p5-r3"
+    ]
   }
 ]
