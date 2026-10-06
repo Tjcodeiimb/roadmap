@@ -115,10 +115,16 @@ export async function addProjectToResume(projectId: string, resumeId?: string) {
 
   section.entries = [...section.entries, { id: newId(), ...entry }];
 
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { error: "Not authenticated" };
+
   const { error } = await supabase
     .from("resumes")
     .update({ doc, updated_at: new Date().toISOString() })
-    .eq("id", targetId);
+    .eq("id", targetId)
+    .eq("user_id", user.id);
   if (error) return { error: error.message };
 
   revalidatePath(`/resume/${targetId}`);

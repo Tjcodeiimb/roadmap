@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type {
   Database,
@@ -23,15 +24,44 @@ import {
 
 type Client = SupabaseClient<Database>;
 
+/**
+ * The caller's own user id.
+ *
+ * Self-scoped reads must filter on this explicitly — RLS is not enough.
+ * Migration 0030 added an "admin read" SELECT policy alongside each
+ * "own rows" policy, and Postgres ORs permissive policies together, so for
+ * an admin a select with no user filter returns EVERY learner's rows.
+ *
+ * That is what made unenrolling look broken: getSelectedTracks was reading
+ * other learners' active enrollments as the admin's own, so a course they
+ * had just left stayed on the dashboard and sidebar through a hard refresh,
+ * and the marketplace kept offering "Continue" instead of "Enroll" — for as
+ * long as anyone else was still enrolled in it. The same flaw applied to
+ * resumes, skills, XP, watch stats and projects.
+ *
+ * Writes were never affected: "admin read" is SELECT-only, and the
+ * "own rows" policy still gates every insert, update and delete.
+ *
+ * cache() dedupes this per request, so the many query functions below each
+ * asking for it costs one auth round-trip rather than twenty.
+ */
+export const currentUserId = cache(async (supabase: Client): Promise<string | null> => {
+  const { data } = await supabase.auth.getUser();
+  return data.user?.id ?? null;
+});
+
 export async function getProfile(supabase: Client, userId: string) {
   const { data } = await supabase.from("profiles").select("*").eq("id", userId).single();
   return data;
 }
 
 export async function getSelectedTracks(supabase: Client) {
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
   const { data } = await supabase
     .from("user_track_selection")
     .select("track_id")
+    .eq("user_id", uid)
     .eq("status", "active");
   return (data ?? []).map((r) => r.track_id);
 }
@@ -43,16 +73,24 @@ export interface EnrolledTrack {
 }
 
 export async function getEnrolledTracks(supabase: Client): Promise<EnrolledTrack[]> {
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
   const { data } = await supabase
     .from("user_track_selection")
     .select("track_id, source, selected_at")
+    .eq("user_id", uid)
     .eq("status", "active")
     .order("selected_at");
   return (data ?? []).map((r) => ({ trackId: r.track_id, source: r.source, selectedAt: r.selected_at }));
 }
 
 export async function getEnrolledCohortIds(supabase: Client): Promise<string[]> {
-  const { data } = await supabase.from("user_cohort_enrollment").select("cohort_id");
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
+  const { data } = await supabase
+    .from("user_cohort_enrollment")
+    .select("cohort_id")
+    .eq("user_id", uid);
   return (data ?? []).map((r) => r.cohort_id);
 }
 
@@ -344,6 +382,8 @@ interface TrackSummaryRow {
 // the live FK constraints, not from the hand-written types).
 export async function getTrackSummaries(supabase: Client, trackIds: string[]): Promise<TrackProgressSummary[]> {
   if (!trackIds.length) return [];
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
 
   const [{ data: trackRows }, { data: progress }] = await Promise.all([
     supabase
@@ -351,7 +391,7 @@ export async function getTrackSummaries(supabase: Client, trackIds: string[]): P
       .select("id, name, label, order_index, phases(id, order_index, title, topics(id, title, order_index))")
       .in("id", trackIds)
       .order("order_index"),
-    supabase.from("user_progress").select("topic_id, status"),
+    supabase.from("user_progress").select("topic_id, status").eq("user_id", uid),
   ]);
 
   const tracks = (trackRows ?? []) as unknown as TrackSummaryRow[];
@@ -421,10 +461,16 @@ interface TrackDetailRow {
 // embedded under topics via its own FK) replaces 4 sequential round-trips
 // with 1 — this page is one of the most frequently visited in the app.
 export async function getTrackDetail(supabase: Client, trackId: string) {
+  const uid = await currentUserId(supabase);
+  if (!uid) return { track: null, phases: [] };
   const { data: row, error } = await supabase
     .from("tracks")
     .select("*, phases(*, topics(*, user_progress(status), resources(id, user_resource_progress!resource_id(status))))")
     .eq("id", trackId)
+    // Scope the embedded progress rows to the caller. Without this an admin
+    // reads every learner's row and [0] picks one at random (migration 0030).
+    .eq("phases.topics.user_progress.user_id", uid)
+    .eq("phases.topics.resources.user_resource_progress.user_id", uid)
     .maybeSingle();
   // A real query error (a broken relationship, an RLS misconfiguration) and
   // a genuinely nonexistent track both leave `row` empty, but they aren't
@@ -564,12 +610,16 @@ export interface CreditedFrom {
 // resources -> user_resource_progress, all real FKs) replaces 5 fully
 // sequential round-trips with 1 — this is the core "learning loop" page.
 export async function getTopicDetail(supabase: Client, topicId: string) {
+  const uid = await currentUserId(supabase);
+  if (!uid) return null;
   const { data: row, error } = await supabase
     .from("topics")
     .select(
       "*, phases(*), user_progress(status), resources(*, user_resource_progress!resource_id(status, credited_via_resource_id))"
     )
     .eq("id", topicId)
+    .eq("user_progress.user_id", uid)
+    .eq("resources.user_resource_progress.user_id", uid)
     .maybeSingle();
   if (error) console.error(`getTopicDetail(${topicId}):`, error.message);
   if (!row) return null;
@@ -665,6 +715,8 @@ interface ResourceDetailRow {
 // still scopes the embedded user_progress/user_resource_progress rows to
 // the caller, exactly as if queried directly.
 export async function getResourceDetail(supabase: Client, resourceId: string) {
+  const uid = await currentUserId(supabase);
+  if (!uid) return null;
   const { data: row, error } = await supabase
     .from("resources")
     .select(
@@ -674,6 +726,8 @@ export async function getResourceDetail(supabase: Client, resourceId: string) {
         "topics(id, title, phase_id, user_progress(status), phases(id, track_id, tracks(id, label, icon_key)))"
     )
     .eq("id", resourceId)
+    .eq("user_resource_progress.user_id", uid)
+    .eq("topics.user_progress.user_id", uid)
     .maybeSingle();
   if (error) console.error(`getResourceDetail(${resourceId}):`, error.message);
   if (!row) return null;
@@ -704,9 +758,12 @@ export async function getResourceDetail(supabase: Client, resourceId: string) {
 }
 
 export async function getWatchStats(supabase: Client) {
+  const uid = await currentUserId(supabase);
+  if (!uid) return { secondsWatched: 0, resourcesCompleted: 0, videosCompleted: 0 };
   const { data: progress } = await supabase
     .from("user_resource_progress")
-    .select("resource_id, seconds_watched, status");
+    .select("resource_id, seconds_watched, status")
+    .eq("user_id", uid);
   const rows = progress ?? [];
   const doneIds = rows.filter((r) => r.status === "done").map((r) => r.resource_id);
 
@@ -740,7 +797,13 @@ export interface PendingSkillUnlock {
 // user_skills in the same transaction, so this always has the full list —
 // even for a batch unlock, a cross-device unlock, or a refresh mid-animation.
 export async function getPendingSkillUnlocks(supabase: Client): Promise<PendingSkillUnlock[]> {
-  const { data: rows } = await supabase.from("user_skills").select("skill_id").is("seen_at", null);
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
+  const { data: rows } = await supabase
+    .from("user_skills")
+    .select("skill_id")
+    .eq("user_id", uid)
+    .is("seen_at", null);
   const skillIds = (rows ?? []).map((r) => r.skill_id);
   if (!skillIds.length) return [];
 
@@ -772,6 +835,8 @@ export interface SkillProgress {
 // Mirrors evaluate_skills()'s consumed-resource logic in JS for display —
 // read-only, so a plain RLS-scoped query is enough; no RPC needed.
 export async function getSkillProgress(supabase: Client): Promise<SkillProgress[]> {
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
   // The counting happens in the database. Doing it here meant sending every
   // mapped resource id (~700) as an .in() filter, which overran the gateway's
   // request-line limit and failed silently as "0 / N" for every skill.
@@ -779,7 +844,7 @@ export async function getSkillProgress(supabase: Client): Promise<SkillProgress[
     await Promise.all([
       supabase.from("skills").select("*").order("domain"),
       supabase.rpc("get_skill_progress"),
-      supabase.from("user_skills").select("skill_id, unlocked_at"),
+      supabase.from("user_skills").select("skill_id, unlocked_at").eq("user_id", uid),
     ]);
 
   if (countsError) console.error("get_skill_progress failed:", countsError.message);
@@ -814,12 +879,15 @@ export interface TrackSkillGroup {
 
 // Like getSkillProgress but scoped to enrolled tracks only, grouped by track.
 export async function getEnrolledSkillProgress(supabase: Client): Promise<TrackSkillGroup[]> {
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
+
   const [enrolledIds, { data: skillResourceRows }, { data: userSkills }] = await Promise.all([
     getSelectedTracks(supabase),
     supabase
       .from("skill_resources")
       .select("skill_id, resources(id, topic_id, topics(phase_id, phases(track_id)))"),
-    supabase.from("user_skills").select("skill_id, unlocked_at"),
+    supabase.from("user_skills").select("skill_id, unlocked_at").eq("user_id", uid),
   ]);
 
   if (!enrolledIds.length) return [];
@@ -852,8 +920,9 @@ export async function getEnrolledSkillProgress(supabase: Client): Promise<TrackS
     supabase
       .from("user_resource_progress")
       .select("resource_id, status")
+      .eq("user_id", uid)
       .in("resource_id", allResourceIds.length ? allResourceIds : ["__none__"]),
-    supabase.from("user_progress").select("topic_id, status"),
+    supabase.from("user_progress").select("topic_id, status").eq("user_id", uid),
   ]);
 
   const doneResourceSet = new Set(
@@ -914,17 +983,29 @@ export async function getEnrolledSkillProgress(supabase: Client): Promise<TrackS
 }
 
 export async function getUserXP(supabase: Client) {
-  const { data } = await supabase.from("user_xp").select("*").maybeSingle();
+  const uid = await currentUserId(supabase);
+  if (!uid) return { total_xp: 0, level: 1 };
+  const { data } = await supabase.from("user_xp").select("*").eq("user_id", uid).maybeSingle();
   return data ?? { total_xp: 0, level: 1 };
 }
 
 export async function getUserStreak(supabase: Client) {
-  const { data } = await supabase.from("user_streak").select("*").maybeSingle();
+  const uid = await currentUserId(supabase);
+  if (!uid) return { current_streak: 0, longest_streak: 0, last_visit_date: null };
+  const { data } = await supabase.from("user_streak").select("*").eq("user_id", uid).maybeSingle();
   return data ?? { current_streak: 0, longest_streak: 0, last_visit_date: null };
 }
 
 export async function getBuildProjects(supabase: Client) {
-  const { data } = await supabase.from("build_projects").select("*").order("created_at", { ascending: false });
+  // build_projects has no "admin read" policy today, but scoping it too keeps
+  // the rule uniform: a self-scoped read always names its user.
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
+  const { data } = await supabase
+    .from("build_projects")
+    .select("*")
+    .eq("user_id", uid)
+    .order("created_at", { ascending: false });
   return data ?? [];
 }
 
@@ -943,11 +1024,14 @@ interface CompletedTopicsTrackRow {
 // what used to be 4 sequential round-trips.
 export async function getCompletedTopicsByTrack(supabase: Client, trackIds: string[]) {
   if (!trackIds.length) return [];
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
 
   const { data } = await supabase
     .from("tracks")
     .select("id, label, phases(topics(title, user_progress(status, completed_at)))")
     .in("id", trackIds)
+    .eq("phases.topics.user_progress.user_id", uid)
     .order("order_index");
 
   const tracks = (data ?? []) as unknown as CompletedTopicsTrackRow[];
@@ -1083,6 +1167,7 @@ export async function getAdminUserDetail(supabase: Client, userId: string): Prom
             "project_playbooks(label, project_stages(id)), user_project_stages(status)"
         )
         .eq("user_id", userId)
+        .eq("user_project_stages.user_id", userId)
         .order("updated_at", { ascending: false }),
     ]);
 
@@ -1224,9 +1309,12 @@ export interface ResumeSummary {
 }
 
 export async function getResumes(supabase: Client): Promise<ResumeSummary[]> {
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
   const { data } = await supabase
     .from("resumes")
     .select("id, title, doc, updated_at")
+    .eq("user_id", uid)
     .order("updated_at", { ascending: false });
 
   return (data ?? []).map((row) => {
@@ -1247,13 +1335,17 @@ export async function getResume(
   supabase: Client,
   id: string
 ): Promise<{ id: string; title: string; doc: ResumeDoc; updatedAt: string } | null> {
-  // RLS scopes this to the owner, so a foreign id comes back as no rows —
+  // Scoped to the owner explicitly: a foreign id comes back as no rows, and
   // callers turn that into a 404 rather than a 403, which would confirm the
-  // resume exists.
+  // resume exists. RLS alone would not do it — migration 0030 lets an admin
+  // read anyone's resume, which getAdminUserResume is the deliberate path for.
+  const uid = await currentUserId(supabase);
+  if (!uid) return null;
   const { data } = await supabase
     .from("resumes")
     .select("id, title, doc, updated_at")
     .eq("id", id)
+    .eq("user_id", uid)
     .maybeSingle();
   if (!data) return null;
   return { id: data.id, title: data.title, doc: hydrateResumeDoc(data.doc), updatedAt: data.updated_at };
@@ -1273,9 +1365,12 @@ export interface UnlockedSkill {
  * picker only ever needs skills the user has actually unlocked.
  */
 export async function getUnlockedSkills(supabase: Client): Promise<UnlockedSkill[]> {
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
   const { data } = await supabase
     .from("user_skills")
     .select("skill_id, skills(id, name, domain, tier)")
+    .eq("user_id", uid)
     .order("unlocked_at", { ascending: false });
 
   const rows = (data ?? []) as unknown as {
@@ -1383,6 +1478,8 @@ interface PlaybookRow {
 }
 
 export async function getPlaybooks(supabase: Client): Promise<PlaybookSummary[]> {
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
   const [{ data: rows }, { data: mine }] = await Promise.all([
     supabase
       .from("project_playbooks")
@@ -1391,8 +1488,7 @@ export async function getPlaybooks(supabase: Client): Promise<PlaybookSummary[]>
       )
       .eq("published", true)
       .order("order_index"),
-    // RLS scopes this to the caller's own rows.
-    supabase.from("user_projects").select("playbook_id"),
+    supabase.from("user_projects").select("playbook_id").eq("user_id", uid),
   ]);
 
   const playbooks = (rows ?? []) as unknown as (Omit<PlaybookRow, "project_stages" | "cv_line" | "formats" | "dos" | "donts" | "tools" | "exports"> & {
@@ -1491,7 +1587,13 @@ export async function getPlaybookDetail(
 
 async function getUnlockedSkillIds(supabase: Client, skillIds: string[]): Promise<string[]> {
   if (!skillIds.length) return [];
-  const { data } = await supabase.from("user_skills").select("skill_id").in("skill_id", skillIds);
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
+  const { data } = await supabase
+    .from("user_skills")
+    .select("skill_id")
+    .eq("user_id", uid)
+    .in("skill_id", skillIds);
   return (data ?? []).map((r) => r.skill_id);
 }
 
@@ -1508,6 +1610,8 @@ export interface ProjectSummary {
 }
 
 export async function getMyProjects(supabase: Client): Promise<ProjectSummary[]> {
+  const uid = await currentUserId(supabase);
+  if (!uid) return [];
   const { data } = await supabase
     .from("user_projects")
     .select(
@@ -1515,6 +1619,8 @@ export async function getMyProjects(supabase: Client): Promise<ProjectSummary[]>
         "project_playbooks(label, icon_key, project_stages(id)), " +
         "user_project_stages(status)"
     )
+    .eq("user_id", uid)
+    .eq("user_project_stages.user_id", uid)
     .order("updated_at", { ascending: false });
 
   const rows = (data ?? []) as unknown as {
@@ -1560,10 +1666,13 @@ export async function getProjectDetail(
   supabase: Client,
   projectId: string
 ): Promise<ProjectDetail | null> {
+  const uid = await currentUserId(supabase);
+  if (!uid) return null;
   const { data } = await supabase
     .from("user_projects")
     .select("id, title, summary, link, outcome, status, created_at, completed_at, playbook_id")
     .eq("id", projectId)
+    .eq("user_id", uid)
     .maybeSingle();
   if (!data) return null;
 
@@ -1572,6 +1681,7 @@ export async function getProjectDetail(
     supabase
       .from("user_project_stages")
       .select("stage_id, status, notes")
+      .eq("user_id", uid)
       .eq("project_id", projectId),
   ]);
   if (!playbook) return null;

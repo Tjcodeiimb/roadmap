@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "check-scoping": "node scripts/check-user-scoping.mjs",
+    "format-seed": "node scripts/format-seed.mjs",
     "seed": "node --env-file=.env.local scripts/seed.mjs",
     "check-orphans": "node scripts/check-orphans.mjs"
   },
